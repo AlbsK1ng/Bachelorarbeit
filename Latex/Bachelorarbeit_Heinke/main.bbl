@@ -1,0 +1,120 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global/global}
+  \entry{DTGrieves}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=GM}{%
+         family={Grieves},
+         familyi={G\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GM1}
+    \strng{fullhash}{GM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Digital Twin: Manufacturing Excellence through Virtual Factory Replication}
+    \field{month}{03}
+    \field{year}{2015}
+  \endentry
+
+  \entry{ZEISS}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=Z}{%
+         family={ZEISS},
+         familyi={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{Z1}
+    \strng{fullhash}{Z1}
+    \field{labelnamesource}{author}
+  \endentry
+
+  \entry{KRITZINGER20181016}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=KW}{%
+         family={Kritzinger},
+         familyi={K\bibinitperiod},
+         given={Werner},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Karner},
+         familyi={K\bibinitperiod},
+         given={Matthias},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=TG}{%
+         family={Traar},
+         familyi={T\bibinitperiod},
+         given={Georg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Henjes},
+         familyi={H\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SW}{%
+         family={Sihn},
+         familyi={S\bibinitperiod},
+         given={Wilfried},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \keyw{Digital Model, Digital Shadow, Digital Twin, Production, Manufacturing, Literature Review}
+    \strng{namehash}{KW+1}
+    \strng{fullhash}{KWKMTGHJSW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The Digital Twin (DT) is commonly known as a key enabler for the digital transformation, however, in literature is no common understanding concerning this term. It is used slightly different over the disparate disciplines. The aim of this paper is to provide a categorical literature review of the DT in manufacturing and to classify existing publication according to their level of integration of the DT. Therefore, it is distinct between Digital Model (DM), Digital Shadow (DS) and Digital Twin. The results are showing, that literature concerning the highest development stage, the DT, is scarce, whilst there is more literature about DM and DS.%
+    }
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.ifacol.2018.08.474
+    \endverb
+    \field{issn}{2405-8963}
+    \field{note}{16th IFAC Symposium on Information Control Problems in Manufacturing INCOM 2018}
+    \field{number}{11}
+    \field{pages}{1016\bibrangedash 1022}
+    \field{title}{Digital Twin in manufacturing: A categorical literature review and classification}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S2405896318316021
+    \endverb
+    \field{volume}{51}
+    \field{journaltitle}{IFAC-PapersOnLine}
+    \field{year}{2018}
+  \endentry
+
+  \entry{RAMI4.0}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=R}{%
+         family={RAMI4},
+         familyi={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{R1}
+    \strng{fullhash}{R1}
+    \field{labelnamesource}{author}
+    \field{journaltitle}{test}
+  \endentry
+\enddatalist
+\endinput
