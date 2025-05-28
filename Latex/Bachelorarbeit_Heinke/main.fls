@@ -1,8 +1,8 @@
-PWD /home/aheinke/Documents/latex/Bachelorarbeit_Heinke
+PWD /home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /home/aheinke/Documents/latex/Bachelorarbeit_Heinke/main.tex
+INPUT /home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex
 OUTPUT main.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/extsizes/extarticle.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/extsizes/extarticle.cls
@@ -549,6 +549,11 @@ INPUT ./Bilder/Metamodel.pdf
 INPUT ./Bilder/Metamodel.pdf
 INPUT ./Bilder/Metamodel.pdf
 INPUT ./Bilder/Metamodel.pdf
+INPUT ./Bilder/dpp_konzept.pdf
+INPUT ./Bilder/dpp_konzept.pdf
+INPUT ./Bilder/dpp_konzept.pdf
+INPUT ./Bilder/dpp_konzept.pdf
+INPUT ./Bilder/dpp_konzept.pdf
 INPUT ./Bilder/robocell_FS2_rgb_Logo.png
 INPUT ./Bilder/robocell_FS2_rgb_Logo.png
 INPUT ./Bilder/robocell_FS2_rgb_Logo.png

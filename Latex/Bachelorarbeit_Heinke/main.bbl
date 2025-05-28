@@ -26,8 +26,8 @@
          giveni={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{GM1}
-    \strng{fullhash}{GM1}
+    \strng{namehash}{GM2}
+    \strng{fullhash}{GM2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Digital Twin: Manufacturing Excellence through Virtual Factory Replication}
@@ -35,16 +35,25 @@
     \field{year}{2015}
   \endentry
 
-  \entry{ZEISS}{article}{}{}
+  \entry{ZEISS}{online}{}{}
     \name{author}{1}{}{%
-      {{hash=Z}{%
-         family={ZEISS},
-         familyi={Z\bibinitperiod},
+      {{hash=GM}{%
+         family={Grafe},
+         familyi={G\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{Z1}
-    \strng{fullhash}{Z1}
+    \strng{namehash}{GM1}
+    \strng{fullhash}{GM1}
     \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Der digitale Zwilling als eine Säule von Industrie 4.0}
+    \verb{url}
+    \verb https://blogs.zeiss.com/digital-innovation/de/digitaler-zwilling-saeu
+    \verb le/
+    \endverb
+    \field{year}{abgerufen am 19.05.2025}
   \endentry
 
   \entry{KRITZINGER20181016}{article}{}{}
@@ -80,14 +89,10 @@
          giveni={W\bibinitperiod},
       }}%
     }
-    \keyw{Digital Model, Digital Shadow, Digital Twin, Production, Manufacturing, Literature Review}
     \strng{namehash}{KW+1}
     \strng{fullhash}{KWKMTGHJSW1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{abstract}{%
-    The Digital Twin (DT) is commonly known as a key enabler for the digital transformation, however, in literature is no common understanding concerning this term. It is used slightly different over the disparate disciplines. The aim of this paper is to provide a categorical literature review of the DT in manufacturing and to classify existing publication according to their level of integration of the DT. Therefore, it is distinct between Digital Model (DM), Digital Shadow (DS) and Digital Twin. The results are showing, that literature concerning the highest development stage, the DT, is scarce, whilst there is more literature about DM and DS.%
-    }
     \verb{doi}
     \verb https://doi.org/10.1016/j.ifacol.2018.08.474
     \endverb
@@ -106,15 +111,19 @@
 
   \entry{RAMI4.0}{article}{}{}
     \name{author}{1}{}{%
-      {{hash=R}{%
-         family={RAMI4},
-         familyi={R\bibinitperiod},
+      {{hash=BVB}{%
+         family={Beuth-Verlag},
+         familyi={B\bibinithyphendelim V\bibinitperiod},
+         given={Berlin},
+         giveni={B\bibinitperiod},
       }}%
     }
-    \strng{namehash}{R1}
-    \strng{fullhash}{R1}
+    \strng{namehash}{BVB1}
+    \strng{fullhash}{BVB1}
     \field{labelnamesource}{author}
-    \field{journaltitle}{test}
+    \field{labeltitlesource}{title}
+    \field{title}{Refernzarchitekturmodell Industrie 4.0 (RAMI 4.0)}
+    \field{year}{April 2016}
   \endentry
 \enddatalist
 \endinput

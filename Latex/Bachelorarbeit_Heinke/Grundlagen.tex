@@ -1,5 +1,7 @@
 \section{Grundlagen}
 \subsection{Industrie 4.0}
+\subsubsection{Künstliche Intelligenz im industriellen Kontext}
+\subsubsection{RAMI 4.0}
 Hier steht etwas zur Industrie 4.0
 
 
@@ -61,29 +63,33 @@ Es entsteht eine Feedback-Schleife und erlaubt dem virtuellen Objekt Einfluss au
 
 
 \subsection{Asset Administration Shell}
-Die Verwaltungsschale (engl. Asset Administration Shell) ist ein Schlüsselkonzept innerhalb des Referenzarchitekturmodell Industrie 4.0 \cite{RAMI4.0}. Sie bildet die Grundlage für die Umsetzung und Entwicklung interoperabler digitaler Zwillinge im industriellen Umfeld.
-Das Konzept wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und erstmlas im Jahr 2016 als Teil von RAMI 4.0 eingeführt.
+Die Asset Administration Shell (deutsch Verwaltungsschale (AAS)) ist eine Schlüsselkomponente innerhalb des Referenzarchitekturmodell Industrie 4.0 \cite{RAMI4.0} und bildet die Grundlage für die Umsetzung und Entwicklung interoperabler digitaler Zwillinge im industriellen Umfeld.
+Sie wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und erstmlas im Jahr 2016 als Teil von RAMI 4.0 vorgestellt.
+Seit ihrer Einführung wurde die AAS kontinuierlich weiterenwtickelt und ist mittlerweile in der internationalen Norm IEC 63278-1:2023 [Quelle] standardisiert.
+% Darin wird die AAS als "strukturierte, standardisierte digitale Repräsentation eines Assets" definiert.
+Seit 2020 wird die Umsetzung und Weiterentwicklung der AAS von der Industrial Digital Twin Association (IDTA) organisiert und gesteuert.
+Ziel der IDTA ist es, den digitalen Zwilling auf Basis der AAS zu standardisieren und in Form von Open Source Softwarelösungen in das industrielle Umfeld zu integrieren.
+Die AAS wird dabei in mehreren Spezifikationen der IDTA dokumentiert und beschrieben.
+Aktuell bildet die AAS Version 3 den neuesten Entwicklungsstand und ist ebenfalls die Basis für diese Arbeit.
+
 % Das Architekturmodell ist ein Leitfaden für die Industrie und dient als Hilfestellung um die digitale Transformation in einem Unternehmen systematisch umzusetzten.
 % Es soll helfen, die komplexen Anforderungen an die Industrie 4.0 für die Allgemeinheit verständlich zu machen.
 
-Innerhalb von RAMI 4.0 ist die Verwaltungsschale eine virtuelle Hülle um ein Asset und repräsentiert dieses digital.
-Sie enthält dabei alle relevanten Daten, Eigenschaften und Funktionen eines Assets über den gesamten Lebenszyklus hinweg.
+Die AAS ist eine Zitat(standardisierte digitale Repräsentation eines Assets) (Quelle IEC 63278). Dabei beinhaltet sie alle relevanten Daten, Eigenschaften und Funktionen eines Assets über den gesamten Lebenszyklus hinweg.
 Enthalten sind diese Informationen dabei in unterschiedlichen Submodellen, die immer einen bestimmten Aspekt eines Assets abbilden. 
-Durch die standardisierte Struktur bildet die Verwaltungsschale die Grundlage für einen einheitlichen Informationsaustausch über System -und Unternehmensgrenzen hinweg.
-
-Die Umsetzung und Weiterentwicklung der Verwaltungsschale wird seit 2020 von der Industrial Digital Twin Association (IDTA) organisiert und gesteuert.
-Ziel der IDTA ist es den digitalen Zwilling auf Basis der Verwaltungsschale zu standardisieren und in Form von Open Source Softwarelösungen in das industrielle Umfeld zu integrieren.
-Die Verwaltungsschale wird in verschiedenen Spezifikationen der IDTA dokumentiert und stetig weiterenwickelt.
-Aktuell bildet die AAS Version 3 den neuesten Entwicklungsstand und ist ebenfalls die Basis für diese Arbeit.
-
-Verwaltungsschalen represäntieren immer genau ein Asset und müssen global eindeutig identifizierbar sein.
 In der Industrie können Assets physische Objekte, wie eine Anlage oder eine Maschine sein oder aber auch virtuelle Elemente wie Software oder eine Idee.
 In RAMI 4.0 wird davon ausgegangen, das Assets immmer einen konkreten Nutzen für ein Unternehmen bzw. eine Organisation bieten.
-Zusammen mit der Verwaltungsschale wird ein Asset zur sogenannten Industrie 4.0 Komonente. 
+Die AAS repräsentiert immer genau ein Asset und ist global eindeutig identifizierbar.
+Durch die Kombination eines Assets mit seiner zugehörigen AAS entsteht eine sogenannte Industrie 4.0 Komponente.
+
+% Durch die standardisierte Struktur bildet die Verwaltungsschale die Grundlage für einen einheitlichen Informationsaustausch über System -und Unternehmensgrenzen hinweg.
+% Verwaltungsschalen repräsentieren immer genau ein Asset und müssen global eindeutig identifizierbar sein.
+% In der Industrie können Assets physische Objekte, wie eine Anlage oder eine Maschine sein oder aber auch virtuelle Elemente wie Software oder eine Idee.
+% In RAMI 4.0 wird davon ausgegangen, das Assets immmer einen konkreten Nutzen für ein Unternehmen bzw. eine Organisation bieten.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{Bilder/aas.png}
+    \includegraphics[width=1\textwidth]{Bilder/aas.png}
     \caption{Industrie 4.0 Komponente}
     \label{fig:klassifizierungDT}
 \end{figure}
@@ -120,34 +126,63 @@ Ein vereinfachtes SChema des Metamodells der Verwaltungsschale ist nachfolgend i
     \label{fig:klassifizierungDT}
 \end{figure}
 
-Um die Erstlleung solcher Submodelle zu erleichtern und gleichzeitig Interoperabilität zu gewährleisten, stellt die IDTA standardisierte Submodellvorlagen - sogenannte Submodel Templates - zur Verfügung.
+Um die Erstlleung von Submodellen zu erleichtern und gleichzeitig Interoperabilität zu gewährleisten, stellt die IDTA standardisierte Submodellvorlagen - sogenannte Submodel Templates - zur Verfügung.
 Aktuell sind 34 dieser Templates veröffentlicht, viele weitere sind in der Entwicklung oder im Überprüfungsprozess und werden in Zukunft ergänzt.
 Die bereits verfügbaren Templates enthalten unteranderem Submodelle wie das digitale Typenschild oder den Carbon Footprint.
 Alle Eigenschaften innerhalb dieser Vorlagen werden dabei in Verbindung mit dem ECLASS-Standard einheiltich semantisch beschrieben.
 Diese Templates könen über ein zentrales Repository bezogen werden und bilden die Basis für eine interoperable semantische Datenstruktur.
-Außerdem 
 
 
-\subsection{Digitaler Produktpass}
-Der digitale Produtpass (DPP) ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation.
-Das Konzept des digitalen Produktpasse wurde erstmals im Rahmen des European Green Deal von der Europäischen Kommission im Jahr 2019 vorgestellt [Quelle: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640] und mittlerweile im Zuge der Eco Design for Sustainable Products Regulation (ESPR) [Quelle] als verpflichtendes Mittel eingeführt.
+\subsection{Digitaler Produktpass für Industrie 4.0}
+Der \ac{dpp} ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation.
 Ziel ist es, die Transparenz über ökologische Merkmale von Produkten wie verwendete Materialien, Recylcebarkeit oder die CO2-Bilanz deutlich zu verbessern.
+Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg aufgezeichnet und in einem menschen -und maschinenlesbarem Format bereitgestellt werden.
+Langfristig soll dies zu einer Kreislaufwirtschaft und digitalen Wirtschaft innerhalb der EU führen.
 
-Als erstes soll der digitale Produktpass im Jahr 2027 für Batterien eingeführt werden. Weitere Produktkategorien werden in den nächsten Jahren folgen.
-Dabei kann der Produktpass als eine digitale Akte gesehen werden, die produktspezifische Daten über den gesamten Lebenszyklus aufzeichnet.
-Gefordert werden wird zum Beispiel die Implementierung eines digitalen Typenschildes auf Basis von IEC 61406 oder die Bereitstellung des Product Carbon Footprints entlang des gesamten Lebenszyklus eines Produktes.
+Das Konzept des digitalen Produktpasse wurde erstmals im Rahmen des European Green Deal von der Europäischen Kommission im Jahr 2019 vorgestellt [Quelle: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640].
+Im Zuge der Ökodesign-Verordnugng (Eco Design for Sustainable Products Regulation (ESPR) ) [Quelle] wird der \acs{dpp} aktuell als verpflichtendes Mittel für zahlreiche Produktgruppen eingeführt.
+Als erstes konkrete Anwendung wird der digitale Produktpass erstmals im Jahr 2027 für Batterien verpflichtend, wie in der EU-Batterieverordnung festgelegt.
+Weitere Produktkategorien, darunter auch die Elektroindustrie und der Maschinen -und Anlagenbau werden in den nächsten Jahren folgen.
+
+Die Bereitstellung der digitalen Produktpässe erfolgt gemäß den Anforderungen der ESPR in elektronischer Form. Dabei müssen diese untereinander interoperabel miteinander kommunizieren können.
+Daten innerhalb eines Passes müssen standardisiert und strukturiert in einem menschen -und maschinenlesbarem Format zur Verfügung gestellt werden.
+Je nach Art der Information werden verschiedene Zugriffsrechte für unterschiedliche Interessengruppen eingeführt. Damit soll der Schutz von geistigem Eigentum sichergestellt werden.
+Verwaltet werden sollen die Daten dabei über einen zentralen Server bzw. ein Registry, in dem die verschiedenen \acsp{dpp} gespeichert bzw. zumindest registriert werden.
+Der Zugriff auf konkrete Pässe soll möglichst einfach sein. Hierzu können zum Beispiel QR-Codes eingesetzte werden, die direkt am Produkt angebracht sind, und direkt zum \acs{dpp} führen.
+Dafür ist es wichtig, das jedes Produkt global eindeutig über eine einzigartige Kennung beschrieben wird.
+Quelle: vgl. https://cirpassproject.eu/wp-content/uploads/2023/03/ESPR-short-summary-Final.pdf
+
+Während die regulatorischen Rahmenbedingungen schon mehr oder weniger final ausgearbeitet sind, bleibt noch die Frage der konkreten technologischen Umsetzung.
+Eine dezentrale Lösung zur Umsetzung bildet der von der ZVEI vorgestellte digitale Produktpass für die Industrie 4.0 (DPP 4.0). [DPP 4.0: An Architecture Proposal for a DPP-System to implement the EU Digital Product Passport for Industrial Products]
+Der DPP 4.0 basiert dabei auf zwei etablierten Standards. Zum Einen das digitale Typenschild, und zum Anderen die Asset Administration Shell [Link zu Kapitel AAS].
+Das digitale Typenschild ermöglicht - gemäß der Norm IEC 61406 [Quellle Norm] - die eindeutige Identifikation von Produkten über eine einzigartige Asset-ID.
+Typischerweise wird diese in Form eines maschinenlesbarem Links oder QR-Codes an ein Produkt angebracht, wodurch ein direkter Zugriff auf den jeweiligen \acs{dpp} ermöglicht wird.
+
+Das Konzept des DPP 4.0 sieht vor, dass Unternehmen ihre Produktpässe dezentral in einem eigenen Repository verwalten.
+Dies soll Unternehmen helfen, Daten innerhalb eines Produktpasse bei Bedarf selbstständig zu aktualisieren.
+Organisiert werden die Daten in verschiedenen Submodellen der Verwaltungsschale. 
+Standardisierte Teilmodelle wie das digitale Typenschild, Dokumentationen oder der Product Carbon Footprint (PCF) helfen bei der Umsetzung der im \acs{dpp} geforderten Daten.
+Darüber hinaus können auch zusätzliche, nicht verpflichtende Informationen integrierte werden, sofern sie für bestimmte Stakeholder einen Mehrwert bieten.
+Der Zugriff auf die Daten erfolgt über ein webbasiertes Portal. Verschiedene Interessengruppen erhalten dabei unterschiedliche Zugangsrechte. 
+Hierfür werden bestimmmte Teilmodelle für unterschiedliche Gruppen freigegeben.
+Eine schemantische Darstellung des DPP 4.0 ist in Abbildung xy dargestellt.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Bilder/dpp_konzept.pdf}
+    \caption{Konzept des DPP 4.0}
+    \label{fig:klassifizierungDT}
+\end{figure}
 
 
-
-Hier muss noch die technologische Umsetzung (mit AAS) hin.
-
-
-Bezug zu AAS nehmen...
-\subsection{Künstliche Intelligenz im industriellen Kontext}
+Exemplarisch gezeigt wird dies in einem PCF Showcase...
+Ein Zwei abschließende Worte...
 
 
+%
 
-\subsection{robcoell}
+\subsection{robocell Füll -und Verschließmodul}
+
 Was ist die robocell? Wodurch zeichnet sie sich aus?
 
 Eingehen auf das Füllmodul
@@ -157,5 +192,26 @@ Eingehen auf das Füllmodul
 \subsection{Technologische Grundlagen}
 Brauche ich das?
 \subsubsection{AASX Package Exlporer}
+Der von Michael Hoffmeister entwickelte AASX Package Explorer ist ein Toll/Anwendung zur manuellen Errstellung von Verwaltungschalen.
+Er ermöglicht das Modellieren von Verwaltungsschalen mit allen Elementen dieser.
+Hiermit können ganze Verwaltungsschale erstellt werden und in eine Datei wie eine aasx Datei oder XML Datei geschrieben werden.
+Er bringt alles mit, was für die Erstellung von Verwaltungsschalen benötigt wird.
+Man kann AAS anschauen und bearbeiten.
+AUch kann ein Server angebunden werden.
 \subsubsection{OPC UA}
-\subsubsection{Basyx}
+\subsubsection{Eclipse BaSyx }
+BaSyx ist eine von der EClipse Foundation entwickelte Softwarelösung für die Erstellung und Verwaltung von Asset Administration Shells.
+Die Architektur von BaSyx basiert auf einer Vielzahl verschiedener Off-The-Shelf-Komponenten, die alle als Docker Container frei zugänglich sind und somit einfach in eine bestehende Umgebung integriert werden können. 
+Die Kernkomponenten sind:
+
+\begin{itemize}
+    \item aas-registry: Ermöglicht die Registrierung und Verwaltung von Verwaltungsschalen
+    \item sm-registry: Ermöglicht die Registrierung und Verwaltung von Submodellen
+    \item aas-env: Enthält Repositorys für AAS, Submodelle und Concept Descriptions
+    \item aas-ui: Weboberfläche zur Visualisierung und Bearbeitung von Verwaltungsschalen
+\end{itemize}
+
+Durch die Kombination der verschiedenen Komponenten bietet BaSyx eine vollständige Laufzeitumgebung für die Verwaltung und Interaktion von digitalen Zwillingen auf Basis der Verwaltungsschale.
+
+
+
