@@ -19,47 +19,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: main-blx.bib
 Database file #2: references.bib
+Warning--string name "oc" is undefined
+--line 79 of file references.bib
 Biblatex version: 3.20
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 5 entries,
+You've used 9 entries,
             6402 wiz_defined-function locations,
-            1231 strings with 9788 characters,
-and the built_in function-call counts, 25669 in all, are:
-= -- 1933
-> -- 408
-< -- 73
-+ -- 742
-- -- 144
-* -- 1601
-:= -- 3089
+            1255 strings with 10486 characters,
+and the built_in function-call counts, 59033 in all, are:
+= -- 3986
+> -- 2352
+< -- 281
++ -- 2501
+- -- 1634
+* -- 3645
+:= -- 6952
 add.period$ -- 0
-call.type$ -- 5
-change.case$ -- 28
-chr.to.int$ -- 48
-cite$ -- 8
-duplicate$ -- 2773
-empty$ -- 2295
-format.name$ -- 226
-if$ -- 5162
+call.type$ -- 9
+change.case$ -- 91
+chr.to.int$ -- 222
+cite$ -- 16
+duplicate$ -- 5003
+empty$ -- 5170
+format.name$ -- 370
+if$ -- 11130
 int.to.chr$ -- 0
-int.to.str$ -- 10
+int.to.str$ -- 22
 missing$ -- 0
-newline$ -- 129
-num.names$ -- 158
-pop$ -- 1466
+newline$ -- 227
+num.names$ -- 325
+pop$ -- 2757
 preamble$ -- 1
-purify$ -- 48
+purify$ -- 120
 quote$ -- 0
-skip$ -- 682
+skip$ -- 1460
 stack$ -- 0
-substring$ -- 3360
-swap$ -- 478
-text.length$ -- 98
+substring$ -- 8162
+swap$ -- 1157
+text.length$ -- 231
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 158
+type$ -- 294
 warning$ -- 0
-while$ -- 420
+while$ -- 695
 width$ -- 0
-write$ -- 125
+write$ -- 219
+(There was 1 warning)

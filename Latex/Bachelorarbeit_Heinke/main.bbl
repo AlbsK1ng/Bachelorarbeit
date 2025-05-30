@@ -17,7 +17,7 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global/global}
-  \entry{DTGrieves}{article}{}{}
+  \entry{DTGrieves}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=GM}{%
          family={Grieves},
@@ -30,9 +30,16 @@
     \strng{fullhash}{GM2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+    \field{note}{White Paper}
     \field{title}{Digital Twin: Manufacturing Excellence through Virtual Factory Replication}
+    \verb{url}
+    \verb https://www.researchgate.net/publication/275211047
+    \endverb
     \field{month}{03}
     \field{year}{2015}
+    \field{urlday}{20}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
   \endentry
 
   \entry{ZEISS}{online}{}{}
@@ -48,82 +55,173 @@
     \strng{fullhash}{GM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+    \field{note}{Blogbeitrag, ZEISS Digital Innovation}
     \field{title}{Der digitale Zwilling als eine Säule von Industrie 4.0}
     \verb{url}
     \verb https://blogs.zeiss.com/digital-innovation/de/digitaler-zwilling-saeu
     \verb le/
     \endverb
-    \field{year}{abgerufen am 19.05.2025}
+    \field{month}{06}
+    \field{year}{2023}
+    \field{urlday}{20}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
   \endentry
 
-  \entry{KRITZINGER20181016}{article}{}{}
+  \entry{ClassificationDT}{article}{}{}
     \name{author}{5}{}{%
-      {{hash=KW}{%
-         family={Kritzinger},
-         familyi={K\bibinitperiod},
-         given={Werner},
-         giveni={W\bibinitperiod},
+      {{hash=WK}{%
+         family={Werner},
+         familyi={W\bibinitperiod},
+         given={Krizinger},
+         giveni={K\bibinitperiod},
       }}%
-      {{hash=KM}{%
-         family={Karner},
-         familyi={K\bibinitperiod},
-         given={Matthias},
-         giveni={M\bibinitperiod},
+      {{hash=MK}{%
+         family={M.},
+         familyi={M\bibinitperiod},
+         given={Karner},
+         giveni={K\bibinitperiod},
       }}%
-      {{hash=TG}{%
-         family={Traar},
-         familyi={T\bibinitperiod},
-         given={Georg},
-         giveni={G\bibinitperiod},
+      {{hash=GT}{%
+         family={G.},
+         familyi={G\bibinitperiod},
+         given={Traar},
+         giveni={T\bibinitperiod},
       }}%
-      {{hash=HJ}{%
-         family={Henjes},
-         familyi={H\bibinitperiod},
-         given={Jan},
-         giveni={J\bibinitperiod},
+      {{hash=JH}{%
+         family={J.},
+         familyi={J\bibinitperiod},
+         given={Henjes},
+         giveni={H\bibinitperiod},
       }}%
-      {{hash=SW}{%
-         family={Sihn},
-         familyi={S\bibinitperiod},
-         given={Wilfried},
-         giveni={W\bibinitperiod},
+      {{hash=WS}{%
+         family={W.},
+         familyi={W\bibinitperiod},
+         given={Sihn},
+         giveni={S\bibinitperiod},
       }}%
     }
-    \strng{namehash}{KW+1}
-    \strng{fullhash}{KWKMTGHJSW1}
+    \strng{namehash}{WK+1}
+    \strng{fullhash}{WKMKGTJHWS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \verb{doi}
-    \verb https://doi.org/10.1016/j.ifacol.2018.08.474
+    \verb 10.1016/j.ifacol.2018.08.474
     \endverb
-    \field{issn}{2405-8963}
-    \field{note}{16th IFAC Symposium on Information Control Problems in Manufacturing INCOM 2018}
     \field{number}{11}
     \field{pages}{1016\bibrangedash 1022}
     \field{title}{Digital Twin in manufacturing: A categorical literature review and classification}
-    \verb{url}
-    \verb https://www.sciencedirect.com/science/article/pii/S2405896318316021
-    \endverb
     \field{volume}{51}
     \field{journaltitle}{IFAC-PapersOnLine}
     \field{year}{2018}
   \endentry
 
-  \entry{RAMI4.0}{article}{}{}
+  \entry{RAMI4.0}{misc}{}{}
+    \list{publisher}{1}{%
+      {Deutsches Institut für Normung e.V. (DIN)}%
+    }
+    \field{labeltitlesource}{title}
+    \field{title}{DIN SPEC 91345:2016-04 - Refernzarchitekturmodell Industrie 4.0 (RAMI 4.0)}
+    \field{month}{04}
+    \field{year}{2016}
+  \endentry
+
+  \entry{AASIEC63278}{misc}{}{}
     \name{author}{1}{}{%
-      {{hash=BVB}{%
-         family={Beuth-Verlag},
-         familyi={B\bibinithyphendelim V\bibinitperiod},
-         given={Berlin},
-         giveni={B\bibinitperiod},
+      {{hash=I}{%
+         family={{International Electrotechnical Commission (IEC)}},
+         familyi={I\bibinitperiod},
       }}%
     }
-    \strng{namehash}{BVB1}
-    \strng{fullhash}{BVB1}
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Refernzarchitekturmodell Industrie 4.0 (RAMI 4.0)}
-    \field{year}{April 2016}
+    \field{edition}{1.0}
+    \field{note}{Internationale Norm, IEC}
+    \field{title}{IEC 63278-1:2023 – Asset Administration Shell for industrial applications - Part 1: Asset Administration Shell structure}
+    \verb{url}
+    \verb https://webstore.iec.ch/en/publication/65628
+    \endverb
+    \field{month}{12}
+    \field{year}{2023}
+    \field{urlday}{25}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{SpezifikationPart1}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=IIDTA}{%
+         family={(IDTA)},
+         familyi={I\bibinitperiod},
+         given={Industrial Digital Twin\bibnamedelima Association},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IIDTA1}
+    \strng{fullhash}{IIDTA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Specification of the Asset Administration Shell - Part 1: Metamodel}
+    \verb{url}
+    \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+    \endverb
+    \field{version}{3.0.1}
+    \field{month}{06}
+    \field{year}{2024}
+    \field{urlday}{26}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{SpezifikationPart5}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=IIDTA}{%
+         family={(IDTA)},
+         familyi={I\bibinitperiod},
+         given={Industrial Digital Twin\bibnamedelima Association},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IIDTA1}
+    \strng{fullhash}{IIDTA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Specification of the Asset Administration Shell - Part 5: Package File Format (AASX)}
+    \verb{url}
+    \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+    \endverb
+    \field{version}{3.0.1}
+    \field{month}{06}
+    \field{year}{2024}
+    \field{urlday}{26}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{SpezifikationPart2}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=IIDTA}{%
+         family={(IDTA)},
+         familyi={I\bibinitperiod},
+         given={Industrial Digital Twin\bibnamedelima Association},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IIDTA1}
+    \strng{fullhash}{IIDTA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Specification of the Asset Administration Shell - Part 2: Application Programming Interfaces}
+    \verb{url}
+    \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+    \endverb
+    \field{version}{3.0.3}
+    \field{year}{2024}
+    \field{urlday}{26}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
   \endentry
 \enddatalist
 \endinput
