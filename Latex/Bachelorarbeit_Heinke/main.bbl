@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,8 +16,8 @@
   {}
 \endgroup
 
-\datalist[entry]{none/global//global/global}
-  \entry{DTGrieves}{misc}{}
+\datalist[entry]{none/global//global/global/global}
+  \entry{DTGrieves}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=GM}{%
          family={Grieves},
@@ -31,8 +31,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{White Paper}
-    \field{title}{Digital Twin: Manufacturing Excellence through Virtual
-  Factory Replication}
+    \field{title}{Digital Twin: Manufacturing Excellence through Virtual Factory Replication}
     \verb{url}
     \verb https://www.researchgate.net/publication/275211047
     \endverb
@@ -43,7 +42,7 @@
     \field{urlyear}{2025}
   \endentry
 
-  \entry{ZEISS}{online}{}
+  \entry{ZEISS}{online}{}{}
     \name{author}{1}{}{%
       {{hash=GM}{%
          family={Grafe},
@@ -69,7 +68,7 @@
     \field{urlyear}{2025}
   \endentry
 
-  \entry{ClassificationDT}{article}{}
+  \entry{ClassificationDT}{article}{}{}
     \name{author}{5}{}{%
       {{hash=WK}{%
          family={Werner},
@@ -111,14 +110,13 @@
     \endverb
     \field{number}{11}
     \field{pages}{1016\bibrangedash 1022}
-    \field{title}{Digital Twin in manufacturing: A categorical literature
-  review and classification}
+    \field{title}{Digital Twin in manufacturing: A categorical literature review and classification}
     \field{volume}{51}
     \field{journaltitle}{IFAC-PapersOnLine}
     \field{year}{2018}
   \endentry
 
-  \entry{DTForSmartManufacturing}{article}{}
+  \entry{DTForSmartManufacturing}{article}{}{}
     \name{author}{3}{}{%
       {{hash=SM}{%
          family={Soori},
@@ -151,37 +149,32 @@
     \field{volume}{2}
     \field{journaltitle}{Sustainable Manufacturing and Service Economics}
     \field{year}{2023}
-    \field{urlday}{01}
-    \field{urlmonth}{06}
-    \field{urlyear}{2025}
   \endentry
 
-  \entry{RAMI4.0}{misc}{}
+  \entry{RAMI4.0}{misc}{}{}
     \list{publisher}{1}{%
       {Deutsches Institut für Normung e.V. (DIN)}%
     }
     \field{labeltitlesource}{title}
-    \field{title}{DIN SPEC 91345:2016-04 - Refernzarchitekturmodell Industrie
-  4.0 (RAMI 4.0)}
+    \field{title}{DIN SPEC 91345:2016-04 - Refernzarchitekturmodell Industrie 4.0 (RAMI 4.0)}
     \field{month}{04}
     \field{year}{2016}
   \endentry
 
-  \entry{AASIEC63278}{misc}{}
+  \entry{AASIEC63278}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=I}{%
          family={{International Electrotechnical Commission (IEC)}},
          familyi={I\bibinitperiod},
       }}%
     }
-    \strng{namehash}{I1}
-    \strng{fullhash}{I1}
+    \strng{namehash}{I2}
+    \strng{fullhash}{I2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{edition}{1.0}
     \field{note}{Internationale Norm, IEC}
-    \field{title}{IEC 63278-1:2023 – Asset Administration Shell for
-  industrial applications - Part 1: Asset Administration Shell structure}
+    \field{title}{IEC 63278-1:2023 - Asset Administration Shell for industrial applications - Part 1: Asset Administration Shell structure}
     \verb{url}
     \verb https://webstore.iec.ch/en/publication/65628
     \endverb
@@ -192,22 +185,41 @@
     \field{urlyear}{2025}
   \endentry
 
-  \entry{SpezifikationPart1}{misc}{}
+  \entry{IDTA}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={{Industrial Digital Twin Association (IDTA)}},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{IDTA - Der Standard für den Digitalen Zwilling}
+    \verb{url}
+    \verb https://industrialdigitaltwin.org/
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{24}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{SpezifikationPart1}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=IIDTA}{%
          family={(IDTA)},
          familyi={I\bibinitperiod},
          given={Industrial Digital Twin\bibnamedelima Association},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
-  T\bibinitperiod\bibinitdelim A\bibinitperiod},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
     \strng{namehash}{IIDTA1}
     \strng{fullhash}{IIDTA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Specification of the Asset Administration Shell - Part 1:
-  Metamodel}
+    \field{title}{Specification of the Asset Administration Shell - Part 1: Metamodel}
     \verb{url}
     \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
     \endverb
@@ -219,22 +231,20 @@
     \field{urlyear}{2025}
   \endentry
 
-  \entry{SpezifikationPart5}{misc}{}
+  \entry{SpezifikationPart5}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=IIDTA}{%
          family={(IDTA)},
          familyi={I\bibinitperiod},
          given={Industrial Digital Twin\bibnamedelima Association},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
-  T\bibinitperiod\bibinitdelim A\bibinitperiod},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
     \strng{namehash}{IIDTA1}
     \strng{fullhash}{IIDTA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Specification of the Asset Administration Shell - Part 5:
-  Package File Format (AASX)}
+    \field{title}{Specification of the Asset Administration Shell - Part 5: Package File Format (AASX)}
     \verb{url}
     \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
     \endverb
@@ -246,29 +256,195 @@
     \field{urlyear}{2025}
   \endentry
 
-  \entry{SpezifikationPart2}{misc}{}
+  \entry{SpezifikationPart2}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=IIDTA}{%
          family={(IDTA)},
          familyi={I\bibinitperiod},
          given={Industrial Digital Twin\bibnamedelima Association},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
-  T\bibinitperiod\bibinitdelim A\bibinitperiod},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
     \strng{namehash}{IIDTA1}
     \strng{fullhash}{IIDTA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Specification of the Asset Administration Shell - Part 2:
-  Application Programming Interfaces}
+    \field{title}{Specification of the Asset Administration Shell - Part 2: Application Programming Interfaces}
     \verb{url}
     \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
     \endverb
     \field{version}{3.0.3}
+    \field{month}{10}
     \field{year}{2024}
     \field{urlday}{26}
     \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{GreenDeal}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=KE}{%
+         family={Komission},
+         familyi={K\bibinitperiod},
+         given={Europäische},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KE1}
+    \strng{fullhash}{KE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Der europäische Grüne Deal}
+    \verb{url}
+    \verb https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:52019DC0640
+    \endverb
+    \field{month}{12}
+    \field{year}{2019}
+    \field{urlday}{28}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{ESPR}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=UE}{%
+         family={Union},
+         familyi={U\bibinitperiod},
+         given={Europäische},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{UE1}
+    \strng{fullhash}{UE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Ökodesign-Anforderungen für nachhaltige Produkte}
+    \verb{url}
+    \verb https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:52019DC0640
+    \endverb
+    \field{month}{06}
+    \field{year}{2024}
+    \field{urlday}{28}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{CIRPASS}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=PC}{%
+         family={Project},
+         familyi={P\bibinitperiod},
+         given={CIRPASS},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PC1}
+    \strng{fullhash}{PC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{The Digital Product Passport as defined in the Proposal for Eco-design for Sustainable Product Regulation (ESPR)}
+    \verb{url}
+    \verb https://cirpassproject.eu/wp-content/uploads/2023/03/ESPR-short-summa
+    \verb ry-Final.pdf
+    \endverb
+    \field{month}{03}
+    \field{year}{2023}
+    \field{urlday}{28}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{DPP40}{misc}{}{}
+    \name{author}{4}{}{%
+      {{hash=GK}{%
+         family={Garrels},
+         familyi={G\bibinitperiod},
+         given={Kai},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Grüner},
+         familyi={G\bibinitperiod},
+         given={Sten},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=OA}{%
+         family={Orzelski},
+         familyi={O\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Reinschmidt},
+         familyi={R\bibinitperiod},
+         given={Jochen},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GK+1}
+    \strng{fullhash}{GKGSOARJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{ZVEI Discussion Paper}
+    \field{title}{DPP 4.0: An Architecture Proposal for a DPP-System to implement the EU Digital Product Passport for Industrial Products}
+    \verb{url}
+    \verb https://www.zvei.org/fileadmin/user_upload/Themen/Industrie/Fachverba
+    \verb nd_Automation/2023-12_Discussion_Paper_DPP4.0_Architecture_v1.1.pdf
+    \endverb
+    \field{version}{1.1}
+    \list{institution}{1}{%
+      {ZVEI - Zentralverband Elektrotechnik- und Elektronikindustrie e.V.}%
+    }
+    \field{month}{12}
+    \field{year}{2023}
+    \field{urlday}{30}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{BaSyxWiki}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=CEB}{%
+         family={Community},
+         familyi={C\bibinitperiod},
+         given={Eclipse\bibnamedelima BaSyx},
+         giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CEB1}
+    \strng{fullhash}{CEB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{BaSyx Wiki}
+    \verb{url}
+    \verb https://wiki.basyx.org/
+    \endverb
+    \field{year}{2024}
+    \field{urlday}{03}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{BaSyxEclipse}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=FE}{%
+         family={Foundation},
+         familyi={F\bibinitperiod},
+         given={Eclipse},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FE1}
+    \strng{fullhash}{FE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Eclipse BaSyx: Industry 4.0 Operating System}
+    \verb{url}
+    \verb https://eclipse.dev/basyx/
+    \endverb
+    \field{year}{2023}
+    \field{urlday}{03}
+    \field{urlmonth}{06}
     \field{urlyear}{2025}
   \endentry
 \enddatalist

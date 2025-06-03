@@ -92,7 +92,7 @@ Sie wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und erstmlas im
 Seit ihrer Einführung wurde die AAS kontinuierlich weiterenwtickelt und ist mittlerweile in der internationalen Norm IEC 63278-1:2023 \cite{AASIEC63278} standardisiert.
 % Darin wird die AAS als "strukturierte, standardisierte digitale Repräsentation eines Assets" definiert.
 
-Seit 2020 wird die Umsetzung und Weiterentwicklung der AAS von der Industrial Digital Twin Association (IDTA) organisiert und gesteuert.
+Seit 2020 wird die Umsetzung und Weiterentwicklung der AAS von der Industrial Digital Twin Association (IDTA) \cite{IDTA} organisiert und gesteuert.
 Ziel der IDTA ist es, den digitalen Zwilling auf Basis der AAS zu standardisieren und in Form von Open Source Softwarelösungen in das industrielle Umfeld zu integrieren.
 Die AAS wird dabei in mehreren Spezifikationen der IDTA dokumentiert und beschrieben.
 Aktuell bildet die AAS Version 3 den neuesten Entwicklungsstand und ist ebenfalls die Basis für diese Arbeit.
@@ -171,14 +171,15 @@ Registries dienen als zentraler Ort zur Registrierung von AAS und Submodellen an
 Discovery(-Server) unterstützen eine schnelle Suche, indem sie Beziehungen anhand verschiedener Schlüsselpaare speichern. So kann zum Beispeil eine AAS über eine Asset-ID gefunden werden. 
 Die fortschrittlichste Form des Austauschs ist die Peer-to-peer Kommunikation, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren können.
 
+\newpage
 \subsection{Digitaler Produktpass für Industrie 4.0}
 Der \ac{dpp} ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation.
 Ziel ist es, die Transparenz über ökologische Merkmale von Produkten wie verwendete Materialien, Recylcebarkeit oder die CO2-Bilanz deutlich zu verbessern.
 Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg aufgezeichnet und in einem menschen -und maschinenlesbarem Format bereitgestellt werden.
 Langfristig soll dies zu einer Kreislaufwirtschaft und digitalen Wirtschaft innerhalb der EU führen.
 
-Das Konzept des digitalen Produktpasse wurde erstmals im Rahmen des European Green Deal von der Europäischen Kommission im Jahr 2019 vorgestellt [Quelle: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640].
-Im Zuge der Ökodesign-Verordnugng (Eco Design for Sustainable Products Regulation (ESPR) ) [Quelle] wird der \acs{dpp} aktuell als verpflichtendes Mittel für zahlreiche Produktgruppen eingeführt.
+Das Konzept des digitalen Produktpasse wurde erstmals im Rahmen des European Green Deal von der Europäischen Kommission im Jahr 2019 vorgestellt \cite{GreenDeal}.
+Im Zuge der Ökodesign-Verordnugng (Eco Design for Sustainable Products Regulation (ESPR) ) \cite{ESPR} wird der \acs{dpp} aktuell als verpflichtendes Mittel für zahlreiche Produktgruppen eingeführt.
 Als erstes konkrete Anwendung wird der digitale Produktpass erstmals im Jahr 2027 für Batterien verpflichtend, wie in der EU-Batterieverordnung festgelegt.
 Weitere Produktkategorien, darunter auch die Elektroindustrie und der Maschinen -und Anlagenbau werden in den nächsten Jahren folgen.
 
@@ -188,23 +189,23 @@ Je nach Art der Information werden verschiedene Zugriffsrechte für unterschiedl
 Verwaltet werden sollen die Daten dabei über einen zentralen Server bzw. ein Registry, in dem die verschiedenen \acsp{dpp} gespeichert bzw. zumindest registriert werden.
 Der Zugriff auf konkrete Pässe soll möglichst einfach sein. Hierzu können zum Beispiel QR-Codes eingesetzte werden, die direkt am Produkt angebracht sind, und direkt zum \acs{dpp} führen.
 Dafür ist es wichtig, das jedes Produkt global eindeutig über eine einzigartige Kennung beschrieben wird.
-Quelle: vgl. https://cirpassproject.eu/wp-content/uploads/2023/03/ESPR-short-summary-Final.pdf
+\cite{CIRPASS}
 
 Während die regulatorischen Rahmenbedingungen schon mehr oder weniger final ausgearbeitet sind, bleibt noch die Frage der konkreten technologischen Umsetzung.
-Eine dezentrale Lösung zur Umsetzung bildet der von der ZVEI vorgestellte digitale Produktpass für die Industrie 4.0 (DPP 4.0). [DPP 4.0: An Architecture Proposal for a DPP-System to implement the EU Digital Product Passport for Industrial Products]
+Eine dezentrale Lösung zur Umsetzung bildet der von der ZVEI vorgestellte digitale Produktpass für die Industrie 4.0 (DPP 4.0) \cite{DPP40}.
 Der DPP 4.0 basiert dabei auf zwei etablierten Standards. Zum Einen das digitale Typenschild, und zum Anderen die Asset Administration Shell [Link zu Kapitel AAS].
 Das digitale Typenschild ermöglicht - gemäß der Norm IEC 61406 [Quellle Norm] - die eindeutige Identifikation von Produkten über eine einzigartige Asset-ID.
 Typischerweise wird diese in Form eines maschinenlesbarem Links oder QR-Codes an ein Produkt angebracht, wodurch ein direkter Zugriff auf den jeweiligen \acs{dpp} ermöglicht wird.
 
-Das Konzept des DPP 4.0 sieht vor, dass Unternehmen ihre Produktpässe dezentral in einem eigenen Repository verwalten.
-Dies soll Unternehmen helfen, Daten innerhalb eines Produktpasse bei Bedarf selbstständig zu aktualisieren.
-Organisiert werden die Daten in verschiedenen Submodellen der Verwaltungsschale. 
+Organisiert werden die Daten im DPP 4.0 in verschiedenen Submodellen der AAS. 
 Standardisierte Teilmodelle wie das digitale Typenschild, Dokumentationen oder der Product Carbon Footprint (PCF) helfen bei der Umsetzung der im \acs{dpp} geforderten Daten.
 Darüber hinaus können auch zusätzliche, nicht verpflichtende Informationen integrierte werden, sofern sie für bestimmte Stakeholder einen Mehrwert bieten.
 Der Zugriff auf die Daten erfolgt über ein webbasiertes Portal. Verschiedene Interessengruppen erhalten dabei unterschiedliche Zugangsrechte. 
-Hierfür werden bestimmmte Teilmodelle für unterschiedliche Gruppen freigegeben.
-Eine schemantische Darstellung des DPP 4.0 ist in Abbildung xy dargestellt.
+Hierfür werden bestimmmte Submodelle gezielt für unterschiedliche Gruppen freigegeben oder eingeschränkt.
+Während beispielsweise das digitale Typenschild oder der PCF öffentlich zugänglich sind, werden sensible Informationen wie technische Dokumentationen oder sicherheitsrelevante Details nur bestimmten autorisierten Gruppen zugänglich gemacht.
+Eine schemantische Darstellung des DPP 4.0 ist nachfolgend in Abbildung xy dargestellt.
 
+\vspace{2em}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{Bilder/dpp_konzept.pdf}
@@ -212,10 +213,12 @@ Eine schemantische Darstellung des DPP 4.0 ist in Abbildung xy dargestellt.
     \label{fig:klassifizierungDT}
 \end{figure}
 
-
-Exemplarisch gezeigt wird dies in einem PCF Showcase...
-Ein Zwei abschließende Worte...
-
+Das Konzept der ZVEI sieht darüber hinaus vor, dass Unternehmen ihre digitalen Produktpässe dezentral in einem eigenen Repository verwalten. 
+Diese Repositories können entweder vom produzierenden Unternehmen selbst oder von Dritten - etwa Cloud-Dienstleistern - im Auftrag betrieben werden. 
+Ziel ist es, Unternehmen die Möglichkeit zu geben, ihre Daten bei Bedarf eigenständig zu aktualisieren und gleichzeitig die Kontrolle über sensible Informationen zu behalten.
+Zur Koordination dieser dezentralen Systeme ist ein zentrales Registry vorgesehen, in der alle Repositories bzw. Server registriert werden.
+Über dieses zentrale Verzeichnis können interessierte Akteure relevante Server identifizieren und gezielt auf freigegebene Submodelle eines Produktpasses zugreifen.
+So wird sichergestellt, dass trotz der dezentralen Struktur eine durchgängige Interoperabilität gewährleistet ist, wie sie für die Umsetzung des digitalen Produktpasses auf europäischer Ebene erforderlich ist.
 
 %
 
@@ -237,29 +240,58 @@ Er bringt alles mit, was für die Erstellung von Verwaltungsschalen benötigt wi
 Man kann AAS anschauen und bearbeiten.
 AUch kann ein Server angebunden werden.
 \subsubsection{OPC UA}
+\newpage
 \subsubsection{Eclipse BaSyx }
-Eclipse BaSyx ist eine vom Fraunhofer-Institut für Experimentelles Software Engineering entwickelte Open-Source-Plattform für standardisierte digitale Zwillinge.
-Der Fokus liegt auf einer einfachen Umsetzung einer Infrastruktur zur Erstellung und Verwaltung von Verwaltungsschalen (Asset Administration Shells, AAS).
-Ein wesentlicher Vorteil von BaSyx ist sein Open-Source-Charakter: Die Software steht allen Interessierten frei zur Verfügung und erlaubt individuelle Anpassungen an spezifische Anforderungen.
-Die Architektur basiert auf einer Vielzahl von Standardkomponenten (Off-the-Shelf), die alle als Docker-Container frei zugänglich sind.
-Diese Komponenten folgen den Spezifikationen der Verwaltungsschale, insbesondere der Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2}.
-BaSyx lässt sich dadurch problemlos in bestehende Docker-Umgebungen integrieren.
+Eclipse BaSyx ist eine vom Fraunhofer-Institut für Experimentelles Software Engineering entwickelte Open-Source-Plattform für die Umsetzung von Industrie 4.0 - Anwendungen.
+Der Fokus liegt auf einer einfachen Umsetzung einer Infrastruktur zur Erstellung und Verwaltung digitaler Zwillinge auf Basis der \acs{aas}.
+Ein wesentlicher Vorteil von BaSyx ist sein Open-Source-Charakter. Die Software steht allen Interessierten frei zur Verfügung und erlaubt individuelle Modifikationen an spezifische Anforderungen.
+Die Architektur basiert auf einer Vielzahl von Standardkomponenten (Off-the-Shelf), die alle als Docker-Container frei zugänglich sind und somit eine nahtlose Integration in bestehende Docker-Umgebungen erlauben.
 
-Eine der wichtigsten Komponenten ist die Registry.
-In ihr können neue AAS registriert und bereits vorhandene Verwaltungsschalen anhand ihrer eindeutigen Kennung gesucht werden.
+Eine der wichtigsten Komponenten ist die Registry. 
+Sie ist auf den Spezifikationen der Verwaltungsschale aufgebaut, insbesondere auf der Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2}.
+In ihr können neue \acs{aas} registriert und bereits vorhandene Verwaltungsschalen anhand ihrer eindeutigen Kennung gesucht werden.
 Sie bildet damit die zentrale Anlaufstelle für Geräte und Anwendungen innerhalb eines Industrie-4.0-Systems
+Analog dazu gibt es eine seperate Registry für die Verwaltung von Submodellen.
 
-  
-Die Kernkomponenten sind:
+Die eigentlichen Daten der AAS werden in der \acs{aas} Environment gespeichert und organisiert.
+Sie umfasst Repositories für AAS, Submodelle und Concept Descriptions.
+In der Regel ist eine Datenbank, standardmäßig eine MongoDB als persistenter Speicher hinterlegt.
+Wie auch alle anderen Komponente stellen diese Repositories standardisierte Schnittstellen basierend auf der API-Spezifikation zur Verfügung.
+Dies erlaubt z.B. das Abfragen, Erstellen oder Aktualisieren von AAS und deren Submodellen.
+Alle verfügbaren Endpunkte dieser Schnittstellen können unter anderem in der automatisch generierten Swagger-Dokumentation eingesehen und ausgeführt werden. 
+Typische REST-Endpunkte sind beispielsweise:
 
-\begin{itemize}
-    \item aas-registry: Ermöglicht die Registrierung und Verwaltung von Verwaltungsschalen
-    \item sm-registry: Ermöglicht die Registrierung und Verwaltung von Submodellen
-    \item aas-env: Enthält Repositorys für AAS, Submodelle und Concept Descriptions
-    \item aas-ui: Weboberfläche zur Visualisierung und Bearbeitung von Verwaltungsschalen
-\end{itemize}
+\vspace{1em}
+\begin{table}[htbp]
+    \centering
+    \begin{tblr}{
+      colspec = {l l l}, % X für automatischen Umbruch in der Beschreibung
+      row{1} = {font=\bfseries}, % Kopfzeile fett
+      hlines
+    }
+    Methode & Endpunkt & Beschreibung \\
+    GET     & /shells & Liste aller AAS abrufen \\
+    GET     & /shells/\{aasIdentifier\} & Details einer bestimmten AAS anzeigen \\
+    GET     & /submodels & Liste aller Submodelle aufrufen \\
+    POST    & /shells & Neue AAS erstellen \\
+    POST    & /submodels & Neues Submodell erstellen \\
+    DELETE  & /shells/\{aasIdentifier\} & AAS löschen \\
+    \end{tblr}
+    \caption{REST-Endpunkte in Eclipse BaSyx}
+    \label{tab:aas_endpoints}
+    \end{table}
 
-Durch die Kombination der verschiedenen Komponenten bietet BaSyx eine vollständige Laufzeitumgebung für die Verwaltung und Interaktion von digitalen Zwillingen auf Basis der Verwaltungsschale.
+Im BaSyx-System ermöglicht sin sogenannter Discovery-Service die Verknüpfung physischer Assets mit iheren zugehörigen AAS.
+Dabei wird eine spezifische Asset-Id mit der entsprechenden AAS-ID verlinkt.
+Dies ist insbesondere für die Abbildung von hierarchischen Strukturen wie Stücklisten (Bill of Materials, BOM) von großer Bedeutung.
+Ein übergeordnetes Asset (z.B. Maschine) kann so beispielsweise mit untergeordneten Komponenten (z.B. Antrieb, Sensoren) logisch über deren AAS verbunden werden.
+Einträge in den Discovery-Service müssen derzeit noch manuell über die API vorgenommen werden.
 
-
-
+Zur benutzerfreundlichen Visualisierung und Interaktion kann die sogenannte AAS Web Ui genutzt werden.
+Die webbasierte Benutzeroberfläche wurde mit dem JavaScript-Framework Vue.js entwickelt und kommuniziert über die standardisierte REST-API mit den zentralen Komponenten der BaSyx-Plattform, darunter die Repositories, Registries und der Discovery Service.
+Sie zeigt alle registrierten AAS in einer Liste an und bietet die Möglichkeit, einzelne AAS in einer Baumstruktur sowohl zu visualisieren als auch zu bearbeiten. 
+Darüber hinaus unterstützt die Anwendung das Hochladen von Typ-1-AAS in Form von AASX-Dateien. Diese werden automatisch registriert und in eine Typ-2-AAS überführt, wodurch sie direkt in das System eingebunden werden können.
+Ein weiteres zentrales Merkmal der AAS Web UI ist der sogenannte AAS-Viewer.
+Dieser erlaubt die Visualisierung von Submodellen und deren Elementen anhand ihrer semantischen ID. 
+Hierfür stehen verschiedene vordefinierte Plugins zur Verfügung, die bestimmte Submodelle - wie beispielsweise das Typenschild oder hierarchische Strukturen - grafisch darstellen.
+Da die Lösung Open Source ist besteht zudem die Möglichkeit, eigene benutzderfenierte Plugins für weitere Submodelle zu erstellen. \cite{BaSyxWiki} \cite{BaSyxEclipse}
