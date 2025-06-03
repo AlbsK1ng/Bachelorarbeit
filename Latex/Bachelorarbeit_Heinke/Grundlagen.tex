@@ -126,7 +126,9 @@ Bestimmte Aspekte eines Assets werden in verschiedenen Submodellen verwaltet.
 Man kann sich dies wie ein Schubladensystem vorstellen, wobei jede Schublade einen bestimmten Bereich des Assets abdeckt - beispielsweise die technischen Stammdaten, das Typenschild Wartungsinformationen oder Zustandswerte einer Maschine.
 Die Auswahl der Submodelle hängt dabei immer von dem konkreten Asset ab, dass modelliert werden soll.
 Genau wie die AAS müssen diese Teilmodelle global eindeutig identifizierbar sein.
-Ein Submodell besteht dabei immmer aus verschiedenen Submodellelementen. Zu den Wichtigsten zählen:
+Ein Submodell besteht dabei immmer aus verschiedenen Submodellelementen. Sie können sowohl statische, als auch dynamische Modelle enthalten.
+Statische Modelle beschreiben zum Beispiel Eigenschaften eines Produktes, während dynamische Modelle veränderbare Daten wie z.B. live gemessene Sensordaten enthalten. 
+Zu den wichtigsten Submodellelementen zählen:
 
 \begin{itemize}
     \item \textbf{Property}: einfaches Merkmal mit bestimmten Datentyp, z.B. Name
@@ -236,8 +238,18 @@ Man kann AAS anschauen und bearbeiten.
 AUch kann ein Server angebunden werden.
 \subsubsection{OPC UA}
 \subsubsection{Eclipse BaSyx }
-BaSyx ist eine von der EClipse Foundation entwickelte Softwarelösung für die Erstellung und Verwaltung von Asset Administration Shells.
-Die Architektur von BaSyx basiert auf einer Vielzahl verschiedener Off-The-Shelf-Komponenten, die alle als Docker Container frei zugänglich sind und somit einfach in eine bestehende Umgebung integriert werden können. 
+Eclipse BaSyx ist eine vom Fraunhofer-Institut für Experimentelles Software Engineering entwickelte Open-Source-Plattform für standardisierte digitale Zwillinge.
+Der Fokus liegt auf einer einfachen Umsetzung einer Infrastruktur zur Erstellung und Verwaltung von Verwaltungsschalen (Asset Administration Shells, AAS).
+Ein wesentlicher Vorteil von BaSyx ist sein Open-Source-Charakter: Die Software steht allen Interessierten frei zur Verfügung und erlaubt individuelle Anpassungen an spezifische Anforderungen.
+Die Architektur basiert auf einer Vielzahl von Standardkomponenten (Off-the-Shelf), die alle als Docker-Container frei zugänglich sind.
+Diese Komponenten folgen den Spezifikationen der Verwaltungsschale, insbesondere der Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2}.
+BaSyx lässt sich dadurch problemlos in bestehende Docker-Umgebungen integrieren.
+
+Eine der wichtigsten Komponenten ist die Registry.
+In ihr können neue AAS registriert und bereits vorhandene Verwaltungsschalen anhand ihrer eindeutigen Kennung gesucht werden.
+Sie bildet damit die zentrale Anlaufstelle für Geräte und Anwendungen innerhalb eines Industrie-4.0-Systems
+
+  
 Die Kernkomponenten sind:
 
 \begin{itemize}
