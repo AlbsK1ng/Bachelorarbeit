@@ -87,6 +87,7 @@ Herausforderungen.
 
 \newpage
 \subsection{Asset Administration Shell}
+\label{chap:AAS}
 Die Asset Administration Shell (AAS) - deutsch Verwaltungsschale - ist eine Schlüsselkomponente innerhalb des Referenzarchitekturmodell Industrie 4.0 \cite{RAMI4.0} und bildet die Grundlage für die Umsetzung und Entwicklung interoperabler digitaler Zwillinge im industriellen Umfeld.
 Sie wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und erstmlas im Jahr 2016 als Teil von RAMI 4.0 vorgestellt.
 Seit ihrer Einführung wurde die AAS kontinuierlich weiterenwtickelt und ist mittlerweile in der internationalen Norm IEC 63278-1:2023 \cite{AASIEC63278} standardisiert.
@@ -122,7 +123,7 @@ Typen können zum Besipiel allgemeine Dokumente, Eigenschaften oder Merkmale ent
 Sie dienen als standardisierte, wiederverwendbare Vorlage für das Erstellen von Instanzen.
 Im Gegensatz dazu werden Instanzen immer einem konkreten physischen Objekt zugewiesen - etwa durch die Seriennummer, den aktuellen Standort oder den Betriebszustand einer Maschine.
 
-Bestimmte Aspekte eines Assets werden in verschiedenen Submodellen verwaltet.
+Bestimmte Aspekte eines Assets werden dabei in verschiedenen Submodellen verwaltet.
 Man kann sich dies wie ein Schubladensystem vorstellen, wobei jede Schublade einen bestimmten Bereich des Assets abdeckt - beispielsweise die technischen Stammdaten, das Typenschild Wartungsinformationen oder Zustandswerte einer Maschine.
 Die Auswahl der Submodelle hängt dabei immer von dem konkreten Asset ab, dass modelliert werden soll.
 Genau wie die AAS müssen diese Teilmodelle global eindeutig identifizierbar sein.
@@ -163,7 +164,7 @@ Der Austausch von Informationen über die AAS kann auf unterschiedliche Weise er
 Die einfachste Möglichkeit ist der Austausch über Dateien. Hierfür gibt es speziell für die AAS entwickelte AASX-Dateien, die einen einfachen Austausch statischer Verwaltungsschalen (Typ 1) erlauben. \cite{SpezifikationPart5}
 Hierbei werden alle Daten, Beziehungen, die Struktur sowie zugehörige Dateien der AAS serialisiert in ein AASX-ZIP-Dateiformat gespeichert. Die Datei kann schließlich über ein digitales Medium wie eine E-Mail oder eine Cloud-Plattform weitergegeben werden.  
 Typ-2 Verwaltungsschalen hingegen werden von einer Laufzeitumgebung gehosted und ermöglichen dadurch einen dynamischen Zugriff auf Informationen. 
-In der API Spezifikation werden drei Kernkomponenten beschrieben, die zusammen ein System für einen interoperablen, standardisierten Zugriff bilden. \cite{SpezifikationPart2}
+In der Spezifikitation Part 2: Aplication Programming Interfaces \cite{SpezifikationPart2} werden drei Kernkomponenten beschrieben, die zusammen ein System für einen interoperablen, standardisierten Zugriff bilden.
 Repositories speichern die Inhalte der AAS, einschließlich ihrer Submodelle und Concept Descriptions (siehe weiter unten).
 Über definierte Schnittstellen (APIs) können Daten aus einer AAS oder einem Submodell gelesen oder geschrieben werden.
 Der Zugriff kann dabei mit verschiedenen Technologien wie HTTP/REST, MQTT oder OPC UA stattfinden.
@@ -193,7 +194,7 @@ Dafür ist es wichtig, das jedes Produkt global eindeutig über eine einzigartig
 
 Während die regulatorischen Rahmenbedingungen schon mehr oder weniger final ausgearbeitet sind, bleibt noch die Frage der konkreten technologischen Umsetzung.
 Eine dezentrale Lösung zur Umsetzung bildet der von der ZVEI vorgestellte digitale Produktpass für die Industrie 4.0 (DPP 4.0) \cite{DPP40}.
-Der DPP 4.0 basiert dabei auf zwei etablierten Standards. Zum Einen das digitale Typenschild, und zum Anderen die Asset Administration Shell [Link zu Kapitel AAS].
+Der DPP 4.0 basiert dabei auf zwei etablierten Standards. Zum Einen das digitale Typenschild, und zum Anderen die Asset Administration Shell (siehe Kapitel~\nameref{chap:AAS}).
 Das digitale Typenschild ermöglicht - gemäß der Norm IEC 61406 [Quellle Norm] - die eindeutige Identifikation von Produkten über eine einzigartige Asset-ID.
 Typischerweise wird diese in Form eines maschinenlesbarem Links oder QR-Codes an ein Produkt angebracht, wodurch ein direkter Zugriff auf den jeweiligen \acs{dpp} ermöglicht wird.
 
@@ -264,22 +265,21 @@ Typische REST-Endpunkte sind beispielsweise:
 \vspace{1em}
 \begin{table}[htbp]
     \centering
-    \begin{tblr}{
-      colspec = {l l l}, % X für automatischen Umbruch in der Beschreibung
-      row{1} = {font=\bfseries}, % Kopfzeile fett
-      hlines
-    }
-    Methode & Endpunkt & Beschreibung \\
-    GET     & /shells & Liste aller AAS abrufen \\
-    GET     & /shells/\{aasIdentifier\} & Details einer bestimmten AAS anzeigen \\
-    GET     & /submodels & Liste aller Submodelle aufrufen \\
-    POST    & /shells & Neue AAS erstellen \\
-    POST    & /submodels & Neues Submodell erstellen \\
-    DELETE  & /shells/\{aasIdentifier\} & AAS löschen \\
-    \end{tblr}
+    \begin{tabular}{l l l}
+        \toprule
+        \textbf{Methode} & \textbf{Endpunkt} & \textbf{Beschreibung} \\
+        \toprule
+        GET     & /shells & Liste aller AAS abrufen \\
+        GET     & /shells/\{aasIdentifier\} & Details einer bestimmten AAS anzeigen \\
+        GET     & /submodels & Liste aller Submodelle aufrufen \\
+        POST    & /shells & Neue AAS erstellen \\
+        POST    & /submodels & Neues Submodell erstellen \\
+        DELETE  & /shells/\{aasIdentifier\} & AAS löschen \\
+        \midrule
+    \end{tabular}
     \caption{REST-Endpunkte in Eclipse BaSyx}
     \label{tab:aas_endpoints}
-    \end{table}
+\end{table}
 
 Im BaSyx-System ermöglicht sin sogenannter Discovery-Service die Verknüpfung physischer Assets mit iheren zugehörigen AAS.
 Dabei wird eine spezifische Asset-Id mit der entsprechenden AAS-ID verlinkt.

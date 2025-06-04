@@ -2,7 +2,7 @@
 \contentsline {section}{Inhaltsverzeichnis}{IV}{Doc-Start}%
 \contentsline {section}{Abbildungsverzeichnis}{VII}{Doc-Start}%
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Motivation / Problemstellung}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Zielsetzung}{1}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Vorgehensweise}{2}{subsection.1.3}%
 \contentsline {section}{\numberline {2}Grundlagen}{3}{section.2}%
@@ -21,44 +21,43 @@
 \contentsline {subsection}{\numberline {3.1}Konzeptionierung des digitalen Zwilling}{17}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Identifikation relevanter Datenquellen}{17}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Auswahl geeigneter Teilmodelle}{17}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Modellierung mit der Verwaltungsschale}{17}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Modellierung mit der AAS}{17}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Umsetzung mit dem AASX Package Explorer}{17}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Validieren und Testen}{17}{subsubsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.3}Technische Integration}{17}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Bereitstellung der Verwaltungsschalen}{17}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Datenzugriff über standardisierte Schnittstellen}{17}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Integration und Verarbeitung von Echtzeitdaten}{17}{subsubsection.3.3.3}%
-\contentsline {paragraph}{\numberline {3.3.3.1}Anbindung OPC UA mit Databridge}{17}{paragraph.3.3.3.1}%
-\contentsline {paragraph}{\numberline {3.3.3.2}Zeitreihendaten mit Datenbank}{17}{paragraph.3.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Anwendungsfall Digitaler Produktpass}{18}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Beschreibung des Use Case}{18}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Umsetzung mit dem Teilmodell Carbon Footprint}{18}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Anwendungsfall Automatisierte Generierung von Verwaltungsschalen}{18}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Erstellen von Templates}{18}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Ausfüllen mit strukturierten Daten}{18}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}Automatisches Bereitstellen der AAS mit der Rest API}{18}{subsubsection.3.5.3}%
-\contentsline {subsubsection}{\numberline {3.5.4}Einsatz von KI}{18}{subsubsection.3.5.4}%
-\contentsline {section}{\numberline {4}Ergebnisse}{18}{section.4}%
-\contentsline {subsection}{\numberline {4.1}AAS-Demonstrator für die robocell}{18}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Systemarchitektur}{18}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Eingesetzte Teilmodelle}{18}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Herausforderungen bei der Erstellung}{18}{subsubsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.2}Anwendungsfall DPP 4.0}{18}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Implementierungskonzept}{18}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Product Carbon Footprint}{18}{subsubsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.3}Anwendungsfall automatisierte Generierung der AAS}{18}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Einsatzmöglichkeiten von KI im Kontext der Verwaltungsschale}{18}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Generierung von Verwaltungsschalen}{18}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Anomaliererkennung}{18}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Weiterführende Einsatzmöglichkeiten}{18}{subsubsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.5}Evaluierung eingesetzter Tools und Software}{18}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}AASX Package Exlporer}{18}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Eclipse AASX Server}{18}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}BaSyx}{18}{subsubsection.4.5.3}%
-\contentsline {subsubsection}{\numberline {4.5.4}Mnestix Browser}{18}{subsubsection.4.5.4}%
-\contentsline {section}{\numberline {5}Zusammenfassung und Ausblick}{18}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{18}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{18}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{18}{subsection.5.3}%
-\contentsline {section}{Glossar und Abkürzungsverzeichnis}{19}{section*.9}%
-\contentsline {section}{\numberline {A}Anhang 1}{21}{appendix.A}%
+\contentsline {subsubsection}{\numberline {3.3.3}Integration von Echtzeitdaten über OPC UA}{17}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Verarbeitung von Zeitreihendaten}{17}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Anwendungsfall Digitaler Produktpass}{17}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Beschreibung}{17}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Umsetzung mit dem Teilmodell Carbon Footprint}{17}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Anwendungsfall automatisierte Generierung von Verwaltungsschalen}{17}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Erstellen von Submodell-Templates}{17}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Befüllen der Templates mit strukturierten Daten}{17}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Bereitstellen der AAS über die Rest API}{17}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Potenziale des KI-Einsatzes zur Erstellung}{17}{subsubsection.3.5.4}%
+\contentsline {section}{\numberline {4}Ergebnisse}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}AAS-Demonstrator für die robocell}{17}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Systemarchitektur}{17}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Eingesetzte Teilmodelle}{17}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Herausforderungen bei der Erstellung}{17}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Anwendungsfall Digitaler Produktpass}{17}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Implementierungskonzept}{17}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Dynamische Berechnung des PCF}{17}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}Anwendungsfall automatisierte Generierung der AAS}{17}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Einsatzmöglichkeiten von KI im Kontext der Verwaltungsschale}{17}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Generierung von Verwaltungsschalen}{17}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Anomaliererkennung}{17}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Weiterführende Einsatzmöglichkeiten}{17}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Evaluierung eingesetzter Tools und Software}{17}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}AASX Package Exlporer}{17}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Eclipse AASX Server}{17}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}BaSyx}{17}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Mnestix Browser}{17}{subsubsection.4.5.4}%
+\contentsline {section}{\numberline {5}Zusammenfassung und Ausblick}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{17}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{17}{subsection.5.3}%
+\contentsline {section}{Glossar und Abkürzungsverzeichnis}{18}{section*.9}%
+\contentsline {section}{\numberline {A}Anhang 1}{20}{appendix.A}%
