@@ -1,25 +1,27 @@
 \section{Einleitung}
-Einleitende Worte...
-Kurze Vorstellung der Firma groninger ?
 \subsection{Motivation / Problemstellung}
 \label{sec:Motivation}
 Im Rahmen von Industrie 4.0 gewinnen digitale Zwillinge zunehmend an Bedeutung. 
 Sie ermöglichen die digitale Abbildung physischer Assets und sollen helfen, Prozesse transparenter und effizienter zu gestalten.
 Viele Unternehmen setzen bereits auf proprietäre Lösungen, die jedoch häufig nicht interoperabel sind und somit den Austasch von Daten über System -und Unternehmensgrenzen hinweg erschweren.
 Mit der steigenden Nachfrage nach digitalen Zwillingen wächst auch der Bedarf an standardisierten und interoperablen Lösungen.
-In den vergangenen Jahren hat sich die \ac{idta} intensiv mit dieser Thematik ausseinandergesetzt und als Lösung die sogenannte Verwaltungsschale (\ac{aas}) etabliert.
+In den vergangenen Jahren hat sich die \ac{idta} intensiv mit dieser Thematik ausseinandergesetzt und als Lösung die sogenannte \ac{aas} etabliert.
 Diese ermöglicht eine interoperable Umsetzung digitaler Zwillinge, wobei sämtliche relevanten Informationen zu einem Asset über dessen gesamten Lebenszyklus hinweg digital erfasst, strukturiert und dokumentiert werden können. 
-Immer mehr Unternehmen befassen sich mit dem Konzept der Verwaltungsschale, und einige haben es bereits in Form von Pilotprojekten, Showcases oder vereinzelt sogar schon in bestehende Systeme integriert.
+Die zunehmende Beschäftigung zahlreicher Unternehmen mit dem Konzept der AAS, die Umsetzung in Pilotprojekten und ersten produktiven Anwendungen unterstereichen die hohe Relevanz und das Potenzial dieser standardisierten Lösung für die Digitalisierung und Vernutzung industrieller Systeme.
 
-Aber auch regulatorische Anforderungen wie der digitale Produktpass, der von der EU entwickelt und künftig für viele Produktgruppen verpflichtend wird, zeigen die Notwendigkeit von einheitlichen digitalen Zwillingen. 
-Um diesen Anforderungen in Zukunft gerecht zu werden, ist es wichtig, sich schon frühzeitig mit der Verwaltungsschale ausseinanderzusetzen.
+Aber auch regulatorische Anforderungen wie der digitale Produktpass, der von der EU entwickelt und künftig für viele Produktgruppen verpflichtend wird, zeigen die Notwendigkeit einheitlicher digitaler Zwillingen. 
+Um am Puls der Zeit zu bleiben und den wachsenden Anforderungen an Transparenz, Rückverfolgbarkeit und Effizienz gerecht zu werden, ist es für Unternehmen unerlässlich, sich frühzeitig mit der AAS auseinanderzusetzten.
+
 \subsection{Zielsetzung}
-Ziel diser Arbeit ist die prototypische Modellierung eines digitalen Zwillings für eine Abfüll -und Verschließmaschine der robocell-Linie der Firma groninger.
-Die Umsetzung erfolgt auf Basis der Verwaltungsschale unter Verwendung verschiedener Open Source Tools, die unter anderem von der \acs{idta} bereitgestellt werden. 
-Im Rahmen der Arbeit soll überprüft werden, ob der Einsatz der Verwaltungsschale hinsichtlich der Interoperabilität, Produktivität und Nachverfolgbarkeit einen Mehrwert für groninger bieten kann.
-Ebenfalls sollen die Tools zur Modellierung eines solchen digitalen Zwillinges evaluiert werden, wobei zum Beispiel der AASX Package Explorer zur Erstellung oder ein Server zum Verwalten der Verwaltungsschalen genutzt werden soll.
-Ebenfalls soll die Einsatzmöglichkeit von KI zur Optimierung diskutiert werden.
-Abschließend soll eine Handlungsempfehlung für groninger formuliert werden, ob der Einsatz der Verwaltungsschale einen Mehrwert für das Unternehmen bieten kann.
+Ziel diser Arbeit ist die prototypische Modellierung eines digitalen Zwillings für die Abfüll -und Verschließmaschine der robocell-Linie der Firma groninger auf Basis der AAS.
+Dabei soll untersucht werden, ob der Einsatz der AAS für das Unternehmen einen Mehrwert bietet - insbesondere im Hinblick auf Interoperabilität, Produktivität und Nachverfolgbarkeit.
+Unter Interoperabilität wird dabei die herstellerunabhängige und standardisierte Kommunikation zwischen Maschinen und Systemen verstanden, die eine nahtlose Vernetzung über Unternehmensgrenzen hinweg ermöglicht.
+Hinsichtlich der Produktivität steht die effiziente Bereitstellung und der Austausch von Informationen im Fokus, mit Potenzialen zur Optimierung von Prozessen, etwa durch vorausschauende Instandhaltungsmaßnahmen. 
+Die Nachverfolgbarkeit schließlich umfasst die lückenlose Erfassung und Rückverfolgung aller relevanten Asset-Daten über den gesamten Lebenszyklus, wodurch Zustandsänderungen und Ereignisse transparent und nachvollziehbar werden.
+Für die Umsetzung sollen verschieden Open-Source-Tools zum Einsatz kommen, die unter anderem von der IDTA bereitgestellt oder im Rahmen des Eclipse-Projekts entwickelt wurden, wie etwa der AASX Package Explorer, die AASX Test Engine oder Eclipse BaSyx.
+Neben der Evaluierung dieser Werkzeuge soll zudem eine mögliche Architektur zur Verwaltung und Bereitstellung AAS-basierter digitaler Zwillinge aufgezeigt werden.
+Ebenfalls soll die Einsatzmöglichkeit von Künstlicher Intelligenz im Kontext der AAS diskutiert werden, um potenzielle Optimierungsansätze und weiterführende Anwendungsmöglichkeiten zu identifizieren.
+Auf Grundlage der gewonnen Erkenntnisse soll abschließend eine Handlungsempfehlung für groninger formuliert werden, die den möglichen Nutzen und die Relevanz des Einsatzes der AAS für das Unternehmen bewertet.
 \subsection{Vorgehensweise}
 Die Arbeit beginnt mit einer eingehenden Betrachtung grundlegender Konzepte, die für das Verständnis der Arbeit notwendig sind. 
 Dabei wird insbesondere die Frage geklärt, was die Verwaltungsschale und der digitale Zwilling überhaupt sind und wie diese sich im industriellen Kontext - insbesondere im Rahmen von Industrie 4.0 - einordnen.
@@ -35,7 +37,7 @@ Für die technische Umsetzung kommen verschiedene Tools und Technologien zum Ein
 Im Ergebnisteil wird der AAS-Demonstrator für die robocell vorgestellt. Es werden sowohl die Systemarchitektur als auch die modellierten Teilmodelle präsentiert.
 Aber auch Herausforderungen bei der Implementierung werden aufgezeigt.
 Zudem werden Potenziale des Einsatz von KI im Zusammenhang mit der Verwaltungsschale aufgezeigt und diskutiert.
-Außerdem werden die eingesetzen Open Source Lösungen zur Modellierung und Verwaltung der Verwaltungsschale evaluiert.
+Außerdem werden die eingesetzen Open Source Lösungen zur Modellierung und Verwaltung der AAS evaluiert.
 
 
 Es folgt eine Zusammenfassung der Arbeit, bei der die wichtigsten Aspekte kurz zusammengefasst werden.
