@@ -1,5 +1,10 @@
 \section{Grundlagen}
 \subsection{Industrie 4.0}
+
+
+
+
+
 \subsubsection{Künstliche Intelligenz im industriellen Kontext}
 \subsubsection{RAMI 4.0}
 Das Refernzarchitekturmodell Industrie 4.0 ist ein Leitfaden für die Industrie und dient als Hilfestellung um die digitale Transformation in einem Unternehmen systematisch umzusetzten.
@@ -59,7 +64,6 @@ Sie kommen entlang des gesamten Lebenszyklus eines Produkts oder Systems zum Ein
 Bereits bei der Entwicklung von Produkten können digitale Zwillinge einen erheblichen Vorteil bieten. 
 Indem bereits frühzeitig digitale Modelle oder Simulationen eingesetzt werden, entfällt die Notwendigkeit physischer Prototypen, was Entwicklungszeiten und Kosten deutlich senken kann. Während der Produktion ermöglichen sie eine durchgängige Überwachung, Analyse und Optimierung von Fertigungsprozessen durch die Integration von Echtzeitdaten.
 Sie unterstützen die virtuelle Inbetriebnahme von Maschinen und dienen als Grundlage für die vorausschauende Wartung (Predictive Maintenance), wodurch Stillstandzeiten einer Maschine reduziert werden können.
-Darüber hinaus können verschiedene Prozesse durch Simulation unter unterschiedlichen Bedingungen getestet und optimiert werden. 
 Nicht zuletzt dienen digitale Zwillinge als zentrale Datenplattform, in der alle relevanten Informationen aus verschiedenen Datenquellen gebündelt werden.
 Sie bilden somit eine konsistente Datenbasis und können beispielsweise bei dem Entwicklungsprozess eines Produktes helfen. \cite{DTForSmartManufacturing}
 
@@ -73,10 +77,15 @@ Sie bilden somit eine konsistente Datenbasis und können beispielsweise bei dem 
 % Uneindeutige Beschreibungen können zu Fehlinterpretationen -und entscheidungen führen.
 % Nicht zuletzt stell die Cybersicherheit eine zentrale Herausforderung dar - vor allem wenn cloudbasierte Lösungen oder unternehmensübergreifende Datenräume genutzt werden.
 
+Eine zentrale Herausforderung bei der Implementierung digitaler Zwillinge ist die fehlende Interoperabilität zwischen verschiedenen IT-Systemen.
+Dadurch entstehen voneinander isolierte Datenbestände, die nicht systemübergreifend nutzbar sind.
+Solche sogenannten Informationssilos entstehen bereits häufig innerhalb eines Unternehmens, wenn Daten und Informationen aus verschiedenen, nicht kompatiblen Systemen stammen.
+Dies kann die Erstellung eines digitalen Zwillings erheblich erschweren, da die relevanten Informationen oft nicht in standardisierter Form vorliegen und zunächst aus unterschiedlichen Quellen bezogen werden müssen.
+Solche isolierten Datenstrukturen finden sich jedoch nicht nur innerhalb eines Unternehmens sondern auch über Unternehmensgrenzen hinweg, beispielsweise in Lieferketten bei denen Akteure proprietäre Datenformate und Austauschprotokolle verwenden.
+Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einem Unternehmen B nicht ohne Weiteres intepretiert oder verwendet werden.
+[citehttps://www.iiconsortium.org/pdf/Digital-Twin-and-Asset-Administration-Shell-Concepts-and-Application-Joint-Whitepaper.pdf]
 
-Herausforderungen.
-
-
+Weiterer Absatz zu Herausforderungen
 
 
 % Definition nach Stark und Damerau des DT: 
@@ -123,8 +132,8 @@ Typen können zum Besipiel allgemeine Dokumente, Eigenschaften oder Merkmale ent
 Sie dienen als standardisierte, wiederverwendbare Vorlage für das Erstellen von Instanzen.
 Im Gegensatz dazu werden Instanzen immer einem konkreten physischen Objekt zugewiesen - etwa durch die Seriennummer, den aktuellen Standort oder den Betriebszustand einer Maschine.
 
-Bestimmte Aspekte eines Assets werden dabei in verschiedenen Submodellen verwaltet.
-Man kann sich dies wie ein Schubladensystem vorstellen, wobei jede Schublade einen bestimmten Bereich des Assets abdeckt - beispielsweise die technischen Stammdaten, das Typenschild Wartungsinformationen oder Zustandswerte einer Maschine.
+Bestimmte Aspekte eines Assets werden gemäß der Spezifikation des Metamodells der AAS \cite{SpezifikationPart1} in verschiedenen Submodellen verwaltet.
+Man kann sich dies wie ein Schubladensystem vorstellen, wobei jede Schublade einen bestimmten Bereich des Assets abdeckt - beispielsweise die technischen Stammdaten, das Typenschild, Wartungsinformationen oder Zustandswerte einer Maschine.
 Die Auswahl der Submodelle hängt dabei immer von dem konkreten Asset ab, dass modelliert werden soll.
 Genau wie die AAS müssen diese Teilmodelle global eindeutig identifizierbar sein.
 Ein Submodell besteht dabei immmer aus verschiedenen Submodellelementen. Sie können sowohl statische, als auch dynamische Modelle enthalten.
@@ -139,13 +148,19 @@ Zu den wichtigsten Submodellelementen zählen:
     \item \textbf{RelationShipElement}: Beziehung verschiedener Elemente oder Assets
     \item \textbf{SubmodelElementCollection}: Sammlung von Submodellelementen
 \end{itemize}
-
 Es ist wichtig alle Submodelle bzw. alle Elemente über eine eindeutige Semantik zu beschreiben.
-Hierfür gibt es sogenannte "Concept Desciptions". Diese enthalten unter anderem Beschreibugen, Definitionen, Einheiten und externe Referenzen für ein bestimmtes Element.
+Hierfür gibt es sogenannte \glqq Concept Desciptions\grqq. Diese enthalten unter anderem Beschreibugen, Definitionen, Einheiten und externe Referenzen für ein bestimmtes Element.
 Sie helfen bei der Klassifizierung von Daten und sorgen für ein gemeinsames Verständnis unterschiedlicher Systeme.
-Diese Beschreibungen können entweder direkt in die AAS eingebetet werden oder über externes Standards wie zum Beispiel ECLASS referenziert werden.
+Fehlt diese semantische Beschreibung, so kann es schnell zu Missverständnissen kommen.
+Wenn zum Beispiel einfach nur ein Wert wie 25 vorliegt, ist ohne weitere Informationen unklar, was gemeint ist. 
+Es könnte sich beispielsweise um 25 Euro, 25 Meter oder 25 Grad Celsius handeln.
+Erst durch die zugehörige Concept Description, in der die Einheit und Bedeutung definiert werden, wird der Wert eindeutig interpretierbar. 
+Diese semantische Beschreibungen können entweder direkt in die AAS eingebetet oder über externes Standards referenziert werden.
+Die Zuordnung erfolgt über eine sogenannte \glqq semanticID\grqq.
+Ein häufig verwendeter externer Standard ist zum Beispiel ECLASS.
 ECLASS basiert auf dem Datenmodell der Norm IEC 61360 [IEC 61360], welche eine standardisierte Struktur für Merkmale und deren semantische Beschreibung definiert.
-Zur Veranschaulichung wird nachfolgend ein vereinfachtes Schema des Metamodells der Verwaltungsschale in Abbildung 3 dargestellt. \cite{SpezifikationPart1}
+
+Zur Veranschaulichung wird nachfolgend ein vereinfachtes Schema des Metamodells der Verwaltungsschale in Abbildung 3 dargestellt. 
 
 \begin{figure}[htbp]
     \centering
@@ -161,7 +176,7 @@ Alle Eigenschaften innerhalb dieser Vorlagen werden dabei in Verbindung mit dem 
 Diese Templates könen über ein zentrales Repository bezogen werden und bilden die Basis für eine interoperable semantische Datenstruktur.
 
 Der Austausch von Informationen über die AAS kann auf unterschiedliche Weise erfolgen.
-Die einfachste Möglichkeit ist der Austausch über Dateien. Hierfür gibt es speziell für die AAS entwickelte AASX-Dateien, die einen einfachen Austausch statischer Verwaltungsschalen (Typ 1) erlauben. \cite{SpezifikationPart5}
+Die einfachste Möglichkeit ist der Austausch über Dateien. Hierfür gibt es speziell für die AAS entwickelte AASX-Dateien \cite{SpezifikationPart5}, die einen einfachen Austausch statischer Verwaltungsschalen (Typ 1) erlauben.
 Hierbei werden alle Daten, Beziehungen, die Struktur sowie zugehörige Dateien der AAS serialisiert in ein AASX-ZIP-Dateiformat gespeichert. Die Datei kann schließlich über ein digitales Medium wie eine E-Mail oder eine Cloud-Plattform weitergegeben werden.  
 Typ-2 Verwaltungsschalen hingegen werden von einer Laufzeitumgebung gehosted und ermöglichen dadurch einen dynamischen Zugriff auf Informationen. 
 In der Spezifikitation Part 2: Aplication Programming Interfaces \cite{SpezifikationPart2} werden drei Kernkomponenten beschrieben, die zusammen ein System für einen interoperablen, standardisierten Zugriff bilden.
@@ -194,7 +209,7 @@ Dafür ist es wichtig, das jedes Produkt global eindeutig über eine einzigartig
 
 Während die regulatorischen Rahmenbedingungen schon mehr oder weniger final ausgearbeitet sind, bleibt noch die Frage der konkreten technologischen Umsetzung.
 Eine dezentrale Lösung zur Umsetzung bildet der von der ZVEI vorgestellte digitale Produktpass für die Industrie 4.0 (DPP 4.0) \cite{DPP40}.
-Der DPP 4.0 basiert dabei auf zwei etablierten Standards. Zum Einen das digitale Typenschild, und zum Anderen die Asset Administration Shell (siehe Kapitel~\nameref{chap:AAS}).
+Der DPP 4.0 basiert dabei auf zwei etablierten Standards. Zum Einen das digitale Typenschild, und zum Anderen die AAS (siehe auch Kapitel~\nameref{chap:AAS}).
 Das digitale Typenschild ermöglicht - gemäß der Norm IEC 61406 [Quellle Norm] - die eindeutige Identifikation von Produkten über eine einzigartige Asset-ID.
 Typischerweise wird diese in Form eines maschinenlesbarem Links oder QR-Codes an ein Produkt angebracht, wodurch ein direkter Zugriff auf den jeweiligen \acs{dpp} ermöglicht wird.
 
@@ -203,13 +218,13 @@ Standardisierte Teilmodelle wie das digitale Typenschild, Dokumentationen oder d
 Darüber hinaus können auch zusätzliche, nicht verpflichtende Informationen integrierte werden, sofern sie für bestimmte Stakeholder einen Mehrwert bieten.
 Der Zugriff auf die Daten erfolgt über ein webbasiertes Portal. Verschiedene Interessengruppen erhalten dabei unterschiedliche Zugangsrechte. 
 Hierfür werden bestimmmte Submodelle gezielt für unterschiedliche Gruppen freigegeben oder eingeschränkt.
-Während beispielsweise das digitale Typenschild oder der PCF öffentlich zugänglich sind, werden sensible Informationen wie technische Dokumentationen oder sicherheitsrelevante Details nur bestimmten autorisierten Gruppen zugänglich gemacht.
+Während beispielsweise das digitale Typenschild (DN) oder der PCF öffentlich zugänglich sind, werden sensible Informationen wie technische Dokumentationen oder sicherheitsrelevante Details nur bestimmten autorisierten Gruppen zugänglich gemacht.
 Eine schemantische Darstellung des DPP 4.0 ist nachfolgend in Abbildung xy dargestellt.
 
-\vspace{2em}
+\vspace{1em}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{Bilder/dpp_konzept.pdf}
+    \includegraphics[width=0.8\textwidth]{Bilder/dpp_konzept.pdf}
     \caption{Konzept des DPP 4.0}
     \label{fig:klassifizierungDT}
 \end{figure}
