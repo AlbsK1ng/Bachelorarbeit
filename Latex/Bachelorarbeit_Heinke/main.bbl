@@ -151,6 +151,67 @@
     \field{year}{2023}
   \endentry
 
+  \entry{DTandAASConceptsInI4.0}{misc}{}{}
+    \name{author}{7}{}{%
+      {{hash=BB}{%
+         family={Boss},
+         familyi={B\bibinitperiod},
+         given={Birgit},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Malakuti},
+         familyi={M\bibinitperiod},
+         given={Somayeh},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LSW}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Shi-Wan},
+         giveni={S\bibinithyphendelim W\bibinitperiod},
+      }}%
+      {{hash=UT}{%
+         family={Usländer},
+         familyi={U\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=CE}{%
+         family={Clauer},
+         familyi={C\bibinitperiod},
+         given={Erich},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Hoffmeister},
+         familyi={H\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Stojanovic},
+         familyi={S\bibinitperiod},
+         given={Ljiljana},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BB+1}
+    \strng{fullhash}{BBMSLSWUTCEHMSL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Joint Whitepaper}
+    \field{title}{Digital Twin and Asset Administration Shell Concepts and Application in the Industrial Internet and Industrie 4.0}
+    \verb{url}
+    \verb https://www.iiconsortium.org/pdf/Digital-Twin-and-Asset-Administratio
+    \verb n-Shell-Concepts-and-Application-Joint-Whitepaper.pdf
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{06}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
   \entry{RAMI4.0}{misc}{}{}
     \list{publisher}{1}{%
       {Deutsches Institut für Normung e.V. (DIN)}%
@@ -180,9 +241,6 @@
     \endverb
     \field{month}{12}
     \field{year}{2023}
-    \field{urlday}{25}
-    \field{urlmonth}{05}
-    \field{urlyear}{2025}
   \endentry
 
   \entry{IDTA}{misc}{}{}
@@ -229,6 +287,27 @@
     \field{urlday}{26}
     \field{urlmonth}{05}
     \field{urlyear}{2025}
+  \endentry
+
+  \entry{ECLASSIEC61360}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={{International Electrotechnical Commission (IEC)}},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I2}
+    \strng{fullhash}{I2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{4.0}
+    \field{note}{Internationale Norm, IEC}
+    \field{title}{IEC 61360-1:2017 - Standard data element types with associated classification scheme - Part 1: Definitions - Principles and methods}
+    \verb{url}
+    \verb https://webstore.iec.ch/en/publication/28560
+    \endverb
+    \field{month}{07}
+    \field{year}{2017}
   \endentry
 
   \entry{SpezifikationPart5}{misc}{}{}
@@ -400,6 +479,27 @@
     \field{urlday}{30}
     \field{urlmonth}{05}
     \field{urlyear}{2025}
+  \endentry
+
+  \entry{TypenschildIEC61406-1}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={{International Electrotechnical Commission (IEC)}},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I2}
+    \strng{fullhash}{I2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{1.0}
+    \field{note}{Internationale Norm, IEC}
+    \field{title}{IEC 61406-1:2022 - Identification Link - Part 1: General requirements}
+    \verb{url}
+    \verb https://webstore.iec.ch/en/publication/67673
+    \endverb
+    \field{month}{09}
+    \field{year}{2022}
   \endentry
 
   \entry{BaSyxWiki}{misc}{}{}

@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1749122332.73268 "main.aux" "main.bbl" "main" 1749136328.41797 0
-  "./main-blx.bib" 1749136327.39981 343 bf1f0c75b5bafd473925320ac9611e26 ""
-  "./references.bib" 1748951236.89151 5366 6a5b7ee1dad2ed6a53e249fc212c1c7b ""
+["bibtex main"] 1749212876.49863 "main.aux" "main.bbl" "main" 1749216734.62119 0
+  "./main-blx.bib" 1749216733.89265 343 bf1f0c75b5bafd473925320ac9611e26 ""
+  "./references.bib" 1749209974.93791 6561 db17288b19cdd6b3ca829ffe8e289f83 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1711143581 65510 b1f696b0241395385f422f67543c37fd ""
-  "main.aux" 1749136327.38081 14929 ca7dcf71db462b3e97f9c8cc5cb01cee "pdflatex"
+  "main.aux" 1749216733.88865 15679 8e8580415bb2c569cc8e471146809a80 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1749136319.03719 "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1749136328.42084 0
+["pdflatex"] 1749216729.20689 "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1749216734.62143 0
   "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" 1748937256.97233 3655 c5f133dc8d1bca6413f92f62e26730b5 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1254269338 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
@@ -274,21 +274,21 @@
   "Einleitung.tex" 1749023735.1929 5429 c97da2b3f35d3819feb2f3e856058080 ""
   "Entwicklung.tex" 1749023674.11891 1022 530359a4a41d713c195bb690d4688aad ""
   "Ergebnisse.tex" 1749023558.66803 794 2a21a36e915890faf6bbf10ad4553f76 ""
-  "Grundlagen.tex" 1749136318.80073 28737 822952beaab42e138606ada8cfb12202 ""
+  "Grundlagen.tex" 1749216728.99458 29131 16b154990782faea29fa6a62f3a8209e ""
   "Titelseite.tex" 1747643554.79157 1630 fc4cd60c7847bb6b331c812500ef80c8 ""
   "Zusammenfassung.tex" 1748248406.5135 178 e1fe5fe01604a99285d654680cf1bc8c ""
   "abkuerzungsverzeichnis.tex" 1748427605.81529 304 35b7f249a184c00a4f4e735729787ca7 ""
   "commands.tex" 1747647607.92526 0 d41d8cd98f00b204e9800998ecf8427e ""
   "ehrenwoertlichErklärung.tex" 1747385158.63477 557 4ec48bd316d1a5d701d88a7edd0ff2cb ""
   "glossary.tex" 1523254870 167 69e8ece9b7c85abdb3646b31f274c667 ""
-  "main.aux" 1749136327.38081 14929 ca7dcf71db462b3e97f9c8cc5cb01cee "pdflatex"
-  "main.bbl" 1749122332.97898 12910 c9edb0eccf9695c9c67cfddd8486a0a9 "bibtex main"
+  "main.aux" 1749216733.88865 15679 8e8580415bb2c569cc8e471146809a80 "pdflatex"
+  "main.bbl" 1749212876.64483 15897 b1a03649bc87efa439ba44b6105d5cbb "bibtex main"
   "main.gls" 0 -1 0 ""
-  "main.lof" 1749136327.40481 426 9f171222153ea912ac862846645d3ba6 "pdflatex"
-  "main.out" 1749136327.39081 12776 5b3fc8f9488cb584c8f35f535a12477e "pdflatex"
-  "main.run.xml" 1749136327.40281 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
+  "main.lof" 1749216733.89765 426 9f171222153ea912ac862846645d3ba6 "pdflatex"
+  "main.out" 1749216733.89265 12776 5b3fc8f9488cb584c8f35f535a12477e "pdflatex"
+  "main.run.xml" 1749216733.89665 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
   "main.tex" 1748937256.97233 3655 c5f133dc8d1bca6413f92f62e26730b5 ""
-  "main.toc" 1749136327.40481 6083 f54431bff22b4f08a4c6c4a37e6606cc "pdflatex"
+  "main.toc" 1749216733.89765 6083 811f5fab1c9713fc5799514fd5a38362 "pdflatex"
   "sperrvermerk.tex" 1747385065.43251 1177 6593896265383cba0f0f0fe7a253f664 ""
   (generated)
   "main-blx.bib"

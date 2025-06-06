@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {2.3}Asset Administration Shell}{7}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Digitaler Produktpass für Industrie 4.0}{11}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}robocell Füll -und Verschließmodul}{13}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Technologische Grundlagen}{13}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.6}Technologische Grundlagen}{14}{subsection.2.6}%
 \contentsline {subsubsection}{\numberline {2.6.1}AASX Package Exlporer}{14}{subsubsection.2.6.1}%
 \contentsline {subsubsection}{\numberline {2.6.2}OPC UA}{14}{subsubsection.2.6.2}%
 \contentsline {subsubsection}{\numberline {2.6.3}Eclipse BaSyx }{15}{subsubsection.2.6.3}%

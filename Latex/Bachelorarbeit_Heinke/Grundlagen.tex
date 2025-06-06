@@ -23,11 +23,11 @@ Grieves definierte drei zentrale Komponenten, die zusammen das Informationsmodel
 \end{itemize}
 
 Auf Basis des von Grieves entwickelten Informationsmodells hat sich der Begriff des digitalen Zwillings stetig weiter entwickelt und in verschiedenen Bereichen Einzug erhalten. 
-Aufgrund der verschiedenen Fachgebiete und unkonsistentr Definitionen des digitalen Zwillings haben sich in der Vergangenheit unterschiedliche Ausprägungen des Begriffs des digitalen Zwillings gebildet.
+Aufgrund der verschiedenen Fachgebiete und unkonsistenter Definitionen haben sich in der Vergangenheit eine Vielzahl unterschiedlicher Ausprägungen des Begriffs des digitalen Zwillings gebildet.
 Diese unterscheiden sich insbesondere in der Tiefe der Datenintegration zwischen dem physischen Objekt und seinem virtuellen Abbild.
 Während ein einfacher digitaler Zwilling lediglich ein einfaches Modell mit statischen Daten ist, ermöglichen fortgeschrittene Zwillinge einen bidrektionalen Datenaustausch zwischen physischem und virtuellem Objekt. 
 
-Grundsätzlich lassen sich digitale Zwilling nach Typ und Instanz unterscheiden.
+Grundsätzlich lassen sich digitale Zwillinge in 2 Kategorien - Typ und Instanz - unterteilen.
 Typen sind allgemeine Abbilder, die grundlegende Eigenschaften und Verhaltensmodelle einer Produktgruppe beschreiben. 
 Sie können mit einer Klasse in der Softwarentwicklung verglichen werden, die als Vorlage für konkrete Instanzen dienen.
 Typen können zum Beispiel einen bestimmten Maschinentyp hinsichtlich Aufbau, Stuktur oder Schnittstellen beschreiben, ohne dabei Bezug zu einer einzelnen physischen Maschine zu nehmen.
@@ -59,7 +59,7 @@ Es entsteht eine Feedback-Schleife und erlaubt dem virtuellen Objekt Einfluss au
 \end{figure}
 
 % Digitales Modell, digitaler Schatten und digitaler zwilling
-Digitale Zwillinge werden im industriellen Umfeld in vielen unterschiedlichen Bereichen eingesetzt. 
+Im industriellen Umfeld werden digitale Zwillinge in vielen unterschiedlichen Bereichen eingesetzt. 
 Sie kommen entlang des gesamten Lebenszyklus eines Produkts oder Systems zum Einsatz - von der Entwicklung über die Produktion bis hin zum Betrieb und der Wartung. 
 Bereits bei der Entwicklung von Produkten können digitale Zwillinge einen erheblichen Vorteil bieten. 
 Indem bereits frühzeitig digitale Modelle oder Simulationen eingesetzt werden, entfällt die Notwendigkeit physischer Prototypen, was Entwicklungszeiten und Kosten deutlich senken kann. Während der Produktion ermöglichen sie eine durchgängige Überwachung, Analyse und Optimierung von Fertigungsprozessen durch die Integration von Echtzeitdaten.
@@ -77,15 +77,15 @@ Sie bilden somit eine konsistente Datenbasis und können beispielsweise bei dem 
 % Uneindeutige Beschreibungen können zu Fehlinterpretationen -und entscheidungen führen.
 % Nicht zuletzt stell die Cybersicherheit eine zentrale Herausforderung dar - vor allem wenn cloudbasierte Lösungen oder unternehmensübergreifende Datenräume genutzt werden.
 
-Eine zentrale Herausforderung bei der Implementierung digitaler Zwillinge ist die fehlende Interoperabilität zwischen verschiedenen IT-Systemen.
-Dadurch entstehen voneinander isolierte Datenbestände, die nicht systemübergreifend nutzbar sind.
-Solche sogenannten Informationssilos entstehen bereits häufig innerhalb eines Unternehmens, wenn Daten und Informationen aus verschiedenen, nicht kompatiblen Systemen stammen.
-Dies kann die Erstellung eines digitalen Zwillings erheblich erschweren, da die relevanten Informationen oft nicht in standardisierter Form vorliegen und zunächst aus unterschiedlichen Quellen bezogen werden müssen.
-Solche isolierten Datenstrukturen finden sich jedoch nicht nur innerhalb eines Unternehmens sondern auch über Unternehmensgrenzen hinweg, beispielsweise in Lieferketten bei denen Akteure proprietäre Datenformate und Austauschprotokolle verwenden.
-Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einem Unternehmen B nicht ohne Weiteres intepretiert oder verwendet werden.
-[citehttps://www.iiconsortium.org/pdf/Digital-Twin-and-Asset-Administration-Shell-Concepts-and-Application-Joint-Whitepaper.pdf]
-
-Weiterer Absatz zu Herausforderungen
+Die Implementierung digitaler Zwillinge erweist sich in der Praxis jedoch oftmals als sehr anspruchsvoll.
+Eine zentrale Herausforderung ist die fehlende Interoperabilität zwischen verschiedenen IT-Systemen.
+Sowohl innerhalb eines Unternehmens als auch unternehmensübergreifend bilden sich dadurch häufig voneinander isolierte Datenbestände, die nicht systemübergreifend nutzbar sind.
+Solche sogenannten Informationssilos können die Umsetzung eines konsistenten digitalen Zwillings erheblich erschweren, da die relevanten Informationen und Daten zunächst aus unterschiedlichen Systemen wie Enterprise Resource Planing (ERP), Manufacturing Execution System (MES) oder Computer Aided Design (CAD) zusammengeführt werden müssen.
+Hinzu kommt, das diese Daten oftmals in unterschiedlichen, nicht standardisierten Formaten vorliegen, was eine automatisierte Integration zusätzlich erschwert.
+Diese Problematik zeigt sich nicht nur innerhalb einzelner Unterhnehmen, sondern auch entlang der gesamten Wertschöpfungskette, etwa wenn verschiedene Akteure einer Lieferkette heterogene Datenformate und proprietäre Austauschprotokolle verwenden.
+Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einer Anwendung oder einem weitern digitalen Zwilling eines Unternehmens B nicht ohne Weiteres intepretiert oder verwendet werden.
+Es ist daher essenziell, digitale Zwillinge in einem interoperablen Format bereitzustellen, um eine einheitliche Interpretation und Nutzung auch über Unternehmensgrenzen hinweg zu ermöglichen.
+\cite{DTandAASConceptsInI4.0}
 
 
 % Definition nach Stark und Damerau des DT: 
@@ -158,7 +158,7 @@ Erst durch die zugehörige Concept Description, in der die Einheit und Bedeutung
 Diese semantische Beschreibungen können entweder direkt in die AAS eingebetet oder über externes Standards referenziert werden.
 Die Zuordnung erfolgt über eine sogenannte \glqq semanticID\grqq.
 Ein häufig verwendeter externer Standard ist zum Beispiel ECLASS.
-ECLASS basiert auf dem Datenmodell der Norm IEC 61360 [IEC 61360], welche eine standardisierte Struktur für Merkmale und deren semantische Beschreibung definiert.
+ECLASS basiert auf dem Datenmodell der Norm IEC 61360 \cite{ECLASSIEC61360}, welche eine standardisierte Struktur für Merkmale und deren semantische Beschreibung definiert.
 
 Zur Veranschaulichung wird nachfolgend ein vereinfachtes Schema des Metamodells der Verwaltungsschale in Abbildung 3 dargestellt. 
 
@@ -210,7 +210,7 @@ Dafür ist es wichtig, das jedes Produkt global eindeutig über eine einzigartig
 Während die regulatorischen Rahmenbedingungen schon mehr oder weniger final ausgearbeitet sind, bleibt noch die Frage der konkreten technologischen Umsetzung.
 Eine dezentrale Lösung zur Umsetzung bildet der von der ZVEI vorgestellte digitale Produktpass für die Industrie 4.0 (DPP 4.0) \cite{DPP40}.
 Der DPP 4.0 basiert dabei auf zwei etablierten Standards. Zum Einen das digitale Typenschild, und zum Anderen die AAS (siehe auch Kapitel~\nameref{chap:AAS}).
-Das digitale Typenschild ermöglicht - gemäß der Norm IEC 61406 [Quellle Norm] - die eindeutige Identifikation von Produkten über eine einzigartige Asset-ID.
+Das digitale Typenschild ermöglicht - gemäß der Norm IEC 61406 \cite{TypenschildIEC61406-1} - die eindeutige Identifikation von Produkten über eine einzigartige Asset-ID.
 Typischerweise wird diese in Form eines maschinenlesbarem Links oder QR-Codes an ein Produkt angebracht, wodurch ein direkter Zugriff auf den jeweiligen \acs{dpp} ermöglicht wird.
 
 Organisiert werden die Daten im DPP 4.0 in verschiedenen Submodellen der AAS. 
@@ -247,9 +247,8 @@ Eingehen auf das Füllmodul
 
 \includegraphics{Bilder/robocell_FS2_rgb_Logo.png}
 \subsection{Technologische Grundlagen}
-Brauche ich das?
 \subsubsection{AASX Package Exlporer}
-Der von Michael Hoffmeister entwickelte AASX Package Explorer ist ein Toll/Anwendung zur manuellen Errstellung von Verwaltungschalen.
+Der von Michael Hoffmeister entwickelte AASX Package Explorer ist ein Open-Source-Werkzeug zur Visualisierung und manuellen Erstellung von AAS.
 Er ermöglicht das Modellieren von Verwaltungsschalen mit allen Elementen dieser.
 Hiermit können ganze Verwaltungsschale erstellt werden und in eine Datei wie eine aasx Datei oder XML Datei geschrieben werden.
 Er bringt alles mit, was für die Erstellung von Verwaltungsschalen benötigt wird.
@@ -258,7 +257,7 @@ AUch kann ein Server angebunden werden.
 \subsubsection{OPC UA}
 \newpage
 \subsubsection{Eclipse BaSyx }
-Eclipse BaSyx ist eine vom Fraunhofer-Institut für Experimentelles Software Engineering entwickelte Open-Source-Plattform für die Umsetzung von Industrie 4.0 - Anwendungen.
+Eclipse BaSyx ist eine vom Fraunhofer-Institut für Experimentelles Software Engineering entwickelte Open-Source-Plattform für die Realisierung von Industrie 4.0 - Anwendungen.
 Der Fokus liegt auf einer einfachen Umsetzung einer Infrastruktur zur Erstellung und Verwaltung digitaler Zwillinge auf Basis der \acs{aas}.
 Ein wesentlicher Vorteil von BaSyx ist sein Open-Source-Charakter. Die Software steht allen Interessierten frei zur Verfügung und erlaubt individuelle Modifikationen an spezifische Anforderungen.
 Die Architektur basiert auf einer Vielzahl von Standardkomponenten (Off-the-Shelf), die alle als Docker-Container frei zugänglich sind und somit eine nahtlose Integration in bestehende Docker-Umgebungen erlauben.
