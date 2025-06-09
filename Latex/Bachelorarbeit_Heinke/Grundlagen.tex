@@ -13,21 +13,21 @@ Es soll helfen, die komplexen Anforderungen an die Industrie 4.0 für die Allgem
 
 \newpage
 \subsection{Digitaler Zwilling}
-Digitale Zwillinge im industriellen Kontext nehmen eine zunehmend zentralle Rolle ein und das Interesse ist in den letzten Jahren immer mehr gestiegen.
-Erstmals wurde das Konzept von M. Grieves im Jahr 2003 in einer Präsentation zum Product Lifecycle Management vorgestellt \cite{DTGrieves}. 
-Grieves definierte drei zentrale Komponenten, die zusammen das Informationsmodell des digitalen Zwilling bilden:
+Digitale Zwillinge spielen vor allem in der Industrie eine zunehmend zentralle Rolle, wobei das Interesse an ihnen in den letzten Jahren deutlich zugenommen hat.
+Das Konzept selbst wurde erstmals von Michael Grieves im Jahr 2003 in einer Präsentation zum Product Lifecycle Management vorgestellt \cite{DTGrieves}. 
+Grieves definierte drei grundlegende Komponenten, die zusammen das Informationsmodell des digitalen Zwilling bilden:
 \begin{itemize}
     \item ein reales Objekt in der physischen Welt,
     \item ein digitales Abbild dieses Objekts in einem virtuellen Raum, sowie
     \item eine Schnittstelle, die den Informationsfluss zwischen diesen beiden ermöglicht.
 \end{itemize}
 
-Auf Basis des von Grieves entwickelten Informationsmodells hat sich der Begriff des digitalen Zwillings stetig weiter entwickelt und in verschiedenen Bereichen Einzug erhalten. 
-Aufgrund der verschiedenen Fachgebiete und unkonsistenter Definitionen haben sich in der Vergangenheit eine Vielzahl unterschiedlicher Ausprägungen des Begriffs des digitalen Zwillings gebildet.
+Auf Basis des von Grieves entwickelten Informationsmodells hat sich der Begriff des digitalen Zwillings kontinuierlich weiterentwickelt.
+Aufgrund verschiedener Fachgebiete und inkonsistenter Definitionen haben sich in der Vergangenheit allerdings eine Vielzahl unterschiedlicher Ausprägungen des Begriffs gebildet.
 Diese unterscheiden sich insbesondere in der Tiefe der Datenintegration zwischen dem physischen Objekt und seinem virtuellen Abbild.
 Während ein einfacher digitaler Zwilling lediglich ein einfaches Modell mit statischen Daten ist, ermöglichen fortgeschrittene Zwillinge einen bidrektionalen Datenaustausch zwischen physischem und virtuellem Objekt. 
 
-Grundsätzlich lassen sich digitale Zwillinge in 2 Kategorien - Typ und Instanz - unterteilen.
+Für ein besseres Verständnis und zur tieferen Klassifizierung ist es zunächst hilfreich, zwischen Typen und Instanzen des digitalen Zwillings zu unterscheiden.
 Typen sind allgemeine Abbilder, die grundlegende Eigenschaften und Verhaltensmodelle einer Produktgruppe beschreiben. 
 Sie können mit einer Klasse in der Softwarentwicklung verglichen werden, die als Vorlage für konkrete Instanzen dienen.
 Typen können zum Beispiel einen bestimmten Maschinentyp hinsichtlich Aufbau, Stuktur oder Schnittstellen beschreiben, ohne dabei Bezug zu einer einzelnen physischen Maschine zu nehmen.
@@ -283,12 +283,12 @@ Typische REST-Endpunkte sind beispielsweise:
         \toprule
         \textbf{Methode} & \textbf{Endpunkt} & \textbf{Beschreibung} \\
         \toprule
-        GET     & /shells & Liste aller AAS abrufen \\
-        GET     & /shells/\{aasIdentifier\} & Details einer bestimmten AAS anzeigen \\
-        GET     & /submodels & Liste aller Submodelle aufrufen \\
-        POST    & /shells & Neue AAS erstellen \\
-        POST    & /submodels & Neues Submodell erstellen \\
-        DELETE  & /shells/\{aasIdentifier\} & AAS löschen \\
+        \textbf{\textcolor{green!50!black}{\textit{GET}}}     & \texttt{\textit{/shells}} & Liste aller AAS abrufen \\
+        \textbf{\textcolor{green!50!black}{\textit{GET}}}     & \texttt{\textit{/shells/\{aasIdentifier\}}} & Bestimmte AAS anzeigen \\
+        \textbf{\textcolor{green!50!black}{\textit{GET}}}     & \texttt{\textit{/submodels}} & Liste aller Submodelle aufrufen \\
+        \textbf{\textcolor{orange!85!black}{\textit{POST}}}    & \texttt{\textit{/shells}} & Neue AAS erstellen \\
+        \textbf{\textcolor{orange!85!black}{\textit{POST}}}    & \texttt{\textit{/submodels}} & Neues Submodell erstellen \\
+        \textbf{\textcolor{red!80!black}{\textit{DELETE}}}  & \texttt{\textit{/shells/\{aasIdentifier\}}} & AAS löschen \\
         \midrule
     \end{tabular}
     \caption{REST-Endpunkte in Eclipse BaSyx}
