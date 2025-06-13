@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  10 JUN 2025 11:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  13 JUN 2025 16:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1524,71 +1524,73 @@ l.25 \subsection{Vorgehensweise}
 [2]) (./Grundlagen.tex
 
 [3]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 21.
+
+[4]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 53.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[4{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<Bilder/klassifizierung_DT.pdf, id=398, 592.13219pt x 227.89139pt>
+[5{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+<Bilder/klassifizierung_DT.pdf, id=406, 592.13219pt x 227.89139pt>
 File: Bilder/klassifizierung_DT.pdf Graphic file (type pdf)
 <use Bilder/klassifizierung_DT.pdf>
-Package pdftex.def Info: Bilder/klassifizierung_DT.pdf  used on input line 57.
+Package pdftex.def Info: Bilder/klassifizierung_DT.pdf  used on input line 88.
 (pdftex.def)             Requested size: 426.79135pt x 164.25552pt.
 
 
-[5 <./Bilder/klassifizierung_DT.pdf>]
+[6 <./Bilder/klassifizierung_DT.pdf>]
 
-[6]
-<Bilder/i4_komponente_neu.pdf, id=430, 388.33081pt x 129.6042pt>
+[7]
+<Bilder/i4_komponente_neu.pdf, id=438, 388.33081pt x 129.6042pt>
 File: Bilder/i4_komponente_neu.pdf Graphic file (type pdf)
 <use Bilder/i4_komponente_neu.pdf>
-Package pdftex.def Info: Bilder/i4_komponente_neu.pdf  used on input line 126.
+Package pdftex.def Info: Bilder/i4_komponente_neu.pdf  used on input line 159.
 (pdftex.def)             Requested size: 426.79135pt x 142.44638pt.
 
 
-[7 <./Bilder/i4_komponente_neu.pdf>]
+[8 <./Bilder/i4_komponente_neu.pdf>]
 
-[8]
-<Bilder/Metamodel.pdf, id=455, 275.10779pt x 283.0575pt>
+[9]
+<Bilder/Metamodel.pdf, id=463, 275.10779pt x 283.0575pt>
 File: Bilder/Metamodel.pdf Graphic file (type pdf)
 <use Bilder/Metamodel.pdf>
-Package pdftex.def Info: Bilder/Metamodel.pdf  used on input line 168.
+Package pdftex.def Info: Bilder/Metamodel.pdf  used on input line 201.
 (pdftex.def)             Requested size: 298.75264pt x 307.39926pt.
 
 
-[9 <./Bilder/Metamodel.pdf>]
-
-[10]
-Package acronym Info: Label `acro:dpp' newly defined as it shall be overridden
-although it is yet undefined on input line 193.
-
+[10 <./Bilder/Metamodel.pdf>]
 
 [11]
-<Bilder/dpp_konzept.pdf, id=511, 222.8325pt x 165.7392pt>
+Package acronym Info: Label `acro:dpp' newly defined as it shall be overridden
+although it is yet undefined on input line 226.
+
+
+[12]
+<Bilder/dpp_konzept.pdf, id=520, 222.8325pt x 165.7392pt>
 File: Bilder/dpp_konzept.pdf Graphic file (type pdf)
 <use Bilder/dpp_konzept.pdf>
-Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 228.
+Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 261.
 (pdftex.def)             Requested size: 341.43437pt x 253.97462pt.
 
 
-[12 <./Bilder/dpp_konzept.pdf>]
-<Bilder/robocell_FS2_rgb_Logo.png, id=537, 462.7689pt x 330.15344pt>
+[13 <./Bilder/dpp_konzept.pdf>]
+<Bilder/robocell_FS2_rgb_Logo.png, id=545, 462.7689pt x 330.15344pt>
 File: Bilder/robocell_FS2_rgb_Logo.png Graphic file (type png)
 <use Bilder/robocell_FS2_rgb_Logo.png>
-Package pdftex.def Info: Bilder/robocell_FS2_rgb_Logo.png  used on input line 254.
+Package pdftex.def Info: Bilder/robocell_FS2_rgb_Logo.png  used on input line 287.
 (pdftex.def)             Requested size: 462.76776pt x 330.15263pt.
 
-Overfull \hbox (35.97641pt too wide) in paragraph at lines 254--255
+Overfull \hbox (35.97641pt too wide) in paragraph at lines 287--288
 [][] 
  []
 
 
 
-[13]
+[14]
 
-[14 <./Bilder/robocell_FS2_rgb_Logo.png>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 292.
+[15 <./Bilder/robocell_FS2_rgb_Logo.png>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 325.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1598,23 +1600,23 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[15]) (./Entwicklung.tex
-Overfull \hbox (3.772pt too wide) in paragraph at lines 310--1
+[16]) (./Entwicklung.tex
+Overfull \hbox (3.772pt too wide) in paragraph at lines 343--1
 \T1/lmr/m/n/12 (-20) Web Ui ge-nutzt wer-den. Die web-ba-sier-te Be-nut-ze-ro-ber-flä-che wur-de mit dem JavaScript-
  []
 
 ) (./Ergebnisse.tex) (./Zusammenfassung.tex)
 
-[16]
+[17]
 Overfull \vbox (588.42247pt too high) has occurred while \output is active []
 
 
 
-[17]
+[18]
 No file main.gls.
 
 
-[18
+[19
 
 ]
 Package microtype Info: Character `029' is missing
@@ -1622,9 +1624,11 @@ Package microtype Info: Character `029' is missing
 (microtype)             Ignoring protrusion settings for this character.
 
 
-[19]
+[20]
 
-[20] (./main.aux)
+[21]
+
+[22] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1648,21 +1652,21 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46769 strings out of 473190
- 914491 string characters out of 5715806
- 1841568 words of memory out of 5000000
- 68991 multiletter control sequences out of 15000+600000
- 645540 words of font info for 179 fonts, out of 8000000 for 9000
+ 46783 strings out of 473190
+ 915129 string characters out of 5715806
+ 1841789 words of memory out of 5000000
+ 68999 multiletter control sequences out of 15000+600000
+ 645669 words of font info for 180 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  84i,11n,93p,2471b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{glo:SPS} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on main.pdf (27 pages, 8172319 bytes).
+Output written on main.pdf (29 pages, 8177586 bytes).
 PDF statistics:
- 694 PDF objects out of 1000 (max. 8388607)
- 612 compressed objects within 7 object streams
- 118 named destinations out of 1000 (max. 500000)
+ 716 PDF objects out of 1000 (max. 8388607)
+ 632 compressed objects within 7 object streams
+ 122 named destinations out of 1000 (max. 500000)
  50720 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -17,6 +17,56 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global/global}
+  \entry{EinführungundUmsetzungI4.0}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=RA}{%
+         family={Roth},
+         familyi={R\bibinitperiod},
+         given={Armin},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Gabler}%
+    }
+    \strng{namehash}{RA1}
+    \strng{fullhash}{RA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1007/978-3-662-48505-7
+    \endverb
+    \field{isbn}{978-3-662-48504-0}
+    \field{title}{Einführung und Umsetzung von Industrie 4.0}
+    \field{year}{2016}
+  \endentry
+
+  \entry{Industrie4.0ProduktionAutomatisierung}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TBBVHMtH}{%
+         family={Thomas\bibnamedelima Bauernhansl},
+         familyi={T\bibinitperiod\bibinitdelim B\bibinitperiod},
+         suffix={Michael ten\bibnamedelima Hompel},
+         suffixi={M\bibinitperiod\bibinitdelim t\bibinitperiod\bibinitdelim H\bibinitperiod},
+         given={Birgit Vogel-Heuser},
+         giveni={B\bibinitperiod\bibinitdelim V\bibinithyphendelim H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Vieweg}%
+    }
+    \strng{namehash}{TBMtHBVH1}
+    \strng{fullhash}{TBMtHBVH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1007/978-3-658-04682-8
+    \endverb
+    \field{isbn}{978-3-658-04681-1}
+    \field{title}{Industrie 4.0 in Produktion, Automatisierung und Logistik}
+    \field{year}{2014}
+  \endentry
+
   \entry{DTGrieves}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=GM}{%

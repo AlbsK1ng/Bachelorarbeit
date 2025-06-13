@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1749538367.70815 "main.aux" "main.bbl" "main" 1749547967.68296 0
-  "./main-blx.bib" 1749547967.26686 343 bf1f0c75b5bafd473925320ac9611e26 ""
-  "./references.bib" 1749209974.93791 6561 db17288b19cdd6b3ca829ffe8e289f83 ""
+["bibtex main"] 1749817372.05177 "main.aux" "main.bbl" "main" 1749825450.28038 0
+  "./main-blx.bib" 1749825449.8151 343 bf1f0c75b5bafd473925320ac9611e26 ""
+  "./references.bib" 1749817350.23396 7164 488137f4eded3b7accc00a259913e4c2 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1711143581 65510 b1f696b0241395385f422f67543c37fd ""
-  "main.aux" 1749547967.25986 15679 8e8580415bb2c569cc8e471146809a80 "pdflatex"
+  "main.aux" 1749825449.8081 16339 242f9f991a64179254010a7c96af91a0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1749547962.65176 "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1749547967.68326 0
+["pdflatex"] 1749825444.5353 "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1749825450.28057 0
   "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" 1748937256.97233 3655 c5f133dc8d1bca6413f92f62e26730b5 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1254269338 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
@@ -275,24 +275,24 @@
   "Bilder/i4_komponente_neu.pdf" 1748604469 24521 26cb0f1d8a14e54d7a41f86dc2ba1890 ""
   "Bilder/klassifizierung_DT.pdf" 1747904680 38690 1b19348eb029bb038375423dc8ea6606 ""
   "Bilder/robocell_FS2_rgb_Logo.png" 1741877595 7202661 29107d45f81407eaef04dbc35a96e0bc ""
-  "Einleitung.tex" 1749023735.1929 5429 c97da2b3f35d3819feb2f3e856058080 ""
+  "Einleitung.tex" 1749825226.94424 5437 d3a67024161260de00fb5bd0f9b5e3cc ""
   "Entwicklung.tex" 1749023674.11891 1022 530359a4a41d713c195bb690d4688aad ""
   "Ergebnisse.tex" 1749023558.66803 794 2a21a36e915890faf6bbf10ad4553f76 ""
-  "Grundlagen.tex" 1749547962.40374 30560 ac811268ba8888536c50d2e06aa8e745 ""
+  "Grundlagen.tex" 1749825444.23303 35603 56cabbc464514ad7ab58697a3c875916 ""
   "Titelseite.tex" 1747643554.79157 1630 fc4cd60c7847bb6b331c812500ef80c8 ""
   "Zusammenfassung.tex" 1748248406.5135 178 e1fe5fe01604a99285d654680cf1bc8c ""
   "abkuerzungsverzeichnis.tex" 1748427605.81529 304 35b7f249a184c00a4f4e735729787ca7 ""
   "commands.tex" 1747647607.92526 0 d41d8cd98f00b204e9800998ecf8427e ""
   "ehrenwoertlichErklärung.tex" 1747385158.63477 557 4ec48bd316d1a5d701d88a7edd0ff2cb ""
   "glossary.tex" 1523254870 167 69e8ece9b7c85abdb3646b31f274c667 ""
-  "main.aux" 1749547967.25986 15679 8e8580415bb2c569cc8e471146809a80 "pdflatex"
-  "main.bbl" 1749538368.08221 15897 b1a03649bc87efa439ba44b6105d5cbb "bibtex main"
+  "main.aux" 1749825449.8081 16339 242f9f991a64179254010a7c96af91a0 "pdflatex"
+  "main.bbl" 1749817372.16721 17420 b40346e6c302d0d18fccdb5453d18087 "bibtex main"
   "main.gls" 0 -1 0 ""
-  "main.lof" 1749547967.26886 426 9f171222153ea912ac862846645d3ba6 "pdflatex"
-  "main.out" 1749547967.26286 12776 5b3fc8f9488cb584c8f35f535a12477e "pdflatex"
-  "main.run.xml" 1749547967.26786 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
+  "main.lof" 1749825449.8161 441 136c659f9fbf22c6d421ebd9950e2ab9 "pdflatex"
+  "main.out" 1749825449.8121 12776 5b3fc8f9488cb584c8f35f535a12477e "pdflatex"
+  "main.run.xml" 1749825449.8161 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
   "main.tex" 1748937256.97233 3655 c5f133dc8d1bca6413f92f62e26730b5 ""
-  "main.toc" 1749547967.26886 6083 811f5fab1c9713fc5799514fd5a38362 "pdflatex"
+  "main.toc" 1749825449.8161 6083 baec210ba6d00fb196b685aded10baea "pdflatex"
   "sperrvermerk.tex" 1747385065.43251 1177 6593896265383cba0f0f0fe7a253f664 ""
   (generated)
   "main-blx.bib"
