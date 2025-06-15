@@ -1,18 +1,18 @@
 \section{Grundlagen}
-Das folgende Kapitel stellt die theoretischen und technologischen Grundlagen vor, die für das Verständnis und die Umsetzung dieser Arbeit notwendig sind.
+Das folgende Kapitel stellt die theoretischen und technologischen Grundlagen vor, die für das Verständnis und die Umsetzung dieser Arbeit erforderlich sind.
 Es beginnt mit einer Einführung in die Industrie 4.0, und vermittelt ein grundlegendes Verständnis für das Konzept des digitalen Zwillings.
-Anschließend werden die Struktur und Funktion der Asset Administration Shell (AAS) sowie die Rolle des digitalen Produktpasses erläutert.
-Den Abschluss bilden die technologischen Voraussetzungen für die praktische Umsetzung, darunter beispielsweise Eclipse BaSyx und der Kommunikationsstandard OPC UA.
+Anschließend werden die Struktur und Funktion der \acs{aas} sowie die Rolle des digitalen Produktpasses erläutert.
+Den Abschluss bilden die technologischen Voraussetzungen für die praktische Umsetzung, darunter beispielsweise die Open-Source-Plattform Eclipse BaSyx und der Kommunikationsstandard OPC UA.
 \subsection{Industrie 4.0}
 % Nach der dritten industriellen Revolution, die vor allem durch den Einsatz elektronischer Systeme sowie der Informations -und Kommunikationstechnologie zur Automatisierung gekennzeichnet ist, vollzieht sich aktuell ein neuer technologischer Wandel, die vierte industrielle Revolution.
 % Besser bekannt als Industrie 4.0, beschreibt sie die umfassende Vernetzung und Integration der physischen mit der digitalen Welt durch den Einsatz Cyber-physischer Systeme.
 
 Der Begriff Industrie 4.0 wurde erstmals im Jahr 2011 im Rahmen eines von der deutschen Bundesregierung initiierten Zukunftsprojekts eingeführt, das auf die Förderung der Informatisierung in der industriellen Fertigung abzielt.
 Angestrebt wird eine Stärkung der Wettbewerbsfähigkeit der deutschen Industrie sowie eine Verbesserung der Marktposition deutscher Unternehmen im globalen Wettbewerb.
-Industrie 4.0 steht dabei für die vierte industrielle Revolution und beschreibt die umfassende dgitale Transformation industrieller Wertschöpfungsprozesse. 
+Industrie 4.0 steht dabei für die vierte industrielle Revolution und beschreibt die umfassende digitale Transformation industrieller Wertschöpfungsprozesse. 
 Im Zentrum steht die intelligente Vernetzung von Menschen, Maschinen und Produkten über moderne digitale Kommunikationsnetzwerke, durch die eine weitreichende Integration der physischen mit der digitalen Welt ermöglicht wird.
 
-Zur besser Einordnung von Industrie 4.0 ist ein Blick auf die vorangegangen industriellen Revolutionen hilfreich.
+Zur besseren Einordnung von Industrie 4.0 ist ein Blick auf die vorangegangenen industriellen Revolutionen hilfreich.
 Die Industrialisierung begann bereits Mitte des 18. Jahrhunderts in Großbritannien und breitete sich von dort an weltweit aus. 
 Mit der Entwicklung der ersten Dampfmaschine setzte die erste industrielle Revolution ein. 
 Sie ermöglichte erstmals die Mechanisierung der Fertigung durch den Einsatz von Arbeits- und Kraftmaschinen. 
@@ -20,28 +20,28 @@ Dadurch konnten manuelle Tätigkeiten zunehmend durch Maschinenkraft ersetzt wer
 Die zweite industrielle Revolution setzte gegen Ende des 19. Jahrhunderts ein und war maßgeblich durch den flächendeckenden Einsatz von Elektrizität geprägt. 
 Mit der Erfindung elektrischer Antriebe und des Verbrennungsmotors konnten Maschinen nun auch dezentral betrieben werden - sie waren nicht länger auf zentrale Kraftquellen wie Dampfmaschinen angewiesen. 
 Dies ermöglichte eine flexiblere Gestaltung von Produktionsstätten und führte zur Entwicklung einer arbeitsteiligen Massenproduktion mithilfe von Fließ- und Förderbändern.
-Ausgehend von dem deutschen Wirtschaftswunder in den sechziger Jahren des 20. Jahrhunderts enstand in den folgenden Jahrzehnten die dritte industrielle Revolution.
-Diese zeichnet sich vor allem durch den Einsatz elektronischer Systeme sowie der Informations -und Kommunikationstechnologie zur Automatisierung aus und hält noch bis heute an.
+Ausgehend von dem deutschen Wirtschaftswunder in den sechziger Jahren des 20. Jahrhunderts entstand in den folgenden Jahrzehnten die dritte industrielle Revolution.
+Diese zeichnet sich vor allem durch den Einsatz elektronischer Systeme sowie der Informations- und Kommunikationstechnologie zur Automatisierung aus und ist noch bis heute wirksam.
 
 Aufbauend auf den vorangegangenen industriellen Revolutionen strebt die vierte industrielle Revolution eine tiefgreifende Transformation industrieller Produktionsprozesse an. 
 Im Fokus steht dabei die Vernetzung von Systemen, die über moderne Internettechnologien miteinander kommunizieren.
 Ziel dieser Entwicklung ist es, die industrielle Wertschöpfung flexibler und effizienter zu gestalten sowie eine stärkere Individualisierung von Produkten zu ermöglichen. 
 \cite{Industrie4.0ProduktionAutomatisierung}\cite{EinführungundUmsetzungI4.0}
 
-Trotz der weitverbreiteten Nutzung des Begriffs Industrie 4.0 mangeld es in der Literatur und Forschung an einer einheitlichen Definition.
-Vor diesem Hintergrund nimmt in Deutschland insbesondere die Plattform Industrie 4.0 \cite{plattform_i40} eine Schlüsselfunktion ein. 
-Dabei handelt es sich um gemeinsame Initiative des Bundesministerium für Wirtschaft und Energie, Bundesministerium Forschung,Technologie und Raumfahrt, wichtiger Industrieverbänden (z.B. VDMA, Bitkom, ZVEI), Unternehmen, Forschungseinrichtungen und Gewerkschaften.
-Die Plattform ist dabei maßgeblich an der inhaltlichen und strategischen Ausgestaltung der Industrie 4.0 beteiligt und leistet einen wichtigen Beitrag zur Begriffsdefinition. 
+Trotz der weiten Verbreitung des Begriffs Industrie 4.0 mangelt es in der Literatur und Forschung an einer einheitlichen Definition.
+Vor diesem Hintergrund nimmt insbesondere die Plattform Industrie 4.0 \cite{plattform_i40} eine zentrale Rolle in Deutschland ein. 
+Dabei handelt es sich um gemeinsame Initiative des Bundesministeriums für Wirtschaft und Energie, des Bundesministerium für Forschung, Technologie und Raumfahrt sowie führender Industrieverbände (z.B. VDMA, Bitkom, ZVEI), Unternehmen, Forschungseinrichtungen und Gewerkschaften.
+
+Die Plattform ist maßgeblich an der inhaltlichen und strategischen Ausarbeitung der Industrie 4.0 beteiligt und leistet einen entscheidenden Beitrag zur Begriffsdefinition. 
 Sie definiert Industrie 4.0 als
 \glqq die vierte industrielle Revolution, einer neuen Stufe der Organisation und Steuerung der gesamten Wertschöpfungskette über den Lebenszyklus von Produkten.
 Dieser Zyklus orientiert sich an den zunehmend individualisierten Kundenwünschen und erstreckt sich von der Idee, dem Auftrag über die Entwicklung und Fertigung, die Auslieferung eines Produkts an den Endkunden bis hin zum Recycling, einschließlich der damit verbundenen Dienstleistungen.
 Basis ist die Verfügbarkeit aller relevanten Informationen in Echtzeit durch Vernetzung aller an der Wertschöpfung beteiligten Instanzen sowie die Fähigkeit aus den Daten den zu jedem Zeitpunkt optimalen Wertschöpfungsfluss abzuleiten. 
 Durch die Verbindung von Menschen, Objekten und Systemen entstehen dynamische, echtzeitoptimierte und selbst organisierende, unternehmensübergreifende Wertschöpfungsnetzwerke, die sich nach unterschiedlichen Kriterien wie beispielsweise Kosten, Verfügbarkeit und Ressourcenverbrauch optimieren lassen \grqq~\cite[S. 8]{plattform_i40_definition}.
-Die Definition legt den Fokus auf die durchgängige Digitalisierung und Vernetzung entlang der gesamten Wertschöpfungskette. 
-Sie impliziert hiermit nicht nur technolgische Paradigmen wie autonome Steuerung, Echtzeitfähigkeit und intelligente, selbstorganissierende Strukturen, sondern auch tiefgreifende organisatorische Veränderungen über Unternehmensgrenzen hinweg.
-Dadurch lassen sich nicht nur die Qualität, Effizienz und Transparenz von Produkten entlang des gesamten Lebenszykluses deutlich steigern, sondern auch der Ressourcenverbrauch, die Produktionskosten sowie der Energieeinsatz signifikant reduzieren.
-Es wird also nicht nur die Wirtschaftlichkeit verbessert, sondern auch die ökologische Nachhaltigkeit gefördert.
-
+Diese Definition legt den Fokus auf die durchgängige Digitalisierung und Vernetzung entlang der gesamten Wertschöpfungskette. 
+Sie umfasst nicht nur technologische Konzepte wie Echtzeitfähigkeit, autonome Steuerung und selbstorganisierende Systeme, sondern impliziert auch tiefgreifende organisatorische Veränderungen über Unternehmensgrenzen hinweg. 
+Dadurch lassen sich nicht nur Qualität, Effizienz und Transparenz entlang des gesamten Produktlebenszyklus deutlich steigern, sondern auch Ressourcenverbrauch, Produktionskosten und Energieeinsatz signifikant reduzieren. 
+Industrie 4.0 trägt somit nicht nur zur Verbesserung der Wirtschaftlichkeit bei, sondern leistet auch einen wichtigen Beitrag zur ökologischen Nachhaltigkeit.
 % Obwohl Industrie 4.0 häufig als neuartiges Konzept dargestellt wird, basiert es im Kern auf Ideen, die schon seit mehreren Jahrzenten exisiteren.
 % Bereits seit den 1980er-Jahren wurden mit Ansätzen wie dem Computer Integrated Manufacturing (CIM) oder der intelligenten Fabrik (Smart Factory) Strategien entwickelt, die auf eine computerintegrierte und automatisierte Produktion abzielen und dabei den Menschen mehr in den Hintergrund rücken.
 % Allerdings scheiterten diese frühen Ansätze oft an den technische Möglichkeiten der damaligen Zeit, vor allem fehlte die Infrastruktur, Rechenleistung und Vernetzung.

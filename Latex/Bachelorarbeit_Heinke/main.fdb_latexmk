@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1750009233.60745 "main.aux" "main.bbl" "main" 1750009430.72065 0
-  "./main-blx.bib" 1750009429 343 bf1f0c75b5bafd473925320ac9611e26 ""
-  "./references.bib" 1750009115 7885 11e6a763e121c246a9c4fe3608ec3580 ""
+["bibtex main"] 1750018764.06962 "main.aux" "main.bbl" "main" 1750018837.39799 0
+  "./main-blx.bib" 1750018835 343 bf1f0c75b5bafd473925320ac9611e26 ""
+  "./references.bib" 1750014550 7937 cdb78b2c7ae56fa0f1ad244d2465a98d ""
   "C:/Users/albi0/AppData/Local/Programs/MiKTeX/bibtex/bst/biblatex/biblatex.bst" 1711466047 65510 b1f696b0241395385f422f67543c37fd ""
-  "main.aux" 1750009429 17099 7ac2c0cb0f19a238d80b33014dd7271a "pdflatex"
+  "main.aux" 1750018835 17117 003e82f4123b0e9e4a6b8d7d136645ae "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1750009423.37655 "c:/Users/albi0/Git/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1750009430.72185 0
+["pdflatex"] 1750018829.40241 "c:/Users/albi0/Git/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1750018837.39983 0
   "Bilder/Groninger.jpg" 1748776018 44543 451238750752a654535f3865252e9c57 ""
   "Bilder/HHN.png" 1748776018 14776 3ddea09f454f790992f8bf254f380852 ""
   "Bilder/Metamodel.pdf" 1748882588 48220 ed4e26f3db865c881ff74bb61726f9e7 ""
@@ -276,7 +276,7 @@
   "Einleitung.tex" 1749978089 5480 d3a67024161260de00fb5bd0f9b5e3cc ""
   "Entwicklung.tex" 1749497998 1041 530359a4a41d713c195bb690d4688aad ""
   "Ergebnisse.tex" 1749497998 811 2a21a36e915890faf6bbf10ad4553f76 ""
-  "Grundlagen.tex" 1750009422 38979 72df249b26dd038502ce47d82006f5a1 ""
+  "Grundlagen.tex" 1750018828 39002 767d4ed12c306c9ce12017f68a3f2bad ""
   "Titelseite.tex" 1748776018 1689 fc4cd60c7847bb6b331c812500ef80c8 ""
   "Zusammenfassung.tex" 1748776018 181 e1fe5fe01604a99285d654680cf1bc8c ""
   "abkuerzungsverzeichnis.tex" 1750008236 383 6dd0ca3a1d0871a8fe3ef0a880b46e9c ""
@@ -284,14 +284,14 @@
   "commands.tex" 1748776018 0 d41d8cd98f00b204e9800998ecf8427e ""
   "ehrenwoertlichErklärung.tex" 1748776018 567 4ec48bd316d1a5d701d88a7edd0ff2cb ""
   "glossary.tex" 1748776018 170 69e8ece9b7c85abdb3646b31f274c667 ""
-  "main.aux" 1750009429 17099 7ac2c0cb0f19a238d80b33014dd7271a "pdflatex"
-  "main.bbl" 1750009233 19745 6c44e31c8b9baaf7b001cfd044aac375 "bibtex main"
+  "main.aux" 1750018835 17117 003e82f4123b0e9e4a6b8d7d136645ae "pdflatex"
+  "main.bbl" 1750018764 19809 31d9395bede18650f460b23b5c6b81a3 "bibtex main"
   "main.gls" 0 -1 0 ""
-  "main.lof" 1750009429 441 e62d34f2e53b532264c729d36d112b7d "pdflatex"
-  "main.out" 1750009429 12777 aea0229d8439dcbe1fabc1970e0ce52b "pdflatex"
-  "main.run.xml" 1750009429 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
+  "main.lof" 1750018835 441 e62d34f2e53b532264c729d36d112b7d "pdflatex"
+  "main.out" 1750018835 12777 aea0229d8439dcbe1fabc1970e0ce52b "pdflatex"
+  "main.run.xml" 1750018835 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
   "main.tex" 1749499673 3820 c5f133dc8d1bca6413f92f62e26730b5 ""
-  "main.toc" 1750009429 6084 8c38b15dcced6ee072504bfb4be1b0cb "pdflatex"
+  "main.toc" 1750018835 6084 8c38b15dcced6ee072504bfb4be1b0cb "pdflatex"
   "sperrvermerk.tex" 1748776019 1195 6593896265383cba0f0f0fe7a253f664 ""
   (generated)
   "main-blx.bib"
