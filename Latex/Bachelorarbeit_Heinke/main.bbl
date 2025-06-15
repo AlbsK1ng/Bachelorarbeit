@@ -17,6 +17,44 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global/global}
+  \entry{Industrie4.0ProduktionAutomatisierung}{misc}{}{}
+    \name{author}{3}{}{%
+      {{hash=BT}{%
+         family={Bauernhansl},
+         familyi={B\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=tHM}{%
+         prefix={ten},
+         prefixi={t\bibinitperiod},
+         family={Hompel},
+         familyi={H\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=VHB}{%
+         family={Vogel-Heuser},
+         familyi={V\bibinithyphendelim H\bibinitperiod},
+         given={Birgit},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Vieweg}%
+    }
+    \strng{namehash}{BTHMtVHB1}
+    \strng{fullhash}{BTHMtVHB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1007/978-3-658-04682-8
+    \endverb
+    \field{isbn}{978-3-658-04681-1}
+    \field{title}{Industrie 4.0 in Produktion, Automatisierung und Logistik}
+    \field{year}{2014}
+  \endentry
+
   \entry{EinführungundUmsetzungI4.0}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=RA}{%
@@ -41,30 +79,75 @@
     \field{year}{2016}
   \endentry
 
-  \entry{Industrie4.0ProduktionAutomatisierung}{misc}{}{}
+  \entry{plattform_i40}{misc}{}{}
     \name{author}{1}{}{%
-      {{hash=TBBVHMtH}{%
-         family={Thomas\bibnamedelima Bauernhansl},
-         familyi={T\bibinitperiod\bibinitdelim B\bibinitperiod},
-         suffix={Michael ten\bibnamedelima Hompel},
-         suffixi={M\bibinitperiod\bibinitdelim t\bibinitperiod\bibinitdelim H\bibinitperiod},
-         given={Birgit Vogel-Heuser},
-         giveni={B\bibinitperiod\bibinitdelim V\bibinithyphendelim H\bibinitperiod},
+      {{hash=P}{%
+         family={{Plattform Industrie 4.0}},
+         familyi={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{P1}
+    \strng{fullhash}{P1}
+    \field{labelnamesource}{author}
+    \verb{url}
+    \verb https://www.plattform-i40.de/
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{15}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{plattform_i40_definition}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=BZV}{%
+         family={BITKOM},
+         familyi={B\bibinitperiod},
+         suffix={VDMA},
+         suffixi={V\bibinitperiod},
+         given={ZVEI},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BVZ1}
+    \strng{fullhash}{BVZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Umsetzungsstrategie Industrie 4.0}}
+    \verb{url}
+    \verb https://www.plattform-i40.de/
+    \endverb
+    \field{month}{04}
+    \field{year}{2025}
+    \field{urlday}{15}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{RAMI4.0}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=VB}{%
+         family={Verlag},
+         familyi={V\bibinitperiod},
+         given={Beuth},
+         giveni={B\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
-      {Springer Vieweg}%
+      {Deutsches Institut für Normung e.V. (DIN)}%
     }
-    \strng{namehash}{TBMtHBVH1}
-    \strng{fullhash}{TBMtHBVH1}
+    \strng{namehash}{VB1}
+    \strng{fullhash}{VB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \verb{doi}
-    \verb 10.1007/978-3-658-04682-8
+    \verb 10.31030/2436156
     \endverb
-    \field{isbn}{978-3-658-04681-1}
-    \field{title}{Industrie 4.0 in Produktion, Automatisierung und Logistik}
-    \field{year}{2014}
+    \field{title}{DIN SPEC 91345:2016-04 - Refernzarchitekturmodell Industrie
+  4.0 (RAMI 4.0)}
+    \field{month}{04}
+    \field{year}{2016}
   \endentry
 
   \entry{DTGrieves}{misc}{}{}
@@ -81,7 +164,8 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{White Paper}
-    \field{title}{Digital Twin: Manufacturing Excellence through Virtual Factory Replication}
+    \field{title}{Digital Twin: Manufacturing Excellence through Virtual
+  Factory Replication}
     \verb{url}
     \verb https://www.researchgate.net/publication/275211047
     \endverb
@@ -160,7 +244,8 @@
     \endverb
     \field{number}{11}
     \field{pages}{1016\bibrangedash 1022}
-    \field{title}{Digital Twin in manufacturing: A categorical literature review and classification}
+    \field{title}{Digital Twin in manufacturing: A categorical literature
+  review and classification}
     \field{volume}{51}
     \field{journaltitle}{IFAC-PapersOnLine}
     \field{year}{2018}
@@ -251,7 +336,8 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{Joint Whitepaper}
-    \field{title}{Digital Twin and Asset Administration Shell Concepts and Application in the Industrial Internet and Industrie 4.0}
+    \field{title}{Digital Twin and Asset Administration Shell Concepts and
+  Application in the Industrial Internet and Industrie 4.0}
     \verb{url}
     \verb https://www.iiconsortium.org/pdf/Digital-Twin-and-Asset-Administratio
     \verb n-Shell-Concepts-and-Application-Joint-Whitepaper.pdf
@@ -260,16 +346,6 @@
     \field{urlday}{06}
     \field{urlmonth}{06}
     \field{urlyear}{2025}
-  \endentry
-
-  \entry{RAMI4.0}{misc}{}{}
-    \list{publisher}{1}{%
-      {Deutsches Institut für Normung e.V. (DIN)}%
-    }
-    \field{labeltitlesource}{title}
-    \field{title}{DIN SPEC 91345:2016-04 - Refernzarchitekturmodell Industrie 4.0 (RAMI 4.0)}
-    \field{month}{04}
-    \field{year}{2016}
   \endentry
 
   \entry{AASIEC63278}{misc}{}{}
@@ -285,7 +361,8 @@
     \field{labeltitlesource}{title}
     \field{edition}{1.0}
     \field{note}{Internationale Norm, IEC}
-    \field{title}{IEC 63278-1:2023 - Asset Administration Shell for industrial applications - Part 1: Asset Administration Shell structure}
+    \field{title}{IEC 63278-1:2023 - Asset Administration Shell for industrial
+  applications - Part 1: Asset Administration Shell structure}
     \verb{url}
     \verb https://webstore.iec.ch/en/publication/65628
     \endverb
@@ -320,14 +397,16 @@
          family={(IDTA)},
          familyi={I\bibinitperiod},
          given={Industrial Digital Twin\bibnamedelima Association},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim A\bibinitperiod},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
+  T\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
     \strng{namehash}{IIDTA1}
     \strng{fullhash}{IIDTA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Specification of the Asset Administration Shell - Part 1: Metamodel}
+    \field{title}{Specification of the Asset Administration Shell - Part 1:
+  Metamodel}
     \verb{url}
     \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
     \endverb
@@ -352,7 +431,9 @@
     \field{labeltitlesource}{title}
     \field{edition}{4.0}
     \field{note}{Internationale Norm, IEC}
-    \field{title}{IEC 61360-1:2017 - Standard data element types with associated classification scheme - Part 1: Definitions - Principles and methods}
+    \field{title}{IEC 61360-1:2017 - Standard data element types with
+  associated classification scheme - Part 1: Definitions - Principles and
+  methods}
     \verb{url}
     \verb https://webstore.iec.ch/en/publication/28560
     \endverb
@@ -366,14 +447,16 @@
          family={(IDTA)},
          familyi={I\bibinitperiod},
          given={Industrial Digital Twin\bibnamedelima Association},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim A\bibinitperiod},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
+  T\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
     \strng{namehash}{IIDTA1}
     \strng{fullhash}{IIDTA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Specification of the Asset Administration Shell - Part 5: Package File Format (AASX)}
+    \field{title}{Specification of the Asset Administration Shell - Part 5:
+  Package File Format (AASX)}
     \verb{url}
     \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
     \endverb
@@ -391,14 +474,16 @@
          family={(IDTA)},
          familyi={I\bibinitperiod},
          given={Industrial Digital Twin\bibnamedelima Association},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim A\bibinitperiod},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
+  T\bibinitperiod\bibinitdelim A\bibinitperiod},
       }}%
     }
     \strng{namehash}{IIDTA1}
     \strng{fullhash}{IIDTA1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Specification of the Asset Administration Shell - Part 2: Application Programming Interfaces}
+    \field{title}{Specification of the Asset Administration Shell - Part 2:
+  Application Programming Interfaces}
     \verb{url}
     \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
     \endverb
@@ -471,7 +556,8 @@
     \strng{fullhash}{PC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{The Digital Product Passport as defined in the Proposal for Eco-design for Sustainable Product Regulation (ESPR)}
+    \field{title}{The Digital Product Passport as defined in the Proposal for
+  Eco-design for Sustainable Product Regulation (ESPR)}
     \verb{url}
     \verb https://cirpassproject.eu/wp-content/uploads/2023/03/ESPR-short-summa
     \verb ry-Final.pdf
@@ -515,7 +601,8 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{ZVEI Discussion Paper}
-    \field{title}{DPP 4.0: An Architecture Proposal for a DPP-System to implement the EU Digital Product Passport for Industrial Products}
+    \field{title}{DPP 4.0: An Architecture Proposal for a DPP-System to
+  implement the EU Digital Product Passport for Industrial Products}
     \verb{url}
     \verb https://www.zvei.org/fileadmin/user_upload/Themen/Industrie/Fachverba
     \verb nd_Automation/2023-12_Discussion_Paper_DPP4.0_Architecture_v1.1.pdf
@@ -544,7 +631,8 @@
     \field{labeltitlesource}{title}
     \field{edition}{1.0}
     \field{note}{Internationale Norm, IEC}
-    \field{title}{IEC 61406-1:2022 - Identification Link - Part 1: General requirements}
+    \field{title}{IEC 61406-1:2022 - Identification Link - Part 1: General
+  requirements}
     \verb{url}
     \verb https://webstore.iec.ch/en/publication/67673
     \endverb
