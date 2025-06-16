@@ -30,7 +30,7 @@ Ziel dieser Entwicklung ist es, die industrielle Wertschöpfung flexibler und ef
 
 Trotz der weiten Verbreitung des Begriffs Industrie 4.0 mangelt es in der Literatur und Forschung an einer einheitlichen Definition.
 Vor diesem Hintergrund nimmt insbesondere die Plattform Industrie 4.0 \cite{plattform_i40} eine zentrale Rolle in Deutschland ein. 
-Dabei handelt es sich um gemeinsame Initiative des Bundesministeriums für Wirtschaft und Energie, des Bundesministerium für Forschung, Technologie und Raumfahrt sowie führender Industrieverbände (z.B. VDMA, Bitkom, ZVEI), Unternehmen, Forschungseinrichtungen und Gewerkschaften.
+Dabei handelt es sich um eine gemeinsame Initiative des Bundesministeriums für Wirtschaft und Energie, des Bundesministerium für Forschung, Technologie und Raumfahrt sowie führender Industrieverbände (z.B. VDMA, Bitkom, ZVEI), Unternehmen, Forschungseinrichtungen und Gewerkschaften.
 
 Die Plattform ist maßgeblich an der inhaltlichen und strategischen Ausarbeitung der Industrie 4.0 beteiligt und leistet einen entscheidenden Beitrag zur Begriffsdefinition. 
 Sie definiert Industrie 4.0 als
@@ -88,7 +88,7 @@ Je nach Art des Informationsflusses sowie dem Grad der Ausprägung der Verbindun
 Obwohl diese Begriffe im allgemeinen Sprachgebrauch oft synonym verwendet werden, unterscheiden sie sich deutlich hinsichtlich ihrer Funktion und Kopplung zum realen Objekt.
 Digitale Modelle sind statische Abbilder physischer Objekte, haben jedoch keine Verbindung zu diesen. 
 Oft werden sie zur Veranschauclichung oder Konstruktion genutzt, wie zum beispiel ein 3D-Modell einer Maschine.
-Zwar können reale Daten, wie etwa Maße oder Materialeigenschaften einer Anlage oder Maschine in ein solches Modell integriert werden, allerdings erfolgt die Eingabe dabei immmer manuel.
+Zwar können reale Daten, wie etwa Maße oder Materialeigenschaften einer Anlage oder Maschine in ein solches Modell integriert werden, allerdings erfolgt die Eingabe dabei immmer manuell.
 Änderungen an dem realen Objekt werden nicht automatisch aktualisiert und bleiben somit ohne Einfluss auf das digitale Modell.
 Der digitale Schatten ergänzt das digitale Modell um eine unindirektionale Verbindung zum realen Objekt.
 Dabei fließen Daten des physischen Objekts meist in Echtzeit über zum Beispiel geeignete Sensoren zum digitalen Objekt.
@@ -237,6 +237,18 @@ Registries dienen als zentraler Ort zur Registrierung von AAS und Submodellen an
 Discovery(-Server) unterstützen eine schnelle Suche, indem sie Beziehungen anhand verschiedener Schlüsselpaare speichern. So kann zum Beispeil eine AAS über eine Asset-ID gefunden werden. 
 Die fortschrittlichste Form des Austauschs ist die Peer-to-peer Kommunikation, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren können.
 
+Gerade wenn Informationen aus der \acs{aas} über die Grenzen des eigenen Unternehmens hinweg bereitgestellt werden, ist es essenziell, die Sicherheit der enthaltenen Daten zu gewährleisten. 
+Die neueste Spezifikation Part 4: Security \cite{SpezifikationPart4} der \acs{idta} bildet hierfür das technische und konzeptionelle Fundament.
+Sehr neu - neue Ansätze und Services
+Identity provider - policy storage etc. 
+Darin wird ein umfassendes Access Control Model beschrieben, das auf dem Prinzip der attributbasierten Zugriffskontrolle (Attribute Based Access Control (ABAC)) basiert.
+ABAC ermöglicht dabei eine feingranulare Steuerung von Zugriffsrechten für bestimmte Operationen (z.B. Lesen oder Schreiben), die an einem Objekt ausgeführt werden sollen.
+Im Kontext der \acs{aas} können diese Objekte beispielsweise ein Submodell oder ein bestimmtes Submodellelemt wie ein Merkmal (Property) sein.
+Die Zugriffsentscheidung erfolgt dabei über Attribute. 
+Diese umfassen unteranderem Subjektattribute (wer stellt die Anfrage?), Objektattribute (auf welche Informationen soll zugegriffen werden?), die beabsichtigte Aktion (z. B. Lesen oder Schreiben) sowie kontextbezogene Merkmale wie der aktuelle Zeitpunkt oder der Zustand des Systems.
+Zusätzlich können auch Rollen als Attribute definiert werden, wodurch sich der ABAC Ansatz auch flexibel mit rollenbasierter Zugriffskontrolle (Role Based Access Controll (RBAC)) kombinieren lässt.
+
+
 \newpage
 \subsection{Digitaler Produktpass für Industrie 4.0}
 Der \ac{dpp} ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation.
@@ -323,7 +335,7 @@ In ihr können neue \acs{aas} registriert und bereits vorhandene Verwaltungsscha
 Sie bildet damit die zentrale Anlaufstelle für Geräte und Anwendungen innerhalb eines Industrie-4.0-Systems
 Analog dazu gibt es eine seperate Registry für die Verwaltung von Submodellen.
 
-Die eigentlichen Daten der AAS werden in der \acs{aas} Environment gespeichert und organisiert.
+Die eigentlichen Daten der AAS werden in der sogenannten \acs{aas} Environment gespeichert und organisiert.
 Sie umfasst Repositories für AAS, Submodelle und Concept Descriptions.
 In der Regel ist eine Datenbank, standardmäßig eine MongoDB als persistenter Speicher hinterlegt.
 Wie auch alle anderen Komponente stellen diese Repositories standardisierte Schnittstellen basierend auf der API-Spezifikation zur Verfügung.
@@ -354,7 +366,7 @@ Im BaSyx-System ermöglicht sin sogenannter Discovery-Service die Verknüpfung p
 Dabei wird eine spezifische Asset-Id mit der entsprechenden AAS-ID verlinkt.
 Dies ist insbesondere für die Abbildung von hierarchischen Strukturen wie Stücklisten (Bill of Materials, BOM) von großer Bedeutung.
 Ein übergeordnetes Asset (z.B. Maschine) kann so beispielsweise mit untergeordneten Komponenten (z.B. Antrieb, Sensoren) logisch über deren AAS verbunden werden.
-Einträge in den Discovery-Service müssen derzeit noch manuell über die API vorgenommen werden.
+Einträge in den Discovery-Service müssen derzeit allerdings noch manuell über die API vorgenommen werden.
 
 Zur benutzerfreundlichen Visualisierung und Interaktion kann die sogenannte AAS Web Ui genutzt werden.
 Die webbasierte Benutzeroberfläche wurde mit dem JavaScript-Framework Vue.js entwickelt und kommuniziert über die standardisierte REST-API mit den zentralen Komponenten der BaSyx-Plattform, darunter die Repositories, Registries und der Discovery Service.
@@ -363,4 +375,4 @@ Darüber hinaus unterstützt die Anwendung das Hochladen von Typ-1-AAS in Form v
 Ein weiteres zentrales Merkmal der AAS Web UI ist der sogenannte AAS-Viewer.
 Dieser erlaubt die Visualisierung von Submodellen und deren Elementen anhand ihrer semantischen ID. 
 Hierfür stehen verschiedene vordefinierte Plugins zur Verfügung, die bestimmte Submodelle - wie beispielsweise das Typenschild oder hierarchische Strukturen - grafisch darstellen.
-Da die Lösung Open Source ist besteht zudem die Möglichkeit, eigene benutzderfenierte Plugins für weitere Submodelle zu erstellen. \cite{BaSyxWiki} \cite{BaSyxEclipse}
+Da die Lösung Open Source ist besteht zudem die Möglichkeit, eigene benutzerdefinierte Plugins für weitere Submodelle zu erstellen. \cite{BaSyxWiki} \cite{BaSyxEclipse}
