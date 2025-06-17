@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  16 JUN 2025 16:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  17 JUN 2025 15:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1576,25 +1576,25 @@ Package pdftex.def Info: Bilder/Metamodel.pdf  used on input line 217.
 
 [13]
 Package acronym Info: Label `acro:dpp' newly defined as it shall be overridden
-although it is yet undefined on input line 254.
+although it is yet undefined on input line 277.
 
 
 [14]
-<Bilder/dpp_konzept.pdf, id=545, 222.8325pt x 165.7392pt>
+<Bilder/dpp_konzept.pdf, id=552, 222.8325pt x 165.7392pt>
 File: Bilder/dpp_konzept.pdf Graphic file (type pdf)
 <use Bilder/dpp_konzept.pdf>
-Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 289.
+Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 312.
 (pdftex.def)             Requested size: 341.43437pt x 253.97462pt.
 
 
 [15 <./Bilder/dpp_konzept.pdf>]
-<Bilder/robocell_FS2_rgb_Logo.png, id=570, 462.7689pt x 330.15344pt>
+<Bilder/robocell_FS2_rgb_Logo.png, id=577, 462.7689pt x 330.15344pt>
 File: Bilder/robocell_FS2_rgb_Logo.png Graphic file (type png)
 <use Bilder/robocell_FS2_rgb_Logo.png>
-Package pdftex.def Info: Bilder/robocell_FS2_rgb_Logo.png  used on input line 315.
+Package pdftex.def Info: Bilder/robocell_FS2_rgb_Logo.png  used on input line 338.
 (pdftex.def)             Requested size: 462.76776pt x 330.15263pt.
 
-Overfull \hbox (35.97641pt too wide) in paragraph at lines 315--316
+Overfull \hbox (35.97641pt too wide) in paragraph at lines 338--339
 [][] 
  []
 
@@ -1603,7 +1603,7 @@ Overfull \hbox (35.97641pt too wide) in paragraph at lines 315--316
 [16]
 
 [17 <./Bilder/robocell_FS2_rgb_Logo.png>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 353.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 376.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1614,7 +1614,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 [18]) (./Entwicklung.tex
-Overfull \hbox (3.772pt too wide) in paragraph at lines 371--1
+Overfull \hbox (3.772pt too wide) in paragraph at lines 394--1
 \T1/lmr/m/n/12 (-20) Web Ui ge-nutzt wer-den. Die web-ba-sier-te Be-nut-ze-ro-ber-flä-che wur-de mit dem JavaScript-
  []
 
@@ -1659,7 +1659,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: AEA0229D8439DCBE1FABC1970E0CE52B;12777.
+(rerunfilecheck)             Checksum: CDCBE5487E17ABA7EEBBC52B29AA64B1;12675.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -1672,7 +1672,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  46814 strings out of 473190
  916143 string characters out of 5715806
- 1842113 words of memory out of 5000000
+ 1842094 words of memory out of 5000000
  69017 multiletter control sequences out of 15000+600000
  646028 words of font info for 183 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
@@ -1681,10 +1681,10 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{glo:SPS} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on main.pdf (31 pages, 8156242 bytes).
+Output written on main.pdf (31 pages, 8156984 bytes).
 PDF statistics:
- 749 PDF objects out of 1000 (max. 8388607)
- 662 compressed objects within 7 object streams
+ 756 PDF objects out of 1000 (max. 8388607)
+ 669 compressed objects within 7 object streams
  129 named destinations out of 1000 (max. 500000)
  50720 words of extra memory for PDF output out of 51595 (max. 10000000)
 

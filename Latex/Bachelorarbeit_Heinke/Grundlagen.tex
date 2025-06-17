@@ -63,8 +63,8 @@ Digitale Zwillinge gelten als eine der Schlüsseltechnologien der Industrie 4.0.
 Als digitales Gegenstück eines physischen Objekts - sei es eine Maschine ein Produkt oder eine komplette Anlage - bilden sie dessen Zustand, Verhalten und Leistung virtuell ab.
 Dadurch ermöglichen sie eine konsistenete Erfassung von Daten, das Simulieren von Prozessen und das frühzeitige Erkennen von Optimierungspotenzialen.
 
-Das Konzept selbst wurde erstmals von Michael Grieves im Jahr 2003 in einer Präsentation zum Product Lifecycle Management vorgestellt \cite{DTGrieves}. 
-Grieves definierte drei grundlegende Komponenten, die zusammen das Informationsmodell des digitalen Zwilling bilden:
+Das Konzept selbst wurde erstmals von Michael Grieves im Jahr 2003 in einer Präsentation zum Product Lifecycle Management vorgestellt. 
+Grieves definierte drei grundlegende Komponenten (vgl. \cite{DTGrieves}) , die zusammen das Informationsmodell des digitalen Zwilling bilden:
 \begin{itemize}
     \item ein reales Objekt in der physischen Welt,
     \item ein digitales Abbild dieses Objekts in einem virtuellen Raum, sowie
@@ -199,14 +199,14 @@ Zu den wichtigsten Submodellelementen zählen:
     \item \textbf{SubmodelElementCollection}: Sammlung von Submodellelementen
 \end{itemize}
 Es ist wichtig alle Submodelle bzw. alle Elemente über eine eindeutige Semantik zu beschreiben.
-Hierfür gibt es sogenannte \glqq Concept Desciptions\grqq. Diese enthalten unter anderem Beschreibugen, Definitionen, Einheiten und externe Referenzen für ein bestimmtes Element.
+Hierfür gibt es sogenannte Concept Desciptions. Diese enthalten unter anderem Beschreibugen, Definitionen, Einheiten und externe Referenzen für ein bestimmtes Element.
 Sie helfen bei der Klassifizierung von Daten und sorgen für ein gemeinsames Verständnis unterschiedlicher Systeme.
 Fehlt diese semantische Beschreibung, so kann es schnell zu Missverständnissen kommen.
 Wenn zum Beispiel einfach nur ein Wert wie 25 vorliegt, ist ohne weitere Informationen unklar, was gemeint ist. 
 Es könnte sich beispielsweise um 25 Euro, 25 Meter oder 25 Grad Celsius handeln.
 Erst durch die zugehörige Concept Description, in der die Einheit und Bedeutung definiert werden, wird der Wert eindeutig interpretierbar. 
 Diese semantische Beschreibungen können entweder direkt in die AAS eingebetet oder über externes Standards referenziert werden.
-Die Zuordnung erfolgt über eine sogenannte \glqq semanticID\grqq.
+Die Zuordnung erfolgt über eine sogenannte semanticID.
 Ein häufig verwendeter externer Standard ist zum Beispiel ECLASS.
 ECLASS basiert auf dem Datenmodell der Norm IEC 61360 \cite{ECLASSIEC61360}, welche eine standardisierte Struktur für Merkmale und deren semantische Beschreibung definiert.
 
@@ -226,31 +226,54 @@ Alle Eigenschaften innerhalb dieser Vorlagen werden dabei in Verbindung mit dem 
 Diese Templates könen über ein zentrales Repository bezogen werden und bilden die Basis für eine interoperable semantische Datenstruktur.
 
 Der Austausch von Informationen über die AAS kann auf unterschiedliche Weise erfolgen.
-Die einfachste Möglichkeit ist der Austausch über Dateien. Hierfür gibt es speziell für die AAS entwickelte AASX-Dateien \cite{SpezifikationPart5}, die einen einfachen Austausch statischer Verwaltungsschalen (Typ 1) erlauben.
-Hierbei werden alle Daten, Beziehungen, die Struktur sowie zugehörige Dateien der AAS serialisiert in ein AASX-ZIP-Dateiformat gespeichert. Die Datei kann schließlich über ein digitales Medium wie eine E-Mail oder eine Cloud-Plattform weitergegeben werden.  
-Typ-2 Verwaltungsschalen hingegen werden von einer Laufzeitumgebung gehosted und ermöglichen dadurch einen dynamischen Zugriff auf Informationen. 
-In der Spezifikitation Part 2: Aplication Programming Interfaces \cite{SpezifikationPart2} werden drei Kernkomponenten beschrieben, die zusammen ein System für einen interoperablen, standardisierten Zugriff bilden.
-Repositories speichern die Inhalte der AAS, einschließlich ihrer Submodelle und Concept Descriptions (siehe weiter unten).
-Über definierte Schnittstellen (APIs) können Daten aus einer AAS oder einem Submodell gelesen oder geschrieben werden.
-Der Zugriff kann dabei mit verschiedenen Technologien wie HTTP/REST, MQTT oder OPC UA stattfinden.
-Registries dienen als zentraler Ort zur Registrierung von AAS und Submodellen anhand iherer eindeutigen IDs. Sie ermöglichen das Auffinden von AAS innerhalb eines Systems.
-Discovery(-Server) unterstützen eine schnelle Suche, indem sie Beziehungen anhand verschiedener Schlüsselpaare speichern. So kann zum Beispeil eine AAS über eine Asset-ID gefunden werden. 
-Die fortschrittlichste Form des Austauschs ist die Peer-to-peer Kommunikation, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren können.
+Die einfachste Möglichkeit besteht im Dateiaustausch. Hierfür wurden speziell für die AAS sogenannte AASX-Dateien \cite{SpezifikationPart5} entwickelt, die den einfachen Austausch statischer \acs{aas} (Typ 1) ermöglichen.
+Dabei werden sämtliche Daten, Beziehungen, Strukturen sowie zugehörige Dateien der AAS serialisiert und in ein AASX-ZIP-Dateiformat gespeichert. Diese Datei kann anschließend über ein digitales Medium, etwa per E-Mail oder eine Cloud-Plattform, weitergegeben werden. 
+Eine Typ 2-\acs{aas} hingegen wird von einer Laufzeitumgebung gehosted, wodurch ein direkter und dynamischen Zugriff auf ihre Inhalte ermöglicht. 
+Die Spezifikitation Part 2: Aplication Programming Interfaces \cite{SpezifikationPart2} beschreibt hierfür nicht nur standardisierte Schnittstellen, sonder auch ein ganzheitliches System für das Verwalten, Bereitstellen und Auffinden der AAS.
+Repositories dienen dabei als zentraler Speicherort für die Inhalte einer \acs{aas}, einschließlich ihrer Submodelle und Concept Descriptions.
+Die Aufgabe der Verwaltung und Registrierung wird von Registries übernommen.
+Sie ermöglichen das systemweite Auffinden von \acs{aas} und stellen sicher, dass diese eindeutig referenzierbar sind.
+Ergänzend dazu bieten Discovery-Services eine erweiterte Suchfunktionalität, indem sie Beziehungen verschiedener Entitäten mittels verschiedener Schlüsselwertpaare speichern.
+Eine AAS kann so zum Beispiel logisch mit einer Asset-Id verknüpft werden und somit schnell innerhalb komplexer Systeme identifiziert werden.
+Der Zugriff auf diese Systeme bzw. ihrer Inhalte wird in Form von Schnittstellen standardisiert, wodurch eine hohe Interoperabilität gewährleistet wird.
+Ein besonderer Fokus liegt dabei auf HTTP/REST, welches durch definierte Zugriffsprinzipien strukturiert ist. Diese folgen dabei dem REST-Schema und unterstützen gängige HTTP-Methoden wie GET, POST, PUT oder DELETE.
+Die fortschrittlichste Form des Informationsaustausches stellt die Peer-to-peer Kommunikation, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren können.
+Dadurch wird ein automatisierter 
 
-Gerade wenn Informationen aus der \acs{aas} über die Grenzen des eigenen Unternehmens hinweg bereitgestellt werden, ist es essenziell, die Sicherheit der enthaltenen Daten zu gewährleisten. 
-Die neueste Spezifikation Part 4: Security \cite{SpezifikationPart4} der \acs{idta} bildet hierfür das technische und konzeptionelle Fundament.
-Sehr neu - neue Ansätze und Services
-Identity provider - policy storage etc. 
-Darin wird ein umfassendes Access Control Model beschrieben, das auf dem Prinzip der attributbasierten Zugriffskontrolle (Attribute Based Access Control (ABAC)) basiert.
-ABAC ermöglicht dabei eine feingranulare Steuerung von Zugriffsrechten für bestimmte Operationen (z.B. Lesen oder Schreiben), die an einem Objekt ausgeführt werden sollen.
-Im Kontext der \acs{aas} können diese Objekte beispielsweise ein Submodell oder ein bestimmtes Submodellelemt wie ein Merkmal (Property) sein.
-Die Zugriffsentscheidung erfolgt dabei über Attribute. 
-Diese umfassen unteranderem Subjektattribute (wer stellt die Anfrage?), Objektattribute (auf welche Informationen soll zugegriffen werden?), die beabsichtigte Aktion (z. B. Lesen oder Schreiben) sowie kontextbezogene Merkmale wie der aktuelle Zeitpunkt oder der Zustand des Systems.
-Zusätzlich können auch Rollen als Attribute definiert werden, wodurch sich der ABAC Ansatz auch flexibel mit rollenbasierter Zugriffskontrolle (Role Based Access Controll (RBAC)) kombinieren lässt.
+
+
+% über gängige Protokolle wie HTTP/REST, MQTT oder OPC UA.
+% Diese erlauben externen Systemen gezielt auf bestimmte Daten innerhalb der AAS oder ihrer Submodelle zuzugreifen.
+% Die Spezifikation beschreibt außerdem ein System, das im Wesentlichen aus drei Kernkomponenten besteht: Repositories, Registries und Discovery Services.
+% werden drei Kernkomponenten beschrieben, die zusammen ein System für einen interoperablen, standardisierten Zugriff bilden.
+% Repositories dienen als Speicherort für die Inhalte einer \acs{aas}, einschließlich ihrer Submodelle und Concept Descriptions.
+% Die Aufgabe der Verwaltung und Registrierung wird dabei von zentralen Registries übernommen.
+% Sie ermöglichen das systemweite Auffinden von \acs{aas} und stellen sicher, dass diese eindeutig referenzierbar sind.
+% Ergänzend dazu biete Discovery-Services eine erweiterte Suchfunktionalität, indem sie Beziehungen verschiedener Entitäten mittels verschiedener Schlüsselpaare speichern.
+% Eine AAS kann so zum Beispiel logisch mit einer Asset-Id verknüpft werden und somit schnell innerhalb komplexer Systeme identifiziert werden.
+% Der Zugriff auf alle dieser Systeme wird in Form von Schnittstellen standardisiert, wodurch eine hohe Interoperabilität gewährleistet wird.
+% Die Schnittstellen folgen dabei dem REST-Schema und unterstützen gängige HTTP-Methoden wie GET, POST, PUT oder DELETE.\\
+% Die fortschrittlichste Form des Austauschs ist die Peer-to-peer Kommunikation, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren können.
+
+Gerade wenn Informationen aus der \acs{aas} über die Grenzen des eigenen Unternehmens hinweg bereitgestellt werden, ist es besonders wichtig, dass die enthaltenen Daten geschützt sind. 
+Die neueste Spezifikation Part 4: Security \cite{SpezifikationPart4} der \acs{idta} liefert hierfür die technische und konzeptionelle Grundlage.
+Sie  beschreibt, wie Zugriffe auf Daten in der \acs{aas} sicher gesteuert werden können, insbesondere in vernetzten Umgebungen wie Datenräumen.
+Zum Einsatz kommen dabei neue Dienste wie ein Identity Provider zur Authentifizierung oder ein Policy Service zur Durchsetzung von Richtlinien.
+Die Sicherheit wird dabei mit Hilfe eines attributbasierten Zugriffsmodells (Attribute Based Access Control (ABAC)) gewährleistet.
+Bei jeder Anfrage auf bestimmte Objekte innerhalb der \acs{aas} wird dabei anhand verschiedener Merkmale (Attribute) geprüft ob ein Zugriff erlaubt ist.
+Dazu zählen sogenannte Subjektattribute (also wer die Anfrage stellt), Objektattribute (z.B. welches Submodell, welche Property oder welches Submodellelement betroffen ist), die gewünschte Aktion (z.B. Lesen oder Schreiben) sowie kontextbezogene Bedingungen (z.B. Zeitpunkt der Anfrage oder Zustand des Systems).
+Die zur Prüfung notwendigen Informationen liefert in der Regel ein Token, das vom Identity Provider bereitgestellt wird. Die Spezifikation sieht hierfür die Nutzung sogenannter JSON Web Tokens (JWT) vor.
+Die Attribute werden schließlich von einem Policy Service mit den dort hinterlegenen Zugriffsrichtlinen abgeglichen und basierend darauf eine Zugriffsentscheidung getroffen.
+Ein besonderer Vorteil des ABAC-Modells liegt dabei in seiner hohen Flexibilität. Rollen können ebenfalls als Attribute behandelt werden, wodurch sich auch problemlos rollenbasierte Zugriffskonzepte (RBAC) umsetzen lassen. 
+
+Die beschriebenen Kontrollmechanismen lassen sich nicht nur auf die Inhalte der \acs{aas} selbst, sondern insbesondere auch auf die Schnittstellen von Registries und Repositories anwenden.
+So kann beispielsweise sichergestellt werden, das nur authorisierte Systeme Zugriff auf ein bestimmtes Submodell erhalten oder nur bestimmte Nutzergruppen neue \acs{aas}-Instanzen registrieren können.
+Diese Sicherheits-Konzepte sind jedoch noch vergleichsweise neu und müssen in der Praxis erst noch weiter erprobt werden.
+Erste Referenzimplementierungen liegen zwar bereits häufig schon in Form rollenbasierter Zugriffskontrollen vor, eine vollständige Integration des ABAC-Ansatzes steht jedoch noch aus.
 
 
 \newpage
-\subsection{Digitaler Produktpass für Industrie 4.0}
+\subsection{Digitaler Produktpass}
 Der \ac{dpp} ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation.
 Ziel ist es, die Transparenz über ökologische Merkmale von Produkten wie verwendete Materialien, Recylcebarkeit oder die CO2-Bilanz deutlich zu verbessern.
 Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg aufgezeichnet und in einem menschen -und maschinenlesbarem Format bereitgestellt werden.

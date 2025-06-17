@@ -11,7 +11,7 @@
 \contentsline {subsubsection}{\numberline {2.1.2}RAMI 4.0}{5}{subsubsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.2}Digitaler Zwilling}{6}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Asset Administration Shell}{9}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Digitaler Produktpass für Industrie 4.0}{14}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Digitaler Produktpass}{14}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}robocell Füll -und Verschließmodul}{16}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Technologische Grundlagen}{17}{subsection.2.6}%
 \contentsline {subsubsection}{\numberline {2.6.1}AASX Package Exlporer}{17}{subsubsection.2.6.1}%
@@ -51,7 +51,7 @@
 \contentsline {subsubsection}{\numberline {4.4.2}Anomaliererkennung}{20}{subsubsection.4.4.2}%
 \contentsline {subsubsection}{\numberline {4.4.3}Weiterführende Einsatzmöglichkeiten}{20}{subsubsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.5}Evaluierung eingesetzter Tools und Software}{20}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}AASX Package Exlporer}{20}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.1}AASX Package Explorer}{20}{subsubsection.4.5.1}%
 \contentsline {subsubsection}{\numberline {4.5.2}Eclipse AASX Server}{20}{subsubsection.4.5.2}%
 \contentsline {subsubsection}{\numberline {4.5.3}BaSyx}{20}{subsubsection.4.5.3}%
 \contentsline {subsubsection}{\numberline {4.5.4}Mnestix Browser}{20}{subsubsection.4.5.4}%
