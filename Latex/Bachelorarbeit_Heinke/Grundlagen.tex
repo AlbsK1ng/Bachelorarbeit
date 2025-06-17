@@ -184,9 +184,12 @@ Im Gegensatz dazu werden Instanzen immer einem konkreten physischen Objekt zugew
 
 Bestimmte Aspekte eines Assets werden gemäß der Spezifikation des Metamodells der AAS \cite{SpezifikationPart1} in verschiedenen Submodellen verwaltet.
 Man kann sich dies wie ein Schubladensystem vorstellen, wobei jede Schublade einen bestimmten Bereich des Assets abdeckt - beispielsweise die technischen Stammdaten, das Typenschild, Wartungsinformationen oder Zustandswerte einer Maschine.
-Die Auswahl der Submodelle hängt dabei immer von dem konkreten Asset ab, dass modelliert werden soll.
-Genau wie die AAS müssen diese Teilmodelle global eindeutig identifizierbar sein.
-Ein Submodell besteht dabei immmer aus verschiedenen Submodellelementen. Sie können sowohl statische, als auch dynamische Modelle enthalten.
+Die Auswahl und Struktur der Submodelle ist domänenspezifisch und hängt stark vom konkreten Asset bzw. Anwendungsfall ab.
+Dabei kann eine \acs{aas} beliebig viele Submodelle enthalten, die bei Bedarf auch erweitert werden können. 
+Wichtig ist, sowohl die AAS selbst als auch ihre Submodelle müssen global eindeutig identifizierbar sein.
+Dies wird durch die Verwendung von eindeutigen Identifikatoren wie einer URI (Uniform Resource Identifier) oder IRDI (International Registration Data Identifier) sichergestellt.
+Für die Elemente innerhalb eines Submodells ist eine lokale Kennung ausreichend. Dies erfolgt in der Regel anhand einer idShort, die einen kurzen, aussagekräftigen Namen enthält.
+Ein Submodell besteht immmer aus verschiedenen Submodellelementen. Sie können sowohl statische, als auch dynamische Modelle enthalten.
 Statische Modelle beschreiben zum Beispiel Eigenschaften eines Produktes, während dynamische Modelle veränderbare Daten wie z.B. live gemessene Sensordaten enthalten. 
 Zu den wichtigsten Submodellelementen zählen:
 
