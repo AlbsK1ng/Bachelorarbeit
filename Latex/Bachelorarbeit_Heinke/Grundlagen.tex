@@ -7,7 +7,7 @@ Den Abschluss bilden die technologischen Voraussetzungen für die praktische Ums
 % Nach der dritten industriellen Revolution, die vor allem durch den Einsatz elektronischer Systeme sowie der Informations -und Kommunikationstechnologie zur Automatisierung gekennzeichnet ist, vollzieht sich aktuell ein neuer technologischer Wandel, die vierte industrielle Revolution.
 % Besser bekannt als Industrie 4.0, beschreibt sie die umfassende Vernetzung und Integration der physischen mit der digitalen Welt durch den Einsatz Cyber-physischer Systeme.
 
-Der Begriff Industrie 4.0 wurde erstmals im Jahr 2011 im Rahmen eines von der deutschen Bundesregierung initiierten Zukunftsprojekts eingeführt, das auf die Förderung der Informatisierung in der industriellen Fertigung abzielt.
+Der Begriff Industrie 4.0 wurde erstmals im Jahr 2011 im Rahmen eines von der deutschen Bundesregierung initiierten Zukunftsprojekts eingeführt, das auf die Förderung der Informatisierung in der industriellen Fertigung/Produktion abzielt.
 Angestrebt wird eine Stärkung der Wettbewerbsfähigkeit der deutschen Industrie sowie eine Verbesserung der Marktposition deutscher Unternehmen im globalen Wettbewerb.
 Industrie 4.0 steht dabei für die vierte industrielle Revolution und beschreibt die umfassende digitale Transformation industrieller Wertschöpfungsprozesse. 
 Im Zentrum steht die intelligente Vernetzung von Menschen, Maschinen und Produkten über moderne digitale Kommunikationsnetzwerke, durch die eine weitreichende Integration der physischen mit der digitalen Welt ermöglicht wird.
@@ -50,12 +50,18 @@ Industrie 4.0 trägt somit nicht nur zur Verbesserung der Wirtschaftlichkeit bei
 
 
 
-\subsubsection{Künstliche Intelligenz im industriellen Kontext}
+\subsubsection{Künstliche Intelligenz}
 \subsubsection{RAMI 4.0}
 Das \ac{rami} ist ein Leitfaden für die Industrie und dient als Hilfestellung um die digitale Transformation in einem Unternehmen systematisch umzusetzten.
 Es wird in der DIN SPEC 91345 \cite{RAMI4.0} standardisiert und soll helfen, die komplexen Anforderungen an die Industrie 4.0 für die Allgemeinheit verständlich zu machen.
- 
+Das Modell unterteilt sich in drei verschiedene Schichten wie in Abbildung xy zu sehen.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Bilder/RAMI.PNG}
+    \caption{Referenzarchitekturmodell Industrie 4.0 (RAMI 4.0)}
+    \label{fig:klassifizierungDT}
+\end{figure}
 
 \newpage
 \subsection{Digitaler Zwilling}
@@ -149,7 +155,7 @@ Es ist daher essenziell, digitale Zwillinge in einem interoperablen Format berei
 \label{chap:AAS}
 Die Asset Administration Shell (AAS) - deutsch Verwaltungsschale - ist eine Schlüsselkomponente innerhalb des Referenzarchitekturmodells der Industrie 4.0 \cite{RAMI4.0} und bildet die Grundlage für die Umsetzung und Entwicklung interoperabler digitaler Zwillinge im industriellen Umfeld.
 Sie wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und erstmlas im Jahr 2016 als Teil von RAMI 4.0 vorgestellt.
-Seit ihrer Einführung wurde die AAS kontinuierlich weiterenwtickelt und ist mittlerweile in der internationalen Norm IEC 63278-1:2023 \cite{AASIEC63278} standardisiert.
+Seit ihrer Einführung wurde die AAS kontinuierlich weiterenwtickelt und ist mittlerweile in der internationalen Norm IEC 63278-1 \cite{AASIEC63278} standardisiert.
 % Darin wird die AAS als "strukturierte, standardisierte digitale Repräsentation eines Assets" definiert.
 
 Seit 2020 wird die Umsetzung und Weiterentwicklung der AAS von der Industrial Digital Twin Association (IDTA) \cite{IDTA} organisiert und gesteuert.
@@ -176,6 +182,8 @@ Durch die Kombination eines Assets mit seiner AAS entsteht eine sogenannte Indus
     \caption{Industrie 4.0 Komponente}
     \label{fig:klassifizierungDT}
 \end{figure}
+
+\subsubsection{Aufbau und Struktur}
 Allgemein kann zwischen Typ -und Instanz-Verwaltungsschalen unterschieden werden.
 Typ-AAS beschreiben allgemeine Eigenschaften eines Produkttypen oder einer Produktlasse wie einen bestimmten Maschinen-Typ, während Instanz-Verwaltungsschalen immer einem spezifischen Objekt zugeordnet werden.
 Typen können zum Besipiel allgemeine Dokumente, Eigenschaften oder Merkmale enthalten, die für eine bestimmte Maschinenart gelten.
@@ -184,54 +192,76 @@ Im Gegensatz dazu werden Instanzen immer einem konkreten physischen Objekt zugew
 
 Bestimmte Aspekte eines Assets werden gemäß der Spezifikation des Metamodells der AAS \cite{SpezifikationPart1} in verschiedenen Submodellen verwaltet.
 Man kann sich dies wie ein Schubladensystem vorstellen, wobei jede Schublade einen bestimmten Bereich des Assets abdeckt - beispielsweise die technischen Stammdaten, das Typenschild, Wartungsinformationen oder Zustandswerte einer Maschine.
-Die Auswahl und Struktur der Submodelle ist domänenspezifisch und hängt stark vom konkreten Asset bzw. Anwendungsfall ab.
+Die Auswahl und Struktur der Submodelle ist domänenspezifisch und hängt stark vom konkreten Asset bzw. Anwendungsfall ab. 
 Dabei kann eine \acs{aas} beliebig viele Submodelle enthalten, die bei Bedarf auch erweitert werden können. 
-Wichtig ist, sowohl die AAS selbst als auch ihre Submodelle müssen global eindeutig identifizierbar sein.
-Dies wird durch die Verwendung von eindeutigen Identifikatoren wie einer URI (Uniform Resource Identifier) oder IRDI (International Registration Data Identifier) sichergestellt.
-Für die Elemente innerhalb eines Submodells ist eine lokale Kennung ausreichend. Dies erfolgt in der Regel anhand einer idShort, die einen kurzen, aussagekräftigen Namen enthält.
-Ein Submodell besteht immmer aus verschiedenen Submodellelementen. Sie können sowohl statische, als auch dynamische Modelle enthalten.
-Statische Modelle beschreiben zum Beispiel Eigenschaften eines Produktes, während dynamische Modelle veränderbare Daten wie z.B. live gemessene Sensordaten enthalten. 
-Zu den wichtigsten Submodellelementen zählen:
 
-\begin{itemize}
-    \item \textbf{Property}: einfaches Merkmal mit bestimmten Datentyp, z.B. Name
-    \item \textbf{Entity}: Eigenständiges Teilobjekt eines Assets, z.B. ein Bauteil 
-    \item \textbf{File}: Eingebettete oder referenzierte Datei, z.B. CAD-Modell
-    \item \textbf{ReferencElement}: Verweis auf anderes (externes) Element oder Objekt
-    \item \textbf{RelationShipElement}: Beziehung verschiedener Elemente oder Assets
-    \item \textbf{SubmodelElementCollection}: Sammlung von Submodellelementen
-\end{itemize}
-Es ist wichtig alle Submodelle bzw. alle Elemente über eine eindeutige Semantik zu beschreiben.
-Hierfür gibt es sogenannte Concept Desciptions. Diese enthalten unter anderem Beschreibugen, Definitionen, Einheiten und externe Referenzen für ein bestimmtes Element.
-Sie helfen bei der Klassifizierung von Daten und sorgen für ein gemeinsames Verständnis unterschiedlicher Systeme.
-Fehlt diese semantische Beschreibung, so kann es schnell zu Missverständnissen kommen.
-Wenn zum Beispiel einfach nur ein Wert wie 25 vorliegt, ist ohne weitere Informationen unklar, was gemeint ist. 
-Es könnte sich beispielsweise um 25 Euro, 25 Meter oder 25 Grad Celsius handeln.
-Erst durch die zugehörige Concept Description, in der die Einheit und Bedeutung definiert werden, wird der Wert eindeutig interpretierbar. 
-Diese semantische Beschreibungen können entweder direkt in die AAS eingebetet oder über externes Standards referenziert werden.
-Die Zuordnung erfolgt über eine sogenannte semanticID.
-Ein häufig verwendeter externer Standard ist zum Beispiel ECLASS.
-ECLASS basiert auf dem Datenmodell der Norm IEC 61360 \cite{ECLASSIEC61360}, welche eine standardisierte Struktur für Merkmale und deren semantische Beschreibung definiert.
+Die Daten innerhalb eines Submodells werden in verschiedenen Submodellelementen strukturiert.
+Diese umfassen Dateneigenschaften, Operationen sowie weitere Sutrukturellemente die für eine umfassende Beschreibung eines digitalen Modells eines Assets erforderlich sind.
+Das vermutlich am häufigsten verwendete Datenelement ist das Submodellelement Property.
+Es lässt sich mit einer Variablen aus der Softwareentwicklung vergleichen, da es einfache Merkmale wie etwa einen Namen oder eine Seriennummer repräsentiert und dabei über einen definierten Datentyp wie String, Integer oder Boolean verfügt.
+Neben Properties spielt zudem das Submodellement File eine besonders wichtige Rolle. Es ermöglicht das Einbetten oder Referenzieren von Dateien in die \acs{aas}. 
+Dabei werden gängige Dateiformate wie PDF, JPG oder STEP unterstützt, was besonders für technische Dokumentationen oder CAD-Modelle von Bedeutung ist.
+Neben diesen Datenelementen existieren noch weitere Submodellelemente, die spezifische Funktionen ermöglichen. 
+So erlaubt beispielsweise das RelationshipElement die Modellierung von Beziehungen oder das ReferenceElement die Referenzierung von internen oder externen Inhalten.
+Zur besseren Veraunschaulichung des zugrundeliegenden Metamodells wird dieses nachfolgend in einer vereinfachten Form dargestellt.
 
-Zur Veranschaulichung wird nachfolgend ein vereinfachtes Schema des Metamodells der Verwaltungsschale in Abbildung 3 dargestellt. 
 
+
+% Sie dienen der Modellierung eigenständiger Teilobjekte eines Assets.
+% Besteht ein Asset beispielsweise aus mehreren Komponenten, so kann jede dieser Komponenten als eigenständige Entität beschrieben werden, wodurch eine strukturierte und hierarchische Abbildung komplexer Systeme ermöglicht wird.
+% Das Submodellelement File erlaubt zudem das Einbetten oder Referenzieren von Dateien in die \acs{aas}. 
+% Dabei werden gängige Dateiformate wie PDF, JPG oder STEP unterstützt, was besonders für technische Dokumentationen oder CAD-Modelle von Bedeutung ist.
+
+
+% Mit dem ReferenceElement können Verweise auf ander lokale oder externe Elemente und Objekte hergestellt werden.
+% Mit RealtionshipElements können Beziehungen innerhalb der AAS modelliert werden. Dies ist besonders wichtig für das Erstellen von Stücklisten.
+% Zur besseren Veraunschaulichung des zugrundeliegenden Metamodellls wird dieses nachfolgend in einer vereinfachten Form dargestellt.
+
+% \begin{itemize}
+%     \item \textbf{Property}: einfaches Merkmal mit bestimmten Datentyp, z.B. Name
+%     \item \textbf{Entity}: Eigenständiges Teilobjekt eines Assets, z.B. ein Bauteil 
+%     \item \textbf{File}: Eingebettete oder referenzierte Datei, z.B. CAD-Modell
+%     \item \textbf{ReferencElement}: Verweis auf anderes (externes) Element oder Objekt
+%     \item \textbf{RelationShipElement}: Beziehung verschiedener Elemente oder Assets
+%     \item \textbf{SubmodelElementCollection}: Sammlung von Submodellelementen
+% \end{itemize}
+% Zur Veraunschaulichung des Metamodellls wird diese nachfolgend in einer vereinfachten Form dargestellt.
+
+\newpage
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{Bilder/Metamodel.pdf}
-    \caption{Vereinfachtes Metamodell der AAS}
+    \includegraphics[width=0.9\textwidth]{Bilder/Metamodell_neu.drawio.pdf}
+    \caption{Vereinfachtes Metamodell der \acs{aas}}
     \label{fig:MetamodellAAS}
 \end{figure}
 
-Um die Erstlleung von Submodellen zu erleichtern und gleichzeitig Interoperabilität zu gewährleisten, stellt die IDTA standardisierte Submodellvorlagen - sogenannte Submodel Templates - zur Verfügung.
+Wichtig ist, sowohl die AAS selbst als auch ihre Submodelle müssen global eindeutig identifizierbar sein.
+Dies wird durch die Verwendung von eindeutigen Identifikatoren der Klasse Identifiable wie einer URI (Uniform Resource Identifier) oder IRDI (International Registration Data Identifier) sichergestellt.
+Für die Elemente innerhalb eines Submodells ist eine lokale Kennung ausreichend. Dies erfolgt in der Regel anhand einer idShort der Klasse Referable, die einen kurzen, aussagekräftigen Namen enthält.
+Dabei ist wichtig alle Submodelle bzw. alle Elemente über eine eindeutige Semantik zu beschreiben.
+Hierfür gibt es eine sogenannte SemanticID der Klasse HasSemantics, welche eine semantische Referenz enthält.
+Sie können entweder auf externe Standards oder direkt auf eine Beschreibung innerhalb der \acs{aas}, sogenannte Concept Descriptions, verweisen.
+Ein häufig verwendeter externer Standard ist zum Beispiel ECLASS, welcher auf der Norm IEC 61360 \cite{ECLASSIEC61360} basiert.
+Darin wird eine standardisierte Struktur für Merkmale und ihre semantische Beschreibungen definiert.
+Die Semantik enthält unter anderem Beschreibugen, Definitionen, Einheiten und externe Referenzen für bestimmte Submodelle oder Submodellelemente und helfen bei der Klassifizierung dieser.
+Dadurch wird ein gemeinsames Verständnis unterschiedlicher Systeme geschaffen.
+Fehlt die semantische Beschreibung, so kann es schnell zu Missverständnissen kommen.
+Liegt beispielsweise ein einfacher Wert 25 vor, ist ohne weitere Informationen unklar, was gemeint ist. 
+Es könnte sich um 25 Euro, 25 Meter oder 25 Grad Celsius handeln.
+Erst durch die zugehörige semantische Beschreibung, in der die Einheit und Bedeutung definiert werden, wird der Wert eindeutig interpretierbar. 
+
+
+Um die Erstellung von Submodellen zu erleichtern und gleichzeitig Interoperabilität zu gewährleisten, stellt die IDTA standardisierte Submodellvorlagen - sogenannte Submodel Templates - zur Verfügung.
 Aktuell sind 34 dieser Templates veröffentlicht, viele weitere sind in der Entwicklung oder im Überprüfungsprozess und werden in Zukunft ergänzt.
 Die bereits verfügbaren Templates enthalten unteranderem Submodelle wie das digitale Typenschild oder den Carbon Footprint.
 Alle Eigenschaften innerhalb dieser Vorlagen werden dabei in Verbindung mit dem ECLASS-Standard einheiltich semantisch beschrieben.
 Diese Templates könen über ein zentrales Repository bezogen werden und bilden die Basis für eine interoperable semantische Datenstruktur.
 
+\subsubsection{Informationsaustausch}
 Der Austausch von Informationen über die AAS kann auf unterschiedliche Weise erfolgen.
 Die einfachste Möglichkeit besteht im Dateiaustausch. Hierfür wurden speziell für die AAS sogenannte AASX-Dateien \cite{SpezifikationPart5} entwickelt, die den einfachen Austausch statischer \acs{aas} (Typ 1) ermöglichen.
 Dabei werden sämtliche Daten, Beziehungen, Strukturen sowie zugehörige Dateien der AAS serialisiert und in ein AASX-ZIP-Dateiformat gespeichert. Diese Datei kann anschließend über ein digitales Medium, etwa per E-Mail oder eine Cloud-Plattform, weitergegeben werden. 
-Eine Typ 2-\acs{aas} hingegen wird von einer Laufzeitumgebung gehosted, wodurch ein direkter und dynamischen Zugriff auf ihre Inhalte ermöglicht. 
+Eine Typ 2-\acs{aas} hingegen wird von einer Laufzeitumgebung gehosted, wodurch ein direkter und dynamischer Zugriff auf ihre Inhalte ermöglicht wird. 
 Die Spezifikitation Part 2: Aplication Programming Interfaces \cite{SpezifikationPart2} beschreibt hierfür nicht nur standardisierte Schnittstellen, sonder auch ein ganzheitliches System für das Verwalten, Bereitstellen und Auffinden der AAS.
 Repositories dienen dabei als zentraler Speicherort für die Inhalte einer \acs{aas}, einschließlich ihrer Submodelle und Concept Descriptions.
 Die Aufgabe der Verwaltung und Registrierung wird von Registries übernommen.
@@ -241,7 +271,6 @@ Eine AAS kann so zum Beispiel logisch mit einer Asset-Id verknüpft werden und s
 Der Zugriff auf diese Systeme bzw. ihrer Inhalte wird in Form von Schnittstellen standardisiert, wodurch eine hohe Interoperabilität gewährleistet wird.
 Ein besonderer Fokus liegt dabei auf HTTP/REST, welches durch definierte Zugriffsprinzipien strukturiert ist. Diese folgen dabei dem REST-Schema und unterstützen gängige HTTP-Methoden wie GET, POST, PUT oder DELETE.
 Die fortschrittlichste Form des Informationsaustausches stellt die Peer-to-peer Kommunikation, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren können.
-Dadurch wird ein automatisierter 
 
 
 
@@ -258,6 +287,7 @@ Dadurch wird ein automatisierter
 % Die Schnittstellen folgen dabei dem REST-Schema und unterstützen gängige HTTP-Methoden wie GET, POST, PUT oder DELETE.\\
 % Die fortschrittlichste Form des Austauschs ist die Peer-to-peer Kommunikation, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren können.
 
+\subsubsection{Sicherheit}
 Gerade wenn Informationen aus der \acs{aas} über die Grenzen des eigenen Unternehmens hinweg bereitgestellt werden, ist es besonders wichtig, dass die enthaltenen Daten geschützt sind. 
 Die neueste Spezifikation Part 4: Security \cite{SpezifikationPart4} der \acs{idta} liefert hierfür die technische und konzeptionelle Grundlage.
 Sie  beschreibt, wie Zugriffe auf Daten in der \acs{aas} sicher gesteuert werden können, insbesondere in vernetzten Umgebungen wie Datenräumen.
@@ -275,7 +305,6 @@ Diese Sicherheits-Konzepte sind jedoch noch vergleichsweise neu und müssen in d
 Erste Referenzimplementierungen liegen zwar bereits häufig schon in Form rollenbasierter Zugriffskontrollen vor, eine vollständige Integration des ABAC-Ansatzes steht jedoch noch aus.
 
 
-\newpage
 \subsection{Digitaler Produktpass}
 Der \ac{dpp} ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation.
 Ziel ist es, die Transparenz über ökologische Merkmale von Produkten wie verwendete Materialien, Recylcebarkeit oder die CO2-Bilanz deutlich zu verbessern.
@@ -312,7 +341,7 @@ Eine schemantische Darstellung des DPP 4.0 ist nachfolgend in Abbildung xy darge
 \vspace{1em}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{Bilder/dpp_konzept.pdf}
+    \includegraphics[width=0.7\textwidth]{Bilder/dpp_konzept.pdf}
     \caption{Konzept des DPP 4.0}
     \label{fig:klassifizierungDT}
 \end{figure}
@@ -340,14 +369,30 @@ Eingehen auf das Füllmodul
 
 \includegraphics{Bilder/robocell_FS2_rgb_Logo.png}
 \subsection{Technologische Grundlagen}
+\newpage
 \subsubsection{AASX Package Exlporer}
-Der von Michael Hoffmeister entwickelte AASX Package Explorer ist ein Open-Source-Werkzeug zur Visualisierung und manuellen Erstellung von AAS.
-Er ermöglicht das Modellieren von Verwaltungsschalen mit allen Elementen dieser.
-Hiermit können ganze Verwaltungsschale erstellt werden und in eine Datei wie eine aasx Datei oder XML Datei geschrieben werden.
-Er bringt alles mit, was für die Erstellung von Verwaltungsschalen benötigt wird.
-Man kann AAS anschauen und bearbeiten.
-AUch kann ein Server angebunden werden.
-\subsubsection{OPC UA}
+Der AASX Package Explorer wurde als Referenzimplementierung für die AAS gemäß den Spezifikationen der \acs{idta} entwickelt.
+Das Tool ist als Open-Source-Software \cite{AASXPackageExplorer} verfügbar und ermöglicht das Erstellen und Bearbeiten von \acs{aas} im standardisierten AASX-Dateiformat.
+Er verfügt über eine benutzerfreundliche grafische Oberfläche (siehe Abbildung \ref{fig:AASXPackageExplorer}), die insbesondere Einsteigern den Zugang zur Modellierung erleichtert.
+Gleichzeitig bietet der AASX Package Explorer auch erweiterte Funktionen, wie das Erstellen von Submodell-Templates, wodurch er sich auch für den profesionellen Einsatz eignet.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Bilder/AAS_PE.PNG}
+    \caption{Benutzeroberfläche AASX Package Explorer}
+    \label{fig:AASXPackageExplorer}
+\end{figure}
+
+
+
+
+
+
+% Er ermöglicht das Modellieren von Verwaltungsschalen mit allen Elementen dieser.
+% Hiermit können ganze Verwaltungsschale erstellt werden und in eine Datei wie eine aasx Datei oder XML Datei geschrieben werden.
+% Er bringt alles mit, was für die Erstellung von Verwaltungsschalen benötigt wird.
+% Man kann AAS anschauen und bearbeiten.
+% AUch kann ein Server angebunden werden.
 \newpage
 \subsubsection{Eclipse BaSyx }
 Eclipse BaSyx ist eine vom Fraunhofer-Institut für Experimentelles Software Engineering entwickelte Open-Source-Plattform für die Realisierung von Industrie 4.0 - Anwendungen.
@@ -402,3 +447,5 @@ Ein weiteres zentrales Merkmal der AAS Web UI ist der sogenannte AAS-Viewer.
 Dieser erlaubt die Visualisierung von Submodellen und deren Elementen anhand ihrer semantischen ID. 
 Hierfür stehen verschiedene vordefinierte Plugins zur Verfügung, die bestimmte Submodelle - wie beispielsweise das Typenschild oder hierarchische Strukturen - grafisch darstellen.
 Da die Lösung Open Source ist besteht zudem die Möglichkeit, eigene benutzerdefinierte Plugins für weitere Submodelle zu erstellen. \cite{BaSyxWiki} \cite{BaSyxEclipse}
+
+\subsubsection{OPC UA}
