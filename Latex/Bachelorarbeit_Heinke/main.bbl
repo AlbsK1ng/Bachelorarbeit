@@ -126,6 +126,31 @@
     \field{urlyear}{2025}
   \endentry
 
+  \entry{bitkomStudie}{online}{}{}
+    \name{author}{1}{}{%
+      {{hash=eB}{%
+         family={e.V.},
+         familyi={e\bibinitperiod},
+         given={Bitkom},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{eB1}
+    \strng{fullhash}{eB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Industrie 4.0: Schon 42 Prozent der Unternehmen setzen KI in der Produktion ein}
+    \verb{url}
+    \verb https://www.bitkom.org/Presse/Presseinformation/Industrie-4.0-Unterne
+    \verb hmen-KI-Produktion
+    \endverb
+    \field{month}{03}
+    \field{year}{2025}
+    \field{urlday}{20}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
   \entry{RAMI4.0}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=VB}{%
@@ -145,8 +170,7 @@
     \verb{doi}
     \verb 10.31030/2436156
     \endverb
-    \field{title}{DIN SPEC 91345:2016-04 - Refernzarchitekturmodell Industrie
-  4.0 (RAMI 4.0)}
+    \field{title}{DIN SPEC 91345:2016-04 - Refernzarchitekturmodell Industrie 4.0 (RAMI 4.0)}
     \field{month}{04}
     \field{year}{2016}
   \endentry
@@ -165,8 +189,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{White Paper}
-    \field{title}{Digital Twin: Manufacturing Excellence through Virtual
-  Factory Replication}
+    \field{title}{Digital Twin: Manufacturing Excellence through Virtual Factory Replication}
     \verb{url}
     \verb https://www.researchgate.net/publication/275211047
     \endverb
@@ -245,8 +268,7 @@
     \endverb
     \field{number}{11}
     \field{pages}{1016\bibrangedash 1022}
-    \field{title}{Digital Twin in manufacturing: A categorical literature
-  review and classification}
+    \field{title}{Digital Twin in manufacturing: A categorical literature review and classification}
     \field{volume}{51}
     \field{journaltitle}{IFAC-PapersOnLine}
     \field{year}{2018}
@@ -337,8 +359,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{Joint Whitepaper}
-    \field{title}{Digital Twin and Asset Administration Shell Concepts and
-  Application in the Industrial Internet and Industrie 4.0}
+    \field{title}{Digital Twin and Asset Administration Shell Concepts and Application in the Industrial Internet and Industrie 4.0}
     \verb{url}
     \verb https://www.iiconsortium.org/pdf/Digital-Twin-and-Asset-Administratio
     \verb n-Shell-Concepts-and-Application-Joint-Whitepaper.pdf
@@ -362,8 +383,7 @@
     \field{labeltitlesource}{title}
     \field{edition}{1.0}
     \field{note}{Internationale Norm, IEC}
-    \field{title}{IEC 63278-1:2023 - Asset Administration Shell for industrial
-  applications - Part 1: Asset Administration Shell structure}
+    \field{title}{IEC 63278-1:2023 - Asset Administration Shell for industrial applications - Part 1: Asset Administration Shell structure}
     \verb{url}
     \verb https://webstore.iec.ch/en/publication/65628
     \endverb
@@ -398,16 +418,14 @@
          family={Association},
          familyi={A\bibinitperiod},
          given={Industrial Digital\bibnamedelima Twin},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
-  T\bibinitperiod},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
       }}%
     }
     \strng{namehash}{AIDT1}
     \strng{fullhash}{AIDT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Specification of the Asset Administration Shell - Part 1:
-  Metamodel}
+    \field{title}{Specification of the Asset Administration Shell - Part 1: Metamodel}
     \verb{url}
     \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
     \endverb
@@ -432,9 +450,7 @@
     \field{labeltitlesource}{title}
     \field{edition}{4.0}
     \field{note}{Internationale Norm, IEC}
-    \field{title}{IEC 61360-1:2017 - Standard data element types with
-  associated classification scheme - Part 1: Definitions - Principles and
-  methods}
+    \field{title}{IEC 61360-1:2017 - Standard data element types with associated classification scheme - Part 1: Definitions - Principles and methods}
     \verb{url}
     \verb https://webstore.iec.ch/en/publication/28560
     \endverb
@@ -448,16 +464,14 @@
          family={Association},
          familyi={A\bibinitperiod},
          given={Industrial Digital\bibnamedelima Twin},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
-  T\bibinitperiod},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
       }}%
     }
     \strng{namehash}{AIDT1}
     \strng{fullhash}{AIDT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Specification of the Asset Administration Shell - Part 5:
-  Package File Format (AASX)}
+    \field{title}{Specification of the Asset Administration Shell - Part 5: Package File Format (AASX)}
     \verb{url}
     \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
     \endverb
@@ -475,16 +489,14 @@
          family={Association},
          familyi={A\bibinitperiod},
          given={Industrial Digital\bibnamedelima Twin},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
-  T\bibinitperiod},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
       }}%
     }
     \strng{namehash}{AIDT1}
     \strng{fullhash}{AIDT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Specification of the Asset Administration Shell - Part 2:
-  Application Programming Interfaces}
+    \field{title}{Specification of the Asset Administration Shell - Part 2: Application Programming Interfaces}
     \verb{url}
     \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
     \endverb
@@ -502,16 +514,14 @@
          family={Association},
          familyi={A\bibinitperiod},
          given={Industrial Digital\bibnamedelima Twin},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
-  T\bibinitperiod},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
       }}%
     }
     \strng{namehash}{AIDT1}
     \strng{fullhash}{AIDT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Specification of the Asset Administration Shell - Part 4:
-  Security}
+    \field{title}{Specification of the Asset Administration Shell - Part 4: Security}
     \verb{url}
     \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
     \endverb
@@ -584,8 +594,7 @@
     \strng{fullhash}{PC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{The Digital Product Passport as defined in the Proposal for
-  Eco-design for Sustainable Product Regulation (ESPR)}
+    \field{title}{The Digital Product Passport as defined in the Proposal for Eco-design for Sustainable Product Regulation (ESPR)}
     \verb{url}
     \verb https://cirpassproject.eu/wp-content/uploads/2023/03/ESPR-short-summa
     \verb ry-Final.pdf
@@ -629,8 +638,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{ZVEI Discussion Paper}
-    \field{title}{DPP 4.0: An Architecture Proposal for a DPP-System to
-  implement the EU Digital Product Passport for Industrial Products}
+    \field{title}{DPP 4.0: An Architecture Proposal for a DPP-System to implement the EU Digital Product Passport for Industrial Products}
     \verb{url}
     \verb https://www.zvei.org/fileadmin/user_upload/Themen/Industrie/Fachverba
     \verb nd_Automation/2023-12_Discussion_Paper_DPP4.0_Architecture_v1.1.pdf
@@ -659,13 +667,36 @@
     \field{labeltitlesource}{title}
     \field{edition}{1.0}
     \field{note}{Internationale Norm, IEC}
-    \field{title}{IEC 61406-1:2022 - Identification Link - Part 1: General
-  requirements}
+    \field{title}{IEC 61406-1:2022 - Identification Link - Part 1: General requirements}
     \verb{url}
     \verb https://webstore.iec.ch/en/publication/67673
     \endverb
     \field{month}{09}
     \field{year}{2022}
+  \endentry
+
+  \entry{RobocellWebsite}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=gcg}{%
+         prefix={groninger \&\bibnamedelima co.},
+         prefixi={g\bibinitperiod\bibinitdelim \bibinitperiod\bibinitdelim c\bibinitperiod},
+         family={gmbh},
+         familyi={g\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ggc1}
+    \strng{fullhash}{ggc1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{robocell - Handschuhlose Abfüllmaschine für Spritzen, Vials und Karpulen}
+    \verb{url}
+    \verb https://www.groninger-group.com/de/pharma/aseptische-abfuellung/abfue
+    \verb llanlagen-fuer-rtu-vials-karpulen-und-spritzen/robocell/
+    \endverb
+    \field{year}{o. J.}
+    \field{urlday}{20}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
   \endentry
 
   \entry{AASXPackageExplorer}{misc}{}{}
