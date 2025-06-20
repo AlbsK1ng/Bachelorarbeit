@@ -368,12 +368,13 @@ Eingehen auf das Füllmodul
 
 
 \includegraphics{Bilder/robocell_FS2_rgb_Logo.png}
-\subsection{Technologische Grundlagen}
 \newpage
+\subsection{Technologische Grundlagen}
 \subsubsection{AASX Package Exlporer}
 Der AASX Package Explorer wurde als Referenzimplementierung für die AAS gemäß den Spezifikationen der \acs{idta} entwickelt.
 Das Tool ist als Open-Source-Software \cite{AASXPackageExplorer} verfügbar und ermöglicht das Erstellen und Bearbeiten von \acs{aas} im standardisierten AASX-Dateiformat.
 Er verfügt über eine benutzerfreundliche grafische Oberfläche (siehe Abbildung \ref{fig:AASXPackageExplorer}), die insbesondere Einsteigern den Zugang zur Modellierung erleichtert.
+Dabei können Submodelle, Eigenschaften, semantische Referenzen sowie Metadaten strukturiert definiert und verwaltet werden.
 Gleichzeitig bietet der AASX Package Explorer auch erweiterte Funktionen, wie das Erstellen von Submodell-Templates, wodurch er sich auch für den profesionellen Einsatz eignet.
 
 \begin{figure}[htbp]
@@ -383,25 +384,19 @@ Gleichzeitig bietet der AASX Package Explorer auch erweiterte Funktionen, wie da
     \label{fig:AASXPackageExplorer}
 \end{figure}
 
+Neben der lokalen Modellierung erlaubt das Tool ebenfalls die Verbindung zu einem AAS-Server über standardisierte Schnittstellen (z.B. OPC UA oder HTTP/REST).
+Dies ermöglicht den Betrieb von \acs{aas} in verteiltelten Systemen.
+Besonders geeignet hierfür ist der Referenzserver des Eclipse-AAS-Projekts \cite{AASXServer}, der das Hosten und Bereitstellen von AASX-Paketen ermöglicht sowie eine nahtlose Integration mit dem AASX Package Explorer erlaubt.
 
-
-
-
-
-% Er ermöglicht das Modellieren von Verwaltungsschalen mit allen Elementen dieser.
-% Hiermit können ganze Verwaltungsschale erstellt werden und in eine Datei wie eine aasx Datei oder XML Datei geschrieben werden.
-% Er bringt alles mit, was für die Erstellung von Verwaltungsschalen benötigt wird.
-% Man kann AAS anschauen und bearbeiten.
-% AUch kann ein Server angebunden werden.
-\newpage
 \subsubsection{Eclipse BaSyx }
-Eclipse BaSyx ist eine vom Fraunhofer-Institut für Experimentelles Software Engineering entwickelte Open-Source-Plattform für die Realisierung von Industrie 4.0 - Anwendungen.
+Eclipse BaSyx ist eine vom Fraunhofer-Institut für Experimentelles Software Engineering entwickelte Open-Source-Plattform für die Realisierung von Industrie 4.0-Anwendungen.
+Mittlerweile wird das Projekt unter dem Dach der Eclipse Foundation weitergeführt.
 Der Fokus liegt auf einer einfachen Umsetzung einer Infrastruktur zur Erstellung und Verwaltung digitaler Zwillinge auf Basis der \acs{aas}.
-Ein wesentlicher Vorteil von BaSyx ist sein Open-Source-Charakter. Die Software steht allen Interessierten frei zur Verfügung und erlaubt individuelle Modifikationen an spezifische Anforderungen.
-Die Architektur basiert auf einer Vielzahl von Standardkomponenten (Off-the-Shelf), die alle als Docker-Container frei zugänglich sind und somit eine nahtlose Integration in bestehende Docker-Umgebungen erlauben.
+Die Software steht dabei allen Interessierten frei zur Verfügung und erlaubt individuelle Modifikationen an spezifische Anforderungen.
 
+Die Softwarearchitektur basiert auf einer Vielzahl von Standardkomponenten (Off-the-Shelf), die alle als Docker-Container frei zugänglich sind und somit eine nahtlose Integration in bestehende Docker-Umgebungen erlauben.
 Eine der wichtigsten Komponenten ist die Registry. 
-Sie ist auf den Spezifikationen der Verwaltungsschale aufgebaut, insbesondere auf der Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2}.
+Sie ist, genau wie alle anderen Komponenten, auf den Spezifikationen der Verwaltungsschale aufgebaut, insbesondere auf der Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2}.
 In ihr können neue \acs{aas} registriert und bereits vorhandene Verwaltungsschalen anhand ihrer eindeutigen Kennung gesucht werden.
 Sie bildet damit die zentrale Anlaufstelle für Geräte und Anwendungen innerhalb eines Industrie-4.0-Systems
 Analog dazu gibt es eine seperate Registry für die Verwaltung von Submodellen.

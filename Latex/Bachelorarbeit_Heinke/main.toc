@@ -16,9 +16,9 @@
 \contentsline {subsubsection}{\numberline {2.3.3}Sicherheit}{14}{subsubsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.4}Digitaler Produktpass}{15}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}robocell Füll -und Verschließmodul}{17}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Technologische Grundlagen}{18}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.6}Technologische Grundlagen}{19}{subsection.2.6}%
 \contentsline {subsubsection}{\numberline {2.6.1}AASX Package Exlporer}{19}{subsubsection.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.6.2}Eclipse BaSyx }{20}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.2}Eclipse BaSyx }{19}{subsubsection.2.6.2}%
 \contentsline {subsubsection}{\numberline {2.6.3}OPC UA}{22}{subsubsection.2.6.3}%
 \contentsline {section}{\numberline {3}Entwicklung}{22}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Konzeptionierung des digitalen Zwilling}{22}{subsection.3.1}%
