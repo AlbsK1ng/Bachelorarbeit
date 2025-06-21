@@ -2,7 +2,7 @@
 Das folgende Kapitel stellt die theoretischen und technologischen Grundlagen vor, die für das Verständnis und die Umsetzung dieser Arbeit erforderlich sind.
 Es beginnt mit einer Einführung in die Industrie 4.0, und vermittelt ein grundlegendes Verständnis für das Konzept des digitalen Zwillings.
 Anschließend werden die Struktur und Funktion der \acs{aas} sowie die Rolle des digitalen Produktpasses erläutert.
-Den Abschluss bilden die technologischen Voraussetzungen für die praktische Umsetzung, darunter beispielsweise die Open-Source-Plattform Eclipse BaSyx und der Kommunikationsstandard OPC UA.
+Den Abschluss bilden die technologischen Voraussetzungen für die praktische Umsetzung, darunter beispielsweise die Open-Source-Plattform Eclipse BaSyx und der Kommunikationsstandard \acs{opcua}.
 \subsection{Industrie 4.0}
 % Nach der dritten industriellen Revolution, die vor allem durch den Einsatz elektronischer Systeme sowie der Informations -und Kommunikationstechnologie zur Automatisierung gekennzeichnet ist, vollzieht sich aktuell ein neuer technologischer Wandel, die vierte industrielle Revolution.
 % Besser bekannt als Industrie 4.0, beschreibt sie die umfassende Vernetzung und Integration der physischen mit der digitalen Welt durch den Einsatz Cyber-physischer Systeme.
@@ -28,8 +28,6 @@ Im Fokus steht dabei die Vernetzung von Systemen, die über moderne Internettech
 Ziel dieser Entwicklung ist es, die industrielle Wertschöpfung flexibler und effizienter zu gestalten sowie eine stärkere Individualisierung von Produkten zu ermöglichen. 
 \cite{Industrie4.0ProduktionAutomatisierung}\cite{EinführungundUmsetzungI4.0}
 
-Der Absatz gefällt mir noch nicht, vlt neu mit anderer QUell und die anderen zwei nur davor?
-
 Trotz der weiten Verbreitung des Begriffs Industrie 4.0 mangelt es in der Literatur und Forschung an einer einheitlichen Definition.
 Vor diesem Hintergrund nimmt insbesondere die Plattform Industrie 4.0 \cite{plattform_i40} eine zentrale Rolle in Deutschland ein. 
 Dabei handelt es sich um eine gemeinsame Initiative des Bundesministeriums für Wirtschaft und Energie, des Bundesministerium für Forschung, Technologie und Raumfahrt sowie führender Industrieverbände (z.B. VDMA, Bitkom, ZVEI), Unternehmen, Forschungseinrichtungen und Gewerkschaften.
@@ -40,10 +38,14 @@ Sie definiert Industrie 4.0 als
 Dieser Zyklus orientiert sich an den zunehmend individualisierten Kundenwünschen und erstreckt sich von der Idee, dem Auftrag über die Entwicklung und Fertigung, die Auslieferung eines Produkts an den Endkunden bis hin zum Recycling, einschließlich der damit verbundenen Dienstleistungen.
 Basis ist die Verfügbarkeit aller relevanten Informationen in Echtzeit durch Vernetzung aller an der Wertschöpfung beteiligten Instanzen sowie die Fähigkeit aus den Daten den zu jedem Zeitpunkt optimalen Wertschöpfungsfluss abzuleiten. 
 Durch die Verbindung von Menschen, Objekten und Systemen entstehen dynamische, echtzeitoptimierte und selbst organisierende, unternehmensübergreifende Wertschöpfungsnetzwerke, die sich nach unterschiedlichen Kriterien wie beispielsweise Kosten, Verfügbarkeit und Ressourcenverbrauch optimieren lassen \grqq~\cite[S. 8]{plattform_i40_definition}.
-Diese Definition legt den Fokus auf die durchgängige Digitalisierung und Vernetzung entlang der gesamten Wertschöpfungskette. 
-Sie umfasst nicht nur technologische Konzepte wie Echtzeitfähigkeit, autonome Steuerung und selbstorganisierende Systeme, sondern impliziert auch tiefgreifende organisatorische Veränderungen über Unternehmensgrenzen hinweg. 
-Dadurch lassen sich nicht nur Qualität, Effizienz und Transparenz entlang des gesamten Produktlebenszyklus deutlich steigern, sondern auch Ressourcenverbrauch, Produktionskosten und Energieeinsatz signifikant reduzieren. 
-Industrie 4.0 trägt somit nicht nur zur Verbesserung der Wirtschaftlichkeit bei, sondern leistet auch einen wichtigen Beitrag zur ökologischen Nachhaltigkeit.
+
+Die Definition der Plattform Industrie 4.0 verdeutlicht: Industrie 4.0 steht für einen grundlegenden Wandel in der industriellen Wertschöpfung.
+Im Zentrum stehen dabei nicht nur neue technologische Möglichkeiten, sondern vor allem das Potenzial, Produktions- und Geschäftsprozesse flexibler, effizienter und nachhaltiger zu gestalten.
+Durch die intelligente Vernetzung und die Nutzung von Echtzeitdaten enstehen selbstorganisierende Systeme, die auch über Unternehmensgrenzen hinweg kooperieren und tiefgreifende organisatorische Veränderungen erfordern.
+Auf diese Weise werden nicht nur Qualität und Transparenz gesteigert, sondern auch Resourcen geschont und Kosten reduziert.
+Insgesamnt trägt Industrie 4.0 somit nicht nur zur Verbesserung der Wirtschaftlichkeit bei, sondern leistet auch einen wichtigen Beitrag zur ökologischen Nachhaltigkeit.
+
+
 % Obwohl Industrie 4.0 häufig als neuartiges Konzept dargestellt wird, basiert es im Kern auf Ideen, die schon seit mehreren Jahrzenten exisiteren.
 % Bereits seit den 1980er-Jahren wurden mit Ansätzen wie dem Computer Integrated Manufacturing (CIM) oder der intelligenten Fabrik (Smart Factory) Strategien entwickelt, die auf eine computerintegrierte und automatisierte Produktion abzielen und dabei den Menschen mehr in den Hintergrund rücken.
 % Allerdings scheiterten diese frühen Ansätze oft an den technische Möglichkeiten der damaligen Zeit, vor allem fehlte die Infrastruktur, Rechenleistung und Vernetzung.
@@ -53,7 +55,7 @@ Industrie 4.0 trägt somit nicht nur zur Verbesserung der Wirtschaftlichkeit bei
 
 
 \subsubsection{Künstliche Intelligenz}
-Was ist Künstliche Intelligenz?
+Künstliche Intelligenz ist eine Schlüsselkomponente in der Industrie 4.0, die es ermöglicht, 
 
 Welche Rolle in Industrie?
 Künstliche Intelligenz (KI) gilt als eine Schlüsseltechnologie der Industrie 4.0.
@@ -68,11 +70,12 @@ Damit wird deutlich, KI gilt nicht nur als Zukunftstechnologie, sondern spielt b
 \subsubsection{RAMI 4.0}
 Das \ac{rami} ist ein Leitfaden für die Industrie und dient als Hilfestellung um die digitale Transformation in einem Unternehmen systematisch umzusetzten.
 Es wird in der DIN SPEC 91345 \cite{RAMI4.0} standardisiert und soll helfen, die komplexen Anforderungen an die Industrie 4.0 für die Allgemeinheit verständlich zu machen.
-Das Modell unterteilt sich in drei verschiedene Schichten wie in Abbildung xy zu sehen.
+Das Modell ist als dreidimensionales Koordinatensystem konzipiert und umfässt die Achsen ... .
+
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1\textwidth]{Bilder/RAMI.PNG}
+    \includegraphics[width=0.8\textwidth]{Bilder/RAMI.PNG}
     \caption{Referenzarchitekturmodell Industrie 4.0 (RAMI 4.0)}
     \label{fig:klassifizierungDT}
 \end{figure}
@@ -84,7 +87,7 @@ Als digitales Gegenstück eines physischen Objekts - sei es eine Maschine ein Pr
 Dadurch ermöglichen sie eine konsistenete Erfassung von Daten, das Simulieren von Prozessen und das frühzeitige Erkennen von Optimierungspotenzialen.
 
 Das Konzept selbst wurde erstmals von Michael Grieves im Jahr 2003 in einer Präsentation zum Product Lifecycle Management vorgestellt. 
-Grieves definierte drei grundlegende Komponenten (vgl. \cite{DTGrieves}) , die zusammen das Informationsmodell des digitalen Zwilling bilden:
+Grieves definierte drei grundlegende Komponenten \cite{DTGrieves} , die zusammen das Informationsmodell des digitalen Zwilling bilden:
 \begin{itemize}
     \item ein reales Objekt in der physischen Welt,
     \item ein digitales Abbild dieses Objekts in einem virtuellen Raum, sowie
@@ -107,7 +110,7 @@ Analog zur Softwarentwicklung können diese als instanziiertes Objekt einer Klas
 Je nach Art des Informationsflusses sowie dem Grad der Ausprägung der Verbindung zur realen Welt werden Instanzen digitaler Zwillinge häufig in drei Kategorien klassifiziert: das digitale Modell, den digitalen Schatten und den digitalen Zwilling \cite{ClassificationDT}.
 Obwohl diese Begriffe im allgemeinen Sprachgebrauch oft synonym verwendet werden, unterscheiden sie sich deutlich hinsichtlich ihrer Funktion und Kopplung zum realen Objekt.
 Digitale Modelle sind statische Abbilder physischer Objekte, haben jedoch keine Verbindung zu diesen. 
-Oft werden sie zur Veranschauclichung oder Konstruktion genutzt, wie zum beispiel ein 3D-Modell einer Maschine.
+Oft werden sie zur Veranschauclichung oder Konstruktion genutzt, wie zum Beispiel ein 3D-Modell einer Maschine.
 Zwar können reale Daten, wie etwa Maße oder Materialeigenschaften einer Anlage oder Maschine in ein solches Modell integriert werden, allerdings erfolgt die Eingabe dabei immmer manuell.
 Änderungen an dem realen Objekt werden nicht automatisch aktualisiert und bleiben somit ohne Einfluss auf das digitale Modell.
 Der digitale Schatten ergänzt das digitale Modell um eine unindirektionale Verbindung zum realen Objekt.
@@ -396,7 +399,7 @@ Gleichzeitig bietet der AASX Package Explorer auch erweiterte Funktionen, wie da
     \label{fig:AASXPackageExplorer}
 \end{figure}
 
-Neben der lokalen Modellierung erlaubt das Tool ebenfalls die Verbindung zu einem AAS-Server über standardisierte Schnittstellen (z.B. OPC UA oder HTTP/REST).
+Neben der lokalen Modellierung erlaubt das Tool ebenfalls die Verbindung zu einem AAS-Server über standardisierte Schnittstellen (z.B. \acs{opcua} oder HTTP/REST).
 Dies ermöglicht den Betrieb von \acs{aas} in verteiltelten Systemen.
 Besonders geeignet hierfür ist der Referenzserver des Eclipse-AAS-Projekts \cite{AASXServer}, der das Hosten und Bereitstellen von AASX-Paketen ermöglicht sowie eine nahtlose Integration mit dem AASX Package Explorer erlaubt.
 
@@ -455,4 +458,12 @@ Dieser erlaubt die Visualisierung von Submodellen und deren Elementen anhand ihr
 Hierfür stehen verschiedene vordefinierte Plugins zur Verfügung, die bestimmte Submodelle - wie beispielsweise das Typenschild oder hierarchische Strukturen - grafisch darstellen.
 Da die Lösung Open Source ist besteht zudem die Möglichkeit, eigene benutzerdefinierte Plugins für weitere Submodelle zu erstellen. \cite{BaSyxWiki} \cite{BaSyxEclipse}
 
-\subsubsection{OPC UA}
+\subsubsection{OPC Unified Architecture}
+OPC UA (Open Platform Communications Unified Architecture) ist ein plattformübergreifender Kommunikationsstandard, der speziell für die Anforderungen der industriellen Automatisierung entwickelt wurde.
+Ziel ist ein herstellerübergreifender, sicherer und standardisierter Datenaustausch.
+In \acs{rami} \cite{RAMI4.0} wird \acs{opcua} als empfohlener Standard für die Kommunikationsschicht definiert und bildet damit die Grundlage für die Interoperabilität zwischen Maschinen, Anlagen und IT-Systemen verschiedener Hersteller.
+
+Die grundlegende Idee von \acs{opcua} besteht darin, dass ein Maschinenhersteller einen \acs{opcua} Server bereitstellt, der einen standardisierten und herstellerunabhängigen Zugriff auf eine Maschine ermöglicht.
+Der Server dient hierbei als zentrale Schnittstelle zur Außenwelt. Er implementiert den OPC Standard und stellt strukturierte Informationen sowie Zugriffsmöglichkeiten auf Maschinenzustände und -daten bereit.
+Im Inneren kommuniziert der Server dabei über ein herstellerspezifisches, proprietäres Protokoll mit der Steuerung.
+Zum Auslesen oder Austauschen dieser Daten wird ein \acs{opcua} Client benötigt. Dieser agiert als Kommunikationspartner des Servers, stellt die Verbindung her und ermöglicht den bidirektionalen Datentransfer. \cite{OPCUA}
