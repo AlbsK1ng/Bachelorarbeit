@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  23 JUN 2025 16:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  24 JUN 2025 15:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1239,9 +1239,6 @@ LaTeX Warning: Label `fig:klassifizierungDT' multiply defined.
 
 LaTeX Warning: Label `fig:klassifizierungDT' multiply defined.
 
-
-LaTeX Warning: Label `fig:klassifizierungDT' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -1401,12 +1398,12 @@ Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (./Titelseite.tex
-<./Bilder/groninger_Logo_Transparent_RGB.png, id=267, 360.1455pt x 82.6287pt>
+<./Bilder/groninger_Logo_Transparent_RGB.png, id=263, 360.1455pt x 82.6287pt>
 File: ./Bilder/groninger_Logo_Transparent_RGB.png Graphic file (type png)
 <use ./Bilder/groninger_Logo_Transparent_RGB.png>
 Package pdftex.def Info: ./Bilder/groninger_Logo_Transparent_RGB.png  used on input line 8.
 (pdftex.def)             Requested size: 173.62622pt x 39.83368pt.
-<./Bilder/HHN.png, id=269, 394.47375pt x 207.02344pt>
+<./Bilder/HHN.png, id=265, 394.47375pt x 207.02344pt>
 File: ./Bilder/HHN.png Graphic file (type png)
 <use ./Bilder/HHN.png>
 Package pdftex.def Info: ./Bilder/HHN.png  used on input line 14.
@@ -1512,7 +1509,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--98
 
 [6]) (./main.lof
 Package acronym Info: Label `acro:aas' newly defined as it shall be overridden
-although it is yet undefined on input line 5.
+although it is yet undefined on input line 4.
 )
 \tf@lof=\write9
 \openout9 = `main.lof'.
@@ -1543,49 +1540,42 @@ although it is yet undefined on input line 5.
 [3]
 
 [4]
-Package acronym Info: Label `acro:rami' newly defined as it shall be overridden
-although it is yet undefined on input line 71.
-
 
 [5]
-<Bilder/RAMI.PNG, id=462, 670.75594pt x 427.5975pt>
-File: Bilder/RAMI.PNG Graphic file (type png)
-<use Bilder/RAMI.PNG>
-Package pdftex.def Info: Bilder/RAMI.PNG  used on input line 78.
-(pdftex.def)             Requested size: 341.43437pt x 217.66078pt.
 
-
-[6 <./Bilder/RAMI.PNG>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 92.
+[6]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 132.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 [7{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<Bilder/klassifizierung_DT.pdf, id=481, 592.13219pt x 227.89139pt>
+<Bilder/klassifizierung_DT.pdf, id=478, 592.13219pt x 227.89139pt>
 File: Bilder/klassifizierung_DT.pdf Graphic file (type pdf)
 <use Bilder/klassifizierung_DT.pdf>
-Package pdftex.def Info: Bilder/klassifizierung_DT.pdf  used on input line 127.
+Package pdftex.def Info: Bilder/klassifizierung_DT.pdf  used on input line 167.
 (pdftex.def)             Requested size: 426.79135pt x 164.25552pt.
 
 
 [8 <./Bilder/klassifizierung_DT.pdf>]
 
 [9]
+Package acronym Info: Label `acro:rami' newly defined as it shall be overridden
+although it is yet undefined on input line 219.
 <Bilder/i4_komponente_neu.pdf, id=514, 388.33081pt x 129.6042pt>
 File: Bilder/i4_komponente_neu.pdf Graphic file (type pdf)
 <use Bilder/i4_komponente_neu.pdf>
-Package pdftex.def Info: Bilder/i4_komponente_neu.pdf  used on input line 198.
+Package pdftex.def Info: Bilder/i4_komponente_neu.pdf  used on input line 244.
 (pdftex.def)             Requested size: 426.79135pt x 142.44638pt.
 
 
 [10 <./Bilder/i4_komponente_neu.pdf>]
 
 [11]
-<Bilder/Metamodell_neu.drawio.pdf, id=539, 412.4208pt x 426.63388pt>
+<Bilder/Metamodell_neu.drawio.pdf, id=540, 412.4208pt x 426.63388pt>
 File: Bilder/Metamodell_neu.drawio.pdf Graphic file (type pdf)
 <use Bilder/Metamodell_neu.drawio.pdf>
-Package pdftex.def Info: Bilder/Metamodell_neu.drawio.pdf  used on input line 250.
+Package pdftex.def Info: Bilder/Metamodell_neu.drawio.pdf  used on input line 296.
 (pdftex.def)             Requested size: 384.1096pt x 397.3578pt.
 
 
@@ -1595,30 +1585,30 @@ Package pdftex.def Info: Bilder/Metamodell_neu.drawio.pdf  used on input line 25
 
 [14]
 Package acronym Info: Label `acro:dpp' newly defined as it shall be overridden
-although it is yet undefined on input line 326.
+although it is yet undefined on input line 372.
 
 
 [15]
-<Bilder/dpp_konzept.pdf, id=620, 222.8325pt x 165.7392pt>
+<Bilder/dpp_konzept.pdf, id=621, 222.8325pt x 165.7392pt>
 File: Bilder/dpp_konzept.pdf Graphic file (type pdf)
 <use Bilder/dpp_konzept.pdf>
-Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 361.
+Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 407.
 (pdftex.def)             Requested size: 298.75264pt x 222.2259pt.
 
 
 [16]
 
 [17 <./Bilder/dpp_konzept.pdf>]
-<Bilder/AAS_PE.PNG, id=658, 913.91437pt x 272.51813pt>
+<Bilder/AAS_PE.PNG, id=659, 913.91437pt x 272.51813pt>
 File: Bilder/AAS_PE.PNG Graphic file (type png)
 <use Bilder/AAS_PE.PNG>
-Package pdftex.def Info: Bilder/AAS_PE.PNG  used on input line 397.
+Package pdftex.def Info: Bilder/AAS_PE.PNG  used on input line 443.
 (pdftex.def)             Requested size: 426.79135pt x 127.26434pt.
-Package acronym Info: Label `acro:opcua' overridden on input line 402.
+Package acronym Info: Label `acro:opcua' overridden on input line 448.
 
 
 [18 <./Bilder/AAS_PE.PNG>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 434.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 480.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1627,17 +1617,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (3.772pt too wide) in paragraph at lines 452--460
+Overfull \hbox (3.772pt too wide) in paragraph at lines 498--506
 \T1/lmr/m/n/12 (-20) Web Ui ge-nutzt wer-den. Die web-ba-sier-te Be-nut-ze-ro-ber-flä-che wur-de mit dem JavaScript-
  []
 
 
 
 [19]
-Package acronym Info: Label `acro:opcua' overridden on input line 464.
-Package acronym Info: Label `acro:opcua' overridden on input line 466.
-Package acronym Info: Label `acro:opcua' overridden on input line 466.
-Package acronym Info: Label `acro:opcua' overridden on input line 469.
+Package acronym Info: Label `acro:opcua' overridden on input line 510.
+Package acronym Info: Label `acro:opcua' overridden on input line 512.
+Package acronym Info: Label `acro:opcua' overridden on input line 512.
+Package acronym Info: Label `acro:opcua' overridden on input line 515.
 ) (./Entwicklung.tex) (./Ergebnisse.tex) (./Zusammenfassung.tex)
 
 [20]
@@ -1656,8 +1646,8 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Overfull \hbox (27.22418pt too wide) in paragraph at lines 157--157
-[]$\T1/lmtt/m/n/12 https : / / www . zvei . org / presse -[] medien / publikationen / umsetzungsstrategie -[]
+Overfull \hbox (53.37152pt too wide) in paragraph at lines 157--157
+\T1/lmr/m/sc/12 (-20) url\T1/lmr/m/n/12 (-20) : []$\T1/lmtt/m/n/12 https : / / www . zvei . org / presse -[] medien / publikationen / umsetzungsstrategie -[]
  []
 
 
@@ -1676,7 +1666,9 @@ Overfull \hbox (39.51118pt too wide) in paragraph at lines 157--157
 
 [24]
 
-[25] (./main.aux)
+[25]
+
+[26] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1689,7 +1681,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CA42BFA67915D4BB781FD6C3C4BDE1C4;12949.
+(rerunfilecheck)             Checksum: 9E13581E3F954ACF2A82675D6A477DA6;12828.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -1700,10 +1692,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46881 strings out of 473190
- 917877 string characters out of 5715806
- 1843761 words of memory out of 5000000
- 69064 multiletter control sequences out of 15000+600000
+ 46887 strings out of 473190
+ 918330 string characters out of 5715806
+ 1844988 words of memory out of 5000000
+ 69068 multiletter control sequences out of 15000+600000
  645899 words of font info for 182 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  84i,11n,93p,2471b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1711,10 +1703,10 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{glo:SPS} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on main.pdf (32 pages, 933212 bytes).
+Output written on main.pdf (33 pages, 556947 bytes).
 PDF statistics:
- 862 PDF objects out of 1000 (max. 8388607)
- 768 compressed objects within 8 object streams
- 151 named destinations out of 1000 (max. 500000)
- 50749 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 874 PDF objects out of 1000 (max. 8388607)
+ 781 compressed objects within 8 object streams
+ 153 named destinations out of 1000 (max. 500000)
+ 50736 words of extra memory for PDF output out of 51595 (max. 10000000)
 

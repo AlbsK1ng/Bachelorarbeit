@@ -100,14 +100,18 @@
   \endentry
 
   \entry{plattform_i40_definition}{misc}{}{}
-    \name{author}{1}{}{%
-      {{hash=BZV}{%
+    \name{author}{3}{}{%
+      {{hash=B}{%
          family={BITKOM},
          familyi={B\bibinitperiod},
-         suffix={VDMA},
-         suffixi={V\bibinitperiod},
-         given={ZVEI},
-         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=V}{%
+         family={VDMA},
+         familyi={V\bibinitperiod},
+      }}%
+      {{hash=Z}{%
+         family={ZVEI},
+         familyi={Z\bibinitperiod},
       }}%
     }
     \strng{namehash}{BVZ1}
@@ -122,6 +126,76 @@
     \field{month}{04}
     \field{year}{2015}
     \field{urlday}{15}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{KIEinführung}{misc}{}{}
+    \name{author}{8}{}{%
+      {{hash=MJ}{%
+         family={Metternich},
+         familyi={M\bibinitperiod},
+         given={Joachim},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={Biegel},
+         familyi={B\bibinitperiod},
+         given={Tobias},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=CBB}{%
+         family={Cassoli},
+         familyi={C\bibinitperiod},
+         given={Beatriz\bibnamedelima Bretones},
+         giveni={B\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=HF}{%
+         family={Hoffmann},
+         familyi={H\bibinitperiod},
+         given={Felix},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=JN}{%
+         family={Jourdan},
+         familyi={J\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Rosemeyer},
+         familyi={R\bibinitperiod},
+         given={Jannik},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Stanula},
+         familyi={S\bibinitperiod},
+         given={Patrick},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=ZA}{%
+         family={Ziegenbein},
+         familyi={Z\bibinitperiod},
+         given={Amina},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Forschungsbeirat der Plattform Industrie 4.0 / acatech - Deutsche Akademie der Technikwissenschaften}%
+    }
+    \strng{namehash}{MJ+1}
+    \strng{fullhash}{MJBTCBBHFJNRJSPZA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Künstliche Intelligenz zur Umsetzung von Industrie 4.0 im Mittelstand}
+    \verb{url}
+    \verb https://www.ptw.tu-darmstadt.de/media/fachgebietptw/dokumente_3/wisse
+    \verb nssammlung_ptw/leitfaeden_2/Kuenstliche_Intelligenz_zur_Umsetzung__vo
+    \verb n_Industrie_4.0_im_Mittelstand.pdf
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{24}
     \field{urlmonth}{06}
     \field{urlyear}{2025}
   \endentry
@@ -152,53 +226,128 @@
     \field{urlyear}{2025}
   \endentry
 
-  \entry{bitkomStudie}{online}{}{}
+  \entry{MLDefinition}{misc}{}{}
     \name{author}{1}{}{%
-      {{hash=eB}{%
-         family={e.V.},
-         familyi={e\bibinitperiod},
-         given={Bitkom},
-         giveni={B\bibinitperiod},
+      {{hash=IF}{%
+         family={IKS},
+         familyi={I\bibinitperiod},
+         given={Frauenhofer},
+         giveni={F\bibinitperiod},
       }}%
     }
-    \strng{namehash}{eB1}
-    \strng{fullhash}{eB1}
+    \strng{namehash}{IF1}
+    \strng{fullhash}{IF1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Industrie 4.0: Schon 42 Prozent der Unternehmen setzen KI in der Produktion ein}
+    \field{title}{Künstliche Intelligenz (KI) und maschinelles Lernen}
     \verb{url}
-    \verb https://www.bitkom.org/Presse/Presseinformation/Industrie-4.0-Unterne
-    \verb hmen-KI-Produktion
+    \verb https://www.iks.fraunhofer.de/de/themen/kuenstliche-intelligenz.html
     \endverb
-    \field{month}{03}
-    \field{year}{2025}
-    \field{urlday}{20}
+    \field{year}{o. J.}
+    \field{urlday}{24}
     \field{urlmonth}{06}
     \field{urlyear}{2025}
   \endentry
 
-  \entry{RAMI4.0}{misc}{}{}
-    \name{author}{1}{}{%
-      {{hash=VB}{%
-         family={Verlag},
+  \entry{MLSchlüsseltechnologie}{misc}{}{}
+    \name{author}{10}{}{%
+      {{hash=DI}{%
+         family={Döbel},
+         familyi={D\bibinitperiod},
+         given={Inga},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=LDM}{%
+         family={Leis},
+         familyi={L\bibinitperiod},
+         given={Dr.\bibnamedelima Miriam},
+         giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=VMM}{%
+         family={Vogelsang},
          familyi={V\bibinitperiod},
-         given={Beuth},
+         given={Manuel\bibnamedelima Molina},
+         giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=ND}{%
+         family={Neustroev},
+         familyi={N\bibinitperiod},
+         given={Dmitry},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PDH}{%
+         family={Petzka},
+         familyi={P\bibinitperiod},
+         given={Dr.\bibnamedelima Henning},
+         giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Riemer},
+         familyi={R\bibinitperiod},
+         given={Annamaria},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RDS}{%
+         family={Rüping},
+         familyi={R\bibinitperiod},
+         given={Dr.\bibnamedelima Stefan},
+         giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=VDA}{%
+         family={Voss},
+         familyi={V\bibinitperiod},
+         given={Dr.\bibnamedelima Angelika},
+         giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Wegele},
+         familyi={W\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WDJ}{%
+         family={Welz},
+         familyi={W\bibinitperiod},
+         given={Dr.\bibnamedelima Juliane},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DI+1}
+    \strng{fullhash}{DILDMVMMNDPDHRARDSVDAWMWDJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Maschinelles Lernen - Eine Analyse zu Kompetenzen, Forschung und Anwendung}
+    \verb{url}
+    \verb https://www.bigdata-ai.fraunhofer.de/de/publikationen/ml-studie.html
+    \endverb
+    \field{year}{2018}
+    \field{urlday}{24}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{DLDefinition}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=BB}{%
+         family={Botsch},
+         familyi={B\bibinitperiod},
+         given={Benny},
          giveni={B\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
-      {Deutsches Institut für Normung e.V. (DIN)}%
+      {Springer Spektrum}%
     }
-    \strng{namehash}{VB1}
-    \strng{fullhash}{VB1}
+    \strng{namehash}{BB1}
+    \strng{fullhash}{BB1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \verb{doi}
-    \verb 10.31030/2436156
+    \verb 10.1007/978-3-662-67277-8
     \endverb
-    \field{title}{DIN SPEC 91345:2016-04 - Refernzarchitekturmodell Industrie 4.0 (RAMI 4.0)}
-    \field{month}{04}
-    \field{year}{2016}
+    \field{isbn}{978-3-662-67276-1}
+    \field{title}{Maschinelles Lernen - Grundlagen und Anwendungen}
+    \field{year}{2023}
   \endentry
 
   \entry{DTGrieves}{misc}{}{}
@@ -394,6 +543,30 @@
     \field{urlday}{06}
     \field{urlmonth}{06}
     \field{urlyear}{2025}
+  \endentry
+
+  \entry{RAMI4.0}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=VB}{%
+         family={Verlag},
+         familyi={V\bibinitperiod},
+         given={Beuth},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Deutsches Institut für Normung e.V. (DIN)}%
+    }
+    \strng{namehash}{VB1}
+    \strng{fullhash}{VB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.31030/2436156
+    \endverb
+    \field{title}{DIN SPEC 91345:2016-04 - Refernzarchitekturmodell Industrie 4.0 (RAMI 4.0)}
+    \field{month}{04}
+    \field{year}{2016}
   \endentry
 
   \entry{AASIEC63278}{misc}{}{}

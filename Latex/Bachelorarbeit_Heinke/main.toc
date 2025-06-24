@@ -7,19 +7,18 @@
 \contentsline {subsection}{\numberline {1.3}Vorgehensweise}{2}{subsection.1.3}%
 \contentsline {section}{\numberline {2}Grundlagen}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Industrie 4.0}{3}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Künstliche Intelligenz}{5}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}RAMI 4.0}{5}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Digitaler Zwilling}{7}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Asset Administration Shell}{10}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Aufbau und Struktur}{11}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Informationsaustausch}{13}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Sicherheit}{14}{subsubsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.4}Digitaler Produktpass}{15}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}robocell}{17}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Technologische Grundlagen}{18}{subsection.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}AASX Package Exlporer}{18}{subsubsection.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.6.2}Eclipse BaSyx }{18}{subsubsection.2.6.2}%
-\contentsline {subsubsection}{\numberline {2.6.3}OPC Unified Architecture}{20}{subsubsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.2}Künstliche Intelligenz}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Digitaler Zwilling}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Asset Administration Shell}{10}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Aufbau und Struktur}{11}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Informationsaustausch}{13}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Sicherheit}{14}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Digitaler Produktpass}{15}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}robocell}{17}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Technologische Grundlagen}{18}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.7.1}AASX Package Exlporer}{18}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.2}Eclipse BaSyx }{18}{subsubsection.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.3}OPC Unified Architecture}{20}{subsubsection.2.7.3}%
 \contentsline {section}{\numberline {3}Entwicklung}{21}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Konzeptionierung des digitalen Zwilling}{21}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Identifikation relevanter Datenquellen}{21}{subsubsection.3.1.1}%
@@ -62,5 +61,5 @@
 \contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{21}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{21}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{21}{subsection.5.3}%
-\contentsline {section}{Glossar und Abkürzungsverzeichnis}{22}{section*.20}%
-\contentsline {section}{\numberline {A}Anhang 1}{25}{appendix.A}%
+\contentsline {section}{Glossar und Abkürzungsverzeichnis}{22}{section*.19}%
+\contentsline {section}{\numberline {A}Anhang 1}{26}{appendix.A}%
