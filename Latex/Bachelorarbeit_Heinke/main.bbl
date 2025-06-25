@@ -874,6 +874,31 @@
     \field{year}{2022}
   \endentry
 
+  \entry{DPP40Bild}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=WD}{%
+         family={Wegener},
+         familyi={W\bibinitperiod},
+         given={Dieter},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WD1}
+    \strng{fullhash}{WD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{DPP4.0 as a Digital Enabler for “Green Transformation”}
+    \verb{url}
+    \verb https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/Tech
+    \verb nik/DMUEF/Vortraege2023/Wegener.pdf
+    \endverb
+    \field{month}{11}
+    \field{year}{2024}
+    \field{urlday}{30}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
   \entry{RobocellWebsite}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=gcg}{%

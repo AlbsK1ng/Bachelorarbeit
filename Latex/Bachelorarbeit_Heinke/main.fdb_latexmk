@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1750773519.95777 "main.aux" "main.bbl" "main" 1750773523.1924 0
-  "./main-blx.bib" 1750773522.71487 343 bf1f0c75b5bafd473925320ac9611e26 ""
-  "./references.bib" 1750773482.99018 11157 8d7efd6edc5d61fefa32c7c1921cf6e5 ""
+["bibtex main"] 1750859525.05172 "main.aux" "main.bbl" "main" 1750859580.94591 0
+  "./main-blx.bib" 1750859580.27834 343 bf1f0c75b5bafd473925320ac9611e26 ""
+  "./references.bib" 1750831325.28293 11451 da862e7d9f09b147a919a8e6030bdddf ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1711143581 65510 b1f696b0241395385f422f67543c37fd ""
-  "main.aux" 1750773522.70687 21668 d945fa04a51341c1cae61ab77120f2ef "pdflatex"
+  "main.aux" 1750859580.26734 22018 546412887ea7bb6beb58c023a3686440 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1750773520.18496 "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1750773523.1927 0
+["pdflatex"] 1750859576.71706 "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1750859580.94614 0
   "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" 1748937256.97233 3655 c5f133dc8d1bca6413f92f62e26730b5 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1254269338 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
@@ -275,24 +275,24 @@
   "Bilder/groninger_Logo_Transparent_RGB.png" 1744789228 22438 99676d83963d24fab6a9b99be56ce6bc ""
   "Bilder/i4_komponente_neu.pdf" 1748604469 24521 26cb0f1d8a14e54d7a41f86dc2ba1890 ""
   "Bilder/klassifizierung_DT.pdf" 1750083071 38688 b1a129c060d76710bc809d2119be710b ""
-  "Einleitung.tex" 1750663447.77049 5392 96680c236078db7866d078db9aa46f7f ""
-  "Entwicklung.tex" 1749023674.11891 1022 530359a4a41d713c195bb690d4688aad ""
+  "Einleitung.tex" 1750829759.91209 5365 a6daa556b729f4e7beb2329b04a4d72f ""
+  "Entwicklung.tex" 1750834465.18142 1007 8982fb342be9f96859e2e51ce192b971 ""
   "Ergebnisse.tex" 1750158639.2642 794 713a6bbdaa964571432fe2019d5309e5 ""
-  "Grundlagen.tex" 1750773512.78298 53526 0aeda6c21a856b658dfa99e3b6fc9c76 ""
+  "Grundlagen.tex" 1750859576.52026 57214 f5328c17517599ed277ace022be6c24d ""
   "Titelseite.tex" 1750160607.28088 1627 5c613b18241f75c9897f5cf133bc0840 ""
   "Zusammenfassung.tex" 1748248406.5135 178 e1fe5fe01604a99285d654680cf1bc8c ""
   "abkuerzungsverzeichnis.tex" 1750761259.97482 481 4f7f870233b3d5d0b29863b94b115327 ""
   "commands.tex" 1747647607.92526 0 d41d8cd98f00b204e9800998ecf8427e ""
   "ehrenwoertlichErklärung.tex" 1747385158.63477 557 4ec48bd316d1a5d701d88a7edd0ff2cb ""
   "glossary.tex" 1523254870 167 69e8ece9b7c85abdb3646b31f274c667 ""
-  "main.aux" 1750773522.70687 21668 d945fa04a51341c1cae61ab77120f2ef "pdflatex"
-  "main.bbl" 1750773520.17913 28982 8d528832ab3f1d7359a033d4d974e4c4 "bibtex main"
+  "main.aux" 1750859580.26734 22018 546412887ea7bb6beb58c023a3686440 "pdflatex"
+  "main.bbl" 1750859525.26397 29683 fd4f6a0f3674d060e57fbaff7426d917 "bibtex main"
   "main.gls" 0 -1 0 ""
-  "main.lof" 1750773522.71587 571 ff07a15a53574398383327376d28aa8e "pdflatex"
-  "main.out" 1750773522.71087 12828 9e13581e3f954acf2a82675d6a477da6 "pdflatex"
-  "main.run.xml" 1750773522.71487 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
+  "main.lof" 1750859580.28034 649 b91277b68441f0eab50d2d235b5e84a6 "pdflatex"
+  "main.out" 1750859580.27434 12747 4c1fb64f9ccc8332a43ffd694fd124dd "pdflatex"
+  "main.run.xml" 1750859580.27934 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
   "main.tex" 1748937256.97233 3655 c5f133dc8d1bca6413f92f62e26730b5 ""
-  "main.toc" 1750773522.71587 6218 b4b127091d180f40567edabd9280eb0d "pdflatex"
+  "main.toc" 1750859580.28034 6203 d1afb02ba80b232a9f3c1fcb852d193b "pdflatex"
   "sperrvermerk.tex" 1747385065.43251 1177 6593896265383cba0f0f0fe7a253f664 ""
   (generated)
   "main-blx.bib"

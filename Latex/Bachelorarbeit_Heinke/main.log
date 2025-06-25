@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  24 JUN 2025 15:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  25 JUN 2025 15:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1236,9 +1236,6 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 LaTeX Warning: Label `fig:klassifizierungDT' multiply defined.
 
-
-LaTeX Warning: Label `fig:klassifizierungDT' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -1544,16 +1541,16 @@ although it is yet undefined on input line 5.
 [5]
 
 [6]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 132.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 165.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 [7{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<Bilder/klassifizierung_DT.pdf, id=478, 592.13219pt x 227.89139pt>
+<Bilder/klassifizierung_DT.pdf, id=479, 592.13219pt x 227.89139pt>
 File: Bilder/klassifizierung_DT.pdf Graphic file (type pdf)
 <use Bilder/klassifizierung_DT.pdf>
-Package pdftex.def Info: Bilder/klassifizierung_DT.pdf  used on input line 167.
+Package pdftex.def Info: Bilder/klassifizierung_DT.pdf  used on input line 200.
 (pdftex.def)             Requested size: 426.79135pt x 164.25552pt.
 
 
@@ -1561,21 +1558,21 @@ Package pdftex.def Info: Bilder/klassifizierung_DT.pdf  used on input line 167.
 
 [9]
 Package acronym Info: Label `acro:rami' newly defined as it shall be overridden
-although it is yet undefined on input line 219.
-<Bilder/i4_komponente_neu.pdf, id=514, 388.33081pt x 129.6042pt>
+although it is yet undefined on input line 252.
+<Bilder/i4_komponente_neu.pdf, id=515, 388.33081pt x 129.6042pt>
 File: Bilder/i4_komponente_neu.pdf Graphic file (type pdf)
 <use Bilder/i4_komponente_neu.pdf>
-Package pdftex.def Info: Bilder/i4_komponente_neu.pdf  used on input line 244.
+Package pdftex.def Info: Bilder/i4_komponente_neu.pdf  used on input line 277.
 (pdftex.def)             Requested size: 426.79135pt x 142.44638pt.
 
 
 [10 <./Bilder/i4_komponente_neu.pdf>]
 
 [11]
-<Bilder/Metamodell_neu.drawio.pdf, id=540, 412.4208pt x 426.63388pt>
+<Bilder/Metamodell_neu.drawio.pdf, id=541, 412.4208pt x 426.63388pt>
 File: Bilder/Metamodell_neu.drawio.pdf Graphic file (type pdf)
 <use Bilder/Metamodell_neu.drawio.pdf>
-Package pdftex.def Info: Bilder/Metamodell_neu.drawio.pdf  used on input line 296.
+Package pdftex.def Info: Bilder/Metamodell_neu.drawio.pdf  used on input line 329.
 (pdftex.def)             Requested size: 384.1096pt x 397.3578pt.
 
 
@@ -1585,30 +1582,30 @@ Package pdftex.def Info: Bilder/Metamodell_neu.drawio.pdf  used on input line 29
 
 [14]
 Package acronym Info: Label `acro:dpp' newly defined as it shall be overridden
-although it is yet undefined on input line 372.
+although it is yet undefined on input line 405.
 
 
 [15]
-<Bilder/dpp_konzept.pdf, id=621, 222.8325pt x 165.7392pt>
+<Bilder/dpp_konzept.pdf, id=623, 222.8325pt x 165.7392pt>
 File: Bilder/dpp_konzept.pdf Graphic file (type pdf)
 <use Bilder/dpp_konzept.pdf>
-Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 407.
+Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 440.
 (pdftex.def)             Requested size: 298.75264pt x 222.2259pt.
 
 
-[16]
+[16 <./Bilder/dpp_konzept.pdf>]
 
-[17 <./Bilder/dpp_konzept.pdf>]
-<Bilder/AAS_PE.PNG, id=659, 913.91437pt x 272.51813pt>
+[17]
+<Bilder/AAS_PE.PNG, id=662, 913.91437pt x 272.51813pt>
 File: Bilder/AAS_PE.PNG Graphic file (type png)
 <use Bilder/AAS_PE.PNG>
-Package pdftex.def Info: Bilder/AAS_PE.PNG  used on input line 443.
+Package pdftex.def Info: Bilder/AAS_PE.PNG  used on input line 477.
 (pdftex.def)             Requested size: 426.79135pt x 127.26434pt.
-Package acronym Info: Label `acro:opcua' overridden on input line 448.
+Package acronym Info: Label `acro:opcua' overridden on input line 482.
 
 
 [18 <./Bilder/AAS_PE.PNG>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 480.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 514.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1617,29 +1614,30 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (3.772pt too wide) in paragraph at lines 498--506
+
+[19]
+Overfull \hbox (3.772pt too wide) in paragraph at lines 532--540
 \T1/lmr/m/n/12 (-20) Web Ui ge-nutzt wer-den. Die web-ba-sier-te Be-nut-ze-ro-ber-flä-che wur-de mit dem JavaScript-
  []
 
+Package acronym Info: Label `acro:opcua' overridden on input line 544.
+Package acronym Info: Label `acro:opcua' overridden on input line 546.
+Package acronym Info: Label `acro:opcua' overridden on input line 546.
+Package acronym Info: Label `acro:opcua' overridden on input line 549.
+) (./Entwicklung.tex
 
+[20]) (./Ergebnisse.tex) (./Zusammenfassung.tex)
 
-[19]
-Package acronym Info: Label `acro:opcua' overridden on input line 510.
-Package acronym Info: Label `acro:opcua' overridden on input line 512.
-Package acronym Info: Label `acro:opcua' overridden on input line 512.
-Package acronym Info: Label `acro:opcua' overridden on input line 515.
-) (./Entwicklung.tex) (./Ergebnisse.tex) (./Zusammenfassung.tex)
-
-[20]
+[21]
 Overfull \vbox (588.42247pt too high) has occurred while \output is active []
 
 
 
-[21]
+[22]
 No file main.gls.
 
 
-[22
+[23
 
 ]
 Package microtype Info: Character `029' is missing
@@ -1652,7 +1650,7 @@ Overfull \hbox (53.37152pt too wide) in paragraph at lines 157--157
 
 
 
-[23]
+[24]
 Overfull \hbox (11.28668pt too wide) in paragraph at lines 157--157
 []$\T1/lmtt/m/n/12 https : / / industrialdigitaltwin . org / en / content -[] hub / aasspecifications$[]
  []
@@ -1664,11 +1662,11 @@ Overfull \hbox (39.51118pt too wide) in paragraph at lines 157--157
 
 
 
-[24]
-
 [25]
 
-[26] (./main.aux)
+[26]
+
+[27] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1681,7 +1679,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9E13581E3F954ACF2A82675D6A477DA6;12828.
+(rerunfilecheck)             Checksum: 4C1FB64F9CCC8332A43FFD694FD124DD;12747.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -1692,21 +1690,21 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46887 strings out of 473190
- 918330 string characters out of 5715806
- 1844988 words of memory out of 5000000
- 69068 multiletter control sequences out of 15000+600000
+ 46894 strings out of 473190
+ 918531 string characters out of 5715806
+ 1844150 words of memory out of 5000000
+ 69073 multiletter control sequences out of 15000+600000
  645899 words of font info for 182 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 84i,11n,93p,2471b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,93p,2471b,3302s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{glo:SPS} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on main.pdf (33 pages, 556947 bytes).
+Output written on main.pdf (34 pages, 558862 bytes).
 PDF statistics:
- 874 PDF objects out of 1000 (max. 8388607)
- 781 compressed objects within 8 object streams
- 153 named destinations out of 1000 (max. 500000)
+ 883 PDF objects out of 1000 (max. 8388607)
+ 788 compressed objects within 8 object streams
+ 155 named destinations out of 1000 (max. 500000)
  50736 words of extra memory for PDF output out of 51595 (max. 10000000)
 

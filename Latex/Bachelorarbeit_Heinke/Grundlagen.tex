@@ -58,26 +58,59 @@ Mit der zunehmenden Vernetzung von Maschinen und Anlagen entstehen immer größe
 Diese Daten bieten enorme Potenziale zur Optimierung industrieller Abläufe, beispielsweise zur Steigerung der Anlagenverfügbarkeit, zur Reduzierung von Ausschuss oder zur Verbesserug der Produktqualität.
 Zudem erlauben intelligente Produkte, das Hersteller auch während der Nutzungsphase Informationen über den Einsatz und Zustand eines Produktes erhalten.
 Auf Basis dieser lassen sich neue Dienstleistungen und Anwendungen entwickeln, wie etwa die vorrauschaunde Instandhaltung oder die dynamische Optimierung von Betriebsparametern.
+
 Damit solche datengetriebenen Ansätze erfolgreich umgesetzt werden können, benötigt es leistungsfähige Technologien zur Analyse und Interpretation.
 Genau hier setzt \acs{ki} an.
 Insbesondere Methoden des maschinellen Lernens erlauben es, Zusammenhänge in großen Datenmengen zu erkennen, Zustände zu klassifizieren und sogar Vorhersagen über zukünftige Systementwicklungen zu treffen. \cite{KIEinführung} 
-\acs{ki} nimmt somit eine zentralle Rolle innerhalb der Industrie 4.0 ein, indem sie einen echten Mehrwert aus den gesammelten Daten generiert und dadurch die Wettbewerbsfähigkeit von Unternehmen stärkt.
+\acs{ki} nimmt somit eine zentralle Rolle innerhalb der Industrie 4.0 ein, indem sie einen echten Mehrwert aus den gesammelten Daten generiert.
 
 Im Allgemeinen bezeichnet \acs{ki} dabei eine Vielzahl von Methoden und Technologien, die es Computern ermöglichen, Aufgaben zu bewältigen, für die normalerweise menschliche Inteligenz erforderlich ist.
 Dazu zählen insbesondere die Fähigkeit, aus Daten zu lernen und eigenständig Lösungen für Probleme zu finden. \cite{KIDefinition}
 
-Wie bereits erwähnt, stellt das maschinelle Lernen ein wichtiges Teilgebiet der \acs{ki} dar.
+Das maschinelle Lernen ist ein wichtiges Teilgebiet der \acs{ki}.
 Es beschreibt Algorithmen, die selbstständig aus Daten lernen und darauf basierend Vorhersagen tätigen können.
-Im Gegensatz zu herkömmlichen Computerprogrammen wird hierbei kein Lösungsweg vorgegeben. 
-Das Modell ist vielmehr selbsständig in der Lage Muster in den vorgegebenen Daten zu erkennen und anhand dieser eine bestimmmte Aufgabe auszuführen  \cite{MLDefinition}.
+Im Gegensatz zu herkömmlichen Computerprogrammen wird kein Lösungsweg vorgegeben. 
+Das Modell ist selbstständig in der Lage zu lernen. Es kann eigenständig Muster in den vorgegebenen Daten erkennen und anhand dieser eine bestimmmte Aufgabe ausführen  \cite{MLDefinition}.
 Aufgrund seiner zentralen Bedeutung für zahlreiche Anwendungen gilt maschinelles Lernen häufig auch als Schlüsseltechnologie der \acs{ki} \cite{MLSchlüsseltechnologie}. 
 
-Ein Teilbereich des maschinellen Lernens ist das sogenannnte Deep Learning. 
-Es basiert auf künstlichen neuronalen Netzen, die in ihrer Struktur an das Verhalten von Neutronen des menschlichen Gehirns angelehnt sind.
-Deep-Learning-Modelle werden vor allem dann eingesetzt, wenn die Beziehung zwischen Eingabe- und Ausgabedaten sehr komplex oder nichtlinear ist.
-Im Gegensatz zu klasischen neuronalen Netzen verwendet das Deep Learning sogenannte tiefe neuronale Netze, die aus einer Vielzahl verschiedener Neuronenschichten bestehen.
-Diese ermöglichen das Erkennen und Erlernen hochkomplexer Zusammenhänge und abstrakter Merkmale in großen Datenmengen.
+Grundsätzlich wird dabei zwischen zwei unterschiedlichen Lernmethoden unterschieden.
+Beim überwachten Lernen wird einem Algorithmus ein Datensatz zur Verfügung gestellt, der sowohl Eingabewerte als auch die dazugehörigen Ziel- bzw. Ausgabewerte enthält.
+Das Modell kann während des Trainings Zusammenhänge und Muster zwischen diesen Daten erkennen und daraus eine Funktion ableiten, die neue Eingaben korrekt zuordnet.
+Typische Anwendungsbereiche sind die Klassifikation (z. B. die Einteilung von Bildern in Kategorien) und die Regression (z. B. die Vorhersage numerischer Werte wie Temperatur oder Energieverbrauch).
+Demgegenüber steht das unüberwachte Lernen, bei dem das Modell mit ungelabelten Daten trainiert wird. 
+Es liegen also keine Zielwerte vor, und der Algorithmus muss eigenständig Muster oder Strukturen in den Eingabedaten identifizieren. 
+Häufig kommt dabei die Clusteranalyse zum Einsatz, bei der ähnliche Datenpunkte zu Gruppen (Clustern) zusammengefasst werden. 
+Eine typische Anwendung ist die Anomalieerkennung, bei der Abweichungen von einem erwarteten Normalverhalten erkannt werden können.
+
+Ein besonders vielversprechender Ansatz innerhalb des maschinellen Lernens ist das sogenannte Deep Learning.
+Es basiert auf künstlichen neuronalen Netzen, die in ihrer Struktur an das Verhalten von Neuronen im menschlichen Gehirn angelehnt sind.
+Während klassische maschinelle Lernmodelle meist nur aus einer oder wenigen Schichten bestehen, verwendet Deep Learning sogenannte tiefe neuronale Netze, die aus einer Vielzahl aufeinanderfolgender Schichten bestehen.
+Diese ermöglichen das Erkennen und Erlernen hochkomplexer Zusammenhänge und abstrakter Merkmale in großen Datenmengen. 
 \cite{DLDefinition}
+
+% Grundsätzlich wird dabei zwischen zwei unterschiedlichen Lernmethoden unterschieden.
+% Beim überwachten Lernen wird einem Algorithmus ein Datensatz zur Verfügung gestellt, der sowohl Eingabewerte als auch die dazugehörigen Ziel- bzw. Ausgabewerte enthält.
+% Das Modell kann während des Trainings Zusammenhänge und Muster zwischen diesen Daten erkennen und daraus eine Funktion ableiten, die neue Eingaben korrekt zuordnet.
+% Typische Anwendungsbereiche sind die Klassifikation (z. B. die Einteilung von Bildern in Kategorien) und die Regression (z. B. die Vorhersage numerischer Werte wie Temperatur oder Energieverbrauch).
+% Demgegenüber steht das unüberwachte Lernen, bei dem das Modell mit ungelabelten Daten trainiert wird. 
+% Es liegen also keine Zielwerte vor, und der Algorithmus muss eigenständig Muster oder Strukturen in den Eingabedaten identifizieren. 
+% Häufig kommt dabei die Clusteranalyse zum Einsatz, bei der ähnliche Datenpunkte zu Gruppen (Clustern) zusammengefasst werden. 
+% Eine typische Anwendung ist die Anomalieerkennung, bei der Abweichungen von einem erwarteten Normalverhalten erkannt werden können.
+% \cite{DLDefinition}
+
+% Ein vielversprechender Ansatz innerhalb des maschinellen Lernens ist das sogenannte Deep Learning, dass sowohl im überwachten als auch unüberwachten Kontext zum Einsatz kommt.
+% Es basiert auf künstlichen neuronalen Netzen, die in ihrer Struktur an das Verhalten von Neuronen im menschlichen Gehirn angelehnt sind.
+% Während klassische maschinelle Lernmodelle meist nur aus einer oder wenigen Schichten bestehen, verwendet Deep Learning sogenannte tiefe neuronale Netze, die aus einer Vielzahl aufeinanderfolgender Schichten bestehen.
+% Diese ermöglichen das Erkennen und Erlernen hochkomplexer Zusammenhänge und abstrakter Merkmale in großen Datenmengen.
+% Deep-Learning-Modelle werden vor allem dann eingesetzt, wenn die Beziehung zwischen Eingabe- und Ausgabedaten sehr komplex oder nichtlinear ist.
+% \cite{DLDefinition}
+
+% Eine besondere Form des Deep Learnings sind generative Modelle. 
+% Sie werden mit großen Datenmengen trainiert, erkennen darin komplexe Muster und sind in der Lage, daraus neue, realistische Daten zu erzeugen [Quelle Springer].
+% Neben der Generierung können sie aber auch zur Analyse und Bewertung von Daten eingesetzt werden.
+% Dies ist insbesondere bei industriellen Szenarien von Bedeutung, beispielsweise bei der Erkennung von Anomalien in Zeitreihendaten.
+% Häufig kommt dabei ein Autoencoder zum Einsatz. 
+
 
 
 
@@ -383,8 +416,8 @@ Die Bereitstellung der digitalen Produktpässe erfolgt gemäß den Anforderungen
 Daten innerhalb eines Passes müssen standardisiert und strukturiert in einem menschen -und maschinenlesbarem Format zur Verfügung gestellt werden.
 Je nach Art der Information werden verschiedene Zugriffsrechte für unterschiedliche Interessengruppen eingeführt. Damit soll der Schutz von geistigem Eigentum sichergestellt werden.
 Verwaltet werden sollen die Daten dabei über einen zentralen Server bzw. ein Registry, in dem die verschiedenen \acsp{dpp} gespeichert bzw. zumindest registriert werden.
-Der Zugriff auf konkrete Pässe soll möglichst einfach sein. Hierzu können zum Beispiel QR-Codes eingesetzte werden, die direkt am Produkt angebracht sind, und direkt zum \acs{dpp} führen.
-Dafür ist es wichtig, das jedes Produkt global eindeutig über eine einzigartige Kennung beschrieben wird.
+% Der Zugriff auf konkrete Pässe soll möglichst einfach sein. Hierzu können zum Beispiel QR-Codes eingesetzte werden, die direkt am Produkt angebracht sind, und direkt zum \acs{dpp} führen.
+% Dafür ist es wichtig, das jedes Produkt global eindeutig über eine einzigartige Kennung beschrieben wird.
 \cite{CIRPASS}
 
 Während die regulatorischen Rahmenbedingungen schon mehr oder weniger final ausgearbeitet sind, bleibt noch die Frage der konkreten technologischen Umsetzung.
@@ -399,14 +432,14 @@ Darüber hinaus können auch zusätzliche, nicht verpflichtende Informationen in
 Der Zugriff auf die Daten erfolgt über ein webbasiertes Portal. Verschiedene Interessengruppen erhalten dabei unterschiedliche Zugangsrechte. 
 Hierfür werden bestimmmte Submodelle gezielt für unterschiedliche Gruppen freigegeben oder eingeschränkt.
 Während beispielsweise das digitale Typenschild (DN) oder der PCF öffentlich zugänglich sind, werden sensible Informationen wie technische Dokumentationen oder sicherheitsrelevante Details nur bestimmten autorisierten Gruppen zugänglich gemacht.
-Eine schemantische Darstellung des DPP 4.0 ist nachfolgend in Abbildung xy dargestellt.
+Eine schematische Darstellung des DPP 4.0 in Abbildung \ref{fig:dpp40} zu sehen.
 
 \vspace{1em}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.7\textwidth]{Bilder/dpp_konzept.pdf}
-    \caption{Konzept des DPP 4.0}
-    \label{fig:klassifizierungDT}
+    \caption{Konzept des DPP 4.0 (eigene Darstellung in Anlehnung an \cite{DPP40Bild})}
+    \label{fig:dpp40}
 \end{figure}
 
 Das Konzept der ZVEI sieht darüber hinaus vor, dass Unternehmen ihre digitalen Produktpässe etgegen den Anforderungen der ESPR dezentral in einem eigenen Repository verwalten. 
@@ -431,6 +464,7 @@ Im Rahmen dieser Arbeit liegt der Fokus auf dem hochautomatisierten Abfüll- und
 % \includegraphics{Bilder/robocell_FS2_rgb_Logo.png}
 \newpage
 \subsection{Technologische Grundlagen}
+Im Folgenden werden die technologischen Grundlagen erläutert, die für das Verständnis und die Umsetzung dieser Arbeit besonders relevant sind.
 \subsubsection{AASX Package Exlporer}
 Der AASX Package Explorer wurde als Referenzimplementierung für die AAS gemäß den Spezifikationen der \acs{idta} entwickelt.
 Das Tool ist als Open-Source-Software \cite{AASXPackageExplorer} verfügbar und ermöglicht das Erstellen und Bearbeiten von \acs{aas} im standardisierten AASX-Dateiformat.
