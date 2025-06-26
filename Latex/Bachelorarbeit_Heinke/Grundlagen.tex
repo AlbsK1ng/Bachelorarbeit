@@ -64,13 +64,13 @@ Genau hier setzt \acs{ki} an.
 Insbesondere Methoden des maschinellen Lernens erlauben es, Zusammenhänge in großen Datenmengen zu erkennen, Zustände zu klassifizieren und sogar Vorhersagen über zukünftige Systementwicklungen zu treffen. \cite{KIEinführung} 
 \acs{ki} nimmt somit eine zentralle Rolle innerhalb der Industrie 4.0 ein, indem sie einen echten Mehrwert aus den gesammelten Daten generiert.
 
-Allgemein bezeichnet der Begriff \acs{ki} eine Vielzahl von Methoden und Technologien, die es Computern ermöglichen, Aufgaben zu bewältigen, für die normalerweise menschliche Inteligenz erforderlich ist.
-Dazu zählen insbesondere die Fähigkeit, aus Daten zu lernen und eigenständig Lösungen für Probleme zu finden. \cite{KIDefinition}
+Allgemein bezeichnet der Begriff \acs{ki} eine Vielzahl von Methoden und Technologien, die es Computern ermöglichen, Aufgaben zu bewältigen, für die normalerweise menschliche Inteligenz erforderlich ist \cite{KIDefinition1}.
+Dazu zählen insbesondere die Fähigkeit, aus Erfahrungen (Daten) zu lernen, eigenständig Problemlösungen zu entwickeln sowie Entscheidungen zu treffen \cite{KIDefinition2}.
 
 Ein zentrales Teilgebiet der \acs{ki} ist das maschinelle Lernen (ML).
-Es beschreibt Algorithmen, die selbstständig aus Daten lernen und darauf basierend Vorhersagen tätigen können.
-Im Gegensatz zu herkömmlichen Computerprogrammen wird kein Lösungsweg vorgegeben. 
-Das Modell ist selbstständig in der Lage zu lernen. Es kann eigenständig Muster in den vorgegebenen Daten erkennen und anhand dieser eine bestimmmte Aufgabe ausführen  \cite{MLDefinition}.
+Es umfasst Algorithmen, die selbstständig aus Daten lernen und darauf basierend Vorhersagen treffen können.
+Im Gegensatz zu klassischen Computerprogrammen folgt das Programm keinem Lösungsweg. 
+Stattdesen erkennt es Muster in den vorliegenden Daten und kann auf Grundlage dieser bestimmte Aufgaben ausführen \cite{MLDefinition}.
 Aufgrund seiner zentralen Bedeutung für zahlreiche Anwendungen gilt maschinelles Lernen häufig auch als Schlüsseltechnologie der \acs{ki} \cite{MLSchlüsseltechnologie}. 
 
 Grundsätzlich wird zwischen überwachtem Lernen (Supervised Learning) und unüberwachtem Lernen (Unsupervised Learning) unterschieden.
@@ -82,11 +82,19 @@ Der Algorithmus versucht selbstständig Strukturen oder Muster in den vorgegeben
 Ein häufig eingesetztes Verfahren ist die Clusteranalyse, bei der ähnliche Datenpunkte zu Gruppen, sogenannten Clustern, zusammengefasst werden. 
 Eine typische Anwendung ist beispielsweise die Anomalieerkennung, bei der Abweichungen von einem erwarteten Normalverhalten erkannt werden können.
 
-Ein besonders vielversprechender Ansatz innerhalb des maschinellen Lernens ist das sogenannte Deep Learning.
+Ein besonders leistungsfähiger Ansatz innerhalb des maschinellen Lernens ist das sogenannte Deep Learning.
 Es basiert auf künstlichen neuronalen Netzen, die in ihrer Struktur an das Verhalten von Neuronen im menschlichen Gehirn angelehnt sind.
-Während klassische maschinelle Lernmodelle meist nur aus einer oder wenigen Schichten bestehen, verwendet Deep Learning sogenannte tiefe neuronale Netze, die aus einer Vielzahl aufeinanderfolgender Schichten bestehen.
-Diese ermöglichen das Erkennen und Erlernen hochkomplexer Zusammenhänge und abstrakter Merkmale in großen Datenmengen. 
-\cite{DLDefinition}
+Während klassische maschinelle Lernmodelle meist aus nur wenigen Schichten bestehen, kommen beim Deep Learning sogenannte tiefe neuronale Netze mit vielen hintereinandergeschachtelten Schichten zum Einsatz.
+Diese ermöglichen das Erkennen hochkomplexer und abstrakter Zusammenhänge in großen Datenmengen, etwa bei der Biderkennung oder der Sprachverarbeitung. \cite{DLDefinition}
+Ein besonders aktuelles Beispiel für die Anwendung tiefer neuronaler Netzwerke ist die generative \acs{ki}. 
+Sie beschäftigt sich mit der Erstellung neuer Inhalte wie Text oder Sprache. 
+Dabei kommen verschiedene Methoden des Deep Learnings zum Einsatz, um aus großen Datenmengen zu lernen, wie neue Inhalte erzeugt werden können \cite{GenerativeKI}.
+
+
+
+
+
+
 
 % Grundsätzlich wird dabei zwischen zwei unterschiedlichen Lernmethoden unterschieden.
 % Beim überwachten Lernen wird einem Algorithmus ein Datensatz zur Verfügung gestellt, der sowohl Eingabewerte als auch die dazugehörigen Ziel- bzw. Ausgabewerte enthält.
@@ -159,7 +167,7 @@ Digitale Zwillinge gelten als eine der Schlüsseltechnologien der Industrie 4.0.
 Als digitales Gegenstück eines physischen Objekts - sei es eine Maschine ein Produkt oder eine komplette Anlage - bilden sie dessen Zustand, Verhalten und Leistung virtuell ab.
 Dadurch ermöglichen sie eine konsistenete Erfassung von Daten, das Simulieren von Prozessen und das frühzeitige Erkennen von Optimierungspotenzialen.
 
-Das Konzept selbst wurde erstmals von Michael Grieves im Jahr 2003 in einer Präsentation zum Product Lifecycle Management vorgestellt. 
+Das Konzept selbst wurde erstmals von Michael Grieves im Jahr 2003 in einer Präsentation zum \ac{plm} vorgestellt. 
 Grieves definierte drei grundlegende Komponenten \cite{DTGrieves} , die zusammen das Informationsmodell des digitalen Zwilling bilden:
 \begin{itemize}
     \item ein reales Objekt in der physischen Welt,
@@ -226,7 +234,7 @@ Sie bilden somit eine konsistente Datenbasis und können beispielsweise bei dem 
 Die Implementierung digitaler Zwillinge erweist sich in der Praxis jedoch oftmals als sehr anspruchsvoll.
 Eine zentrale Herausforderung ist die fehlende Interoperabilität zwischen verschiedenen IT-Systemen.
 Sowohl innerhalb eines Unternehmens als auch unternehmensübergreifend bilden sich dadurch häufig voneinander isolierte Datenbestände, die nicht systemübergreifend nutzbar sind.
-Solche sogenannten Informationssilos können die Umsetzung eines konsistenten digitalen Zwillings erheblich erschweren, da die relevanten Informationen und Daten zunächst aus unterschiedlichen Systemen wie Enterprise Resource Planing (ERP), Manufacturing Execution System (MES) oder Computer Aided Design (CAD) zusammengeführt werden müssen.
+Solche sogenannten Informationssilos können die Umsetzung eines konsistenten digitalen Zwillings erheblich erschweren, da die relevanten Informationen und Daten zunächst aus unterschiedlichen Systemen wie \ac{erp}, \ac{mes} oder \ac{cad} zusammengeführt werden müssen.
 Hinzu kommt, das diese Daten oftmals in unterschiedlichen, nicht standardisierten Formaten vorliegen, was eine automatisierte Integration zusätzlich erschwert.
 Diese Problematik zeigt sich nicht nur innerhalb einzelner Unterhnehmen, sondern auch entlang der gesamten Wertschöpfungskette, etwa wenn verschiedene Akteure einer Lieferkette heterogene Datenformate und proprietäre Austauschprotokolle verwenden.
 Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einer Anwendung oder einem weitern digitalen Zwilling eines Unternehmens B nicht ohne Weiteres intepretiert oder verwendet werden.
@@ -456,6 +464,13 @@ Die robocell ist eine von groninger in Zusammenarbeit mit SKAN entwickelte Masch
 Sie zeichnet sich dadurch aus, dass alle alle Prozesschritte vollständig automatisiert ablaufen.
 Durch den gezielten Einsatz von Robotern kann so der menschliche Eingriff auf ein Minimum reduziert werden, wodurch maximale Sicherheit, Flexibilität und Sicherheit im Abfüllprozess gewährleistet wird \cite{RobocellWebsite}.
 
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{Bilder/robocell_FS2_rgb_Logo.png}
+%     \caption{robocell}
+%     \label{fig:robocell}
+% \end{figure}
+
 Die Linie besteht dabei aus mehreren modular aufgebauten Einzelmaschinen, die jeweils spezifische Aufgaben entlang des Produktionsprozesses übernehmen. 
 Im Rahmen dieser Arbeit liegt der Fokus auf dem hochautomatisierten Abfüll- und Verschließmodul, das für das vollautomatisierte Abfüllen und Verschließen von Behältnissen verantwortlich ist.
 
@@ -472,6 +487,7 @@ Er verfügt über eine benutzerfreundliche grafische Oberfläche (siehe Abbildun
 Dabei können Submodelle, Eigenschaften, semantische Referenzen sowie Metadaten strukturiert definiert und verwaltet werden.
 Gleichzeitig bietet der AASX Package Explorer auch erweiterte Funktionen, wie das Erstellen von Submodell-Templates, wodurch er sich auch für den profesionellen Einsatz eignet.
 
+\vspace{0.5em}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/AAS_PE.PNG}

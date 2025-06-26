@@ -1,7 +1,30 @@
 \section{Entwicklung}
+In diesem Kapitel wird die Entwicklung des digitalen Zwillings für die robocell beschrieben.
 \subsection{Konzeptionierung des digitalen Zwilling}
+
+
 \subsubsection{Identifikation relevanter Datenquellen}
+Ein digitaler Zwilling basiert immmer auf einer Vielzahl unterschiedlicher Daten. 
+Daher ist es essenziell, im ersten Schritt alle relevanten Datenquellen zu identifizieren.
+In industriellen Umgebungen existieren typischerweise verschiedene Systeme zur Erfassung, Verwaltung und Speicherung von Maschinendaten.
+Bei groninger übernimmt diese Funktion das \acs{plm}-System Agile, das eng mit dem \acs{erp}-System PSI Penta verknüpft ist.
+Darin können unter anderem technische Spezifikation, Stücklisten, \acs{cad}-Dateien oder allgemeine Dokumente gefunden werden, die die Basis des digitalen Zwillings der robocell bilden.
+
+Neben statischen Informationen aus den Unternehmenssystemen spielen aber auch dynamische Daten, wie sie durch Sensoren oder Steuerungssysteme erzeugt werden, eine wichtige Rolle.
+Da im Rahmen dieser Arbeit keine reale Maschine angebunden ist, werden diese Daten simuliert.
+Hierfür wird eine in node.js entwickelte Anwendung eingesetzt, die sowohl Prozess- als auch Betriebsdaten generiert. 
+Ergänzend dazu wird ein Maschinensimulator verwendet, der einen PackML-Zustandsautomaten abbildet und typische Maschinenzustände sowie deren Übergänge simuliert. 
+Beide Komponenten stehen als Docker Container zur Verfügung und stellen die Daten über einen \acs{opcua} Server bereit, wodurch eine realitätsnahe Datenbasis geschaffen wird.
 \subsubsection{Auswahl geeigneter Teilmodelle}
+Aufbauend auf den zuvor betrachteten Informationsquellen gilt es nun zu entscheiden, welche Aspekte der Maschine in der \acs{aas} modelliert werden sollen.
+Als Orientierung dienen die von der \acs{idta} bereitgestellten Submodel Templates, die bereits viele typische Anwendungsfälle standardisiert abdecken.
+Darüber hinaus können jedoch auch eigene Teilmodelle entwickelt werden, die gezielt auf projektspezifische Anforderungen zugeschnitten sind.
+Diese können entweder vollständig neu konzipiert oder aus bestehenden Vorlagen abgeleitet werden.
+
+Nachfolgende Tabelle gibt einen Überblick über die in diesem Projekt eingesetzten Submodelle, ihre jeweilige Funktion, die Datenquell und ob es für diese bereits Vorlagen gibt.
+
+
+
 \subsection{Modellierung mit der AAS}
 \subsubsection{Umsetzung mit dem AASX Package Explorer}
 \subsubsection{Validieren und Testen}
@@ -13,7 +36,7 @@
 \subsection{Anwendungsfall Digitaler Produktpass}
 \subsubsection{Beschreibung}
 \subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
-\subsection{Anwendungsfall automatisierte Generierung von Verwaltungsschalen}
+\subsection{Anwendungsfall automatisierte Generierung von AAS}
 \subsubsection{Erstellen von Submodell-Templates}
 \subsubsection{Befüllen der Templates mit strukturierten Daten}
 \subsubsection{Bereitstellen der AAS über die Rest API}
