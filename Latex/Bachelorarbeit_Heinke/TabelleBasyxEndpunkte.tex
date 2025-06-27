@@ -1,0 +1,21 @@
+% \vspace{1em}
+{\small
+\begin{longtblr}[
+  label = tab:aas_endpoints,
+  caption = {REST-Endpunkte in Eclipse BaSyx},
+  entry = REST-Endpunkte in Eclipse BaSyx
+]{
+  colspec = {c l X},
+  rowhead = 1,
+  vlines,
+  hlines
+}
+\textbf{Methode} & \textbf{Endpunkt} & \textbf{Beschreibung} \\
+\textcolor{green!50!black}{\textit{GET}} & \texttt{/shells} & Liste aller AAS abrufen \\
+\textcolor{green!50!black}{\textit{GET}} & \texttt{/shells/\{aasIdentifier\}} & Bestimmte AAS anzeigen \\
+\textcolor{green!50!black}{\textit{GET}} & \texttt{/submodels} & Liste aller Submodelle aufrufen \\
+\textcolor{orange!85!black}{\textit{POST}} & \texttt{/shells} & Neue AAS erstellen \\
+\textcolor{orange!85!black}{\textit{POST}} & \texttt{/submodels} & Neues Submodell erstellen \\
+\textcolor{red!80!black}{\textit{DELETE}} & \texttt{/shells/\{aasIdentifier\}} & AAS löschen \\
+\end{longtblr}
+}

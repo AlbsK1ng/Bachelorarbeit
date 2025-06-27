@@ -1086,5 +1086,139 @@
     \field{urlmonth}{06}
     \field{urlyear}{2025}
   \endentry
+
+  \entry{SpezifikationTypenschild}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=AIDT}{%
+         family={Association},
+         familyi={A\bibinitperiod},
+         given={Industrial Digital\bibnamedelima Twin},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AIDT1}
+    \strng{fullhash}{AIDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{IDTA 02006-3-0 - Digital Nameplate for Industrial Equipment}
+    \verb{url}
+    \verb https://github.com/admin-shell-io/submodel-templates/blob/main/publis
+    \verb hed/Digital%20nameplate/3/0/IDTA%2002006-3-0_Submodel_Digital%20Namep
+    \verb late.pdf
+    \endverb
+    \field{version}{3.0}
+    \field{month}{11}
+    \field{year}{2024}
+    \field{urlday}{27}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{SpezifikationDokumentation}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=AIDT}{%
+         family={Association},
+         familyi={A\bibinitperiod},
+         given={Industrial Digital\bibnamedelima Twin},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AIDT1}
+    \strng{fullhash}{AIDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{IDTA 02004-1-2 - Handover Documentation}
+    \verb{url}
+    \verb https://github.com/admin-shell-io/submodel-templates/blob/main/publis
+    \verb hed/Handover%20Documentation/1/2/IDTA%2002004-1-2_Submodel_Handover%2
+    \verb 0Documentation.pdf
+    \endverb
+    \field{version}{1.2}
+    \field{month}{03}
+    \field{year}{2023}
+    \field{urlday}{27}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{Spezifikation3DModelle}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=AIDT}{%
+         family={Association},
+         familyi={A\bibinitperiod},
+         given={Industrial Digital\bibnamedelima Twin},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AIDT1}
+    \strng{fullhash}{AIDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{IDTA 02026-1-0 - Provision of 3D Models}
+    \verb{url}
+    \verb https://github.com/admin-shell-io/submodel-templates/blob/main/publis
+    \verb hed/Provision%20of%203D%20Models/1/0/IDTA_02026-1-0_Submodel_Provisio
+    \verb nOf3DModels.pdf
+    \endverb
+    \field{version}{1.0}
+    \field{month}{06}
+    \field{year}{2024}
+    \field{urlday}{27}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{SpezifikaitonTechnischeDaten}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=AIDT}{%
+         family={Association},
+         familyi={A\bibinitperiod},
+         given={Industrial Digital\bibnamedelima Twin},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AIDT1}
+    \strng{fullhash}{AIDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{IDTA 02003 - Generic Frame for Technical Data for Industrial Equipment in Manufacturing}
+    \verb{url}
+    \verb https://github.com/admin-shell-io/submodel-templates/blob/main/publis
+    \verb hed/Technical_Data/2/IDTA%2002003_Template_TechnicalData.pdf
+    \endverb
+    \field{version}{2.0}
+    \field{month}{03}
+    \field{year}{2025}
+    \field{urlday}{27}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{SpezifikationHierachischeStrukturen}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=AIDT}{%
+         family={Association},
+         familyi={A\bibinitperiod},
+         given={Industrial Digital\bibnamedelima Twin},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AIDT1}
+    \strng{fullhash}{AIDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{IDTA 02011-1-1 - Hierarchical Structures enabling Bills of Material}
+    \verb{url}
+    \verb https://github.com/admin-shell-io/submodel-templates/blob/main/publis
+    \verb hed/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/
+    \verb IDTA%2002011-1-1_Submodel_HierarchicalStructuresEnablingBoM.pdf
+    \endverb
+    \field{version}{1.1}
+    \field{month}{06}
+    \field{year}{2024}
+    \field{urlday}{27}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
 \enddatalist
 \endinput

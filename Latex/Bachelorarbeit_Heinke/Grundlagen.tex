@@ -481,11 +481,11 @@ Im Rahmen dieser Arbeit liegt der Fokus auf dem hochautomatisierten Abfüll- und
 \subsection{Technologische Grundlagen}
 Im Folgenden werden die technologischen Grundlagen erläutert, die für das Verständnis und die Umsetzung dieser Arbeit besonders relevant sind.
 \subsubsection{AASX Package Exlporer}
-Der AASX Package Explorer wurde als Referenzimplementierung für die AAS gemäß den Spezifikationen der \acs{idta} entwickelt.
+Der AASX Package Explorer, nachfolgend als Package Explorer bezeichnet, wurde als Referenzimplementierung für die AAS gemäß den Spezifikationen der \acs{idta} entwickelt.
 Das Tool ist als Open-Source-Software \cite{AASXPackageExplorer} verfügbar und ermöglicht das Erstellen und Bearbeiten von \acs{aas} im standardisierten AASX-Dateiformat.
 Er verfügt über eine benutzerfreundliche grafische Oberfläche (siehe Abbildung \ref{fig:AASXPackageExplorer}), die insbesondere Einsteigern den Zugang zur Modellierung erleichtert.
 Dabei können Submodelle, Eigenschaften, semantische Referenzen sowie Metadaten strukturiert definiert und verwaltet werden.
-Gleichzeitig bietet der AASX Package Explorer auch erweiterte Funktionen, wie das Erstellen von Submodell-Templates, wodurch er sich auch für den profesionellen Einsatz eignet.
+Gleichzeitig bietet der Package Explorer auch erweiterte Funktionen, wie das Erstellen von Submodell-Templates, wodurch er sich auch für den profesionellen Einsatz eignet.
 
 \vspace{0.5em}
 \begin{figure}[htbp]
@@ -497,7 +497,7 @@ Gleichzeitig bietet der AASX Package Explorer auch erweiterte Funktionen, wie da
 
 Neben der lokalen Modellierung erlaubt das Tool ebenfalls die Verbindung zu einem AAS-Server über standardisierte Schnittstellen (z.B. \acs{opcua} oder HTTP/REST).
 Dies ermöglicht den Betrieb von \acs{aas} in verteiltelten Systemen.
-Besonders geeignet hierfür ist der Referenzserver des Eclipse-AAS-Projekts \cite{AASXServer}, der das Hosten und Bereitstellen von AASX-Paketen ermöglicht sowie eine nahtlose Integration mit dem AASX Package Explorer erlaubt.
+Besonders geeignet hierfür ist der Referenzserver des Eclipse-AAS-Projekts \cite{AASXServer}, der das Hosten und Bereitstellen von AASX-Paketen ermöglicht sowie eine nahtlose Integration mit dem Package Explorer erlaubt.
 
 \subsubsection{Eclipse BaSyx }
 Eclipse BaSyx ist eine vom Fraunhofer-Institut für Experimentelles Software Engineering entwickelte Open-Source-Plattform für die Realisierung von Industrie 4.0-Anwendungen.
@@ -520,24 +520,7 @@ Dies erlaubt z.B. das Abfragen, Erstellen oder Aktualisieren von AAS und deren S
 Alle verfügbaren Endpunkte dieser Schnittstellen können unter anderem in der automatisch generierten Swagger-Dokumentation eingesehen und ausgeführt werden. 
 Typische REST-Endpunkte sind beispielsweise:
 
-\vspace{1em}
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{l l l}
-        \toprule
-        \textbf{Methode} & \textbf{Endpunkt} & \textbf{Beschreibung} \\
-        \toprule
-        \textbf{\textcolor{green!50!black}{\textit{GET}}}     & \texttt{\textit{/shells}} & Liste aller AAS abrufen \\
-        \textbf{\textcolor{green!50!black}{\textit{GET}}}     & \texttt{\textit{/shells/\{aasIdentifier\}}} & Bestimmte AAS anzeigen \\
-        \textbf{\textcolor{green!50!black}{\textit{GET}}}     & \texttt{\textit{/submodels}} & Liste aller Submodelle aufrufen \\
-        \textbf{\textcolor{orange!85!black}{\textit{POST}}}    & \texttt{\textit{/shells}} & Neue AAS erstellen \\
-        \textbf{\textcolor{orange!85!black}{\textit{POST}}}    & \texttt{\textit{/submodels}} & Neues Submodell erstellen \\
-        \textbf{\textcolor{red!80!black}{\textit{DELETE}}}  & \texttt{\textit{/shells/\{aasIdentifier\}}} & AAS löschen \\
-        \midrule
-    \end{tabular}
-    \caption{REST-Endpunkte in Eclipse BaSyx}
-    \label{tab:aas_endpoints}
-\end{table}
+\input{TabelleBasyxEndpunkte.tex}
 
 Im BaSyx-System ermöglicht sin sogenannter Discovery-Service die Verknüpfung physischer Assets mit iheren zugehörigen AAS.
 Dabei wird eine spezifische Asset-Id mit der entsprechenden AAS-ID verlinkt.

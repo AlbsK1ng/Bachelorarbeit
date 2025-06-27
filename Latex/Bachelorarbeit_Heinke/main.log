@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  26 JUN 2025 16:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  27 JUN 2025 13:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1202,36 +1202,41 @@ Package: tabularray 2024-02-16 v2024A Typeset tabulars and arrays with LaTeX3
 \l__tblr_cell_wd_dim=\dimen368
 \l__tblr_cell_ht_dim=\dimen369
 \l__tblr_diag_box=\box109
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen370
+\c@nlinenum=\count559
+\TeXr@lab=\toks62
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count559
-\Gm@cntv=\count560
-\c@Gm@tempcnt=\count561
-\Gm@bindingoffset=\dimen370
-\Gm@wd@mp=\dimen371
-\Gm@odd@mp=\dimen372
-\Gm@even@mp=\dimen373
-\Gm@layoutwidth=\dimen374
-\Gm@layoutheight=\dimen375
-\Gm@layouthoffset=\dimen376
-\Gm@layoutvoffset=\dimen377
-\Gm@dimlist=\toks62
+\Gm@cnth=\count560
+\Gm@cntv=\count561
+\c@Gm@tempcnt=\count562
+\Gm@bindingoffset=\dimen371
+\Gm@wd@mp=\dimen372
+\Gm@odd@mp=\dimen373
+\Gm@even@mp=\dimen374
+\Gm@layoutwidth=\dimen375
+\Gm@layoutheight=\dimen376
+\Gm@layouthoffset=\dimen377
+\Gm@layoutvoffset=\dimen378
+\Gm@dimlist=\toks63
 ) (./glossary.tex)
 \glswrite=\write5
 \glo@main@file=\write6
 \openout6 = `main.glo'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 83.
+Package glossaries Info: Writing glossary file main.glo on input line 84.
 
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count562
-\@quotereset=\count563
+\@quotelevel=\count563
+\@quotereset=\count564
 (./main.aux
 
 LaTeX Warning: Label `fig:klassifizierungDT' multiply defined.
@@ -1239,37 +1244,37 @@ LaTeX Warning: Label `fig:klassifizierungDT' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count564
-\scratchdimen=\dimen378
+\scratchcounter=\count565
+\scratchdimen=\dimen379
 \scratchbox=\box110
-\nofMPsegments=\count565
-\nofMParguments=\count566
-\everyMPshowfont=\toks63
-\MPscratchCnt=\count567
-\MPscratchDim=\dimen379
-\MPnumerator=\count568
-\makeMPintoPDFobject=\count569
-\everyMPtoPDFconversion=\toks64
+\nofMPsegments=\count566
+\nofMParguments=\count567
+\everyMPshowfont=\toks64
+\MPscratchCnt=\count568
+\MPscratchDim=\dimen380
+\MPnumerator=\count569
+\makeMPintoPDFobject=\count570
+\everyMPtoPDFconversion=\toks65
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1295,29 +1300,29 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 Package caption Info: rotating package is loaded.
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 89.
+Package hyperref Info: Link coloring OFF on input line 90.
  (./main.out) (./main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
 
-\c@lstlisting=\count570
-LaTeX Info: Redefining \microtypecontext on input line 89.
-Package microtype Info: Applying patch `item' on input line 89.
-Package microtype Info: Applying patch `toc' on input line 89.
-Package microtype Info: Applying patch `eqnum' on input line 89.
+\c@lstlisting=\count571
+LaTeX Info: Redefining \microtypecontext on input line 90.
+Package microtype Info: Applying patch `item' on input line 90.
+Package microtype Info: Applying patch `toc' on input line 90.
+Package microtype Info: Applying patch `eqnum' on input line 90.
 
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 89.
+Package microtype Warning: Unable to apply patch `footnote' on input line 90.
 
-Package microtype Info: Applying patch `verbatim' on input line 89.
-LaTeX Info: Redefining \microtypesetup on input line 89.
+Package microtype Info: Applying patch `verbatim' on input line 90.
+LaTeX Info: Redefining \microtypesetup on input line 90.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 89.
+LaTeX Info: Redefining \showhyphens on input line 90.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1355,8 +1360,8 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                - Invalid format of field 'month'.
 
 )
-Package biblatex Info: Reference section=0 on input line 89.
-Package biblatex Info: Reference segment=0 on input line 89.
+Package biblatex Info: Reference section=0 on input line 90.
+Package biblatex Info: Reference segment=0 on input line 90.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
@@ -1478,17 +1483,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--15
 ) (./ehrenwoertlichErkl√§rung.tex
 
 [2])
-Underfull \hbox (badness 10000) in paragraph at lines 5--98
+Underfull \hbox (badness 10000) in paragraph at lines 5--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--98
+Underfull \hbox (badness 10000) in paragraph at lines 5--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--98
+Underfull \hbox (badness 10000) in paragraph at lines 5--99
 
  []
 
@@ -1613,8 +1618,15 @@ Package pdftex.def Info: Bilder/AAS_PE.PNG  used on input line 493.
 Package acronym Info: Label `acro:opcua' overridden on input line 498.
 
 
-[18 <./Bilder/AAS_PE.PNG>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 530.
+[18 <./Bilder/AAS_PE.PNG>] (./TabelleBasyxEndpunkte.tex
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 20.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1622,64 +1634,80 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
+> Step: build the whole table.
+)
 
 [19]
-Overfull \hbox (3.772pt too wide) in paragraph at lines 548--556
+Overfull \hbox (3.772pt too wide) in paragraph at lines 531--539
 \T1/lmr/m/n/12 (-20) Web Ui ge-nutzt wer-den. Die web-ba-sier-te Be-nut-ze-ro-ber-fl‰-che wur-de mit dem JavaScript-
  []
 
-Package acronym Info: Label `acro:opcua' overridden on input line 560.
-Package acronym Info: Label `acro:opcua' overridden on input line 562.
-Package acronym Info: Label `acro:opcua' overridden on input line 562.
-Package acronym Info: Label `acro:opcua' overridden on input line 565.
+Package acronym Info: Label `acro:opcua' overridden on input line 543.
+Package acronym Info: Label `acro:opcua' overridden on input line 545.
+Package acronym Info: Label `acro:opcua' overridden on input line 545.
+Package acronym Info: Label `acro:opcua' overridden on input line 548.
 ) (./Entwicklung.tex
 
 [20]
-Package acronym Info: Label `acro:opcua' overridden on input line 17.
+Package acronym Info: Label `acro:opcua' overridden on input line 20.
 
 
-[21]) (./Ergebnisse.tex) (./Zusammenfassung.tex)
+[21] (./TabelleSubmodelle.tex
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 22.
+> Step: build the whole table.
 
-[22]
-Overfull \vbox (441.22664pt too high) has occurred while \output is active []
 
-
+[22])) (./Ergebnisse.tex) (./Zusammenfassung.tex)
 
 [23]
+Overfull \vbox (409.97665pt too high) has occurred while \output is active []
+
+
+
+[24]
 No file main.gls.
 
 
-[24
+[25
 
 ]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Overfull \hbox (53.37152pt too wide) in paragraph at lines 157--157
+Overfull \hbox (53.37152pt too wide) in paragraph at lines 158--158
 \T1/lmr/m/sc/12 (-20) url\T1/lmr/m/n/12 (-20) : []$\T1/lmtt/m/n/12 https : / / www . zvei . org / presse -[] medien / publikationen / umsetzungsstrategie -[]
  []
 
 
 
-[25]
-Overfull \hbox (11.28668pt too wide) in paragraph at lines 157--157
+[26]
+Overfull \hbox (11.28668pt too wide) in paragraph at lines 158--158
 []$\T1/lmtt/m/n/12 https : / / industrialdigitaltwin . org / en / content -[] hub / aasspecifications$[]
  []
 
 
 
-[26]
-Overfull \hbox (39.51118pt too wide) in paragraph at lines 157--157
+[27]
+Overfull \hbox (39.51118pt too wide) in paragraph at lines 158--158
 \T1/lmr/m/it/12 (-20) Shell - Part 4: Se-cu-ri-ty\T1/lmr/m/n/12 (-20) . Ver-si-on 3.0. Mai 2025. \T1/lmr/m/sc/12 (-20) url\T1/lmr/m/n/12 (-20) : []$\T1/lmtt/m/n/12 https : / / industrialdigitaltwin .
  []
 
 
 
-[27]
+[28]
 
-[28] (./main.aux)
+[29]
+
+[30] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1692,7 +1720,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 60EF97450E5C758E726EA90F71149980;12672.
+(rerunfilecheck)             Checksum: 265AA51F44C08D121C66BC807EA759A8;12672.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -1703,21 +1731,21 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46940 strings out of 473190
- 919325 string characters out of 5715806
- 1844648 words of memory out of 5000000
- 69105 multiletter control sequences out of 15000+600000
- 646000 words of font info for 183 fonts, out of 8000000 for 9000
+ 47364 strings out of 473190
+ 930015 string characters out of 5715806
+ 1857993 words of memory out of 5000000
+ 69490 multiletter control sequences out of 15000+600000
+ 659063 words of font info for 203 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 84i,12n,93p,2471b,3302s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,13n,116p,2471b,3302s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{glo:SPS} has been referenced but does not exist, replaced by a fixed one
 
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on main.pdf (35 pages, 564061 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on main.pdf (37 pages, 612086 bytes).
 PDF statistics:
- 928 PDF objects out of 1000 (max. 8388607)
- 831 compressed objects within 9 object streams
- 167 named destinations out of 1000 (max. 500000)
- 50736 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 995 PDF objects out of 1000 (max. 8388607)
+ 879 compressed objects within 9 object streams
+ 175 named destinations out of 1000 (max. 500000)
+ 56880 words of extra memory for PDF output out of 61914 (max. 10000000)
 

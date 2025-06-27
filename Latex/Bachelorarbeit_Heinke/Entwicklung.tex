@@ -1,31 +1,54 @@
 \section{Entwicklung}
 In diesem Kapitel wird die Entwicklung des digitalen Zwillings für die robocell beschrieben.
+
 \subsection{Konzeptionierung des digitalen Zwilling}
-
-
+Ziel dieses Kapitels ist es, eine grundlegende Basis für die Erstellung des digitalen Zwillings der robocell zu schaffen.
+Dabei wird untersucht, welche Daten für die Modellierung erforderlich sind, wo diese herkommen und wie sie in (standardisierten) Teilmodellen der \acs{aas} strukturiert werden können.
 \subsubsection{Identifikation relevanter Datenquellen}
-Ein digitaler Zwilling basiert immmer auf einer Vielzahl unterschiedlicher Daten. 
-Daher ist es essenziell, im ersten Schritt alle relevanten Datenquellen zu identifizieren.
-In industriellen Umgebungen existieren typischerweise verschiedene Systeme zur Erfassung, Verwaltung und Speicherung von Maschinendaten.
-Bei groninger übernimmt diese Funktion das \acs{plm}-System Agile, das eng mit dem \acs{erp}-System PSI Penta verknüpft ist.
-Darin können unter anderem technische Spezifikation, Stücklisten, \acs{cad}-Dateien oder allgemeine Dokumente gefunden werden, die die Basis des digitalen Zwillings der robocell bilden.
+Ein digitaler Zwilling basiert immmer auf einer Vielzahl unterschiedlicher Daten, die gemeinsam ein umfassendes digitales Abbild eines Assets ermöglichen. 
+Dabei werden sowohl statische Informationen (z.B. Datenblätter oder Konstruktionsdaten) als auch dynamische Daten, die während des Betriebs einer Maschine anfallen, benötigt.
 
-Neben statischen Informationen aus den Unternehmenssystemen spielen aber auch dynamische Daten, wie sie durch Sensoren oder Steuerungssysteme erzeugt werden, eine wichtige Rolle.
+Im ersten Schritt gilt es daher, alle relevanten Datenquellen zu identifizieren.
+In industriellen Umgebungen existieren hierfür typischerweise verschiedene Systeme zur Erfassung, Verwaltung und Speicherung von Maschinendaten.
+Bei groninger übernimmt diese Funktion das \acs{plm}-System Agile, das eng mit dem \acs{erp}-System PSI Penta verknüpft ist.
+Darin sind unter anderem Stücklisten, technische Spezifikationen, \acs{cad}-Dateien sowie allgemeine Dokumente hinterlegt, die die statische Grundlage  für den digitalen Zwilling bilden.
+
+Neben den Informationen aus den Unternehmenssystemen spielen aber auch Laufzeitdaten, wie sie durch Sensoren oder Steuerungssysteme erzeugt werden, eine zentrale Rolle.
 Da im Rahmen dieser Arbeit keine reale Maschine angebunden ist, werden diese Daten simuliert.
 Hierfür wird eine in node.js entwickelte Anwendung eingesetzt, die sowohl Prozess- als auch Betriebsdaten generiert. 
 Ergänzend dazu wird ein Maschinensimulator verwendet, der einen PackML-Zustandsautomaten abbildet und typische Maschinenzustände sowie deren Übergänge simuliert. 
 Beide Komponenten stehen als Docker Container zur Verfügung und stellen die Daten über einen \acs{opcua} Server bereit, wodurch eine realitätsnahe Datenbasis geschaffen wird.
 \subsubsection{Auswahl geeigneter Teilmodelle}
-Aufbauend auf den zuvor betrachteten Informationsquellen gilt es nun zu entscheiden, welche Aspekte der Maschine in der \acs{aas} modelliert werden sollen.
+Aufbauend auf den zuvor betrachteten Informationsquellen gilt es nun zu entscheiden, welche Aspekte der Maschine im digitalen Zwilling abgebildet werden sollen.
+Dabei werden die Informationen in unterschiedlichen Submodellen der \acs{aas} strukturiert.
+
 Als Orientierung dienen die von der \acs{idta} bereitgestellten Submodel Templates, die bereits viele typische Anwendungsfälle standardisiert abdecken.
-Darüber hinaus können jedoch auch eigene Teilmodelle entwickelt werden, die gezielt auf projektspezifische Anforderungen zugeschnitten sind.
+Darüber hinaus besteht jedoch auch die Möglichkeit, eigene Submodelle zu entwerfen, die gezielt auf projektspezifische Anforderungen zugeschnitten sind.
 Diese können entweder vollständig neu konzipiert oder aus bestehenden Vorlagen abgeleitet werden.
 
-Nachfolgende Tabelle gibt einen Überblick über die in diesem Projekt eingesetzten Submodelle, ihre jeweilige Funktion, die Datenquell und ob es für diese bereits Vorlagen gibt.
+Die konkrete Auswahl der Submodelle in dieser Arbeit erfolgte hauptsächlich auf Basis zahlreicher Use Cases, die unter anderem auf der Website der \acs{idta} gefunden werden können.
+% Diese können in verschiedenen Submodellen der AAS abgebildet werden.
+%  Auswahl in diesem Projekt anhand Use Cases sowie welche Daten 
+
+Ein bedeutender Vorteil der \acs{aas} besteht darin, dass die Auswahl der Submodelle nicht in Stein gemeiselt sind.
+Sie können sukszessive ergänzt, angepasst oder auch wieder entfernt werden.
+Es werden im Folgenden deshalb zunächst nur die wichtigsten Submodelle betrachtet.
+In späteren Anwendungsfälle werden diese gezielt erweitert.
+
+
+% Wie erfolgt die Auswahl? sss
+
+Nachfolgende Tabelle gibt einen Überblick über die wichtigsten, in diesem Projekt eingesetzten Submodelle sowie ihrer Inhalte.
+Die bereits veröffentlichten Modelle werden dabei jeweils in einer Spezifikation der \acs{idta} festgehalten.
+
+\input{TabelleSubmodelle.tex}
+
+
 
 
 
 \subsection{Modellierung mit der AAS}
+Für die manuelle Erstellung der \acs{aas} wurde der
 \subsubsection{Umsetzung mit dem AASX Package Explorer}
 \subsubsection{Validieren und Testen}
 \subsection{Technische Integration}

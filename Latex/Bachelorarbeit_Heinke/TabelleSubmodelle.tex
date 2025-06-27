@@ -1,0 +1,23 @@
+%\newpage
+{\small
+\begin{longtblr}[
+    label = tab:Submodelle,
+    entry = Submodelle mit typischen Inhalten,
+    caption = {Submodelle mit typischen Inhalten}
+  ]{
+    colspec = {l l X[c]},
+    rowhead = 1,
+    vlines,
+    hline{1-10} = {-}{},
+    }
+    \textbf{Submodell}                                   & \textbf{Typische Inhalte}                            & \textbf{Standardisierung} \\
+    Typenschild                                          & \makecell[l]{Hersteller \\ Seriennummer \\ Adressinformationen}                  & IDTA 02006-3-0 \cite{SpezifikationTypenschild} \\
+    Dokumentation                                     & \makecell[l]{Allgemeine Dokumente \\ Betriebsanleitungen \\ Projektzeichnungen}             & IDTA 02004-1-2 \cite{SpezifikationDokumentation} \\
+    3D-Modelle                                           & Konstruktionsmodelle                & IDTA 02026-1-0 \cite{Spezifikation3DModelle}\\*
+    Technische Daten                                     & \makecell[l]{Generelle Informationen \\ Technische Eigenschaften }                       & IDTA 02003 \cite{SpezifikaitonTechnischeDaten}\\*
+    Hierarchische Strukturen                                     &  \makecell[l]{Strukturierte Stücklisten \\ Komponentenbeziehungen }                    & IDTA 02011-1-1 \cite{SpezifikationHierachischeStrukturen}\\*
+    Wartung                                              &  \makecell[l]{Wartungsintervalle \\ }          & -  \\*
+    Prozessdaten                                         &  \makecell[l]{Messwerte \\ Zeitreihen }             & - \\*
+    Kontrollkomponente                                   &  \makecell[l]{Betriebsmodi \\ Schnitstelle zur Automatisierung }             & - \\      
+\end{longtblr}
+}
