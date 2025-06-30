@@ -45,6 +45,7 @@ Daneben wurden aber auch projektspezifische Anforderungen berücksichtigt, die s
 Ein wesentlicher Vorteil der \acs{aas} besteht darin, dass die Auswahl der Submodelle flexibel ist.
 Sie können sukszessive ergänzt, angepasst oder auch wieder entfernt werden.
 Es werden im Folgenden deshalb zunächst nur die wichtigsten, in diesem Projekt eingesetzten Submodelle betrachtet, die in späteren Anwendungsfällen gezielt erweitert werden.
+
 Die nachfolgende Tabelle gibt einen Überblick über die initiale Auswahl dieser Submodelle, ihre typischen Inhalte sowie deren Standardisierung.
 
 % Wie erfolgt die Auswahl? sss
@@ -60,19 +61,22 @@ Die nachfolgende Tabelle gibt einen Überblick über die initiale Auswahl dieser
 
 \subsection{Modellierung mit der AAS}
 In diesem Kapitel wird erläutert, wie die zuvor ausgewählten Submodelle mit konkreten Daten befüllt werden können und welche Aspekte bei der Modellierung beachtet werden müssen.
-Für die manuelle Erstellung der \acs{aas} wird dabei der Package Explorer eingesetzt.
 Zudem wird gezeigt, wie die erstellte \acs{aas} mit Hilfe einer Test Engine auf eine korrekte und vollständige Struktur überprüft werden kann. 
 \subsubsection{Umsetzung mit dem Package Explorer}
-Im ersten Schritt muss eine neue \acs{aas} erstellt werden.
+Für die manuelle Erstellung der \acs{aas} wird der Package Explorer eingesetzt.
+Er erlaubt eine eine intuitive Modellierung aller relevanten Elemente und erleichtert so den strukturierten Aufbau der \acs{aas}.
+
+Bevor die gewünschten Submodelle hinzugefügt werden können muss zuerst eine neues \acs{aas}-Paket erstellt werden.
 Dazu kann im Package Exporer eine neue Umgebung geöffnet werden, die als Container für die Inhalte eines Assets dient.
 Im Anschluss kann eine neue \acs{aas} hinzugefügt werden, die allgemeine Informationen sowie assetspezifische Daten enthält.
+
 Neben der Auswahl des Asset-Typs (Instanz oder Typ) spielt insbesondere die eindeutige Identifikation eine wichtige Rolle.
 Das Asset wird über eine globalAssetId identifiziert, während die \acs{aas} selbst eine eigene ID sowie eine idShort erhält.
+Es bietet sich an, hierfür zunächst Beispiel-IDs zu verwenden. Diese können direkt im Package Explorer generiert werden.
 Dies ist besonders wichtig für den späteren Austausch der \acs{aas} sowie das systemweite Auffinden innerhalb eines Industrie 4.0-Ökosystem.
+Darüber hinaus besteht ebenfalls die Möglichkeit, ein Thumbmail in Form einer Datei (z.B. png oder jpeg) zu hinterlegen.
 
-!!! Bild mit Markierung der ids und idShort
-
-Im nächsten Schritt müssen die benötigten Submodelle hinzugefügt werden. 
+Im nächsten Schritt können die benötigten Submodelle hinzugefügt werden. 
 Auch diese können als Instanz oder Typ angelegt werden.
 Dabei besteht die Möglichkeit, entweder ein leeres Submodell manuell mit verschiedenen Submodellelementen zu erstellen oder auf ein vorhandenes Submodel Template zurückzugreifen.
 Letztere können als AASX-Datei, beispielsweise über das Repository der \acs{idta} \cite{idtaTemplates}, heruntergeladen und anschließend über ein sogenanntes Auxiliary AAS in die Umgebung geladen werden.
@@ -81,9 +85,16 @@ Sie stehen dann zur Verfügung und können in die \acs{aas} kopiert werden.
 Nachdem alle Submodelle erstellt bzw. eingebunden sind, müssen diese mit den entsprechenden Inhalten gefüllt werden.
 Hierzu können konkrete Werte, Dateien oder Referenzen direkt in den jeweiligen Submodellelementen eingetragen bzw. eingebettet werden.
 Besonders bei der Verwendung von Templates muss darauf geachtet werden, dass die Struktur dieser nicht verändert wird, da dies sonst zu Abweichungen von der Spezifikation führen kann.
+Eine Übersicht über die Modellierungsumgebung im Package Explorer mit einem geöffneten Submodell ist in Abbildung \ref{fig:BearbeitungsansichtPackageExplorer} dargestellt.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Bilder/ModellierungAAS/neu.PNG}
+    \caption{Bearbeitungsansicht eines Submodells im Package Explorer}
+    \label{fig:BearbeitungsansichtPackageExplorer}
+\end{figure}
 
-Zur Gewährleistung einer einheitlichen semantischen Beschreibung können einzelne Elemente innerhalb eines Submodells mit einer sogenannten semanticId versehen werden.
+Zur Gewährleistung einer einheitlichen semantischen Beschreibung können einzelne Elemente innerhalb eines Submodells mit einer semanticId versehen werden.
 Diese verweist entweder auf externe Standards oder auf lokale Concept Descriptions innerhalb der AAS-Umgebung.
 Eine Concept Description kann manuell erstellt oder über den ECLASS-Standard eingebunden werden.
 Der Package Explorer bietet hierfür eine erweiterte Funktion, bei der sich vorgefertigte ECLASS-Kataloge importieren lassen.
@@ -100,24 +111,86 @@ Nach der Erstellung sollte eine Überprüfung der Konformität der \acs{aas} erf
 Hierzu wird eine von der \acs{idta} bereitgestellte Test Engine eingesetzt \cite{TestEngine}. 
 Diese kann direkt mit pip, dem Paktemanager von Python, installiert und anschließend über die Kommandozeile genutzt werden.
 
-Mit folgendem Befehl kann nun die zuvor erstellte AASX-Datei der robocell validiert werden.
+Mit dem Befehl \texttt{aas\_test\_engines check\_file robocell.aasx} kann nun die zuvor erstellte AASX-Datei der robocell validiert werden.
 %Mit dem Befehl: aas_test_engines check_file my_aas.aasx kann eine AASX-Datei validiert werden.
-\begin{verbatim}
-aas_test_engines check_file robocell.aasx
-\end{verbatim}
-
+% \begin{verbatim}
+% aas_test_engines check_file robocell.aasx
+% \end{verbatim}
 Dabei wird zunächst geprüft, ob die AASX-Datei formal korrekt aufgebaut ist, insbesondere hinsichtlich der internen Struktur und ihrer Beziehungen.
 Anschließend erfolgt die Kontrolle der enthaltenen \acs{aas} gegen die Metamodell-Spezifikationen der \acs{idta} (Teil 1 \cite{SpezifikationPart1} und 3a \cite{SpezifikationPart3a}).
 Zuletzt erfolgt ein Abgleich der Submodelle mit ihren entsprechenden Submodel Templates.
-Wenn im ganzen Prozess keine Fehler oder Abweichungen gefunden werden, folgt eine entsprechende Bestätigung der Test Engine (siehe Abbildung !!!xy).
+Wenn im ganzen Prozess keine Fehler oder Abweichungen gefunden werden, folgt eine entsprechende Bestätigung der Test Engine (siehe Abbildung \ref{fig:KonsolenausgabeTestEngine}).
 
-!!!Bild Test Engine Bestätigung
+\setlength{\fboxsep}{0pt}
+\begin{figure}[htbp]
+    \centering
+    \fcolorbox{black!60}{white}{\includegraphics[width=0.99\textwidth]{Bilder/testEngineSuccess.PNG}}
+    \caption{Konsolenausgabe nach erfolgreicher Validierung}
+    \label{fig:KonsolenausgabeTestEngine}
+\end{figure}
 
 \subsection{Technische Integration}
 \subsubsection{Bereitstellung der Verwaltungsschalen}
 \subsubsection{Datenzugriff über standardisierte Schnittstellen}
+
+
+
+\newpage
 \subsubsection{Integration von Echtzeitdaten über OPC UA}
+Nach der Erstellung einer statischen \acs{aas} für die robocell gilt es nun, diese um dynamische Informationen zu erweitern.
+Diese sind essenziell, um den aktuellen Zustand einer Maschine abbilden zu können.
+Die Datenbasis bilden die beiden zuvor vorgestellten Anwendungen, die Maschinen- bzw. Sensordaten über einen OPC UA Server bereitstellen.
+% Auf die konkrete Simulation dieser Daten soll in dieser Arbeit allerdings nicht weiter eingegangen werden.
+
+% Dennoch ist es sinnvoll, einmal die Struktur der bereitgestellten Daten zu betrachten.
+
+% Zur Analyse kann ein OPC UA Client genutzt werden, z.B. UA Expert, mit dem alle verfügbaren Datenpunkte (Nodes) eingesehen werden können.
+% Die Daten werden in einer hierarchischen Struktur bereitgestellt, wie sie in Abbildung \ref{fig:opcua_serverstruktur} zu erkennen ist.
+% Jede Node besitzt dabei einen NamespaceIndex sowie eine eindeutige NodeId (siehe Abbildung \ref{fig:opcua_pressure_node}), über die das jeweilige Objekt identifiziert werden kann.
+
+% \begin{figure}[htbp]
+%     \centering
+%     \begin{minipage}[t]{0.25\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{Bilder/OPCUA/serverstruktur.png}
+%         \caption{OPC UA Serverstruktur}
+%         \label{fig:opcua_serverstruktur}
+%     \end{minipage}
+%     \hspace{0.2\textwidth} % Abstand zwischen den Bildern
+%     \begin{minipage}[t]{0.4\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{Bilder/OPCUA/pressure_node.png}
+%         \caption{Detailansicht der Node \texttt{pressure}}
+%         \label{fig:opcua_pressure_node}
+%     \end{minipage}
+% \end{figure}
+
+Die technische Integration in die \acs{aas} wird im Folgenden am Beispiel des Submodells Prozessdaten erläutert.
+Innerhalb dieses Submodells existieren verschiedene Properties, die jeweils bestimmte Werte, wie beispielsweise den Druck, repräsentieren (siehe Abbildung \ref{fig:UMLSubmodellProcessData}). 
+Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten, die über \acs{opcua} bereitgestellt werden, aktualisiert werden.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Bilder/UML/submodel_processdata.pdf}
+    \caption{Klassendiagramm des Submodells Prozessdaten}
+    \label{fig:UMLSubmodellProcessData}
+\end{figure}
+
+Das Eclipse BaSyx Projekt stellt hierfür eine weitere Komponente bereit, die sogenannte Databridge \cite{BaSyxDatabridge}.
+Diese steht, wie alle anderen Komponenten auch, als Docker Container zur Verfügung und ermöglicht die Anbindung verschiedenster Datenquellen an eine \acs{aas}.
+Sie unterstützt eine Vielzahl von Protokollen, darunter insbesondere auch \acs{opcua} oder MQTT.
+Dabei dient sie als Vermittler zwischen einem Datenendpunkt, in diesem Fall einem \acs{opcua} Server und einem Submodell innerhalb der \acs{aas}.
+
+Die Konfiguration der Databridge erfolgt über mehrere JSON-Dateien.
+In der Datei routes.json werden sowohl die Datenquelle als auch die Datensenke definiert.
+Die Aktualisierung der Daten erfolgt dabei ereignisbasiert anhand eines Event-Triggers.
+Dies entspricht einer klassischen Subscription, bei der die Databridge automatisch benachrichtigt wird, sobald sich der Wert des OPC UA Servers ändert.
+
+
+
+
 \subsubsection{Verarbeitung von Zeitreihendaten}
+
 \subsection{Anwendungsfall Digitaler Produktpass}
 \subsubsection{Beschreibung}
 \subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
