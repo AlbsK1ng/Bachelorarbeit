@@ -268,12 +268,12 @@ Die AAS wird dabei in mehreren Spezifikationen der \acs{idta} dokumentiert und b
 Aktuell bildet die AAS Version 3 den neuesten Entwicklungsstand und ist ebenfalls die Basis für diese Arbeit.
 % evtl die Quelle wenn gut https://www.zvei.org/themen/start-der-industrial-digital-twin-association-idta
 
-Die AAS repräsentiert ein Asset digital, indem sie alle relevanten Daten, Eigenschaften und Funktionen über den gesamten Lebenszyklus hinweg in strukturierter und standardisierter Form bereitstellt. 
+Die \acs{aas} repräsentiert ein Asset digital, indem sie alle relevanten Daten, Eigenschaften und Funktionen über den gesamten Lebenszyklus hinweg in strukturierter und standardisierter Form bereitstellt. 
 Sie fungiert somit als digitales Gegenstück eines realen Objekts - also als digitaler Zwilling.
 Die Informationen sind in sogenannten Submodellen organisiert, die jeweils spezifische Aspekte eines Assets abbilden.
 Dabei kann es sich sowohl um physische Assets (z.B. Maschinen, Anlagen) als auch um virtuelle Assets (z.B. Software, Konzepte) handeln. 
-Eine AAS ist stets eindeutig einem Asset zugeordnet und global identifizierbar. 
-Durch die Kombination eines Assets mit seiner AAS entsteht eine sogenannte Industrie-4.0-Komponente.
+Eine \acs{aas} ist dabei stets einem Asset zugeordnet und global eindeutig identifizierbar. 
+Durch die Kombination eines Assets mit seiner \acs{aas} entsteht eine sogenannte Industrie-4.0-Komponente.
 
 % Durch die standardisierte Struktur bildet die Verwaltungsschale die Grundlage für einen einheitlichen Informationsaustausch über System -und Unternehmensgrenzen hinweg.
 % Verwaltungsschalen repräsentieren immer genau ein Asset und müssen global eindeutig identifizierbar sein.
@@ -343,7 +343,7 @@ Wichtig ist, sowohl die AAS selbst als auch ihre Submodelle müssen global einde
 Dies wird durch die Verwendung von eindeutigen Identifikatoren der Klasse Identifiable wie einer URI (Uniform Resource Identifier) oder IRDI (International Registration Data Identifier) sichergestellt.
 Für die Elemente innerhalb eines Submodells ist eine lokale Kennung ausreichend. Dies erfolgt in der Regel anhand einer idShort der Klasse Referable, die einen kurzen, aussagekräftigen Namen enthält.
 Dabei ist wichtig alle Submodelle bzw. alle Elemente über eine eindeutige Semantik zu beschreiben.
-Hierfür gibt es eine sogenannte SemanticID der Klasse HasSemantics, welche eine semantische Referenz enthält.
+Hierfür gibt es eine sogenannte semanticID der Klasse HasSemantics, welche eine semantische Referenz enthält.
 Sie können entweder auf externe Standards oder direkt auf eine Beschreibung innerhalb der \acs{aas}, sogenannte Concept Descriptions, verweisen.
 Ein häufig verwendeter externer Standard ist zum Beispiel ECLASS, welcher auf der Norm IEC 61360 \cite{ECLASSIEC61360} basiert.
 Darin wird eine standardisierte Struktur für Merkmale und ihre semantische Beschreibungen definiert.
@@ -359,7 +359,7 @@ Um die Erstellung von Submodellen zu erleichtern und gleichzeitig Interoperabili
 Aktuell sind 34 dieser Templates veröffentlicht, viele weitere sind in der Entwicklung oder im Überprüfungsprozess und werden in Zukunft ergänzt.
 Die bereits verfügbaren Templates enthalten unteranderem Submodelle wie das digitale Typenschild oder den Carbon Footprint.
 Alle Eigenschaften innerhalb dieser Vorlagen werden dabei in Verbindung mit dem ECLASS-Standard einheiltich semantisch beschrieben.
-Diese Templates könen über ein zentrales Repository bezogen werden und bilden die Basis für eine interoperable semantische Datenstruktur.
+Diese Templates könen über ein zentrales Repository \cite{idtaTemplates} bezogen werden und bilden die Basis für eine interoperable semantische Datenstruktur.
 
 \subsubsection{Informationsaustausch}
 Der Austausch von Informationen über die AAS kann auf unterschiedliche Weise erfolgen.
@@ -371,7 +371,7 @@ Repositories dienen dabei als zentraler Speicherort für die Inhalte einer \acs{
 Die Aufgabe der Verwaltung und Registrierung wird von Registries übernommen.
 Sie ermöglichen das systemweite Auffinden von \acs{aas} und stellen sicher, dass diese eindeutig referenzierbar sind.
 Ergänzend dazu bieten Discovery-Services eine erweiterte Suchfunktionalität, indem sie Beziehungen verschiedener Entitäten mittels verschiedener Schlüsselwertpaare speichern.
-Eine AAS kann so zum Beispiel logisch mit einer Asset-Id verknüpft werden und somit schnell innerhalb komplexer Systeme identifiziert werden.
+Eine \acs{aas} kann so zum Beispiel logisch mit einer \acs{assetid} (Asset Identifier) verknüpft werden und somit schnell innerhalb komplexer Systeme identifiziert werden.
 Der Zugriff auf diese Systeme bzw. ihrer Inhalte wird in Form von Schnittstellen standardisiert, wodurch eine hohe Interoperabilität gewährleistet wird.
 Ein besonderer Fokus liegt dabei auf HTTP/REST, welches durch definierte Zugriffsprinzipien strukturiert ist. Diese folgen dabei dem REST-Schema und unterstützen gängige HTTP-Methoden wie GET, POST, PUT oder DELETE.
 Die fortschrittlichste Form des Informationsaustausches stellt die Peer-to-peer Kommunikation, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren können.
@@ -523,7 +523,7 @@ Typische REST-Endpunkte sind beispielsweise:
 \input{TabelleBasyxEndpunkte.tex}
 
 Im BaSyx-System ermöglicht sin sogenannter Discovery-Service die Verknüpfung physischer Assets mit iheren zugehörigen AAS.
-Dabei wird eine spezifische Asset-Id mit der entsprechenden AAS-ID verlinkt.
+Dabei wird eine spezifische Asset-ID mit der entsprechenden AAS-ID verlinkt.
 Dies ist insbesondere für die Abbildung von hierarchischen Strukturen wie Stücklisten (Bill of Materials, BOM) von großer Bedeutung.
 Ein übergeordnetes Asset (z.B. Maschine) kann so beispielsweise mit untergeordneten Komponenten (z.B. Antrieb, Sensoren) logisch über deren AAS verbunden werden.
 Einträge in den Discovery-Service müssen derzeit allerdings noch manuell über die API vorgenommen werden.
