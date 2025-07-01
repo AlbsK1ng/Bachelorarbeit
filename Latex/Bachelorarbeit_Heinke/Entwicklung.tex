@@ -1,15 +1,12 @@
 \section{Entwicklung}
-In diesem Kapitel wird die Entwicklung des digitalen Zwillings für die robocell beschrieben.
-\dots
+In diesem Abschnitt wird die schrittweise Entwicklung des digitalen Zwillings der robocell beschrieben.
+Zunäscht werden alle relevanten Datenquellen identifiziert und geeignete Submodelle ausgewählt.
+Darauf aufbauend folgt die Modellierung der \acs{aas} mithilfe des Package Explorers sowie die Validierung dieser mit einer Test Engine.
+Im Anschluss wird gezeigt, wie die \acs{aas} in eine BaSyx-Umgebung integriert werden kann.
+Dabei werden sowohl Echtzeidaten über \acs{opcua} als auch Zeitreihendaten über eine InfluxDB eingebunden.
+Darüber hinaus wird auf die Entwicklung von drei exemplarischen Anwendungsfällen eingegangen.
+Dazu zählt unter anderem der digitale Produktpass, die automatisierte Erstellung von \acs{aas}-Instanzen sowie der Einsatz von \acs{ki}.
 
-\dots
-
-\dots
-
-\dots
-
-\dots
-\dots
 \subsection{Konzeptionierung des digitalen Zwilling}
 Ziel dieses Kapitels ist es, eine grundlegende Basis für die Erstellung des digitalen Zwillings der robocell zu schaffen.
 Dabei wird untersucht, welche Daten für die Modellierung erforderlich sind, wo diese herkommen und wie sie in (standardisierten) Teilmodellen der \acs{aas} strukturiert werden können.
@@ -46,8 +43,8 @@ Ein wesentlicher Vorteil der \acs{aas} besteht darin, dass die Auswahl der Submo
 Sie können sukszessive ergänzt, angepasst oder auch wieder entfernt werden.
 Es werden im Folgenden deshalb zunächst nur die wichtigsten, in diesem Projekt eingesetzten Submodelle betrachtet, die in späteren Anwendungsfällen gezielt erweitert werden.
 
-Die nachfolgende Tabelle gibt einen Überblick über die initiale Auswahl dieser Submodelle, ihre typischen Inhalte sowie deren Standardisierung.
-
+Die nachfolgende Tabelle gibt einen Überblick über die initiale Auswahl dieser Submodelle sowie ihrer typischen Inhalte.
+In der Spalte Standardisierung ist jeweils das zugehörige Submodel Template durch die zugehörige Dokumentennumer der \acs{idta} angegeben, in der die entsprechende Version dokumentiert ist.
 % Wie erfolgt die Auswahl? sss
 
 %Nachfolgende Tabelle gibt einen Überblick über die wichtigsten, in diesem Projekt eingesetzten Submodelle sowie ihrer Inhalte.
@@ -58,7 +55,7 @@ Die nachfolgende Tabelle gibt einen Überblick über die initiale Auswahl dieser
 
 
 
-
+\newpage
 \subsection{Modellierung mit der AAS}
 In diesem Kapitel wird erläutert, wie die zuvor ausgewählten Submodelle mit konkreten Daten befüllt werden können und welche Aspekte bei der Modellierung beachtet werden müssen.
 Zudem wird gezeigt, wie die erstellte \acs{aas} mit Hilfe einer Test Engine auf eine korrekte und vollständige Struktur überprüft werden kann. 
@@ -77,7 +74,7 @@ Dies ist besonders wichtig für den späteren Austausch der \acs{aas} sowie das 
 Darüber hinaus besteht ebenfalls die Möglichkeit, ein Thumbmail in Form einer Datei (z.B. png oder jpeg) zu hinterlegen.
 
 Im nächsten Schritt können die benötigten Submodelle hinzugefügt werden. 
-Auch diese können als Instanz oder Typ angelegt werden.
+Auch diese lassen sich entweder als Instanz oder Typ anlegen.
 Dabei besteht die Möglichkeit, entweder ein leeres Submodell manuell mit verschiedenen Submodellelementen zu erstellen oder auf ein vorhandenes Submodel Template zurückzugreifen.
 Letztere können als AASX-Datei, beispielsweise über das Repository der \acs{idta} \cite{idtaTemplates}, heruntergeladen und anschließend über ein sogenanntes Auxiliary AAS in die Umgebung geladen werden.
 Sie stehen dann zur Verfügung und können in die \acs{aas} kopiert werden.
@@ -137,7 +134,7 @@ Wenn im ganzen Prozess keine Fehler oder Abweichungen gefunden werden, folgt ein
 
 \newpage
 \subsubsection{Integration von Echtzeitdaten über OPC UA}
-Nach der Erstellung einer statischen \acs{aas} für die robocell gilt es nun, diese um dynamische Informationen zu erweitern.
+Nach der Erstellung einer statischen \acs{aas} für die robocell und der Integration in das BaSyx-System gilt es nun, diese um dynamische Informationen zu erweitern.
 Diese sind essenziell, um den aktuellen Zustand einer Maschine abbilden zu können.
 Die Datenbasis bilden die beiden zuvor vorgestellten Anwendungen, die Maschinen- bzw. Sensordaten über einen OPC UA Server bereitstellen.
 % Auf die konkrete Simulation dieser Daten soll in dieser Arbeit allerdings nicht weiter eingegangen werden.
@@ -182,14 +179,69 @@ Sie unterstützt eine Vielzahl von Protokollen, darunter insbesondere auch \acs{
 Dabei dient sie als Vermittler zwischen einem Datenendpunkt, in diesem Fall einem \acs{opcua} Server und einem Submodell innerhalb der \acs{aas}.
 
 Die Konfiguration der Databridge erfolgt über mehrere JSON-Dateien.
-In der Datei routes.json werden sowohl die Datenquelle als auch die Datensenke definiert.
+In der Datei \texttt{routes.json} werden sowohl die Datenquelle als auch die Datensenke definiert.
 Die Aktualisierung der Daten erfolgt dabei ereignisbasiert anhand eines Event-Triggers.
-Dies entspricht einer klassischen Subscription, bei der die Databridge automatisch benachrichtigt wird, sobald sich der Wert des OPC UA Servers ändert.
+% Dies entspricht einer klassischen Subscription, bei der die Databridge automatisch reagiert, sobald sich der Wert des OPC UA Servers ändert.
 
+Als Datenquelle muss der OPC UA Server angegeben werden.
+Diser kann in einer seperaten Datei, beispielsweise \texttt{opcuaconsumer.json} konfiguriert werden.
+Der \acs{opcua} Server stellt die Werte in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar.
+In der JSON-Datei müssen schließlich die Server-Konfiguration als auch die zu überwachenden Knoten definiert werden.
+In diesem Beispiel wird als OPC UA Client Eclipse Milo verwendet, der auf einem Subscription-Modell basiert.
+Dabei wird der Server nicht gepollt, sondern es werden bestimmmte Knoten (Nodes) abonniert.
+Die exemplarische Konfiguration einer solchen Datenquelle ist für die Druck-Node in Listing \ref{lst:jsonDatenquelle} dargestellt.
+Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall können zusätzlich angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
 
+\begin{lstlisting}[style=jsonstyle, caption={Beispielhafte JSON-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
+{
+    "uniqueId"       : "pressure",
+    "nodeInformation": "ns=4;i=113",
+    "serverUrl"      : "opcua-server",
+    "serverPort"     : 4840,
+    "pathToService"  : "milo"
+}
+\end{lstlisting}
 
+Zur Anpassung der eingehenden Werte an die Struktur der gewünschten Property können verschiedene Transformatoren eingesetzt werden. 
+Die Databridge unterstützt hierfür unter anderem das Verwenden von JSONata-Ausdrücken oder den Einsatz von JsonJacksonTransformers. 
+Mit diesen lassen sich die vom OPC UA Server empfangenen Rohdaten in ein JSON-Objekt überführen und anschließend die konkreten Datenwerte der jeweiligen Nodes gezielt extrahieren
 
+Anschließend muss die Datensenke konfiguriert werden, welche die transformierten Werte in die entsprechenden Properties des Submodells Prozessdaten überträgt.
+Dies erfolgt analog zur Konfiguration der Datenquelle über eine JSON-Datei.
+In dieser müssen der Endpoint des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version angegeben werden.
+Eine beispielhafte Konfiguration ist in Listing \ref{lst:jsonDatensenke} für den Druck dargestellt.
+Der Platzhalter \texttt{\{smID\}} steht dabei für die Base64-kodierte ID des Submodells Prozessdaten, wie sie in der REST-API der \acs{aas} verwendet wird.
+
+\begin{lstlisting}[style=jsonstyle, caption={Beispielhafte JSON-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
+{
+    "uniqueId"        : "Submodel/ProcessData/Pressure",
+    "submodelEndpoint": "http://aas-env:8081/submodels/{smId}",
+    "idShortPath"     : "Druck",
+    "api"             : "DotAAS-V3"
+}
+\end{lstlisting}
+
+Nach erfolgreicher Konfiguration der Databridge werden die \acs{opcua}-Werte automatisiert in die jeweilige Property des Submodells geschrieben. 
+Dieser Mechanismus lässt sich nicht nur für die Übertragung von Prozesswerten, sondern auch zur Darstellung des aktuellen Maschinenzustands nutzen und bietet somit eine flexible Grundlage für die Integration von Prozess- und Betriebsdaten in die \acs{aas}.
 \subsubsection{Verarbeitung von Zeitreihendaten}
+% Neben der dynamischen Aktualisierung einzelner Properties besteht auch die Möglichkeit, umfangreiche Zeitreihendaten in die \acs{aas} zu integrieren.
+% Hierfür bietet das Submodel Template Time Series Data, das ebenfalls in einer Submodellspezifikation dokumentiert ist \cite{SpezifikationTimeSeriesData}, eine standardisierte Lösung.
+
+Grundsätzlich lassen sich Zeitreihendaten auf unterschiedliche Weise in eine \acs{aas} einbinden.
+Das Submodel Template Time Series Data \cite{SpezifikationTimeSeriesData} bietet hierfür mehrere standardisierte Lösungsansätze.
+Eine Möglichkeit besteht darin, diese direkt in der \acs{aas} zu speichern.
+Diese Variante eignet sich jedoch nur für kleinere Datenmengen.
+Alternativ können die Daten in Form einer Datei abgespeichert werden.
+Diese können dann entweder direkt in die \acs{aas} eingebunden oder extern über ein ExternalSegment referenziert werden.
+Für größere Datenmengen bietet sich die exterene Speicherung an einem seperaten Ort, wie etwa einer Datenbank, an.
+Diese kann schließlich über ein LinkedSegment mit der \acs{aas} verknüpft werden.
+
+Im Folgenden wird die zuletzt genannte Option näher betrachtet.
+Hierzu werden die simulierten Werte für Druck und Temperatur extern in einer InfluxDB gespeichert.
+Die über \acs{opcua} bereitgestellten Daten werden dabei mithilfe von Telegraf, einem leichtgewichtigen Agenten zur Datenerfassung und -weiterleitung \cite{Influx}, kontinuierlich in eine speziell für diesen Anwendungsfall angelegte Tabelle geschrieben.
+Beide Komponenten stehen als Docker-Container zur Verfügung und lassen sich nahtlos in das bestehende BaSyx-System integrieren.
+
+
 
 \subsection{Anwendungsfall Digitaler Produktpass}
 \subsubsection{Beschreibung}

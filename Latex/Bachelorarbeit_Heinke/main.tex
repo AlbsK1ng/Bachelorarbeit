@@ -16,7 +16,6 @@
 
 %\usepackage{geometry}
 \usepackage[onehalfspacing]{setspace}
-\usepackage{listings}
 \usepackage{color}
 \usepackage{attachfile}
 \usepackage[explicit]{titlesec}
@@ -55,7 +54,24 @@
 \usepackage{tabularray}
 \usepackage{makecell}
 
+%----------Code listings------------
+\usepackage{listings}
+% Farben definieren
+\definecolor{codebg}{gray}{0.95}
 
+% Listings-Stil für JSON
+\lstdefinestyle{jsonstyle}{
+    backgroundcolor=\color{codebg},
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    basicstyle=\ttfamily\footnotesize,
+    showstringspaces=false,
+    breaklines=true
+}
+%----------Code listings------------
 
 \usepackage[a4paper, asymmetric, left=3cm,right=3cm,top=1cm,bottom=1.5cm,includeheadfoot, headheight=40pt]{geometry}
 
@@ -112,8 +128,8 @@
 \listoffigures
 \newpage
 
-% \listoftables
-%\lstlistoflistings 
+\listoftables
+\lstlistoflistings 
 
 \newpage
 
