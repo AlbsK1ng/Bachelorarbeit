@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  2 JUL 2025 23:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  2 JUL 2025 23:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1785,7 +1785,7 @@ Package acronym Info: Label `acro:opcua' overridden on input line 239.
 File: Bilder/TimeSeries/MetadataTimeSeries.PNG Graphic file (type png)
 <use Bilder/TimeSeries/MetadataTimeSeries.PNG>
 Package pdftex.def Info: Bilder/TimeSeries/MetadataTimeSeries.PNG  used on input line 248.
-(pdftex.def)             Requested size: 413.98813pt x 102.24277pt.
+(pdftex.def)             Requested size: 375.57846pt x 92.7559pt.
 
 
 [29 <./Bilder/TimeSeries/MetadataTimeSeries.PNG>]
@@ -1793,31 +1793,29 @@ Package pdftex.def Info: Bilder/TimeSeries/MetadataTimeSeries.PNG  used on input
 File: Bilder/TimeSeries/LinkedSegment.PNG Graphic file (type png)
 <use Bilder/TimeSeries/LinkedSegment.PNG>
 Package pdftex.def Info: Bilder/TimeSeries/LinkedSegment.PNG  used on input line 260.
-(pdftex.def)             Requested size: 405.45047pt x 198.93144pt.
+(pdftex.def)             Requested size: 367.04082pt x 180.08716pt.
 
 
 [30 <./Bilder/TimeSeries/LinkedSegment.PNG>]
-
-[31]
-<Bilder/UML/tehcnicalDataForRobocell.pdf, id=959, 1046.91125pt x 626.34pt>
+<Bilder/UML/tehcnicalDataForRobocell.pdf, id=955, 1046.91125pt x 626.34pt>
 File: Bilder/UML/tehcnicalDataForRobocell.pdf Graphic file (type pdf)
 <use Bilder/UML/tehcnicalDataForRobocell.pdf>
 Package pdftex.def Info: Bilder/UML/tehcnicalDataForRobocell.pdf  used on input line 305.
 (pdftex.def)             Requested size: 426.79135pt x 255.3388pt.
 
 
-[32 <./Bilder/UML/tehcnicalDataForRobocell.pdf>]) (Ergebnisse.tex) (Zusammenfassung.tex)
+[31 <./Bilder/UML/tehcnicalDataForRobocell.pdf>]) (Ergebnisse.tex) (Zusammenfassung.tex)
 
-[33]
+[32]
 Overfull \vbox (27.66415pt too high) has occurred while \output is active []
 
 
 
-[34]
+[33]
 No file main.gls.
 
 
-[35
+[34
 
 ]
 Package microtype Info: Character `029' is missing
@@ -1830,9 +1828,9 @@ Overfull \hbox (53.37152pt too wide) in paragraph at lines 174--174
 
 
 
-[36]
+[35]
 
-[37]
+[36]
 Overfull \hbox (11.28668pt too wide) in paragraph at lines 174--174
 []$\T1/lmtt/m/n/12 https : / / industrialdigitaltwin . org / en / content -[] hub / aasspecifications$[]
  []
@@ -1844,11 +1842,11 @@ Overfull \hbox (39.51118pt too wide) in paragraph at lines 174--174
 
 
 
+[37]
+
 [38]
 
-[39]
-
-[40] (main.aux)
+[39] (main.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
@@ -1872,8 +1870,8 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48924 strings out of 468225
- 979121 string characters out of 5432974
+ 48923 strings out of 468225
+ 979114 string characters out of 5432974
  1968931 words of memory out of 5000000
  76250 multiletter control sequences out of 15000+600000
  730797 words of font info for 213 fonts, out of 8000000 for 9000
@@ -1883,9 +1881,9 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{glo:SPS} has been referenced but does not exist, replaced by a fixed one
 
 <C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (48 pages, 1408494 bytes).
+Output written on main.pdf (47 pages, 1408043 bytes).
 PDF statistics:
- 1215 PDF objects out of 1440 (max. 8388607)
- 224 named destinations out of 1000 (max. 500000)
+ 1211 PDF objects out of 1440 (max. 8388607)
+ 223 named destinations out of 1000 (max. 500000)
  59478 words of extra memory for PDF output out of 61914 (max. 10000000)
 
