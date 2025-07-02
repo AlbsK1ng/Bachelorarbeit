@@ -396,7 +396,7 @@ Gerade wenn Informationen aus der \acs{aas} über die Grenzen des eigenen Untern
 Die neueste Spezifikation Part 4: Security \cite{SpezifikationPart4} der \acs{idta} liefert hierfür die technische und konzeptionelle Grundlage.
 Sie  beschreibt, wie Zugriffe auf Daten in der \acs{aas} sicher gesteuert werden können, insbesondere in vernetzten Umgebungen wie Datenräumen.
 Zum Einsatz kommen dabei neue Dienste wie ein Identity Provider zur Authentifizierung oder ein Policy Service zur Durchsetzung von Richtlinien.
-Die Sicherheit wird dabei mit Hilfe eines attributbasierten Zugriffsmodells (Attribute Based Access Control (ABAC)) gewährleistet.
+Die Sicherheit wird dabei mithilfe eines attributbasierten Zugriffsmodells (Attribute Based Access Control (ABAC)) gewährleistet.
 Bei jeder Anfrage auf bestimmte Objekte innerhalb der \acs{aas} wird dabei anhand verschiedener Merkmale (Attribute) geprüft ob ein Zugriff erlaubt ist.
 Dazu zählen sogenannte Subjektattribute (also wer die Anfrage stellt), Objektattribute (z.B. welches Submodell, welche Property oder welches Submodellelement betroffen ist), die gewünschte Aktion (z.B. Lesen oder Schreiben) sowie kontextbezogene Bedingungen (z.B. Zeitpunkt der Anfrage oder Zustand des Systems).
 Die zur Prüfung notwendigen Informationen liefert in der Regel ein Token, das vom Identity Provider bereitgestellt wird. Die Spezifikation sieht hierfür die Nutzung sogenannter JSON Web Tokens (JWT) vor.
@@ -524,7 +524,7 @@ Typische REST-Endpunkte sind beispielsweise:
 
 Im BaSyx-System ermöglicht sin sogenannter Discovery-Service die Verknüpfung physischer Assets mit iheren zugehörigen AAS.
 Dabei wird eine spezifische Asset-ID mit der entsprechenden AAS-ID verlinkt.
-Dies ist insbesondere für die Abbildung von hierarchischen Strukturen wie Stücklisten (Bill of Materials, BOM) von großer Bedeutung.
+Dies ist insbesondere für die Abbildung von hierarchischen Strukturen wie Stücklisten (\ac{bom}) von großer Bedeutung.
 Ein übergeordnetes Asset (z.B. Maschine) kann so beispielsweise mit untergeordneten Komponenten (z.B. Antrieb, Sensoren) logisch über deren AAS verbunden werden.
 Einträge in den Discovery-Service müssen derzeit allerdings noch manuell über die API vorgenommen werden.
 
