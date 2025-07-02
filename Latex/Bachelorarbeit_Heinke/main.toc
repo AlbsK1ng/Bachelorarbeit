@@ -36,31 +36,31 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Beschreibung}{30}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Umsetzung mit dem Teilmodell Carbon Footprint}{30}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}Anwendungsfall automatisierte Generierung von AAS}{30}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Erstellen von Submodell-Templates}{31}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Befüllen der Templates mit strukturierten Daten}{31}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}Bereitstellen der AAS über die Rest API}{32}{subsubsection.3.5.3}%
-\contentsline {subsubsection}{\numberline {3.5.4}Potenziale des KI-Einsatzes}{33}{subsubsection.3.5.4}%
-\contentsline {section}{\numberline {4}Ergebnisse}{33}{section.4}%
-\contentsline {subsection}{\numberline {4.1}AAS-Demonstrator für die robocell}{33}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Systemarchitektur}{33}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Eingesetzte Teilmodelle}{33}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Herausforderungen bei der Erstellung}{33}{subsubsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.2}Anwendungsfall Digitaler Produktpass}{33}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Implementierungskonzept}{33}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Dynamische Berechnung des PCF}{33}{subsubsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.3}Anwendungsfall automatisierte Generierung der AAS}{33}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Einsatzmöglichkeiten von KI im Kontext der Verwaltungsschale}{33}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Generierung von Verwaltungsschalen}{33}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Anomaliererkennung}{33}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Weiterführende Einsatzmöglichkeiten}{33}{subsubsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.5}Evaluierung eingesetzter Tools und Software}{33}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}AASX Package Explorer}{33}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Eclipse AASX Server}{33}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}BaSyx}{33}{subsubsection.4.5.3}%
-\contentsline {subsubsection}{\numberline {4.5.4}Mnestix Browser}{33}{subsubsection.4.5.4}%
-\contentsline {section}{\numberline {5}Zusammenfassung und Ausblick}{33}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{33}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{33}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{33}{subsection.5.3}%
-\contentsline {section}{Glossar und Abkürzungsverzeichnis}{34}{section*.38}%
-\contentsline {section}{\numberline {A}Anhang 1}{39}{appendix.A}%
+\contentsline {subsubsection}{\numberline {3.5.1}Erstellen von Submodell-Templates}{32}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Befüllen der Templates mit strukturierten Daten}{32}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Bereitstellen der AAS über die Rest API}{33}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Potenziale des KI-Einsatzes}{34}{subsubsection.3.5.4}%
+\contentsline {section}{\numberline {4}Ergebnisse}{34}{section.4}%
+\contentsline {subsection}{\numberline {4.1}AAS-Demonstrator für die robocell}{34}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Systemarchitektur}{34}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Eingesetzte Teilmodelle}{34}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Herausforderungen bei der Erstellung}{34}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Anwendungsfall Digitaler Produktpass}{34}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Implementierungskonzept}{34}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Dynamische Berechnung des PCF}{34}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}Anwendungsfall automatisierte Generierung der AAS}{34}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Einsatzmöglichkeiten von KI im Kontext der Verwaltungsschale}{34}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Generierung von Verwaltungsschalen}{34}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Anomaliererkennung}{34}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Weiterführende Einsatzmöglichkeiten}{34}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Evaluierung eingesetzter Tools und Software}{34}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}AASX Package Explorer}{34}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Eclipse AASX Server}{34}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}BaSyx}{34}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Mnestix Browser}{34}{subsubsection.4.5.4}%
+\contentsline {section}{\numberline {5}Zusammenfassung und Ausblick}{34}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{34}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{34}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{34}{subsection.5.3}%
+\contentsline {section}{Glossar und Abkürzungsverzeichnis}{35}{section*.38}%
+\contentsline {section}{\numberline {A}Anhang 1}{40}{appendix.A}%
