@@ -1,0 +1,18 @@
+{\small
+\begin{longtblr}[
+  label = tab:BereitstellungInBaSyx,
+  caption = {Bereitstellung einer AAS über die REST-API in Eclips BaSyx},
+  entry = Bereitstellung einer AAS über die REST-API in Eclips BaSyx
+]{
+  colspec = {l l X},
+  rowhead = 1,
+  vlines,
+  hlines
+}
+\textbf{Schritt} & \textbf{Service} & \textbf{Endpunkte} \\
+1. AAS erstellen & AAS Repository & \texttt{/shells}\\
+2. Submodell(e) erstellen & Submodel Repository & \texttt{/submodels}\\
+\makecell[l]{3. Submodell(e) mit \\ \acs{aas} verknüpfen} & AAS Repository & \texttt{\makecell[l]{/shells/{\{aasIdentifier\}} \\ /submodel-refs}}\\
+4. \acs{cd} anlegen & \acs{cd} Repository & \texttt{/concept-descriptions}\\
+\end{longtblr}
+}

@@ -35,7 +35,7 @@ Diese können entweder vollständig neu konzipiert oder aus bestehenden Vorlagen
 
 Die konkrete Auswahl der Submodelle in dieser Arbeit orientiert sich hauptsächlich an typischen Industrie 4.0-Anwendungsfällen, die unter anderem auf der Website der \acs{idta} dokumentiert sind \cite{idtaUseCases}.
 Diese Anwendungsfälle zeigen auf, welche Submodelle in der Praxis besonders relevant sind.
-Eines der wichtigsten ist vermutlich das digitale Typenschild.
+Eines der wichtigsten ist vermutlich das digitale Typenschild, da dieses häufig die erste Anlaufstelle für die Identifikation und grundlegende Informationen eines Assets darstellt.
 Daneben wurden aber auch projektspezifische Anforderungen berücksichtigt, die sich aus den verfügbaren Daten sowie dem fachlichen Austausch mit Industriepartnern wie Wittenstein ergaben.
 
 Tabelle \ref{tab:Submodelle} liefert einen Überblick über die initiale Auswahl dieser Submodelle sowie ihrer typischen Inhalte.
@@ -124,12 +124,47 @@ Wenn im ganzen Prozess keine Fehler oder Abweichungen gefunden werden, folgt ein
 \subsection{Technische Integration}
 
 
-\subsubsection{Bereitstellung der Verwaltungsschalen}
+\newpage
+\subsubsection{Bereitstellung der \acs{aas}}
+Für die Bereitstellung der \acs{aas} stehen mehrere Open-Source-Lösungen zur Verfügung. 
+Eine Lösung, die sich besonders gut für den Einstieg eignet, ist der AasxServerBlazor \cite{AASXServer}, der das serverseitige Gegenstück zum Package Explorer bildet. 
+Diese Kombination ermöglicht eine einfache Visualisierung sowie Verwaltung von \acs{aas}-Paketen und ist vorallem für erste Tests hilfreich.
 
+Für komplexerer Anwendungsfälle erweist sich der AasxServerBlazor jedoch als nicht optimal, insbesondere im Hinblick auf die Integration von Echtzeitdaten sowie die dynamische Erweibarkeit von Submodellen.
+Aus diesem Grund wird im weiteren Verlauf dieses Projekts die Eclipse BaSyx Plattform eingesetzt.
+Durch ihre modulare Architektur und die klare Trennung verschiedener Komponenten wie den Registries oder den Repositories bietet BaSyx eine deutlich flexiblere Grundlage für die Umsetzung praxisnaher Industrie 4.0-Szenarien.
+
+Die einfachste Möglichkeit, um BaSyx zu installieren, ist über Docker.
+Alle benötigten Komponenten stehen hierfür als vorgefertigtes Image öffentlich über den Docker Hub zur Verfügung.
+Alternativ kann auch der Source Code von Github bezogen werden, um einzelne Kompnenten individuell anzupassen oder zu erweitern.
+Die verschiedenen Services, darunter die \acs{aas} Environment, Registries für \acs{aas} und Submodelle, der Discovery Service, sowie die MongoDB als persistenter Speicher, können alle in einer zentralen docker-compose.yml Datei verwaltet werden.
+Die Konfiguration erfolgt in der Regel über Umgebungsvariablen oder seperate Konfigurationsdateien, die in der docker-compose.yml referenziert werden.
+Schließlich können alle Komponenten gemeinsam mit dem Befehl docker compose up gestartet werden.
+
+Nach erfolgreichem Start der BaSyx Umgebung, gibt es mehrere Möglichkeiten, eine \acs{aas} bereitzustellen und zu registrieren.
+Eine besonders einfache Variante besteht darin, dass die AASX-Dateie in ein gemountedes Volume der AAS Environment abgelegt wird.
+Bei einem erneuten Start der Anwendung wird diese Datei automatisch erkannt, registriert und in das BaSyx System eingebunden.
+Die dabei erzeugten Daten, darunter Informationen zu \acs{aas}, Submodellen, Concept Descriptions sowie Registrierungsdaten, werden in verschiedenen Tabellen der angebunden MongoDB gespeichert.
+Dies gewährleistet, dass alle relevanten Daten auch bei einem Neustart der Docker Container erhalten bleiben.
+
+Andererseits kann die Bereitstellung auch direkt über die AAS Web Ui erfolgen.
+Über die Benutzeroberfläche kann eine AASX-Datei manuell importiert werden, wodurch sie direkt im laufenden System registriert un eingebunden wird.
+Diese Methode eignet sich besonders gut für Tests oder kleinere Anpassungen, da eine \acs{aas} auf diese Weise schnell und ohne direkten Zugriff auf das zugrunde liegende Dateisystem eingebunden werden kann.
+
+Die flexibelste aber technisch anspruchsvollste Möglichkeit ist die manuelle Registrierung über die REST-API. 
+Dabei kann nicht einfach eine AASX-Datei hochgeladen werden, sondern es müssen die \acs{aas}, ihre Submodelle sowie ihre Beziehungen eigenständig über die bereitgestellte Schnittstellen angelegt werden.
+Dies erfolgt über JSON-Datenstrukturen, die im Body der jeweiligen Anfrage übermittelt werden.
+Ein typischer Ablauf mit den zugehörigen REST-Endpunkten ist in Tabelle \ref{tab:BereitstellungInBaSyx} dargestellt.
+Die Endpunkte gehören dabei zu verschiedenen Services innerhalb der AAS Environment.
+
+\input{TabelleBereitstellungBaSyxMitAPI.tex}
 % Das passt evtl nicht so ganz oder überflüssig von daher vlt weglassen
 % \subsubsection{Datenzugriff über standardisierte Schnittstellen}
 
-
+Darüber hinaus besteht ebenfalls die Möglichkeit, eine \acs{aas} im Discovery Service zu registrieren.
+Über einen sogenannten assetLink kann diese dabei logisch mit einem Asset verknüpft werden.
+Die Registrierung erfolgt analog zur AAS Environment über einen REST-Endpunkt.
+Besonders bei der Darstellung von hierarchischen Strukturen, etwa einer \acs{bom} mit mehreren verschachtelten Assets, hilft der Discovery Service bei der eindeutigen Zuordnung der jeweiligen \acs{aas} zu ihrem physischen Gegenstück.
 
 \newpage
 \subsubsection{Integration von Echtzeitdaten über OPC UA}
@@ -161,13 +196,13 @@ Die Datenbasis bilden die beiden zuvor vorgestellten Anwendungen, die Maschinen-
 %     \end{minipage}
 % \end{figure}
 
-Die technische Integration in die \acs{aas} wird im Folgenden am Beispiel des Submodells Prozessdaten erläutert.
+Die Integration von Echtzeidaten in die \acs{aas} wird im Folgenden am Beispiel des Submodells Prozessdaten erläutert.
 Innerhalb dieses Submodells existieren verschiedene Properties, die jeweils bestimmte Werte, wie beispielsweise den Druck, repräsentieren (siehe Abbildung \ref{fig:UMLSubmodellProcessData}). 
 Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten, die über \acs{opcua} bereitgestellt werden, aktualisiert werden.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Bilder/UML/submodel_processdata.pdf}
+    \includegraphics[width=0.6\textwidth]{Bilder/UML/submodel_processdata.pdf}
     \caption{Klassendiagramm des Submodells Prozessdaten}
     \label{fig:UMLSubmodellProcessData}
 \end{figure}
@@ -191,7 +226,7 @@ Dabei wird der Server nicht gepollt, sondern es werden bestimmmte Knoten (Nodes)
 Die exemplarische Konfiguration einer solchen Datenquelle ist für die Druck-Node in Listing \ref{lst:jsonDatenquelle} dargestellt.
 Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall können zusätzlich angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
 
-\begin{lstlisting}[style=jsonstyle, caption={Beispielhafte JSON-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
+\begin{lstlisting}[language=json, caption={Beispielhafte JSON-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
 {
     "uniqueId"       : "pressure",
     "nodeInformation": "ns=4;i=113",
@@ -211,7 +246,7 @@ In dieser müssen der Endpoint des Submodells, der idShortPath der gewünschten 
 Eine beispielhafte Konfiguration ist in Listing \ref{lst:jsonDatensenke} für den Druck dargestellt.
 Der Platzhalter \texttt{\{smID\}} steht dabei für die Base64-kodierte ID des Submodells Prozessdaten, wie sie in der REST-API der \acs{aas} verwendet wird.
 
-\begin{lstlisting}[style=jsonstyle, caption={Beispielhafte JSON-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
+\begin{lstlisting}[language=json, caption={Beispielhafte JSON-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
 {
     "uniqueId"        : "Submodel/ProcessData/Pressure",
     "submodelEndpoint": "http://aas-env:8081/submodels/{smId}",
@@ -274,11 +309,11 @@ Hier steht etwas
 
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 Ziel dieses Anwendungsfalles ist es, den Prozess der automatisierten Generierung und Bereitstellung einer \acs{aas} darzustellen.
-Dazu wird zunächst ein Submodel Template im Package Explorer erstellt, anschließend automatisiert mit Daten befüllt und schließlich in ein Industrie 4.0-System eingebunden.
+Dazu wird zunächst ein Submodel Template im Package Explorer erstellt, das anschließend automatisiert mit Daten befüllt und schließlich in ein Industrie 4.0-System eingebunden wird.
 \newpage
 
 
-\subsubsection{Erstellen von Submodell-Templates}
+\subsubsection{Erstellen von Submodel Templates}
 Das Erstellen von Submodel Templates spielt eine zentrale Rolle für den effizienten Einsatz der \acs{aas} in Industrie 4.0-Anwendungen. 
 Ein einmal definiertes Template kann für beliebig viele Instanzen eines digitalen Zwillings wiederverwendet werden. 
 Dadurch wird nicht nur die Konsistenz der Datenstruktur sichergestellt, sondern auch der Entwicklungsaufwand erheblich reduziert.
