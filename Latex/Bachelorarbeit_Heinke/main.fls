@@ -399,6 +399,8 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tabularray/tabularray.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/tabularray/tabularray.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/makecell/makecell.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/makecell/makecell.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -643,11 +645,6 @@ INPUT ./Bilder/TimeSeries/LinkedSegment.PNG
 INPUT ./Bilder/TimeSeries/LinkedSegment.PNG
 INPUT ./Bilder/TimeSeries/LinkedSegment.PNG
 INPUT ./Bilder/TimeSeries/LinkedSegment.PNG
-INPUT ./Bilder/UML/tehcnicalDataForRobocell.pdf
-INPUT ./Bilder/UML/tehcnicalDataForRobocell.pdf
-INPUT ./Bilder/UML/tehcnicalDataForRobocell.pdf
-INPUT ./Bilder/UML/tehcnicalDataForRobocell.pdf
-INPUT ./Bilder/UML/tehcnicalDataForRobocell.pdf
 INPUT ./Ergebnisse.tex
 INPUT ./Ergebnisse.tex
 INPUT Ergebnisse.tex

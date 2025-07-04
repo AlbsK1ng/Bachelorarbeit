@@ -21,7 +21,7 @@ Darin sind unter anderem Stücklisten, technische Spezifikationen, \acs{cad}-Dat
 
 Neben den Informationen aus den Unternehmenssystemen spielen aber auch Laufzeitdaten, wie sie durch Sensoren oder Steuerungssysteme erzeugt werden, eine zentrale Rolle.
 Da im Rahmen dieser Arbeit keine reale Maschine angebunden ist, werden diese Daten simuliert.
-Hierfür wird eine in node.js entwickelte Anwendung eingesetzt, die sowohl Prozess- als auch Betriebsdaten generiert. 
+Hierfür wird eine in Node.js entwickelte Anwendung eingesetzt, die sowohl Prozess- als auch Betriebsdaten generiert. 
 Ergänzend dazu wird ein Maschinensimulator verwendet, der einen PackML-Zustandsautomaten abbildet und typische Maschinenzustände sowie deren Übergänge simuliert. 
 Beide Komponenten stehen als Docker Container zur Verfügung und stellen die Daten über einen \acs{opcua} Server bereit, wodurch eine realitätsnahe Datenbasis geschaffen wird.
 \subsubsection{Auswahl geeigneter Teilmodelle}
@@ -126,6 +126,7 @@ Wenn im ganzen Prozess keine Fehler oder Abweichungen gefunden werden, folgt ein
 
 \newpage
 \subsubsection{Bereitstellung der \acs{aas}}
+\label{sec:bereitstellungAAS}
 Für die Bereitstellung der \acs{aas} stehen mehrere Open-Source-Lösungen zur Verfügung. 
 Eine Lösung, die sich besonders gut für den Einstieg eignet, ist der AasxServerBlazor \cite{AASXServer}, der das serverseitige Gegenstück zum Package Explorer bildet. 
 Diese Kombination ermöglicht eine einfache Visualisierung sowie Verwaltung von \acs{aas}-Paketen und ist vorallem für erste Tests hilfreich.
@@ -307,11 +308,11 @@ Hier steht etwas
 \subsubsection{Beschreibung}
 \subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
 
+\newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 Ziel dieses Anwendungsfalles ist es, den Prozess der automatisierten Generierung und Bereitstellung einer \acs{aas} darzustellen.
-Dazu wird zunächst ein Submodel Template im Package Explorer erstellt, das anschließend automatisiert mit Daten befüllt und schließlich in ein Industrie 4.0-System eingebunden wird.
-\newpage
-
+Dazu wird zunächst ein Submodel Template im Package Explorer erstellt und anschließend in ein Typ-Submodell überführt.
+Dieses wird anschließend automatisiert mit Daten befüllt, in eine \acs{aas}-Instanz eingebettet und schließlich in ein Industrie 4.0-System eingebunden.
 
 \subsubsection{Erstellen von Submodel Templates}
 Das Erstellen von Submodel Templates spielt eine zentrale Rolle für den effizienten Einsatz der \acs{aas} in Industrie 4.0-Anwendungen. 
@@ -320,9 +321,19 @@ Dadurch wird nicht nur die Konsistenz der Datenstruktur sichergestellt, sondern 
 
 Grundsätzlich gibt es mehrere Möglichkeiten ein solches Template zu erstellen.
 Es kann entweder vollständig neu modelliert oder von bestehenden Submodel Templates abgeleitet werden, wie es im Folgenden exemplarisch anhand des Submodells Technische Daten \cite{SpezifikaitonTechnischeDaten} gezeigt wird.
-Für die technische Umsetzung kann dabei erneut der Package Explorer genutzt werden.
+Dieses Template stellt eine standardisierte Struktur zur Beschreibung technischer Merkmale eines Produkts bereit.
 
-Ein typisches Beispiel ist das Submodell Technische Daten, das grundlegende Informationen wie Abmessungen, Gewicht, Leistung oder Energieverbrauch einer Maschine enthält. Die folgende Abbildung zeigt exemplarisch den Aufbau eines solchen Templates im AASX Package Explorer:
+Für die technische Umsetzung kann der Package Explorer eingesetzt werden.
+Hierfür muss zunächst das Submodel Template Technische Daten importiert werden.
+Dabei handelt es sich um ein generisches Template, das lediglich grundlegende Strukturkategorien vorgibt.
+Es enthält beispielsweise SubmodelElementCollections wie Generelle Informationen, Technische Informationen oder Produktklassifikation, die allerdings noch nicht mit konkreten Eigenschaften gefüllt sind.
+
+Auf Unternehmensebene kann dieses Template für eine bestimmte Produktgruppe mit zusätzlichen Merkmalen individualisiert werden.
+So lassen sich beispielsweise spezifische Anforderungen bzw. produktspezifische Eigenschaften wie Umgebungsbedingungen oder elektrische Daten einer Maschine ergänzen.
+
+Aus dem angepassten Template kann anschließend eine Typ-\acs{aas} erstellt werden, in die bereits konkrete allgemeingültige Merkmale einer Produktgruppe eingetragen werden.
+Diese dient als Vorlage für die spätere Instanziierung konkreter digitaler Zwillinge einzelner Produkte, bei denen dann auch die produktspezifischen Werte ergänzt werden.
+Zur Weiterverwendung kann das Submodell direkt im Package Explorer als JSON-Datei exportiert werden.
 % Das Erstellen von Submodel Templates spielt eine wichtige Roll für den späteren Einsatz\dots
 % Einmal ein Submodel template erstelllen, später für alle Insatnzen wiederverwendet werden
 % Dies spart enorm an Zeit bei der Entwicklung 
@@ -335,15 +346,41 @@ Ein typisches Beispiel ist das Submodell Technische Daten, das grundlegende Info
 
 % Beispiel technische Daten mit Abbildung
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=1\textwidth]{Bilder/UML/tehcnicalDataForRobocell.pdf}
-    \caption{!!!}
-    \label{fig:!!!}
-\end{figure}
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=1\textwidth]{Bilder/UML/tehcnicalDataForRobocell.pdf}
+%     \caption{!!!}
+%     \label{fig:!!!}
+% \end{figure}
 
-\subsubsection{Befüllen der Templates mit strukturierten Daten}
-Das Template muss nun mit Daten gefüllt werden ... 
-\subsubsection{Bereitstellen der AAS über die Rest API}
-Um die erstellte \acs{aas} nun in das BaSyx-System zu integrieren ... 
+\subsubsection{Automatisiertes Befüllen mit strukturierten Daten}
+Nach der Erstellung eines Typ-Submodells stellt sich die Frage, wie dieses effizient mit konkreten Informationen befüllt und anschließend in eine vollständige \acs{aas}-Instanz eingebettet werden kann.
+In der Praxis liegen die hierfür benötigten Daten häufig bereits strukturiert in bestehenden Unternehmenssystemen vor, beispielsweise in \acs{plm}- oder \acs{erp}-Systemen.
+
+Da eine direkte Anbindung solcher Systeme im Rahmen dieser Arbeit nicht möglich ist, wird das automatisierte Befüllen exemplarisch anhand vorgegebener Beispieldaten umgesetzt.
+Diese enthalten technische Informationen, wie sie typischerweise in den Unternehmenssystemen vorliegen, und bilden die Grundlage für die automatisierte Erstellung des Instanz-Submodells Technische Daten.
+
+Für die technische Umsetzung bietet sich ein Skript an, das diese Daten automatisiert in die vorgegebene Submodellstruktur überträgt und anschließend in Form einer Typ-2-\acs{aas} bereitstellt.
+In diesem Projekt wird dazu die serverseitige JavaScript-Laufzeitumgebung Node.js \cite{nodejs} verwendet, da sie eine einfache Verarbeitung von JSON-Daten sowie eine unkomplizierte Kommunikation mit REST-Schnittstellen ermöglicht. 
+Als Basis werden drei zentrale Komponenten benötigt:
+
+\begin{enumerate}[noitemsep, leftmargin=*, label=\textbf{\arabic*.}]
+    \item \textbf{Datenquelle:} Beispieldaten technische Produktinformationen
+    \item \textbf{Submodell-Vorlage:} Struktur und Semantik des Submodells
+    \item \textbf{AAS-Vorlage:} Aufbau und Struktur der \acs{aas}-Instanz
+\end{enumerate}
+
+Die Datenquelle liegt im JSON-Format vor und ist hierarchisch aufgebaut.
+Sie besteht aus mehreren verschachtelten Schlüssel-Wert-Paaren.
+Jeder Schlüssel dient als eindeutiger Bezeichner und entspricht einem idShort-Wert eines Submodellelements innerhalb der Submodell-Vorlage.
+Diese Vorlage ist so konzipiert, dass an den relevanten Stellen Platzhalter vorhanden sind, die während der Ausführung des Skripts mit den zugehörigen Werten aus der Datenquelle befüllt werden können.
+
+Nach dem Befüllen des Submodells mit konkreten Werten muss dieses in eine zugehörige \acs{aas}-Instanz eingebunden werden. 
+Die AAS-Vorlage definiert hierfür die grundlegende Struktur der \acs{aas} in einer separaten JSON-Datei. 
+Diese enthält jedoch noch keine spezifischen Identifikatoren, wie beispielsweise die eindeutige ID der \acs{aas} oder des zugehörigen Assets. 
+Um diese hinzuzufügen, können während der Skriptausführung zufällige UUIDv4-Werte generiert und an den entsprechenden Stellen in die Vorlage eingefügt werden.
+
+Im Anschluss daran gilt es, die \acs{aas} sowie das Submodell in einer Industrie-4.0-Anwendung bereitzustellen. 
+Hierfür kann erneut Eclipse BaSyx genutzt werden, wobei die AAS und das Submodell, analog zur in Kapitel~\ref{sec:bereitstellungAAS} beschriebenen Methode der manuellen Registrierung, über die REST-API bereitgestellt werden können.
+
 \subsubsection{Potenziale des KI-Einsatzes}

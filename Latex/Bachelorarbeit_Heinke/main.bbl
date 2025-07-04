@@ -1384,5 +1384,28 @@
     \field{urlmonth}{07}
     \field{urlyear}{2025}
   \endentry
+
+  \entry{nodejs}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=FO}{%
+         family={Foundation},
+         familyi={F\bibinitperiod},
+         given={OpenJS},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FO1}
+    \strng{fullhash}{FO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Introduction to Node.js}
+    \verb{url}
+    \verb https://nodejs.org/en/learn/getting-started/introduction-to-nodejs
+    \endverb
+    \field{year}{o. J.}
+    \field{urlday}{04}
+    \field{urlmonth}{07}
+    \field{urlyear}{2025}
+  \endentry
 \enddatalist
 \endinput

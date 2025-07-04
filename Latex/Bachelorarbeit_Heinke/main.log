@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  3 JUL 2025 16:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  4 JUL 2025 15:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1207,36 +1207,44 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen370
 \c@nlinenum=\count559
 \TeXr@lab=\toks62
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip120
+\enit@outerparindent=\dimen371
+\enit@toks=\toks63
+\enit@inbox=\box110
+\enit@count@id=\count560
+\enitdp@description=\count561
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count560
-\Gm@cntv=\count561
-\c@Gm@tempcnt=\count562
-\Gm@bindingoffset=\dimen371
-\Gm@wd@mp=\dimen372
-\Gm@odd@mp=\dimen373
-\Gm@even@mp=\dimen374
-\Gm@layoutwidth=\dimen375
-\Gm@layoutheight=\dimen376
-\Gm@layouthoffset=\dimen377
-\Gm@layoutvoffset=\dimen378
-\Gm@dimlist=\toks63
+\Gm@cnth=\count562
+\Gm@cntv=\count563
+\c@Gm@tempcnt=\count564
+\Gm@bindingoffset=\dimen372
+\Gm@wd@mp=\dimen373
+\Gm@odd@mp=\dimen374
+\Gm@even@mp=\dimen375
+\Gm@layoutwidth=\dimen376
+\Gm@layoutheight=\dimen377
+\Gm@layouthoffset=\dimen378
+\Gm@layoutvoffset=\dimen379
+\Gm@dimlist=\toks64
 ) (./glossary.tex)
 \glswrite=\write5
 \glo@main@file=\write6
 \openout6 = `main.glo'.
 
-Package glossaries Info: Writing glossary file main.glo on input line 134.
+Package glossaries Info: Writing glossary file main.glo on input line 138.
 
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count563
-\@quotereset=\count564
+\@quotelevel=\count565
+\@quotereset=\count566
 (./main.aux
 
 LaTeX Warning: Label `fig:klassifizierungDT' multiply defined.
@@ -1244,37 +1252,37 @@ LaTeX Warning: Label `fig:klassifizierungDT' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
  (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count565
-\scratchdimen=\dimen379
-\scratchbox=\box110
-\nofMPsegments=\count566
-\nofMParguments=\count567
-\everyMPshowfont=\toks64
-\MPscratchCnt=\count568
-\MPscratchDim=\dimen380
-\MPnumerator=\count569
-\makeMPintoPDFobject=\count570
-\everyMPtoPDFconversion=\toks65
+\scratchcounter=\count567
+\scratchdimen=\dimen380
+\scratchbox=\box111
+\nofMPsegments=\count568
+\nofMParguments=\count569
+\everyMPshowfont=\toks65
+\MPscratchCnt=\count570
+\MPscratchDim=\dimen381
+\MPnumerator=\count571
+\makeMPintoPDFobject=\count572
+\everyMPtoPDFconversion=\toks66
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1300,29 +1308,29 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 Package caption Info: rotating package is loaded.
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 140.
+Package hyperref Info: Link coloring OFF on input line 144.
  (./main.out) (./main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
 
-\c@lstlisting=\count571
-LaTeX Info: Redefining \microtypecontext on input line 140.
-Package microtype Info: Applying patch `item' on input line 140.
-Package microtype Info: Applying patch `toc' on input line 140.
-Package microtype Info: Applying patch `eqnum' on input line 140.
+\c@lstlisting=\count573
+LaTeX Info: Redefining \microtypecontext on input line 144.
+Package microtype Info: Applying patch `item' on input line 144.
+Package microtype Info: Applying patch `toc' on input line 144.
+Package microtype Info: Applying patch `eqnum' on input line 144.
 
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 140.
+Package microtype Warning: Unable to apply patch `footnote' on input line 144.
 
-Package microtype Info: Applying patch `verbatim' on input line 140.
-LaTeX Info: Redefining \microtypesetup on input line 140.
+Package microtype Info: Applying patch `verbatim' on input line 144.
+LaTeX Info: Redefining \microtypesetup on input line 144.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 140.
+LaTeX Info: Redefining \showhyphens on input line 144.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1360,8 +1368,8 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                - Invalid format of field 'month'.
 
 )
-Package biblatex Info: Reference section=0 on input line 140.
-Package biblatex Info: Reference segment=0 on input line 140.
+Package biblatex Info: Reference section=0 on input line 144.
+Package biblatex Info: Reference segment=0 on input line 144.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
@@ -1400,12 +1408,12 @@ Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (./Titelseite.tex
-<./Bilder/groninger_Logo_Transparent_RGB.png, id=265, 360.1455pt x 82.6287pt>
+<./Bilder/groninger_Logo_Transparent_RGB.png, id=261, 360.1455pt x 82.6287pt>
 File: ./Bilder/groninger_Logo_Transparent_RGB.png Graphic file (type png)
 <use ./Bilder/groninger_Logo_Transparent_RGB.png>
 Package pdftex.def Info: ./Bilder/groninger_Logo_Transparent_RGB.png  used on input line 8.
 (pdftex.def)             Requested size: 173.62622pt x 39.83368pt.
-<./Bilder/HHN.png, id=267, 394.47375pt x 207.02344pt>
+<./Bilder/HHN.png, id=263, 394.47375pt x 207.02344pt>
 File: ./Bilder/HHN.png Graphic file (type png)
 <use ./Bilder/HHN.png>
 Package pdftex.def Info: ./Bilder/HHN.png  used on input line 14.
@@ -1483,17 +1491,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--15
 ) (./ehrenwoertlichErklärung.tex
 
 [2])
-Underfull \hbox (badness 10000) in paragraph at lines 5--149
+Underfull \hbox (badness 10000) in paragraph at lines 5--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--149
+Underfull \hbox (badness 10000) in paragraph at lines 5--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--149
+Underfull \hbox (badness 10000) in paragraph at lines 5--153
 
  []
 
@@ -1566,7 +1574,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 [7{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-<Bilder/klassifizierung_DT.pdf, id=548, 592.13219pt x 227.89139pt>
+<Bilder/klassifizierung_DT.pdf, id=541, 592.13219pt x 227.89139pt>
 File: Bilder/klassifizierung_DT.pdf Graphic file (type pdf)
 <use Bilder/klassifizierung_DT.pdf>
 Package pdftex.def Info: Bilder/klassifizierung_DT.pdf  used on input line 207.
@@ -1585,7 +1593,7 @@ although it is yet undefined on input line 236.
 [9]
 Package acronym Info: Label `acro:rami' newly defined as it shall be overridden
 although it is yet undefined on input line 259.
-<Bilder/i4_komponente_neu.pdf, id=590, 388.33081pt x 129.6042pt>
+<Bilder/i4_komponente_neu.pdf, id=583, 388.33081pt x 129.6042pt>
 File: Bilder/i4_komponente_neu.pdf Graphic file (type pdf)
 <use Bilder/i4_komponente_neu.pdf>
 Package pdftex.def Info: Bilder/i4_komponente_neu.pdf  used on input line 284.
@@ -1595,7 +1603,7 @@ Package pdftex.def Info: Bilder/i4_komponente_neu.pdf  used on input line 284.
 [10 <./Bilder/i4_komponente_neu.pdf>]
 
 [11]
-<Bilder/Metamodell_neu.drawio.pdf, id=618, 412.4208pt x 426.63388pt>
+<Bilder/Metamodell_neu.drawio.pdf, id=611, 412.4208pt x 426.63388pt>
 File: Bilder/Metamodell_neu.drawio.pdf Graphic file (type pdf)
 <use Bilder/Metamodell_neu.drawio.pdf>
 Package pdftex.def Info: Bilder/Metamodell_neu.drawio.pdf  used on input line 336.
@@ -1620,7 +1628,7 @@ although it is yet undefined on input line 412.
 
 
 [15]
-<Bilder/dpp_konzept.pdf, id=706, 222.8325pt x 165.7392pt>
+<Bilder/dpp_konzept.pdf, id=699, 222.8325pt x 165.7392pt>
 File: Bilder/dpp_konzept.pdf Graphic file (type pdf)
 <use Bilder/dpp_konzept.pdf>
 Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 447.
@@ -1630,7 +1638,7 @@ Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 447.
 [16 <./Bilder/dpp_konzept.pdf>]
 
 [17]
-<Bilder/AAS_PE.PNG, id=747, 913.91437pt x 272.51813pt>
+<Bilder/AAS_PE.PNG, id=740, 913.91437pt x 272.51813pt>
 File: Bilder/AAS_PE.PNG Graphic file (type png)
 <use Bilder/AAS_PE.PNG>
 Package pdftex.def Info: Bilder/AAS_PE.PNG  used on input line 492.
@@ -1695,7 +1703,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [23]
 
 [24]
-<Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG, id=878, 1236.87094pt x 576.65437pt>
+<Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG, id=871, 1236.87094pt x 576.65437pt>
 File: Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG Graphic file (type png)
 <use Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG>
 Package pdftex.def Info: Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG  used on input line 87.
@@ -1703,7 +1711,7 @@ Package pdftex.def Info: Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG
 
 
 [25 <./Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG>]
-<Bilder/testEngineSuccess.PNG, id=895, 1314.41063pt x 411.03563pt>
+<Bilder/testEngineSuccess.PNG, id=888, 1314.41063pt x 411.03563pt>
 File: Bilder/testEngineSuccess.PNG Graphic file (type png)
 <use Bilder/testEngineSuccess.PNG>
 Package pdftex.def Info: Bilder/testEngineSuccess.PNG  used on input line 119.
@@ -1724,90 +1732,86 @@ Package pdftex.def Info: Bilder/testEngineSuccess.PNG  used on input line 119.
 )
 
 [28]
-Package acronym Info: Label `acro:opcua' overridden on input line 201.
-<Bilder/UML/submodel_processdata.pdf, id=947, 303.63042pt x 132.99292pt>
+Package acronym Info: Label `acro:opcua' overridden on input line 202.
+<Bilder/UML/submodel_processdata.pdf, id=940, 303.63042pt x 132.99292pt>
 File: Bilder/UML/submodel_processdata.pdf Graphic file (type pdf)
 <use Bilder/UML/submodel_processdata.pdf>
-Package pdftex.def Info: Bilder/UML/submodel_processdata.pdf  used on input line 205.
+Package pdftex.def Info: Bilder/UML/submodel_processdata.pdf  used on input line 206.
 (pdftex.def)             Requested size: 256.07741pt x 112.16582pt.
-Package acronym Info: Label `acro:opcua' overridden on input line 212.
 Package acronym Info: Label `acro:opcua' overridden on input line 213.
-Package acronym Info: Label `acro:opcua' overridden on input line 222.
+Package acronym Info: Label `acro:opcua' overridden on input line 214.
+Package acronym Info: Label `acro:opcua' overridden on input line 223.
 
 
 [29 <./Bilder/UML/submodel_processdata.pdf>]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 229.
-Package acronym Info: Label `acro:opcua' overridden on input line 258.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 230.
+Package acronym Info: Label `acro:opcua' overridden on input line 259.
 
 
 [30]
-Package acronym Info: Label `acro:opcua' overridden on input line 274.
-<Bilder/TimeSeries/MetadataTimeSeries.PNG, id=1001, 557.83406pt x 137.7647pt>
+Package acronym Info: Label `acro:opcua' overridden on input line 275.
+<Bilder/TimeSeries/MetadataTimeSeries.PNG, id=994, 557.83406pt x 137.7647pt>
 File: Bilder/TimeSeries/MetadataTimeSeries.PNG Graphic file (type png)
 <use Bilder/TimeSeries/MetadataTimeSeries.PNG>
-Package pdftex.def Info: Bilder/TimeSeries/MetadataTimeSeries.PNG  used on input line 283.
+Package pdftex.def Info: Bilder/TimeSeries/MetadataTimeSeries.PNG  used on input line 284.
 (pdftex.def)             Requested size: 375.57846pt x 92.7559pt.
 
 
 [31 <./Bilder/TimeSeries/MetadataTimeSeries.PNG>]
-<Bilder/TimeSeries/LinkedSegment.PNG, id=1010, 563.10374pt x 276.28218pt>
+<Bilder/TimeSeries/LinkedSegment.PNG, id=1003, 563.10374pt x 276.28218pt>
 File: Bilder/TimeSeries/LinkedSegment.PNG Graphic file (type png)
 <use Bilder/TimeSeries/LinkedSegment.PNG>
-Package pdftex.def Info: Bilder/TimeSeries/LinkedSegment.PNG  used on input line 295.
+Package pdftex.def Info: Bilder/TimeSeries/LinkedSegment.PNG  used on input line 296.
 (pdftex.def)             Requested size: 367.04082pt x 180.08716pt.
 
 
 [32 <./Bilder/TimeSeries/LinkedSegment.PNG>]
-<Bilder/UML/tehcnicalDataForRobocell.pdf, id=1020, 1046.91125pt x 626.34pt>
-File: Bilder/UML/tehcnicalDataForRobocell.pdf Graphic file (type pdf)
-<use Bilder/UML/tehcnicalDataForRobocell.pdf>
-Package pdftex.def Info: Bilder/UML/tehcnicalDataForRobocell.pdf  used on input line 340.
-(pdftex.def)             Requested size: 426.79135pt x 255.3388pt.
 
+[33]
 
-[33 <./Bilder/UML/tehcnicalDataForRobocell.pdf>]) (./Ergebnisse.tex) (./Zusammenfassung.tex)
+[34]) (./Ergebnisse.tex) (./Zusammenfassung.tex)
 
-[34]
+[35]
 Overfull \vbox (27.66415pt too high) has occurred while \output is active []
 
 
 
-[35]
+[36]
 No file main.gls.
 
 
-[36
+[37
 
 ]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Overfull \hbox (53.37152pt too wide) in paragraph at lines 208--208
+Overfull \hbox (53.37152pt too wide) in paragraph at lines 212--212
 \T1/lmr/m/sc/12 (-20) url\T1/lmr/m/n/12 (-20) : []$\T1/lmtt/m/n/12 https : / / www . zvei . org / presse -[] medien / publikationen / umsetzungsstrategie -[]
  []
 
 
 
-[37]
-
 [38]
-Overfull \hbox (11.28668pt too wide) in paragraph at lines 208--208
+
+[39]
+Overfull \hbox (11.28668pt too wide) in paragraph at lines 212--212
 []$\T1/lmtt/m/n/12 https : / / industrialdigitaltwin . org / en / content -[] hub / aasspecifications$[]
  []
 
 
-Overfull \hbox (39.51118pt too wide) in paragraph at lines 208--208
+Overfull \hbox (39.51118pt too wide) in paragraph at lines 212--212
 \T1/lmr/m/it/12 (-20) Shell - Part 4: Se-cu-ri-ty\T1/lmr/m/n/12 (-20) . Ver-si-on 3.0. Mai 2025. \T1/lmr/m/sc/12 (-20) url\T1/lmr/m/n/12 (-20) : []$\T1/lmtt/m/n/12 https : / / industrialdigitaltwin .
  []
 
 
 
-[39]
-
 [40]
 
-[41] (./main.aux)
+[41]
+
+[42] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1820,7 +1824,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9AD89072E86E372C799E87F430CC59B9;12414.
+(rerunfilecheck)             Checksum: 05FF50B3B4320D80B41835BE3B88BF7D;12137.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -1831,10 +1835,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47868 strings out of 473190
- 938027 string characters out of 5715806
- 1932438 words of memory out of 5000000
- 69912 multiletter control sequences out of 15000+600000
+ 48203 strings out of 473190
+ 943721 string characters out of 5715806
+ 1940178 words of memory out of 5000000
+ 70240 multiletter control sequences out of 15000+600000
  667303 words of font info for 216 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  84i,13n,108p,2471b,3302s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1842,10 +1846,10 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{glo:SPS} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
-Output written on main.pdf (49 pages, 984875 bytes).
+Output written on main.pdf (50 pages, 977855 bytes).
 PDF statistics:
- 1287 PDF objects out of 1440 (max. 8388607)
- 1119 compressed objects within 12 object streams
- 231 named destinations out of 1000 (max. 500000)
- 61526 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1298 PDF objects out of 1440 (max. 8388607)
+ 1130 compressed objects within 12 object streams
+ 234 named destinations out of 1000 (max. 500000)
+ 61513 words of extra memory for PDF output out of 61914 (max. 10000000)
 
