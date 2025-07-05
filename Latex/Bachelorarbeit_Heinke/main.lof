@@ -6,6 +6,5 @@
 \contentsline {figure}{\numberline {5}{\ignorespaces Benutzeroberfläche AASX Package Explorer}}{18}{figure.caption.20}%
 \contentsline {figure}{\numberline {6}{\ignorespaces Bearbeitungsansicht eines Submodells im Package Explorer}}{25}{figure.caption.29}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Konsolenausgabe nach erfolgreicher Validierung}}{26}{figure.caption.30}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Klassendiagramm des Submodells Prozessdaten}}{29}{figure.caption.32}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Metadaten im Submodell Time Series Data}}{31}{figure.caption.38}%
-\contentsline {figure}{\numberline {10}{\ignorespaces LinkedSegment im Submodell Time Series Data}}{32}{figure.caption.39}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Metadaten-Konfiguration im Submodell Time Series Data}}{31}{figure.caption.39}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Konfiguration des LinkedSegments im Submodell Time Series Data}}{31}{figure.caption.40}%

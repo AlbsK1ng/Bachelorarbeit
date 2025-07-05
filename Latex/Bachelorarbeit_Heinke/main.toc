@@ -2,7 +2,7 @@
 \contentsline {section}{Inhaltsverzeichnis}{IV}{Doc-Start}%
 \contentsline {section}{Abbildungsverzeichnis}{VII}{Doc-Start}%
 \contentsline {section}{Tabellenverzeichnis}{VIII}{Doc-Start}%
-\contentsline {section}{Listings}{VIII}{Doc-Start}%
+\contentsline {section}{Listings}{IX}{Doc-Start}%
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Zielsetzung}{1}{subsection.1.2}%
@@ -29,9 +29,9 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Umsetzung mit dem Package Explorer}{24}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Validierung}{25}{subsubsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.3}Technische Integration}{26}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Bereitstellung der \acs {aas}}{27}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Integration von Echtzeitdaten über OPC UA}{29}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Verarbeitung von Zeitreihendaten}{31}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Bereitstellung der \acs {aas}}{26}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Integration von Echtzeitdaten über OPC UA}{28}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Verarbeitung von Zeitreihendaten}{30}{subsubsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.4}Anwendungsfall Digitaler Produktpass}{32}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Beschreibung}{32}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Umsetzung mit dem Teilmodell Carbon Footprint}{32}{subsubsection.3.4.2}%
@@ -61,5 +61,5 @@
 \contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{36}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{36}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{36}{subsection.5.3}%
-\contentsline {section}{Glossar und Abkürzungsverzeichnis}{37}{section*.40}%
+\contentsline {section}{Glossar und Abkürzungsverzeichnis}{37}{section*.41}%
 \contentsline {section}{\numberline {A}Anhang 1}{42}{appendix.A}%
