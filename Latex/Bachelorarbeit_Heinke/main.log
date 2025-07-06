@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  5 JUL 2025 16:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  6 JUL 2025 22:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1588,6 +1588,7 @@ although it is yet undefined on input line 32.
 
 [6]) (main.lof
 Package acronym Info: Label `acro:aas' overridden on input line 4.
+Package acronym Info: Label `acro:aas' overridden on input line 7.
 )
 \tf@lof=\write9
 \openout9 = `main.lof'.
@@ -1650,7 +1651,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [7{C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 
 pdfTeX warning: pdflatex (file ./Bilder/klassifizierung_DT.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Bilder/klassifizierung_DT.pdf, id=543, 592.13219pt x 227.89139pt>
+<Bilder/klassifizierung_DT.pdf, id=547, 592.13219pt x 227.89139pt>
 File: Bilder/klassifizierung_DT.pdf Graphic file (type pdf)
 <use Bilder/klassifizierung_DT.pdf>
 Package pdftex.def Info: Bilder/klassifizierung_DT.pdf  used on input line 207.
@@ -1671,20 +1672,20 @@ Package acronym Info: Label `acro:rami' newly defined as it shall be overridden
 although it is yet undefined on input line 259.
 
 
-pdfTeX warning: pdflatex (file ./Bilder/i4_komponente_neu.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Bilder/i4_komponente_neu.pdf, id=586, 388.33081pt x 129.6042pt>
-File: Bilder/i4_komponente_neu.pdf Graphic file (type pdf)
-<use Bilder/i4_komponente_neu.pdf>
-Package pdftex.def Info: Bilder/i4_komponente_neu.pdf  used on input line 284.
+pdfTeX warning: pdflatex (file ./Bilder/aas_blau.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Bilder/aas_blau.pdf, id=590, 388.33081pt x 129.6042pt>
+File: Bilder/aas_blau.pdf Graphic file (type pdf)
+<use Bilder/aas_blau.pdf>
+Package pdftex.def Info: Bilder/aas_blau.pdf  used on input line 284.
 (pdftex.def)             Requested size: 426.79135pt x 142.44638pt.
 
 
-[10 <./Bilder/i4_komponente_neu.pdf>]
+[10 <./Bilder/aas_blau.pdf>]
 
 [11]
 
 pdfTeX warning: pdflatex (file ./Bilder/Metamodell_neu.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Bilder/Metamodell_neu.drawio.pdf, id=612, 412.4208pt x 426.63388pt>
+<Bilder/Metamodell_neu.drawio.pdf, id=626, 412.4208pt x 426.63388pt>
 File: Bilder/Metamodell_neu.drawio.pdf Graphic file (type pdf)
 <use Bilder/Metamodell_neu.drawio.pdf>
 Package pdftex.def Info: Bilder/Metamodell_neu.drawio.pdf  used on input line 336.
@@ -1711,7 +1712,7 @@ although it is yet undefined on input line 412.
 [15]
 
 pdfTeX warning: pdflatex (file ./Bilder/dpp_konzept.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Bilder/dpp_konzept.pdf, id=701, 222.8325pt x 165.7392pt>
+<Bilder/dpp_konzept.pdf, id=715, 222.8325pt x 165.7392pt>
 File: Bilder/dpp_konzept.pdf Graphic file (type pdf)
 <use Bilder/dpp_konzept.pdf>
 Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 447.
@@ -1721,7 +1722,7 @@ Package pdftex.def Info: Bilder/dpp_konzept.pdf  used on input line 447.
 [16 <./Bilder/dpp_konzept.pdf>]
 
 [17]
-<Bilder/AAS_PE.PNG, id=740, 913.91437pt x 272.51813pt>
+<Bilder/AAS_PE.PNG, id=754, 913.91437pt x 272.51813pt>
 File: Bilder/AAS_PE.PNG Graphic file (type png)
 <use Bilder/AAS_PE.PNG>
 Package pdftex.def Info: Bilder/AAS_PE.PNG  used on input line 492.
@@ -1769,104 +1770,114 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 [23]
 
-[24]
-<Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG, id=870, 1236.87094pt x 576.65437pt>
+pdfTeX warning: pdflatex (file ./Bilder/Konzeptionierung/konzeptionierung.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Bilder/Konzeptionierung/konzeptionierung.pdf, id=878, 630.43526pt x 246.9225pt>
+File: Bilder/Konzeptionierung/konzeptionierung.pdf Graphic file (type pdf)
+<use Bilder/Konzeptionierung/konzeptionierung.pdf>
+Package pdftex.def Info: Bilder/Konzeptionierung/konzeptionierung.pdf  used on input line 67.
+(pdftex.def)             Requested size: 426.79135pt x 167.16658pt.
+
+
+[24 <./Bilder/Konzeptionierung/konzeptionierung.pdf>]
+<Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG, id=921, 1236.87094pt x 576.65437pt>
 File: Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG Graphic file (type png)
 <use Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG>
-Package pdftex.def Info: Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG  used on input line 87.
+Package pdftex.def Info: Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG  used on input line 102.
 (pdftex.def)             Requested size: 426.79135pt x 198.98116pt.
 
 
 [25 <./Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG>]
-<Bilder/testEngineSuccess.PNG, id=887, 1314.41063pt x 411.03563pt>
+<Bilder/testEngineSuccess.PNG, id=937, 1314.41063pt x 411.03563pt>
 File: Bilder/testEngineSuccess.PNG Graphic file (type png)
 <use Bilder/testEngineSuccess.PNG>
-Package pdftex.def Info: Bilder/testEngineSuccess.PNG  used on input line 119.
+Package pdftex.def Info: Bilder/testEngineSuccess.PNG  used on input line 134.
 (pdftex.def)             Requested size: 422.52577pt x 132.12991pt.
 
 
 [26 <./Bilder/testEngineSuccess.PNG>]
 
 [27] (TabelleBereitstellungBaSyxMitAPI.tex)
-Package acronym Info: Label `acro:opcua' overridden on input line 174.
-Package acronym Info: Label `acro:opcua' overridden on input line 202.
-Package acronym Info: Label `acro:opcua' overridden on input line 214.
+Package acronym Info: Label `acro:opcua' overridden on input line 189.
 
 
 [28]
-Package acronym Info: Label `acro:opcua' overridden on input line 221.
-Package acronym Info: Label `acro:opcua' overridden on input line 223.
-Package acronym Info: Label `acro:opcua' overridden on input line 225.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 232.
+Package acronym Info: Label `acro:opcua' overridden on input line 217.
+Package acronym Info: Label `acro:opcua' overridden on input line 229.
+Package acronym Info: Label `acro:opcua' overridden on input line 236.
+Package acronym Info: Label `acro:opcua' overridden on input line 238.
+Package acronym Info: Label `acro:opcua' overridden on input line 240.
 
 
 [29]
-Package acronym Info: Label `acro:opcua' overridden on input line 261.
-Package acronym Info: Label `acro:opcua' overridden on input line 277.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 247.
+Package acronym Info: Label `acro:opcua' overridden on input line 276.
 
 
 [30]
-<Bilder/TimeSeries/MetadataTimeSeries.PNG, id=996, 557.83406pt x 137.7647pt>
+Package acronym Info: Label `acro:opcua' overridden on input line 292.
+<Bilder/TimeSeries/MetadataTimeSeries.PNG, id=1046, 557.83406pt x 137.7647pt>
 File: Bilder/TimeSeries/MetadataTimeSeries.PNG Graphic file (type png)
 <use Bilder/TimeSeries/MetadataTimeSeries.PNG>
-Package pdftex.def Info: Bilder/TimeSeries/MetadataTimeSeries.PNG  used on input line 286.
+Package pdftex.def Info: Bilder/TimeSeries/MetadataTimeSeries.PNG  used on input line 301.
 (pdftex.def)             Requested size: 375.57846pt x 92.7559pt.
-<Bilder/TimeSeries/LinkedSegment.PNG, id=998, 563.10374pt x 276.28218pt>
+<Bilder/TimeSeries/LinkedSegment.PNG, id=1048, 563.10374pt x 276.28218pt>
 File: Bilder/TimeSeries/LinkedSegment.PNG Graphic file (type png)
 <use Bilder/TimeSeries/LinkedSegment.PNG>
-Package pdftex.def Info: Bilder/TimeSeries/LinkedSegment.PNG  used on input line 298.
+Package pdftex.def Info: Bilder/TimeSeries/LinkedSegment.PNG  used on input line 313.
 (pdftex.def)             Requested size: 367.04082pt x 180.08716pt.
 
 
-[31 <./Bilder/TimeSeries/MetadataTimeSeries.PNG> <./Bilder/TimeSeries/LinkedSegment.PNG>]
+[31 <./Bilder/TimeSeries/MetadataTimeSeries.PNG>]
 
-[32]
+[32 <./Bilder/TimeSeries/LinkedSegment.PNG>]
 
 [33]
 
-[34]) (Ergebnisse.tex) (Zusammenfassung.tex)
+[34]
 
-[35]
+[35]) (Ergebnisse.tex) (Zusammenfassung.tex)
+
+[36]
 Overfull \vbox (27.66415pt too high) has occurred while \output is active []
 
 
 
-[36]
+[37]
 No file main.gls.
 
 
-[37
+[38
 
 ]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Overfull \hbox (53.37152pt too wide) in paragraph at lines 219--219
+Overfull \hbox (53.37152pt too wide) in paragraph at lines 220--220
 \T1/lmr/m/sc/12 (-20) url\T1/lmr/m/n/12 (-20) : []$\T1/lmtt/m/n/12 https : / / www . zvei . org / presse -[] medien / publikationen / umsetzungsstrategie -[]
  []
 
 
 
-[38]
-
 [39]
-Overfull \hbox (11.28668pt too wide) in paragraph at lines 219--219
+
+[40]
+Overfull \hbox (11.28668pt too wide) in paragraph at lines 220--220
 []$\T1/lmtt/m/n/12 https : / / industrialdigitaltwin . org / en / content -[] hub / aasspecifications$[]
  []
 
 
-Overfull \hbox (39.51118pt too wide) in paragraph at lines 219--219
+Overfull \hbox (39.51118pt too wide) in paragraph at lines 220--220
 \T1/lmr/m/it/12 (-20) Shell - Part 4: Se-cu-ri-ty\T1/lmr/m/n/12 (-20) . Ver-si-on 3.0. Mai 2025. \T1/lmr/m/sc/12 (-20) url\T1/lmr/m/n/12 (-20) : []$\T1/lmtt/m/n/12 https : / / industrialdigitaltwin .
  []
 
 
 
-[40]
-
 [41]
 
-[42] (main.aux)
+[42]
+
+[43] (main.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
@@ -1879,7 +1890,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3201CB06ED8A73B432EB387433CD297F;12137.
+(rerunfilecheck)             Checksum: 5035FBCF4411B7F95B6DC45F554A00E5;12137.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -1890,10 +1901,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49315 strings out of 468225
- 985412 string characters out of 5432974
- 1947630 words of memory out of 5000000
- 76613 multiletter control sequences out of 15000+600000
+ 49326 strings out of 468225
+ 985789 string characters out of 5432974
+ 1993691 words of memory out of 5000000
+ 76621 multiletter control sequences out of 15000+600000
  735291 words of font info for 220 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  84i,13n,110p,2569b,3304s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1901,9 +1912,9 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{glo:SPS} has been referenced but does not exist, replaced by a fixed one
 
 <C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb>
-Output written on main.pdf (52 pages, 1440715 bytes).
+Output written on main.pdf (53 pages, 1656847 bytes).
 PDF statistics:
- 1294 PDF objects out of 1440 (max. 8388607)
- 237 named destinations out of 1000 (max. 500000)
- 61508 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1349 PDF objects out of 1440 (max. 8388607)
+ 240 named destinations out of 1000 (max. 500000)
+ 61513 words of extra memory for PDF output out of 61914 (max. 10000000)
 

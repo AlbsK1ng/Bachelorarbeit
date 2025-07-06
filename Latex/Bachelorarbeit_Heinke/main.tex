@@ -172,6 +172,7 @@
 \lstlistoflistings 
 
 \newpage
+\thispagestyle{empty}
 \cleardoublepage
 
 \pagenumbering{arabic}
@@ -185,10 +186,10 @@
 
 \renewcommand{\footrulewidth}{0.4pt}% default is 0pt
 
-\fancyhead[RE, LO]{\rightmark}
+\fancyhead[LE, RO]{\rightmark}
 
-\fancyfoot[LO, RE]{\thepage}% Seitenzahl in Fußzeile (Links auf ungeraden LO und Rechts auf geraden Seiten RE) 
-\fancyfoot[LE, RO]{Albert Heinke 2025}% Name und Jahreszahl in Fußzeile (Links auf geraden LE und Rechts auf ungeraden Seiten RO)
+\fancyfoot[LE, RO]{\thepage}% Seitenzahl in Fußzeile (Links auf ungeraden LO und Rechts auf geraden Seiten RE) 
+%\fancyfoot[LE, RO]{Albert Heinke 2025}% Name und Jahreszahl in Fußzeile (Links auf geraden LE und Rechts auf ungeraden Seiten RO)
 
 \input{commands.tex}
 %=======================BEGIN HAUPTTEIL===================================%

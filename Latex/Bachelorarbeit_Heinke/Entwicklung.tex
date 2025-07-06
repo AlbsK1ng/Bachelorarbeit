@@ -21,7 +21,7 @@ Darin sind unter anderem Stücklisten, technische Spezifikationen, \acs{cad}-Dat
 
 Neben den Informationen aus den Unternehmenssystemen spielen aber auch Laufzeitdaten, wie sie durch Sensoren oder Steuerungssysteme erzeugt werden, eine zentrale Rolle.
 Da im Rahmen dieser Arbeit keine reale Maschine angebunden ist, werden diese Daten simuliert.
-Hierfür wird eine in Node.js entwickelte Anwendung eingesetzt, die sowohl Prozess- als auch Betriebsdaten generiert. 
+Hierfür kommt eine in Node.js entwickelte Anwendung zum Einsatz, die im Folgenden als Datengenerator bezeichnet wird und sowohl Prozess- als auch Betriebsdaten generiert. 
 Ergänzend dazu wird ein Maschinensimulator verwendet, der einen PackML-Zustandsautomaten abbildet und typische Maschinenzustände sowie deren Übergänge simuliert. 
 Beide Komponenten stehen als Docker Container zur Verfügung und stellen die Daten über einen \acs{opcua} Server bereit, wodurch eine realitätsnahe Datenbasis geschaffen wird.
 \subsubsection{Auswahl geeigneter Teilmodelle}
@@ -50,10 +50,25 @@ Submodelle können sukszessive ergänzt, angepasst oder auch wieder entfernt wer
 
 \input{TabelleSubmodelle.tex}
 
+Ein besonders wichtiges Submodell stellt die Stückliste (\acs{bom}) dar. 
+Mit diesem kann die hierarchische Struktur eines Assets abgebildet werden, das aus mehreren Komponenten besteht.
+Bei komplexeren Anlagen oder Maschinen, wie auch der robocell, bietet es sich an, einzelne Komponenten jeweils in einer eigenen \acs{aas}-Instanz zu modellieren und diese später in der Haupt-\acs{aas} zu referenzieren.
+Auf diese Weise kann eine höhere Modularität und Wiederverwendbarkeit erreicht werden.
+Da die robocell jedoch aus einer Vielzahl von Komponenten besteht, wird sich diese Arbeit im weiteren Verlauf auf eine kleine Auswahl beschränken.
 
+Zur Verdeutlichung der zugrunde liegenden Architektur sowie der Beziehungen zwischen den zuvor identifizierten Datenquellen, \acs{aas} und Submodellen dient Abbildung~\ref{fig:konzeptionierungAAS}.
+Die \acs{aas} der robocell bildet dabei das zentrale digitale Abbild, in das die relevanten Informationen über die in diesem Kapitel ausgewählten Submodelle integriert werden sollen.
+Einzelne Maschinenkomponenten werden durch eigene Komponenten-\acs{aas} repräsentiert. 
+Dabei ist zu beachten, dass in der Abbildung lediglich die erste Ebene dieser Komponentenstruktur visualisiert ist.
+Weitere, hierarchisch untergeordnete Bauteile können analog ebenfalls durch eigene \acs{aas}-Instanzen modelliert und über entsprechende Referenzen in die Haupt-\acs{aas} der robocell bzw. in übergeordnete Strukturen eingebunden werden.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Bilder/Konzeptionierung/konzeptionierung.pdf}
+    \caption{\acs{aas}-Konzept der robocell}
+    \label{fig:konzeptionierungAAS}
+\end{figure}
 
-\newpage
 \subsection{Modellierung mit der AAS}
 In diesem Abschnitt wird erläutert, wie die zuvor ausgewählten Submodelle mit konkreten Daten befüllt werden können und welche Aspekte bei der Modellierung beachtet werden müssen.
 Zudem wird gezeigt, wie die erstellte \acs{aas} mithilfe einer Test Engine auf eine korrekte und vollständige Struktur überprüft werden kann. 
@@ -79,7 +94,7 @@ Sie stehen dann zur Verfügung und können in die \acs{aas} kopiert werden.
 
 Nachdem alle Submodelle erstellt bzw. eingebunden sind, müssen diese mit den entsprechenden Inhalten gefüllt werden.
 Hierzu können konkrete Werte, Dateien oder Referenzen direkt in den jeweiligen Submodellelementen eingetragen bzw. eingebettet werden.
-Besonders bei der Verwendung von Templates muss darauf geachtet werden, dass die Struktur dieser nicht verändert wird, da dies sonst zu Abweichungen von der Spezifikation führen kann.
+Besonders bei der Verwendung von Templates muss darauf geachtet werden, dass die Struktur dieser nicht verändert wird, da dies sonst zu Abweichungen von der Submodellspezifikation führen kann.
 Eine Übersicht über die Modellierungsumgebung im Package Explorer mit einem geöffneten Submodell ist in Abbildung \ref{fig:BearbeitungsansichtPackageExplorer} dargestellt.
 
 \begin{figure}[htbp]
@@ -218,7 +233,7 @@ Die Konfiguration der Databridge erfolgt über mehrere JSON-Dateien.
 In einer zentralen Konfigurationsdatei werden sowohl die Datenquelle als auch die Datensenke definiert.
 Die Aktualisierung der Daten erfolgt dabei ereignisbasiert anhand eines Event-Triggers.
 
-Als Datenquelle muss der \acs{opcua} Server angegeben werden, dessen Konfiguration typischerweise in einer separaten JSON-Datei erfolgt.
+Als Datenquelle muss der \acs{opcua} Server des Datengenerators angegeben werden, dessen Konfiguration typischerweise in einer separaten JSON-Datei erfolgt.
 Darin sind sowohl die Verbindungsparameter des Servers (z.B. URL und Port) als auch die zu überwachenden Knoten anzugeben.
 Der \acs{opcua} Server stellt die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
 
@@ -273,7 +288,7 @@ Für größere Datenmengen bietet sich die exterene Speicherung an einem seperat
 Diese kann über ein LinkedSegment mit der \acs{aas} verknüpft werden.
 
 Im Folgenden wird die zuletzt genannte Option näher betrachtet.
-Hierzu werden die simulierten Werte für Druck und Temperatur extern in einer InfluxDB gespeichert.
+Hierzu werden die simulierten Werte für Druck und Temperatur des Datengenerators extern in einer InfluxDB gespeichert.
 Die über \acs{opcua} bereitgestellten Daten werden dabei mithilfe von Telegraf, einem leichtgewichtigen Agenten zur Datenerfassung und -weiterleitung \cite{Influx}, kontinuierlich in eine speziell für diesen Anwendungsfall angelegte Tabelle geschrieben.
 Beide Komponenten stehen als Docker-Container zur Verfügung und lassen sich nahtlos in das bestehende BaSyx-System integrieren.
 

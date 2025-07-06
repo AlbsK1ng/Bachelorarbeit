@@ -1,10 +1,11 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Klassifizierung des DT}}{8}{figure.caption.8}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Industrie 4.0 Komponente}}{10}{figure.caption.13}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Vereinfachtes Metamodell der \acs {aas}}}{12}{figure.caption.14}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Konzept des DPP 4.0 (eigene Darstellung in Anlehnung an \blx@tocontentsinit {0}\cite {DPP40Bild})}}{16}{figure.caption.19}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Benutzeroberfläche AASX Package Explorer}}{18}{figure.caption.20}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Bearbeitungsansicht eines Submodells im Package Explorer}}{25}{figure.caption.29}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Konsolenausgabe nach erfolgreicher Validierung}}{26}{figure.caption.30}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Metadaten-Konfiguration im Submodell Time Series Data}}{31}{figure.caption.39}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Konfiguration des LinkedSegments im Submodell Time Series Data}}{31}{figure.caption.40}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Klassifizierung digitaler Zwilling}}{8}{figure.caption.9}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Industrie 4.0 Komponente}}{10}{figure.caption.14}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Vereinfachtes Metamodell der \acs {aas}}}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Konzept des DPP 4.0 (eigene Darstellung in Anlehnung an \blx@tocontentsinit {0}\cite {DPP40Bild})}}{16}{figure.caption.20}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Benutzeroberfläche AASX Package Explorer}}{18}{figure.caption.21}%
+\contentsline {figure}{\numberline {6}{\ignorespaces \acs {aas}-Konzept der robocell}}{24}{figure.caption.30}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Bearbeitungsansicht eines Submodells im Package Explorer}}{25}{figure.caption.31}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Konsolenausgabe nach erfolgreicher Validierung}}{26}{figure.caption.32}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Metadaten-Konfiguration im Submodell Time Series Data}}{31}{figure.caption.41}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Konfiguration des LinkedSegments im Submodell Time Series Data}}{32}{figure.caption.42}%
