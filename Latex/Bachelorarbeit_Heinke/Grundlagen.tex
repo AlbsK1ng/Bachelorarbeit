@@ -287,14 +287,14 @@ Durch die Kombination eines Assets mit seiner \acs{aas} entsteht eine sogenannte
 \end{figure}
 
 \subsubsection{Aufbau und Struktur}
-Allgemein kann zwischen Typ -und Instanz-Verwaltungsschalen unterschieden werden.
-Typ-AAS beschreiben allgemeine Eigenschaften eines Produkttypen oder einer Produktlasse wie einen bestimmten Maschinen-Typ, während Instanz-Verwaltungsschalen immer einem spezifischen Objekt zugeordnet werden.
+Allgemein kann zwischen Typ -und Instanz-\acs{aas} unterschieden werden.
+Typ-\acs{aas} beschreiben allgemeine Eigenschaften eines Produkttypen oder einer Produktlasse wie einen bestimmten Maschinen-Typ, während eine Instanz-\acs{aas} immer einem spezifischen Objekt zugeordnet wird.
 Typen können zum Besipiel allgemeine Dokumente, Eigenschaften oder Merkmale enthalten, die für eine bestimmte Maschinenart gelten.
 Sie dienen als standardisierte, wiederverwendbare Vorlage für das Erstellen von Instanzen.
-Im Gegensatz dazu werden Instanzen immer einem konkreten physischen Objekt zugewiesen - etwa durch die Seriennummer, den aktuellen Standort oder den Betriebszustand einer Maschine.
+Im Gegensatz dazu werden Instanzen immer einem konkreten physischen Objekt zugewiesen, etwa durch die Seriennummer, den aktuellen Standort oder den Betriebszustand einer Maschine.
 
 Bestimmte Aspekte eines Assets werden gemäß der Spezifikation des Metamodells der AAS \cite{SpezifikationPart1} in verschiedenen Submodellen verwaltet.
-Man kann sich dies wie ein Schubladensystem vorstellen, wobei jede Schublade einen bestimmten Bereich des Assets abdeckt - beispielsweise die technischen Stammdaten, das Typenschild, Wartungsinformationen oder Zustandswerte einer Maschine.
+Man kann sich dies wie ein Schubladensystem vorstellen, wobei jede Schublade einen bestimmten Bereich des Assets abdeckt, beispielsweise die technischen Stammdaten, das Typenschild, Wartungsinformationen oder Zustandswerte einer Maschine.
 Die Auswahl und Struktur der Submodelle ist domänenspezifisch und hängt stark vom konkreten Asset bzw. Anwendungsfall ab. 
 Dabei kann eine \acs{aas} beliebig viele Submodelle enthalten, die bei Bedarf auch erweitert werden können. 
 
@@ -302,8 +302,9 @@ Die Daten innerhalb eines Submodells werden in verschiedenen Submodellelementen 
 Diese umfassen Dateneigenschaften, Operationen sowie weitere Sutrukturellemente die für eine umfassende Beschreibung eines digitalen Modells eines Assets erforderlich sind.
 Das vermutlich am häufigsten verwendete Datenelement ist das Submodellelement Property.
 Es lässt sich mit einer Variablen aus der Softwareentwicklung vergleichen, da es einfache Merkmale wie etwa einen Namen oder eine Seriennummer repräsentiert und dabei über einen definierten Datentyp wie String, Integer oder Boolean verfügt.
+
 Neben Properties spielt zudem das Submodellement File eine besonders wichtige Rolle. Es ermöglicht das Einbetten oder Referenzieren von Dateien in die \acs{aas}. 
-Dabei werden gängige Dateiformate wie PDF, JPG oder STEP unterstützt, was besonders für technische Dokumentationen oder CAD-Modelle von Bedeutung ist.
+Dabei werden gängige Dateiformate wie PDF, JPG oder STEP unterstützt, was besonders für technische Dokumentationen oder \acs{cad}-Modelle von Bedeutung ist.
 Neben diesen Datenelementen existieren noch weitere Submodellelemente, die spezifische Funktionen ermöglichen. 
 So erlaubt beispielsweise das RelationshipElement die Modellierung von Beziehungen oder das ReferenceElement die Referenzierung von internen oder externen Inhalten.
 Zur besseren Veraunschaulichung des zugrundeliegenden Metamodells wird dieses nachfolgend in einer vereinfachten Form dargestellt.
@@ -341,18 +342,21 @@ Zur besseren Veraunschaulichung des zugrundeliegenden Metamodells wird dieses na
 Wichtig ist, sowohl die AAS selbst als auch ihre Submodelle müssen global eindeutig identifizierbar sein.
 Dies wird durch die Verwendung von eindeutigen Identifikatoren der Klasse Identifiable wie einer URI (Uniform Resource Identifier) oder IRDI (International Registration Data Identifier) sichergestellt.
 Für die Elemente innerhalb eines Submodells ist eine lokale Kennung ausreichend. Dies erfolgt in der Regel anhand einer idShort der Klasse Referable, die einen kurzen, aussagekräftigen Namen enthält.
+
 Dabei ist wichtig alle Submodelle bzw. alle Elemente über eine eindeutige Semantik zu beschreiben.
 Hierfür gibt es eine sogenannte semanticID der Klasse HasSemantics, welche eine semantische Referenz enthält.
 Diese verweist entweder auf einen externen Standard oder auf eine lokale \ac{cd}, die direkt in der \acs{aas} eingebettet ist.
 Ein häufig verwendeter externer Standard ist zum Beispiel ECLASS, welcher auf der Norm IEC 61360 \cite{ECLASSIEC61360} basiert.
-Darin wird eine standardisierte Struktur für Merkmale und ihre semantische Beschreibungen definiert.
-Die Semantik enthält unter anderem Beschreibugen, Definitionen, Einheiten und externe Referenzen für bestimmte Submodelle oder Submodellelemente und hilft bei der Klassifizierung dieser.
-Dadurch wird ein gemeinsames Verständnis unterschiedlicher Systeme geschaffen.
-Fehlt die semantische Beschreibung, so kann es schnell zu Missverständnissen kommen.
-Liegt beispielsweise ein einfacher Wert 25 vor, ist ohne weitere Informationen unklar, was gemeint ist. 
-Es könnte sich um 25 Euro, 25 Meter oder 25 Grad Celsius handeln.
-Erst durch die zugehörige semantische Beschreibung, in der die Einheit und Bedeutung definiert werden, wird der Wert eindeutig interpretierbar. 
 
+Zur formalen Beschreibung solcher Concept Descriptions stellt die \acs{idta} standardisierte Data Specification Templates gemäß der Norm IEC 6130 \cite{SpezifikationPart3a} bereit.
+Diese liefern ein strukturiertes Modell zur Beschreibung technischer Merkmale.
+Darin enthalten sind unter anderem Definitionen, Einheiten, Wertebereiche, zulässige Werte sowie externe Referenzen, die bestimmten Submodellen oder Submodellelementen zugeordnet werden können.
+Dadurch wird ein gemeinsames semantisches Verständnis zwischen unterschiedlichen Systemen ermöglicht.
+
+%Fehlt die semantische Beschreibung, so kann es schnell zu Missverständnissen kommen.
+%Liegt beispielsweise ein einfacher Wert 25 vor, ist ohne weitere Informationen unklar, was gemeint ist. 
+%Es könnte sich um 25 Euro, 25 Meter oder 25 Grad Celsius handeln.
+%Erst durch die zugehörige semantische Beschreibung, in der die Einheit und Bedeutung definiert werden, wird der Wert eindeutig interpretierbar. 
 
 Um die Erstellung von Submodellen zu erleichtern und gleichzeitig Interoperabilität zu gewährleisten, stellt die \acs{idta} standardisierte Submodellvorlagen - sogenannte Submodel Templates - zur Verfügung.
 Aktuell sind 34 dieser Templates veröffentlicht, viele weitere sind in der Entwicklung oder im Überprüfungsprozess und werden in Zukunft ergänzt.
@@ -361,19 +365,22 @@ Alle Eigenschaften innerhalb dieser Vorlagen werden dabei in Verbindung mit dem 
 Diese Templates könen über ein zentrales Repository \cite{idtaTemplates} bezogen werden und bilden die Basis für eine interoperable semantische Datenstruktur.
 
 \subsubsection{Informationsaustausch}
-Der Austausch von Informationen über die AAS kann auf unterschiedliche Weise erfolgen.
-Die einfachste Möglichkeit besteht im Dateiaustausch. Hierfür wurden speziell für die AAS sogenannte AASX-Dateien \cite{SpezifikationPart5} entwickelt, die den einfachen Austausch statischer \acs{aas} (Typ 1) ermöglichen.
-Dabei werden sämtliche Daten, Beziehungen, Strukturen sowie zugehörige Dateien der AAS serialisiert und in ein AASX-ZIP-Dateiformat gespeichert. Diese Datei kann anschließend über ein digitales Medium, etwa per E-Mail oder eine Cloud-Plattform, weitergegeben werden. 
+Der Austausch von Informationen über die \acs{aas} kann auf unterschiedliche Weise erfolgen.
+Die einfachste Möglichkeit besteht im Dateiaustausch. Hierfür wurden speziell für die \acs{aas} sogenannte AASX-Dateien \cite{SpezifikationPart5} entwickelt, die den einfachen Austausch statischer \acs{aas} (Typ 1) ermöglichen.
+Dabei werden sämtliche Daten, Beziehungen, Strukturen sowie zugehörige Dateien der \acs{aas} serialisiert und in ein AASX-ZIP-Dateiformat gespeichert. 
+Diese Datei kann anschließend über ein digitales Medium, etwa per E-Mail oder eine Cloud-Plattform, weitergegeben werden. 
+
 Eine Typ 2-\acs{aas} hingegen wird von einer Laufzeitumgebung gehosted, wodurch ein direkter und dynamischer Zugriff auf ihre Inhalte ermöglicht wird. 
 Die Spezifikitation Part 2: Aplication Programming Interfaces \cite{SpezifikationPart2} beschreibt hierfür nicht nur standardisierte Schnittstellen, sonder auch ein ganzheitliches System für das Verwalten, Bereitstellen und Auffinden der AAS.
 Repositories dienen dabei als zentraler Speicherort für die Inhalte einer \acs{aas}, einschließlich ihrer Submodelle und Concept Descriptions.
-Die Aufgabe der Verwaltung und Registrierung wird von Registries übernommen.
+Die Aufgabe der Verwaltung und Registrierung übernehmen sogenannte Registries.
 Sie ermöglichen das systemweite Auffinden von \acs{aas} und stellen sicher, dass diese eindeutig referenzierbar sind.
 Ergänzend dazu bieten Discovery Services eine erweiterte Suchfunktionalität, indem sie Beziehungen verschiedener Entitäten mittels verschiedener Schlüsselwertpaare speichern.
 Eine \acs{aas} kann so zum Beispiel logisch mit einer \acs{assetid} (Asset Identifier) verknüpft werden und somit schnell innerhalb komplexer Systeme identifiziert werden.
 Der Zugriff auf diese Systeme bzw. ihrer Inhalte wird in Form von Schnittstellen standardisiert, wodurch eine hohe Interoperabilität gewährleistet wird.
-Ein besonderer Fokus liegt dabei auf HTTP/REST, welches durch definierte Zugriffsprinzipien strukturiert ist. Diese folgen dabei dem REST-Schema und unterstützen gängige HTTP-Methoden wie GET, POST, PUT oder DELETE.
-Die fortschrittlichste Form des Informationsaustausches stellt die Peer-to-peer Kommunikation dar, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren können.
+Ein besonderer Fokus liegt dabei auf der Nutzung von HTTP gemäß dem REST-Architekturstil, der eine strukturierte Kommunikation über Methoden wie GET, POST, PUT oder DELETE ermöglicht.
+
+Die fortschrittlichste Form des Informationsaustausches stellt die Peer-to-peer Kommunikation dar, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren.
 
 
 
@@ -394,12 +401,14 @@ Die fortschrittlichste Form des Informationsaustausches stellt die Peer-to-peer 
 Gerade wenn Informationen aus der \acs{aas} über die Grenzen des eigenen Unternehmens hinweg bereitgestellt werden, ist es besonders wichtig, dass die enthaltenen Daten geschützt sind. 
 Die neueste Spezifikation Part 4: Security \cite{SpezifikationPart4} der \acs{idta} liefert hierfür die technische und konzeptionelle Grundlage.
 Sie  beschreibt, wie Zugriffe auf Daten in der \acs{aas} sicher gesteuert werden können, insbesondere in vernetzten Umgebungen wie Datenräumen.
-Zum Einsatz kommen dabei neue Dienste wie ein Identity Provider zur Authentifizierung oder ein Policy Service zur Durchsetzung von Richtlinien.
+
+Zum Einsatz kommen dabei Dienste wie ein Identity Provider zur Authentifizierung oder ein Policy Service zur Durchsetzung von Richtlinien.
 Die Sicherheit wird dabei mithilfe eines attributbasierten Zugriffsmodells (\ac{abac}) gewährleistet.
-Bei jeder Anfrage auf bestimmte Objekte innerhalb der \acs{aas} wird dabei anhand verschiedener Merkmale (Attribute) geprüft ob ein Zugriff erlaubt ist.
+Bei jeder Anfrage auf bestimmte Objekte innerhalb der \acs{aas} wird dabei anhand verschiedener Merkmale (Attribute) geprüft, ob ein Zugriff erlaubt ist.
 Dazu zählen sogenannte Subjektattribute (also wer die Anfrage stellt), Objektattribute (z.B. welches Submodell, welche Property oder welches Submodellelement betroffen ist), die gewünschte Aktion (z.B. Lesen oder Schreiben) sowie kontextbezogene Bedingungen (z.B. Zeitpunkt der Anfrage oder Zustand des Systems).
+
 Die zur Prüfung notwendigen Informationen liefert in der Regel ein Token, das vom Identity Provider bereitgestellt wird. Die Spezifikation sieht hierfür die Nutzung sogenannter JSON Web Tokens (JWT) vor.
-Die Attribute werden schließlich von einem Policy Service mit den dort hinterlegenen Zugriffsrichtlinen abgeglichen und basierend darauf eine Zugriffsentscheidung getroffen.
+Die Attribute werden schließlich von dem Policy Service mit den dort hinterlegenen Zugriffsrichtlinen abgeglichen und basierend darauf eine Zugriffsentscheidung getroffen.
 Ein besonderer Vorteil des \acs{abac}-Modells liegt dabei in seiner hohen Flexibilität. Rollen können ebenfalls als Attribute behandelt werden, wodurch sich auch problemlos rollenbasierte Zugriffskonzepte (RBAC) umsetzen lassen. 
 
 Die beschriebenen Kontrollmechanismen lassen sich nicht nur auf die Inhalte der \acs{aas} selbst, sondern insbesondere auch auf die Schnittstellen von Registries und Repositories anwenden.
@@ -441,10 +450,9 @@ Hierfür werden bestimmmte Submodelle gezielt für unterschiedliche Gruppen frei
 Während beispielsweise das digitale Typenschild (DN) oder der \acs{pcf} öffentlich zugänglich sind, werden sensible Informationen wie technische Dokumentationen oder sicherheitsrelevante Details nur bestimmten autorisierten Gruppen zugänglich gemacht.
 Eine schematische Darstellung des \acs{dpp40} in Abbildung \ref{fig:dpp40} zu sehen.
 
-\vspace{1em}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{Bilder/dpp_konzept.pdf}
+    \includegraphics[width=0.65\textwidth]{Bilder/dpp_konzept.pdf}
     \caption{Konzept des \acs{dpp40} (eigene Darstellung in Anlehnung an \cite{DPP40Bild})}
     \label{fig:dpp40}
 \end{figure}
