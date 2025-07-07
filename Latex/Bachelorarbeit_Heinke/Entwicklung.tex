@@ -320,12 +320,54 @@ Zur Visualisierung der Zeitreihendaten bietet das BaSyx-System eine praktische L
 Die über das LinkedSegment referenzierten Zeitreihendaten lassen sich dort in verschiedenen Diagrammen visualisieren, beispielsweise als Linien- oder Balkendiagramm.
 Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne dass diese physisch in der \acs{aas} gespeichert werden müssen.
 
-\newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
-Hier steht etwas
-\subsubsection{Beschreibung}
-\subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
+Im Kontext steigender Anforderungen an Nachhaltigkeit und Transparenz enlang des gesamten Produktlebenszyklus eines Assets gewinnt der \acs{dpp} zunehmend an Bedeutung.
+Im Folgenden wird daher gezeigt, wie dieser mithilfe der \acs{aas} umgesetzt werden kann. 
 
+Der Anwendungsfall orientiert sich dabei an dem von der ZVEI vorgestellten \acs{dpp40}, dessen beispielhafte Umsetzung unter anderem im Rahmen eines von ZVEI und \acs{idta} entwickelten \acs{pcf}-Showcases \cite{PCFShowcas} demonstriert wird. 
+Der Fokus liegt unter anderem auf der Bereitstellung nachhaltigkeitsbezogener Informationen sowie der Umsetzung der im \acs{dpp} geforderten Zugriffsrechte für unterschiedliche Interessensgruppen.
+Diese Aspekte sollen im nachfolgenden Abschnitt technisch umgesetzt werden.
+
+Als Grundlage dient der digitale Zwilling der robocell, der im Rahmen dieses Anwendungsfalls um ein Submodell zur Abbildung des Carbon Footprints erweitert wird.
+Die Umsetzung der Zugriffsrechte erfolgt mit der Eclipse BaSyx-Plattform, mit der eine rollenbasierte Zugriffskontrolle implementiert werden kann.
+
+\subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
+Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äquivalenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
+Zur strukturierten Erfassung dieser Werte kann das von der \acs{idta} spezifizierte Submodel Template Carbon Footprint \cite{SpezifikaitonPCF} eingesetzt werden.
+
+Im Rahmen dieses Anwendungsfalls werden die Phasen Produktion, Material sowie die Gesamtbetrachtung (Cradle to Gate) berücksichtigt. 
+Für jede Phase wird gemäß der Submodellspezifikation eine SubmodelElementCollection angelegt, die zentrale Informationen wie den CO\textsubscript{2}-Wert, die Berechnungsmethode sowie den Gültigkeitszeitraum enthält. 
+Diese Sammlungen dienen als Grundlage für die spätere Aggregation der \acs{pcf}-Werte der Gesamtmaschine und werden im weiteren Verlauf dynamisch mit Werten befüllt.
+
+Zur Ermittlung dieser Werte wird das Submodell um eine Komponentenliste erweitert, die auf die in der robocell verbauten Steuerungskomponenten verweist. 
+Diese Liste bildet die Grundlage für die spätere Berechnung. 
+Im Rahmen dieser Arbeit wurde exemplarisch eine Auswahl an Siemens-Komponenten betrachtet, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule. 
+Diese wurden als Typ-1-\acs{aas} zur Verfügung gestellt, wobei jede \acs{aas} ein eigenes Carbon Footprint-Submodell enthält.
+
+Sowohl die aktualisierte \acs{aas} der robocell als auch die zugehörigen Komponenten-\acs{aas} können über die Eclipse BaSyx-Plattform bereitgestellt werden. 
+Die Inhalte lassen sich so direkt über die Benutzeroberfläche der AAS Web UI einsehen. 
+Zusätzlich steht ein Plugin zur Verfügung, das die Visualisierung der \acs{pcf}-Werte unterstützt.
+
+Die dynamische Aggregation des \acs{pcf} der Gesamtmaschine erfolgt über eine externe Node.js-API, die über eine im Vue.js-basierten Plugin integrierte Schaltfläche ausgelöst wird. 
+Alternativ wäre auch eine direkte Berechnung im Plugin oder über einen Microservice denkbar. 
+In der vorliegenden Umsetzung liegt die gesamte Aggregationslogik jedoch serverseitig in der API.
+
+Die API nutzt dabei die REST-Schnittstelle des Submodel Repositories der AAS Environment, um zunächst alle in der \acs{aas} der robocell hinterlegten Komponenten auszulesen. 
+Diese sind jeweils über ihre globalAssetId eindeutig referenziert. 
+Mithilfe des Discovery Services werden auf Basis dieser IDs die zugehörigen Komponenten-AAS identifiziert und anschließend vom AAS Repository abgerufen. 
+Für jede dieser Komponenten wird geprüft, ob ein Carbon Footprint-Submodell vorhanden ist. 
+Falls dies zutrifft, wird das Submodell ausgelesen und die enthaltenen Werte extrahiert.
+
+Aus den ermittelten Einzelwerten berechnet die API schließlich die aggregierten CO\textsubscript{2}-Äquivalente für die Phasen Produktion, Material sowie Cradle to Gate. 
+Die berechneten Werte werden abschließend in das Carbon Footprint-Submodell der Haupt-\acs{aas} der robocell geschrieben und stehen dort strukturiert zur Verfügung.
+
+Die beschriebene Lösung ermöglicht es, den \acs{pcf} dynamisch auf Basis der in der Komponentenliste referenzierten Steuerungselemente zu berechnen. 
+Auch wenn derzeit nur ausgewählte Komponenten berücksichtigt werden, lässt sich die Liste bei Verfügbarkeit weiterer Komponenten-\acs{aas} unkompliziert erweitern, sodass sukzessive die gesamte Maschine in die Berechnung einbezogen werden kann. 
+Perspektivisch lässt sich die Berechnung zudem um weitere Lebenszyklusphasen wie Nutzung oder Entsorgung ergänzen, um eine ganzheitliche Betrachtung von der Herstellung bis zum Lebensende eines Produkts bzw. einer Maschine zu ermöglichen.
+
+\subsubsection{Zugriffsrechte und Datensicherheit}
+Das vlt zu komplex \dots
+Einfach weglassen ? 
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 Ziel dieses Anwendungsfalles ist es, den Prozess der automatisierten Generierung und Bereitstellung einer \acs{aas} darzustellen.
@@ -398,7 +440,7 @@ Die AAS-Vorlage definiert hierfür die grundlegende Struktur der \acs{aas} in ei
 Diese enthält jedoch noch keine spezifischen Identifikatoren, wie beispielsweise die eindeutige ID der \acs{aas} oder des zugehörigen Assets. 
 Um diese hinzuzufügen, können während der Skriptausführung zufällige UUIDv4-Werte generiert und an den entsprechenden Stellen in die Vorlage eingefügt werden.
 
-Im Anschluss daran gilt es, die \acs{aas} sowie das Submodell in einer Industrie-4.0-Anwendung bereitzustellen. 
-Hierfür kann erneut Eclipse BaSyx genutzt werden, wobei die AAS und das Submodell, analog zur in Kapitel~\ref{sec:bereitstellungAAS} beschriebenen Methode der manuellen Registrierung, über die REST-API bereitgestellt werden können.
+Im Anschluss daran gilt es, die \acs{aas} in einer Industrie-4.0-Anwendung bereitzustellen. 
+Hierfür kann erneut Eclipse BaSyx genutzt werden, wobei die AAS sowie das zugehörige Submodell, analog zur in Kapitel~\ref{sec:bereitstellungAAS} beschriebenen Methode der manuellen Registrierung, über die REST-API bereitgestellt werden können.
 
 \subsubsection{Potenziale des KI-Einsatzes}
