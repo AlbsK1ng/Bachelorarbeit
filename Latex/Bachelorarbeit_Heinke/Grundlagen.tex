@@ -2,7 +2,7 @@
 Das folgende Kapitel stellt die theoretischen und technologischen Grundlagen vor, die für das Verständnis und die Umsetzung dieser Arbeit erforderlich sind.
 Es beginnt mit einer Einführung in die Industrie 4.0, und vermittelt ein grundlegendes Verständnis für das Konzept des digitalen Zwillings.
 Anschließend werden die Struktur und Funktion der \acs{aas} sowie die Rolle des digitalen Produktpasses erläutert.
-Den Abschluss bilden die technologischen Voraussetzungen für die praktische Umsetzung, darunter beispielsweise die Open-Source-Plattform Eclipse BaSyx und der Kommunikationsstandard \acs{opcua}.
+Den Abschluss bilden die technologischen Voraussetzungen für die praktische Umsetzung, darunter beispielsweise die Open-Source-Plattform Eclipse BaSyx und der Kommunikationsstandard \ac{opcua}.
 \subsection{Industrie 4.0}
 % Nach der dritten industriellen Revolution, die vor allem durch den Einsatz elektronischer Systeme sowie der Informations -und Kommunikationstechnologie zur Automatisierung gekennzeichnet ist, vollzieht sich aktuell ein neuer technologischer Wandel, die vierte industrielle Revolution.
 % Besser bekannt als Industrie 4.0, beschreibt sie die umfassende Vernetzung und Integration der physischen mit der digitalen Welt durch den Einsatz Cyber-physischer Systeme.
@@ -450,13 +450,13 @@ Hierfür werden bestimmmte Submodelle gezielt für unterschiedliche Gruppen frei
 Während beispielsweise das digitale Typenschild (DN) oder der \acs{pcf} öffentlich zugänglich sind, werden sensible Informationen wie technische Dokumentationen oder sicherheitsrelevante Details nur bestimmten autorisierten Gruppen zugänglich gemacht.
 Eine schematische Darstellung des \acs{dpp40} in Abbildung \ref{fig:dpp40} zu sehen.
 
-\vspace{0em}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.75\textwidth]{Bilder/DPP/DppKonzeptNeu.pdf}
-    \caption{Konzept des \acs{dpp40} (eigene Darstellung in Anlehnung an \cite{DPP40Bild})}
-    \label{fig:dpp40}
-\end{figure}
+% \vspace{0em}
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=0.75\textwidth]{Bilder/DPP/DppKonzeptNeu.pdf}
+%     \caption{Konzept des \acs{dpp40} (eigene Darstellung in Anlehnung an \cite{DPP40Bild})}
+%     \label{fig:dpp40}
+% \end{figure}
 
 Das Konzept der ZVEI sieht darüber hinaus vor, dass Unternehmen ihre digitalen Produktpässe etgegen den Anforderungen der ESPR dezentral in einem eigenen Repository verwalten. 
 Diese Repositories können entweder vom produzierenden Unternehmen selbst oder von Dritten - etwa Cloud-Dienstleistern - im Auftrag betrieben werden. 
@@ -469,23 +469,19 @@ So wird sichergestellt, dass trotz der dezentralen Struktur eine durchgängige I
 
 \subsection{robocell}
 Die robocell ist eine von groninger in Zusammenarbeit mit SKAN entwickelte Maschinenlinie zur aseptischen Abfüllung von genesteten Spritzen, Zylinderampulen und Vials.
-Sie zeichnet sich dadurch aus, dass alle alle Prozesschritte vollständig automatisiert ablaufen.
-Durch den gezielten Einsatz von Robotern kann so der menschliche Eingriff auf ein Minimum reduziert werden, wodurch maximale Sicherheit, Flexibilität und Sicherheit im Abfüllprozess gewährleistet wird \cite{RobocellWebsite}.
+Sie zeichnet sich dadurch aus, dass alle Prozesschritte vollständig automatisiert ablaufen.
+Durch den gezielten Einsatz von Robotern kann der menschliche Eingriff auf ein Minimum reduziert werden, wodurch maximale Sicherheit, Flexibilität und Effizienz im Abfüllprozess gewährleistet wird \cite{RobocellWebsite}.
 
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=0.7\textwidth]{Bilder/robocell_FS2_rgb_Logo.png}
-%     \caption{robocell}
-%     \label{fig:robocell}
-% \end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Bilder/robocell/filling_closing_module.png}
+    \caption{robocell Abfüll- und Verschließmodul !!! Quelle Betriebsanleitung fehlt}
+    \label{fig:robocell}
+\end{figure}
 
-Die Linie besteht dabei aus mehreren modular aufgebauten Einzelmaschinen, die jeweils spezifische Aufgaben entlang des Produktionsprozesses übernehmen. 
-Im Rahmen dieser Arbeit liegt der Fokus auf dem hochautomatisierten Abfüll- und Verschließmodul, das für das vollautomatisierte Abfüllen und Verschließen von Behältnissen verantwortlich ist.
+Die Linie besteht aus mehreren modular aufgebauten Einzelmaschinen, die jeweils spezifische Aufgaben entlang des Produktionsprozesses übernehmen. 
+Im Rahmen dieser Arbeit liegt der Fokus auf dem in Abbildung~\ref{fig:robocell} gezeigten hochautomatisierten Abfüll- und Verschließmodul, das für das vollautomatisierte Abfüllen und Verschließen von Behältnissen verantwortlich ist.
 
-
-
-% \includegraphics{Bilder/robocell_FS2_rgb_Logo.png}
-\newpage
 \subsection{Technologische Grundlagen}
 Im Folgenden werden die technologischen Grundlagen erläutert, die für das Verständnis und die Umsetzung dieser Arbeit besonders relevant sind.
 \subsubsection{AASX Package Exlporer}
@@ -546,7 +542,7 @@ Hierfür stehen verschiedene vordefinierte Plugins zur Verfügung, die bestimmte
 Da die Lösung Open Source ist besteht zudem die Möglichkeit, eigene benutzerdefinierte Plugins für weitere Submodelle zu erstellen. \cite{BaSyxWiki} \cite{BaSyxEclipse}
 
 \subsubsection{OPC Unified Architecture}
-OPC UA (Open Platform Communications Unified Architecture) ist ein plattformübergreifender Kommunikationsstandard, der speziell für die Anforderungen der industriellen Automatisierung entwickelt wurde.
+\acs{opcua} ist ein plattformübergreifender Kommunikationsstandard, der speziell für die Anforderungen der industriellen Automatisierung entwickelt wurde.
 Ziel ist ein herstellerübergreifender, sicherer und standardisierter Datenaustausch.
 In \acs{rami} \cite{RAMI4.0} wird \acs{opcua} als empfohlener Standard für die Kommunikationsschicht definiert und bildet damit die Grundlage für die Interoperabilität zwischen Maschinen, Anlagen und IT-Systemen verschiedener Hersteller.
 
