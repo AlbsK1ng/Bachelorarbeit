@@ -41,17 +41,13 @@ Daneben wurden aber auch projektspezifische Anforderungen berücksichtigt, die s
 
 Tabelle \ref{tab:Submodelle} liefert einen Überblick über die initiale Auswahl dieser Submodelle.
 In der Spalte Standardisierung ist jeweils das zugehörige Submodel Template durch die zugehörige Dokumentennumer der \acs{idta} angegeben, in der die entsprechende Version dokumentiert ist.
-Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, welche Informationen im digitalen Zwilling abgebildet werden sollen.
-
-Diese Submodelle werden in späteren Anwendungsfällen gezielt erweitert.
-Ein wesentlicher Vorteil der \acs{aas} besteht nämlich in ihrer Flexibilität.
-Submodelle können sukszessive ergänzt, angepasst oder auch wieder entfernt werden, ohne dabei die bestehende Struktur des digitalen Zwillings zu verändern.
-% Wie erfolgt die Auswahl? sss
-
-%Nachfolgende Tabelle gibt einen Überblick über die wichtigsten, in diesem Projekt eingesetzten Submodelle sowie ihrer Inhalte.
-%Die bereits veröffentlichten Modelle sind dabei jeweils in einer Spezifikation der \acs{idta} standardisiert.
+Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, welche Informationen mit den Submodellen im digitalen Zwilling abgebildet werden sollen.
 
 \input{TabelleSubmodelle.tex}
+
+Die in der Tabelle dargestellten Submodelle werden in späteren Anwendungsfällen gezielt erweitert.
+Ein wesentlicher Vorteil der \acs{aas} besteht nämlich in ihrer Flexibilität.
+Submodelle können sukszessive ergänzt, angepasst oder auch wieder entfernt werden, ohne dabei die bestehende Struktur des digitalen Zwillings zu verändern.
 
 Ein besonders wichtiges Submodell stellt die Stückliste (\acs{bom}) dar.
 Mit diesem lässt sich die hierarchische Struktur eines Assets abbilden, das aus mehreren verschachtelten Komponenten besteht.
@@ -74,52 +70,49 @@ Weitere, hierarchisch untergeordnete Bauteile oder Baugruppen können analog ebe
 
 \subsection{Modellierung mit der AAS}
 
-In diesem Abschnitt wird erläutert, wie die zuvor ausgewählten Submodelle in eine \acs{aas} integriert und mit konkreten Daten befüllt werden können.
-Die Modellierung erfolgt dabei mithilfe des Package Explorers.
-Außerdem wird gezeigt, wie sich die erstellte \acs{aas} mit einer Test Engine auf eine korrekte und vollständige Struktur überprüfen lässt.
+In diesem Abschnitt wird erläutert, wie die zuvor ausgewählten Submodelle in eine \acs{aas} integriert und mit konkreten Daten befüllt werden können.  
+Außerdem wird gezeigt, wie sich die erstellte \acs{aas} mithilfe einer Test Engine auf eine korrekte und vollständige Struktur überprüfen lässt.
 
 \subsubsection{Umsetzung mit dem Package Explorer}
-Für die manuelle Erstellung der \acs{aas} kann der Package Explorer eingesetzt werden.
-Dieser erlaubt eine eine intuitive Modellierung aller relevanten Elemente einer \acs{aas} und erleichtert so den strukturierten Aufbau des digitalen Zwillings.
+Im Folgenden wird beschrieben, wie eine \acs{aas} von Grund auf erstellt, mit Submodellen und Inhalten angereichert und abschließend in Form einer AASX-Datei gespeichert bzw. exportiert werden kann.  
+Die Umsetzung erfolgt dabei mithilfe des Package Explorers, der eine intuitive Modellierung aller relevanten Elemente einer \acs{aas} ermöglicht und so den strukturierten Aufbau eines digitalen Zwillings unterstützt.
 
-Zunächst muss ein neues \acs{aas}-Paket erstellt werden.
-Hierzu kann im Package Exporer eine neue Umgebung geöffnet werden, die als Container für die Inhalte eines Assets dient.
-Anschließend lässt sich eine neue \acs{aas} anlegen, die allgemeine Informationen sowie assetspezifische Daten beeinhaltet.
+Zunächst muss ein neues \acs{aas}-Paket erstellt werden.  
+Hierzu kann im Package Explorer eine neue Umgebung geöffnet werden, die als Container für die Inhalte eines Assets dient.  
+Darin lässt sich anschließend eine neue \acs{aas} anlegen, die allgemeine Informationen sowie assetspezifische Daten beinhaltet.  
+Abbildung~\ref{fig:UmsetzungPackageExplorerIDs} zeigt den initialen Aufbau der \acs{aas}, der im weiteren Verlauf sukzessive um Submodelle und deren Inhalte erweitert wird.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{Bilder/ModellierungAAS/Final/1.png}
+    \caption{Konfiguration der AAS im Package Explorer}
+    \label{fig:UmsetzungPackageExplorerIDs}
+\end{figure}
 
 Neben der Auswahl des Asset-Typs (Instanz oder Typ) ist insbesondere die eindeutige Identifikation von zentraler Bedeutung.
 Das Asset selbst wird über eine globalAssetId referenziert, während die \acs{aas} eine eigene ID sowie eine idShort erhält.
 Für erste Modellierungszwecke empfiehlt es sich, Beispiel-IDs zu verwenden, die direkt im Package Explorer generiert werden können.
-Diese erleichtert nicht nur den späteren Austausch der \acs{aas}, sondern auch deren systemweites Auffinden innerhalb eines Industrie 4.0-Ökosystems.
-% Darüber hinaus besteht ebenfalls die Möglichkeit, ein Thumbmail in Form einer Datei (z.B. png oder jpeg) zu hinterlegen.
+Diese erleichtern nicht nur den späteren Austausch der \acs{aas}, sondern auch deren systemweites Auffinden innerhalb eines Industrie 4.0-Ökosystems und sind daher unerlässlich.
 
 Im nächsten Schritt müssen die benötigten Submodelle hinzugefügt werden. Auch diese lassen sich entweder als Instanz oder Typ anlegen.
 Dabei besteht die Möglichkeit, entweder ein leeres Submodell manuell mit verschiedenen Submodellelementen zu erstellen oder auf ein vorhandenes Submodel Template zurückzugreifen.
 Letztere können als AASX-Datei, beispielsweise über das Repository der \acs{idta} \cite{idtaTemplates}, heruntergeladen und anschließend über ein sogenanntes Auxiliary AAS in die Umgebung geladen werden.
+
 Anschließend müssen die in den Submodellen enthaltenen Elemente mit konkreten Inhalten wie Werten, Dateien, Referenzen oder Beziehungen gefüllt werden.
+Besonders bei der Verwendung von Templates muss darauf geachtet werden, dass die Struktur dieser nicht verändert wird, da dies sonst zu Abweichungen von der Submodellspezifikation führen kann.
 
 Für die Abbildung hierarchischer Strukturen, insbesondere im Submodell \acs{bom}, kommen verschiedene Entitäten zum Einsatz.
 Diese repräsentieren einzelne Komponenten bzw. Baugruppen eines Produkts.
 Bei komplexeren Maschinen oder Anlagen, wie im Fall der robocell, ist es sinnvoll, solche Komponenten als eigenständige \acs{aas} zu modellieren.
-Diese können dann im Package Explorer als SelfManagedEntity angelegt und über ihre globalAssetId referenziert werden, wodurch eine klare Trennung zwischen der Haupt-\acs{aas} sowie den referenzierten Kompnenten-\acs{aas} erfolgt.
+Diese können im Package Explorer als SelfManagedEntity in der Haupt-\acs{aas} angelegt und über ihre globalAssetId referenziert werden, wodurch eine klare Trennung zwischen der Haupt-\acs{aas} sowie den referenzierten Kompnenten-\acs{aas} erfolgt.
 
-Besonders bei der Verwendung von Templates muss darauf geachtet werden, dass die Struktur dieser nicht verändert wird, da dies sonst zu Abweichungen von der Submodellspezifikation führen kann.
-Eine Übersicht über die Modellierungsumgebung im Package Explorer mit einem geöffneten Submodell ist in Abbildung \ref{fig:BearbeitungsansichtPackageExplorer} dargestellt.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=1\textwidth]{Bilder/ModellierungAAS/ModellierungMitDokumentation.PNG}
-    \caption{Bearbeitungsansicht eines Submodells im Package Explorer}
-    \label{fig:BearbeitungsansichtPackageExplorer}
-\end{figure}
-
-Wie auch in der Abbildung zu erkennen, kann jedem Submodell bzw. jedem Submodellellement eine semanticId zugewiesen werden.
-Diese dient der einheitlichen semantischen Beschreibung und verweist entweder auf externe Standards wie ECLASS oder auf lokale Concept Descriptions innerhalb der AAS-Umgebung.
-Der Package Explorer bietet hierfür eine erweiterte Funktion, bei der sich vorgefertigte ECLASS-Kataloge importieren lassen.
-Die darin enthalten Begriffe können direkt im Package Explorer dursucht, ausgewählt und den enstprechenden Submodellen bzw. Submodellelementen zugewiesen werden.
+Für die Klassifizierung einzelner Elemente müssen semanticIds vergeben werden, die entweder auf externe Standards wie ECLASS oder auf lokale Concept Descriptions innerhalb der AAS-Umgebung verweisen.  
+Sofern verfügbar, sollte stets auf vordefinierte Standards zurückgegriffen werden, da die manuelle Modellierung nicht nur deutlich komplexer ist, sondern auch zu einer eingeschränkten Interoperabilität führen kann.
+Der Package Explorer bietet hierfür eine erweiterte Funktionalität, bei der sich vorgefertigte ECLASS-Kataloge importieren lassen.
+Die darin enthalten Begriffe lassen sich direkt im Package Explorer durchsuchen, auswählen und direkt den enstprechenden Submodellen bzw. Submodellelementen zuweisen.
 
 Sobald alle gewünschten Submodelle mit Inhalten gefüllt und semantisch beschrieben sind, muss die \acs{aas} gespeichert und exportiert werden.
 In diesem Projekt erfolgt dies bevorzugt im AASX-Format, das sich als standardisierte Austauschform für die \acs{aas} etabliert hat und eine einfache Weitergabe ermöglicht.
-
 
 \subsubsection{Validierung}
 Im Anschluss an die Erstellung der \acs{aas} sollte eine Überprüfung der Konformität erfolgen.
@@ -127,10 +120,6 @@ Hierzu kann eine von der \acs{idta} bereitgestellte Test Engine \cite{TestEngine
 Diese lässt sich direkt mit pip, dem Paktemanager von Python, installieren und anschließend über die Kommandozeile nutzen.
 Mit dem Befehl \verb|aas_test_engines check_files robocell.aasx| kann beispielsweise die Validierung der zuvor erstellten AASX-Datei der robocell gestartet werden.
 
-%Mit dem Befehl: aas_test_engines check_file my_aas.aasx kann eine AASX-Datei validiert werden.
-% \begin{verbatim}
-% aas_test_engines check_file robocell.aasx
-% \end{verbatim}
 Dabei wird zunächst geprüft, ob die AASX-Datei formal korrekt aufgebaut ist, insbesondere hinsichtlich der internen Struktur und ihrer Beziehungen.
 Anschließend erfolgt die Kontrolle der enthaltenen \acs{aas} gegen die Metamodell-Spezifikationen der \acs{idta} (Teil 1 \cite{SpezifikationPart1} und 3a \cite{SpezifikationPart3a}).
 Zuletzt erfolgt ein Abgleich der Submodelle mit den zugehörigen Templates, sofern diese für das jeweilige Submodell definiert wurden.
@@ -138,23 +127,15 @@ Zuletzt erfolgt ein Abgleich der Submodelle mit den zugehörigen Templates, sofe
 Treten bei der Validierung formale oder semantische Fehler auf, beispielsweise durch fehlende Referenzen oder ungültige IDs, gibt die Test Engine eine detaillierte Fehlermeldung in der Konsole aus. 
 Diese Hinweise geben Aufschluss darüber, an welcher Stelle die Struktur bzw. der Inhalt der AASX-Datei fehlerhaft ist, und ermöglichen so eine gezielte Korrektur der betroffenen Elemente. 
 Werden im gesamten Prüfprozess hingegen keine Fehler oder Abweichungen festgestellt, bestätigt die Test Engine die erfolgreiche Validierung.
-%(siehe Abbildung \ref{fig:KonsolenausgabeTestEngine}).
-% \setlength{\fboxsep}{0pt}
-% \begin{figure}[htbp]
-%     \centering
-%     \fcolorbox{black!60}{white}{\includegraphics[width=0.99\textwidth]{Bilder/testEngineSuccess.PNG}}
-%     \caption{Konsolenausgabe nach erfolgreicher Validierung}
-%     \label{fig:KonsolenausgabeTestEngine}
-% \end{figure}
 
 \subsection{Technische Integration}
 Im Anschluss an die Konzeption und Modellierung des digitalen Zwillings liegt der Fokus dieses Kapitels auf der technischen Integration der zuvor erstellten \acs{aas} in eine Industrie 4.0-kompatible Umgebung. 
-Mithilfe der Eclipse BaSyx-Plattform wird gezeigt, wie die statisch modellierte \acs{aas} in eine Typ-2-\acs{aas} überführt und systemseitig bereitgestellt werden kann. 
+Mithilfe der Eclipse BaSyx-Plattform wird gezeigt, wie die statisch modellierte Typ-1-\acs{aas} in eine Typ-2-\acs{aas} überführt und systemseitig bereitgestellt werden kann. 
 Darüber hinaus wird die Erweiterung um dynamische Informationen anhand der Anbindung von Echtzeit- und Zeitreihendaten über standardisierte Schnittstellen erläutert.
 
 \subsubsection{Bereitstellung der \acs{aas}}
 \label{sec:bereitstellungAAS}
-Für die Bereitstellung der \acs{aas} stehen mehrere Open-Source-Lösungen zur Verfügung. 
+Für die Bereitstellung als Typ-2-\acs{aas} stehen mehrere Open-Source-Lösungen zur Verfügung. 
 Eine Lösung, die sich besonders gut für den Einstieg eignet, ist der AasxServerBlazor \cite{AASXServer}, der das serverseitige Gegenstück zum Package Explorer bildet. 
 Diese Kombination ermöglicht eine einfache Visualisierung sowie Verwaltung von \acs{aas}-Paketen und ist vorallem für erste Tests hilfreich.
 
@@ -186,8 +167,6 @@ Ein typischer Ablauf mit den zugehörigen REST-Endpunkten ist in Tabelle \ref{ta
 Die Endpunkte gehören dabei zu verschiedenen Services innerhalb der AAS Environment.
 
 \input{TabelleBereitstellungBaSyxMitAPI.tex}
-% Das passt evtl nicht so ganz oder überflüssig von daher vlt weglassen
-% \subsubsection{Datenzugriff über standardisierte Schnittstellen}
 
 Darüber hinaus besteht ebenfalls die Möglichkeit, eine \acs{aas} im Discovery Service zu registrieren.
 Über einen sogenannten assetLink kann diese dabei logisch mit einem Asset verknüpft werden.
@@ -198,42 +177,10 @@ Besonders bei der Darstellung von hierarchischen Strukturen, etwa einer \acs{bom
 Nach der Erstellung der statischen \acs{aas} der robocell und der Integration in das BaSyx-System gilt es nun, diese um dynamische Informationen zu erweitern.
 Diese sind essenziell, um den aktuellen Zustand einer Maschine abbilden zu können.
 Die Datenbasis bilden die beiden zuvor vorgestellten Anwendungen, die Maschinen- bzw. Sensordaten über einen \acs{opcua} Server bereitstellen.
-% Auf die konkrete Simulation dieser Daten soll in dieser Arbeit allerdings nicht weiter eingegangen werden.
-
-% Dennoch ist es sinnvoll, einmal die Struktur der bereitgestellten Daten zu betrachten.
-
-% Zur Analyse kann ein OPC UA Client genutzt werden, z.B. UA Expert, mit dem alle verfügbaren Datenpunkte (Nodes) eingesehen werden können.
-% Die Daten werden in einer hierarchischen Struktur bereitgestellt, wie sie in Abbildung \ref{fig:opcua_serverstruktur} zu erkennen ist.
-% Jede Node besitzt dabei einen NamespaceIndex sowie eine eindeutige NodeId (siehe Abbildung \ref{fig:opcua_pressure_node}), über die das jeweilige Objekt identifiziert werden kann.
-
-% \begin{figure}[htbp]
-%     \centering
-%     \begin{minipage}[t]{0.25\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{Bilder/OPCUA/serverstruktur.png}
-%         \caption{OPC UA Serverstruktur}
-%         \label{fig:opcua_serverstruktur}
-%     \end{minipage}
-%     \hspace{0.2\textwidth} % Abstand zwischen den Bildern
-%     \begin{minipage}[t]{0.4\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{Bilder/OPCUA/pressure_node.png}
-%         \caption{Detailansicht der Node \texttt{pressure}}
-%         \label{fig:opcua_pressure_node}
-%     \end{minipage}
-% \end{figure}
 
 Die Integration von Echtzeidaten in die \acs{aas} wird im Folgenden am Beispiel des Submodells Prozessdaten erläutert.
 Innerhalb dieses Submodells existieren verschiedene Properties, die jeweils bestimmte Werte, wie beispielsweise den Druck oder die Anzahl abefüllter Einheiten, repräsentieren. %(siehe Abbildung \ref{fig:UMLSubmodellProcessData}). 
 Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten, die über \acs{opcua} bereitgestellt werden, aktualisiert werden.
-
-%\begin{figure}[htbp]
-%    \centering
-%    \includegraphics[width=0.6\textwidth]{Bilder/UML/submodel_processdata.pdf}
-%   \caption{Klassendiagramm des Submodells Prozessdaten}
-%    \label{fig:UMLSubmodellProcessData}
-%\end{figure}
-
 
 Das Eclipse BaSyx-Projekt stellt hierfür eine weitere Komponente bereit, die sogenannte Databridge \cite{BaSyxDatabridge}.
 Diese steht, wie alle anderen Komponenten auch, als Docker Container zur Verfügung und ermöglicht die Anbindung verschiedenster Datenquellen an eine \acs{aas}.
@@ -309,7 +256,8 @@ Dazu gehören ein eindeutiger Name, eine Beschreibung sowie die Definition der D
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.88\textwidth]{Bilder/TimeSeries/MetadataTimeSeries.PNG}
+    % 0.88
+    \includegraphics{Bilder/TimeSeries/MetadataTimeSeries.PNG}
     \caption{Metadaten-Konfiguration im Submodell Time Series Data}
     \label{fig:MetadataTimeSeries}
 \end{figure}
@@ -321,13 +269,14 @@ Zusätzlich können weitere Informationen angegeben werden, wie beispielsweise d
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.86\textwidth]{Bilder/TimeSeries/LinkedSegment.PNG}
+    % 0.86
+    \includegraphics{Bilder/TimeSeries/LinkedSegment.PNG}
     \caption{Konfiguration des LinkedSegments im Submodell Time Series Data}
     \label{fig:LinkedSegmentTimeSeries}
 \end{figure}
 
 Zur Visualisierung der Zeitreihendaten bietet das BaSyx-System eine praktische Lösung.
-Über ein entsprechendes Plugin können die im Submodell Time Series Data enthaltenen Informationen direkt in der AAS Web Ui dargestellt werden.
+Über ein entsprechendes Plugin können die im Submodell Time Series Data enthaltenen Informationen direkt in der Benutzeroberfläche der AAS Web Ui dargestellt werden.
 Die über das LinkedSegment referenzierten Zeitreihendaten lassen sich dort in verschiedenen Diagrammen visualisieren, beispielsweise als Linien- oder Balkendiagramm.
 Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne dass diese physisch in der \acs{aas} gespeichert werden müssen.
 
