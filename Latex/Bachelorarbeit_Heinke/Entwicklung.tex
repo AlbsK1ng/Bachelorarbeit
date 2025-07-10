@@ -63,7 +63,7 @@ Weitere, hierarchisch untergeordnete Bauteile oder Baugruppen können analog ebe
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1\textwidth]{Bilder/Konzeptionierung/konzeptionierung.pdf}
+    \includegraphics[width=1\textwidth]{Bilder/Konzeptionierung/konzeptionierungNeu.pdf}
     \caption{\acs{aas}-Konzept der robocell}
     \label{fig:konzeptionierungAAS}
 \end{figure}
@@ -197,7 +197,7 @@ Besonders bei der Darstellung von hierarchischen Strukturen, etwa einer \acs{bom
 
 \subsubsection{Integration von Echtzeitdaten über OPC UA}
 Nach der Erstellung der statischen \acs{aas} der robocell und der Integration in das BaSyx-System gilt es nun, diese um dynamische Informationen zu erweitern.
-Diese sind essenziell, um den aktuellen Zustand einer Maschine abbilden zu können.
+Diese sind essenziell, um den aktuellen Maschinenzustand präzise und in Echtzeit abzubilden.
 Die Datenbasis bilden die beiden zuvor vorgestellten Anwendungen, die Maschinen- bzw. Sensordaten über einen \acs{opcua} Server bereitstellen.
 
 Die Integration von Echtzeidaten in die \acs{aas} wird im Folgenden am Beispiel des Submodells Prozessdaten erläutert.
@@ -221,7 +221,7 @@ Darüber hinaus muss der zu verwendende \acs{opcua} Client festgelegt werden.
 In diesem Projekt wird Eclipse Milo eingesetzt, der auf einem Subscription-Modell basiert.
 Im Gegensatz zu einem Polling-Ansatz werden hier gezielt bestimmte Knoten (Nodes) abonniert, sodass neue Werte automatisch bei Änderung übermittelt werden.
 
-Ein Beispiel für die JSON-Konfiguration einer solchen Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für die Druck-Node dargestellt.
+Ein Beispiel für eine entsprechende JSON-Konfiguration der Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für die Druck-Node dargestellt.
 Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall können zusätzlich angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
 
 \begin{lstlisting}[language=json, caption={Beispielhafte JSON-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
@@ -234,16 +234,14 @@ Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertra
 }
 \end{lstlisting}
 
-Zur Anpassung der eingehenden Werte an die Struktur der gewünschten Property können verschiedene Transformatoren eingesetzt werden. 
-Die Databridge unterstützt hierfür unter anderem das Verwenden von JSONata-Ausdrücken oder den Einsatz von JsonJacksonTransformers. 
-Mit diesen lassen sich die vom OPC UA Server empfangenen Rohdaten in ein JSON-Objekt überführen und anschließend die konkreten Datenwerte der jeweiligen Nodes gezielt extrahieren
+Zur Anpassung der eingehenden Daten an die Struktur der Ziel-Property lassen sich verschiedene Transformatoren einsetzen.
+Die Databridge unterstützt hierfür unter anderem JSONata-Ausdrücke oder JsonJacksonTransformers.
+Mithilfe dieser Mechanismen können die vom \acs{opcua}-Server empfangenen Rohdaten zunächst in ein JSON-Objekt überführt und anschließend gezielt extrahiert und weiterverarbeitet werden.
 
-Anschließend muss die Datensenke konfiguriert werden, welche die transformierten Werte in die entsprechenden Properties des Submodells Prozessdaten überträgt.
-Dies erfolgt analog zur Konfiguration der Datenquelle über eine JSON-Datei.
-In dieser müssen der Endpoint des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version angegeben werden.
-Eine beispielhafte Konfiguration ist in Listing \ref{lst:jsonDatensenke} dargestellt.
-Der Platzhalter \texttt{\{smID\}} steht dabei für die Base64-kodierte ID des Submodells Prozessdaten, wie sie in der REST-API der \acs{aas} verwendet wird.
-
+Im Anschluss erfolgt die Konfiguration der Datensenke, also der Zielkomponente innerhalb der \acs{aas}.
+Auch diese Konfiguration erfolgt über eine separate JSON-Datei, in der der Endpoint des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version definiert werden.
+Listing~\ref{lst:jsonDatensenke} zeigt ein Beispiel einer entsprechenden Konfiguration.
+Der Platzhalter \{smId\} steht dabei für die Base64-kodierte ID des Submodells, wie sie in der REST-API der \acs{aas} verwendet wird.
 \begin{lstlisting}[language=json, caption={Beispielhafte JSON-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
 {
     "uniqueId"        : "Submodel/ProcessData/Pressure",
@@ -253,8 +251,10 @@ Der Platzhalter \texttt{\{smID\}} steht dabei für die Base64-kodierte ID des Su
 }
 \end{lstlisting}
 
-Nach erfolgreicher Konfiguration der Databridge werden die \acs{opcua}-Werte automatisiert in die jeweilige Property des Submodells geschrieben. 
-Dieser Mechanismus lässt sich nicht nur für die Übertragung von Prozesswerten, sondern auch zur Darstellung des aktuellen Maschinenzustands nutzen und bietet somit eine flexible Grundlage für die Integration von Prozess- und Betriebsdaten in die \acs{aas}.
+Nach erfolgreicher Konfiguration übernimmt die Databridge die automatisierte Übertragung der \acs{opcua}-Werte in die entsprechenden Properties des Submodells.
+Dieses Prinzip lässt sich nicht nur auf Prozesswerte anwenden, sondern auch zur Abbildung des Maschinenzustands oder anderer dynamischer Betriebsdaten nutzen.
+Somit bildet die Databridge eine flexible und protokolloffene Lösung zur Echtzeitanbindung externer Datenquellen an eine \acs{aas}.
+
 
 \subsubsection{Verarbeitung von Zeitreihendaten}
 
@@ -279,20 +279,22 @@ Dazu gehören ein eindeutiger Name, eine Beschreibung sowie die Definition der D
 \begin{figure}[htbp]
     \centering
     % 0.88
-    \includegraphics{Bilder/TimeSeries/MetadataTimeSeries.PNG}
+    \includegraphics{Bilder/TimeSeries/MetadatenEigeneDarstellung.pdf}
     \caption{Metadaten-Konfiguration im Submodell Time Series Data}
     \label{fig:MetadataTimeSeries}
 \end{figure}
 
 Anschließend folgt die Konfiguration des LinkedSegments (siehe Abbildung \ref{fig:LinkedSegmentTimeSeries}). 
 Dieses stellt die eigentliche Verbindung zu den extern gespeicherten Zeitreihendaten her.
-Es enthält unter anderem den Endpunkt der InfluxDB, sowie die zugehörige Abfrage (Query), mit der die gewünschten Werte abgefragt werden können.
-Zusätzlich können weitere Informationen angegeben werden, wie beispielsweise die Abtastrate (samplingRate), der Zeitraum, den das Segment abdeckt, oder ein recordCount, der angibt, wie viele Einträge innerhalb dieses Zeitraums erwartet werden.
+Hierfür sind sowohl der Datenendpunkt als als auch die Query, mit der die gewünschten Werte ausgelesen werden sollen, zu spezifizieren.
+Im vorliegenden Fall handelt es sich dabei um die Adresse des InfluxDB-Containers sowie die Abfrage, mit der die Werte für Druck und Temperatur aus der zugehörigen Tabelle extrahiert werden können.
+Dabei ist zu beachten, dass der entsprechende Port der InfluxDB nach außen freigegeben ist, da andernfalls kein Zugriff durch externe Anwendungen möglich ist.
+Ergänzend können weitere Metadaten angegeben werden, beispielsweise die Abtastrate (samplingRate), der durch das Segment abgedeckte Zeitraum oder ein recordCount, der die erwartete Anzahl an Einträgen innerhalb dieses Zeitfensters beschreibt.
 
 \begin{figure}[htbp]
     \centering
     % 0.86
-    \includegraphics{Bilder/TimeSeries/LinkedSegment.PNG}
+    \includegraphics{Bilder/TimeSeries/LinkedSegmentEigeneDarstellung.pdf}
     \caption{LinkedSegment-Konfiguration im Submodell Time Series Data}
     \label{fig:LinkedSegmentTimeSeries}
 \end{figure}

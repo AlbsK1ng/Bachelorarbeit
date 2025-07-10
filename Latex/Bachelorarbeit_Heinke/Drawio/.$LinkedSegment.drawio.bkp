@@ -1,0 +1,58 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9">
+  <diagram name="Seite-1" id="vGBwzLZIg6hZzlx329QO">
+    <mxGraphModel dx="519" dy="393" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GxNOZXjlHH1W95P_12yy-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D8E4FC;" vertex="1" parent="1">
+          <mxGeometry x="350" y="300" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-2" value="&lt;font style=&quot;font-size: 13px;&quot; face=&quot;Times New Roman&quot;&gt;&lt;b style=&quot;&quot;&gt;&amp;lt;&amp;lt;SubmodelEllementCollection&amp;gt;&amp;gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="381" y="300" width="178" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F5FD;" vertex="1" parent="1">
+          <mxGeometry x="350" y="350" width="240" height="171" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-5" value="&lt;font face=&quot;Times New Roman&quot; style=&quot;color: rgb(51, 51, 51);&quot;&gt;+ Name:&lt;/font&gt;&lt;font face=&quot;Times New Roman&quot; style=&quot;color: rgb(102, 102, 102);&quot;&gt; MultiLanguageProperty [string]&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="354.5" width="205" height="12.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-6" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ Description:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt; MultiLanguageProperty [string]&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="367" width="235" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-7" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ RecordCount:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt; Property [long]&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="380.5" width="205" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-8" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ StartTime:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(102, 102, 102); font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Property [string]&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="394" width="215" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-9" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ EndTime:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(102, 102, 102); font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Property [string]&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="407.5" width="255" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-10" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ Duration:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(102, 102, 102); font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Property [string]&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="421" width="235" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-11" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ SamplingInterval:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(102, 102, 102); font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Property [long]&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="434.5" width="255" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-12" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ SamplingRate:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt; Property [long]&amp;nbsp;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="448" width="285" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-13" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ State:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(102, 102, 102); font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Property [string]&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="461.5" width="295" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-14" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ LastUpdate:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(102, 102, 102); font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Property [string]&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="475" width="305" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-15" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ Endpoint:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(102, 102, 102); font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Property [string]&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="488.5" width="355" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-16" value="&lt;font style=&quot;color: rgb(51, 51, 51);&quot; face=&quot;Times New Roman&quot;&gt;+ Query:&lt;/font&gt;&lt;font style=&quot;color: rgb(102, 102, 102);&quot; face=&quot;Times New Roman&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(102, 102, 102); font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;Property [string]&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="355" y="501.5" width="315" height="13.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GxNOZXjlHH1W95P_12yy-17" value="&lt;b&gt;&lt;font style=&quot;font-size: 13px;&quot; face=&quot;Times New Roman&quot;&gt;LinkedSegment&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="381" y="320" width="178" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
