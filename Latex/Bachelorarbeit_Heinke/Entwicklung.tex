@@ -77,28 +77,36 @@ Außerdem wird gezeigt, wie sich die erstellte \acs{aas} mithilfe einer Test Eng
 Im Folgenden wird beschrieben, wie eine \acs{aas} von Grund auf erstellt, mit Submodellen und Inhalten angereichert und abschließend in Form einer AASX-Datei gespeichert bzw. exportiert werden kann.  
 Die Umsetzung erfolgt dabei mithilfe des Package Explorers, der eine intuitive Modellierung aller relevanten Elemente einer \acs{aas} ermöglicht und so den strukturierten Aufbau eines digitalen Zwillings unterstützt.
 
-Zunächst muss ein neues \acs{aas}-Paket erstellt werden.  
+Im ersten Schritt muss ein neues \acs{aas}-Paket erstellt werden.  
 Hierzu kann im Package Explorer eine neue Umgebung geöffnet werden, die als Container für die Inhalte eines Assets dient.  
 Darin lässt sich anschließend eine neue \acs{aas} anlegen, die allgemeine Informationen sowie assetspezifische Daten beinhaltet.  
-Abbildung~\ref{fig:UmsetzungPackageExplorerIDs} zeigt den initialen Aufbau der \acs{aas}, der im weiteren Verlauf sukzessive um Submodelle und deren Inhalte erweitert wird.
+Abbildung~\ref{fig:UmsetzungPackageExplorerIDs} zeigt den initialen Aufbau, der im weiteren Verlauf sukzessive um Submodelle und deren Inhalte erweitert wird.
+Datein, wie ein Titelbild für die robocell, sind dabei ein wichtiger Bestandteil und können direkt in die \acs{aas}-Umgebung eingebettet werden.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics{Bilder/ModellierungAAS/Final/1.png}
-    \caption{Konfiguration der AAS im Package Explorer}
-    \label{fig:UmsetzungPackageExplorerIDs}
-\end{figure}
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics{Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG}
+%     \caption{Identifikatoren eines Assets und seiner AAS}
+%     \label{fig:UmsetzungPackageExplorerIDs}
+% \end{figure}
 
 Neben der Auswahl des Asset-Typs (Instanz oder Typ) ist insbesondere die eindeutige Identifikation von zentraler Bedeutung.
 Das Asset selbst wird über eine globalAssetId referenziert, während die \acs{aas} eine eigene ID sowie eine idShort erhält.
 Für erste Modellierungszwecke empfiehlt es sich, Beispiel-IDs zu verwenden, die direkt im Package Explorer generiert werden können.
 Diese erleichtern nicht nur den späteren Austausch der \acs{aas}, sondern auch deren systemweites Auffinden innerhalb eines Industrie 4.0-Ökosystems und sind daher unerlässlich.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{Bilder/ModellierungAAS/Final/Identifikatoren.png}
+    \caption{Identifikatoren im Package Explorer}
+    \label{fig:SemantikID}
+\end{figure}
+
 Im nächsten Schritt müssen die benötigten Submodelle hinzugefügt werden. Auch diese lassen sich entweder als Instanz oder Typ anlegen.
 Dabei besteht die Möglichkeit, entweder ein leeres Submodell manuell mit verschiedenen Submodellelementen zu erstellen oder auf ein vorhandenes Submodel Template zurückzugreifen.
 Letztere können als AASX-Datei, beispielsweise über das Repository der \acs{idta} \cite{idtaTemplates}, heruntergeladen und anschließend über ein sogenanntes Auxiliary AAS in die Umgebung geladen werden.
 
-Anschließend müssen die in den Submodellen enthaltenen Elemente mit konkreten Inhalten wie Werten, Dateien, Referenzen oder Beziehungen gefüllt werden.
+Anschließend können die in den Submodellen enthaltenen Elemente mit konkreten Inhalten wie Werten, Dateien, Referenzen oder Beziehungen gefüllt werden.
 Besonders bei der Verwendung von Templates muss darauf geachtet werden, dass die Struktur dieser nicht verändert wird, da dies sonst zu Abweichungen von der Submodellspezifikation führen kann.
 
 Für die Abbildung hierarchischer Strukturen, insbesondere im Submodell \acs{bom}, kommen verschiedene Entitäten zum Einsatz.
@@ -106,10 +114,24 @@ Diese repräsentieren einzelne Komponenten bzw. Baugruppen eines Produkts.
 Bei komplexeren Maschinen oder Anlagen, wie im Fall der robocell, ist es sinnvoll, solche Komponenten als eigenständige \acs{aas} zu modellieren.
 Diese können im Package Explorer als SelfManagedEntity in der Haupt-\acs{aas} angelegt und über ihre globalAssetId referenziert werden, wodurch eine klare Trennung zwischen der Haupt-\acs{aas} sowie den referenzierten Kompnenten-\acs{aas} erfolgt.
 
-Für die Klassifizierung einzelner Elemente müssen semanticIds vergeben werden, die entweder auf externe Standards wie ECLASS oder auf lokale Concept Descriptions innerhalb der AAS-Umgebung verweisen.  
-Sofern verfügbar, sollte stets auf vordefinierte Standards zurückgegriffen werden, da die manuelle Modellierung nicht nur deutlich komplexer ist, sondern auch zu einer eingeschränkten Interoperabilität führen kann.
-Der Package Explorer bietet hierfür eine erweiterte Funktionalität, bei der sich vorgefertigte ECLASS-Kataloge importieren lassen.
-Die darin enthalten Begriffe lassen sich direkt im Package Explorer durchsuchen, auswählen und direkt den enstprechenden Submodellen bzw. Submodellelementen zuweisen.
+Für die semantische Beschreibung von Submodellen und Submodellelementen innerhalb der AAS ist die Vergabe von semanticId-Referenzen essenziell, wie in Abbildung \ref{fig:SemantikID} beispielhaft für ein Submodell dargestellt. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{Bilder/ModellierungAAS/Final/SemantikID.PNG}
+    \caption{Semantische Referenz im Package Explorer}
+    \label{fig:SemantikID}
+\end{figure}
+
+Jede semanticId verweist dabei auf eine zugehörige \acs{cd}, welche die Bedeutung des referenzierten Elements eindeutig beschreibt.
+Im Package Explorer können solche Concept Descriptions unter anderem manuell erstellt werden, wobei bereits eine strukturierte Vorlage, wie in \cite{SpezifikationPart3a} beschrieben, hinterlegt ist.
+Diese Vorlage umfasst beispielsweise Felder für Definition, Datentyp, Einheit sowie Symbol und ermöglicht dadurch eine konsistente semantische Beschreibung einzelner Elemente.
+
+Alternativ können auch externe Standards referenziert werden. 
+Der Package Explorer unterstützt diesen Ansatz durch eine erweiterte Funktionalität, mit der sich vorgefertigte ECLASS-Kataloge direkt in das Tool importieren lassen. 
+Nach dem Import können die enthaltenen Objekte durchsucht, ausgewählt und den entsprechenden Submodellen oder Submodellelementen zugewiesen werden. 
+Die semantische Verknüpfung erfolgt dabei über eine \acs{irdi}, die das jeweilige Konzept eindeutig identifiziert. 
+Die Nutzung etablierter externer Standards ist grundsätzlich zu bevorzugen, da sie nicht nur den Modellierungsaufwand erheblich reduziert, sondern auch die Interoperabilität zwischen verschiedenen Systemen und Anwendungen deutlich verbessert.
 
 Sobald alle gewünschten Submodelle mit Inhalten gefüllt und semantisch beschrieben sind, muss die \acs{aas} gespeichert und exportiert werden.
 In diesem Projekt erfolgt dies bevorzugt im AASX-Format, das sich als standardisierte Austauschform für die \acs{aas} etabliert hat und eine einfache Weitergabe ermöglicht.
@@ -271,7 +293,7 @@ Zusätzlich können weitere Informationen angegeben werden, wie beispielsweise d
     \centering
     % 0.86
     \includegraphics{Bilder/TimeSeries/LinkedSegment.PNG}
-    \caption{Konfiguration des LinkedSegments im Submodell Time Series Data}
+    \caption{LinkedSegment-Konfiguration im Submodell Time Series Data}
     \label{fig:LinkedSegmentTimeSeries}
 \end{figure}
 

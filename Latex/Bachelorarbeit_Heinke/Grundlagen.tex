@@ -340,7 +340,7 @@ Zur besseren Veraunschaulichung des zugrundeliegenden Metamodells wird dieses na
 \end{figure}
 
 Wichtig ist, sowohl die AAS selbst als auch ihre Submodelle müssen global eindeutig identifizierbar sein.
-Dies wird durch die Verwendung von eindeutigen Identifikatoren der Klasse Identifiable wie einer URI (Uniform Resource Identifier) oder IRDI (International Registration Data Identifier) sichergestellt.
+Dies wird durch die Verwendung von eindeutigen Identifikatoren der Klasse Identifiable wie einer URI (Uniform Resource Identifier) oder \acs{irdi} (International Registration Data Identifier) sichergestellt.
 Für die Elemente innerhalb eines Submodells ist eine lokale Kennung ausreichend. Dies erfolgt in der Regel anhand einer idShort der Klasse Referable, die einen kurzen, aussagekräftigen Namen enthält.
 
 Dabei ist wichtig alle Submodelle bzw. alle Elemente über eine eindeutige Semantik zu beschreiben.
@@ -492,10 +492,9 @@ Er verfügt über eine benutzerfreundliche grafische Oberfläche (siehe Abbildun
 Dabei können Submodelle, Eigenschaften, semantische Referenzen sowie Metadaten strukturiert definiert und verwaltet werden.
 Gleichzeitig bietet der Package Explorer auch erweiterte Funktionen, wie das Erstellen von Submodell-Templates, wodurch er sich auch für den profesionellen Einsatz eignet.
 
-\vspace{0.5em}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1\textwidth]{Bilder/AAS_PE.PNG}
+    \includegraphics[scale=0.765]{Bilder/ModellierungAAS/Final/Grundlagen_PE.PNG}
     \caption{Benutzeroberfläche Package Explorer}
     \label{fig:AASXPackageExplorer}
 \end{figure}
@@ -508,13 +507,13 @@ Besonders geeignet hierfür ist der Referenzserver des Eclipse-AAS-Projekts \cit
 Eclipse BaSyx ist eine vom Fraunhofer-Institut für Experimentelles Software Engineering entwickelte Open-Source-Plattform für die Realisierung von Industrie 4.0-Anwendungen.
 Mittlerweile wird das Projekt unter dem Dach der Eclipse Foundation weitergeführt.
 Der Fokus liegt auf einer einfachen Umsetzung einer Infrastruktur zur Erstellung und Verwaltung digitaler Zwillinge auf Basis der \acs{aas}.
-Die Software steht dabei allen Interessierten frei zur Verfügung und erlaubt individuelle Modifikationen an spezifische Anforderungen.
+Die Software steht dabei allen Interessenten frei zur Verfügung.
 
 Die Softwarearchitektur basiert auf einer Vielzahl von Standardkomponenten (Off-the-Shelf), die alle als Docker-Container frei zugänglich sind und somit eine nahtlose Integration in bestehende Docker-Umgebungen erlauben.
 Eine der wichtigsten Komponenten ist die Registry. 
 Sie ist, genau wie alle anderen Komponenten, auf den Spezifikationen der Verwaltungsschale aufgebaut, insbesondere auf der Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2}.
 In ihr können neue \acs{aas} registriert und bereits vorhandene Verwaltungsschalen anhand ihrer eindeutigen Kennung gesucht werden.
-Sie bildet damit die zentrale Anlaufstelle für Geräte und Anwendungen innerhalb eines Industrie-4.0-Systems
+Sie bildet damit die zentrale Anlaufstelle für Geräte und Anwendungen innerhalb eines Industrie-4.0-Systems.
 Analog dazu gibt es eine seperate Registry für die Verwaltung von Submodellen.
 
 Die eigentlichen Daten der AAS werden in der sogenannten \acs{aas} Environment gespeichert und organisiert.
