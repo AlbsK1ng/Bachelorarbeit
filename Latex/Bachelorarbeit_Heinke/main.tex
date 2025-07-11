@@ -57,13 +57,15 @@
 %----------Code listings------------
 \usepackage{listings}
 % Farben definieren
-\definecolor{delim}{RGB}{20,105,176}
-\definecolor{numb}{RGB}{106, 109, 32}
-\definecolor{string}{rgb}{0.64,0.08,0.08}
+\definecolor{numb}{rgb}{0.0, 0.5, 0.0}
+\definecolor{string}{rgb}{0.4, 0.0, 0.4}
+\definecolor{background}{gray}{0.96}
 
 \lstdefinelanguage{json}{
     numbers=left,
     numberstyle=\small,
+    backgroundcolor=\color{background},
+    numbersep=8pt,
     frame=single,
     rulecolor=\color{black},
     showspaces=false,
@@ -86,10 +88,10 @@
       {7}{{{\color{numb}7}}}{1}
       {8}{{{\color{numb}8}}}{1}
       {9}{{{\color{numb}9}}}{1}
-      {\{}{{{\color{delim}{\{}}}}{1}
-      {\}}{{{\color{delim}{\}}}}}{1}
-      {[}{{{\color{delim}{[}}}}{1}
-      {]}{{{\color{delim}{]}}}}{1},
+      {\{}{{{\color{black}{\{}}}}{1}
+      {\}}{{{\color{black}{\}}}}}{1}
+      {[}{{{\color{black}{[}}}}{1}
+      {]}{{{\color{black}{]}}}}{1},
 }
 %----------Code listings------------
 

@@ -1,0 +1,7 @@
+[ caption={Beispielhafte JSON-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
+{
+    "uniqueId"        : "Submodel/ProcessData/Pressure",
+    "submodelEndpoint": "http://aas-env:8081/submodels/{smId}",
+    "idShortPath"     : "Pressure",
+    "api"             : "DotAAS-V3"
+}

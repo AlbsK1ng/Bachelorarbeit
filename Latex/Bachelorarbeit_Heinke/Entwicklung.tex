@@ -51,15 +51,12 @@ Submodelle können sukszessive ergänzt, angepasst oder auch wieder entfernt wer
 
 Ein besonders wichtiges Submodell stellt die Stückliste (\acs{bom}) dar.
 Mit diesem lässt sich die hierarchische Struktur eines Assets abbilden, das aus mehreren verschachtelten Komponenten besteht.
-Für komplexe Maschinen oder Anlagen, wie im Fall der robocell, wird im Rahmen dieser Konzeption vorgesehen, einzelne Komponenten jeweils als eigene \acs{aas}-Instanzen zu modellieren und in der übergeordneten Haupt-\acs{aas} zu referenzieren.
+Für komplexe Maschinen oder Anlagen, wie im Fall der robocell, wird im Rahmen dieser Konzeption vorgesehen, einzelne ausgewählte Komponenten jeweils als eigene \acs{aas}-Instanzen zu modellieren und in der übergeordneten Haupt-\acs{aas} zu referenzieren.
+Diese werden im weiteren Verlauf als Komponenten-\acs{aas} bezeichnet.
 Auf diese Weise soll eine höhere Modularität und Wiederverwendbarkeit erreicht werden.
 
 Zur Verdeutlichung der zugrunde liegenden Architektur sowie der Beziehungen zwischen den identifizierten Datenquellen, \acs{aas} und Submodellen dient Abbildung~\ref{fig:konzeptionierungAAS}. 
 Die \acs{aas} der robocell bildet dabei das zentrale digitale Abbild, in das die relevanten Informationen aus den in diesem Kapitel beschriebenen Submodellen integriert werden sollen.
-
-Einzelne Maschinenkomponenten werden durch eigene Komponenten-\acs{aas} repräsentiert. 
-In der Abbildung sind exemplarisch zwei Industrie-4.0-Komponenten der ersten Ebene der Komponentenstruktur dargestellt. 
-Weitere, hierarchisch untergeordnete Bauteile oder Baugruppen können analog ebenfalls als eigenständige \acs{aas}-Instanzen modelliert und über entsprechende Referenzen in die Haupt-\acs{aas} der robocell oder in übergeordnete Strukturen eingebunden werden.
 
 \begin{figure}[htbp]
     \centering
@@ -159,39 +156,66 @@ Darüber hinaus wird die Erweiterung um dynamische Informationen anhand der Anbi
 \label{sec:bereitstellungAAS}
 Für die Bereitstellung als Typ-2-\acs{aas} stehen mehrere Open-Source-Lösungen zur Verfügung. 
 Eine Lösung, die sich besonders gut für den Einstieg eignet, ist der AasxServerBlazor \cite{AASXServer}, der das serverseitige Gegenstück zum Package Explorer bildet. 
-Diese Kombination ermöglicht eine einfache Visualisierung sowie Verwaltung von \acs{aas}-Paketen und ist vorallem für erste Tests hilfreich.
+
+Im Package Explorer besteht hierfür die Möglichkeit, eine direkte Verbindung zum AasxServerBlazor herzustellen (siehe Abbildung \ref{fig:AasxServerBlazor}). 
+Dies erfolgt über eine HTTP-Verbindung.
+Dadurch können AASX-Dateien unmittelbar aus dem Package Explorer heraus auf den Server hochgeladen und bereitgestellt werden. 
+Umgekehrt lassen sich auch die auf dem Server vorhandenen \acs{aas} im Package Explorer anzeigen und bearbeiten.
+Die Kombination der beiden Anwendungen ermöglicht so eine einfache Visualisierung sowie Verwaltung von \acs{aas}-Paketen und ist vorallem für erste Tests hilfreich.
+
+\begin{figure}[htbp]
+    \centering
+    % 0.88
+    \includegraphics{Bilder/AASXServer/AASXServer.PNG}
+    \caption{Verbindung zum AasxServerBlazor im Package Explorer}
+    \label{fig:AasxServerBlazor}
+\end{figure}
+
 
 Für komplexerer Anwendungsfälle erweist sich der AasxServerBlazor jedoch als nicht optimal, insbesondere im Hinblick auf die Integration von Echtzeitdaten sowie die dynamische Erweibarkeit von Submodellen.
 Aus diesem Grund wird im weiteren Verlauf dieses Projekts die Eclipse BaSyx-Plattform eingesetzt.
 Durch ihre modulare Architektur und die klare Trennung verschiedener Komponenten wie den Registries oder den Repositories bietet sie eine deutlich flexiblere Grundlage für die Umsetzung praxisnaher Industrie 4.0-Szenarien.
 
-Die einfachste Möglichkeit, um BaSyx zu installieren, ist über Docker.
-Alle benötigten Komponenten stehen hierfür als vorgefertigtes Image öffentlich über den Docker Hub zur Verfügung.
-Alternativ kann auch der Source Code von Github bezogen werden, um einzelne Kompnenten individuell anzupassen oder zu erweitern.
-Die verschiedenen Services, darunter die \acs{aas} Environment, Registries für \acs{aas} und Submodelle, der Discovery Service, sowie die MongoDB als persistenter Speicher, können alle in einer zentralen docker-compose.yml Datei verwaltet werden.
+Die einfachste Möglichkeit, die Eclipse-BaSyx-Plattform zu installieren, besteht in der Nutzung von Docker.
+Alle benötigten Komponenten stehen als vorgefertigte Images öffentlich über den Docker Hub zur Verfügung. 
+Alternativ kann der Quellcode von GitHub bezogen werden, um einzelne Komponenten individuell anzupassen oder zu erweitern.
+Die verschiedenen Services, darunter die \acs{aas} Environment, Registries für \acs{aas} und Submodelle, der Discovery Service, sowie die MongoDB als persistenter Speicher, können zentral in einer docker-compose.yml-Datei verwaltet werden.
 Die Konfiguration erfolgt in der Regel über Umgebungsvariablen oder seperate Konfigurationsdateien, die in der docker-compose.yml referenziert werden.
-Schließlich können alle Komponenten gemeinsam mit dem Befehl docker compose up gestartet werden.
+Mit dem Befehl docker compose up lassen sich anschließend alle Komponenten gemeinsam starten.
 
-Nach erfolgreichem Start der BaSyx Umgebung, gibt es mehrere Möglichkeiten, eine \acs{aas} bereitzustellen und zu registrieren.
-Eine besonders einfache Variante besteht darin, dass die AASX-Datei in ein gemountedes Volume der AAS Environment abgelegt wird.
-Bei einem erneuten Start der Anwendung wird diese Datei automatisch erkannt, registriert und in das BaSyx System eingebunden.
+Nach erfolgreichem Start der BaSyx-Umgebung stehen verschiedene Möglichkeiten zur Verfügung, um eine \acs{aas} bereitzustellen und in das System zu integrieren. 
+Welche Methode dabei zum Einsatz kommt, hängt stark von den jeweiligen Anforderungen und Rahmenbedingungen des Anwendungsszenarios ab.
+Nachfolgend werden drei ausgewählte Ansätze zur Bereitstellung einer \acs{aas} näher betrachtet.
+
+
+\paragraph*{a) Volume}
+Eine besonders einfache Variante besteht darin, eine AASX-Datei in ein gemountetes Volume der AAS Environment abzulegen.
+Ein Volume ist ein persistentes Speicherverzeichnis auf dem Host-System, das mit einem Verzeichnis innerhalb eines Docker-Containers verknüpft ist.
+Es ermöglicht die dauerhafte Speicherung von Daten, unabhängig vom Lebenszyklus des Containers.
+In der von Eclipse BaSyx bereitgestellten Docker-Umgebung ist ein entsprechendes Volume in der Regel bereits vorkonfiguriert.
+
+Beim Neustart der AAS Environment wird die AASX-Datei automatisch erkannt, registriert und in das BaSyx-System eingebunden.
 Die dabei erzeugten Daten, darunter Informationen zu \acs{aas}, Submodellen, Concept Descriptions sowie Registrierungsdaten, werden in verschiedenen Tabellen der angebunden MongoDB gespeichert.
-Dies gewährleistet, dass alle relevanten Daten auch bei einem Neustart der Docker Container erhalten bleiben.
+Dies gewährleistet, dass alle relevanten Daten persistent erhalten bleiben, selbst dann, wenn die ursprüngliche AASX-Datei später aus dem Volume entfernt wird.
 
-Alternativ kann die Bereitstellung auch direkt über die AAS Web Ui erfolgen.
-Über die Benutzeroberfläche kann eine AASX-Datei manuell importiert werden, wodurch sie direkt im laufenden System registriert un eingebunden wird.
+\paragraph*{b) AAS Web UI}
+Alternativ kann die Bereitstellung auch direkt über die AAS Web UI erfolgen.
+Über die Benutzeroberfläche kann eine AASX-Datei manuell importiert werden, wodurch sie direkt im laufenden System registriert und eingebunden wird.
 Diese Methode eignet sich besonders gut für Tests oder kleinere Anpassungen, da eine \acs{aas} auf diese Weise schnell und ohne direkten Zugriff auf das zugrunde liegende Dateisystem eingebunden werden kann.
 
-Die flexibelste aber technisch anspruchsvollste Möglichkeit ist die manuelle Registrierung über die REST-API. 
-Dabei kann nicht einfach eine AASX-Datei hochgeladen werden, sondern es müssen die \acs{aas}, ihre Submodelle sowie ihre Beziehungen eigenständig über die bereitgestellte Schnittstellen angelegt werden.
-Dies erfolgt über JSON-Datenstrukturen, die im Body der jeweiligen Anfrage übermittelt werden.
-Ein typischer Ablauf mit den zugehörigen REST-Endpunkten ist in Tabelle \ref{tab:BereitstellungInBaSyx} dargestellt.
-Die Endpunkte gehören dabei zu verschiedenen Services innerhalb der AAS Environment.
+\paragraph*{c) REST-API}
+Die flexibelste, jedoch auch technisch anspruchsvollste Methode zur Bereitstellung einer AAS ist die manuelle Registrierung über die REST-API. 
+Dabei kann nicht einfach eine AASX-Datei hochgeladen werden. 
+Stattdessen müssen die AAS, ihre Submodelle sowie deren Beziehungen explizit über die bereitgestellten Schnittstellen des BaSyx-Systems erstellt werden. 
+Dies erfolgt durch das Senden strukturierter JSON-Daten im Body der jeweiligen HTTP-Anfragen.
+Ein typischer Ablauf dieser Registrierung ist in Tabelle \ref{tab:BereitstellungInBaSyx} dargestellt. 
+Sie zeigt die notwendigen Schritte sowie die zugehörigen REST-Endpunkte.
+Diese sind dabei verschiedenen Services innerhalb der AAS Environment zugeordnet.
 
 \input{TabelleBereitstellungBaSyxMitAPI.tex}
 
-Darüber hinaus besteht ebenfalls die Möglichkeit, eine \acs{aas} im Discovery Service zu registrieren.
-Über einen sogenannten assetLink kann diese dabei logisch mit einem Asset verknüpft werden.
+Neben der Bereitstellung in der AAS Environment kann eine \acs{aas} optional auch im Discovery Service registriert werden.
+Über einen sogenannten assetLink kann diese dabei logisch mit ihrem zugehörigen Asset verknüpft werden.
 Die Registrierung erfolgt analog zur AAS Environment über einen REST-Endpunkt.
 Besonders bei der Darstellung von hierarchischen Strukturen, etwa einer \acs{bom} mit mehreren verschachtelten Assets, hilft der Discovery Service bei der eindeutigen Zuordnung der jeweiligen \acs{aas} zu ihrem physischen Gegenstück.
 
@@ -201,8 +225,16 @@ Diese sind essenziell, um den aktuellen Maschinenzustand präzise und in Echtzei
 Die Datenbasis bilden die beiden zuvor vorgestellten Anwendungen, die Maschinen- bzw. Sensordaten über einen \acs{opcua} Server bereitstellen.
 
 Die Integration von Echtzeidaten in die \acs{aas} wird im Folgenden am Beispiel des Submodells Prozessdaten erläutert.
-Innerhalb dieses Submodells existieren verschiedene Properties, die jeweils bestimmte Werte, wie beispielsweise den Druck oder die Anzahl abefüllter Einheiten, repräsentieren. %(siehe Abbildung \ref{fig:UMLSubmodellProcessData}). 
+Innerhalb dieses Submodells existieren verschiedene Properties, die jeweils bestimmte Werte, wie beispielsweise den Druck oder die Anzahl abefüllter Einheiten, repräsentieren (siehe Abbildung \ref{fig:SubmodellProzessdaten}). %(siehe Abbildung \ref{fig:UMLSubmodellProcessData}). 
 Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten, die über \acs{opcua} bereitgestellt werden, aktualisiert werden.
+
+\begin{figure}[htbp]
+    \centering
+    % 0.88
+    \includegraphics{Bilder/OPCUA/SubmodellProzessdaten.pdf}
+    \caption{Submodell Prozessdaten}
+    \label{fig:SubmodellProzessdaten}
+\end{figure}
 
 Das Eclipse BaSyx-Projekt stellt hierfür eine weitere Komponente bereit, die sogenannte Databridge \cite{BaSyxDatabridge}.
 Diese steht, wie alle anderen Komponenten auch, als Docker Container zur Verfügung und ermöglicht die Anbindung verschiedenster Datenquellen an eine \acs{aas}.
@@ -211,17 +243,25 @@ Dabei dient sie als Vermittler zwischen einem Datenendpunkt und einem Submodell 
 
 Die Konfiguration der Databridge erfolgt über mehrere JSON-Dateien.
 In einer zentralen Konfigurationsdatei werden sowohl die Datenquelle als auch die Datensenke definiert.
-Die Aktualisierung der Daten erfolgt dabei ereignisbasiert anhand eines Event-Triggers.
+Außerdem können Transformatoren angegeben werden, die beispielsweise Einheitenumrechnungen oder Typkonvertierungen übernehmen.
 
 Als Datenquelle muss der \acs{opcua} Server des Datengenerators angegeben werden, dessen Konfiguration typischerweise in einer separaten JSON-Datei erfolgt.
 Darin sind sowohl die Verbindungsparameter des Servers (z.B. URL und Port) als auch die zu überwachenden Knoten anzugeben.
-Der \acs{opcua} Server stellt die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
+Der \acs{opcua} Server stellt die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist (siehe Abbildung \ref{fig:OPCUADatenStruktur}).
 
-Darüber hinaus muss der zu verwendende \acs{opcua} Client festgelegt werden.
+\begin{figure}[htbp]
+    \centering
+    % 0.88
+    \includegraphics{Bilder/OPCUA/OPCUADaten.pdf}
+    \caption{OPC UA Datenknoten}
+    \label{fig:OPCUADatenStruktur}
+\end{figure}
+
+Außerdem muss der zu verwendende \acs{opcua} Client festgelegt werden.
 In diesem Projekt wird Eclipse Milo eingesetzt, der auf einem Subscription-Modell basiert.
 Im Gegensatz zu einem Polling-Ansatz werden hier gezielt bestimmte Knoten (Nodes) abonniert, sodass neue Werte automatisch bei Änderung übermittelt werden.
 
-Ein Beispiel für eine entsprechende JSON-Konfiguration der Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für die Druck-Node dargestellt.
+Ein Beispiel für eine entsprechende JSON-Konfiguration der Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für den Druckwert dargestellt.
 Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall können zusätzlich angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
 
 \begin{lstlisting}[language=json, caption={Beispielhafte JSON-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
@@ -239,14 +279,14 @@ Die Databridge unterstützt hierfür unter anderem JSONata-Ausdrücke oder JsonJ
 Mithilfe dieser Mechanismen können die vom \acs{opcua}-Server empfangenen Rohdaten zunächst in ein JSON-Objekt überführt und anschließend gezielt extrahiert und weiterverarbeitet werden.
 
 Im Anschluss erfolgt die Konfiguration der Datensenke, also der Zielkomponente innerhalb der \acs{aas}.
-Auch diese Konfiguration erfolgt über eine separate JSON-Datei, in der der Endpoint des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version definiert werden.
+Auch diese Konfiguration erfolgt über eine separate JSON-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version definiert werden.
 Listing~\ref{lst:jsonDatensenke} zeigt ein Beispiel einer entsprechenden Konfiguration.
 Der Platzhalter \{smId\} steht dabei für die Base64-kodierte ID des Submodells, wie sie in der REST-API der \acs{aas} verwendet wird.
 \begin{lstlisting}[language=json, caption={Beispielhafte JSON-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
 {
     "uniqueId"        : "Submodel/ProcessData/Pressure",
     "submodelEndpoint": "http://aas-env:8081/submodels/{smId}",
-    "idShortPath"     : "Druck",
+    "idShortPath"     : "Pressure",
     "api"             : "DotAAS-V3"
 }
 \end{lstlisting}
@@ -279,8 +319,8 @@ Dazu gehören ein eindeutiger Name, eine Beschreibung sowie die Definition der D
 \begin{figure}[htbp]
     \centering
     % 0.88
-    \includegraphics{Bilder/TimeSeries/MetadatenEigeneDarstellung.pdf}
-    \caption{Metadaten-Konfiguration im Submodell Time Series Data}
+    \includegraphics[width=1\textwidth]{Bilder/TimeSeries/Metadaten.pdf}
+    \caption{Metadaten im Submodell Time Series Data}
     \label{fig:MetadataTimeSeries}
 \end{figure}
 
@@ -294,13 +334,13 @@ Ergänzend können weitere Metadaten angegeben werden, beispielsweise die Abtast
 \begin{figure}[htbp]
     \centering
     % 0.86
-    \includegraphics{Bilder/TimeSeries/LinkedSegmentEigeneDarstellung.pdf}
-    \caption{LinkedSegment-Konfiguration im Submodell Time Series Data}
+    \includegraphics{Bilder/TimeSeries/LinkedSegment.pdf}
+    \caption{LinkedSegment im Submodell Time Series Data}
     \label{fig:LinkedSegmentTimeSeries}
 \end{figure}
 
 Zur Visualisierung der Zeitreihendaten bietet das BaSyx-System eine praktische Lösung.
-Über ein entsprechendes Plugin können die im Submodell Time Series Data enthaltenen Informationen direkt in der Benutzeroberfläche der AAS Web Ui dargestellt werden.
+Über ein entsprechendes Plugin können die im Submodell Time Series Data enthaltenen Informationen direkt in der Benutzeroberfläche der AAS Web UI dargestellt werden.
 Die über das LinkedSegment referenzierten Zeitreihendaten lassen sich dort in verschiedenen Diagrammen visualisieren, beispielsweise als Linien- oder Balkendiagramm.
 Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne dass diese physisch in der \acs{aas} gespeichert werden müssen.
 
@@ -425,7 +465,7 @@ Diese enthält jedoch noch keine spezifischen Identifikatoren, wie beispielsweis
 Um diese hinzuzufügen, können während der Skriptausführung zufällige UUIDv4-Werte generiert und an den entsprechenden Stellen in die Vorlage eingefügt werden.
 
 Im Anschluss daran gilt es, die \acs{aas} in einer Industrie-4.0-Anwendung bereitzustellen. 
-Hierfür kann erneut Eclipse BaSyx genutzt werden, wobei die AAS sowie das zugehörige Submodell, analog zur in Kapitel~\ref{sec:bereitstellungAAS} beschriebenen Methode der manuellen Registrierung, über die REST-API bereitgestellt werden können.
+Hierfür kann erneut Eclipse BaSyx genutzt werden, wobei die AAS sowie das zugehörige Submodell, analog zur Möglichkeit~c) (REST-API) aus Kapitel~\ref{sec:bereitstellungAAS}, eingebunden werden kann.
 
 % \subsubsection{Potenziale des KI-Einsatzes}
 

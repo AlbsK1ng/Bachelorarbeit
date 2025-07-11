@@ -7,5 +7,8 @@
 \contentsline {figure}{\numberline {6}{\ignorespaces \acs {aas}-Konzept der robocell}}{24}{figure.caption.38}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Identifikatoren im Package Explorer}}{25}{figure.caption.39}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Semantische Referenz im Package Explorer}}{26}{figure.caption.40}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Metadaten-Konfiguration im Submodell Time Series Data}}{32}{figure.caption.42}%
-\contentsline {figure}{\numberline {10}{\ignorespaces LinkedSegment-Konfiguration im Submodell Time Series Data}}{33}{figure.caption.43}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Verbindung zum AasxServerBlazor im Package Explorer}}{28}{figure.caption.42}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Submodell Prozessdaten}}{30}{figure.caption.43}%
+\contentsline {figure}{\numberline {11}{\ignorespaces OPC UA Datenknoten}}{31}{figure.caption.44}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Metadaten im Submodell Time Series Data}}{33}{figure.caption.45}%
+\contentsline {figure}{\numberline {13}{\ignorespaces LinkedSegment im Submodell Time Series Data}}{34}{figure.caption.46}%
