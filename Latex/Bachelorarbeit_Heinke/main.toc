@@ -25,15 +25,15 @@
 \contentsline {subsection}{\numberline {3.1}Konzeptionierung des digitalen Zwilling}{21}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Identifikation relevanter Datenquellen}{21}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Auswahl geeigneter Teilmodelle}{22}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Modellierung mit der AAS}{24}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Umsetzung mit dem Package Explorer}{24}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Validierung}{26}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}Technische Integration}{27}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Bereitstellung der \acs {aas}}{27}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.2}Modellierung mit der AAS}{25}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Umsetzung mit dem Package Explorer}{25}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Validierung}{27}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Technische Integration}{28}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Bereitstellung der \acs {aas}}{28}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Integration von Echtzeitdaten über OPC UA}{30}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Verarbeitung von Zeitreihendaten}{32}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}Anwendungsfall Digitaler Produktpass}{34}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Umsetzung mit dem Teilmodell Carbon Footprint}{34}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.3.3}Verarbeitung von Zeitreihendaten}{33}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Anwendungsfall Digitaler Produktpass}{35}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Umsetzung mit dem Teilmodell Carbon Footprint}{35}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Zugriffsrechte und Datensicherheit}{36}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}Anwendungsfall automatisierte Generierung von AAS}{37}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Erstellen von Submodel Templates}{37}{subsubsection.3.5.1}%
@@ -63,5 +63,5 @@
 \contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{40}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{40}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{40}{subsection.5.3}%
-\contentsline {section}{Glossar und Abkürzungsverzeichnis}{41}{section*.50}%
+\contentsline {section}{Glossar und Abkürzungsverzeichnis}{41}{section*.49}%
 \contentsline {section}{\numberline {A}Anhang 1}{47}{appendix.A}%

@@ -10,7 +10,7 @@ Dazu zählt unter anderem der digitale Produktpass, die automatisierte Generieru
 
 \subsection{Konzeptionierung des digitalen Zwilling}
 Ziel dieses Abschnittes ist es, eine grundlegende Basis für die Erstellung des digitalen Zwillings zu schaffen.
-Dabei wird untersucht, welche Daten für die Modellierung erforderlich sind, wo diese herkommen und wie sie in (standardisierten) Teilmodellen der \acs{aas} strukturiert werden können.
+Dabei wird untersucht, welche Daten für die Modellierung erforderlich sind, wo diese herkommen und wie sie in (standardisierten) Submodellen der \acs{aas} strukturiert werden können.
 \subsubsection{Identifikation relevanter Datenquellen}
 Ein digitaler Zwilling basiert immmer auf einer Vielzahl unterschiedlicher Daten, die gemeinsam ein umfassendes digitales Abbild eines Assets ermöglichen. 
 Dabei werden sowohl statische Informationen (z.B. Datenblätter oder Konstruktionsdaten) als auch dynamische Daten, die während des Betriebs einer Maschine anfallen, benötigt.
@@ -41,7 +41,7 @@ Daneben wurden aber auch projektspezifische Anforderungen berücksichtigt, die s
 
 Tabelle \ref{tab:Submodelle} liefert einen Überblick über die initiale Auswahl dieser Submodelle.
 In der Spalte Standardisierung ist jeweils das zugehörige Submodel Template durch die zugehörige Dokumentennumer der \acs{idta} angegeben, in der die entsprechende Version dokumentiert ist.
-Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, welche Informationen mit den Submodellen im digitalen Zwilling abgebildet werden sollen.
+Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, welche Informationen im weiteren Verlauf im digitalen Zwilling abgebildet werden sollen.
 
 \input{TabelleSubmodelle.tex}
 
@@ -65,6 +65,7 @@ Die \acs{aas} der robocell bildet dabei das zentrale digitale Abbild, in das die
     \label{fig:konzeptionierungAAS}
 \end{figure}
 
+\newpage
 \subsection{Modellierung mit der AAS}
 
 In diesem Abschnitt wird erläutert, wie die zuvor ausgewählten Submodelle in eine \acs{aas} integriert und mit konkreten Daten befüllt werden können.  
@@ -147,36 +148,29 @@ Treten bei der Validierung formale oder semantische Fehler auf, beispielsweise d
 Diese Hinweise geben Aufschluss darüber, an welcher Stelle die Struktur bzw. der Inhalt der AASX-Datei fehlerhaft ist, und ermöglichen so eine gezielte Korrektur der betroffenen Elemente. 
 Werden im gesamten Prüfprozess hingegen keine Fehler oder Abweichungen festgestellt, bestätigt die Test Engine die erfolgreiche Validierung.
 
+\newpage
 \subsection{Technische Integration}
-Im Anschluss an die Konzeption und Modellierung des digitalen Zwillings liegt der Fokus dieses Kapitels auf der technischen Integration der zuvor erstellten \acs{aas} in eine Industrie 4.0-kompatible Umgebung. 
-Mithilfe der Eclipse BaSyx-Plattform wird gezeigt, wie die statisch modellierte Typ-1-\acs{aas} in eine Typ-2-\acs{aas} überführt und systemseitig bereitgestellt werden kann. 
-Darüber hinaus wird die Erweiterung um dynamische Informationen anhand der Anbindung von Echtzeit- und Zeitreihendaten über standardisierte Schnittstellen erläutert.
+Im Anschluss an die Konzeption und Modellierung des digitalen Zwillings liegt der Fokus dieses Kapitels auf der technischen Integration der zuvor erstellten \acs{aas} in eine Industrie-4.0-kompatible Umgebung.
+Dabei wird unter anderem gezeigt, wie die statisch modellierte Typ-1-\acs{aas} mithilfe des AASX Server Blazor beziehungsweise vorzugsweise der Eclipse BaSyx-Plattform in eine Typ-2-\acs{aas} überführt und systemseitig bereitgestellt werden kann.
+Ergänzend dazu wird beschrieben, wie die \acs{aas} um dynamische Inhalte erweitert werden kann.
+Dies umfasst die Integration von Echtzeitdaten über OPC UA sowie die Einbindung und Visualisierung externer Zeitreihendaten mithilfe von InfluxDB und Telegraf.
 
 \subsubsection{Bereitstellung der \acs{aas}}
 \label{sec:bereitstellungAAS}
-Für die Bereitstellung als Typ-2-\acs{aas} stehen mehrere Open-Source-Lösungen zur Verfügung. 
-Eine Lösung, die sich besonders gut für den Einstieg eignet, ist der AasxServerBlazor \cite{AASXServer}, der das serverseitige Gegenstück zum Package Explorer bildet. 
+Für die Bereitstellung als Typ-2-\acs{aas} stehen verschiedene Open-Source-Lösungen zur Verfügung. 
+Eine besonders einsteigerfreundliche Option stellt der AASX Server Blazor \cite{AASXServer} dar.
+Er bildet das serverseitige Gegenstück zum Package Explorer und verfügt ebenfalls über eine grafische Benutzeroberfläche zur Visualisierung von \acs{aas}-Paketen.
+Über eine HTTP-Schnittstelle können die beiden Anwendungen miteinander verbunden werden.
+Dadurch lassen sich AASX-Dateien ohne zusätzlichen Konfigurationsaufwand direkt aus dem Package Explorer heraus auf den Server übertragen und bereitstellen.
+Ebenso können auf dem Server gespeicherte \acs{aas} über den Explorer eingesehen und bearbeitet werden.
+Die enge Verzahnung beider Komponenten ermöglicht somit eine unkomplizierte Bereitstellung und Verwaltung von \acs{aas}-Paketen und eignet sich besonders für erste Testszenarien oder prototypische Anwendungen.
 
-Im Package Explorer besteht hierfür die Möglichkeit, eine direkte Verbindung zum AasxServerBlazor herzustellen (siehe Abbildung \ref{fig:AasxServerBlazor}). 
-Dies erfolgt über eine HTTP-Verbindung.
-Dadurch können AASX-Dateien unmittelbar aus dem Package Explorer heraus auf den Server hochgeladen und bereitgestellt werden. 
-Umgekehrt lassen sich auch die auf dem Server vorhandenen \acs{aas} im Package Explorer anzeigen und bearbeiten.
-Die Kombination der beiden Anwendungen ermöglicht so eine einfache Visualisierung sowie Verwaltung von \acs{aas}-Paketen und ist vorallem für erste Tests hilfreich.
-
-\begin{figure}[htbp]
-    \centering
-    % 0.88
-    \includegraphics{Bilder/AASXServer/AASXServer.PNG}
-    \caption{Verbindung zum AasxServerBlazor im Package Explorer}
-    \label{fig:AasxServerBlazor}
-\end{figure}
-
-
-Für komplexerer Anwendungsfälle erweist sich der AasxServerBlazor jedoch als nicht optimal, insbesondere im Hinblick auf die Integration von Echtzeitdaten sowie die dynamische Erweibarkeit von Submodellen.
+Für komplexere Anwendungsszenarien, insbesondere solche mit Anforderungen an Echtzeitfähigkeit sowie an flexible und erweiterbare Submodelle, stößt der AASX Server Blazor jedoch an seine funktionalen und architektonischen Grenzen. 
+So fehlen beispielsweise Schnittstellen zur Anbindung dynamischer Datenquellen sowie Möglichkeiten zur Skalierung und zur verteilten Systemintegration.
 Aus diesem Grund wird im weiteren Verlauf dieses Projekts die Eclipse BaSyx-Plattform eingesetzt.
-Durch ihre modulare Architektur und die klare Trennung verschiedener Komponenten wie den Registries oder den Repositories bietet sie eine deutlich flexiblere Grundlage für die Umsetzung praxisnaher Industrie 4.0-Szenarien.
+Durch ihre modulare Architektur und die klare Trennung verschiedener Komponenten wie den Registries oder den Repositories bietet sie eine deutlich flexiblere Grundlage für die Umsetzung anspruchsvoller Industrie 4.0-Szenarien.
 
-Die einfachste Möglichkeit, die Eclipse-BaSyx-Plattform zu installieren, besteht in der Nutzung von Docker.
+Die einfachste Möglichkeit, BaSyx zu installieren, besteht in der Nutzung von Docker.
 Alle benötigten Komponenten stehen als vorgefertigte Images öffentlich über den Docker Hub zur Verfügung. 
 Alternativ kann der Quellcode von GitHub bezogen werden, um einzelne Komponenten individuell anzupassen oder zu erweitern.
 Die verschiedenen Services, darunter die \acs{aas} Environment, Registries für \acs{aas} und Submodelle, der Discovery Service, sowie die MongoDB als persistenter Speicher, können zentral in einer docker-compose.yml-Datei verwaltet werden.
@@ -185,7 +179,7 @@ Mit dem Befehl docker compose up lassen sich anschließend alle Komponenten geme
 
 Nach erfolgreichem Start der BaSyx-Umgebung stehen verschiedene Möglichkeiten zur Verfügung, um eine \acs{aas} bereitzustellen und in das System zu integrieren. 
 Welche Methode dabei zum Einsatz kommt, hängt stark von den jeweiligen Anforderungen und Rahmenbedingungen des Anwendungsszenarios ab.
-Nachfolgend werden drei ausgewählte Ansätze zur Bereitstellung einer \acs{aas} näher betrachtet.
+Nachfolgend werden drei ausgewählte Ansätze zur Bereitstellung näher betrachtet.
 
 
 \paragraph*{a) Volume}
@@ -247,7 +241,7 @@ Außerdem können Transformatoren angegeben werden, die beispielsweise Einheiten
 
 Als Datenquelle muss der \acs{opcua} Server des Datengenerators angegeben werden, dessen Konfiguration typischerweise in einer separaten JSON-Datei erfolgt.
 Darin sind sowohl die Verbindungsparameter des Servers (z.B. URL und Port) als auch die zu überwachenden Knoten anzugeben.
-Der \acs{opcua} Server stellt die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist (siehe Abbildung \ref{fig:OPCUADatenStruktur}).
+Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua} Server die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
 
 \begin{figure}[htbp]
     \centering
@@ -281,7 +275,7 @@ Mithilfe dieser Mechanismen können die vom \acs{opcua}-Server empfangenen Rohda
 Im Anschluss erfolgt die Konfiguration der Datensenke, also der Zielkomponente innerhalb der \acs{aas}.
 Auch diese Konfiguration erfolgt über eine separate JSON-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version definiert werden.
 Listing~\ref{lst:jsonDatensenke} zeigt ein Beispiel einer entsprechenden Konfiguration.
-Der Platzhalter \{smId\} steht dabei für die Base64-kodierte ID des Submodells, wie sie in der REST-API der \acs{aas} verwendet wird.
+Der Platzhalter \{smId\} steht dabei für die Base64-kodierte ID des Submodells Prozessdaten, wie sie in der REST-API der \acs{aas} verwendet wird.
 \begin{lstlisting}[language=json, caption={Beispielhafte JSON-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
 {
     "uniqueId"        : "Submodel/ProcessData/Pressure",
@@ -344,6 +338,7 @@ Zur Visualisierung der Zeitreihendaten bietet das BaSyx-System eine praktische L
 Die über das LinkedSegment referenzierten Zeitreihendaten lassen sich dort in verschiedenen Diagrammen visualisieren, beispielsweise als Linien- oder Balkendiagramm.
 Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne dass diese physisch in der \acs{aas} gespeichert werden müssen.
 
+\newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
 Im Kontext steigender Anforderungen an Nachhaltigkeit und Transparenz enlang des gesamten Produktlebenszyklus eines Assets gewinnt der \acs{dpp} zunehmend an Bedeutung.
 Im Folgenden wird daher gezeigt, wie dieser mithilfe der \acs{aas} umgesetzt werden kann. 
