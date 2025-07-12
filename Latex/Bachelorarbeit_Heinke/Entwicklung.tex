@@ -370,6 +370,15 @@ Zusätzlich steht ein Plugin zur Verfügung, das die Visualisierung der \acs{pcf
 Die dynamische Aggregation des \acs{pcf} der Gesamtmaschine erfolgt über eine externe Node.js-API, die über eine im Vue.js-basierten Plugin integrierte Schaltfläche ausgelöst wird. 
 Alternativ wäre auch eine direkte Berechnung im Plugin oder über einen Microservice denkbar. 
 In der vorliegenden Umsetzung liegt die gesamte Aggregationslogik jedoch serverseitig in der API.
+Zur Veranschaulichung ist der Ablauf der Aggregation in Abbildung \ref{fig:SequenzdiagrammPCF}  als Sequenzdiagramm dargestellt.
+
+\begin{figure}[htbp]
+    \centering
+        \includegraphics[width=1\textwidth]{Bilder/DPP/Sequenzdiagramm.pdf}
+    
+    \caption{Sequenzdiagramm zur Aggregation des PCF}
+    \label{fig:SequenzdiagrammPCF}
+\end{figure}
 
 Die API nutzt dabei die REST-Schnittstelle des Submodel Repositories der AAS Environment, um zunächst alle in der \acs{aas} der robocell hinterlegten Komponenten auszulesen. 
 Diese sind jeweils über ihre globalAssetId eindeutig referenziert. 
@@ -387,6 +396,8 @@ Perspektivisch lässt sich die Berechnung zudem um weitere Lebenszyklusphasen wi
 \subsubsection{Zugriffsrechte und Datensicherheit}
 Das vlt zu komplex \dots
 Einfach weglassen ? 
+
+
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 Ziel dieses Anwendungsfalles ist es, den Prozess der automatisierten Generierung und Bereitstellung einer \acs{aas} darzustellen.
@@ -444,7 +455,7 @@ In diesem Projekt wird dazu die serverseitige JavaScript-Laufzeitumgebung Node.j
 Als Basis werden drei zentrale Komponenten benötigt:
 
 \begin{enumerate}[noitemsep, leftmargin=*, label=\textbf{\arabic*.}]
-    \item \textbf{Datenquelle:} Beispieldaten technische Produktinformationen
+    \item \textbf{Datenquelle:} Technische Produktinformationen
     \item \textbf{Submodell-Vorlage:} Struktur und Semantik des Submodells
     \item \textbf{AAS-Vorlage:} Aufbau und Struktur der \acs{aas}-Instanz
 \end{enumerate}
