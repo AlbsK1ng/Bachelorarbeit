@@ -9,16 +9,17 @@
     rowhead = 1,
     vlines,
     hline{1-11} = {-}{},
-    row{1} = {bg=tableHeader}
+    row{1} = {bg=tableHeader},
+    row{5,6,9} = {bg=teal!10}, 
     }
     \textbf{Submodell}                                   & \textbf{Vorgesehene Inhalte}                            & \textbf{Standardisierung} & \textbf{Datenquelle}\\
-    Typenschild                                          & \makecell[l]{Hersteller, \\ Seriennummer, \\ Adressinformationen}                  & IDTA 02006-3-0 \cite{SpezifikationTypenschild} & Agile \\
-    Dokumentation                                     & \makecell[l]{Allgemeine Dokumente, \\ Betriebsanleitungen, \\ Projektzeichnungen}             & IDTA 02004-1-2 \cite{SpezifikationDokumentation} & Agile \\
     3D-Modelle                                           & Konstruktionsmodelle                & IDTA 02026-1-0 \cite{Spezifikation3DModelle} & Agile \\*
-    Technische Daten                                     & \makecell[l]{Allgemeine Informationen, \\ Technische Eigenschaften }                       & IDTA 02003 \cite{SpezifikaitonTechnischeDaten}& \makecell[c]{Betriebs- \\ anleitung} \\*
     \acs{bom}                                     &  \makecell[l]{Strukturierte Stücklisten, \\ Komponentenbeziehungen }                    & IDTA 02011-1-1 \cite{SpezifikationHierachischeStrukturen} & Agile \\*
-    Wartung                                              &  \makecell[l]{Wartungsinformationen, \\ Wartungsintervalle }          & -  & \makecell[c]{Betriebs- \\ anleitung}\\*
-    Prozessdaten                                         &  \makecell[l]{Messwerte}             & -  & Datengenerator\\*
+    Dokumentation                                     & \makecell[l]{Allgemeine Dokumente, \\ Betriebsanleitungen, \\ Projektzeichnungen}             & IDTA 02004-1-2 \cite{SpezifikationDokumentation} & Agile \\
     \makecell[l]{Kontroll- \\ komponente }                                   &  \makecell[l]{Betriebsmodi, \\ Schnittstelle zur \\ Automatisierung }             & - & \makecell[c]{Maschinen- \\ simulator}\\      
+    Prozessdaten                                         &  \makecell[l]{Messwerte}             & -  & Datengenerator\\*
+    Technische Daten                                     & \makecell[l]{Allgemeine Informationen, \\ Technische Eigenschaften }                       & IDTA 02003 \cite{SpezifikaitonTechnischeDaten}& \makecell[c]{Betriebs- \\ anleitung} \\*
+    Typenschild                                          & \makecell[l]{Hersteller, \\ Seriennummer, \\ Adressinformationen}                  & IDTA 02006-3-0 \cite{SpezifikationTypenschild} & Agile \\
+    Wartung                                              &  \makecell[l]{Wartungsinformationen, \\ Wartungsintervalle }          & -  & \makecell[c]{Betriebs- \\ anleitung}\\*
 \end{longtblr}
 }
