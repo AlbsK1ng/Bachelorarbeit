@@ -628,11 +628,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
-INPUT ./Bilder/Konzeptionierung/konzeptionierungNeu.pdf
-INPUT ./Bilder/Konzeptionierung/konzeptionierungNeu.pdf
-INPUT ./Bilder/Konzeptionierung/konzeptionierungNeu.pdf
-INPUT ./Bilder/Konzeptionierung/konzeptionierungNeu.pdf
-INPUT ./Bilder/Konzeptionierung/konzeptionierungNeu.pdf
 INPUT ./Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG
 INPUT ./Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG
 INPUT ./Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG
@@ -946,11 +941,6 @@ INPUT ./Bilder/ModellierungAAS/Icons/SMC.PNG
 INPUT ./Bilder/ModellierungAAS/Icons/SMC.PNG
 INPUT ./Bilder/ModellierungAAS/Icons/SMC.PNG
 INPUT ./Bilder/ModellierungAAS/Icons/SMC.PNG
-INPUT ./Bilder/ModellierungAAS/V1/ConceptDescription.png
-INPUT ./Bilder/ModellierungAAS/V1/ConceptDescription.png
-INPUT ./Bilder/ModellierungAAS/V1/ConceptDescription.png
-INPUT ./Bilder/ModellierungAAS/V1/ConceptDescription.png
-INPUT ./Bilder/ModellierungAAS/V1/ConceptDescription.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm
 INPUT ./TabelleBereitstellungBaSyxMitAPI.tex
 INPUT ./TabelleBereitstellungBaSyxMitAPI.tex

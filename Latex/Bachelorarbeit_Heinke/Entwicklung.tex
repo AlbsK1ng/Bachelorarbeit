@@ -39,31 +39,38 @@ Diese Anwendungsfälle zeigen auf, welche Submodelle in der Praxis besonders rel
 Eines der wichtigsten ist vermutlich das digitale Typenschild, da dieses häufig die erste Anlaufstelle für die Identifikation und grundlegende Informationen eines Assets darstellt.
 Daneben wurden aber auch projektspezifische Anforderungen berücksichtigt, die sich aus den verfügbaren Daten sowie dem fachlichen Austausch mit Industriepartnern wie Wittenstein ergaben.
 
-Tabelle \ref{tab:Submodelle} liefert einen Überblick über die initiale Auswahl dieser Submodelle.
+Tabelle \ref{tab:Submodelle} liefert einen Überblick über die initiale Auswahl dieser Submodelle sowie den zugehörigen Datenquellen.
+Diese werden in späteren Anwendungsfällen gezielt erweitert.
 In der Spalte Standardisierung ist jeweils das zugehörige Submodel Template durch die zugehörige Dokumentennumer der \acs{idta} angegeben, in der die entsprechende Version dokumentiert ist.
 Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, welche Informationen im weiteren Verlauf im digitalen Zwilling abgebildet werden sollen.
 
 \input{TabelleSubmodelle.tex}
 
-Die in der Tabelle dargestellten Submodelle werden in späteren Anwendungsfällen gezielt erweitert.
-Ein wesentlicher Vorteil der \acs{aas} besteht nämlich in ihrer Flexibilität.
-Submodelle können sukszessive ergänzt, angepasst oder auch wieder entfernt werden, ohne dabei die bestehende Struktur des digitalen Zwillings zu verändern.
+Im Rahmen dieser Arbeit ist die Modellierung der \acs{aas} bzw. der verschiedenen Submodelle als Instanz vorgesehen.
+Auch wenn es sich bei der robocell grundsätzlich um ein generisches Modul innerhalb einer Maschinenfamilie handelt und somit technisch gesehen als Typ klassifiziert werden könnte, steht in diesem Projekt die exemplarische Umsetzung eines konkreten digitalen Zwillings im Vordergrund.
+Dies begründet sich vor allem durch die Anbindung von Echtzeit- und Zeitreihendaten sowie die Abbildung einer Betriebsumgebung, was dem digitalen Zwilling einen klaren Instanzcharakter verleiht.
+Außerdem unterstützt dies die spätere Demonstration der konkreten \acs{aas} im Industrie 4.0-Systemkontext.
+% Im Rahmen dieser Arbeit ist die Modellierung der AAS als Instanz vorgesehen.
+% Auch wenn es sich bei der robocell grundsätzlich um ein generisches Modul einer Maschinenfamil technisch um einen Typ handelt und keine
+% In diesem Projekt exemplarische Umsertzung eines konkreten digitalen Zwillings im Vordergrund da echtzeitdaten un dzeitreihendaten angebunden werden und eine betriebsumgebung abgtebildet wird instanzcharackter.
+% Unterstützt zudem die Demonstration der aasa im Systemkontext.
 
-Ein besonders wichtiges Submodell stellt die Stückliste (\acs{bom}) dar.
-Mit diesem lässt sich die hierarchische Struktur eines Assets abbilden, das aus mehreren verschachtelten Komponenten besteht.
-Für komplexe Maschinen oder Anlagen, wie im Fall der robocell, wird im Rahmen dieser Konzeption vorgesehen, einzelne ausgewählte Komponenten jeweils als eigene \acs{aas}-Instanzen zu modellieren und in der übergeordneten Haupt-\acs{aas} zu referenzieren.
-Diese werden im weiteren Verlauf als Komponenten-\acs{aas} bezeichnet.
-Auf diese Weise soll eine höhere Modularität und Wiederverwendbarkeit erreicht werden.
 
-Zur Verdeutlichung der zugrunde liegenden Architektur sowie der Beziehungen zwischen den identifizierten Datenquellen, \acs{aas} und Submodellen dient Abbildung~\ref{fig:konzeptionierungAAS}. 
-Die \acs{aas} der robocell bildet dabei das zentrale digitale Abbild, in das die relevanten Informationen aus den in diesem Kapitel beschriebenen Submodellen integriert werden sollen.
+% Ein besonders wichtiges Submodell stellt die Stückliste (\acs{bom}) dar.
+% Mit diesem lässt sich die hierarchische Struktur eines Assets abbilden, das aus mehreren verschachtelten Komponenten besteht.
+% Für komplexe Maschinen oder Anlagen, wie im Fall der robocell, wird im Rahmen dieser Konzeption vorgesehen, einzelne ausgewählte Komponenten jeweils als eigene \acs{aas}-Instanzen zu modellieren und in der übergeordneten Haupt-\acs{aas} zu referenzieren.
+% Diese werden im weiteren Verlauf als Komponenten-\acs{aas} bezeichnet.
+% Auf diese Weise soll eine höhere Modularität und Wiederverwendbarkeit erreicht werden.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=1\textwidth]{Bilder/Konzeptionierung/konzeptionierungNeu.pdf}
-    \caption{\acs{aas}-Konzept der robocell}
-    \label{fig:konzeptionierungAAS}
-\end{figure}
+% Zur Verdeutlichung der zugrunde liegenden Architektur sowie der Beziehungen zwischen den identifizierten Datenquellen, \acs{aas} und Submodellen dient Abbildung~\ref{fig:konzeptionierungAAS}. 
+% Die \acs{aas} der robocell bildet dabei das zentrale digitale Abbild, in das die relevanten Informationen aus den in diesem Kapitel beschriebenen Submodellen integriert werden sollen.
+
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics[width=1\textwidth]{Bilder/Konzeptionierung/konzeptionierungNeu.pdf}
+%     \caption{\acs{aas}-Konzept der robocell}
+%     \label{fig:konzeptionierungAAS}
+% \end{figure}
 
 % \medskip
 % \noindent
@@ -101,79 +108,75 @@ Die \acs{aas} der robocell bildet dabei das zentrale digitale Abbild, in das die
 \newpage
 \subsection{Modellierung mit der AAS}
 In diesem Abschnitt wird beschrieben, wie die zuvor ausgewählten Submodelle in eine \acs{aas} integriert und mit konkreten Daten sowie semantischen Informationen angereichert werden können.
+Dabei wird erläutert, wie eine \acs{aas} von Grund auf modelliert, schrittweise mit Inhalten gefüllt und abschließend gespeichert bzw. exportiert werden kann.  
 Die Umsetzung erfolgt mithilfe des Package Explorers, der eine intuitive Modellierung aller relevanten Elemente der \acs{aas} ermöglicht und so den strukturierten Aufbau eines digitalen Zwillings unterstützt.
 Außerdem wird gezeigt, wie sich die erstellte \acs{aas} mit einer Test Engine auf eine korrekte und vollständige Struktur überprüfen lässt.
 
 \subsubsection{Umsetzung mit dem Package Explorer}
-Im Folgenden wird erläutert, wie eine \acs{aas} von Grund auf modelliert, schrittweise mit Inhalten gefüllt und abschließend in Form einer AASX-Datei gespeichert bzw. exportiert werden kann.  
 
-\medskip
-\noindent
-\textbf{Erstellung einer neuen AAS}\\
-Im ersten Schritt muss ein neues \acs{aas}-Paket erstellt werden.  
-Hierzu kann im Package Explorer eine neue Umgebung geöffnet werden, die als Container für die Inhalte eines Assets dient.  
-Darin lässt sich anschließend eine neue \acs{aas} anlegen, die allgemeine Informationen sowie assetspezifische Daten beinhaltet.  
-Abbildung~\ref{fig:NeuesAASPaket} zeigt den initialen Aufbau, der im weiteren Verlauf sukzessive um Submodelle und deren Inhalte erweitert wird.
-Dateien, wie ein Titelbild für die robocell, sind dabei ein wichtiger Bestandteil und können direkt in die \acs{aas}-Umgebung eingebettet werden.
+Die Modellierung beginnt mit dem Erstellen eines neuen \acs{aas}-Pakets im Package Explorer.
+Dieses dient als Container für die digitalen Inhalte eines Assets.  
+In der geöffneten Umgebung lässt sich eine neue \acs{aas} anlegen, die sowohl allgemeine als auch assetspezifische Daten enthält. 
+
+Abbildung~\ref{fig:NeuesAASPaket} zeigt den initialen Aufbau im Package Explorer, der im weiteren Verlauf sukzessive um Submodelle und deren Inhalte erweitert wird.
+Dateien, wie ein Titelbild für die robocell können dabei bereits zu Beginn in die \acs{aas}-Umgebung eingebettet werden und sind ein wichtiger Bestandteil des digitalen Zwillings.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics{Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG}
-    \caption{Identifikatoren im Package Explorer}
+    \caption{AAS-Paket im Package Explorer}
     \label{fig:NeuesAASPaket}
 \end{figure}
 
-Anschließend müssen die Metadaten für die \acs{aas} sowie das zugehörige Asset eingetragen werden.
+Anschließend müssen die Metadaten der \acs{aas} sowie des zugehörigen Asset spezifiziert werden.
 Neben der Auswahl des Asset-Typs (Instanz oder Typ) ist insbesondere die eindeutige Identifikation von zentraler Bedeutung.
-Das Asset selbst wird über eine globalAssetId referenziert, während die \acs{aas} eine eigene ID sowie eine idShort erhält.
-Für erste Modellierungszwecke empfiehlt es sich, Beispiel-IDs zu verwenden, die direkt im Package Explorer generiert werden können.
-Diese erleichtern nicht nur den späteren Austausch der \acs{aas}, sondern auch deren systemweites Auffinden innerhalb eines Industrie-4.0-Ökosystems und sind daher unerlässlich.
+Das Asset selbst wird über eine globalAssetId referenziert, während die \acs{aas} eine eigene ID und eine idShort erhält.
+Für erste Modellierungszwecke empfiehlt es sich, auf automatisch generierte Beispiel-IDs zurückzugreifen, die direkt im Package Explorer erzeugt werden können.
+Diese vereinfachen nicht nur den späteren Austausch der \acs{aas}, sondern ermöglichen auch deren systemweites Auffinden innerhalb eines Industrie-4.0-Ökosystems.
 
-\medskip
-\noindent
-\textbf{Submodelle}\\
-Im nächsten Schritt der Modellierung müssen die benötigten Submodelle zur \acs{aas} hinzugefügt werden. 
-Auch diese lassen sich entweder als Instanz oder Typ anlegen.
-Während Instanzen konkrete Ausprägungen eines Submodells darstellen und mit spezifischen Werten befüllt werden, dienen Typen als wiederverwendbare Vorlagen für gleichartige Strukturen. 
-Der Package Explorer unterstützt beide Varianten, was eine flexible Modellierung je nach Anwendungsfall erlaubt.
+Im nächsten Schritt müssen die benötigten Submodelle zur \acs{aas} hinzugefügt werden.
+Jedem Submodell muss dabei eine eindeutige ID erhalten.
+Zusätzlich können optionale Administrationsinformationen angegeben werden, wie beispielsweise die Versionsnummer oder der Name des Autors.
+Submodelle lassen sich dabei ebenfallls entweder als Instanz oder als Typ anlegen, was eine flexible Modellierung je nach Anwendungsfall ermöglicht.
 
 Bei der manuellen Erstellung eines Submodells ist dieses zunächst leer.
 Es kann anschließend durch das gezielte Hinzufügen verschiedener Submodellelemente strukturiert werden.
-Tabelle~\ref{tab:Submodellelemente} gibt einen Überblick über die wichtigsten Submodellelemente, die im Package Explorer zur Verfügung stehen
+Tabelle~\ref{tab:Submodellelemente} gibt einen Überblick über die wichtigsten Submodellelemente, die im Package Explorer zur Verfügung stehen.
 
 \input{TabelleSubmodellElemente}
 
-Alternativ können standardisierte Submodel Templates verwendet werden, wie sie beispielsweise über das Repository der \acs{idta} \cite{idtaTemplates} als AASX-Dateien bereitgestellt werden.
-Diese lassen sich über ein sogenanntes Auxiliary AAS in die Modellierungsumgebung importieren und dort weiterverwenden.
-Diese Templates beeinhalten bereits eine vordefinierte Struktur mit typischen Submodellelementen, wodurch der Modellierungsaufwand erheblich reduziert wird.
+Im Gegensatz zu Submodellen erhalten einzelne Submodellelemente keine eigene ID.
+Stattdessen werden sie über ihre idShort identifiziert, die innerhalb des jeweiligen Submodells eindeutig sein muss.
+Eine Ausnahme bildet die Verwendung von SubmodelElementLists.
+Innerhalb solcher Listen sollen die direkt untergeordneten Elemente keine eigene idShort besitzen, sondern ausschließlich über ihren Index identifiziert werden.
 
-Nach dem Hinzufügen der gewünschten Submodellen können die enthaltenen Submodellelemente mit konkreten Inhalten wie Werten, Dateien, Referenzen oder Beziehungen befüllt werden.
-Besonders bei der Verwendung von Templates sollte darauf geachtet werden, dass die Struktur dieser nicht verändert wird, da dies sonst zu Abweichungen von der Submodellspezifikation führen kann.
+Ein weiterer wichtiger Punkt sind Referenzen im Package Explorer.
+Vlt bekomme ich auch nochmal Entitäten rein
 
-Zur Abbildung hierarchischer Strukturen, insbesondere im Submodell \acs{bom}, werden sogenannte Entities verwendet. 
-Eine Entitie repräsentiert dabei ein untergeordnetes Asset innerhalb der Gesamtstruktur. 
-Grundsätzlich lassen sich zwei Typen unterscheiden. 
-CoManagedEntities besitzen keine eigene \acs{aas} und werden innerhalb der AAS der übergeordneten Hauptkomponente mitverwaltet. 
-SelfManagedEntities hingegen, wie sie im Rahmen der Konzeption dieser Arbeit vorgesehen sind, verfügen über eine eigene \acs{aas} und können somit unabhängig verwaltet und referenziert werden. 
-Die Identifikation erfolgt über die jeweils zugewiesene globalAssetId.
+Alternativ zur manuellen Modellierung können auch die im Rahmen der Konzeption ausgewählten Submodel Templates verwendet werden, wie sie in Tabelle~\ref{tab:Submodelle} aufgeführt sind. 
+Diese Templates werden beispielsweise über das Repository der \acs{idta} \cite{idtaTemplates} als AASX-Dateien bereitgestellt und lassen sich über ein sogenanntes Auxiliary \acs{aas} in die Modellierungsumgebung importieren und dort weiterverwenden. 
+Sie beinhalten bereits eine vordefinierte Struktur mit typischen Submodellelementen, wodurch der Modellierungsaufwand erheblich reduziert und gleichzeitig eine standardisierte Umsetzung sichergestellt wird. 
+Darüber hinaus besteht die Möglichkeit, auf Basis dieser Vorlagen unternehmensspezifische Templates abzuleiten, um projektspezifische Anforderungen gezielt abzubilden. 
+Ein entsprechender Ansatz zum Umgang mit Submodel Templates wird im weiteren Verlauf dieser Arbeit in Kapitel~\ref{chap:ErstellenvonSubmodelTemplates} näher betrachtet.
 
-\medskip
-\noindent
-\textbf{Semantik}\\
+Nach dem Hinzufügen bzw. Erstellen aller gewünschten Submodelle können die enthaltenen Submodellelemente mit konkreten Inhalten wie Werten, Dateien, Referenzen oder Beziehungen befüllt werden.
+Dies beschränkt sich jedoch auf statische Submodelle wie das Typenschild, technische Daten oder Dokumentationen.
+Dynamische Inhalte, wie beispielsweise die Betriebsmodi im Submodell Kontrollkomponente, werden nicht im Package Explorer modelliert, sondern zu einem späteren Zeitpunkt zur Laufzeit über externe Datenquellen, in diesem Fall durch den Maschinensimulator, angebunden.
 
 Für die semantische Beschreibung von Submodellen und Submodellelementen innerhalb der AAS ist die Vergabe von semanticId-Referenzen essenziell.
 Jede semanticId verweist auf eine zugehörige \acs{cd}, die die Bedeutung des referenzierten Elements eindeutig und maschinenlesbar beschreibt.
 Im Package Explorer lassen sich solche Concept Descriptions manuell anlegen und verwalten.
 Dabei steht eine vordefinierte Eingabemaske zur Verfügung, die sich an dem in Part 3a: Data Specification - IEC 61360 \cite{SpezifikationPart3a} defionierten Data Specification Template orientiert.
-Wie in Abbildung \ref{fig:DataSpecificationConten} dargestellt, umfasst diese Vorlage strukturierte Felder wie Definition, Datentyp, Einheit oder Symbol.
+% Wie in Abbildung \ref{fig:DataSpecificationConten} dargestellt, umfasst diese Vorlage strukturierte Felder wie Definition, Datentyp, Einheit oder Symbol.
+Diese Vorlage umfasst Felder wie Definitionen, Datentyp, Einheit oder Symbol.
 Dadurch wird eine konsistente und semantisch eindeutige Beschreibung einzelner Elemente im Submodell ermöglicht.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics{Bilder/ModellierungAAS/V1/ConceptDescription.png}
-    \caption{Package Explorer: Data Specification Template}
-    \label{fig:DataSpecificationConten}
-\end{figure}
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics{Bilder/ModellierungAAS/V1/ConceptDescription.png}
+%     \caption{Package Explorer: Data Specification Template}
+%     \label{fig:DataSpecificationConten}
+% \end{figure}
 
 Alternativ können auch externe Standards referenziert werden. 
 Der Package Explorer unterstützt diesen Ansatz durch eine erweiterte Funktionalität, mit der sich vorgefertigte ECLASS-Kataloge direkt in das Tool importieren lassen. 
@@ -181,14 +184,24 @@ Nach dem Import können die enthaltenen Objekte durchsucht, ausgewählt und den 
 Die semantische Verknüpfung erfolgt dabei über eine \acs{irdi}, die das jeweilige Konzept eindeutig identifiziert. 
 Die Nutzung etablierter externer Standards ist grundsätzlich zu bevorzugen, da sie nicht nur den Modellierungsaufwand erheblich reduziert, sondern auch die Interoperabilität zwischen verschiedenen Systemen und Anwendungen deutlich verbessert.
 
-\medskip
-\noindent
-\textbf{Export}\\
-Sobald alle gewünschten Submodelle mit Inhalten gefüllt und semantisch beschrieben sind, muss die \acs{aas} gespeichert und exportiert werden.
-In diesem Projekt erfolgt dies bevorzugt im AASX-Format, das sich als standardisierte Austauschform für die \acs{aas} etabliert hat und eine einfache Weitergabe ermöglicht.
-\medskip
+Nach Abschluss der Modellierung lässt sich die erstellte \acs{aas} in verschiedenen Formaten exportieren.
+Das bevorzugte Format in diesem Projekt ist das AASX-Format, das sich als standardisierte Austauschform für die \acs{aas} etabliert hat.
+Es enthält alle modellierten Inhalte, einschließlich eingebetteter Dateien wie Bilder oder Dokumente, und eignet sich daher besonders für die Weitergabe einer Typ-1-\acs{aas}.
+Alternativ kann die \acs{aas} auch als JSON- oder XML-Datei gespeichert werden.
+Diese Formate beeinhalten allerdings ausschließlich die strukturierte Beschreibung der \acs{aas}, eignen sich jedoch besonders für die Nutzung in APIs oder zur Anbindung an bestehende Softwaresysteme.
+Zusätzlich unterstützt der Package Explorer auch den gezielten Export einzelner Submodelle oder Concept Descriptions.
+Diese lassen sich seperat, etwa als JSON-Datei abspeichern und können so gezielt in anderen AAS-Projekten wiederverwendet werden.
+
+\subsubsection{Abbildung hierarchischer Strukturen und Beziehungen}
+Zur Abbildung hierarchischer Strukturen, insbesondere im Submodell \acs{bom}, werden sogenannte Entities verwendet. 
+Eine Entitie repräsentiert dabei ein untergeordnetes Asset innerhalb der Gesamtstruktur. 
+Grundsätzlich lassen sich zwei Typen unterscheiden. 
+CoManagedEntities besitzen keine eigene \acs{aas} und werden innerhalb der AAS der übergeordneten Hauptkomponente mitverwaltet. 
+SelfManagedEntities hingegen, wie sie im Rahmen der Konzeption dieser Arbeit vorgesehen sind, verfügen über eine eigene \acs{aas} und können somit unabhängig verwaltet und referenziert werden. 
+Die Identifikation erfolgt über die jeweils zugewiesene globalAssetId.
+
 \subsubsection{Validierung}
-Im Anschluss an die Erstellung der \acs{aas} sollte eine Überprüfung der Konformität erfolgen.
+Im Anschluss an die Modellierung der \acs{aas} sollte eine Überprüfung der Konformität erfolgen.
 Hierzu kann eine von der \acs{idta} bereitgestellte Test Engine \cite{TestEngine} eingesetzt werden. 
 Diese lässt sich direkt mit pip, dem Paktemanager von Python, installieren und anschließend über die Kommandozeile nutzen.
 Mit dem Befehl \verb|aas_test_engines check_files robocell.aasx| kann beispielsweise die Validierung der zuvor erstellten AASX-Datei der robocell gestartet werden.
@@ -458,6 +471,7 @@ Dazu wird zunächst ein Submodel Template im Package Explorer erstellt und ansch
 Dieses wird anschließend automatisiert mit Daten befüllt, in eine \acs{aas}-Instanz eingebettet und schließlich in ein Industrie 4.0-System eingebunden.
 
 \subsubsection{Erstellen von Submodel Templates}
+\label{chap:ErstellenvonSubmodelTemplates}
 Das Erstellen von Submodel Templates spielt eine zentrale Rolle für den effizienten Einsatz der \acs{aas} in Industrie 4.0-Anwendungen. 
 Ein einmal definiertes Template kann für beliebig viele Instanzen eines digitalen Zwillings wiederverwendet werden. 
 Dadurch wird nicht nur die Konsistenz der Datenstruktur sichergestellt, sondern auch der Entwicklungsaufwand erheblich reduziert.

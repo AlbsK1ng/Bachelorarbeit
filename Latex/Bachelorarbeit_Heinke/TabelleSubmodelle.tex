@@ -5,21 +5,20 @@
     entry = Initiale Auswahl der Submodelle der \acs{aas},
     caption = {Initiale Auswahl der Submodelle der \acs{aas}}
   ]{
-    colspec = {l l X[c]},
+    colspec = {l l c X[c]},
     rowhead = 1,
     vlines,
     hline{1-11} = {-}{},
     row{1} = {bg=tableHeader}
     }
-    \textbf{Submodell}                                   & \textbf{Vorgesehene Inhalte}                            & \textbf{Standardisierung} \\
-    Typenschild                                          & \makecell[l]{Hersteller \\ Seriennummer \\ Adressinformationen}                  & IDTA 02006-3-0 \cite{SpezifikationTypenschild} \\
-    Dokumentation                                     & \makecell[l]{Allgemeine Dokumente \\ Betriebsanleitungen \\ Projektzeichnungen}             & IDTA 02004-1-2 \cite{SpezifikationDokumentation} \\
-    3D-Modelle                                           & Konstruktionsmodelle                & IDTA 02026-1-0 \cite{Spezifikation3DModelle}\\*
-    Technische Daten                                     & \makecell[l]{Allgemeine Informationen \\ Technische Eigenschaften }                       & IDTA 02003 \cite{SpezifikaitonTechnischeDaten}\\*
-    \acs{bom}                                     &  \makecell[l]{Strukturierte Stücklisten \\ Komponentenbeziehungen }                    & IDTA 02011-1-1 \cite{SpezifikationHierachischeStrukturen}\\*
-    Wartung                                              &  \makecell[l]{Wartungsinformationen \\ Wartungsintervalle \\ }          & -  \\*
-    Prozessdaten                                         &  \makecell[l]{Messwerte}             & - \\*
-    Zeitreihendaten                                       &  \makecell[l]{Zeitreihen }             & IDTA 02008-1-1 \cite{SpezifikationTimeSeriesData}    \\*
-    Kontrollkomponente                                   &  \makecell[l]{Betriebsmodi \\ Schnittstelle zur Automatisierung }             & - \\      
+    \textbf{Submodell}                                   & \textbf{Vorgesehene Inhalte}                            & \textbf{Standardisierung} & \textbf{Datenquelle}\\
+    Typenschild                                          & \makecell[l]{Hersteller, \\ Seriennummer, \\ Adressinformationen}                  & IDTA 02006-3-0 \cite{SpezifikationTypenschild} & Agile \\
+    Dokumentation                                     & \makecell[l]{Allgemeine Dokumente, \\ Betriebsanleitungen, \\ Projektzeichnungen}             & IDTA 02004-1-2 \cite{SpezifikationDokumentation} & Agile \\
+    3D-Modelle                                           & Konstruktionsmodelle                & IDTA 02026-1-0 \cite{Spezifikation3DModelle} & Agile \\*
+    Technische Daten                                     & \makecell[l]{Allgemeine Informationen, \\ Technische Eigenschaften }                       & IDTA 02003 \cite{SpezifikaitonTechnischeDaten}& \makecell[c]{Betriebs- \\ anleitung} \\*
+    \acs{bom}                                     &  \makecell[l]{Strukturierte Stücklisten, \\ Komponentenbeziehungen }                    & IDTA 02011-1-1 \cite{SpezifikationHierachischeStrukturen} & Agile \\*
+    Wartung                                              &  \makecell[l]{Wartungsinformationen, \\ Wartungsintervalle }          & -  & \makecell[c]{Betriebs- \\ anleitung}\\*
+    Prozessdaten                                         &  \makecell[l]{Messwerte}             & -  & Datengenerator\\*
+    \makecell[l]{Kontroll- \\ komponente }                                   &  \makecell[l]{Betriebsmodi, \\ Schnittstelle zur \\ Automatisierung }             & - & \makecell[c]{Maschinen- \\ simulator}\\      
 \end{longtblr}
 }
