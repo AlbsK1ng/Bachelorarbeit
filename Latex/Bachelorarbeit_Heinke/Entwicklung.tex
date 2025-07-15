@@ -1,11 +1,13 @@
 \newpage
 \section{Entwicklung}
-In diesem Kapitel wird die schrittweise Entwicklung des digitalen Zwillings der robocell beschrieben.
-Zunäscht werden alle relevanten Datenquellen identifiziert und geeignete Submodelle der \acs{aas} ausgewählt.
-Darauf aufbauend folgt die Modellierung dieser mithilfe des Package Explorers sowie die Validierung mit einer Test Engine.
-Im Anschluss wird gezeigt, wie die \acs{aas} mithilfe von Eclipse BaSyx bereitgestelllt und verwaltet werden kann.
+In diesem Kapitel wird die schrittweise Entwicklung des digitalen Zwillings beschrieben.
+Das zugrundeliegende Asset ist das Abfüll- und Verschließmodul der robocell-Linie.
+Dabei wird zunächst eine konzeptionelle Basis erarbeitet, die als Ausgangspunkt für die anschließende Implementierung des digitalen Zwilings dient.
+Darauf aufbauend folgt die statische Modellierung mithilfe der \acs{aas} und des Package Explorers sowie die Validierung mit einer Test Engine.
+Außerdem wird gezeigt, wie die \acs{aas} mit der Eclipse BaSyx-Plattform bereitgestelllt und um dynamische Informationen ergänzt werden kann.
 Dabei werden sowohl Echtzeidaten über \acs{opcua} als auch Zeitreihendaten über eine InfluxDB eingebunden.
-Darüber hinaus wird auf die Entwicklung von drei exemplarischen Anwendungsfällen eingegangen.
+
+Abschließend wird auf die Entwicklung von drei exemplarischen Anwendungsfällen eingegangen.
 Dazu zählt unter anderem der digitale Produktpass, die automatisierte Generierung der \acs{aas} sowie der Einsatz von \acs{ki}.
 
 \subsection{Konzeptionierung des digitalen Zwilling}
@@ -48,8 +50,8 @@ Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, 
 \input{TabelleSubmodelle.tex}
 
 Im Rahmen dieser Arbeit ist die Modellierung der \acs{aas} bzw. der verschiedenen Submodelle als Instanz vorgesehen.
-Auch wenn es sich bei der robocell grundsätzlich um ein generisches Modul innerhalb einer Maschinenfamilie handelt und somit technisch gesehen als Typ klassifiziert werden könnte, steht in diesem Projekt die exemplarische Umsetzung eines konkreten digitalen Zwillings im Vordergrund.
-Dies begründet sich vor allem durch die Anbindung von Echtzeit- und Zeitreihendaten sowie die Abbildung einer Betriebsumgebung, was dem digitalen Zwilling einen klaren Instanzcharakter verleiht.
+Auch wenn es sich bei dem Abfüll -und Verschließmodul grundsätzlich um ein generisches Modul innerhalb der robocell-Linie handelt und somit technisch gesehen als Typ klassifiziert werden könnte, steht in diesem Projekt die exemplarische Umsetzung eines konkreten digitalen Zwillings im Vordergrund.
+Dies begründet sich vor allem durch die vorgesehene Anbindung von Echtzeit- und Zeitreihendaten sowie die Abbildung einer Betriebsumgebung, was dem digitalen Zwilling einen klaren Instanzcharakter verleiht.
 Außerdem unterstützt dies die spätere Demonstration der konkreten \acs{aas} im Industrie 4.0-Systemkontext.
 % Im Rahmen dieser Arbeit ist die Modellierung der AAS als Instanz vorgesehen.
 % Auch wenn es sich bei der robocell grundsätzlich um ein generisches Modul einer Maschinenfamil technisch um einen Typ handelt und keine
@@ -443,7 +445,7 @@ Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in
 Zur strukturierten Erfassung dieser Werte kann das von der \acs{idta} spezifizierte Submodel Template Carbon Footprint \cite{SpezifikaitonPCF} eingesetzt werden.
 
 Im Rahmen dieses Anwendungsfalls werden die Phasen Produktion, Material sowie die Gesamtbetrachtung (Cradle to Gate) berücksichtigt. 
-Für jede Phase wird gemäß der Submodellspezifikation eine SubmodelElementCollection angelegt, die zentrale Informationen wie den CO\textsubscript{2}-Wert, die Berechnungsmethode sowie den Gültigkeitszeitraum enthält. 
+Für jede Phase wird gemäß der Submodellspezifikation eine \acs{smc} angelegt, die zentrale Informationen wie den CO\textsubscript{2}-Wert, die Berechnungsmethode sowie den Gültigkeitszeitraum enthält. 
 Diese Sammlungen dienen als Grundlage für die spätere Aggregation der \acs{pcf}-Werte der Gesamtmaschine und werden im weiteren Verlauf dynamisch mit Werten befüllt.
 
 Zur Ermittlung dieser Werte wird das Submodell um eine Komponentenliste erweitert, die auf die in der robocell verbauten Steuerungskomponenten verweist. 

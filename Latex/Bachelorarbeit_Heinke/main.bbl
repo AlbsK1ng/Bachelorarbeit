@@ -1284,6 +1284,33 @@
     \field{urlyear}{2025}
   \endentry
 
+  \entry{SpezifikationTimeSeriesData}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=AIDT}{%
+         family={Association},
+         familyi={A\bibinitperiod},
+         given={Industrial Digital\bibnamedelima Twin},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AIDT1}
+    \strng{fullhash}{AIDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{IDTA 02008-1-1 - Time Series Data}
+    \verb{url}
+    \verb https://github.com/admin-shell-io/submodel-templates/blob/main/publis
+    \verb hed/Time%20Series%20Data/1/1/IDTA%2002008-1-1_Submodel_TimeSeriesData
+    \verb .pdf
+    \endverb
+    \field{version}{1.1}
+    \field{month}{03}
+    \field{year}{2023}
+    \field{urlday}{01}
+    \field{urlmonth}{07}
+    \field{urlyear}{2025}
+  \endentry
+
   \entry{eclass_irdi}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=E}{%
@@ -1350,33 +1377,6 @@
     \field{year}{2024}
     \field{urlday}{30}
     \field{urlmonth}{06}
-    \field{urlyear}{2025}
-  \endentry
-
-  \entry{SpezifikationTimeSeriesData}{misc}{}{}
-    \name{author}{1}{}{%
-      {{hash=AIDT}{%
-         family={Association},
-         familyi={A\bibinitperiod},
-         given={Industrial Digital\bibnamedelima Twin},
-         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{AIDT1}
-    \strng{fullhash}{AIDT1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{IDTA 02008-1-1 - Time Series Data}
-    \verb{url}
-    \verb https://github.com/admin-shell-io/submodel-templates/blob/main/publis
-    \verb hed/Time%20Series%20Data/1/1/IDTA%2002008-1-1_Submodel_TimeSeriesData
-    \verb .pdf
-    \endverb
-    \field{version}{1.1}
-    \field{month}{03}
-    \field{year}{2023}
-    \field{urlday}{01}
-    \field{urlmonth}{07}
     \field{urlyear}{2025}
   \endentry
 

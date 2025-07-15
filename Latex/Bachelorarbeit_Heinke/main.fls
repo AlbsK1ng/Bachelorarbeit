@@ -624,6 +624,11 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
+INPUT ./Bilder/BaSyx/Grundlagen.png
+INPUT ./Bilder/BaSyx/Grundlagen.png
+INPUT ./Bilder/BaSyx/Grundlagen.png
+INPUT ./Bilder/BaSyx/Grundlagen.png
+INPUT ./Bilder/BaSyx/Grundlagen.png
 INPUT ./Entwicklung.tex
 INPUT ./Entwicklung.tex
 INPUT Entwicklung.tex
