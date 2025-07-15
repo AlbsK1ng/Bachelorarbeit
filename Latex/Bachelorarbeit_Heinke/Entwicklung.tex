@@ -128,7 +128,7 @@ Dateien, wie ein Titelbild für die robocell können dabei bereits zu Beginn in 
     \label{fig:NeuesAASPaket}
 \end{figure}
 
-Anschließend müssen die Metadaten der \acs{aas} sowie des zugehörigen Asset spezifiziert werden.
+Zunächst müssen die Metadaten der \acs{aas} sowie des zugehörigen Asset spezifiziert werden.
 Neben der Auswahl des Asset-Typs ist insbesondere die eindeutige Identifikation von zentraler Bedeutung.
 Das Asset selbst wird über eine globalAssetId referenziert, während die \acs{aas} eine eigene ID und eine idShort erhält.
 Diese vereinfachen nicht nur den späteren Austausch der \acs{aas}, sondern ermöglichen auch deren systemweites Auffinden innerhalb eines Industrie-4.0-Ökosystems.
@@ -151,10 +151,10 @@ SubmodelElements hingegen sind komplexere Strukturen die wiederum als Container 
 
 Submodellelemente erhalten im Gegensatz zu Submodellen keine eigene ID, sondern werden über ihre idShort eindeutig referenziert.
 Diese muss innerhalb eines Submodells einzigartig sein.
-Eine Ausnahme bilden SubmodelElementLists, in denen die enthaltenen Elemente nicht über eine idShort, sondern nur über ihre Position (Index) identifiziert werden.
+Eine Ausnahme bilden \acsp{sml}, in denen die enthaltenen Elemente nicht über eine idShort, sondern nur über ihre Position (Index) identifiziert werden.
 
-Ein weiterer wichtiger Punkt sind Referenzen im Package Explorer.
-Vlt bekomme ich auch nochmal Entitäten rein
+% Ein weiterer wichtiger Punkt sind Referenzen im Package Explorer.
+% Vlt bekomme ich auch nochmal Entitäten rein
 
 
 Alternativ zur manuellen Modellierung können die im Rahmen der Konzeption ausgewählten Submodel Templates verwendet werden, wie sie in Tabelle~\ref{tab:Submodelle} aufgeführt sind.
@@ -165,7 +165,16 @@ Auch unternehmensspezifische Ableitungen lassen sich darauf aufbauend erstellen.
 Ein vertiefter Ansatz zur Template-Nutzung findet sich in Kapitel~\ref{chap:ErstellenvonSubmodelTemplates}.
 
 Nach dem Strukturaufbau können konkrete Inhalte wie Werte, Dokumente oder Referenzen eingepflegt werden.
-Dies beschränkt sich jedoch auf statische Submodelle wie Typenschild, Technische Daten oder Dokumentation.
+Dies beschränkt sich jedoch auf statische Submodelle wie Technische Daten oder Dokumentation.
+Abbildung \ref{fig:SubmodellTypenschild} veranschaulicht den strukturellen Aufbau solcher Submodelle anhand eines Ausschnitts des Submodells Typenschild.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{Bilder/ModellierungAAS/Final/Submodell.PNG}
+    \caption{Package Explorer: Ausschnitt Submodell Typenschild}
+    \label{fig:SubmodellTypenschild}
+\end{figure}
+
 Dynamische Inhalte, etwa Betriebsdaten werden nicht direkt im Package Explorer gepflegt, sondern über externe Datenquellen (z.B. Maschinensimulator oder Datengenerator) angebunden.
 
 \subsubsection*{Semantische Beschreibung mit Concept Descriptions}
@@ -175,7 +184,7 @@ Jede semanticId verweist auf eine zugehörige \acs{cd}, die die Bedeutung des re
 Im Package Explorer lassen sich solche Concept Descriptions manuell anlegen und verwalten.
 Dabei steht eine vordefinierte Eingabemaske zur Verfügung, die sich an dem in Part 3a: Data Specification - IEC 61360 \cite{SpezifikationPart3a} vordefinierten Datenmodell für semantische Beschreibungen orientiert.
 Wie in Abbildung \ref{fig:DataSpecificationConten} dargestellt, umfasst diese Vorlage strukturierte Felder wie Definition, Datentyp, Einheit oder Symbol.
-Dadurch wird eine konsistente und semantisch eindeutige Beschreibung einzelner Elemente im Submodell ermöglicht.
+Dadurch wird eine konsistente und semantisch eindeutige Beschreibung einzelner Submodelle bzw. Submodellelemente ermöglicht.
 
 \begin{figure}[htbp]
     \centering
@@ -325,7 +334,7 @@ Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua
 \begin{figure}[htbp]
     \centering
     % 0.88
-    \includegraphics{Bilder/OPCUA/OPCUADaten.pdf}
+    \includegraphics[width=1\textwidth]{Bilder/OPCUA/OPCUADaten.pdf}
     \caption{OPC UA Datenknoten}
     \label{fig:OPCUADatenStruktur}
 \end{figure}
