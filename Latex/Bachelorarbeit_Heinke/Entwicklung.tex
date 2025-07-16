@@ -489,64 +489,33 @@ Einfach weglassen ?
 
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
-Ziel dieses Anwendungsfalls ist es, den Prozess der automatisierten Generierung und Bereitstellung einer \acs{aas} exemplarisch darzustellen.
-Hierzu wird zunächst im Package Explorer ein Submodel Template erstellt, das anschließend in ein Typ-Submodell überführt wird. 
-Dieses dient als Grundlage für die automatisierte Erzeugung eines Instanz-Submodells, das mit konkreten Daten befüllt, in eine \acs{aas}-Instanz eingebettet und schließlich in ein Industrie-4.0-System integriert wird.
+Ziel dieses Anwendungsfalls ist es, den Prozess der automatisierten Generierung und Bereitstellung einer \acs{aas} exemplarisch darzustellen. 
+Im ersten Schritt wird gezeigt, wie ein unternehmensspezifisches Submodel Template erstellt und anschließend in ein Typ-Submodell überführt werden kann.
+Dieses bildet die Grundlage für die automatisierte Erzeugung eines Instanz-Submodells, das mit konkreten Daten befüllt, in eine \acs{aas}-Instanz eingebettet und schließlich in das BaSyx-System integriert wird.
 
 \subsubsection{Arbeiten mit Submodel Templates}
 \label{chap:ErstellenvonSubmodelTemplates}
-Das Erstellen von Submodel Templates spielt eine zentrale Rolle für den effizienten Einsatz digitaler Zwillinge in Industrie 4.0-Anwendungen. 
-Ein einmal definiertes Template kann für beliebig viele \acs{aas}-Instanzen wiederverwendet werden. 
-Dadurch wird nicht nur die Konsistenz der Datenstruktur sichergestellt, sondern auch der Entwicklungsaufwand erheblich reduziert.
+Die Verwendung von Submodel Templates spielt eine zentrale Rolle für den effizienten Einsatz digitaler Zwillinge in Industrie-4.0-Anwendungen. 
+Ein einmal definiertes Template kann zur Erstellung eines Typ-Submodells genutzt werden, das wiederum als Vorlage für beliebig viele \acs{aas}-Instanzen dient. 
+Auf diese Weise wird nicht nur die Konsistenz der Datenstruktur sichergestellt, sondern auch der Aufwand für die Modellierung signifikant reduziert.
 
-Ein solches Template kann entweder vollständig neu modelliert oder von bestehenden Submodel Templates abgeleitet werden, wie es im Folgenden exemplarisch anhand des Submodells Technische Daten \cite{SpezifikaitonTechnischeDaten} gezeigt wird.
-Dieses stellt eine standardisierte Struktur zur Beschreibung technischer Merkmale eines Produkts bereit.
-Dabei handelt es sich um ein generisches Template, das lediglich grundlegende Strukturkategorien vorgibt.
-Es enthält beispielsweise \acsp{smc} wie Generelle Informationen, Technische Informationen oder Produktklassifikation, die allerdings noch nicht mit konkreten Eigenschaften gefüllt sind.
+Ausgangspunkt für die Erstellung eines Typ-Submodells ist in der Regel ein generisches Submodel Template. 
+Im folgenden Beispiel wird das Template Technische Daten \cite{SpezifikaitonTechnischeDaten} verwendet, das eine übergeordnete Struktur zur Beschreibung technischer Merkmale eines Produkts bereitstellt. 
+Es enthält grundlegende Kategorien wie Generelle Informationen, Technische Informationen oder Produktklassifikation. 
+Diese dienen als Rahmen, sind jedoch noch nicht mit konkreten inhaltlichen Ausprägungen versehen.
 
-Auf Unternehmensebene kann dieses Template für eine bestimmte Produktgruppe durch zusätzliche Merkmale individualisiert werden. 
-Für die praktische Umsetzung kann der Package Explorer verwendet werden, über den das Template importiert und angepasst werden kann. 
-So lassen sich beispielsweise produktspezifische Anforderungen wie Umgebungsbedingungen oder elektrische Daten ergänzen. 
-Das resultierende unternehmensspezifische Template erhält eine eigene semanticId, bleibt jedoch zusätzlich mit der ursprünglichen semanticId des Templaets verknüpft, um die Rückverfolgbarkeit zu diesem sicherzustellen.
+Auf Unternehmensebene kann dieses Template produktspezifisch angepasst werden, beispielsweise für einen bestimmten Maschinentyp wie die robocell. 
+In der Praxis wäre auch eine branchenspezifische Ableitung denkbar, diese wird hier jedoch nicht weiter betrachtet. 
+Für die technische Umsetzung kann der Package Explorer genutzt werden, über den das Template importiert und erweitert werden kann. 
+So lassen sich beispielsweise produktspezifische Anforderungen wie Umgebungsbedingungen oder elektrische Daten ergänzen.
+Das resultierende unternehmensspezifische Template erhält eine eigene semanticId, bleibt jedoch zusätzlich mit der ursprünglichen semanticId des generischen Templates verknüpft, um die semantische Rückverfolgbarkeit zur standardisierten Struktur sicherzustellen.
 
 Aus dem angepassten Template kann anschließend ein Typ-Submodell erstellt werden, das bereits allgemeingültige Merkmale einer Produktgruppe enthält. 
 Dieses dient als Vorlage für die spätere Erstellung konkreter AAS-Instanzen, die mit produktspezifischen Werten vervollständigt werden. 
-Auch hier wird die Verbindung zur ursprünglichen bzw. unternehmensspezifschen Tmeplate-Struktur über die entsprechenden semtaicId-Verknüpfungen beibehalten.
+Auch hier sollte die Verbindung zur ursprünglichen bzw. unternehmensspezifischen Template-Struktur über entsprechende semanticId-Verknüpfungen beibehalten werden.
 
+--------------------------
 
-%
-Im Rahmen der Entwicklung digitaler Zwillinge spielt die strukturierte Ableitung von Typ-Submodellen eine zentrale Rolle. Ziel ist es, aus einem generischen Submodel Template schrittweise eine unternehmensspezifische, wiederverwendbare Struktur zu entwickeln, die als Grundlage für die automatisierte Erstellung konkreter \acs{aas}-Instanzen dient.
-
-Der Prozess beginnt mit einem generischen Template, das in der Regel durch ein Standardisierungsgremium oder eine übergeordnete Spezifikation, wie etwa die Verwaltungsschalen-Spezifikation \cite{SpezifikaitonTechnischeDaten}, bereitgestellt wird.
-Dieses Template definiert die grundlegende Struktur eines Submodells, etwa durch standardisierte Submodel Element Collections (SMCs) wie „Generelle Informationen“, „Technische Merkmale“ oder „Produktklassifikation“. 
-Zu diesem Zeitpunkt handelt es sich um eine generische Vorlage ohne branchenspezifische Inhalte.
-
-In einem zweiten Schritt erfolgt die branchenspezifische Verfeinerung dieses Templates, typischerweise durch einen Arbeitskreis, Industrieverband oder ein Konsortium. 
-Ziel dieser Ebene ist es, die generische Struktur um fachspezifische Inhalte zu erweitern – etwa besondere Sicherheitsanforderungen oder Schnittstellenspezifikationen für bestimmte Maschinenarten wie Werkzeugmaschinen, Verpackungsanlagen oder Antriebssysteme. Das so entstehende branchenspezifische Template bildet eine verbindliche Struktur für eine bestimmte Domäne und ist weiterhin über seine \texttt{semanticId} mit dem ursprünglichen generischen Template verknüpft.
-
-Darauf aufbauend kann ein Unternehmen dieses branchenspezifische Template übernehmen und weiter individualisieren. Dabei werden z.\,B. interne Anforderungen ergänzt, produkt- oder standortspezifische Eigenschaften definiert oder eigene Klassifikationssysteme integriert. Dieses unternehmensspezifische Template erhält ebenfalls eine eigene \texttt{semanticId}, bleibt jedoch über die semantische Referenzierung mit den vorhergehenden Template-Stufen verbunden. Dadurch bleibt die Rückverfolgbarkeit zur branchenspezifischen und generischen Vorlage gewahrt, während gleichzeitig eine hohe Flexibilität für unternehmensinterne Anforderungen besteht.
-
-Aus dem angepassten Template wird im letzten Schritt ein Typ-Submodell abgeleitet. Dieses enthält alle für eine bestimmte Produktgruppe relevanten Strukturinformationen, jedoch noch keine konkreten Werte. Es stellt eine instanziierbare Vorlage dar, die bei der Erzeugung konkreter AAS-Instanzen verwendet wird. Die eigentliche Instanziierung erfolgt durch eine automatisierte Befüllung mit produktspezifischen Daten, wie sie im nachfolgenden Kapitel beschrieben wird.
-%
-
-% Das Erstellen von Submodel Templates spielt eine wichtige Roll für den späteren Einsatz\dots
-% Einmal ein Submodel template erstelllen, später für alle Insatnzen wiederverwendet werden
-% Dies spart enorm an Zeit bei der Entwicklung 
-
-% Eine Möglichkeit zur Erstellung der Templates mit dem Package Explorer
-% Hierfür kann er als Expertentool eingesetzt werden
-% Dort kann das strukturiert aufgebaut werden
-% Das ist dann ein Template und kann anschließend mit Daten gefüllt werden.
-
-
-% Beispiel technische Daten mit Abbildung
-
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=1\textwidth]{Bilder/UML/tehcnicalDataForRobocell.pdf}
-%     \caption{!!!}
-%     \label{fig:!!!}
-% \end{figure}
 
 \subsubsection{Automatisiertes Befüllen mit strukturierten Daten}
 Nach der Erstellung eines Typ-Submodells stellt sich die Frage, wie dieses effizient mit konkreten Informationen befüllt und anschließend in eine vollständige \acs{aas}-Instanz eingebettet werden kann.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  16 JUL 2025 15:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  16 JUL 2025 17:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1904,7 +1904,7 @@ Package acronym Info: Label `acro:smc' overridden on input line 447.
 
 
 [38]
-<Bilder/DPP/Sequenzdiagramm.pdf, id=1292, 505.89pt x 406.3983pt>
+<Bilder/DPP/Sequenzdiagramm.pdf, id=1291, 505.89pt x 406.3983pt>
 File: Bilder/DPP/Sequenzdiagramm.pdf Graphic file (type pdf)
 <use Bilder/DPP/Sequenzdiagramm.pdf>
 Package pdftex.def Info: Bilder/DPP/Sequenzdiagramm.pdf  used on input line 466.
@@ -1914,8 +1914,6 @@ Package pdftex.def Info: Bilder/DPP/Sequenzdiagramm.pdf  used on input line 466.
 [39 <./Bilder/DPP/Sequenzdiagramm.pdf>]
 
 [40]
-Package acronym Info: Label `acro:smc' overridden on input line 505.
-
 
 [41]
 
@@ -1970,7 +1968,7 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A1B73AEB730F39A92FCCB54EFE829F6B;13197.
+(rerunfilecheck)             Checksum: 742FA5708B40F857E0FA5E54EAF2C8E5;13197.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                main
@@ -1981,9 +1979,9 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51373 strings out of 473190
- 1021831 string characters out of 5715806
- 1953356 words of memory out of 5000000
+ 51372 strings out of 473190
+ 1021820 string characters out of 5715806
+ 1953370 words of memory out of 5000000
  73330 multiletter control sequences out of 15000+600000
  665768 words of font info for 217 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
@@ -1992,10 +1990,10 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{glo:SPS} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (61 pages, 4321612 bytes).
+Output written on main.pdf (61 pages, 4321919 bytes).
 PDF statistics:
- 1652 PDF objects out of 1728 (max. 8388607)
- 1398 compressed objects within 14 object streams
- 274 named destinations out of 1000 (max. 500000)
+ 1650 PDF objects out of 1728 (max. 8388607)
+ 1396 compressed objects within 14 object streams
+ 273 named destinations out of 1000 (max. 500000)
  58997 words of extra memory for PDF output out of 61914 (max. 10000000)
 
