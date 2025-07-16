@@ -271,8 +271,7 @@ Nach erfolgreichem Start der BaSyx-Umgebung stehen verschiedene Möglichkeiten z
 Welche Methode dabei zum Einsatz kommt, hängt stark von den jeweiligen Anforderungen und Rahmenbedingungen des Anwendungsszenarios ab.
 Nachfolgend werden drei ausgewählte Ansätze zur Bereitstellung näher betrachtet.
 
-
-\paragraph*{a) Volume}
+\noindent\textbf{A. Volume}\\
 Eine besonders einfache Variante besteht darin, eine AASX-Datei in ein gemountetes Volume der AAS Environment abzulegen.
 Ein Volume ist ein persistentes Speicherverzeichnis auf dem Host-System, das mit einem Verzeichnis innerhalb eines Docker-Containers verknüpft ist.
 Es ermöglicht die dauerhafte Speicherung von Daten, unabhängig vom Lebenszyklus des Containers.
@@ -282,12 +281,12 @@ Beim Neustart der AAS Environment wird die AASX-Datei automatisch erkannt, regis
 Die dabei erzeugten Daten, darunter Informationen zu \acs{aas}, Submodellen, Concept Descriptions sowie Registrierungsdaten, werden in verschiedenen Tabellen der angebunden MongoDB gespeichert.
 Dies gewährleistet, dass alle relevanten Daten persistent erhalten bleiben, selbst dann, wenn die ursprüngliche AASX-Datei später aus dem Volume entfernt wird.
 
-\paragraph*{b) AAS Web UI}
+\noindent\textbf{B. AAS Web UI}\\
 Alternativ kann die Bereitstellung auch direkt über die AAS Web UI erfolgen.
 Über die Benutzeroberfläche kann eine AASX-Datei manuell importiert werden, wodurch sie direkt im laufenden System registriert und eingebunden wird.
 Diese Methode eignet sich besonders gut für Tests oder kleinere Anpassungen, da eine \acs{aas} auf diese Weise schnell und ohne direkten Zugriff auf das zugrunde liegende Dateisystem eingebunden werden kann.
 
-\paragraph*{c) REST-API}
+\noindent\textbf{C. REST-API}\\
 Die flexibelste, jedoch auch technisch anspruchsvollste Methode zur Bereitstellung einer AAS ist die manuelle Registrierung über die REST-API. 
 Dabei kann nicht einfach eine AASX-Datei hochgeladen werden. 
 Stattdessen müssen die AAS, ihre Submodelle sowie deren Beziehungen explizit über die bereitgestellten Schnittstellen des BaSyx-Systems erstellt werden. 
@@ -490,31 +489,31 @@ Einfach weglassen ?
 
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
-Ziel dieses Anwendungsfalles ist es, den Prozess der automatisierten Generierung und Bereitstellung einer \acs{aas} darzustellen.
-Dazu wird zunächst ein Submodel Template im Package Explorer erstellt und anschließend in ein Typ-Submodell überführt.
-Dieses wird anschließend automatisiert mit Daten befüllt, in eine \acs{aas}-Instanz eingebettet und schließlich in ein Industrie 4.0-System eingebunden.
+Ziel dieses Anwendungsfalls ist es, den Prozess der automatisierten Generierung und Bereitstellung einer \acs{aas} exemplarisch darzustellen.
+Hierzu wird zunächst im Package Explorer ein Submodel Template erstellt, das anschließend in ein Typ-Submodell überführt wird. 
+Dieses dient als Grundlage für die automatisierte Erzeugung eines Instanz-Submodells, das mit konkreten Daten befüllt, in eine \acs{aas}-Instanz eingebettet und schließlich in ein Industrie-4.0-System integriert wird.
 
-\subsubsection{Erstellen von Submodel Templates}
+\subsubsection{Arbeiten mit Submodel Templates}
 \label{chap:ErstellenvonSubmodelTemplates}
-Das Erstellen von Submodel Templates spielt eine zentrale Rolle für den effizienten Einsatz der \acs{aas} in Industrie 4.0-Anwendungen. 
-Ein einmal definiertes Template kann für beliebig viele Instanzen eines digitalen Zwillings wiederverwendet werden. 
+Das Erstellen von Submodel Templates spielt eine zentrale Rolle für den effizienten Einsatz digitaler Zwillinge in Industrie 4.0-Anwendungen. 
+Ein einmal definiertes Template kann für beliebig viele \acs{aas}-Instanzen wiederverwendet werden. 
 Dadurch wird nicht nur die Konsistenz der Datenstruktur sichergestellt, sondern auch der Entwicklungsaufwand erheblich reduziert.
 
-Grundsätzlich gibt es mehrere Möglichkeiten ein solches Template zu erstellen.
-Es kann entweder vollständig neu modelliert oder von bestehenden Submodel Templates abgeleitet werden, wie es im Folgenden exemplarisch anhand des Submodells Technische Daten \cite{SpezifikaitonTechnischeDaten} gezeigt wird.
-Dieses Template stellt eine standardisierte Struktur zur Beschreibung technischer Merkmale eines Produkts bereit.
-
-Für die technische Umsetzung kann der Package Explorer eingesetzt werden.
-Hierfür muss zunächst das Submodel Template Technische Daten importiert werden.
+Ein solches Template kann entweder vollständig neu modelliert oder von bestehenden Submodel Templates abgeleitet werden, wie es im Folgenden exemplarisch anhand des Submodells Technische Daten \cite{SpezifikaitonTechnischeDaten} gezeigt wird.
+Dieses stellt eine standardisierte Struktur zur Beschreibung technischer Merkmale eines Produkts bereit.
 Dabei handelt es sich um ein generisches Template, das lediglich grundlegende Strukturkategorien vorgibt.
-Es enthält beispielsweise SubmodelElementCollections wie Generelle Informationen, Technische Informationen oder Produktklassifikation, die allerdings noch nicht mit konkreten Eigenschaften gefüllt sind.
+Es enthält beispielsweise \acsp{smc} wie Generelle Informationen, Technische Informationen oder Produktklassifikation, die allerdings noch nicht mit konkreten Eigenschaften gefüllt sind.
 
-Auf Unternehmensebene kann dieses Template für eine bestimmte Produktgruppe mit zusätzlichen Merkmalen individualisiert werden.
-So lassen sich beispielsweise spezifische Anforderungen bzw. produktspezifische Eigenschaften wie Umgebungsbedingungen oder elektrische Daten einer Maschine ergänzen.
+Auf Unternehmensebene kann dieses Template für eine bestimmte Produktgruppe durch zusätzliche Merkmale individualisiert werden. 
+Für die praktische Umsetzung kann der Package Explorer verwendet werden, über den das Template importiert und angepasst werden kann. 
+So lassen sich beispielsweise produktspezifische Anforderungen wie Umgebungsbedingungen oder elektrische Daten ergänzen. 
+Das resultierende unternehmensspezifische Template erhält eine eigene semanticId, bleibt jedoch zusätzlich mit der ursprünglichen semanticId des Templaets verknüpft, um die Rückverfolgbarkeit zu diesem sicherzustellen.
 
-Aus dem angepassten Template kann anschließend eine Typ-\acs{aas} erstellt werden, in die bereits konkrete allgemeingültige Merkmale einer Produktgruppe eingetragen werden.
-Diese dient als Vorlage für die spätere Instanziierung konkreter digitaler Zwillinge einzelner Produkte, bei denen dann auch die produktspezifischen Werte ergänzt werden.
-Zur Weiterverwendung kann das Submodell direkt im Package Explorer als JSON-Datei exportiert werden.
+Aus dem angepassten Template kann anschließend ein Typ-Submodell erstellt werden, das bereits allgemeingültige Merkmale einer Produktgruppe enthält. 
+Dieses dient als Vorlage für die spätere Erstellung konkreter AAS-Instanzen, die mit produktspezifischen Werten vervollständigt werden. 
+Auch hier wird die Verbindung zur ursprünglichen bzw. unternehmensspezifschen Tmeplate-Struktur über die entsprechenden semtaicId-Verknüpfungen beibehalten.
+
+
 % Das Erstellen von Submodel Templates spielt eine wichtige Roll für den späteren Einsatz\dots
 % Einmal ein Submodel template erstelllen, später für alle Insatnzen wiederverwendet werden
 % Dies spart enorm an Zeit bei der Entwicklung 
@@ -562,13 +561,13 @@ Diese enthält jedoch noch keine spezifischen Identifikatoren, wie beispielsweis
 Um diese hinzuzufügen, können während der Skriptausführung zufällige UUIDv4-Werte generiert und an den entsprechenden Stellen in die Vorlage eingefügt werden.
 
 Im Anschluss daran gilt es, die \acs{aas} in einer Industrie-4.0-Anwendung bereitzustellen. 
-Hierfür kann erneut Eclipse BaSyx genutzt werden, wobei die AAS sowie das zugehörige Submodell, analog zur Möglichkeit~c) (REST-API) aus Kapitel~\ref{sec:bereitstellungAAS}, eingebunden werden kann.
+Hierfür kann erneut Eclipse BaSyx genutzt werden, wobei die AAS sowie das zugehörige Submodell, analog zur Möglichkeit~C REST-API aus Kapitel~\ref{sec:bereitstellungAAS}, eingebunden werden können.
 
 % \subsubsection{Potenziale des KI-Einsatzes}
 
-\subsection{Anwendungsfall KI in der Industrie 4.0}
+\subsection{Titel Anwendungsfall KI}
 
-\subsubsection{Anomaliererkennung mit maschinellem Lernen}
+\subsubsection{Konzept eines KI-Modells zur Anomalieerkennung}
 Datenquelle
 Umsetzung mit pytorch
 Modelltraining mit Autoencoder
@@ -577,5 +576,11 @@ Modell sepcihern mit onnx
 
 Bild erst in Ergebnissse
 
-\subsubsection{Modellverwaltung mit der \acs{aas}}
+\subsubsection{Verwaltung der KI Metadaten in der \acs{aas}}
 
+\subsubsection*{A. Modellbeschreibung}
+ssadasd
+\subsubsection*{B. Datensatzbeschreibung}
+asdasd
+\subsubsection*{C. Modellbereitstellung}
+aSDASD

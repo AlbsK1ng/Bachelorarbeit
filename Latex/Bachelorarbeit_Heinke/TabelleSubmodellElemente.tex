@@ -4,25 +4,31 @@
     entry = Submodellelemente im Package Explorer,
     caption = {Submodellelemente im Package Explorer nach \cite{SpezifikationPart1}},
   ]{
-    colspec = {l l X{l}},
+    colspec = {l l X[l]},
+    cell{1}{1} = {c=2}{},
+    cell{2}{1} = {r=6}{c},
+    cell{2}{1} = {bg=babyblue},
+    cell{8}{1} = {r=6}{c},
+    cell{8}{1} = {bg=babyblue},
     rowhead = 1,
     vline{1,3,4,5} = {-}{},
     vline{2} = {-}{},
-    hline{1-16} = {-}{} ,
+    hline{1-2,8,14} = {-}{},
+    hline{3-8,9-13} = {2-3}{}, 
     row{1} = {bg=tableHeader},
     }
-    \textbf{\makecell[l]{Submodell-\\element}} & \textbf{Beschreibung} & \textbf{Typ}\\
-    Blob & Binärdatei                                                                  & DataElement \\
-    Capability & \makecell[l]{Fähigkeit eines Assets, etwas bewirken \\ zu können (ohne konkrete Umsetzung)}                                                            & \makecell[l]{Submodel-\\Element} \\
-    Entity & \makecell[l]{Einzelne Komponente (Asset) innerhalb \\ einer übergeordneten AAS  }                                                             & \makecell[l]{Submodel-\\Element} \\
-    \makecell[l]{File} & \makecell[l]{Verlinkte oder eingebettete Datei mit \\ eindeutigem MIME-Type}                                                                & DataElement \\
-    \makecell[l]{MultiLanguage-\\Property} & Property mit mehrsprachigen Inhalten                             & DataElement \\
-    Operation & \makecell[l]{Funktion mit Ein- und Ausgabeparametern, die \\ von einem System ausgeführt werden kann}                                                              & \makecell[l]{Submodel-\\Element} \\
-    Property & Einfaches Merkmal mit festem Datentyp                   & DataElement  \\
-    Range & Wertebereich mit Minimal- und Maximalwert                                                                  & DataElement\\
-    \makecell[l]{Reference-\\Element} & Verweis auf interne oder externe Elemente                                     & DataElement \\
-    \makecell[l]{Relationship-\\Element} & \makecell[l]{Beziehung zwischen zwei Elementen \\(sowohl intern als auch extern möglich)}                                  & \makecell[l]{Submodel-\\Element} \\
-    \makecell[l]{Submodel-\\ElementList (\acs{sml})} & \makecell[l]{Geordnete Liste verschiedener \\Submodellelemente}                                & \makecell[l]{Submodel-\\Element} \\
-    \makecell[l]{SubmodelElement-\\Collection (\acs{smc})} & Sammlung von Submodellelementen                          & \makecell[l]{Submodel-\\Element} \\
+    \textbf{\makecell[l]{Submodellelement}}& & \textbf{Beschreibung}\\
+    \begin{sideways}DataElement\end{sideways}   &Blob & Binärdatei                                                                   \\
+    &\makecell[l]{File} & \makecell[l]{Verlinkte oder eingebettete Datei mit \\ eindeutigem MIME-Type}                                                                 \\
+    &\makecell[l]{MultiLanguage-\\Property} & Property mit mehrsprachigen Inhalten                              \\
+    &Property & Einfaches Merkmal mit festem Datentyp                    \\
+    &Range & Wertebereich mit Minimal- und Maximalwert                                                                  \\
+    &\makecell[l]{Reference-\\Element} & Verweis auf interne oder externe Elemente                                     \\
+    \begin{sideways}SubmodelElement\end{sideways} &Capability & \makecell[l]{Fähigkeit eines Assets, etwas bewirken \\ zu können (ohne konkrete Umsetzung)}                                                            \\
+    &Entity & \makecell[l]{Einzelne Komponente (Asset) innerhalb \\ einer übergeordneten AAS  }                                                              \\
+    &Operation & \makecell[l]{Funktion mit Ein- und Ausgabeparametern, die \\ von einem System ausgeführt werden kann}                                                               \\
+    &\makecell[l]{Relationship-\\Element} & \makecell[l]{Beziehung zwischen zwei Elementen \\(sowohl intern als auch extern möglich)}                                   \\
+    &\makecell[l]{Submodel-\\ElementList (\acs{sml})} & \makecell[l]{Geordnete Liste verschiedener Submodellelemente}                                 \\
+    &\makecell[l]{SubmodelElement-\\Collection (\acs{smc})} & Sammlung von Submodellelementen                           \\
 \end{longtblr}
 }

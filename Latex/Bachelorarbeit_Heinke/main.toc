@@ -37,11 +37,11 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Umsetzung mit dem Teilmodell Carbon Footprint}{38}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Zugriffsrechte und Datensicherheit}{40}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}Anwendungsfall automatisierte Generierung von AAS}{41}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Erstellen von Submodel Templates}{41}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.1}Arbeiten mit Submodel Templates}{41}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\numberline {3.5.2}Automatisiertes Befüllen mit strukturierten Daten}{42}{subsubsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.6}Anwendungsfall KI in der Industrie 4.0}{43}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Anomaliererkennung mit maschinellem Lernen}{43}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Modellverwaltung mit der \acs {aas}}{44}{subsubsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6}Titel Anwendungsfall KI}{43}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Konzept eines KI-Modells zur Anomalieerkennung}{43}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Verwaltung der KI Metadaten in der \acs {aas}}{43}{subsubsection.3.6.2}%
 \contentsline {section}{\numberline {4}Ergebnisse}{44}{section.4}%
 \contentsline {subsection}{\numberline {4.1}AAS-Demonstrator für die robocell}{44}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Systemarchitektur}{44}{subsubsection.4.1.1}%
@@ -64,5 +64,5 @@
 \contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{44}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{44}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{44}{subsection.5.3}%
-\contentsline {section}{Glossar und Abkürzungsverzeichnis}{45}{section*.64}%
+\contentsline {section}{Glossar und Abkürzungsverzeichnis}{45}{section*.65}%
 \contentsline {section}{\numberline {A}Anhang 1}{51}{appendix.A}%
