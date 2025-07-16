@@ -111,6 +111,29 @@
 
 %----------Aufzählung-------------------
 \usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{amssymb}
+\definecolor{orangeHaken}{HTML}{c0ccff}
+\definecolor{greenHaken}{HTML}{49cc90}
+
+\newcommand{\recommended}{\textcolor{orangeHaken}{\ding{52}}} % orange Kreis
+\newcommand{\optional}{\textcolor{black}{\ding{118}}}
+\newcommand{\notused}{\textcolor{black}{\ding{55}}}     % X-Symbol
+\newcommand{\mandatory}{\textcolor{greenHaken}{\ding{51}}} % grüner Haken
+
+%%% legende %%%
+\tcbset{legendbox/.style={
+  colback=background,
+  colframe=white,
+  arc=2mm,
+  boxrule=0pt,
+  left=2mm,
+  right=2mm,
+  top=1mm,
+  bottom=1mm,
+  boxsep=4pt,
+  width=\textwidth
+}}
 %----------Aufzählung-------------------
 \usepackage[a4paper, asymmetric, left=3cm,right=3cm,top=1cm,bottom=1.5cm,includeheadfoot, headheight=40pt]{geometry}
 

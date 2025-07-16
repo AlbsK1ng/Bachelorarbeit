@@ -168,7 +168,10 @@ Ein vertiefter Ansatz zur Template-Nutzung findet sich in Kapitel~\ref{chap:Erst
 
 Nach dem Strukturaufbau können konkrete Inhalte wie Werte, Dokumente oder Referenzen eingepflegt werden.
 Dies beschränkt sich jedoch auf statische Submodelle wie Technische Daten oder Dokumentation.
-Abbildung \ref{fig:SubmodellTypenschild} veranschaulicht den strukturellen Aufbau solcher Submodelle anhand eines Ausschnitts des Submodells Typenschild.
+Dynamische Inhalte, etwa Betriebsdaten werden nicht direkt im Package Explorer gepflegt, sondern über externe Datenquellen (z.B. Maschinensimulator oder Datengenerator) angebunden.
+
+Abbildung \ref{fig:SubmodellTypenschild} veranschaulicht den strukturellen Aufbau im Package Explorer. 
+Gezeigt wird ein Ausschnitt des statischen Submodells Typenschild.
 
 \begin{figure}[htbp]
     \centering
@@ -177,23 +180,18 @@ Abbildung \ref{fig:SubmodellTypenschild} veranschaulicht den strukturellen Aufba
     \label{fig:SubmodellTypenschild}
 \end{figure}
 
-Dynamische Inhalte, etwa Betriebsdaten werden nicht direkt im Package Explorer gepflegt, sondern über externe Datenquellen (z.B. Maschinensimulator oder Datengenerator) angebunden.
-
 \subsubsection*{Semantische Beschreibung mit Concept Descriptions}
 
 Für die semantische Beschreibung von Submodellen und Submodellelementen innerhalb der AAS ist die Vergabe von semanticId-Referenzen essenziell.
 Jede semanticId verweist auf eine zugehörige \acs{cd}, die die Bedeutung des referenzierten Elements eindeutig und maschinenlesbar beschreibt.
 Im Package Explorer lassen sich solche Concept Descriptions manuell anlegen und verwalten.
 Dabei steht eine vordefinierte Eingabemaske zur Verfügung, die sich an dem in Part 3a: Data Specification - IEC 61360 \cite{SpezifikationPart3a} vordefinierten Datenmodell für semantische Beschreibungen orientiert.
-Wie in Abbildung \ref{fig:DataSpecificationConten} dargestellt, umfasst diese Vorlage strukturierte Felder wie Definition, Datentyp, Einheit oder Symbol.
-Dadurch wird eine konsistente und semantisch eindeutige Beschreibung einzelner Submodelle bzw. Submodellelemente ermöglicht.
+Die Grundstruktur dieser Vorlage ist bei allen Elementen der \acs{aas} gleich.
+Allerdings unterscheiden sich je nach Elementtyp die verpflichtenden und empfohlenen Felder.
+Das bedeutet, dass für verschiedene Elemente (z.B. Property oder Relationship) jeweils unterschiedliche Felder als zwingend erforderlich gelten, während andere optional oder gar nicht vorgesehen sind.
+Die Struktur wird im Folgenden am Beispiel einer Property für die physikalische Größe Frequenz dargestellt.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics{Bilder/ModellierungAAS/V1/test.png}
-    \caption{Package Explorer: Vorlage für Concept Description}
-    \label{fig:DataSpecificationConten}
-\end{figure}
+\input{DataSpecificationContent.tex}
 
 Alternativ können auch externe Standards referenziert werden. 
 Der Package Explorer unterstützt diesen Ansatz durch eine erweiterte Funktionalität, mit der sich vorgefertigte ECLASS-Kataloge direkt in das Tool importieren lassen. 
@@ -490,31 +488,26 @@ Einfach weglassen ?
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 Ziel dieses Anwendungsfalls ist es, den Prozess der automatisierten Generierung und Bereitstellung einer \acs{aas} exemplarisch darzustellen. 
-Im ersten Schritt wird gezeigt, wie ein unternehmensspezifisches Submodel Template erstellt und anschließend in ein Typ-Submodell überführt werden kann.
-Dieses bildet die Grundlage für die automatisierte Erzeugung eines Instanz-Submodells, das mit konkreten Daten befüllt, in eine \acs{aas}-Instanz eingebettet und schließlich in das BaSyx-System integriert wird.
+Im ersten Schritt wird ein unternehmensspezifisches Submodel Template erstellt, das anschließend in ein Typ-Submodell überführt wird.
+Dieses bildet die Grundlage für die automatisierte Generierung eines Instanz-Submodells, das mit konkreten Daten befüllt, in eine \acs{aas} eingebettet und schließlich in das BaSyx-System integriert wird.
 
 \subsubsection{Arbeiten mit Submodel Templates}
 \label{chap:ErstellenvonSubmodelTemplates}
-Die Verwendung von Submodel Templates spielt eine zentrale Rolle für den effizienten Einsatz digitaler Zwillinge in Industrie-4.0-Anwendungen. 
-Ein einmal definiertes Template kann zur Erstellung eines Typ-Submodells genutzt werden, das wiederum als Vorlage für beliebig viele \acs{aas}-Instanzen dient. 
-Auf diese Weise wird nicht nur die Konsistenz der Datenstruktur sichergestellt, sondern auch der Aufwand für die Modellierung signifikant reduziert.
+Für die automatisierte Generierung einer \acs{aas} ist eine konsistente Submodellstruktur erforderlich, die sich aus wiederverwendbaren Vorlagen ableiten lässt.
+Im vorliegenden Anwendungsfall dient das standardisierte Submodel Template Technische Daten \cite{SpezifikaitonTechnischeDaten} als Ausgangspunkt. 
+Dieses definiert eine generische Struktur zur Beschreibung technischer Merkmale, gegliedert in Kategorien wie Generelle Informationen, Technische Informationen oder Produktklassifikation. 
+Es bildet somit den semantischen Rahmen, enthält jedoch zunächst keine konkreten Ausprägungen.
 
-Ausgangspunkt für die Erstellung eines Typ-Submodells ist in der Regel ein generisches Submodel Template. 
-Im folgenden Beispiel wird das Template Technische Daten \cite{SpezifikaitonTechnischeDaten} verwendet, das eine übergeordnete Struktur zur Beschreibung technischer Merkmale eines Produkts bereitstellt. 
-Es enthält grundlegende Kategorien wie Generelle Informationen, Technische Informationen oder Produktklassifikation. 
-Diese dienen als Rahmen, sind jedoch noch nicht mit konkreten inhaltlichen Ausprägungen versehen.
+Auf Unternehmensebene kann das generische Template an spezifische Anforderungen angepasst werden, beispielsweise für einen bestimmten Maschinentyp wie die robocell.
+Branchenspezifische Varianten sind grundsätzlich ebenfalls denkbar, werden in diesem Anwendungsfall jedoch nicht weiter betrachtet.
 
-Auf Unternehmensebene kann dieses Template produktspezifisch angepasst werden, beispielsweise für einen bestimmten Maschinentyp wie die robocell. 
-In der Praxis wäre auch eine branchenspezifische Ableitung denkbar, diese wird hier jedoch nicht weiter betrachtet. 
-Für die technische Umsetzung kann der Package Explorer genutzt werden, über den das Template importiert und erweitert werden kann. 
-So lassen sich beispielsweise produktspezifische Anforderungen wie Umgebungsbedingungen oder elektrische Daten ergänzen.
-Das resultierende unternehmensspezifische Template erhält eine eigene semanticId, bleibt jedoch zusätzlich mit der ursprünglichen semanticId des generischen Templates verknüpft, um die semantische Rückverfolgbarkeit zur standardisierten Struktur sicherzustellen.
+Die Anpassung erfolgt mithilfe des Package Explorers, über den sich das Template importieren und gezielt erweitern lässt.
+So können etwa produktspezifische Anforderungen, wie Umgebungsbedingungen oder der Verarbeitungsbereich, mithilfe geeigneter Submodellelemente ergänzt werden.
+Das resultierende unternehmensspezifische Template erhält eine eigene semanticId, bleibt jedoch zusätzlich mit der ursprünglichen semanticId des generischen Templates verknüpft, um die Rückverfolgbarkeit zur standardisierten Vorlage sicherzustellen.
 
-Aus dem angepassten Template kann anschließend ein Typ-Submodell erstellt werden, das bereits allgemeingültige Merkmale einer Produktgruppe enthält. 
-Dieses dient als Vorlage für die spätere Erstellung konkreter AAS-Instanzen, die mit produktspezifischen Werten vervollständigt werden. 
-Auch hier sollte die Verbindung zur ursprünglichen bzw. unternehmensspezifischen Template-Struktur über entsprechende semanticId-Verknüpfungen beibehalten werden.
-
---------------------------
+Anschließend kann aus dem angepassten Template ein Typ-Submodell abgeleitet werden, das nicht nur die Struktur, sondern bereits allgemeingültige Merkmale einer Produktgruppe enthält, beispielsweise den Einsatzort oder die maximal zulässige Umgebungstemperatur einer Maschine.
+Dieses Typ-Submodell dient als Vorlage für die spätere Erstellung konkreter AAS-Instanzen, die anschließend mit produktspezifischen Werten vervollständigt werden.
+Die Verbindung zur ursprünglichen sowie zur unternehmensspezifischen Template-Struktur wird dabei über entsprechende semanticId-Verknüpfungen beibehalten.
 
 
 \subsubsection{Automatisiertes Befüllen mit strukturierten Daten}
