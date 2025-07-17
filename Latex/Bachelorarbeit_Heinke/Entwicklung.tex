@@ -263,7 +263,7 @@ In der von Eclipse BaSyx bereitgestellten Docker-Umgebung ist ein entsprechendes
 
 Beim Neustart der AAS Environment wird die AASX-Datei automatisch erkannt, registriert und in das BaSyx-System eingebunden.
 Die dabei erzeugten Daten, darunter Informationen zu \acs{aas}, Submodellen, Concept Descriptions sowie Registrierungsdaten, werden in verschiedenen Tabellen der angebunden MongoDB gespeichert.
-Dies gewährleistet, dass alle relevanten Daten persistent erhalten bleiben, selbst dann, wenn die ursprüngliche AASX-Datei später aus dem Volume entfernt wird.
+Dies gewährleistet, dass alle relevanten Daten persistent erhalten bleiben, selbst dann, wenn die ursprüngliche AASX-Datei später wieder aus dem Volume entfernt wird.
 
 \noindent\textbf{B. AAS Web UI}\\
 Alternativ kann die Bereitstellung auch direkt über die AAS Web UI erfolgen.
@@ -346,7 +346,7 @@ Die Databridge unterstützt hierfür unter anderem JSONata-Ausdrücke oder JsonJ
 Mithilfe dieser Mechanismen können die vom \acs{opcua}-Server empfangenen Rohdaten zunächst in ein JSON-Objekt überführt und anschließend gezielt extrahiert und weiterverarbeitet werden.
 
 Im Anschluss erfolgt die Konfiguration der Datensenke, also der Zielkomponente innerhalb der \acs{aas}.
-Auch diese Konfiguration erfolgt über eine separate JSON-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version definiert werden.
+Auch diese erfolgt über eine separate JSON-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version definiert werden.
 Listing~\ref{lst:jsonDatensenke} zeigt ein Beispiel einer entsprechenden Konfiguration.
 Der Platzhalter \{smId\} steht dabei für die Base64-kodierte ID des Submodells Prozessdaten, wie sie in der REST-API der \acs{aas} verwendet wird.
 \begin{lstlisting}[language=json, caption={Beispielhafte JSON-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
