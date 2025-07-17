@@ -1,14 +1,33 @@
 \newpage
-\section{Entwicklung}
-In diesem Kapitel wird die schrittweise Entwicklung des digitalen Zwillings beschrieben.
-Das zugrundeliegende Asset ist das Abfüll- und Verschließmodul der robocell-Linie.
-Dabei wird zunächst eine konzeptionelle Basis erarbeitet, die als Ausgangspunkt für die anschließende Implementierung des digitalen Zwilings dient.
-Darauf aufbauend folgt die statische Modellierung mithilfe der \acs{aas} und des Package Explorers sowie die Validierung mit einer Test Engine.
-Außerdem wird gezeigt, wie die \acs{aas} mit der Eclipse BaSyx-Plattform bereitgestelllt und um dynamische Informationen ergänzt werden kann.
-Dabei werden sowohl Echtzeidaten über \acs{opcua} als auch Zeitreihendaten über eine InfluxDB eingebunden.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Bilder/vorgehenEntwicklungsteil.pdf}
+    \caption{AAS-Paket im Package Explorer}
+    \label{fig:NeuesAASPaket}
+\end{figure}
 
-Abschließend wird auf die Entwicklung von drei exemplarischen Anwendungsfällen eingegangen.
-Dazu zählt unter anderem der digitale Produktpass, die automatisierte Generierung der \acs{aas} sowie der Einsatz von \acs{ki}.
+
+\newpage
+\section{Entwicklung}
+In diesem Kapitel wird die schrittweise Entwicklung des digitalen Zwillings für das Abfüll- und Verschließmodul der robocell-Linie dargestellt.
+Ziel ist es, das physische Asset gemäß dem Konzept der \acs{aas} digital abzubilden und in ein Industrie 4.0-konformes System zu integrieren.
+Abbildung \ref{fig:Entwicklungsschritte} veranschaulicht den Ablauf des zugrundeliegenden Entwicklungsprozesses.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Bilder/vorgehenEntwicklungsteil.pdf}
+    \caption{Meine Bildunterschrift!!!!!}
+    \label{fig:Entwicklungsschritte}
+\end{figure}
+\vspace{-1em}
+
+Aufbauend auf einer konzeptionellen Grundlage erfolgt zunächst die statische Modellierung der \acs{aas} mithilfe des Package Explorers. 
+Die resultierende Struktur wird anschließend mit einer Test Engine validiert.
+Im weiteren Verlauf wird die \acs{aas} mit der Eclipse BaSyx-Plattform bereitgestellt und um dynamische Informationen ergänzt. 
+Dabei werden sowohl Echtzeitdaten über \acs{opcua} als auch Zeitreihendaten über eine InfluxDB eingebunden.
+
+Abschließend wird die Entwicklung von drei exemplarischen Anwendungsfällen betrachtet. 
+Dazu zählen die Umsetzung eines digitalen Produktpasses, die automatisierte Generierung und Bereitstellung von \acs{aas}-Instanzen sowie der Einsatz von \acs{ki} im Kontext des digitalen Zwillings.
 
 \subsection{Konzeptionierung des digitalen Zwilling}
 Ziel dieses Abschnittes ist es, eine grundlegende Basis für die Erstellung des digitalen Zwillings zu schaffen.
@@ -31,7 +50,7 @@ Beide Komponenten stehen als Docker Container zur Verfügung und stellen die Dat
 Aufbauend auf den zuvor betrachteten Informationsquellen gilt es nun zu entscheiden, welche Aspekte der Maschine im digitalen Zwilling, oder besser gesagt in der \acs{aas}, abgebildet werden sollen.
 Im nächsten Schritt ist daher die Auswahl bzw. der Entwurf geeigneter Submodelle erforderlich, die die relevanten Informationen strukturiert bereitstellen.
 
-Als Orientierung dienen die von der \acs{idta} bereitgestellten Submodel Templates \cite{idtaTemplates}, die bereits viele typische Anwendungsfälle standardisiert abdecken.
+Als Orientierung dienen die von der \acs{idta} bereitgestellten \acsp{smt} \cite{idtaTemplates}, die bereits viele typische Anwendungsfälle standardisiert abdecken.
 Diese sind jeweils in einer Submodellspezifikation der \acs{idta} dokumentiert.
 Darüber hinaus besteht jedoch auch die Möglichkeit, eigene Submodelle zu entwerfen, die gezielt auf projektspezifische Anforderungen zugeschnitten sind.
 Diese können entweder vollständig neu konzipiert oder aus bestehenden Vorlagen abgeleitet werden.
@@ -44,7 +63,7 @@ Daneben wurden aber auch projektspezifische Anforderungen berücksichtigt, die s
 Tabelle \ref{tab:Submodelle} liefert einen Überblick über die initiale Auswahl dieser Submodelle sowie den zugehörigen Datenquellen.
 Diese werden in späteren Anwendungsfällen gezielt erweitert.
 Zur besseren Übersicht sind dynamische Submodelle farblich hervorgehoben, während statische Submodelle weiß hinterlegt sind.
-Sofern vorhanden, verweist die Spalte Standardisierung auf das jeweils zugehörige Submodel Template mittels der offiziellen Dokumentennummer der \acs{idta}, in der die bettrefende Version spezifiziert ist.
+Sofern vorhanden, verweist die Spalte Standardisierung auf das jeweils zugehörige \acs{smt} mittels der offiziellen Dokumentennummer der \acs{idta}, in der die bettrefende Version spezifiziert ist.
 Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, welche Informationen im weiteren Verlauf im digitalen Zwilling abgebildet werden sollen.
 
 \input{TabelleSubmodelle.tex}
@@ -74,39 +93,6 @@ Außerdem unterstützt dies die spätere Demonstration der konkreten \acs{aas} i
 %     \caption{\acs{aas}-Konzept der robocell}
 %     \label{fig:konzeptionierungAAS}
 % \end{figure}
-
-% \medskip
-% \noindent
-% \textbf{Entitie}\\
-% Zur Abbildung hierarchischer Strukturen, insbesondere im Submodell \acs{bom}, werden sogenannte Entities verwendet. 
-% Eine Entitie repräsentiert dabei ein untergeordnetes Asset innerhalb der Gesamtstruktur. 
-% Grundsätzlich lassen sich zwei Typen unterscheiden. 
-% CoManagedEntities besitzen keine eigene \acs{aas} und werden innerhalb der AAS der übergeordneten Hauptkomponente mitverwaltet. 
-% SelfManagedEntities hingegen, wie sie im Rahmen der Konzeption dieser Arbeit vorgesehen sind, verfügen über eine eigene \acs{aas} und können somit unabhängig verwaltet und referenziert werden. 
-% Die Identifikation erfolgt über die jeweils zugewiesene globalAssetId.
-
-% \medskip
-% \noindent
-% \textbf{Property}\\
-% Das Submodellelement Property dient der Repräsentation einfacher Merkmale eines Assets, wie beispielsweise Name, Seriennummer oder Status. 
-% Es ist stets mit einem definierten Datentyp (z. B. string, integer, boolean) verknüpft und lässt sich funktional mit einer Variablen aus der Softwareentwicklung vergleichen.
-
-% \medskip
-% \noindent
-% \textbf{Property-Element}\\
-% Hierbei handelt es sich um ein Datenelement, das einen einfachen Wert (z. B. eine Zahl, einen Text oder ein Datum) speichert und somit Basisinformationen bereitstellt.
-
-% \medskip
-% \noindent
-% \textbf{File-Element}\\
-% Dieses Element dient zum Einbetten oder Verlinken von Dateien, etwa Bildern oder Dokumenten, die dem Asset zugeordnet sind.
-
-% \medskip
-% \noindent
-% \textbf{Operation-Element}\\
-% Es beschreibt eine ausführbare Funktion oder Methode, die auf dem Asset oder Submodell ausgeführt werden kann, und unterstützt so Interaktionen oder Steuerungen.
-
-% \medskip
 
 \newpage
 \subsection{Modellierung mit der AAS}
@@ -159,7 +145,7 @@ Eine Ausnahme bilden \acsp{sml}, in denen die enthaltenen Elemente nicht über e
 % Vlt bekomme ich auch nochmal Entitäten rein
 
 
-Alternativ zur manuellen Modellierung können die im Rahmen der Konzeption ausgewählten Submodel Templates verwendet werden, wie sie in Tabelle~\ref{tab:Submodelle} aufgeführt sind.
+Alternativ zur manuellen Modellierung können die im Rahmen der Konzeption ausgewählten \acsp{smt} verwendet werden, wie sie in Tabelle~\ref{tab:Submodelle} aufgeführt sind.
 Diese stammen beispielsweise aus dem offiziellen Repository der \acs{idta} \cite{idtaTemplates} und lassen sich als AASX-Dateien importieren.
 Im Package Explorer erfolgt dies über ein sogenanntes Auxiliary AAS, das als sekundäre Umgebung zur Template-Verwaltung dient.
 Die importierten Templates enthalten eine strukturierte Vorlage mit typischen Submodellelementen und reduzieren somit den Modellierungsaufwand erheblich.
@@ -214,13 +200,13 @@ Diese Formate beeinhalten allerdings ausschließlich die strukturierte Beschreib
 Zusätzlich unterstützt der Package Explorer auch den gezielten Export einzelner Submodelle oder Concept Descriptions.
 Diese lassen sich seperat, etwa als JSON-Datei abspeichern und können so gezielt in anderen AAS-Projekten wiederverwendet werden.
 
-\subsubsection{Abbildung hierarchischer Strukturen und Beziehungen}
-Zur Abbildung hierarchischer Strukturen, insbesondere im Submodell \acs{bom}, werden sogenannte Entities verwendet. 
-Eine Entitie repräsentiert dabei ein untergeordnetes Asset innerhalb der Gesamtstruktur. 
-Grundsätzlich lassen sich zwei Typen unterscheiden. 
-CoManagedEntities besitzen keine eigene \acs{aas} und werden innerhalb der AAS der übergeordneten Hauptkomponente mitverwaltet. 
-SelfManagedEntities hingegen, wie sie im Rahmen der Konzeption dieser Arbeit vorgesehen sind, verfügen über eine eigene \acs{aas} und können somit unabhängig verwaltet und referenziert werden. 
-Die Identifikation erfolgt über die jeweils zugewiesene globalAssetId.
+% \subsubsection{Abbildung hierarchischer Strukturen und Beziehungen}
+% Zur Abbildung hierarchischer Strukturen, insbesondere im Submodell \acs{bom}, werden sogenannte Entities verwendet. 
+% Eine Entitie repräsentiert dabei ein untergeordnetes Asset innerhalb der Gesamtstruktur. 
+% Grundsätzlich lassen sich zwei Typen unterscheiden. 
+% CoManagedEntities besitzen keine eigene \acs{aas} und werden innerhalb der AAS der übergeordneten Hauptkomponente mitverwaltet. 
+% SelfManagedEntities hingegen, wie sie im Rahmen der Konzeption dieser Arbeit vorgesehen sind, verfügen über eine eigene \acs{aas} und können somit unabhängig verwaltet und referenziert werden. 
+% Die Identifikation erfolgt über die jeweils zugewiesene globalAssetId.
 
 \subsubsection{Validierung}
 Im Anschluss an die Modellierung der \acs{aas} sollte eine Überprüfung der Konformität erfolgen.
@@ -380,7 +366,7 @@ Somit bildet die Databridge eine flexible und protokolloffene Lösung zur Echtze
 \subsubsection{Verarbeitung von Zeitreihendaten}
 
 Grundsätzlich lassen sich Zeitreihendaten auf unterschiedlichste Weise in eine \acs{aas} einbinden.
-Das Submodel Template Time Series Data \cite{SpezifikationTimeSeriesData} bietet hierfür mehrere standardisierte Lösungsansätze.
+Das \acs{smt} Time Series Data \cite{SpezifikationTimeSeriesData} bietet hierfür mehrere standardisierte Lösungsansätze.
 Eine Möglichkeit besteht darin, diese direkt über ein InternalSegment in der \acs{aas} zu speichern.
 Diese Variante eignet sich jedoch nur für kleinere Datenmengen.
 Alternativ können die Daten in Form einer Datei abgespeichert werden.
@@ -393,7 +379,7 @@ Hierzu werden die simulierten Werte für Druck und Temperatur des Datengenerator
 Die über \acs{opcua} bereitgestellten Daten werden dabei mithilfe von Telegraf, einem leichtgewichtigen Agenten zur Datenerfassung und -weiterleitung \cite{Influx}, kontinuierlich in eine speziell für diesen Anwendungsfall angelegte Tabelle geschrieben.
 InfluxDB sowie Telegraf stehen dabei beide als Docker-Container zur Verfügung und lassen sich so nahtlos in das bestehende BaSyx-System integrieren.
 
-Um die in der Datenbank gespeicherten Daten in die \acs{aas} einzubinden, kann das bereits genannte Submodel Template Time Series Data verwendet werden.
+Um die in der Datenbank gespeicherten Daten in die \acs{aas} einzubinden, kann das bereits genannte \acs{smt} Time Series Data verwendet werden.
 Zunächst müssen die Metadaten eingetragen werden (siehe Abbildung \ref{fig:MetadataTimeSeries}).
 Dazu gehören ein eindeutiger Name, eine Beschreibung sowie die Definition der Datenpunkte (Records), die hiermit aufgezeichnet werden sollen.
 
@@ -439,7 +425,7 @@ Die Umsetzung der Zugriffsrechte erfolgt mit der Eclipse BaSyx-Plattform, mit de
 
 \subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
 Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äquivalenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
-Zur strukturierten Erfassung dieser Werte kann das von der \acs{idta} spezifizierte Submodel Template Carbon Footprint \cite{SpezifikaitonPCF} eingesetzt werden.
+Zur strukturierten Erfassung dieser Werte kann das von der \acs{idta} spezifizierte \acs{smt} Carbon Footprint \cite{SpezifikaitonPCF} eingesetzt werden.
 
 Im Rahmen dieses Anwendungsfalls werden die Phasen Produktion, Material sowie die Gesamtbetrachtung (Cradle to Gate) berücksichtigt. 
 Für jede Phase wird gemäß der Submodellspezifikation eine \acs{smc} angelegt, die zentrale Informationen wie den CO\textsubscript{2}-Wert, die Berechnungsmethode sowie den Gültigkeitszeitraum enthält. 
@@ -488,25 +474,26 @@ Einfach weglassen ?
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 Ziel dieses Anwendungsfalls ist es, den Prozess der automatisierten Generierung und Bereitstellung einer \acs{aas} exemplarisch darzustellen. 
-Im ersten Schritt wird ein unternehmensspezifisches Submodel Template erstellt, das anschließend in ein Typ-Submodell überführt wird.
+Hierzu wird im ersten Schritt ein unternehmensspezifisches \acs{smt} erstellt, das anschließend in ein Typ-Submodell überführt wird.
 Dieses bildet die Grundlage für die automatisierte Generierung eines Instanz-Submodells, das mit konkreten Daten befüllt, in eine \acs{aas} eingebettet und schließlich in das BaSyx-System integriert wird.
 
 \subsubsection{Arbeiten mit Submodel Templates}
 \label{chap:ErstellenvonSubmodelTemplates}
 Für die automatisierte Generierung einer \acs{aas} ist eine konsistente Submodellstruktur erforderlich, die sich aus wiederverwendbaren Vorlagen ableiten lässt.
-Im vorliegenden Anwendungsfall dient das standardisierte Submodel Template Technische Daten \cite{SpezifikaitonTechnischeDaten} als Ausgangspunkt. 
-Dieses definiert eine generische Struktur zur Beschreibung technischer Merkmale, gegliedert in Kategorien wie Generelle Informationen, Technische Informationen oder Produktklassifikation. 
+Im vorliegenden Anwendungsfall dient das standardisierte \acs{smt} Technische Daten \cite{SpezifikaitonTechnischeDaten} als Ausgangspunkt. 
+Dieses definiert eine generische Struktur zur Beschreibung technischer Merkmale, gegliedert in Kategorien (\acsp{smc}) wie Generelle Informationen, Technische Informationen oder Produktklassifikation. 
 Es bildet somit den semantischen Rahmen, enthält jedoch zunächst keine konkreten Ausprägungen.
 
 Auf Unternehmensebene kann das generische Template an spezifische Anforderungen angepasst werden, beispielsweise für einen bestimmten Maschinentyp wie die robocell.
 Branchenspezifische Varianten sind grundsätzlich ebenfalls denkbar, werden in diesem Anwendungsfall jedoch nicht weiter betrachtet.
 
-Die Anpassung erfolgt mithilfe des Package Explorers, über den sich das Template importieren und gezielt erweitern lässt.
+Die Anpassung kann mithilfe des Package Explorers erfolgen.
+Über diesen lässt sich das standardisierte \acs{smt} importieren und anschließend gezielt erweitern.
 So können etwa produktspezifische Anforderungen, wie Umgebungsbedingungen oder der Verarbeitungsbereich, mithilfe geeigneter Submodellelemente ergänzt werden.
 Das resultierende unternehmensspezifische Template erhält eine eigene semanticId, bleibt jedoch zusätzlich mit der ursprünglichen semanticId des generischen Templates verknüpft, um die Rückverfolgbarkeit zur standardisierten Vorlage sicherzustellen.
 
-Anschließend kann aus dem angepassten Template ein Typ-Submodell abgeleitet werden, das nicht nur die Struktur, sondern bereits allgemeingültige Merkmale einer Produktgruppe enthält, beispielsweise den Einsatzort oder die maximal zulässige Umgebungstemperatur einer Maschine.
-Dieses Typ-Submodell dient als Vorlage für die spätere Erstellung konkreter AAS-Instanzen, die anschließend mit produktspezifischen Werten vervollständigt werden.
+Anschließend kann aus dem angepassten Template ein Typ-Submodell abgeleitet werden, das nicht nur die Struktur, sondern bereits allgemeingültige Merkmale einer Produktgruppe enthält, beispielsweise den Einsatzort oder die maximal zulässige Umgebungstemperatur.
+Dieses Typ-Submodell dient als Vorlage für die spätere Erstellung konkreter AAS-Instanzen, die anschließend mit produktspezifischen Werten wie einer Seriennummer vervollständigt werden.
 Die Verbindung zur ursprünglichen sowie zur unternehmensspezifischen Template-Struktur wird dabei über entsprechende semanticId-Verknüpfungen beibehalten.
 
 
@@ -540,20 +527,33 @@ Um diese hinzuzufügen, können während der Skriptausführung zufällige UUIDv4
 Im Anschluss daran gilt es, die \acs{aas} in einer Industrie-4.0-Anwendung bereitzustellen. 
 Hierfür kann erneut Eclipse BaSyx genutzt werden, wobei die AAS sowie das zugehörige Submodell, analog zur Möglichkeit~C REST-API aus Kapitel~\ref{sec:bereitstellungAAS}, eingebunden werden können.
 
-% \subsubsection{Potenziale des KI-Einsatzes}
-
 \subsection{Titel Anwendungsfall KI}
 
-\subsubsection{Konzept eines KI-Modells zur Anomalieerkennung}
+\subsubsection{KI-Modell zur Anomalieerkennung}
+Zur Erkennung von Abweichungen im Betriebsverhalten der robocell, wird ein KI-basiertes Verfahren auf Basis eines Autoencoders implementiert.
+Dieses dient der frühzeitigen Identifikation von Anomalien in Zeitreihendaten.
+
+
+FÜr die Umsetzung gibt es verschiedene Möglichkeiten. In dieser Arbeit wird pytorch 
+
+
+
+
+Die Umsetzung erfolgt mit pytorch.
+
+
+
+
 Datenquelle
 Umsetzung mit pytorch
 Modelltraining mit Autoencoder
 Modell sepcihern mit onnx
 
+Nach erfolgreichem Training kann das Modell 
 
-Bild erst in Ergebnissse
-
-\subsubsection{Verwaltung der KI Metadaten in der \acs{aas}}
+\subsubsection{Verwaltung der Metadaten in der \acs{aas}}
+In Folgendem wird beschrieben, wie die Metadaten des zuvor erstellten \acs{ki}-Modells mithilfe der \acs{aas} strukturiert erfasst und verwaltet werden können. 
+Grundlage hierfür bilden drei von der \acs{idta} veröffentlichte \acsp{smt}, die gemeinsam eine umfassende Abbildung des KI-Lebenszyklus ermöglichen.
 
 \subsubsection*{A. Modellbeschreibung}
 ssadasd
