@@ -96,6 +96,20 @@
       {[}{{{\color{black}{[}}}}{1}
       {]}{{{\color{black}{]}}}}{1},
 }
+%%% inline %%%
+\tcbset{inlinebox/.style={
+  on line,
+  box align=base,
+  colback=gray!20,
+  colframe=gray!50,
+  boxrule=0.5pt,
+  arc=2pt,
+  top=1pt,
+  bottom=1pt,
+  left=2pt,
+  right=2pt
+}}
+%%% inline %%%
 %----------Code listings------------
 
 %----------Farben-------------------
@@ -107,19 +121,20 @@
 \definecolor{DynamischesSubmodel}{HTML}{6eaa5e}
 % \definecolor{tableHeader}{HTML}{d8e4fc}
 \definecolor{tableHeader}{RGB}{230,230,230}
+\definecolor{rowHeader}{RGB}{245,245,245} 
 %----------Farben-------------------
 
 %----------Aufzählung-------------------
 \usepackage{enumitem}
 \usepackage{pifont}
 \usepackage{amssymb}
-\definecolor{orangeHaken}{HTML}{c0ccff}
+\definecolor{orangeHaken}{HTML}{aa7e5e}
 \definecolor{greenHaken}{HTML}{49cc90}
 
 \newcommand{\recommended}{\textcolor{orangeHaken}{\ding{52}}} % orange Kreis
 \newcommand{\optional}{\textcolor{black}{\ding{118}}}
 \newcommand{\notused}{\textcolor{black}{\ding{55}}}     % X-Symbol
-\newcommand{\mandatory}{\textcolor{greenHaken}{\ding{51}}} % grüner Haken
+\newcommand{\mandatory}{\textcolor{DynamischesSubmodel}{\ding{51}}} % grüner Haken
 
 %%% legende %%%
 \tcbset{legendbox/.style={

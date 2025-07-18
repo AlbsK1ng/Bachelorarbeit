@@ -212,7 +212,7 @@ Diese lassen sich seperat, etwa als JSON-Datei abspeichern und können so geziel
 Im Anschluss an die Modellierung der \acs{aas} sollte eine Überprüfung der Konformität erfolgen.
 Hierzu kann eine von der \acs{idta} bereitgestellte Test Engine \cite{TestEngine} eingesetzt werden. 
 Diese lässt sich direkt mit pip, dem Paktemanager von Python, installieren und anschließend über die Kommandozeile nutzen.
-Mit dem Befehl \verb|aas_test_engines check_files robocell.aasx| kann beispielsweise die Validierung der zuvor erstellten AASX-Datei der robocell gestartet werden.
+Mit dem Befehl \tcbox[inlinebox]{\texttt{aas\_test\_engines check\_files robocell.aasx}} kann beispielsweise die Validierung der zuvor erstellten AASX-Datei der robocell gestartet werden.
 
 Dabei wird zunächst geprüft, ob die AASX-Datei formal korrekt aufgebaut ist, insbesondere hinsichtlich der internen Struktur und ihrer Beziehungen.
 Anschließend erfolgt die Kontrolle der enthaltenen \acs{aas} gegen die Metamodell-Spezifikationen der \acs{idta} (Teil 1 \cite{SpezifikationPart1} und 3a \cite{SpezifikationPart3a}).
@@ -298,7 +298,7 @@ Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten
 \begin{figure}[htbp]
     \centering
     % 0.88
-    \includegraphics{Bilder/OPCUA/SubmodellProzessdaten.pdf}
+    \includegraphics{Bilder/OPCUA/ProcessDataPackageExplorer.PNG}
     \caption{Submodell Prozessdaten}
     \label{fig:SubmodellProzessdaten}
 \end{figure}
@@ -413,28 +413,39 @@ Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne da
 
 \newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
-Im Kontext steigender Anforderungen an Nachhaltigkeit und Transparenz enlang des gesamten Produktlebenszyklus eines Assets gewinnt der \acs{dpp} zunehmend an Bedeutung.
-Im Folgenden wird daher gezeigt, wie dieser mithilfe der \acs{aas} umgesetzt werden kann. 
+Im Kontext steigender Anforderungen an Nachhaltigkeit und Transparenz entlang des gesamten Produktlebenszyklus eines Assets gewinnt der \acs{dpp} zunehmend an Bedeutung. 
+Der Fokus dieses Anwendungsfalls liegt auf zwei zentralen Aspekten: der Abbildung des \acs{pcf} sowie der technischen Umsetzung von Zugriffsrechten auf die im \acs{dpp} enthaltenen Daten.
 
-Der Anwendungsfall orientiert sich dabei an dem von der ZVEI vorgestellten \acs{dpp40}, dessen beispielhafte Umsetzung unter anderem im Rahmen eines von ZVEI und \acs{idta} entwickelten \acs{pcf}-Showcases \cite{PCFShowcas} demonstriert wird. 
-Der Fokus liegt unter anderem auf der Bereitstellung nachhaltigkeitsbezogener Informationen sowie der Umsetzung der im \acs{dpp} geforderten Zugriffsrechte für unterschiedliche Interessensgruppen.
-Diese Aspekte sollen im nachfolgenden Abschnitt technisch umgesetzt werden.
+Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äquivalenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
+Seine Bedeutung zeigt sich auch in der EU-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt, der die erste konkrete Umsetzung eines \acs{dpp} darstellt und daher als Ausgangspunkt für weitere Branchen wie den Maschinen- und Anlagenbau dient.
+Darin wird unter anderem die verpflichtende Angabe des \acs{pcf}, insbesondere für die Phasen Material, Produktion und die Gesamtbetrachtung (Cradle to Gate) gefordert, welche im Rahmen dieses Anwendungsfalls exemplarisch umgesetzt werden. 
+Für weiterführende Lebenszyklusphasen wie die Nutzung ist die Angabe derzeit noch nicht vorgeschrieben.
 
-Als Grundlage dient der digitale Zwilling der robocell, der im Rahmen dieses Anwendungsfalls um ein Submodell zur Abbildung des Carbon Footprints erweitert wird.
-Die Umsetzung der Zugriffsrechte erfolgt mit der Eclipse BaSyx-Plattform, mit der eine rollenbasierte Zugriffskontrolle implementiert werden kann.
+Die technische Umsetzung orientiert sich an dem vom ZVEI vorgestellten Konzept des \acs{dpp40}, das gemeinsam mit der \acs{idta} im Rahmen eines \acs{pcf}-Showcases demonstriert wird \cite{PCFShowcas}. 
+Aufbauend auf diesem Konzept wird gezeigt, wie ein \acs{dpp} mithilfe der \acs{aas} modelliert und prototypisch realisiert werden kann.
+
+Konkret wird der digitale Zwilling des Abfüll- und Verschließmoduls der robocell um ein Submodell zur Abbildung des \acs{pcf} erweitert. 
+Der Fokus liegt auf der exemplarischen Aggregation von CO\textsubscript{2}-Daten aus Zulieferkomponenten, um den \acs{pcf} des Moduls zu berechnen. 
+Ergänzend wird demonstriert, wie sich Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen mithilfe der Eclipse BaSyx-Plattform umsetzen lassen.
 
 \subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
-Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äquivalenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
-Zur strukturierten Erfassung dieser Werte kann das von der \acs{idta} spezifizierte \acs{smt} Carbon Footprint \cite{SpezifikaitonPCF} eingesetzt werden.
+Zur exemplarischen Abbildung und dynamischen Berechnung des \acs{pcf} der Gesamtmaschine wird das von der \acs{idta} spezifizierte \acs{smt} Carbon Footprint \cite{SpezifikaitonPCF} eingesetzt.  
+Dieses Template definiert eine standardisierte Struktur zur Erfassung von CO\textsubscript{2}-Äquivalenten entlang des Produktlebenszyklus.  
+Es unterscheidet zwischen dem \acs{pcf} und dem Transport Carbon Footprint (TCF), wobei im Rahmen dieses Anwendungsfalls ausschließlich der \acs{pcf} betrachtet wird.
 
-Im Rahmen dieses Anwendungsfalls werden die Phasen Produktion, Material sowie die Gesamtbetrachtung (Cradle to Gate) berücksichtigt. 
-Für jede Phase wird gemäß der Submodellspezifikation eine \acs{smc} angelegt, die zentrale Informationen wie den CO\textsubscript{2}-Wert, die Berechnungsmethode sowie den Gültigkeitszeitraum enthält. 
-Diese Sammlungen dienen als Grundlage für die spätere Aggregation der \acs{pcf}-Werte der Gesamtmaschine und werden im weiteren Verlauf dynamisch mit Werten befüllt.
+Das \acs{smt} gibt die Struktur des \acs{pcf} in Form einer \acs{smc} vor.  
+Diese Sammlung enthält standardisierte Elemente wie den CO\textsubscript{2}-Wert, die zugehörige Lebenszyklusphase, die verwendete Berechnungsmethode sowie den Gültigkeitszeitraum.
+Wie bereits zuvor beschrieben, liegt der Fokus auf den Lebenszyklusphasen Material, Produktion und Cradle to Gate.  
+Für jede dieser Phasen empfiehlt es sich, eine eigene \acs{smc} gemäß der Submodellspezifikation zu erstellen.  
+Diese Sammlungen dienen als Basis für die spätere Aggregation der \acs{pcf}-Werte der Gesamtmaschine und werden im weiteren Verlauf dynamisch mit Werten befüllt.
 
-Zur Ermittlung dieser Werte wird das Submodell um eine Komponentenliste erweitert, die auf die in der robocell verbauten Steuerungskomponenten verweist. 
-Diese Liste bildet die Grundlage für die spätere Berechnung. 
-Im Rahmen dieser Arbeit wurde exemplarisch eine Auswahl an Siemens-Komponenten betrachtet, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule. 
-Diese wurden als Typ-1-\acs{aas} zur Verfügung gestellt, wobei jede \acs{aas} ein eigenes Carbon Footprint-Submodell enthält.
+Für die exemplarische Berechnung des \acs{pcf} wurde eine Auswahl an Steuerungskomponenten festgelegt, die in der robocell verbaut sind.  
+Diese Auswahl beschränkt sich auf Siemens-Komponenten, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule.  
+Die Komponenten wurden als Typ-1-\acs{aas} zur Verfügung gestellt, wobei jede \acs{aas} ein eigenes Submodell gemäß des \acs{smt} Carbon Footprint enthält.
+
+Um diese in die \acs{pcf}-Berechnung einzubeziehen, können sie direkt im Carbon Footprint-Submodell der robocell referenziert werden. 
+In diesem Anwendungsfall erfolgt dies über eine \acs{sml}, in der die Komponenten als Entities unter Angabe ihrer jeweiligen globalAssetId eingebunden sind. 
+Alternativ ist auch eine Referenzierung über das \acs{bom}-Submodell möglich, allerdings erschwert dies die spätere Aggregation über die AAS Web UI.
 
 Sowohl die aktualisierte \acs{aas} der robocell als auch die zugehörigen Komponenten-\acs{aas} können über die Eclipse BaSyx-Plattform bereitgestellt werden. 
 Die Inhalte lassen sich so direkt über die Benutzeroberfläche der AAS Web UI einsehen. 
@@ -467,8 +478,19 @@ Auch wenn derzeit nur ausgewählte Komponenten berücksichtigt werden, lässt si
 Perspektivisch lässt sich die Berechnung zudem um weitere Lebenszyklusphasen wie Nutzung oder Entsorgung ergänzen, um eine ganzheitliche Betrachtung von der Herstellung bis zum Lebensende eines Produkts bzw. einer Maschine zu ermöglichen.
 
 \subsubsection{Zugriffsrechte und Datensicherheit}
-Das vlt zu komplex \dots
-Einfach weglassen ? 
+Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Daten spielt eine zentrale Rolle, insbesondere im Hinblick auf Datenschutz, regulatorische Anforderungen sowie den Schutz gesitigen Eigentums. 
+Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} die Nutzung eines \acs{abac}-Ansatzes vor, um eine feingranulare Zugriffskontrolle auf Submodelle und deren Elemente zu ermöglichen.
+Da sich die \acs{abac}-Funktionalität in gängigen Implementierungen wie dem AASX Server Blazor oder Eclipse BaSyx derzeit noch in der Entwicklung befindet, wird die Umsetzung der Zugriffsrechte im Rahmen dieses Anwendungsfalls exemplarisch anhand eines \acs{rbac}-Ansatzes demonstriert, wie er in Eclipse BaSyx unterstützt wird.
+
+
+
+
+% Für den Anwendungsfall des \acs{dpp} werden exemplarisch zwei Rollen definiert:
+%     \item \textbf{Groninger-Mitarbeiter}: Diese Rolle erhält Vollzugriff auf den \acs{dpp}. Sie kann Werte einsehen, aktualisieren und auch wieder löschen.
+%     \item \textbf{Externer Kunde}: Diese Rolle erhält ausschließlich Leserechte auf ausgewählte Submodelle.
+% \end{itemize}
+
+
 
 
 \newpage
