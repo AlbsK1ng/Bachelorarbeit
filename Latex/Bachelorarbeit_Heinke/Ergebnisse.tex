@@ -4,6 +4,23 @@
 \subsubsection{Eingesetzte Teilmodelle}
 \subsubsection{Herausforderungen bei der Erstellung}
 \subsection{Anwendungsfall Digitaler Produktpass}
+
+Die beschriebene Lösung ermöglicht es, den \acs{pcf} dynamisch auf Basis der in der Komponentenliste referenzierten Steuerungselemente zu berechnen. 
+Auch wenn derzeit nur ausgewählte Komponenten berücksichtigt werden, lässt sich die Liste bei Verfügbarkeit weiterer Komponenten-\acs{aas} unkompliziert erweitern, sodass sukzessive die gesamte Maschine in die Berechnung einbezogen werden kann. 
+Perspektivisch lässt sich die Berechnung zudem um weitere Lebenszyklusphasen wie Nutzung oder Entsorgung ergänzen, um eine ganzheitliche Betrachtung von der Herstellung bis zum Lebensende eines Produkts bzw. einer Maschine zu ermöglichen.
+
+
+PCF
+Die entwickelte Lösung konnte erfolgreich demonstrieren, dass eine dynamische Aggregation des \acs{pcf} für ein Anlagenmodul auf Basis verteilter Komponenten-AAS möglich ist. Die über die globalAssetId referenzierten Steuerungskomponenten wurden automatisiert ausgelesen und ihre jeweiligen \acs{pcf}-Werte für die Phasen Material, Produktion sowie Cradle to Gate korrekt ermittelt.
+
+Die ermittelten Einzelwerte wurden aggregiert und als strukturierte CO\textsubscript{2}-Äquivalente zurück in das Carbon Footprint-Submodell der Haupt-AAS geschrieben. Damit steht der aggregierte \acs{pcf} direkt in der AAS der RoboCell zur Verfügung und kann über die AAS Web UI oder andere Dienste weiterverarbeitet werden.
+
+Ein ergänzendes Plugin ermöglicht die interaktive Visualisierung der Werte in der Benutzeroberfläche. Es zeigt die Einzelbeiträge der Komponenten sowie die Gesamtsumme in den jeweiligen Phasen, wodurch eine nachvollziehbare und transparente Darstellung des \acs{pcf} erzielt wird.
+
+Die Lösung wurde mit einer Auswahl realer Siemens-Komponenten erprobt. Auch wenn derzeit nur eine Teilmenge des vollständigen Maschinenaufbaus berücksichtigt wurde, zeigt der Ansatz eine hohe Erweiterbarkeit: Weitere Komponenten-AAS können bei Verfügbarkeit problemlos eingebunden und in die Aggregation integriert werden.
+
+Zugriffsrechte
+Zusätzlich wurde die technische Umsetzbarkeit der Zugriffssteuerung im Kontext des digitalen Produktpasses geprüft. Erste Tests zeigen, dass sich differenzierte Zugriffskontrollen auf Submodell-Ebene technisch realisieren lassen. Dies bietet Potenzial für zukünftige Szenarien, bei denen sensible Nachhaltigkeitsdaten nur bestimmten Akteuren entlang der Wertschöpfungskette zugänglich gemacht werden sollen.
 \subsubsection{Implementierungskonzept}
 \subsubsection{Dynamische Berechnung des PCF}
 \subsection{Anwendungsfall automatisierte Generierung der AAS}

@@ -1,13 +1,4 @@
 \newpage
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=1\textwidth]{Bilder/vorgehenEntwicklungsteil.pdf}
-    \caption{AAS-Paket im Package Explorer}
-    \label{fig:NeuesAASPaket}
-\end{figure}
-
-
-\newpage
 \section{Entwicklung}
 In diesem Kapitel wird die schrittweise Entwicklung des digitalen Zwillings für das Abfüll- und Verschließmodul der robocell-Linie dargestellt.
 Ziel ist es, das physische Asset gemäß dem Konzept der \acs{aas} digital abzubilden und in ein Industrie 4.0-konformes System zu integrieren.
@@ -429,7 +420,7 @@ Der Fokus liegt auf der exemplarischen Aggregation von CO\textsubscript{2}-Daten
 Ergänzend wird demonstriert, wie sich Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen mithilfe der Eclipse BaSyx-Plattform umsetzen lassen.
 
 \subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
-Zur exemplarischen Abbildung und dynamischen Berechnung des \acs{pcf} der Gesamtmaschine wird das von der \acs{idta} spezifizierte \acs{smt} Carbon Footprint \cite{SpezifikaitonPCF} eingesetzt.  
+Zur exemplarischen Abbildung und dynamischen Berechnung des \acs{pcf} der Gesamtmaschine wird das von der \acs{idta} spezifizierte \acs{smt} \acs{cf} \cite{SpezifikaitonPCF} eingesetzt.  
 Dieses Template definiert eine standardisierte Struktur zur Erfassung von CO\textsubscript{2}-Äquivalenten entlang des Produktlebenszyklus.  
 Es unterscheidet zwischen dem \acs{pcf} und dem Transport Carbon Footprint (TCF), wobei im Rahmen dieses Anwendungsfalls ausschließlich der \acs{pcf} betrachtet wird.
 
@@ -441,41 +432,41 @@ Diese Sammlungen dienen als Basis für die spätere Aggregation der \acs{pcf}-We
 
 Für die exemplarische Berechnung des \acs{pcf} wurde eine Auswahl an Steuerungskomponenten festgelegt, die in der robocell verbaut sind.  
 Diese Auswahl beschränkt sich auf Siemens-Komponenten, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule.  
-Die Komponenten wurden als Typ-1-\acs{aas} zur Verfügung gestellt, wobei jede \acs{aas} ein eigenes Submodell gemäß des \acs{smt} Carbon Footprint enthält.
+Die Komponenten wurden als Typ-1-\acs{aas} zur Verfügung gestellt, wobei jede \acs{aas} ein eigenes Submodell gemäß des \acs{smt} \acs{cf} enthält.
 
-Um diese in die \acs{pcf}-Berechnung einzubeziehen, können sie direkt im Carbon Footprint-Submodell der robocell referenziert werden. 
+Um diese in die \acs{pcf}-Berechnung einzubeziehen, können sie direkt im \acs{cf}-Submodell der robocell referenziert werden. 
 In diesem Anwendungsfall erfolgt dies über eine \acs{sml}, in der die Komponenten als Entities unter Angabe ihrer jeweiligen globalAssetId eingebunden sind. 
-Alternativ ist auch eine Referenzierung über das \acs{bom}-Submodell möglich, allerdings erschwert dies die spätere Aggregation über die AAS Web UI.
+Alternativ wäre auch eine Referenzierung direkt über das \acs{bom}-Submodell möglich.
 
-Sowohl die aktualisierte \acs{aas} der robocell als auch die zugehörigen Komponenten-\acs{aas} können über die Eclipse BaSyx-Plattform bereitgestellt werden. 
-Die Inhalte lassen sich so direkt über die Benutzeroberfläche der AAS Web UI einsehen. 
-Zusätzlich steht ein Plugin zur Verfügung, das die Visualisierung der \acs{pcf}-Werte unterstützt.
+Für die dynamische Berechnung müssen sowohl die \acs{aas} der robocell als auch die zugehörigen Komponenten-\acs{aas} in einer Laufzeitumgebung verfügbar sein. 
+Die Bereitstellung erfolgt über die Eclipse BaSyx-Plattform.
+Zur Benutzerinteraktion wird das bestehendes Vue.js-Plugin für den Carbon Fooprint der AAS Web UI genutzt.
+Dieses wird im Rahmen dieses Anwendungsfalls um eine Schaltfläche zur Initialisierung der Aggregation erweitert wird.
 
-Die dynamische Aggregation des \acs{pcf} der Gesamtmaschine erfolgt über eine externe Node.js-API, die über eine im Vue.js-basierten Plugin integrierte Schaltfläche ausgelöst wird. 
-Alternativ wäre auch eine direkte Berechnung im Plugin oder über einen Microservice denkbar. 
-In der vorliegenden Umsetzung liegt die gesamte Aggregationslogik jedoch serverseitig in der API.
-Zur Veranschaulichung ist der Ablauf der Aggregation in Abbildung \ref{fig:SequenzdiagrammPCF}  als Sequenzdiagramm dargestellt.
+Die Aggregationslogik ist als eigenständiger, Node.js-basierter Microservice mit einer Web-API implementiert. 
+Diese wertet die Komponenten-\acs{aas} aus, berechnet die aggregierten Werte für die zuvor definierten Lebenszyklusphasen und schreibt diese in das \acs{cf}-Submodell der Haupt-AAS der robocell zurück. 
+Die Auslösung des Microservice erfolgt über die Schaltfläche im erweiterten Plugin.
 
+Alternativ wäre auch eine clientseitige Berechnung direkt im \acs{cf}-Plugin denkbar. 
+In der vorliegenden Umsetzung liegt die gesamte Aggregationslogik jedoch zentral und serverseitig im Microservice. 
+Der Ablauf ist in Abbildung \ref{fig:SequenzdiagrammPCF} als Sequenzdiagramm dargestellt.
+
+\newpage
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/DPP/Sequenzdiagramm.pdf}
+        \includegraphics[width=1\textwidth]{Bilder/DPP/Sequenzdiagramm_Neu.pdf}
     
     \caption{Sequenzdiagramm zur Aggregation des PCF}
     \label{fig:SequenzdiagrammPCF}
 \end{figure}
 
-Die API nutzt dabei die REST-Schnittstelle des Submodel Repositories der AAS Environment, um zunächst alle in der \acs{aas} der robocell hinterlegten Komponenten auszulesen. 
-Diese sind jeweils über ihre globalAssetId eindeutig referenziert. 
-Mithilfe des Discovery Services werden auf Basis dieser IDs die zugehörigen Komponenten-AAS identifiziert und anschließend vom AAS Repository abgerufen. 
-Für jede dieser Komponenten wird geprüft, ob ein Carbon Footprint-Submodell vorhanden ist. 
+Der Microservice nutzt die REST-Schnittstelle des Submodel Repositories der AAS Environment, um zunächst alle in der \acs{aas} der robocell hinterlegten Komponenten auszulesen. 
+Mithilfe des Discovery Service werden auf Basis ihrer globalAssetIds die zugehörigen Komponenten-\acs{aas} identifiziert und anschließend vom AAS Repository abgerufen.
+Für jede dieser Komponenten wird geprüft, ob ein \acs{cf}-Submodell vorhanden ist. 
 Falls dies zutrifft, wird das Submodell ausgelesen und die enthaltenen Werte extrahiert.
 
-Aus den ermittelten Einzelwerten berechnet die API schließlich die aggregierten CO\textsubscript{2}-Äquivalente für die Phasen Produktion, Material sowie Cradle to Gate. 
-Die berechneten Werte werden abschließend in das Carbon Footprint-Submodell der Haupt-\acs{aas} der robocell geschrieben und stehen dort strukturiert zur Verfügung.
-
-Die beschriebene Lösung ermöglicht es, den \acs{pcf} dynamisch auf Basis der in der Komponentenliste referenzierten Steuerungselemente zu berechnen. 
-Auch wenn derzeit nur ausgewählte Komponenten berücksichtigt werden, lässt sich die Liste bei Verfügbarkeit weiterer Komponenten-\acs{aas} unkompliziert erweitern, sodass sukzessive die gesamte Maschine in die Berechnung einbezogen werden kann. 
-Perspektivisch lässt sich die Berechnung zudem um weitere Lebenszyklusphasen wie Nutzung oder Entsorgung ergänzen, um eine ganzheitliche Betrachtung von der Herstellung bis zum Lebensende eines Produkts bzw. einer Maschine zu ermöglichen.
+Aus den ermittelten Einzelwerten berechnet der Microservice schließlich die aggregierten CO\textsubscript{2}-Äquivalente für die Phasen Produktion, Material sowie Cradle to Gate. 
+Die berechneten Werte werden abschließend in das \acs{cf}-Submodell der Haupt-\acs{aas} der robocell geschrieben und stehen dort strukturiert zur Verfügung.
 
 \subsubsection{Zugriffsrechte und Datensicherheit}
 Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Daten spielt eine zentrale Rolle, insbesondere im Hinblick auf Datenschutz, regulatorische Anforderungen sowie den Schutz gesitigen Eigentums. 
@@ -483,7 +474,9 @@ Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikati
 Da sich die \acs{abac}-Funktionalität in gängigen Implementierungen wie dem AASX Server Blazor oder Eclipse BaSyx derzeit noch in der Entwicklung befindet, wird die Umsetzung der Zugriffsrechte im Rahmen dieses Anwendungsfalls exemplarisch anhand eines \acs{rbac}-Ansatzes demonstriert, wie er in Eclipse BaSyx unterstützt wird.
 
 
-
+Groninger-Mitarbeiter
+Kunde
+Service-Techniker
 
 % Für den Anwendungsfall des \acs{dpp} werden exemplarisch zwei Rollen definiert:
 %     \item \textbf{Groninger-Mitarbeiter}: Diese Rolle erhält Vollzugriff auf den \acs{dpp}. Sie kann Werte einsehen, aktualisieren und auch wieder löschen.
@@ -520,15 +513,16 @@ Die Verbindung zur ursprünglichen sowie zur unternehmensspezifischen Template-S
 
 
 \subsubsection{Automatisiertes Befüllen mit strukturierten Daten}
-Nach der Erstellung eines Typ-Submodells stellt sich die Frage, wie dieses effizient mit konkreten Informationen befüllt und anschließend in eine vollständige \acs{aas}-Instanz eingebettet werden kann.
-In der Praxis liegen die hierfür benötigten Daten häufig bereits strukturiert in bestehenden Unternehmenssystemen vor, beispielsweise in \acs{plm}- oder \acs{erp}-Systemen.
+Nach der Erstellung eines Typ-Submodells stellt sich die Frage, wie dieses effizient mit konkreten Produktinformationen befüllt und anschließend in eine vollständige \acs{aas}-Instanz überführt werden kann.
 
-Da eine direkte Anbindung solcher Systeme im Rahmen dieser Arbeit nicht möglich ist, wird das automatisierte Befüllen exemplarisch anhand vorgegebener Beispieldaten umgesetzt.
-Diese enthalten technische Informationen, wie sie typischerweise in den Unternehmenssystemen vorliegen, und bilden die Grundlage für die automatisierte Erstellung des Instanz-Submodells Technische Daten.
+In der industriellen Praxis liegen die benötigten Daten meist bereits strukturiert in bestehenden IT-Systemen wie \acs{plm}- oder \acs{erp}-Lösungen vor.
+Da eine direkte Systemintegration im Rahmen dieser Arbeit nicht realisierbar ist, wird der Prozess exemplarisch anhand vordefinierter Beispieldaten demonstriert.
+Diese Daten enthalten typische technische Merkmale, wie sie auch in realen Unternehmenssystemen vorzufinden sind, und bilden die Grundlage für die automatisierte Erstellung eines Instanz-Submodells.
 
-Für die technische Umsetzung bietet sich ein Skript an, das diese Daten automatisiert in die vorgegebene Submodellstruktur überträgt und anschließend in Form einer Typ-2-\acs{aas} bereitstellt.
+Die technische Umsetzung erfolgt über ein Skript, das diese Daten automatisiert in die vorgegebene Submodellstruktur überträgt und anschließend in eine neu erzeugte \acs{aas}-Instanz einbettet.
 In diesem Projekt wird dazu die serverseitige JavaScript-Laufzeitumgebung Node.js \cite{nodejs} verwendet, da sie eine einfache Verarbeitung von JSON-Daten sowie eine unkomplizierte Kommunikation mit REST-Schnittstellen ermöglicht. 
-Als Basis werden drei zentrale Komponenten benötigt:
+
+Als Basis werden drei zentrale JSON-Komponenten benötigt:
 
 \begin{enumerate}[noitemsep, leftmargin=*, label=\textbf{\arabic*.}]
     \item \textbf{Datenquelle:} Technische Produktinformationen
@@ -536,18 +530,16 @@ Als Basis werden drei zentrale Komponenten benötigt:
     \item \textbf{AAS-Vorlage:} Aufbau und Struktur der \acs{aas}-Instanz
 \end{enumerate}
 
-Die Datenquelle liegt im JSON-Format vor und ist hierarchisch aufgebaut.
-Sie besteht aus mehreren verschachtelten Schlüssel-Wert-Paaren.
-Jeder Schlüssel dient als eindeutiger Bezeichner und entspricht einem idShort-Wert eines Submodellelements innerhalb der Submodell-Vorlage.
-Diese Vorlage ist so konzipiert, dass an den relevanten Stellen Platzhalter vorhanden sind, die während der Ausführung des Skripts mit den zugehörigen Werten aus der Datenquelle befüllt werden können.
+Die Datenquelle ist hierarchisch aufgebaut und enthält verschachtelte Schlüssel-Wert-Paare. 
+Jeder Schlüssel entspricht einem idShort-Wert eines Elements innerhalb der Submodell-Vorlage. 
+Diese wiederum ist so konzipiert, dass Platzhalter an den relevanten Stellen eingefügt sind, die bei der Skriptausführung mit den zugehörigen Werten aus der Datenquelle ersetzt werden.
 
-Nach dem Befüllen des Submodells mit konkreten Werten muss dieses in eine zugehörige \acs{aas}-Instanz eingebunden werden. 
-Die AAS-Vorlage definiert hierfür die grundlegende Struktur der \acs{aas} in einer separaten JSON-Datei. 
-Diese enthält jedoch noch keine spezifischen Identifikatoren, wie beispielsweise die eindeutige ID der \acs{aas} oder des zugehörigen Assets. 
-Um diese hinzuzufügen, können während der Skriptausführung zufällige UUIDv4-Werte generiert und an den entsprechenden Stellen in die Vorlage eingefügt werden.
+Nach der Befüllung des Instanz-Submodells mit konkreten Werten muss dieses in eine neu erzeugte \acs{aas}-Instanz eingebunden werden.
+Die zugrunde liegende \acs{aas}-Vorlage definiert die grundlegende Struktur in einer separaten Datei, enthält jedoch noch keine spezifischen Identifikatoren, wie beispielsweise die eindeutige ID der \acs{aas} oder des zugehörigen Assets.
+Um diese hinzuzufügen, können während der Skriptausführung zufällig generierte UUIDv4-Werte an den entsprechenden Stellen in die Vorlage eingefügt werden.
 
-Im Anschluss daran gilt es, die \acs{aas} in einer Industrie-4.0-Anwendung bereitzustellen. 
-Hierfür kann erneut Eclipse BaSyx genutzt werden, wobei die AAS sowie das zugehörige Submodell, analog zur Möglichkeit~C REST-API aus Kapitel~\ref{sec:bereitstellungAAS}, eingebunden werden können.
+Im letzten Schritt erfolgt die Bereitstellung der AAS-Instanz innerhalb des Eclipse BaSyx-Systems. 
+Hierzu kann die \acs{aas} sowie das zugehörige Submodell, analog zur Möglichkeit~C REST-API aus Kapitel~\ref{sec:bereitstellungAAS}, eingebunden und registriert werden.
 
 \subsection{Titel Anwendungsfall KI}
 

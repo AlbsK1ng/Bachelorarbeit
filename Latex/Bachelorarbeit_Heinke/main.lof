@@ -2,15 +2,14 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Klassifizierung des digitalen Zwillings}}{8}{figure.caption.10}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Industrie 4.0 Komponente}}{10}{figure.caption.15}%
 \contentsline {figure}{\numberline {3}{\ignorespaces Vereinfachtes Metamodell der \acs {aas}}}{12}{figure.caption.16}%
-\contentsline {figure}{\numberline {4}{\ignorespaces robocell Abfüll- und Verschließmodul \blx@tocontentsinit {0}\cite {RobocellBetriebsanleitung}}}{17}{figure.caption.35}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Benutzeroberfläche Package Explorer}}{18}{figure.caption.36}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Benutzeroberfläche AAS Web UI}}{20}{figure.caption.38}%
-\contentsline {figure}{\numberline {7}{\ignorespaces AAS-Paket im Package Explorer}}{22}{figure.caption.39}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Meine Bildunterschrift!!!!!}}{23}{figure.caption.40}%
-\contentsline {figure}{\numberline {9}{\ignorespaces AAS-Paket im Package Explorer}}{27}{figure.caption.41}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Package Explorer: Ausschnitt Submodell Typenschild}}{30}{figure.caption.55}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Submodell Prozessdaten}}{36}{figure.caption.57}%
-\contentsline {figure}{\numberline {12}{\ignorespaces OPC UA Datenknoten}}{36}{figure.caption.58}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Metadaten im Submodell Time Series Data}}{38}{figure.caption.59}%
-\contentsline {figure}{\numberline {14}{\ignorespaces LinkedSegment im Submodell Time Series Data}}{39}{figure.caption.60}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{42}{figure.caption.70}%
+\contentsline {figure}{\numberline {4}{\ignorespaces robocell Abfüll- und Verschließmodul \blx@tocontentsinit {0}\cite {RobocellBetriebsanleitung}}}{17}{figure.caption.36}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Benutzeroberfläche Package Explorer}}{18}{figure.caption.37}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Benutzeroberfläche AAS Web UI}}{20}{figure.caption.39}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Meine Bildunterschrift!!!!!}}{22}{figure.caption.40}%
+\contentsline {figure}{\numberline {8}{\ignorespaces AAS-Paket im Package Explorer}}{26}{figure.caption.41}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Package Explorer: Ausschnitt Submodell Typenschild}}{29}{figure.caption.55}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Submodell Prozessdaten}}{35}{figure.caption.57}%
+\contentsline {figure}{\numberline {11}{\ignorespaces OPC UA Datenknoten}}{35}{figure.caption.58}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Metadaten im Submodell Time Series Data}}{37}{figure.caption.59}%
+\contentsline {figure}{\numberline {13}{\ignorespaces LinkedSegment im Submodell Time Series Data}}{38}{figure.caption.60}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{41}{figure.caption.70}%
