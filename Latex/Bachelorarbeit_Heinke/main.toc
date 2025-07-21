@@ -35,11 +35,6 @@
 \contentsline {subsection}{\numberline {3.4}Anwendungsfall Digitaler Produktpass}{39}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Umsetzung mit dem Teilmodell Carbon Footprint}{39}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Zugriffsrechte und Datensicherheit}{41}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Zugriffsrechte und Datensicherheit}{43}{subsubsection.3.4.3}%
-\contentsline {paragraph}{\numberline {3.4.3.1}Identitäts- und Rechteverwaltung mit Keycloak}{43}{paragraph.3.4.3.1}%
-\contentsline {paragraph}{\numberline {3.4.3.2}Umsetzung der Zugriffskontrolle in Eclipse BaSyx}{44}{paragraph.3.4.3.2}%
-\contentsline {paragraph}{\numberline {3.4.3.3}Test und Validierung der Zugriffskonfiguration}{44}{paragraph.3.4.3.3}%
-\contentsline {paragraph}{\numberline {3.4.3.4}Zusammenfassung}{45}{paragraph.3.4.3.4}%
 \contentsline {subsection}{\numberline {3.5}Anwendungsfall automatisierte Generierung von AAS}{46}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Arbeiten mit Submodel Templates}{46}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\numberline {3.5.2}Automatisiertes Befüllen mit strukturierten Daten}{47}{subsubsection.3.5.2}%

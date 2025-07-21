@@ -538,31 +538,46 @@ Mit Token kann anfrage an BaSyx gestellt werden
 
 AB hier neu!!!!
 
-\subsubsection{Zugriffsrechte und Datensicherheit}
+Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Informationen ist essenziell, insbesondere im Hinblick auf Datenschutz, regulatorische Anforderungen sowie den Schutz geistigen Eigentums. 
+Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} die Anwendung eines attributbasierten Zugriffskontrollmodells (\acs{abac}) vor. 
+Dieses ermöglicht eine feingranulare Regelung des Zugriffs auf Submodelle und deren Elemente anhand von differenzierten Nutzerattributen.
+Da die \acs{abac}-Funktionalität in aktuellen Umsetzungen wie dem AASX Server Blazor oder Eclipse BaSyx noch nicht vollständig unterstützt wird, erfolgt die Realisierung im Rahmen dieses Anwendungsfalls exemplarisch auf Basis eines rollenbasierten Ansatzes (\acs{rbac}), wie er von der Eclipse BaSyx-Plattform unterstützt wird. 
 
-Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Informationen ist essenziell, insbesondere im Hinblick auf Datenschutz, regulatorische Anforderungen sowie den Schutz geistigen Eigentums. Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} die Anwendung eines attributbasierten Zugriffskontrollmodells (\acs{abac}) vor. Dieses ermöglicht eine feingranulare Regelung des Zugriffs auf Submodelle und deren Elemente anhand von Nutzerattributen und Kontextinformationen.
+Zur Umsetzung der Authentifizierung und Autorisierung wird Keycloak eingesetzt \cite{Keycloak}. 
+Der Identity Provider ermöglicht die zentrale Verwaltung von Nutzern, Rollen und Clients und stellt \acsp{jwt} für die Zugriffskontrolle aus. 
+Die Anwendung steht dabei als Docker-Container zur Verfügung, wodurch eine nahtlose Einbindung in das bestehende BaSyx-System möglich ist.
 
-Da die \acs{abac}-Funktionalität in aktuellen Umsetzungen wie dem AASX Server Blazor oder Eclipse BaSyx zum Zeitpunkt der Umsetzung noch nicht vollständig unterstützt wird, erfolgt die Realisierung im Rahmen dieses Anwendungsfalls exemplarisch auf Basis eines rollenbasierten Ansatzes (\acs{rbac}). Eclipse BaSyx bietet hierfür eine vollumfängliche Unterstützung.
-
-\paragraph{Identitäts- und Rechteverwaltung mit Keycloak}
-
-Zur Umsetzung der Authentifizierung und Autorisierung wird Keycloak als Identity Provider eingesetzt. Keycloak ermöglicht die zentrale Verwaltung von Nutzern, Rollen und Clients und stellt sogenannte \acsp{jwt} aus, die zur Zugriffskontrolle innerhalb der BaSyx-Plattform verwendet werden. Die Integration erfolgt containerisiert über Docker, wodurch eine nahtlose Einbindung in das bestehende Setup möglich ist.
-
-Im ersten Schritt wird ein dediziertes \textit{Realm} erstellt, in dem sämtliche für das Projekt relevanten Entitäten verwaltet werden. Exemplarisch werden drei Nutzer mit jeweils unterschiedlichen Rollen konfiguriert:
+Im ersten Schritt muss ein dediziertes Realm erstellt werden, in dem sämtliche für das Projekt erforderlichen Identitäten verwaltet werden. 
+Exemplarisch werden drei Benutzer mit jeweils unterschiedlichen Rollen konfiguriert.
+Jeder Nutzer erhält dabei ein individuelles Passwort, mit dem er sich später authentifizieren kann.
 
 \begin{itemize}[noitemsep, leftmargin=*]
-    \item \textbf{groninger.meyer} (Rolle: \textit{groninger.mitarbeiter}) – Vollzugriff auf alle Submodelle
-    \item \textbf{customer.doe} (Rolle: \textit{customer}) – Leserechte auf ausgewählte Submodelle
-    \item \textbf{technician.john} (Rolle: \textit{technician}) – Eingeschränkter Zugriff, das PCF-Submodell ist nicht sichtbar
+    \item \textbf{groninger.meyer} (Rolle: \textit{Groninger-Mitarbeiter}) 
+    \item \textbf{customer.doe} (Rolle: \textit{Kunde})
+    \item \textbf{technician.john} (Rolle: \textit{Service-Techniker})
 \end{itemize}
 
-Die Zuweisung der Rollen erfolgt über Role Mappings. Für jede Nutzergruppe wird ein dedizierter Client in Keycloak angelegt. Diese Clients besitzen Service Accounts, denen die jeweils erforderlichen Rollen zugewiesen sind. Die Authentifizierung erfolgt über den OAuth2-Flow \texttt{client\_credentials}.
+Neben Benutzern, die reale Personen repräsentieren, existieren in Keycloak auch Clients, die technische Anwendungen oder Dienste repräsentieren.
+Diese Clients nutzen sogenannte Service Accounts, denen gezielt Rollen zugewiesen werden können.
+Auf diese Weise lassen sich auch automatisierte Systemzugriffe kontrollieren und absichern.
+Beispielsweise wird dem Client \texttt{client-customer} die Rolle \textit{Kunde} zugewiesen, wodurch dieser im späteren Zugriffskontext dieselben Berechtigungen wie ein (menschlicher) Nutzer mit dieser Rolle erhält.
 
-\paragraph{Umsetzung der Zugriffskontrolle in Eclipse BaSyx}
+Die eigentlichen Zugriffsrechte auf die Inhalte einer \acs{aas} werden in separaten JSON-Dateien definiert.
+Diese regeln den Zugriff auf die AAS Environment, Registries und den Discovery Service.
+Dabei wird jeder Rolle ein Satz von Berechtigungen wie Lesen, Schreiben oder Aktualisieren zugewiesen.
+Zusätzlich können bestimmte AAS, Submodelle oder Concept Descriptions spezifiziert werden, auf die diese Regeln angewendet werden sollen.
+Sollen die Regeln nicht nur für einzelne, sondern für alle Elemente eines bestimmten Typs gelten, kann dafür das Platzhalterzeichen '*' verwendet werden.
 
-Die Zugriffsrechte auf Submodelle und deren Elemente werden über JSON-basierte RBAC-Regeln in den Komponenten von Eclipse BaSyx definiert. Diese Regeln legen für jede Rolle fest, welche Operationen (\texttt{READ}, \texttt{WRITE}, \texttt{DELETE}) auf welchen Submodellen erlaubt sind.
+Außerdem können bestimmte AAS bzw. Submodell spezigiziert werden auf die diese Reglen angenwadt werden sollen.
+'*' ist eine Wildcard und zählt für alle. 
 
-Ein Beispiel für die Konfiguration der Submodellzugriffe:
+
+Für AAS Environment, Registries und Discovery Serivce.
+Dabei können den verschiedenen Rollen unterschiedliche Rechte zugeweisen werden.
+Der Mitarbeiter hält zum Beispiel vollen Zugriff auf alle Submodelle des DPP bzw. der AAS, während der Kunde nur bestimmmte Submodelle lesen darf.
+Beispiel links und rechts nebeneinander als Code Aussshnit vlt?
+Außerdem angeben für welche AAS, Submodelle oder Concept DescriptionsVlt hier ein JSON-Beispiel?
+
 
 \begin{itemize}[noitemsep, leftmargin=*]
     \item \textbf{groninger.mitarbeiter}: Vollzugriff auf alle Submodelle (u.\,a. \textit{CarbonFootprint}, \textit{BOM}, \textit{Nameplate}, \textit{Prozessdaten})
@@ -571,19 +586,6 @@ Ein Beispiel für die Konfiguration der Submodellzugriffe:
 \end{itemize}
 
 Die RBAC-Konfiguration erfolgt über die Datei \texttt{rbac-rules.json}, die beim Start der jeweiligen BaSyx-Komponente (z.\,B. \texttt{aas-environment}, \texttt{registry}) eingelesen wird. Die dort definierten Regeln werden mit den Rollen aus dem JWT abgeglichen und dynamisch zur Laufzeit angewendet.
-
-\paragraph{Test und Validierung der Zugriffskonfiguration}
-
-Zur Validierung des RBAC-Modells wird das API-Testwerkzeug Postman eingesetzt. Für jede Rolle wird zunächst über den jeweiligen Keycloak-Client ein \ac{jwt} bezogen. Anschließend erfolgt eine authentifizierte Anfrage an die BaSyx-REST-Schnittstellen unter Verwendung dieses Tokens.
-
-Je nach im Token enthaltener Rolle gewährt oder verweigert BaSyx den Zugriff auf bestimmte Ressourcen. So lässt sich nachvollziehbar testen, ob beispielsweise ein Techniker keine Einsicht in das Submodell \textit{CarbonFootprint} erhält oder ein Kunde nur lesend auf bestimmte Informationen zugreifen kann.
-
-\paragraph{Zusammenfassung}
-
-Durch die Kombination aus Keycloak und der RBAC-Unterstützung von Eclipse BaSyx konnte ein differenziertes Zugriffskonzept umgesetzt werden, das exemplarisch den kontrollierten Zugang zu digitalen Produktdaten demonstriert. Die Konfiguration über externe JSON-Dateien ermöglicht eine flexible Erweiterung des Berechtigungsmodells. Gleichzeitig schafft der modulare Aufbau eine Grundlage für eine spätere Migration hin zu einem attributbasierten Zugriffsmodell gemäß der \acs{idta}-Security-Spezifikation.
-
-
-
 
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
