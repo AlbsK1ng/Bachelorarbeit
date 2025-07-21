@@ -468,124 +468,53 @@ Falls dies zutrifft, wird das Submodell ausgelesen und die enthaltenen Werte ext
 Aus den ermittelten Einzelwerten berechnet der Microservice schließlich die aggregierten CO\textsubscript{2}-Äquivalente für die Phasen Produktion, Material sowie Cradle to Gate. 
 Die berechneten Werte werden abschließend in das \acs{cf}-Submodell der Haupt-\acs{aas} der robocell geschrieben und stehen dort strukturiert zur Verfügung.
 
+\newpage
 \subsubsection{Zugriffsrechte und Datensicherheit}
-Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Daten spielt eine zentrale Rolle, insbesondere im Hinblick auf Datenschutz, regulatorische Anforderungen sowie den Schutz gesitigen Eigentums. 
-Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} die Nutzung eines \acs{abac}-Ansatzes vor, um eine feingranulare Zugriffskontrolle auf Submodelle und deren Elemente zu ermöglichen.
-Da sich die \acs{abac}-Funktionalität in gängigen Implementierungen wie dem AASX Server Blazor oder Eclipse BaSyx derzeit jedoch noch in der Entwicklung befindet, wird die Umsetzung der Zugriffsrechte im Rahmen dieses Anwendungsfalls exemplarisch anhand eines \acs{rbac}-Ansatzes demonstriert, wie er in Eclipse BaSyx unterstützt wird.
-
-Als Identity Provider kommt eine Anwendung namens Keycloak zum Einsatz. 
-Sie stellt \acsp{jwt} aus, die zur Authentifizierung und Autorisierung innerhalb der Eclipse BaSyx-Plattform verwendet werden.
-Die Anwendung steht außerdem als Docker-Container zur Verfügung und lässt sich so nahtlos in das bestehende BaSyx-System integrieren.
-
-Im ersten Schritt muss ein neues Realm erstellt werden. 
-Ein Realm ist eine isolierte Umgebung innerhalb von Keycloak, in der Nutzer, Rollen und Clients für ein spezifisches Proket konfiguriert werden können.
-
-In diesem Anwendnungsfall werden exemplarisch drei Rollen definiert:
-Zusätzlich werden drei Beispielnutzer angelegt:
-
-\begin{itemize}[noitemsep, leftmargin=*]
-    \item \textbf{Groninger-Mitarbeiter -> groninger.meyer} 
-    \item \textbf{Kunde -> customer.doe} 
-    \item \textbf{Service-Techniker -> technician.john} 
-\end{itemize}
-
-
-Jeder Nutzer erhält ein individuelles Passwort. Die Rollenzuweisung erfolgt über sogenannte Role Mappings.
-
-Jede Nutzergruppe ein Client. Client in Keycloak repräsentiert einen technischen .. der Zugriff auf gescützte Resourcen braciht.
-Konfiguration: wie ? was abgeben service accoutns roles,... credentials 
-
-BaSyx konfigurieren Regeln für env, registry, ... serialisier in JSON Dateien: 
-FÜr jede Rolle angeben welche AAS und welche Submodelle und welche REchte wie READ , Write, ...
-Mit Postman testen -> 
-Postman zum Testen-> Mit client credentials token holen von Keycloak
-Mit Token kann anfrage an BaSyx gestellt werden
- -> je nach Rolle erluabt verweigert asyx 
-
-
-In diesem Anwendungsfall werden exewmplarisch drei Rollen definiert: Groninger-Mitarbeiter, Kunde, Service-Techniker
-Außerdem 3 Beispiel Nutzer: customer.doe, groninger.meyer, technician.john, welchen die entsprechenden Rollen über role mappings zugeweisen werden 
-Jeder Nutzer erhält dabei ein eigenes Passwort
-Client anlegen: Kurz erkläremn was client ist
-Ein client für customer, groninger, \dots -> service roles zuweisen
-BaSyx konfigurieren Regeln für env, registry, ... serialisier in JSON Dateien: 
-FÜr jede Rolle angeben welche AAS und welche Submodelle und welche REchte wie READ , Write, ...
-Mit Postman testen -> 
-Postman zum Testen-> Mit client credentials token holen von Keycloak
-Mit Token kann anfrage an BaSyx gestellt werden
- -> je nach Rolle erluabt verweigert asyx 
-
-
-Keycloak als Identity Provider (JWT-Token) -> neues Realm groninger-aas
-Realm roles -> Groninger-Mitarbeiter, Kunde, Service-Techniker
-Beispiel Nutzer anlegen: customer.doe, groninger.meyer, technician.john
-Jedem Nutze ein Passwort zuweisen
-Nutzern Rollen zuweisen über role mapppings
-Client anlegen: Kurz erkläremn was client ist
-Ein client für customer, groninger, \dots -> service roles zuweisen
-BaSyx konfigurieren Regeln für env, registry, ... serialisier in JSON Dateien: 
-FÜr jede Rolle angeben welche AAS und welche Submodelle und welche REchte wie READ , Write, ...
-Mit Postman testen -> 
-Postman zum Testen-> Mit client credentials token holen von Keycloak
-Mit Token kann anfrage an BaSyx gestellt werden
- -> je nach Rolle erluabt verweigert asyx 
-
-
-% Für den Anwendungsfall des \acs{dpp} werden exemplarisch zwei Rollen definiert:
-%     \item \textbf{Groninger-Mitarbeiter}: Diese Rolle erhält Vollzugriff auf den \acs{dpp}. Sie kann Werte einsehen, aktualisieren und auch wieder löschen.
-%     \item \textbf{Externer Kunde}: Diese Rolle erhält ausschließlich Leserechte auf ausgewählte Submodelle.
-% \end{itemize}
-
-AB hier neu!!!!
 
 Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Informationen ist essenziell, insbesondere im Hinblick auf Datenschutz, regulatorische Anforderungen sowie den Schutz geistigen Eigentums. 
 Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} die Anwendung eines attributbasierten Zugriffskontrollmodells (\acs{abac}) vor. 
-Dieses ermöglicht eine feingranulare Regelung des Zugriffs auf Submodelle und deren Elemente anhand von differenzierten Nutzerattributen.
+Dieses ermöglicht eine feingranulare Steuerung des Zugriffs auf Submodelle und deren Elemente anhand von differenzierten Nutzerattributen.
+
 Da die \acs{abac}-Funktionalität in aktuellen Umsetzungen wie dem AASX Server Blazor oder Eclipse BaSyx noch nicht vollständig unterstützt wird, erfolgt die Realisierung im Rahmen dieses Anwendungsfalls exemplarisch auf Basis eines rollenbasierten Ansatzes (\acs{rbac}), wie er von der Eclipse BaSyx-Plattform unterstützt wird. 
 
 Zur Umsetzung der Authentifizierung und Autorisierung wird Keycloak eingesetzt \cite{Keycloak}. 
 Der Identity Provider ermöglicht die zentrale Verwaltung von Nutzern, Rollen und Clients und stellt \acsp{jwt} für die Zugriffskontrolle aus. 
-Die Anwendung steht dabei als Docker-Container zur Verfügung, wodurch eine nahtlose Einbindung in das bestehende BaSyx-System möglich ist.
+Keycloak steht dabei wie alle BaSyx-Komponenten auch als Docker-Container zur Verfügung, wodurch eine nahtlose Einbindung in das bestehende System möglich ist.
 
-Im ersten Schritt muss ein dediziertes Realm erstellt werden, in dem sämtliche für das Projekt erforderlichen Identitäten verwaltet werden. 
-Exemplarisch werden drei Benutzer mit jeweils unterschiedlichen Rollen konfiguriert.
-Jeder Nutzer erhält dabei ein individuelles Passwort, mit dem er sich später authentifizieren kann.
+Im ersten Schritt muss ein dediziertes Realm eingerichtet werden, das als isolierte Umgebung zur Verwaltung sämtlicher projektbezogener Identitäten dient. 
+Dies kann direkt über die Keycloak-Benutzeroberfläche erfolgen.
+In dem Realm lassen sich unter anderem Benutzerkonten sowie Rollen definieren.
+Die Zuweisung dieser zueinander erfolgt über sogenannte Role Mappings innerhalb des Realms.
+Ein Nutzer kann dabei mehreren Rollen gleichzeitig zugeordnet sein. 
+Jedes Benutzerkonto erhält zudem ein individuelles Passwort zur Authentifizierung.
 
-\begin{itemize}[noitemsep, leftmargin=*]
-    \item \textbf{groninger.meyer} (Rolle: \textit{Groninger-Mitarbeiter}) 
-    \item \textbf{customer.doe} (Rolle: \textit{Kunde})
-    \item \textbf{technician.john} (Rolle: \textit{Service-Techniker})
+In diesem Anwendungsfall werden beispielhaft folgende Benutzer mit den zugehörigen Rollen eingerichtet:
+
+\begin{itemize}[noitemsep, leftmargin=*, label=\textbullet]
+  \item \makebox[6cm][l]{\textbf{groninger.meyer}} (Rolle: \textit{Groninger-Mitarbeiter})
+  \item \makebox[6cm][l]{\textbf{customer.doe}} (Rolle: \textit{Kunde})
+  \item \makebox[6cm][l]{\textbf{technician.john}} (Rolle: \textit{Service-Techniker})
 \end{itemize}
 
-Neben Benutzern, die reale Personen repräsentieren, existieren in Keycloak auch Clients, die technische Anwendungen oder Dienste repräsentieren.
-Diese Clients nutzen sogenannte Service Accounts, denen gezielt Rollen zugewiesen werden können.
-Auf diese Weise lassen sich auch automatisierte Systemzugriffe kontrollieren und absichern.
-Beispielsweise wird dem Client \texttt{client-customer} die Rolle \textit{Kunde} zugewiesen, wodurch dieser im späteren Zugriffskontext dieselben Berechtigungen wie ein (menschlicher) Nutzer mit dieser Rolle erhält.
+Neben menschlichen Benutzern können mit Keycloak auch technische Clients, die z.\,B. technische Dienste oder Anwendungen repräsentieren, verwaltet . 
+Diese Clients verfügen über eigene Service Accounts, denen ebenfalls Rollen zugewiesen werden können. 
+So kann beispielsweise ein Client mit der Rolle Kunde ausgestattet werden und somit im Namen dieser Rolle auf geschützte Ressourcen zugreifen.
 
-Die eigentlichen Zugriffsrechte auf die Inhalte einer \acs{aas} werden in separaten JSON-Dateien definiert.
-Diese regeln den Zugriff auf die AAS Environment, Registries und den Discovery Service.
-Dabei wird jeder Rolle ein Satz von Berechtigungen wie Lesen, Schreiben oder Aktualisieren zugewiesen.
-Zusätzlich können bestimmte AAS, Submodelle oder Concept Descriptions spezifiziert werden, auf die diese Regeln angewendet werden sollen.
-Sollen die Regeln nicht nur für einzelne, sondern für alle Elemente eines bestimmten Typs gelten, kann dafür das Platzhalterzeichen '*' verwendet werden.
+Die Rechtevergabe innerhalb von Eclipse BaSyx erfolgt rollenbasiert über externe komponentenspezifische Konfigurationsdateien, typischerweise im JSON-Format. 
+Diese definieren, welchen Rollen welche Rechte auf bestimmte Elemente innerhalb der BaSyx-Umgebung erhalten, darunter AAS, Submodelle und Concept Descriptions. 
+Die möglichen Aktionen umfassen z.\,B. READ, WRITE oder DELETE. 
+Für generische Regeln kann das Platzhalterzeichen \texttt{*} verwendet werden.  
+So lässt sich etwa definieren, dass eine Rolle Zugriff auf alle AAS oder alle Submodelle innerhalb einer BaSyx-Komponente erhält.
+Für die AAS Web UI ist keine seperate \acs{rbac}-Datei nötig, sie orientiert sich an den Konfigurationen der zugrundeliegenden Services.
 
-Außerdem können bestimmte AAS bzw. Submodell spezigiziert werden auf die diese Reglen angenwadt werden sollen.
-'*' ist eine Wildcard und zählt für alle. 
+In diesem Anwendungsfall erhält die Rolle Groninger-Mitarbeiter beispielsweise vollen Zugriff auf sämtliche Submodelle des digitalen Produktpasses, während die Rolle Kunde lediglich Leserechte auf ausgewählte Submodelle wie Typenschild oder Technische Daten hat.
+Der Rolle Service-Techniker hingegen werden Lese- und Schreibrechte auf wartungsrelevante Submodelle (z.,B. Wartung oder Kontrollkomponente) zugewiesen, jedoch kein Zugriff auf das Submodell \acs{pcf}, welches für diese Rolle nicht relevant ist.
+Eine exemplarische \acs{rbac}-Konfiguration für die Rolle Groninger-Mitarbeiter in der AAS Environment ist in Listing~\ref{lst:rbac-config} dargestellt.
 
+!!! Bilder
 
-Für AAS Environment, Registries und Discovery Serivce.
-Dabei können den verschiedenen Rollen unterschiedliche Rechte zugeweisen werden.
-Der Mitarbeiter hält zum Beispiel vollen Zugriff auf alle Submodelle des DPP bzw. der AAS, während der Kunde nur bestimmmte Submodelle lesen darf.
-Beispiel links und rechts nebeneinander als Code Aussshnit vlt?
-Außerdem angeben für welche AAS, Submodelle oder Concept DescriptionsVlt hier ein JSON-Beispiel?
-
-
-\begin{itemize}[noitemsep, leftmargin=*]
-    \item \textbf{groninger.mitarbeiter}: Vollzugriff auf alle Submodelle (u.\,a. \textit{CarbonFootprint}, \textit{BOM}, \textit{Nameplate}, \textit{Prozessdaten})
-    \item \textbf{customer}: Leserechte auf ausgewählte Submodelle (z.\,B. \textit{Nameplate}, \textit{Dokumentation}, \textit{CarbonFootprint})
-    \item \textbf{technician}: Zugriff auf für den Service relevante Submodelle (z.\,B. \textit{Maintenance}, \textit{ControlComponent}), jedoch ohne Einsicht in das \textit{CarbonFootprint}-Submodell
-\end{itemize}
-
-Die RBAC-Konfiguration erfolgt über die Datei \texttt{rbac-rules.json}, die beim Start der jeweiligen BaSyx-Komponente (z.\,B. \texttt{aas-environment}, \texttt{registry}) eingelesen wird. Die dort definierten Regeln werden mit den Rollen aus dem JWT abgeglichen und dynamisch zur Laufzeit angewendet.
+Wie kann man sich als Nutzer anmelden über AAS Web UI \\
+Mit API \\
 
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}

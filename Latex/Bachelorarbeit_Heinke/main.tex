@@ -1,7 +1,10 @@
 \documentclass[12pt]{extarticle}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-\usepackage{lmodern}
+
+% Times Roman
+\renewcommand{\rmdefault}{ptm}
+% \usepackage{lmodern} Computer Modern
 % \usepackage[square,numbers]{natbib}
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -134,7 +137,7 @@
 \newcommand{\recommended}{\textcolor{orangeHaken}{\ding{52}}} % orange Kreis
 \newcommand{\optional}{\textcolor{black}{\ding{118}}}
 \newcommand{\notused}{\textcolor{black}{\ding{55}}}     % X-Symbol
-\newcommand{\mandatory}{\textcolor{DynamischesSubmodel}{\ding{51}}} % grüner Haken
+\newcommand{\mandatory}{\textcolor{greenHaken}{\ding{51}}} % grüner Haken
 
 %%% legende %%%
 \tcbset{legendbox/.style={
