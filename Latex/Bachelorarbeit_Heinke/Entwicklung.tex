@@ -495,6 +495,13 @@ Jeder Nutzer erhält ein individuelles Passwort. Die Rollenzuweisung erfolgt üb
 Jede Nutzergruppe ein Client. Client in Keycloak repräsentiert einen technischen .. der Zugriff auf gescützte Resourcen braciht.
 Konfiguration: wie ? was abgeben service accoutns roles,... credentials 
 
+BaSyx konfigurieren Regeln für env, registry, ... serialisier in JSON Dateien: 
+FÜr jede Rolle angeben welche AAS und welche Submodelle und welche REchte wie READ , Write, ...
+Mit Postman testen -> 
+Postman zum Testen-> Mit client credentials token holen von Keycloak
+Mit Token kann anfrage an BaSyx gestellt werden
+ -> je nach Rolle erluabt verweigert asyx 
+
 
 In diesem Anwendungsfall werden exewmplarisch drei Rollen definiert: Groninger-Mitarbeiter, Kunde, Service-Techniker
 Außerdem 3 Beispiel Nutzer: customer.doe, groninger.meyer, technician.john, welchen die entsprechenden Rollen über role mappings zugeweisen werden 
@@ -528,6 +535,52 @@ Mit Token kann anfrage an BaSyx gestellt werden
 %     \item \textbf{Groninger-Mitarbeiter}: Diese Rolle erhält Vollzugriff auf den \acs{dpp}. Sie kann Werte einsehen, aktualisieren und auch wieder löschen.
 %     \item \textbf{Externer Kunde}: Diese Rolle erhält ausschließlich Leserechte auf ausgewählte Submodelle.
 % \end{itemize}
+
+AB hier neu!!!!
+
+\subsubsection{Zugriffsrechte und Datensicherheit}
+
+Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Informationen ist essenziell, insbesondere im Hinblick auf Datenschutz, regulatorische Anforderungen sowie den Schutz geistigen Eigentums. Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} die Anwendung eines attributbasierten Zugriffskontrollmodells (\acs{abac}) vor. Dieses ermöglicht eine feingranulare Regelung des Zugriffs auf Submodelle und deren Elemente anhand von Nutzerattributen und Kontextinformationen.
+
+Da die \acs{abac}-Funktionalität in aktuellen Umsetzungen wie dem AASX Server Blazor oder Eclipse BaSyx zum Zeitpunkt der Umsetzung noch nicht vollständig unterstützt wird, erfolgt die Realisierung im Rahmen dieses Anwendungsfalls exemplarisch auf Basis eines rollenbasierten Ansatzes (\acs{rbac}). Eclipse BaSyx bietet hierfür eine vollumfängliche Unterstützung.
+
+\paragraph{Identitäts- und Rechteverwaltung mit Keycloak}
+
+Zur Umsetzung der Authentifizierung und Autorisierung wird Keycloak als Identity Provider eingesetzt. Keycloak ermöglicht die zentrale Verwaltung von Nutzern, Rollen und Clients und stellt sogenannte \acsp{jwt} aus, die zur Zugriffskontrolle innerhalb der BaSyx-Plattform verwendet werden. Die Integration erfolgt containerisiert über Docker, wodurch eine nahtlose Einbindung in das bestehende Setup möglich ist.
+
+Im ersten Schritt wird ein dediziertes \textit{Realm} erstellt, in dem sämtliche für das Projekt relevanten Entitäten verwaltet werden. Exemplarisch werden drei Nutzer mit jeweils unterschiedlichen Rollen konfiguriert:
+
+\begin{itemize}[noitemsep, leftmargin=*]
+    \item \textbf{groninger.meyer} (Rolle: \textit{groninger.mitarbeiter}) – Vollzugriff auf alle Submodelle
+    \item \textbf{customer.doe} (Rolle: \textit{customer}) – Leserechte auf ausgewählte Submodelle
+    \item \textbf{technician.john} (Rolle: \textit{technician}) – Eingeschränkter Zugriff, das PCF-Submodell ist nicht sichtbar
+\end{itemize}
+
+Die Zuweisung der Rollen erfolgt über Role Mappings. Für jede Nutzergruppe wird ein dedizierter Client in Keycloak angelegt. Diese Clients besitzen Service Accounts, denen die jeweils erforderlichen Rollen zugewiesen sind. Die Authentifizierung erfolgt über den OAuth2-Flow \texttt{client\_credentials}.
+
+\paragraph{Umsetzung der Zugriffskontrolle in Eclipse BaSyx}
+
+Die Zugriffsrechte auf Submodelle und deren Elemente werden über JSON-basierte RBAC-Regeln in den Komponenten von Eclipse BaSyx definiert. Diese Regeln legen für jede Rolle fest, welche Operationen (\texttt{READ}, \texttt{WRITE}, \texttt{DELETE}) auf welchen Submodellen erlaubt sind.
+
+Ein Beispiel für die Konfiguration der Submodellzugriffe:
+
+\begin{itemize}[noitemsep, leftmargin=*]
+    \item \textbf{groninger.mitarbeiter}: Vollzugriff auf alle Submodelle (u.\,a. \textit{CarbonFootprint}, \textit{BOM}, \textit{Nameplate}, \textit{Prozessdaten})
+    \item \textbf{customer}: Leserechte auf ausgewählte Submodelle (z.\,B. \textit{Nameplate}, \textit{Dokumentation}, \textit{CarbonFootprint})
+    \item \textbf{technician}: Zugriff auf für den Service relevante Submodelle (z.\,B. \textit{Maintenance}, \textit{ControlComponent}), jedoch ohne Einsicht in das \textit{CarbonFootprint}-Submodell
+\end{itemize}
+
+Die RBAC-Konfiguration erfolgt über die Datei \texttt{rbac-rules.json}, die beim Start der jeweiligen BaSyx-Komponente (z.\,B. \texttt{aas-environment}, \texttt{registry}) eingelesen wird. Die dort definierten Regeln werden mit den Rollen aus dem JWT abgeglichen und dynamisch zur Laufzeit angewendet.
+
+\paragraph{Test und Validierung der Zugriffskonfiguration}
+
+Zur Validierung des RBAC-Modells wird das API-Testwerkzeug Postman eingesetzt. Für jede Rolle wird zunächst über den jeweiligen Keycloak-Client ein \ac{jwt} bezogen. Anschließend erfolgt eine authentifizierte Anfrage an die BaSyx-REST-Schnittstellen unter Verwendung dieses Tokens.
+
+Je nach im Token enthaltener Rolle gewährt oder verweigert BaSyx den Zugriff auf bestimmte Ressourcen. So lässt sich nachvollziehbar testen, ob beispielsweise ein Techniker keine Einsicht in das Submodell \textit{CarbonFootprint} erhält oder ein Kunde nur lesend auf bestimmte Informationen zugreifen kann.
+
+\paragraph{Zusammenfassung}
+
+Durch die Kombination aus Keycloak und der RBAC-Unterstützung von Eclipse BaSyx konnte ein differenziertes Zugriffskonzept umgesetzt werden, das exemplarisch den kontrollierten Zugang zu digitalen Produktdaten demonstriert. Die Konfiguration über externe JSON-Dateien ermöglicht eine flexible Erweiterung des Berechtigungsmodells. Gleichzeitig schafft der modulare Aufbau eine Grundlage für eine spätere Migration hin zu einem attributbasierten Zugriffsmodell gemäß der \acs{idta}-Security-Spezifikation.
 
 
 
