@@ -36,7 +36,7 @@ Neben den Informationen aus den Unternehmenssystemen spielen aber auch Laufzeitd
 Da im Rahmen dieser Arbeit keine reale Maschine angebunden ist, werden diese Daten simuliert.
 Hierfür kommt eine in Node.js entwickelte Anwendung zum Einsatz, die im Folgenden als Datengenerator bezeichnet wird und sowohl Prozess- als auch Betriebsdaten generiert. 
 Ergänzend dazu wird ein Maschinensimulator verwendet, der einen PackML-Zustandsautomaten abbildet und typische Maschinenzustände sowie deren Übergänge simuliert. 
-Beide Komponenten stehen als Docker Container zur Verfügung und stellen die Daten über einen \acs{opcua} Server bereit, wodurch eine realitätsnahe Datenbasis geschaffen wird.
+Beide Komponenten stehen als Docker-Container zur Verfügung und stellen die Daten über einen \acs{opcua} Server bereit, wodurch eine realitätsnahe Datenbasis geschaffen wird.
 \subsubsection{Auswahl geeigneter Teilmodelle}
 Aufbauend auf den zuvor betrachteten Informationsquellen gilt es nun zu entscheiden, welche Aspekte der Maschine im digitalen Zwilling, oder besser gesagt in der \acs{aas}, abgebildet werden sollen.
 Im nächsten Schritt ist daher die Auswahl bzw. der Entwurf geeigneter Submodelle erforderlich, die die relevanten Informationen strukturiert bereitstellen.
@@ -295,7 +295,7 @@ Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten
 \end{figure}
 
 Das Eclipse BaSyx-Projekt stellt hierfür eine weitere Komponente bereit, die sogenannte Databridge \cite{BaSyxDatabridge}.
-Diese steht, wie alle anderen Komponenten auch, als Docker Container zur Verfügung und ermöglicht die Anbindung verschiedenster Datenquellen an eine \acs{aas}.
+Diese steht, wie alle anderen Komponenten auch, als Docker-Container zur Verfügung und ermöglicht die Anbindung verschiedenster Datenquellen an eine \acs{aas}.
 Sie unterstützt eine Vielzahl von Protokollen, darunter insbesondere auch \acs{opcua} oder MQTT.
 Dabei dient sie als Vermittler zwischen einem Datenendpunkt und einem Submodell innerhalb der \acs{aas}.
 
@@ -471,12 +471,58 @@ Die berechneten Werte werden abschließend in das \acs{cf}-Submodell der Haupt-\
 \subsubsection{Zugriffsrechte und Datensicherheit}
 Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Daten spielt eine zentrale Rolle, insbesondere im Hinblick auf Datenschutz, regulatorische Anforderungen sowie den Schutz gesitigen Eigentums. 
 Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} die Nutzung eines \acs{abac}-Ansatzes vor, um eine feingranulare Zugriffskontrolle auf Submodelle und deren Elemente zu ermöglichen.
-Da sich die \acs{abac}-Funktionalität in gängigen Implementierungen wie dem AASX Server Blazor oder Eclipse BaSyx derzeit noch in der Entwicklung befindet, wird die Umsetzung der Zugriffsrechte im Rahmen dieses Anwendungsfalls exemplarisch anhand eines \acs{rbac}-Ansatzes demonstriert, wie er in Eclipse BaSyx unterstützt wird.
+Da sich die \acs{abac}-Funktionalität in gängigen Implementierungen wie dem AASX Server Blazor oder Eclipse BaSyx derzeit jedoch noch in der Entwicklung befindet, wird die Umsetzung der Zugriffsrechte im Rahmen dieses Anwendungsfalls exemplarisch anhand eines \acs{rbac}-Ansatzes demonstriert, wie er in Eclipse BaSyx unterstützt wird.
+
+Als Identity Provider kommt eine Anwendung namens Keycloak zum Einsatz. 
+Sie stellt \acsp{jwt} aus, die zur Authentifizierung und Autorisierung innerhalb der Eclipse BaSyx-Plattform verwendet werden.
+Die Anwendung steht außerdem als Docker-Container zur Verfügung und lässt sich so nahtlos in das bestehende BaSyx-System integrieren.
+
+Im ersten Schritt muss ein neues Realm erstellt werden. 
+Ein Realm ist eine isolierte Umgebung innerhalb von Keycloak, in der Nutzer, Rollen und Clients für ein spezifisches Proket konfiguriert werden können.
+
+In diesem Anwendnungsfall werden exemplarisch drei Rollen definiert:
+Zusätzlich werden drei Beispielnutzer angelegt:
+
+\begin{itemize}[noitemsep, leftmargin=*]
+    \item \textbf{Groninger-Mitarbeiter -> groninger.meyer} 
+    \item \textbf{Kunde -> customer.doe} 
+    \item \textbf{Service-Techniker -> technician.john} 
+\end{itemize}
 
 
-Groninger-Mitarbeiter
-Kunde
-Service-Techniker
+Jeder Nutzer erhält ein individuelles Passwort. Die Rollenzuweisung erfolgt über sogenannte Role Mappings.
+
+Jede Nutzergruppe ein Client. Client in Keycloak repräsentiert einen technischen .. der Zugriff auf gescützte Resourcen braciht.
+Konfiguration: wie ? was abgeben service accoutns roles,... credentials 
+
+
+In diesem Anwendungsfall werden exewmplarisch drei Rollen definiert: Groninger-Mitarbeiter, Kunde, Service-Techniker
+Außerdem 3 Beispiel Nutzer: customer.doe, groninger.meyer, technician.john, welchen die entsprechenden Rollen über role mappings zugeweisen werden 
+Jeder Nutzer erhält dabei ein eigenes Passwort
+Client anlegen: Kurz erkläremn was client ist
+Ein client für customer, groninger, \dots -> service roles zuweisen
+BaSyx konfigurieren Regeln für env, registry, ... serialisier in JSON Dateien: 
+FÜr jede Rolle angeben welche AAS und welche Submodelle und welche REchte wie READ , Write, ...
+Mit Postman testen -> 
+Postman zum Testen-> Mit client credentials token holen von Keycloak
+Mit Token kann anfrage an BaSyx gestellt werden
+ -> je nach Rolle erluabt verweigert asyx 
+
+
+Keycloak als Identity Provider (JWT-Token) -> neues Realm groninger-aas
+Realm roles -> Groninger-Mitarbeiter, Kunde, Service-Techniker
+Beispiel Nutzer anlegen: customer.doe, groninger.meyer, technician.john
+Jedem Nutze ein Passwort zuweisen
+Nutzern Rollen zuweisen über role mapppings
+Client anlegen: Kurz erkläremn was client ist
+Ein client für customer, groninger, \dots -> service roles zuweisen
+BaSyx konfigurieren Regeln für env, registry, ... serialisier in JSON Dateien: 
+FÜr jede Rolle angeben welche AAS und welche Submodelle und welche REchte wie READ , Write, ...
+Mit Postman testen -> 
+Postman zum Testen-> Mit client credentials token holen von Keycloak
+Mit Token kann anfrage an BaSyx gestellt werden
+ -> je nach Rolle erluabt verweigert asyx 
+
 
 % Für den Anwendungsfall des \acs{dpp} werden exemplarisch zwei Rollen definiert:
 %     \item \textbf{Groninger-Mitarbeiter}: Diese Rolle erhält Vollzugriff auf den \acs{dpp}. Sie kann Werte einsehen, aktualisieren und auch wieder löschen.
