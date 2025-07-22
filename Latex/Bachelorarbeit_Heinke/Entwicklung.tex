@@ -441,7 +441,7 @@ Alternativ wäre auch eine Referenzierung direkt über das \acs{bom}-Submodell m
 Für die dynamische Berechnung müssen sowohl die \acs{aas} der robocell als auch die zugehörigen Komponenten-\acs{aas} in einer Laufzeitumgebung verfügbar sein. 
 Die Bereitstellung erfolgt über die Eclipse BaSyx-Plattform.
 Zur Benutzerinteraktion wird das bestehendes Vue.js-Plugin für den Carbon Fooprint der AAS Web UI genutzt.
-Dieses wird im Rahmen dieses Anwendungsfalls um eine Schaltfläche zur Initialisierung der Aggregation erweitert wird.
+Dieses wird im Rahmen dieses Anwendungsfalls um eine Schaltfläche zur Initialisierung der Aggregation erweitert.
 
 Die Aggregationslogik ist als eigenständiger, Node.js-basierter Microservice mit einer Web-API implementiert. 
 Diese wertet die Komponenten-\acs{aas} aus, berechnet die aggregierten Werte für die zuvor definierten Lebenszyklusphasen und schreibt diese in das \acs{cf}-Submodell der Haupt-AAS der robocell zurück. 
@@ -471,28 +471,26 @@ Die berechneten Werte werden abschließend in das \acs{cf}-Submodell der Haupt-\
 
 \subsubsection{Zugriffsrechte und Datensicherheit}
 
-Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Informationen ist essenziell, insbesondere im Hinblick auf Datenschutz, regulatorische Anforderungen sowie den Schutz geistigen Eigentums. 
-Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} die Nutzung eines attributbasierten Zugriffskontrollmodells (\acs{abac}) vor. 
+Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Informationen ist essenziell, insbesondere im Hinblick auf Datenschutz, regulatorische Vorgaben sowie den Schutz geistigen Eigentums.  
+Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} hierfür die Nutzung eines attributbasiertes Zugriffskontrollmodell (\acs{abac}) vor.
 
-Da die \acs{abac}-Funktionalität in aktuellen Umsetzungen wie dem AASX Server Blazor oder Eclipse BaSyx jedoch noch nicht vollständig unterstützt wird, erfolgt die Realisierung in diesem Anwendungsfall exemplarisch auf Basis eines rollenbasierten Ansatzes (\acs{rbac}), wie er von der Eclipse BaSyx-Plattform unterstützt wird. 
-Die Zugriffskontrolle erfolgt dabei durch die Zuweisung von Rechten an vordefinierte Rollen, denen wiederum Benutzer oder technische Clients zugeordnet werden können.
+Da die \acs{abac}-Funktionalität in aktuellen Referenzimplementierungen wie dem AASX Server Blazor oder Eclipse BaSyx jedoch noch nicht vollständig verfügbar ist, wird im Rahmen dieses Anwendungsfalls exemplarisch ein rollenbasiertes Zugriffskontrollmodell (\acs{rbac}) eingesetzt, wie es von der Eclipse BaSyx-Plattform unterstützt wird.  
+Die Zugriffskontrolle erfolgt dabei durch die Zuweisung spezifischer Berechtigungen an vordefinierte Rollen, denen wiederum Benutzer oder technische Clients zugeordnet werden.
 
-Zur Umsetzung der Authentifizierung und Autorisierung wird der Open-Source Identity Provider Keycloak eingesetzt \cite{Keycloak}.
-Dieser ermöglicht die zentrale Verwaltung von Nutzern, Rollen und Clients und unterstützt eine tokenbasierte Zugriffskontrolle mithilfe von \acsp{jwt}.
-Keycloak steht als Docker-Container zur Verfügung und lässt sich nahtlos in die bestehende BaSyx-Systemarchitektur integrieren.
+Zur Umsetzung von Authentifizierung und Autorisierung wird der Open-Source Identity Provider Keycloak verwendet \cite{Keycloak}.  
+Dieser ermöglicht die zentrale Verwaltung von Benutzern, Rollen und Clients und unterstützt eine tokenbasierte Zugriffskontrolle auf Basis von \acsp{jwt}.  
+Keycloak steht dabie als Docker-Container zur Verfügung und kann nahtlos in die BaSyx-Systemarchitektur integriert werden.
 
-Im ersten Schritt muss ein dediziertes Realm eingerichtet werden, das als gekapselte Umgebung sämtlicher projektbezogener Identitäten dient. 
-Innerhalb des Realms lassen sich Benutzer als auch Rollen definieren.
-Die Zuweisung erfolgt über sogenannte Role Mappings.
-Ein Nutzer kann entweder einer einzelnen oder mehreren Rollen gleichzeitig zugeordnet sein.
+Im ersten Schritt muss ein dediziertes Realm eingerichtet werden, das als gekapselte Umgebung für alle projektbezogenen Identitäten dient.  
+Innerhalb dieses Realms lassen sich sowohl Benutzerkonten als auch Rollen definieren, wobei die Zuweisung über sogenannte Role Mappings erfolgt.  
+Ein Benutzer kann dabei einer oder mehreren Rollen gleichzeitig zugewiesen sein.
 
-Jedes Benutzerkonto erhält dabei einen eindeutigen Benutzernamen sowie ein individuelles Passwort zur Authentifizierung. 
-Für erhöhte Sicherheit kann das initial vergebene Passwort als temporär markiert werden, sodass der Benutzer beim ersten Login zu dessen Änderung gezwungen wird. 
-Darüber hinaus bietet Keycloak ebenfalls die Möglichkeit, sogenannte Required Actions zu definieren.
-Diese verpflichten einen Nutzer beim nächsten Login zur Durchführung bestimmter Aktionen, etwa zur Verifizierung der E-Mail-Adresse oder zur Aktualisierung des Passworts.
-Auf diese Weise lässt sich der Authentifizierungsprozess flexibel an projektspezifische und sicherheitsrelevante Vorgaben anpassen.
+Jedes Benutzerkonto verfügt über einen eindeutigen Benutzernamen sowie ein initiales Passwort zur Authentifizierung.  
+Zur Erhöhung der Sicherheit kann dieses Passwort als temporär markiert werden, wodurch der Benutzer bei der ersten Anmeldung zu einer Änderung gezwungen wird.  
+Darüber hinaus bietet Keycloak ebenfalls die Möglichkeit, sogenannte Required Actions zu definieren, etwa zur E-Mail-Verifizierung oder zur erzwungenen Passwortänderung beim nächsten Login.  
+Dies erlaubt eine flexible Anpassung des Authentifizierungsprozesses an projektspezifische Sicherheitsanforderungen.
 
-In diesem Anwendungsfall werden beispielhaft folgende Benutzer eingerichtet:
+Im Rahmen dieses Anwendungsfalls werden exemplarisch folgende Benutzer eingerichtet:
 
 \begin{itemize}[noitemsep, leftmargin=*, label=\textbullet]
   \item \makebox[6cm][l]{\textbf{groninger.meyer}} (Rolle: \textit{Groninger-Mitarbeiter})
@@ -500,24 +498,21 @@ In diesem Anwendungsfall werden beispielhaft folgende Benutzer eingerichtet:
   \item \makebox[6cm][l]{\textbf{technician.john}} (Rolle: \textit{Service-Techniker})
 \end{itemize}
 
-Neben der Verwaltung menschlicher Benutzern erlaubt Keycloak auch die Administration technischer Clients, die beispielsweise maschinelle Anwendungen oder externe Systeme repräsentieren. 
-Die Identifikation der Clients erfolgt über eine eindeutige Client-ID sowie die Nutzung des OpenID Connect-Protokolls.
-Die Authentifizierung wird in der Regel durch eine Kombination aus Client-ID und einem geheimen Schlüssel (Client-Secret) sichergestellt.
-Für jeden Client kann ein sogenannter Service Account aktiviert werden, der als technisches Benutzerkonto agiert und, analog zu menschlichen Nutzern, mit spezifischen Rollen ausgestattet werden kann. 
-Dies ermöglicht eine kontrollierte und differenzierte Zugriffsteuerung auch für automatisierte Systemzugriffe.
+Neben der Verwaltung menschlicher Benutzer unterstützt Keycloak auch die Administration technischer Clients, die z.B. maschinelle Anwendungen oder externe Systeme repräsentieren.  
+Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutiger Client-ID und einem geheimen Schlüssel (Client Secret) gemäß dem OpenID Connect-Protokoll.  
+Für jeden Client kann optional ein Service Account aktiviert werden, der als technisches Benutzerkonto agiert und - analog zu realen Benutzern - mit spezifischen Rollen ausgestattet wird.  
+Dies ermöglicht eine differenzierte Zugriffsteuerung auch für automatisierte Systemzugriffe.
 
-Die Rechtevergabe innerhalb von Eclipse BaSyx erfolgt rollenbasiert über externe komponentenspezifische Konfigurationsdateien, typischerweise im JSON-Format. 
-Diese definieren, welchen Rollen welche Rechte auf bestimmte Elemente innerhalb der BaSyx-Umgebung erhalten, darunter AAS, Submodelle und Concept Descriptions. 
-Die möglichen Aktionen umfassen z.\,B. READ, WRITE oder DELETE. 
-Für generische Regeln kann das Platzhalterzeichen \texttt{*} verwendet werden.  
-So lässt sich etwa definieren, dass eine Rolle Zugriff auf alle AAS oder alle Submodelle innerhalb einer BaSyx-Komponente erhält.
-Für die AAS Web UI ist keine seperate \acs{rbac}-Datei nötig, sie orientiert sich an den Konfigurationen der zugrundeliegenden Services.
+Die Rechtevergabe innerhalb von Eclipse BaSyx erfolgt rollenbasiert über externe Konfigurationsdateien (i.~d.~R. im JSON-Format).  
+Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE ) auf bestimmte Elemente wie \acs{aas}, Submodelle oder Concept Descriptions erhalten.  
+Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um z.~B. den Zugriff auf alle Submodelle einer BaSyx-Komponente zu gewähren.  
+Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Services.
 
-Im Rahmen dieses Anwendungsfalles erhält die Rolle Groninger-Mitarbeiter beispielsweise vollen Zugriff auf sämtliche Submodelle des digitalen Produktpasses, während die Rolle Kunde lediglich Leserechte auf ausgewählte Submodelle wie Typenschild oder Technische Daten hat.
-Der Rolle Service-Techniker hingegen werden Lese- und Schreibrechte auf wartungsrelevante Submodelle (z.,B. Wartung oder Kontrollkomponente) zugewiesen, jedoch kein Zugriff auf das Submodell \acs{pcf}, welches für diese Rolle nicht relevant ist.
-Eine exemplarische \acs{rbac}-Konfiguration für die Rolle Groninger-Mitarbeiter in der AAS Environment ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
+Im Rahmen dieses Szenarios erhält die Rolle Groninger-Mitarbeiter vollständige Zugriffsrechte auf alle Submodelle des digitalen Produktpasses, während die Rolle Kunde ausschließlich Leserechte auf ausgewählte Submodelle (z.B. Typenschild oder Technische Daten) besitzt.  
+Die Rolle Service-Techniker hingegen verfügt über Lese- und Schreibrechte auf wartungsrelevante Submodelle (z.\,B. Wartung, Kontrollkomponente), jedoch ohne Zugriff auf das \acs{pcf}-Submodell, das für diese Rolle nicht vorgesehen ist.  
+Eine exemplarische \acs{rbac}-Konfiguration für die Rolle Groninger-Mitarbeiter ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
 
-\begin{lstlisting}[language=json, caption={RBAC-Konfiguration für die Rolle Groninger-Mitarbeiter }, label={lst:groningerMitarbeiterRBAC}]
+\begin{lstlisting}[language=json, caption={RBAC-Konfiguration für die Rolle Groninger-Mitarbeiter}, label={lst:groningerMitarbeiterRBAC}]
 {
     "role": "groninger-employee",
     "action": ["CREATE", "READ", "UPDATE", "DELETE"],
@@ -530,16 +525,14 @@ Eine exemplarische \acs{rbac}-Konfiguration für die Rolle Groninger-Mitarbeiter
 \end{lstlisting}
 
 Eine Möglichkeit, die im \acs{dpp} enthaltenen Informationen einzusehen, bietet die AAS Web UI. 
-Ist \acs{rbac} aktiviert, wird der Benutzer beim Aufruf der Weboberfläche automatisch zur Keycloak-Anmeldeseite weitergeleitet. 
-Dort erfolgt die Authentifizierung durch Eingabe von Benutzername und Passwort. 
-Die AAS Web UI ist in Keycloak als eigener Client registriert und erhält nach erfolgreicher Anmeldung ein Zugriffstoken, das die Rolleninformationen des Nutzers enthält. 
-Dieses Token wird im Hintergrund verwendet, um auf die zugrundeliegenden BaSyx-Komponenten wie die AAS Environment oder den Discovery Service zuzugreifen. 
-Die Entscheidung über die Zugriffsberechtigung trifft dabei nicht die AAS Web UI selbst, sondern die angesprochenen Dienste, die das übermittelte Token auslesen und die darin enthaltenen Rollen mit den in den jeweiligen \acs{rbac}-Konfigurationsdateien definierten Berechtigungen abgleichen.
+Ist \acs{rbac} aktiviert, wird der Benutzer beim Aufruf der Oberfläche zur Keycloak-Anmeldeseite weitergeleitet.  
+Nach erfolgreicher Authentifizierung erhält der registrierte Client (AAS Web UI) ein Zugriffstoken, das die Rolleninformationen des Nutzers enthält.  
+Dieses Token wird im Hintergrund an die angebundenen BaSyx-Komponenten (z.\,B. AAS Environment, Registry) weitergegeben.  
+Die Entscheidung über die tatsächliche Zugriffsberechtigung trifft dabei nicht die AAS Web UI, sondern der jeweilige Service, indem er die im Token enthaltenen Rollen gegen die hinterlegten RBAC-Regeln prüft.
 
-Alternativ kann auch direkt über die \acs{api} auf einzelne BaSyx-Komponenten zugegriffen werden, beispielsweise durch technische Clients oder externe Anwendungen. 
-Im Unterschied zur Nutzung über die AAS Web UI muss das Zugriffstoken in diesem Fall aktiv vom jeweiligen Client bei Keycloak angefordert werden, etwa über den Token-Endpunkt des entsprechenden Realms. 
-Um sich gegenüber den Komponenten zu authentifizieren, kann das erhaltene Token anschließend im Authorization-Header der HTTP-Anfrage mitgesendet werden. 
-Die Entscheidung über die Zugriffsberechtigung erfolgt dabei analog zur AAS Web UI durch die jeweiligen Dienste auf Basis der im Token enthaltenen Rollen und der hinterlegten \acs{rbac}-Regeln.
+Alternativ ist auch ein direkter Zugriff über die \acs{api} möglich, etwa durch technische Clients oder externe Anwendungen.  
+In diesem Fall muss das Zugriffstoken aktiv über den Token-Endpunkt des entsprechenden Realms bei Keycloak angefordert und anschließend im HTTP-Header der Anfrage übermittelt werden.  
+Die Autorisierung erfolgt analog zur Web-Oberfläche durch die jeweiligen BaSyx-Komponenten basierend auf den Rollen im Token und den definierten \acs{rbac}-Konfigurationen.
 
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}

@@ -61,11 +61,12 @@
 \usepackage{adjustbox} 
 %----------Code listings------------
 \usepackage{listings}
+\usepackage[scaled=1.1]{inconsolata}
 % Farben definieren
 \definecolor{numb}{rgb}{0.0, 0.5, 0.0}
 \definecolor{string}{rgb}{0.4, 0.0, 0.4}
 \definecolor{background}{HTML}{F5F5F5}
-\definecolor{darkgray}{gray}{0.2}
+\definecolor{darkgray}{gray}{0.1}
 \lstdefinelanguage{json}{
     numbers=left,
     numberstyle=\small,
@@ -82,7 +83,7 @@
     lineskip=-0.25pt, 
     upquote=true,
     morestring=[b]",
-    stringstyle=\color{darkgray},
+    stringstyle=\color{black},
     literate=
      *{0}{{{\color{numb}0}}}{1}
       {1}{{{\color{numb}1}}}{1}
