@@ -410,6 +410,20 @@ Die über das LinkedSegment referenzierten Zeitreihendaten lassen sich dort in v
 Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne dass diese physisch in der \acs{aas} gespeichert werden müssen.
 
 \subsection{KI-Modell zur Optimierung}
+Im Folgenden wird ein \acs{ki}-gestütztes Konzept zur Optimierung der zustandsbasierten Prozessüberwachung innerhalb des digitalen Zwillings vorgestellt und prototypisch umgesetzt.
+Ziel ist es, mithilfe maschinellen Lernens Anomalien im Betrieb des Abfüll -und Verschließmoduls der robocell frühzeitig zu erkennen und dadurch eine Grundlage für prädiktive Instandhaltungsstrategien zu schaffen.
+Dabei werden Methoden der \acs{ki} mit den Strukturen der \acs{aas} verknüpft, um eine standardisierte, interoperable Verwaltung des resultierenden Modells im Sinne der Industrie-4.0 zu ermöglichen.
+
+\subsubsection{Konzeptidee}
+Die zentrale Idee des Konzepts besteht darin, die im digitalen Zwilling eingebetteten Prozessdaten nutzbar zu machen, um durch den Einsatz von Methoden des maschinellen Lernens Muster im Betriebsverhalten zu identifizieren und Abweichungen frühzeitig zu erkennen.
+Ein vielversprechender Ansatz ist dabei der Einsatz sogenannter Autoencoder - neuronaler Netzarchitekturen aus dem Bereich des Deep Learning, die sich insbesondere für unüberwachtes Lernen eignen. 
+Autoencoder lernen in einer komprimierten Repräsentation die „Normalität“ des Systemverhaltens und ermöglichen es dadurch, Anomalien als signifikante Abweichungen in der Rekonstruktionsgenauigkeit zu erkennen (vgl. Sakurada und Yairi, 2014). 
+Dieser Ansatz ist besonders geeignet für industrielle Prozesse, bei denen nur wenige oder keine gelabelten Störungsdaten vorliegen.
+
+
+
+
+
 KI-gestützttes Konzept anhand eines prototypischen Beispiels.
 Ziel ML-Modell zur Anomalieerkennung auf Prozessdaten und zeigen wie das Modell mit der AAS verwaltet werden kann
 Wie sieht die Idee aus?
@@ -417,16 +431,15 @@ Wie sieht die Idee aus?
 \subsubsection{Prototypische Umsetzung}
 Zur Erkennung von Abweichungen im Betriebsverhalten der robocell, wird ein KI-basiertes Verfahren auf Basis eines Autoencoders implementiert.
 Dieses dient der frühzeitigen Identifikation von Anomalien in Zeitreihendaten.
-
-
-FÜr die Umsetzung gibt es verschiedene Möglichkeiten. In dieser Arbeit wird pytorch 
-Die Umsetzung erfolgt mit pytorch.
-Datenquelle
-Umsetzung mit pytorch
-Modelltraining mit Autoencoder
-Modell sepcihern mit onnx
-
-Nach erfolgreichem Training kann das Modell 
+neuronales Netz
+unüberwachtes Lernen
+Daten stammen vom Datengenerator oder besser gesagt aus der InfluxDB
+Umsetzung mit pytorch - Python
+Erst daten aus Datenbank holen 
+Diese vorbereiten mit numpy
+iwas war noch mit Sqeuenzen
+dann mit autoiencoder trainieren
+speichern mit onnx
 
 \subsubsection{Verwaltung der Metadaten in der \acs{aas}}
 In Folgendem wird beschrieben, wie die Metadaten des zuvor erstellten \acs{ki}-Modells mithilfe der \acs{aas} strukturiert erfasst und verwaltet werden können. 
