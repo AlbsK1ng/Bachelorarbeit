@@ -7,7 +7,7 @@ Abbildung \ref{fig:Entwicklungsschritte} veranschaulicht den Ablauf des zugrunde
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/vorgehenEntwicklungsteil.pdf}
-    \caption{Meine Bildunterschrift!!!!!}
+    \caption{Ablauf der Entwicklung des digitalen Zwillings}
     \label{fig:Entwicklungsschritte}
 \end{figure}
 \vspace{-1em}
@@ -85,7 +85,6 @@ Außerdem unterstützt dies die spätere Demonstration der konkreten \acs{aas} i
 %     \label{fig:konzeptionierungAAS}
 % \end{figure}
 
-\newpage
 \subsection{Modellierung mit der AAS}
 In diesem Abschnitt wird beschrieben, wie die zuvor ausgewählten Submodelle in eine \acs{aas} integriert und mit konkreten Daten sowie semantischen Informationen angereichert werden können.
 Dabei wird erläutert, wie eine \acs{aas} von Grund auf modelliert, schrittweise mit Inhalten gefüllt und abschließend gespeichert bzw. exportiert werden kann.  
@@ -100,6 +99,7 @@ In der geöffneten Umgebung lässt sich eine neue \acs{aas} anlegen, die sowohl 
 Abbildung~\ref{fig:NeuesAASPaket} zeigt den initialen Aufbau im Package Explorer, der im weiteren Verlauf sukzessive um Submodelle und deren Inhalte erweitert wird.
 Dateien, wie ein Titelbild für die robocell können dabei bereits zu Beginn in die \acs{aas}-Umgebung eingebettet werden und sind ein integraler Bestandteil des digitalen Zwillings.
 
+\vspace{-0.7em}
 \begin{figure}[htbp]
     \centering
     \includegraphics{Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG}
@@ -114,6 +114,7 @@ Diese vereinfachen nicht nur den späteren Austausch der \acs{aas}, sondern erm�
 Für erste Modellierungszwecke empfiehlt es sich, auf automatisch generierte Beispiel-IDs zurückzugreifen, die direkt im Package Explorer erzeugt werden können.
 
 \subsubsection*{Strukturierung durch Submodelle}
+\vspace{-0.5em}
 Im nächsten Schritt müssen die benötigten Submodelle zur \acs{aas} hinzugefügt werden.
 Diese lassen sich entweder als Instanz, Typ oder auch Template anlegen, was eine flexible Modellierung je nach Anwendungsfall ermöglicht.
 Jedes Submodell erhält dabei wie die \acs{aas} auch eine eindeutige ID, über die diese später identifiziert werden können.
@@ -126,6 +127,7 @@ Gemäß der Metamodellspezifikation \cite{SpezifikationPart1} wird dabei zwische
 DataElements bilden stets die unterste Ebene im Modell. Sie enthalten konkrete Informationen wie Werte oder Dateien und können keine weiteren Elemente enthalten.
 SubmodelElements hingegen sind komplexere Strukturen die wiederum als Container für untergeordnete Elemente dienen.
 
+\vspace{-0.5em}
 \input{TabelleSubmodellElemente}
 
 Submodellelemente erhalten im Gegensatz zu Submodellen keine eigene ID, sondern werden über ihre idShort eindeutig referenziert.
@@ -158,6 +160,7 @@ Gezeigt wird ein Ausschnitt des statischen Submodells Typenschild.
 \end{figure}
 
 \subsubsection*{Semantische Beschreibung mit Concept Descriptions}
+\vspace{-0.5em}
 
 Für die semantische Beschreibung von Submodellen und Submodellelementen innerhalb der AAS ist die Vergabe von semanticId-Referenzen essenziell.
 Jede semanticId verweist auf eine zugehörige \acs{cd}, die die Bedeutung des referenzierten Elements eindeutig und maschinenlesbar beschreibt.
@@ -182,6 +185,7 @@ Technisch betrachtet wäre jedoch auch eine rein externe Referenz ausreichend, d
 Die Nutzung etablierter externer Standards ist grundsätzlich zu bevorzugen, da sie nicht nur den Modellierungsaufwand erheblich reduziert, sondern auch die Interoperabilität zwischen verschiedenen Systemen und Anwendungen deutlich verbessert.
 
 \subsubsection*{Exportmöglichkeiten im Package Explorer}
+\vspace{-0.5em}
 Nach Abschluss der Modellierung lässt sich die erstellte \acs{aas} in verschiedenen Formaten exportieren.
 Das bevorzugte Format in diesem Projekt ist das AASX-Format, das sich als standardisierte Austauschform für die \acs{aas} etabliert hat.
 Es enthält alle modellierten Inhalte, einschließlich eingebetteter Dateien wie Bilder oder Dokumente, und eignet sich daher besonders für die Weitergabe einer Typ-1-\acs{aas}.
@@ -205,7 +209,7 @@ Hierzu kann eine von der \acs{idta} bereitgestellte Test Engine \cite{TestEngine
 Diese lässt sich direkt mit pip, dem Paktemanager von Python, installieren und anschließend über die Kommandozeile nutzen.
 
 Mit dem Befehl 
-\tcbox[inlinebox]{\textbf{aas\_test\_engine check\_files}} 
+\tcbox[inlinebox]{{aas\_test\_engine check\_files}} 
 kann beispielsweise die Validierung der zuvor erstellten \acs{aas} gestartet werden.
 Unterstützt werden sowohl AASX- als auch JSON-Dateien.
 Dabei wird zunächst geprüft, ob diese formal korrekt aufgebaut sind, insbesondere hinsichtlich der internen Struktur und ihrer Beziehungen.
@@ -216,7 +220,6 @@ Treten bei der Validierung formale oder semantische Fehler auf, beispielsweise d
 Diese Hinweise geben Aufschluss darüber, an welcher Stelle die Struktur bzw. der Inhalt der AASX-Datei fehlerhaft ist, und ermöglichen so eine gezielte Korrektur der betroffenen Elemente. 
 Werden im gesamten Prüfprozess hingegen keine Fehler oder Abweichungen festgestellt, bestätigt die Test Engine die erfolgreiche Validierung.
 
-\newpage
 \subsection{Technische Integration}
 Im Anschluss an die Konzeption und Modellierung des digitalen Zwillings liegt der Fokus dieses Kapitels auf der technischen Integration der zuvor erstellten \acs{aas} in eine Industrie-4.0-kompatible Umgebung.
 Dabei wird unter anderem gezeigt, wie die statisch modellierte Typ-1-\acs{aas} mithilfe des AASX Server Blazor beziehungsweise vorzugsweise der Eclipse BaSyx-Plattform in eine Typ-2-\acs{aas} überführt und systemseitig bereitgestellt werden kann.
@@ -249,6 +252,7 @@ Nach erfolgreichem Start der BaSyx-Umgebung stehen verschiedene Möglichkeiten z
 Welche Methode dabei zum Einsatz kommt, hängt stark von den jeweiligen Anforderungen und Rahmenbedingungen des Anwendungsszenarios ab.
 Nachfolgend werden drei ausgewählte Ansätze zur Bereitstellung näher betrachtet.
 
+\vspace{0.5em}
 \noindent\textbf{A. Volume}\\
 Eine besonders einfache Variante besteht darin, eine AASX-Datei in ein gemountetes Volume der AAS Environment abzulegen.
 Ein Volume ist ein persistentes Speicherverzeichnis auf dem Host-System, das mit einem Verzeichnis innerhalb eines Docker-Containers verknüpft ist.
@@ -259,11 +263,13 @@ Beim Neustart der AAS Environment wird die AASX-Datei automatisch erkannt, regis
 Die dabei erzeugten Daten, darunter Informationen zu \acs{aas}, Submodellen, Concept Descriptions sowie Registrierungsdaten, werden in verschiedenen Tabellen der angebunden MongoDB gespeichert.
 Dies gewährleistet, dass alle relevanten Daten persistent erhalten bleiben, selbst dann, wenn die ursprüngliche AASX-Datei später wieder aus dem Volume entfernt wird.
 
+\vspace{0.5em}
 \noindent\textbf{B. AAS Web UI}\\
 Alternativ kann die Bereitstellung auch direkt über die AAS Web UI erfolgen.
 Über die Benutzeroberfläche kann eine AASX-Datei manuell importiert werden, wodurch sie direkt im laufenden System registriert und eingebunden wird.
 Diese Methode eignet sich besonders gut für Tests oder kleinere Anpassungen, da eine \acs{aas} auf diese Weise schnell und ohne direkten Zugriff auf das zugrunde liegende Dateisystem eingebunden werden kann.
 
+\vspace{0.5em}
 \noindent\textbf{C. REST-API}\\
 Die flexibelste, jedoch auch technisch anspruchsvollste Methode zur Bereitstellung einer AAS ist die manuelle Registrierung über die REST-API. 
 Dabei kann nicht einfach eine AASX-Datei hochgeladen werden. 
@@ -286,13 +292,13 @@ Diese sind essenziell, um den aktuellen Maschinenzustand präzise und in Echtzei
 Die Datenbasis bilden die beiden zuvor vorgestellten Anwendungen, die Maschinen- bzw. Sensordaten über einen \acs{opcua} Server bereitstellen.
 
 Die Integration von Echtzeidaten in die \acs{aas} wird im Folgenden am Beispiel des Submodells Prozessdaten erläutert.
-Innerhalb dieses Submodells existieren verschiedene Properties, die jeweils bestimmte Werte, wie beispielsweise den Druck oder die Anzahl abefüllter Einheiten, repräsentieren (siehe Abbildung \ref{fig:SubmodellProzessdaten}). %(siehe Abbildung \ref{fig:UMLSubmodellProcessData}). 
+Wie in Abbildung \ref{fig:SubmodellProzessdaten} dargestellt, existieren innerhalb dieses Submodells verschiedene Properties, die jeweils bestimmte Werte, wie beispielsweise den Druck oder die Anzahl abefüllter Einheiten, repräsentieren. %(siehe Abbildung \ref{fig:UMLSubmodellProcessData}). 
 Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten, die über \acs{opcua} bereitgestellt werden, aktualisiert werden.
 
 \begin{figure}[htbp]
     \centering
     % 0.88
-    \includegraphics{Bilder/OPCUA/ProcessDataPackageExplorer.PNG}
+    \includegraphics[width=1\textwidth]{Bilder/OPCUA/SubmodellProzessdaten.pdf}
     \caption{Submodell Prozessdaten}
     \label{fig:SubmodellProzessdaten}
 \end{figure}
@@ -313,7 +319,7 @@ Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua
 \begin{figure}[htbp]
     \centering
     % 0.88
-    \includegraphics[width=1\textwidth]{Bilder/OPCUA/OPCUADaten.pdf}
+    \includegraphics{Bilder/OPCUA/OPCUADaten.pdf}
     \caption{OPC UA Datenknoten}
     \label{fig:OPCUADatenStruktur}
 \end{figure}
@@ -348,7 +354,7 @@ Der Platzhalter \{smId\} steht dabei für die Base64-kodierte ID des Submodells 
 {
     "uniqueId"        : "Submodel/ProcessData/Pressure",
     "submodelEndpoint": "http://aas-env:8081/submodels/{smId}",
-    "idShortPath"     : "Pressure",
+    "idShortPath"     : "Data.Pressure",
     "api"             : "DotAAS-V3"
 }
 \end{lstlisting}
@@ -377,11 +383,12 @@ InfluxDB sowie Telegraf stehen beide als Docker-Container zur Verfügung und las
 Um die in der Datenbank gespeicherten Daten in die \acs{aas} einzubinden, kann das bereits genannte \acs{smt} Time Series Data verwendet werden.
 Der strukturelle Aufbau ist in Abbildung \ref{fig:SMTTimeSeriesData} dargestellt.
 
+\newpage
 \begin{figure}[htbp]
     \centering
     % 0.88
     \includegraphics[width=1\textwidth]{Bilder/TimeSeries/SM_TimeSeriesData.pdf}
-    \caption{Aufbau des SMT Time Series Data}
+    \caption{SMT Time Series Data}
     \label{fig:SMTTimeSeriesData}
 \end{figure}
 
@@ -401,6 +408,36 @@ Zur Visualisierung der Zeitreihendaten bietet das BaSyx-System eine praktische L
 Über ein entsprechendes Plugin können die im Submodell Time Series Data enthaltenen Informationen direkt in der Benutzeroberfläche der AAS Web UI dargestellt werden.
 Die über das LinkedSegment referenzierten Zeitreihendaten lassen sich dort in verschiedenen Diagrammen visualisieren, beispielsweise als Linien- oder Balkendiagramm.
 Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne dass diese physisch in der \acs{aas} gespeichert werden müssen.
+
+\subsection{KI-Modell zur Optimierung}
+KI-gestützttes Konzept anhand eines prototypischen Beispiels.
+Ziel ML-Modell zur Anomalieerkennung auf Prozessdaten und zeigen wie das Modell mit der AAS verwaltet werden kann
+Wie sieht die Idee aus?
+
+\subsubsection{Prototypische Umsetzung}
+Zur Erkennung von Abweichungen im Betriebsverhalten der robocell, wird ein KI-basiertes Verfahren auf Basis eines Autoencoders implementiert.
+Dieses dient der frühzeitigen Identifikation von Anomalien in Zeitreihendaten.
+
+
+FÜr die Umsetzung gibt es verschiedene Möglichkeiten. In dieser Arbeit wird pytorch 
+Die Umsetzung erfolgt mit pytorch.
+Datenquelle
+Umsetzung mit pytorch
+Modelltraining mit Autoencoder
+Modell sepcihern mit onnx
+
+Nach erfolgreichem Training kann das Modell 
+
+\subsubsection{Verwaltung der Metadaten in der \acs{aas}}
+In Folgendem wird beschrieben, wie die Metadaten des zuvor erstellten \acs{ki}-Modells mithilfe der \acs{aas} strukturiert erfasst und verwaltet werden können. 
+Grundlage hierfür bilden drei von der \acs{idta} veröffentlichte \acsp{smt}, die gemeinsam eine umfassende Abbildung des KI-Lebenszyklus ermöglichen.
+
+\subsubsection*{A. Modellbeschreibung}
+ssadasd
+\subsubsection*{B. Datensatzbeschreibung}
+asdasd
+\subsubsection*{C. Modellbereitstellung}
+aSDASD
 
 \newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
@@ -510,7 +547,7 @@ Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich 
 
 Im Rahmen dieses Szenarios erhält die Rolle Groninger-Mitarbeiter vollständige Zugriffsrechte auf alle Submodelle des digitalen Produktpasses, während die Rolle Kunde ausschließlich Leserechte auf ausgewählte Submodelle (z.B. Typenschild oder Technische Daten) besitzt.  
 Die Rolle Service-Techniker hingegen verfügt über Lese- und Schreibrechte auf wartungsrelevante Submodelle (z.\,B. Wartung, Kontrollkomponente), jedoch ohne Zugriff auf das \acs{pcf}-Submodell, das für diese Rolle nicht vorgesehen ist.  
-Eine exemplarische \acs{rbac}-Konfiguration für die Rolle Groninger-Mitarbeiter ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
+Eine exemplarische \acs{rbac}-Konfiguration der Rolle Groninger-Mitarbeiter für die die AAS Environment ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
 
 \begin{lstlisting}[language=json, caption={RBAC-Konfiguration für die Rolle Groninger-Mitarbeiter}, label={lst:groningerMitarbeiterRBAC}]
 {
@@ -588,38 +625,3 @@ Um diese hinzuzufügen, können während der Skriptausführung zufällig generie
 
 Im letzten Schritt erfolgt die Bereitstellung der AAS-Instanz innerhalb des Eclipse BaSyx-Systems. 
 Hierzu kann die \acs{aas} sowie das zugehörige Submodell, analog zur Möglichkeit~C REST-API aus Kapitel~\ref{sec:bereitstellungAAS}, eingebunden und registriert werden.
-
-\subsection{Titel Anwendungsfall KI}
-
-\subsubsection{KI-Modell zur Anomalieerkennung}
-Zur Erkennung von Abweichungen im Betriebsverhalten der robocell, wird ein KI-basiertes Verfahren auf Basis eines Autoencoders implementiert.
-Dieses dient der frühzeitigen Identifikation von Anomalien in Zeitreihendaten.
-
-
-FÜr die Umsetzung gibt es verschiedene Möglichkeiten. In dieser Arbeit wird pytorch 
-
-
-
-
-Die Umsetzung erfolgt mit pytorch.
-
-
-
-
-Datenquelle
-Umsetzung mit pytorch
-Modelltraining mit Autoencoder
-Modell sepcihern mit onnx
-
-Nach erfolgreichem Training kann das Modell 
-
-\subsubsection{Verwaltung der Metadaten in der \acs{aas}}
-In Folgendem wird beschrieben, wie die Metadaten des zuvor erstellten \acs{ki}-Modells mithilfe der \acs{aas} strukturiert erfasst und verwaltet werden können. 
-Grundlage hierfür bilden drei von der \acs{idta} veröffentlichte \acsp{smt}, die gemeinsam eine umfassende Abbildung des KI-Lebenszyklus ermöglichen.
-
-\subsubsection*{A. Modellbeschreibung}
-ssadasd
-\subsubsection*{B. Datensatzbeschreibung}
-asdasd
-\subsubsection*{C. Modellbereitstellung}
-aSDASD
