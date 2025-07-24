@@ -401,6 +401,7 @@ Anschließend folgt die Konfiguration des LinkedSegments.
 Dieses stellt die eigentliche Verbindung zu den extern gespeicherten Zeitreihendaten her.
 Hierfür sind sowohl der Datenendpunkt als als auch die Query, mit der die gewünschten Werte ausgelesen werden sollen, zu spezifizieren.
 Im vorliegenden Fall handelt es sich dabei um die Adresse des InfluxDB-Containers sowie die Abfrage, mit der die Werte für Druck und Temperatur aus der zugehörigen Tabelle extrahiert werden können.
+
 Dabei ist zu beachten, dass der entsprechende Port der InfluxDB nach außen freigegeben ist, da andernfalls kein Zugriff durch externe Anwendungen möglich ist.
 Ergänzend können weitere Metadaten angegeben werden, beispielsweise die Abtastrate (samplingRate), der durch das Segment abgedeckte Zeitraum oder ein recordCount, der die erwartete Anzahl an Einträgen innerhalb dieses Zeitfensters beschreibt.
 
@@ -412,10 +413,81 @@ Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne da
 \subsection{KI-Modell zur Optimierung}
 Im Folgenden wird ein \acs{ki}-gestütztes Konzept zur Optimierung der zustandsbasierten Prozessüberwachung innerhalb des digitalen Zwillings vorgestellt und prototypisch umgesetzt.
 Ziel ist es, mithilfe maschinellen Lernens Anomalien im Betrieb des Abfüll -und Verschließmoduls der robocell frühzeitig zu erkennen und dadurch eine Grundlage für prädiktive Instandhaltungsstrategien zu schaffen.
-Dabei werden Methoden der \acs{ki} mit den Strukturen der \acs{aas} verknüpft, um eine standardisierte, interoperable Verwaltung des resultierenden Modells im Sinne der Industrie-4.0 zu ermöglichen.
+Darüber hinaus werden die Methoden der \acs{ki} mit den Strukturen der \acs{aas} verknüpft, um eine standardisierte, interoperable Verwaltung des resultierenden Modells im Sinne der Industrie-4.0 zu ermöglichen.
 
 \subsubsection{Konzeptidee}
+Mit der fortschreitenden Digitalisierung industrieller Prozesse entstehen zunehmend umfangreiche Datenmengen, die wertvolle Informationen über den Zustand und das Verhalten eines Assets liefern. 
+Dabei handelt es sich um unterschiedlichste Datenarten, etwa die Drehzahl eines Motors während eines Schraubprozesses oder, wie im Rahmen dieser Arbeit im digitalen Zwilling abgebildet, klassische Prozessdaten wie Druck und Temperatur.
+Gerade bei langjährig eingesetzten Maschinen oder Anlagen gestaltet sich die manuelle Analyse dieser Daten als besonders herausfordernd. 
+Abweichungen vom Normalbetrieb sind oft schwer zu erkennen, was eine zuverlässige Zustandsüberwachung erheblich erschwert.
+Ein vielversprechender Ansatz, der genau diese Problematik adressiert, ist der sogenannte Autoencoder. 
+
+Dieser stellt eine spezielle Architektur tiefer neuronaler Netze dar und besteht typischerweise aus zwei Hauptkomponenten: einem Encoder, der die Eingabedaten komprimiert und in eine latente Repräsentation überführt, sowie einem Decoder, der versucht, aus dieser komprimierten Darstellung die ursprünglichen Daten möglichst genau zu rekonstruieren. 
+Beide Komponenten werden dabei gemeinsam im Rahmen des unüberwachten Lernens trainiert. \cite{Lempitsky2019}
+
+
+\begin{figure}[htbp]
+    \centering
+    % 0.88
+    \includegraphics[width=1\textwidth]{Bilder/Autoencoder/AutoencoderModell.pdf}
+    \caption{Aufbau eines Autoencoders}
+    \label{fig:Autoencoder}
+\end{figure}
+
+
+
+ERklärung Encoder latetnert Raum, Decoder
+Der Encoder 
+Im Rahmen unüberwachtem Lernens möchte ich hier noch sagen und das das von Vortiel ist weil die Daten in der Industrie häufgi so vorliegen ohne gelabelte Anomalien weist wie ich meine danach würd ich gerne ein Bil einfügen dachte ich mit encoder -> latenter Raume -> Encoder und danach dann das Bild kurz beschreiben so meine gedanken
+
+
+
+
+
+Die Daten liegen häufig so vor also ungelabelt.
+In diesem Absatz weiter was autoencoder ist oder eerst im nöchsten also mit den Zwei teilen also encoder und decoder
+
+
+Der Autoencoder besteht
+Dabei handelt es sich um eine spezielle Architektur tiefer neuronaler Netze die im Rahmen des unüberwachtem Lernens eingesetzt wird.
+
+
+
+
+
+
+
+
+
+
+ist es jedoch herausfordernd, diese Daten manuell zu analysieren und Abweichungen vom Normalbetrieb zuverlässig zu identifizieren.
+
+Ein vielversprechender Ansatz, der genau diese Problematik adressiert, ist der Einsatz von AUtoencoder.
+\dots Weiter erstmal nicht
+Zur Unterstützung diser Analyse bieten sich Verfahren des macschinellen Lernens an, die Muster in den Daten erkennnen und automatisiert auf Abweichungen hinweisen können.
+
+
+
+
+Die Idee des Konzepts besteht darin, maschinelles Lernen einzusetzten um Muster in den im digitalen Zwilling gespeicherten Prozessdaten zu identifizieren und Abweichungen frühzeitig zu erkennen.
+Ein vielversprechender Ansatz ist der Einsatz sogenannter Autoencoder.
+Sie stellen eine spezielle Architektur tiefer neuronaler Netze dar und bestehen im wesentlichen aus zwei Hauptkomponenten: einem Encoder ... und einem Decoder der die .
+
+
+Sie bestehen dabei aus zwei Schlüsselkomponenten - einem Encoder und einem Decoder.
+
+
+ER besteht wesentlich aus zwei Teilen 
+ - dem Encoder und Decoder 
+
+Sie stellen eine Form des unüberwachtem Lernens nueronale Netze dar.
+ER besteht wesentlich aus zwei Teilen 
+ - dem Encoder und Decoder 
+
+
 Die zentrale Idee des Konzepts besteht darin, die im digitalen Zwilling eingebetteten Prozessdaten nutzbar zu machen, um durch den Einsatz von Methoden des maschinellen Lernens Muster im Betriebsverhalten zu identifizieren und Abweichungen frühzeitig zu erkennen.
+
+
 Ein vielversprechender Ansatz ist dabei der Einsatz sogenannter Autoencoder - neuronaler Netzarchitekturen aus dem Bereich des Deep Learning, die sich insbesondere für unüberwachtes Lernen eignen. 
 Autoencoder lernen in einer komprimierten Repräsentation die „Normalität“ des Systemverhaltens und ermöglichen es dadurch, Anomalien als signifikante Abweichungen in der Rekonstruktionsgenauigkeit zu erkennen (vgl. Sakurada und Yairi, 2014). 
 Dieser Ansatz ist besonders geeignet für industrielle Prozesse, bei denen nur wenige oder keine gelabelten Störungsdaten vorliegen.
@@ -558,7 +630,7 @@ Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DE
 Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um z.~B. den Zugriff auf alle Submodelle einer BaSyx-Komponente zu gewähren.  
 Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Services.
 
-Im Rahmen dieses Szenarios erhält die Rolle Groninger-Mitarbeiter vollständige Zugriffsrechte auf alle Submodelle des digitalen Produktpasses, während die Rolle Kunde ausschließlich Leserechte auf ausgewählte Submodelle (z.B. Typenschild oder Technische Daten) besitzt.  
+Im Rahmen dieses Szenarios erhält die Rolle Groninger-Mitarbeiter vollständige Zugriffsrechte auf alle Submodelle des \acs{dpp}, während die Rolle Kunde ausschließlich Leserechte auf ausgewählte Submodelle (z.B. Typenschild oder Technische Daten) besitzt.  
 Die Rolle Service-Techniker hingegen verfügt über Lese- und Schreibrechte auf wartungsrelevante Submodelle (z.\,B. Wartung, Kontrollkomponente), jedoch ohne Zugriff auf das \acs{pcf}-Submodell, das für diese Rolle nicht vorgesehen ist.  
 Eine exemplarische \acs{rbac}-Konfiguration der Rolle Groninger-Mitarbeiter für die die AAS Environment ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
 
