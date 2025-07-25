@@ -313,7 +313,7 @@ In einer zentralen Konfigurationsdatei werden sowohl die Datenquelle als auch di
 Außerdem können Transformatoren angegeben werden, die beispielsweise Einheitenumrechnungen oder Typkonvertierungen übernehmen.
 
 Als Datenquelle muss der \acs{opcua} Server des Datengenerators angegeben werden, dessen Konfiguration typischerweise in einer separaten JSON-Datei erfolgt.
-Darin sind sowohl die Verbindungsparameter des Servers (z.B. URL und Port) als auch die zu überwachenden Knoten anzugeben.
+Darin sind sowohl die Verbindungsparameter des Servers (z.B. \acs{url} (Uniform Resource Locator) und Port) als auch die zu überwachenden Knoten anzugeben.
 Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua} Server die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
 
 \begin{figure}[htbp]
@@ -365,7 +365,7 @@ Somit bildet die Databridge eine flexible und protokolloffene Lösung zur Echtze
 
 
 \subsubsection{Verarbeitung von Zeitreihendaten}
-
+\label{sec: VerarbeitungZeitreihen}
 Grundsätzlich lassen sich Zeitreihendaten auf unterschiedlichste Weise in eine \acs{aas} einbinden.
 Das \acs{smt} Time Series Data \cite{SpezifikationTimeSeriesData} bietet hierfür mehrere standardisierte Lösungsansätze.
 Eine Möglichkeit besteht darin, diese direkt über ein InternalSegment in der \acs{aas} zu speichern.
@@ -417,15 +417,15 @@ Darüber hinaus werden die Methoden der \acs{ki} mit den Strukturen der \acs{aas
 
 \subsubsection{Konzeptidee}
 Mit der fortschreitenden Digitalisierung industrieller Prozesse entstehen zunehmend umfangreiche Datenmengen, die wertvolle Informationen über den Zustand und das Verhalten eines Assets liefern. 
-Dabei handelt es sich um unterschiedlichste Datenarten, etwa die Drehzahl eines Motors während eines Schraubprozesses oder, wie im Rahmen dieser Arbeit im digitalen Zwilling abgebildet, klassische Prozessdaten wie Druck und Temperatur.
-Gerade bei langjährig eingesetzten Maschinen oder Anlagen gestaltet sich die manuelle Analyse dieser Daten als besonders herausfordernd. 
-Abweichungen vom Normalbetrieb sind oft schwer zu erkennen, was eine zuverlässige Zustandsüberwachung erheblich erschwert.
+Dabei handelt es sich um unterschiedlichste Datenarten, etwa die Drehzahl eines Motors oder, wie im Rahmen dieser Arbeit im digitalen Zwilling abgebildet, klassische Prozessdaten wie Druck und Temperatur.
+Die manuelle Analyse dieser Daten kann sich als sehr herausfordernd gestalten. Abweichungen vom Normalbetrieb sind oft schwer zu erkennen, was eine zuverlässige Zustandsüberwachung erheblich erschwert.
+
 Ein vielversprechender Ansatz, der genau diese Problematik adressiert, ist der sogenannte Autoencoder. 
+Dieser stellt eine spezielle Architektur tiefer neuronaler Netze dar und besteht typischerweise aus zwei Hauptkomponenten: einem Encoder und einem Decoder, die gemeinsam eine komprimierte, latente Repräsentation der Eingangsdaten erlernen.
+\cite{Lempitsky2019}
+Der prinzipielle Aufbau eines Autoencoders ist in Abbildung \ref{fig:Autoencoder} dargestellt.
 
-Dieser stellt eine spezielle Architektur tiefer neuronaler Netze dar und besteht typischerweise aus zwei Hauptkomponenten: einem Encoder, der die Eingabedaten komprimiert und in eine latente Repräsentation überführt, sowie einem Decoder, der versucht, aus dieser komprimierten Darstellung die ursprünglichen Daten möglichst genau zu rekonstruieren. 
-Beide Komponenten werden dabei gemeinsam im Rahmen des unüberwachten Lernens trainiert. \cite{Lempitsky2019}
-
-
+% \vspace{-1em}
 \begin{figure}[htbp]
     \centering
     % 0.88
@@ -434,88 +434,57 @@ Beide Komponenten werden dabei gemeinsam im Rahmen des unüberwachten Lernens tr
     \label{fig:Autoencoder}
 \end{figure}
 
+Der Encoder besteht aus mehreren Schichten, die die Eingabedaten schrittweise in eine komprimierte Form überführen. Dabei erfolgt eine Dimensionsreduktion, das heißt, die Daten werden im Verlauf auf weniger Dimensionen verdichtet. 
+Das Ziel ist es, die für die Rekonstruktion wesentlichen Merkmale zu extrahieren und irrelevante Informationen zu filtern.
+Der dabei entstehende latente Raum bildet die am stärksten komprimierte Repräsentation der Daten ab und dient als Ausgangspunkt für den Decoder.
+Dieser übernimmt die Aufgabe, die komprimierte Darstellung wieder in die ursprüngliche Eingabe zu rekonstruieren. 
+Auch er besteht aus mehreren Schichten, die die Daten schrittweise dekomprimieren.
+Zur Bewertung der Leistungsfähigkeit des Autoencoders wird die resultierende Ausgabe mit der ursprünglichen Eingabe verglichen. 
+Die Differenz zwischen beiden wird als Rekonstruktionsfehler bezeichnet.\cite{Autoencoder}
 
-
-ERklärung Encoder latetnert Raum, Decoder
-Der Encoder 
-Im Rahmen unüberwachtem Lernens möchte ich hier noch sagen und das das von Vortiel ist weil die Daten in der Industrie häufgi so vorliegen ohne gelabelte Anomalien weist wie ich meine danach würd ich gerne ein Bil einfügen dachte ich mit encoder -> latenter Raume -> Encoder und danach dann das Bild kurz beschreiben so meine gedanken
-
-
-
-
-
-Die Daten liegen häufig so vor also ungelabelt.
-In diesem Absatz weiter was autoencoder ist oder eerst im nöchsten also mit den Zwei teilen also encoder und decoder
-
-
-Der Autoencoder besteht
-Dabei handelt es sich um eine spezielle Architektur tiefer neuronaler Netze die im Rahmen des unüberwachtem Lernens eingesetzt wird.
-
-
-
-
-
-
-
-
-
-
-ist es jedoch herausfordernd, diese Daten manuell zu analysieren und Abweichungen vom Normalbetrieb zuverlässig zu identifizieren.
-
-Ein vielversprechender Ansatz, der genau diese Problematik adressiert, ist der Einsatz von AUtoencoder.
-\dots Weiter erstmal nicht
-Zur Unterstützung diser Analyse bieten sich Verfahren des macschinellen Lernens an, die Muster in den Daten erkennnen und automatisiert auf Abweichungen hinweisen können.
-
-
-
-
-Die Idee des Konzepts besteht darin, maschinelles Lernen einzusetzten um Muster in den im digitalen Zwilling gespeicherten Prozessdaten zu identifizieren und Abweichungen frühzeitig zu erkennen.
-Ein vielversprechender Ansatz ist der Einsatz sogenannter Autoencoder.
-Sie stellen eine spezielle Architektur tiefer neuronaler Netze dar und bestehen im wesentlichen aus zwei Hauptkomponenten: einem Encoder ... und einem Decoder der die .
-
-
-Sie bestehen dabei aus zwei Schlüsselkomponenten - einem Encoder und einem Decoder.
-
-
-ER besteht wesentlich aus zwei Teilen 
- - dem Encoder und Decoder 
-
-Sie stellen eine Form des unüberwachtem Lernens nueronale Netze dar.
-ER besteht wesentlich aus zwei Teilen 
- - dem Encoder und Decoder 
-
-
-Die zentrale Idee des Konzepts besteht darin, die im digitalen Zwilling eingebetteten Prozessdaten nutzbar zu machen, um durch den Einsatz von Methoden des maschinellen Lernens Muster im Betriebsverhalten zu identifizieren und Abweichungen frühzeitig zu erkennen.
-
-
-Ein vielversprechender Ansatz ist dabei der Einsatz sogenannter Autoencoder - neuronaler Netzarchitekturen aus dem Bereich des Deep Learning, die sich insbesondere für unüberwachtes Lernen eignen. 
-Autoencoder lernen in einer komprimierten Repräsentation die „Normalität“ des Systemverhaltens und ermöglichen es dadurch, Anomalien als signifikante Abweichungen in der Rekonstruktionsgenauigkeit zu erkennen (vgl. Sakurada und Yairi, 2014). 
-Dieser Ansatz ist besonders geeignet für industrielle Prozesse, bei denen nur wenige oder keine gelabelten Störungsdaten vorliegen.
-
-
-
-
-
-KI-gestützttes Konzept anhand eines prototypischen Beispiels.
-Ziel ML-Modell zur Anomalieerkennung auf Prozessdaten und zeigen wie das Modell mit der AAS verwaltet werden kann
-Wie sieht die Idee aus?
+Autoencoder eignen sich hervorragend zur Erkennung von Anomalien in Zeitreihendaten, insbesondere im Rahmen des unüberwachten Lernens.
+Klassische Autoencoder werden dabei ausschließlich mit Daten aus dem Normalbetrieb trainiert.
+Dabei lernt das Modell, typische Muster zu erkennen und ist in der Lage, normale Betriebszustände zuverlässig zu rekonstruieren.
+Weichen neue Eingangsdaten deutlich vom erlernten Schema ab, gelingt die Rekonstruktion nicht mehr vollständig.
+Dies führt zu einem erhöhten Rekonstruktionsfehler, der als Indikator für eine potenzielle Anomalie gewertet werden kann.
 
 \subsubsection{Prototypische Umsetzung}
-Zur Erkennung von Abweichungen im Betriebsverhalten der robocell, wird ein KI-basiertes Verfahren auf Basis eines Autoencoders implementiert.
-Dieses dient der frühzeitigen Identifikation von Anomalien in Zeitreihendaten.
-neuronales Netz
-unüberwachtes Lernen
-Daten stammen vom Datengenerator oder besser gesagt aus der InfluxDB
-Umsetzung mit pytorch - Python
-Erst daten aus Datenbank holen 
-Diese vorbereiten mit numpy
-iwas war noch mit Sqeuenzen
-dann mit autoiencoder trainieren
-speichern mit onnx
+Für die prototypische Umsetzung des Autoencoders wird die Programmiersprache Python verwendet.
+Als Datengrundlage dienen die simulierte Temperaturverläufe, die mithilfe des Datengenerators erzeugt und, wie auch in Kapitel \ref{sec: VerarbeitungZeitreihen} beschrieben, in einer InfluxDB gespeichert sind.
+Um diese vorzubereiten, wird ein Python-basierter InfluxDB-Client verwendet, der über ein API-Token sowie die \acs{url} des Datenbanksystems mit der Datenquelle kommuniziert.
+Die relevanten Temperaturdaten werden über eine gezielte Abfrage aus der Datenbank extrahiert.
+In dieser Umsetzung wird dabei ein Zeitraum von 7 Tagen betrachtet.
+
+Die extrahierten Daten lassen sich anschließend mit NumPy in ein geeignetes Array-Format überführen und in Sequenzen unterteilen, um sie für das Training des Autoencoders vorzubereiten.
+Dabei werden Zeitfenster mit einer Länge von 30 Werten bei einer Abtastrate von 1 Hz gebildet, was einem Zeitraum von 30 Sekunden entspricht.
+Diese Fenstergröße wird gewählt, da relevante Veränderungen im Prozessverlauf typischerweise innerhalb kurzer Zeiträume auftreten.
+Abschließend müssen die Sequenzen in einen Tensor umgewandelt werden. 
+In diesem Fall handelt es sich um einen zweidimensionalen Tensor, bei dem jede Zeile eine Zeitfenster-Sequenz mit 30 Temperaturwerten enthält.
+
+Im Anschluss an die Datenvorbereitung muss der Autoencoder konfiguriert werden. 
+Dies erfolgt mit dem Deep-Learning-Framework PyTorch [1]. 
+In dieser Umsetzung wird ein einfaches Modell verwendet. 
+Der Encoder ist so aufgebaut, dass er die Eingabesequenz mit 30 Temperaturwerten zunächst auf 5 Neuronen reduziert und anschließend auf 2 Neuronen verdichtet. 
+Diese beiden Neuronen bilden den latenten Raum. 
+Der Decoder ist spiegelbildlich aufgebaut, erweitert die Darstellung aus dem latenten Raum zunächst wieder auf 5 Neuronen und generiert schließlich 30 Ausgabewerte, die der ursprünglichen Eingabesequenz entsprechen.
+
+Nach der Konfiguration des Autoencoders folgt das Training mit einer festgelegten Anzahl an Epochen. 
+Dabei werden dem Modell die zuvor definierten Tensoren mit den Zeitfenster-Sequenzen als Eingabe übergeben. 
+Die Rekonstruktion erfolgt für alle Sequenzen parallel. 
+Anschließend wird die mittlere quadratische Abweichung (MSE) zwischen Eingabe und Ausgabe berechnet. 
+Dieser Fehlerwert dient als Grundlage für die Anpassung der Modellparameter, beispielsweise durch Backpropagation. 
+Der Vorgang wird iterativ über alle Epochen hinweg wiederholt, um die Genauigkeit des Modells sukzessive zu optimieren.
+
+Das fertig trainierte Modell kann anschließend zur Erkennung von Anomalien in neuen Temperaturdaten eingesetzt werden. 
+Diese Daten sind analog zu den Trainingsdaten aufgebaut, enthalten jedoch gezielt eingefügte Ausreißer bzw. Unregelmäßigkeiten. 
+Während der Ausführung des Autoencoders muss für jede Sequenz der Rekonstruktionsfehler berechnet werden, der die durchschnittliche Abweichung zwischen den Eingabewerten und den rekonstruierten Ausgabewerten beschreibt.
+Um Anomalien zu identifizieren, kann dieser Fehler mit einem definierten Schwellenwert verglichen werden, beispielsweise dem 95. Perzentil der Fehlerverteilung oder dem Mittelwert zuzüglich des Zweifachen der Standardabweichung. 
+Überschreitet der Rekonstruktionsfehler diesen Wert, so wird die gesamte Sequenz, also das vollständige Zeitfenster mit 30 Werten, als Anomalie klassifiziert.
 
 \subsubsection{Verwaltung der Metadaten in der \acs{aas}}
-In Folgendem wird beschrieben, wie die Metadaten des zuvor erstellten \acs{ki}-Modells mithilfe der \acs{aas} strukturiert erfasst und verwaltet werden können. 
-Grundlage hierfür bilden drei von der \acs{idta} veröffentlichte \acsp{smt}, die gemeinsam eine umfassende Abbildung des KI-Lebenszyklus ermöglichen.
+KI-Modelle lassen sich im weiteren Sinne als digitale Assets betrachten, da sie ebenfalls über einen eigenen Lebenszyklus verfügen. 
+Im Folgenden wird daher gezeigt, wie diese mithilfe der \acs{aas} verwaltet werden können. 
+Grundlage bilden drei von der \acs{idta} veröffentlichte \acsp{smt} \cite{SpezifikationAIModelNameplate, SpezifikationAIDataset,SpezifikationAIDeployement}, die gemeinsam eine umfassende Abbildung des KI-Lebenszyklus ermöglichen:
 
 \subsubsection*{A. Modellbeschreibung}
 ssadasd

@@ -1430,6 +1430,111 @@
     \field{year}{2019}
   \endentry
 
+  \entry{Autoencoder}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=DBCS}{%
+         family={Dave\bibnamedelima Bergmann},
+         familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Cole\bibnamedelima Stryker},
+         giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DBCS1}
+    \strng{fullhash}{DBCS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Was ist ein Autoencoder?}
+    \verb{url}
+    \verb https://www.ibm.com/de-de/think/topics/autoencoder
+    \endverb
+    \field{year}{2023}
+    \field{urlday}{25}
+    \field{urlmonth}{07}
+    \field{urlyear}{2025}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{SpezifikationAIModelNameplate}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=AIDT}{%
+         family={Association},
+         familyi={A\bibinitperiod},
+         given={Industrial Digital\bibnamedelima Twin},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AIDT1}
+    \strng{fullhash}{AIDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{IDTA 02060-1-0 - Artificial Model Nameplate}
+    \verb{url}
+    \verb https://github.com/admin-shell-io/submodel-templates/blob/main/publis
+    \verb hed/Artificial%20Intelligence%20Model%20Nameplate/1/0/IDTA%2002060-1-
+    \verb 0_Submodel_AIModelNameplate.pdf
+    \endverb
+    \field{version}{1.0}
+    \field{month}{02}
+    \field{year}{2025}
+    \field{urlday}{25}
+    \field{urlmonth}{07}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{SpezifikationAIDataset}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=AIDT}{%
+         family={Association},
+         familyi={A\bibinitperiod},
+         given={Industrial Digital\bibnamedelima Twin},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AIDT1}
+    \strng{fullhash}{AIDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{IDTA 02058-1-0 - Artificial Intelligence Dataset}
+    \verb{url}
+    \verb https://github.com/admin-shell-io/submodel-templates/blob/main/publis
+    \verb hed/Artificial%20Intelligence%20Dataset/1/0/IDTA%2002058-1-0_Submodel
+    \verb _AIDataset.pdf
+    \endverb
+    \field{version}{1.0}
+    \field{month}{02}
+    \field{year}{2025}
+    \field{urlday}{25}
+    \field{urlmonth}{07}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{SpezifikationAIDeployement}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=AIDT}{%
+         family={Association},
+         familyi={A\bibinitperiod},
+         given={Industrial Digital\bibnamedelima Twin},
+         giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AIDT1}
+    \strng{fullhash}{AIDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{IDTA 02059-1-0 - Artificial Intelligence Deployement}
+    \verb{url}
+    \verb https://github.com/admin-shell-io/submodel-templates/blob/main/publis
+    \verb hed/Artificial%20Intelligence%20Deployment/1/0/IDTA%2002059-1-0_Submo
+    \verb del_AIDeployment.pdf
+    \endverb
+    \field{version}{1.0}
+    \field{month}{02}
+    \field{year}{2025}
+    \field{urlday}{25}
+    \field{urlmonth}{07}
+    \field{urlyear}{2025}
+  \endentry
+
   \entry{PCF}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=FP}{%
