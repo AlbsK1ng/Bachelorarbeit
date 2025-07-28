@@ -1356,6 +1356,52 @@
     \field{urlyear}{2025}
   \endentry
 
+  \entry{BaSyxDockerHub}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=CEB}{%
+         family={Community},
+         familyi={C\bibinitperiod},
+         given={Eclipse\bibnamedelima BaSyx},
+         giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CEB1}
+    \strng{fullhash}{CEB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Eclipse BaSyx Docker Hub Repository}
+    \verb{url}
+    \verb https://hub.docker.com/u/eclipsebasyx
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{29}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{BaSyxGithub}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=CEB}{%
+         family={Community},
+         familyi={C\bibinitperiod},
+         given={Eclipse\bibnamedelima BaSyx},
+         giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CEB1}
+    \strng{fullhash}{CEB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Eclipse BaSyx Github Repository}
+    \verb{url}
+    \verb https://github.com/eclipse-basyx
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{29}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
+  \endentry
+
   \entry{BaSyxDatabridge}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=CEB}{%
@@ -1454,6 +1500,29 @@
     \warn{\item Invalid format of field 'month'}
   \endentry
 
+  \entry{PyTorch}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=FP}{%
+         family={Foundation},
+         familyi={F\bibinitperiod},
+         given={PyTorch},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FP2}
+    \strng{fullhash}{FP2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{PyTorch-Dokumentation}
+    \verb{url}
+    \verb https://docs.pytorch.org/docs/stable/index.html
+    \endverb
+    \field{year}{o. J.}
+    \field{urlday}{25}
+    \field{urlmonth}{07}
+    \field{urlyear}{2025}
+  \endentry
+
   \entry{SpezifikationAIModelNameplate}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=AIDT}{%
@@ -1476,7 +1545,7 @@
     \field{version}{1.0}
     \field{month}{02}
     \field{year}{2025}
-    \field{urlday}{25}
+    \field{urlday}{26}
     \field{urlmonth}{07}
     \field{urlyear}{2025}
   \endentry
@@ -1503,7 +1572,7 @@
     \field{version}{1.0}
     \field{month}{02}
     \field{year}{2025}
-    \field{urlday}{25}
+    \field{urlday}{26}
     \field{urlmonth}{07}
     \field{urlyear}{2025}
   \endentry
@@ -1530,7 +1599,7 @@
     \field{version}{1.0}
     \field{month}{02}
     \field{year}{2025}
-    \field{urlday}{25}
+    \field{urlday}{26}
     \field{urlmonth}{07}
     \field{urlyear}{2025}
   \endentry

@@ -9,6 +9,7 @@ Den Abschluss bilden die technologischen Voraussetzungen für die praktische Ums
 
 Der Begriff Industrie 4.0 wurde erstmals im Jahr 2011 im Rahmen eines von der deutschen Bundesregierung initiierten Zukunftsprojekts eingeführt, das auf die Förderung der Informatisierung in der industriellen Fertigung/Produktion abzielt.
 Angestrebt wird eine Stärkung der Wettbewerbsfähigkeit der deutschen Industrie sowie eine Verbesserung der Marktposition deutscher Unternehmen im globalen Wettbewerb.
+
 Industrie 4.0 steht dabei für die vierte industrielle Revolution und beschreibt die umfassende digitale Transformation industrieller Wertschöpfungsprozesse. 
 Im Zentrum steht die intelligente Vernetzung von Menschen, Maschinen und Produkten über moderne digitale Kommunikationsnetzwerke, durch die eine weitreichende Integration der physischen mit der digitalen Welt ermöglicht wird.
 
@@ -66,7 +67,7 @@ Insbesondere Methoden des maschinellen Lernens erlauben es, Zusammenhänge in gr
 Allgemein bezeichnet der Begriff \acs{ki} dabei eine Vielzahl von Methoden und Technologien, die es Computern ermöglichen, Aufgaben zu bewältigen, für die normalerweise menschliche Inteligenz erforderlich ist \cite{KIDefinition1}.
 Dazu zählen insbesondere die Fähigkeit, aus Erfahrungen (Daten) zu lernen, Problemlösungen zu entwickeln sowie selbstständig Entscheidungen zu treffen \cite{KIDefinition2}.
 
-Ein zentrales Teilgebiet der \acs{ki} ist das maschinelle Lernen (ML).
+Ein zentrales Teilgebiet der \acs{ki} ist das maschinelle Lernen.
 Es umfasst Algorithmen, die selbstständig aus Daten lernen und darauf basierend Vorhersagen treffen können.
 Im Gegensatz zu klassischen Computerprogrammen folgt das Programm keinem Lösungsweg. 
 Stattdesen erkennt es Muster in den vorliegenden Daten und kann auf Grundlage dieser bestimmte Aufgaben ausführen \cite{MLDefinition}.
@@ -76,6 +77,7 @@ Grundsätzlich wird zwischen überwachtem Lernen (Supervised Learning) und unüb
 Beim überwachten Lernen wird ein Modell anhand eines Datensatzes trainiert, der sowohl Eingabewerte als auch die dazugehörigen Ziel- bzw. Ausgabewerte enthält.
 Der Algorithmus lernt dabei, Zusammenhänge und Muster in den Daten zu erkennen, um daraus eine Funktion abzuleiten, die neue Eingaben korrekt vorhersagen kann.
 Typische Anwendungsbereiche sind die Klassifikation (z. B. die Einteilung von Bildern in Kategorien) und die Regression (z. B. die Vorhersage numerischer Werte wie Temperatur oder Energieverbrauch).
+
 Beim unüberwachtem Lernen hingegen wird ein Modell mit ungelabelten Daten trainiert, das heißt ohne vorgegeben Zielwerte. 
 Der Algorithmus versucht selbstständig Strukturen oder Muster in den vorgegeben Daten zu finden.
 Ein häufig eingesetztes Verfahren ist die Clusteranalyse, bei der ähnliche Datenpunkte zu Gruppen, sogenannten Clustern, zusammengefasst werden. 
@@ -84,7 +86,7 @@ Eine typische Anwendung ist beispielsweise die Anomalieerkennung, bei der Abweic
 Ein besonders leistungsfähiger Ansatz innerhalb des maschinellen Lernens ist das sogenannte Deep Learning.
 Es basiert auf künstlichen neuronalen Netzen, die in ihrer Struktur an das Verhalten von Neuronen im menschlichen Gehirn angelehnt sind.
 Während klassische maschinelle Lernmodelle meist aus nur wenigen Schichten bestehen, kommen beim Deep Learning sogenannte tiefe neuronale Netze mit vielen hintereinandergeschachtelten Schichten zum Einsatz.
-Diese ermöglichen das Erkennen hochkomplexer und abstrakter Zusammenhänge in großen Datenmengen, etwa bei der Biderkennung oder der Sprachverarbeitung. \cite{DLDefinition}
+Diese ermöglichen das Erkennen hochkomplexer und abstrakter Zusammenhänge in großen Datenmengen, etwa bei der Bilderkennung oder der Sprachverarbeitung. \cite{DLDefinition}
 Ein besonders aktuelles Beispiel für die Anwendung tiefer neuronaler Netzwerke ist die generative \acs{ki}. 
 Sie beschäftigt sich mit der Erstellung neuer Inhalte wie Text oder Sprache. 
 Dabei kommen verschiedene Methoden des Deep Learnings zum Einsatz, um aus großen Datenmengen zu lernen, wie neue Inhalte erzeugt werden können \cite{GenerativeKI}.
@@ -378,24 +380,9 @@ Sie ermöglichen das systemweite Auffinden von \acs{aas} und stellen sicher, das
 Ergänzend dazu bieten Discovery Services eine erweiterte Suchfunktionalität, indem sie Beziehungen verschiedener Entitäten mittels verschiedener Schlüsselwertpaare speichern.
 Eine \acs{aas} kann so zum Beispiel logisch mit einer \acs{assetid} (Asset Identifier) verknüpft werden und somit schnell innerhalb komplexer Systeme identifiziert werden.
 Der Zugriff auf diese Systeme bzw. ihrer Inhalte wird in Form von Schnittstellen standardisiert, wodurch eine hohe Interoperabilität gewährleistet wird.
-Ein besonderer Fokus liegt dabei auf der Nutzung von HTTP gemäß dem REST-Architekturstil, der eine strukturierte Kommunikation über Methoden wie GET, POST, PUT oder DELETE ermöglicht.
+Ein besonderer Fokus liegt dabei auf der Nutzung von HTTP gemäß dem \acs{rest}-Architekturstil (Representational State Transfer), der eine strukturierte Kommunikation über Methoden wie GET, POST, PUT oder DELETE ermöglicht.
 
 Die fortschrittlichste Form des Informationsaustausches stellt die Peer-to-peer Kommunikation dar, bei der I4.0-Komponenten (Typ-3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren.
-
-
-
-% über gängige Protokolle wie HTTP/REST, MQTT oder OPC UA.
-% Diese erlauben externen Systemen gezielt auf bestimmte Daten innerhalb der AAS oder ihrer Submodelle zuzugreifen.
-% Die Spezifikation beschreibt außerdem ein System, das im Wesentlichen aus drei Kernkomponenten besteht: Repositories, Registries und Discovery Services.
-% werden drei Kernkomponenten beschrieben, die zusammen ein System für einen interoperablen, standardisierten Zugriff bilden.
-% Repositories dienen als Speicherort für die Inhalte einer \acs{aas}, einschließlich ihrer Submodelle und Concept Descriptions.
-% Die Aufgabe der Verwaltung und Registrierung wird dabei von zentralen Registries übernommen.
-% Sie ermöglichen das systemweite Auffinden von \acs{aas} und stellen sicher, dass diese eindeutig referenzierbar sind.
-% Ergänzend dazu biete Discovery-Services eine erweiterte Suchfunktionalität, indem sie Beziehungen verschiedener Entitäten mittels verschiedener Schlüsselpaare speichern.
-% Eine AAS kann so zum Beispiel logisch mit einer Asset-Id verknüpft werden und somit schnell innerhalb komplexer Systeme identifiziert werden.
-% Der Zugriff auf alle dieser Systeme wird in Form von Schnittstellen standardisiert, wodurch eine hohe Interoperabilität gewährleistet wird.
-% Die Schnittstellen folgen dabei dem REST-Schema und unterstützen gängige HTTP-Methoden wie GET, POST, PUT oder DELETE.\\
-% Die fortschrittlichste Form des Austauschs ist die Peer-to-peer Kommunikation, bei der I4.0-Komponenten (Typ 3-AAS) eigenständig über die I4.0-Sprache miteinander kommunizieren können.
 
 \subsubsection{Sicherheit}
 \label{sec: Sicherheit}
@@ -419,7 +406,7 @@ Erste Referenzimplementierungen liegen zwar bereits häufig schon in Form rollen
 
 
 \subsection{Digitaler Produktpass}
-Der digitale Produktpass (\acs{dpp}) ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation.
+Der \acs{dpp} ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation.
 Ziel ist es, die Transparenz über ökologische Merkmale von Produkten wie verwendete Materialien, Recylcebarkeit oder die CO\textsubscript{2}-Bilanz deutlich zu verbessern.
 Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg aufgezeichnet und in einem menschen -und maschinenlesbarem Format bereitgestellt werden.
 Langfristig soll dies zu einer Kreislaufwirtschaft und digitalen Wirtschaft innerhalb der EU führen.
@@ -488,11 +475,12 @@ Im Rahmen dieser Arbeit liegt der Fokus auf dem in Abbildung~\ref{fig:robocell} 
 \subsection{Technologische Grundlagen}
 Im Folgenden werden die technologischen Grundlagen erläutert, die für das Verständnis und die Umsetzung dieser Arbeit besonders relevant sind.
 \subsubsection{AASX Package Exlporer}
-Der AASX Package Explorer, nachfolgend als Package Explorer bezeichnet, wurde als Referenzimplementierung für die AAS gemäß den Spezifikationen der \acs{idta} entwickelt.
+Der AASX Package Explorer, nachfolgend als Package Explorer bezeichnet, wurde als Referenzimplementierung für die \acs{aas} gemäß den Spezifikationen der \acs{idta} entwickelt.
 Das Tool ist als Open-Source-Software \cite{AASXPackageExplorer} verfügbar und ermöglicht das Erstellen und Bearbeiten von \acs{aas} im standardisierten AASX-Dateiformat.
+
 Er verfügt über eine benutzerfreundliche grafische Oberfläche (siehe Abbildung \ref{fig:AASXPackageExplorer}), die insbesondere Einsteigern den Zugang zur Modellierung erleichtert.
 Dabei können Submodelle, Eigenschaften, semantische Referenzen sowie Metadaten strukturiert definiert und verwaltet werden.
-Gleichzeitig bietet der Package Explorer auch erweiterte Funktionen, wie das Erstellen von Submodell-Templates, wodurch er sich auch für den profesionellen Einsatz eignet.
+Gleichzeitig bietet der Package Explorer auch erweiterte Funktionen, wie das Erstellen von \acsp{smt}, wodurch er sich auch für den profesionellen Einsatz eignet.
 
 \begin{figure}[htbp]
     \centering
@@ -501,7 +489,7 @@ Gleichzeitig bietet der Package Explorer auch erweiterte Funktionen, wie das Ers
     \label{fig:AASXPackageExplorer}
 \end{figure}
 
-Neben der lokalen Modellierung erlaubt das Tool ebenfalls die Verbindung zu einem AAS-Server über standardisierte Schnittstellen (z.B. \acs{opcua} oder HTTP/REST).
+Neben der lokalen Modellierung erlaubt das Tool ebenfalls die Verbindung zu einem AAS-Server über standardisierte Schnittstellen (z.B. \acs{opcua} oder HTTP/\acs{rest}).
 Dies ermöglicht den Betrieb von \acs{aas} in verteiltelten Systemen.
 Besonders geeignet hierfür ist der Referenzserver des Eclipse-AAS-Projekts \cite{AASXServer}, der das Hosten und Bereitstellen von AASX-Paketen ermöglicht sowie eine nahtlose Integration mit dem Package Explorer erlaubt.
 
@@ -516,26 +504,26 @@ Eine der wichtigsten Komponenten ist die Registry.
 Sie ist, genau wie alle anderen Komponenten, auf den Spezifikationen der \acs{aas} aufgebaut, insbesondere auf der Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2}.
 In ihr können neue \acs{aas} registriert und bereits vorhandene \acs{aas} anhand ihrer eindeutigen Kennung gesucht werden.
 Sie bildet damit die zentrale Anlaufstelle für Geräte und Anwendungen innerhalb des BaSyx-Systems.
-Analog dazu existiert es eine seperate Registry für die Verwaltung von Submodellen.
+Analog dazu existiert eine seperate Registry für die Verwaltung von Submodellen.
 
 Die eigentlichen Daten werden in der sogenannten \acs{aas} Environment gespeichert und organisiert.
 Sie umfasst Repositories für \acs{aas}, Submodelle und Concept Descriptions.
 In der Regel ist eine Datenbank, standardmäßig eine MongoDB als persistenter Speicher hinterlegt.
-Wie auch alle anderen Komponente stellen diese Repositories standardisierte Schnittstellen basierend auf der API-Spezifikation zur Verfügung.
-Dies erlaubt z.B. das Abfragen, Erstellen oder Aktualisieren einer \acs{aas} samt ihrer Submodelle und Inhalte.
+Wie auch alle anderen Komponente stellen diese Repositories standardisierte Schnittstellen basierend auf der \acs{api}-Spezifikation zur Verfügung.
+Dies erlaubt z.~B. das Abfragen, Erstellen oder Aktualisieren einer \acs{aas} samt ihrer Submodelle und Inhalte.
 Alle verfügbaren Endpunkte dieser Schnittstellen können unter anderem in der automatisch generierten Swagger-Dokumentation eingesehen und ausgeführt werden. 
-Typische REST-Endpunkte sind beispielsweise:
+Typische \acs{rest}-Endpunkte sind beispielsweise:
 
 \input{TabelleBasyxEndpunkte.tex}
 
-Im BaSyx-System ermöglicht sin sogenannter Discovery Service die Verknüpfung physischer Assets mit iheren zugehörigen AAS.
-Dabei wird eine spezifische Asset-ID mit der entsprechenden AAS-ID verlinkt.
+Im BaSyx-System ermöglicht ein Discovery Service die Verknüpfung physischer Assets mit iheren zugehörigen \acs{aas}.
+% Dabei wird eine spezifische \acs{assetid} mit der entsprechenden AAS-ID verlinkt.
 Dies ist insbesondere für die Abbildung von hierarchischen Strukturen wie Stücklisten (\ac{bom}) von großer Bedeutung.
 Ein übergeordnetes Asset (z.B. Maschine) kann so beispielsweise mit untergeordneten Komponenten (z.B. Antrieb, Sensoren) logisch über deren AAS verbunden werden.
 Einträge in den Discovery Service müssen derzeit allerdings noch manuell über die \acs{api} (Aplication Programming Interface) vorgenommen werden.
 
 Zur benutzerfreundlichen Visualisierung und Interaktion kann die sogenannte AAS Web UI genutzt werden.
-Die webbasierte Benutzeroberfläche, wie in Abbildung \ref{fig:BasyxWebUI} dargestellt ist, wurde mit dem JavaScript-Framework Vue.js entwickelt und kommuniziert über die standardisierte REST-API mit den zentralen Komponenten der BaSyx-Plattform, darunter die Repositories, Registries und der Discovery Service.
+Die webbasierte Benutzeroberfläche, wie in Abbildung \ref{fig:BasyxWebUI} dargestellt ist, wurde mit dem JavaScript-Framework Vue.js entwickelt und kommuniziert über die standardisierte \acs{rest}-API mit den zentralen Komponenten der BaSyx-Plattform, darunter die Repositories, Registries und der Discovery Service.
 Sie zeigt alle registrierten \acs{aas} in einer Liste an und bietet die Möglichkeit, einzelne \acs{aas} in einer Baumstruktur sowohl zu visualisieren als auch zu bearbeiten. 
 
 \begin{figure}[htbp]
