@@ -229,8 +229,8 @@ Diese Hinweise geben Aufschluss darüber, an welcher Stelle die Struktur bzw. de
 Werden im gesamten Prüfprozess hingegen keine Fehler oder Abweichungen festgestellt, bestätigt die Test Engine die erfolgreiche Validierung.
 
 \subsection{Technische Integration}
-Im Anschluss an die Konzeption und Modellierung des digitalen Zwillings liegt der Fokus dieses Kapitels auf der technischen Integration der zuvor erstellten \acs{aas} in eine Industrie-4.0-kompatible Umgebung.
-Dabei wird unter anderem gezeigt, wie die statisch modellierte Typ-1-\acs{aas} mithilfe des AASX Server Blazor beziehungsweise vorzugsweise der Eclipse BaSyx-Plattform in eine Typ-2-\acs{aas} überführt und systemseitig bereitgestellt werden kann.
+Im Anschluss an die Konzeption und Modellierung des digitalen Zwillings liegt der Fokus dieses Kapitels auf der technischen Integration in eine Industrie-4.0-kompatible Umgebung.
+Dabei wird gezeigt, wie die statisch modellierte Typ-1-\acs{aas} mithilfe des AASX Server Blazor beziehungsweise vorzugsweise der Eclipse BaSyx-Plattform in eine Typ-2-\acs{aas} überführt und systemseitig bereitgestellt werden kann.
 Ergänzend dazu wird beschrieben, wie die \acs{aas} um dynamische Inhalte erweitert werden kann.
 Dies umfasst die Integration von Echtzeitdaten über \acs{opcua} sowie die Einbindung und Visualisierung externer Zeitreihendaten mithilfe von InfluxDB und Telegraf.
 
@@ -239,7 +239,8 @@ Dies umfasst die Integration von Echtzeitdaten über \acs{opcua} sowie die Einbi
 Für die Bereitstellung als Typ-2-\acs{aas} stehen verschiedene Open-Source-Lösungen zur Verfügung. 
 Eine besonders einsteigerfreundliche Option stellt der AASX Server Blazor \cite{AASXServer} dar.
 Er bildet das serverseitige Gegenstück zum Package Explorer und verfügt ebenfalls über eine grafische Benutzeroberfläche zur Visualisierung von \acs{aas}-Paketen.
-Über eine HTTP-Schnittstelle können die beiden Anwendungen miteinander verbunden werden.
+
+Über eine \acs{http}-Schnittstelle können die beiden Anwendungen miteinander verbunden werden.
 Dadurch lassen sich AASX-Dateien ohne zusätzlichen Konfigurationsaufwand direkt aus dem Package Explorer heraus auf den Server übertragen und bereitstellen.
 Ebenso können auf dem Server gespeicherte \acs{aas} über den Explorer eingesehen und bearbeitet werden.
 Die enge Verzahnung beider Komponenten ermöglicht somit eine unkomplizierte Bereitstellung und Verwaltung von \acs{aas}-Paketen und eignet sich besonders für erste Testszenarien oder prototypische Anwendungen.
@@ -282,7 +283,7 @@ Diese Methode eignet sich besonders gut für Tests oder kleinere Anpassungen, da
 Die flexibelste, jedoch auch technisch anspruchsvollste Methode zur Bereitstellung einer \acs{aas} ist die manuelle Registrierung über die \acs{rest}-\acs{api}. 
 Dabei kann nicht einfach eine AASX-Datei hochgeladen werden. 
 Stattdessen müssen die AAS, ihre Submodelle sowie deren Beziehungen explizit über die bereitgestellten Schnittstellen des BaSyx-Systems erstellt werden. 
-Dies erfolgt durch das Senden strukturierter \acs{json}-Daten im Body der jeweiligen HTTP-Anfragen.
+Dies erfolgt durch das Senden strukturierter \acs{json}-Daten im Body der jeweiligen \acs{http}-Anfragen.
 Ein typischer Ablauf dieser Registrierung ist in Tabelle \ref{tab:BereitstellungInBaSyx} dargestellt. 
 Sie zeigt die notwendigen Schritte sowie die zugehörigen \acs{rest}-Endpunkte.
 Diese sind dabei verschiedenen Services innerhalb der AAS Environment zugeordnet.
@@ -314,7 +315,7 @@ Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten
 
 Das Eclipse BaSyx-Projekt stellt hierfür eine weitere Komponente bereit, die sogenannte Databridge \cite{BaSyxDatabridge}.
 Diese steht, wie alle anderen Komponenten auch, als Docker-Container zur Verfügung und ermöglicht die Anbindung verschiedenster Datenquellen an eine \acs{aas}.
-Sie unterstützt eine Vielzahl von Protokollen, darunter insbesondere auch \acs{opcua} oder MQTT.
+Sie unterstützt eine Vielzahl von Protokollen, darunter insbesondere auch \acs{opcua} oder \acs{mqtt} (Message Queuing Telemetry Transport).
 Dabei dient sie als Vermittler zwischen einem Datenendpunkt und einem Submodell innerhalb der \acs{aas}.
 
 Die Konfiguration der Databridge erfolgt über mehrere \acs{json}-Dateien.
@@ -356,7 +357,7 @@ Die Databridge unterstützt hierfür unter anderem JSONata-Ausdrücke oder JsonJ
 Mithilfe dieser Mechanismen können die vom \acs{opcua}-Server empfangenen Rohdaten zunächst in ein \acs{json}-Objekt überführt und anschließend gezielt extrahiert und weiterverarbeitet werden.
 
 Im Anschluss erfolgt die Konfiguration der Datensenke, also der Zielkomponente innerhalb der \acs{aas}.
-Auch diese erfolgt über eine separate \acs{json}-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version definiert werden.
+Auch diese erfolgt über eine separate \acs{json}-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete \acs{api}-Version definiert werden.
 Listing~\ref{lst:jsonDatensenke} zeigt ein Beispiel einer entsprechenden Konfiguration.
 Der Platzhalter \{smId\} steht dabei für die Base64-kodierte ID des Submodells Prozessdaten, wie sie in der \acs{rest}-API der \acs{aas} verwendet wird.
 
@@ -477,15 +478,17 @@ Der Encoder wird so aufgebaut, dass er die Eingabesequenz mit 30 Temperaturwerte
 Diese beiden Neuronen bilden den latenten Raum. 
 Der Decoder ist spiegelbildlich aufgebaut, erweitert die Darstellung aus dem latenten Raum zunächst wieder auf 5 Neuronen und generiert schließlich 30 Ausgabewerte, die der ursprünglichen Eingabesequenz entsprechen.
 
-Nach der Konfiguration des Autoencoders erfolgt das Training des Modells. 
+Nach erfolgreicher Konfiguration muss das Modell trainiert werden.
 Als Eingabe dienen die zuvor definierten Tensoren, welche die Zeitfenster-Sequenzen enthalten. 
 Die Rekonstruktion der Eingabedaten erfolgt parallel für alle Sequenzen. 
 Anschließend wird der mittlere quadratische Fehler (MSE) zwischen Eingabe und Ausgabe berechnet. 
 Dieser Fehlerwert bildet die Grundlage für die Anpassung der Modellparameter, beispielsweise durch Backpropagation. 
 Durch die wiederholte Durchführung dieses Prozesses über mehrere Epochen hinweg kann die Genauigkeit des Modells sukzessive verbessert werden.
 
-Das fertig trainierte Modell kann anschließend zur Erkennung von Anomalien in neuen Temperaturdaten eingesetzt werden. 
-Diese Daten sind analog zu den Trainingsdaten aufgebaut, enthalten jedoch gezielt eingefügte Ausreißer bzw. Unregelmäßigkeiten. 
+Das fertig trainierte Modell kann anschließend zur Erkennung von Anomalien eingesetzt werden.
+Analog zum Training werden erneut simulierte Temperaturverläufe verwendet, die jedoch gezielt Ausreißer bzw. Unregelmäßigkeiten enthalten.
+Diese Testdaten sind strukturell identisch zu den Trainingsdaten, unterscheiden sich aber durch die eingefügten Anomalien.
+
 Während der Ausführung des Autoencoders muss für jede Sequenz der Rekonstruktionsfehler berechnet werden, der die durchschnittliche Abweichung zwischen den Eingabewerten und den rekonstruierten Ausgabewerten beschreibt.
 Um Anomalien zu identifizieren, kann dieser Fehler mit einem definierten Schwellenwert verglichen werden, beispielsweise dem 95. Perzentil der Fehlerverteilung oder dem Mittelwert zuzüglich des Zweifachen der Standardabweichung. 
 Überschreitet der Rekonstruktionsfehler diesen Wert, so wird die gesamte Sequenz, also das vollständige Zeitfenster mit 30 Werten, als Anomalie klassifiziert.
@@ -649,7 +652,7 @@ Dieses Token wird im Hintergrund an die angebundenen BaSyx-Komponenten (z.\,B. A
 Die Entscheidung über die tatsächliche Zugriffsberechtigung trifft dabei nicht die AAS Web UI, sondern der jeweilige Service, indem er die im Token enthaltenen Rollen gegen die hinterlegten RBAC-Regeln prüft.
 
 Alternativ ist auch ein direkter Zugriff über die \acs{api} möglich, etwa durch technische Clients oder externe Anwendungen.  
-In diesem Fall muss das Zugriffstoken aktiv über den Token-Endpunkt des entsprechenden Realms bei Keycloak angefordert und anschließend im HTTP-Header der Anfrage übermittelt werden.  
+In diesem Fall muss das Zugriffstoken aktiv über den Token-Endpunkt des entsprechenden Realms bei Keycloak angefordert und anschließend im \acs{http}-Header der Anfrage übermittelt werden.  
 Die Autorisierung erfolgt analog zur Web-Oberfläche durch die jeweiligen BaSyx-Komponenten basierend auf den Rollen im Token und den definierten \acs{rbac}-Konfigurationen.
 
 \subsection{Anwendungsfall automatisierte Generierung von AAS}

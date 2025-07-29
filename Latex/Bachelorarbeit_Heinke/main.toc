@@ -65,5 +65,5 @@
 \contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{52}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{52}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{52}{subsection.5.3}%
-\contentsline {section}{Glossar und Abkürzungsverzeichnis}{53}{section*.139}%
+\contentsline {section}{Glossar und Abkürzungsverzeichnis}{53}{section*.141}%
 \contentsline {section}{\numberline {A}Anhang 1}{59}{appendix.A}%
