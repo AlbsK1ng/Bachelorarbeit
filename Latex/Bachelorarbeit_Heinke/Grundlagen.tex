@@ -1,8 +1,8 @@
 \section{Grundlagen}
 Das folgende Kapitel stellt die theoretischen und technologischen Grundlagen vor, die für das Verständnis und die Umsetzung dieser Arbeit erforderlich sind.
 Es beginnt mit einer Einführung in die Industrie 4.0, und vermittelt ein grundlegendes Verständnis für das Konzept des digitalen Zwillings.
-Anschließend werden die Struktur und Funktion der \acs{aas} sowie die Rolle des digitalen Produktpasses erläutert.
-Den Abschluss bilden die technologischen Voraussetzungen für die praktische Umsetzung, darunter beispielsweise die Open-Source-Plattform Eclipse BaSyx und der Kommunikationsstandard \ac{opcua}.
+Anschließend werden die Struktur und Funktion der \acs{aas} sowie die Rolle des \acs{dpp} erläutert.
+Den Abschluss bilden die technologischen Voraussetzungen für die praktische Umsetzung, darunter beispielsweise die Open-Source-Plattform Eclipse BaSyx oder der Kommunikationsstandard \ac{opcua}.
 \subsection{Industrie 4.0}
 % Nach der dritten industriellen Revolution, die vor allem durch den Einsatz elektronischer Systeme sowie der Informations -und Kommunikationstechnologie zur Automatisierung gekennzeichnet ist, vollzieht sich aktuell ein neuer technologischer Wandel, die vierte industrielle Revolution.
 % Besser bekannt als Industrie 4.0, beschreibt sie die umfassende Vernetzung und Integration der physischen mit der digitalen Welt durch den Einsatz Cyber-physischer Systeme.
@@ -18,11 +18,14 @@ Die Industrialisierung begann bereits Mitte des 18. Jahrhunderts in Großbritann
 Mit der Entwicklung der ersten Dampfmaschine setzte die erste industrielle Revolution ein. 
 Sie ermöglichte erstmals die Mechanisierung der Fertigung durch den Einsatz von Arbeits- und Kraftmaschinen. 
 Dadurch konnten manuelle Tätigkeiten zunehmend durch Maschinenkraft ersetzt werden, insbesondere in der Textil-, Eisen- und Stahlindustrie, die zu den ersten Branchen gehörten, die von dieser Entwicklung profitierten.
+
 Die zweite industrielle Revolution setzte gegen Ende des 19. Jahrhunderts ein und war maßgeblich durch den flächendeckenden Einsatz von Elektrizität geprägt. 
 Mit der Erfindung elektrischer Antriebe und des Verbrennungsmotors konnten Maschinen nun auch dezentral betrieben werden. Sie waren nicht länger auf zentrale Kraftquellen wie Dampfmaschinen angewiesen. 
 Dies ermöglichte eine flexiblere Gestaltung von Produktionsstätten und führte zur Entwicklung einer arbeitsteiligen Massenproduktion mithilfe von Fließ- und Förderbändern.
+
 Ausgehend von dem deutschen Wirtschaftswunder in den sechziger Jahren des 20. Jahrhunderts entstand in den folgenden Jahrzehnten die dritte industrielle Revolution.
 Diese zeichnet sich vor allem durch den Einsatz elektronischer Systeme sowie der Informations- und Kommunikationstechnologie zur Automatisierung aus und ist noch bis heute wirksam.
+
 Aufbauend auf den vorangegangenen industriellen Revolutionen strebt die vierte industrielle Revolution eine tiefgreifende Transformation industrieller Produktionsprozesse an. 
 Im Fokus steht dabei die Vernetzung von Systemen, die über moderne Internettechnologien miteinander kommunizieren.
 Ziel dieser Entwicklung ist es, die industrielle Wertschöpfung deutlich flexibler und effizienter zu gestalten sowie eine stärkere Individualisierung von Produkten zu ermöglichen. 
@@ -30,7 +33,7 @@ Ziel dieser Entwicklung ist es, die industrielle Wertschöpfung deutlich flexibl
 
 Trotz der weiten Verbreitung des Begriffs Industrie 4.0 mangelt es in der Literatur und Forschung an einer einheitlichen Definition.
 Vor diesem Hintergrund nimmt insbesondere die Plattform Industrie 4.0 \cite{plattform_i40} eine zentrale Rolle in Deutschland ein. 
-Dabei handelt es sich um eine gemeinsame Initiative des Bundesministeriums für Wirtschaft und Energie, des Bundesministerium für Forschung, Technologie und Raumfahrt sowie führender Industrieverbände (z.B. VDMA, Bitkom, ZVEI), Unternehmen, Forschungseinrichtungen und Gewerkschaften.
+Dabei handelt es sich um eine gemeinsame Initiative des Bundesministeriums für Wirtschaft und Energie, des Bundesministeriums für Forschung, Technologie und Raumfahrt sowie führender Industrieverbände, Unternehmen, Forschungseinrichtungen und Gewerkschaften, darunter etwa der Verband Deutscher Maschinen- und Anlagenbau (VDMA), der Bundesverband Informationswirtschaft, Telekommunikation und neue Medien (Bitkom) und der \ac{zvei}.
 
 Die Plattform ist maßgeblich an der inhaltlichen und strategischen Ausarbeitung der Industrie 4.0 beteiligt und leistet einen entscheidenden Beitrag zur Begriffsdefinition. 
 Sie definiert Industrie 4.0 als
@@ -64,7 +67,7 @@ Genau hier setzt \acs{ki} an.
 Insbesondere Methoden des maschinellen Lernens erlauben es, Zusammenhänge in großen Datenmengen zu erkennen, Zustände zu klassifizieren und sogar Vorhersagen über zukünftige Systementwicklungen zu treffen. \cite{KIEinführung} 
 \acs{ki} nimmt somit eine zentralle Rolle innerhalb der Industrie 4.0 ein, indem sie einen echten Mehrwert aus den gesammelten Daten generiert.
 
-Allgemein bezeichnet der Begriff \acs{ki} dabei eine Vielzahl von Methoden und Technologien, die es Computern ermöglichen, Aufgaben zu bewältigen, für die normalerweise menschliche Inteligenz erforderlich ist \cite{KIDefinition1}.
+Allgemein bezeichnet der Begriff \acs{ki} dabei eine Vielzahl von Methoden und Technologien, die es Computern ermöglichen, Aufgaben zu bewältigen, für die normalerweise menschliche Intelligenz erforderlich ist \cite{KIDefinition1}.
 Dazu zählen insbesondere die Fähigkeit, aus Erfahrungen (Daten) zu lernen, Problemlösungen zu entwickeln sowie selbstständig Entscheidungen zu treffen \cite{KIDefinition2}.
 
 Ein zentrales Teilgebiet der \acs{ki} ist das maschinelle Lernen.
@@ -191,17 +194,20 @@ Analog zur Softwarentwicklung können diese als instanziiertes Objekt einer Klas
 
 Je nach Art des Informationsflusses sowie dem Grad der Ausprägung der Verbindung zur realen Welt werden Instanzen digitaler Zwillinge häufig in drei Kategorien eingeteilt: das digitale Modell, den digitalen Schatten und den digitalen Zwilling \cite{ClassificationDT}.
 Obwohl diese Begriffe im allgemeinen Sprachgebrauch oft synonym verwendet werden, unterscheiden sie sich deutlich hinsichtlich ihrer Funktion und Kopplung zum realen Objekt.
+
 Digitale Modelle sind statische Abbilder physischer Objekte, haben jedoch keine Verbindung zu diesen. 
 Oft werden sie zur Veranschauclichung oder Konstruktion genutzt, wie zum Beispiel ein 3D-Modell einer Maschine.
 Zwar können reale Daten, wie etwa Maße oder Materialeigenschaften einer Anlage oder Maschine in ein solches Modell integriert werden, allerdings erfolgt die Eingabe dabei immmer manuell.
 Änderungen an dem realen Objekt werden nicht automatisch aktualisiert und bleiben somit ohne Einfluss auf das digitale Modell.
+
 Der digitale Schatten ergänzt das digitale Modell um eine unindirektionale Verbindung zum realen Objekt.
 Dabei fließen Daten des physischen Objekts meist in Echtzeit über zum Beispiel geeignete Sensoren zum digitalen Objekt.
 Der Schatten bildet den aktuellen Zustand des Objekts ab, hat aber keine Rückkoplung zu diesem.
 Ein typisches Beispiel für einen digitalen Schatten wäre das Condition Monitoring, wobei der Zustand einer Maschine mit geeigneten Sensoren abgebildet wird.
-Mit einer aktiven Rückkoplung zum realen Objekt wird der digitale Schatten zum digitalen Zwilling.
-Es entsteht eine Feedback-Schleife und erlaubt dem virtuellen Objekt Einfluss auf das reale System zu nehmen.
 
+Mit einer aktiven Rückkoplung zum realen Objekt wird der digitale Schatten zum digitalen Zwilling.
+Es entsteht eine Feedback-Schleife, die es dem virtuellen Objekt erlaubt, Einfluss auf das reale System zu nehmen.
+Eine Übersicht der drei Kategorien zeigt Abbildung \ref{fig:klassifizierungDT}. 
 % Quelle: file:///C:/Users/Heinke/Documents/Bachelorarbeit/02%20Literatur/Digitaler_Zwilling/Klassifizierung_DT.pdf
 \vspace{-0.5em}
 \begin{figure}[htbp]
@@ -236,6 +242,7 @@ Die Implementierung digitaler Zwillinge erweist sich in der Praxis jedoch oftmal
 Eine zentrale Herausforderung ist die fehlende Interoperabilität zwischen verschiedenen IT-Systemen.
 Sowohl innerhalb eines Unternehmens als auch unternehmensübergreifend bilden sich dadurch häufig voneinander isolierte Datenbestände, die nicht systemübergreifend nutzbar sind.
 Solche sogenannten Informationssilos können die Umsetzung eines konsistenten digitalen Zwillings erheblich erschweren, da die relevanten Informationen und Daten zunächst aus unterschiedlichen Systemen wie \ac{erp}, \ac{mes} oder \ac{cad} zusammengeführt werden müssen.
+
 Hinzu kommt, das diese Daten oftmals in unterschiedlichen, nicht standardisierten Formaten vorliegen, was eine automatisierte Integration zusätzlich erschwert.
 Diese Problematik zeigt sich nicht nur innerhalb einzelner Unterhnehmen, sondern auch entlang der gesamten Wertschöpfungskette, etwa wenn verschiedene Akteure einer Lieferkette heterogene Datenformate und proprietäre Austauschprotokolle verwenden.
 Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einer Anwendung oder einem weitern digitalen Zwilling eines Unternehmens B nicht ohne Weiteres intepretiert oder verwendet werden.
@@ -258,15 +265,15 @@ Es ist daher essenziell, digitale Zwillinge in einem interoperablen Format berei
 % Das Modell ist als dreidimensionales Koordinatensystem konzipiert und umfässt die Achsen ... .
 
 
-Die Asset Administration Shell (\ac{aas}) - deutsch Verwaltungsschale - ist eine Schlüsselkomponente innerhalb des \ac{rami} \cite{RAMI4.0} und bildet die Grundlage für die Umsetzung und Entwicklung interoperabler digitaler Zwillinge im industriellen Umfeld.
-Sie wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und erstmlas im Jahr 2016 als Teil von \acs{rami} vorgestellt.
-Seit ihrer Einführung wurde die AAS kontinuierlich weiterenwtickelt und ist mittlerweile in der internationalen Norm IEC 63278-1 \cite{AASIEC63278} standardisiert.
+Die \acs{aas} - deutsch Verwaltungsschale - ist eine Schlüsselkomponente innerhalb des \ac{rami} \cite{RAMI4.0} und bildet die Grundlage für die Umsetzung und Entwicklung interoperabler digitaler Zwillinge im industriellen Umfeld.
+Sie wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und erstmals im Jahr 2016 als Teil von \acs{rami} vorgestellt.
+Seit ihrer Einführung wurde die \acs{aas} kontinuierlich weiterentwickelt und ist mittlerweile in der internationalen Norm IEC 63278-1 \cite{AASIEC63278} standardisiert.
 % Darin wird die AAS als "strukturierte, standardisierte digitale Repräsentation eines Assets" definiert.
 
-Seit 2020 wird die Umsetzung und Weiterentwicklung der AAS von der Industrial Digital Twin Association (IDTA) \cite{IDTA} organisiert und gesteuert.
-Ziel der \acs{idta} ist es, den digitalen Zwilling auf Basis der AAS zu standardisieren und in Form von Open-Source-Softwarelösungen in das industrielle Umfeld zu integrieren.
-Die AAS wird dabei in mehreren Spezifikationen der \acs{idta} dokumentiert und beschrieben.
-Aktuell bildet die AAS Version 3 den neuesten Entwicklungsstand und ist ebenfalls die Basis für diese Arbeit.
+Seit 2020 wird die Umsetzung und Weiterentwicklung der \acs{aas} von der \acs{idta} \cite{IDTA} organisiert und gesteuert.
+Ziel der Organisation ist es, den digitalen Zwilling auf Basis der \acs{aas} zu standardisieren und in Form von Open-Source-Softwarelösungen in das industrielle Umfeld zu integrieren.
+Die \acs{aas} wird dabei in mehreren Spezifikationen der \acs{idta} dokumentiert und beschrieben.
+Aktuell bildet die \acs{aas}-Version 3 den neuesten Entwicklungsstand und ist ebenfalls die Basis für diese Arbeit.
 % evtl die Quelle wenn gut https://www.zvei.org/themen/start-der-industrial-digital-twin-association-idta
 
 Die \acs{aas} repräsentiert ein Asset digital, indem sie alle relevanten Daten, Eigenschaften und Funktionen über den gesamten Lebenszyklus hinweg in strukturierter und standardisierter Form bereitstellt. 
@@ -321,17 +328,6 @@ Zur besseren Veraunschaulichung des zugrundeliegenden Metamodells wird dieses na
 
 % Mit dem ReferenceElement können Verweise auf ander lokale oder externe Elemente und Objekte hergestellt werden.
 % Mit RealtionshipElements können Beziehungen innerhalb der AAS modelliert werden. Dies ist besonders wichtig für das Erstellen von Stücklisten.
-% Zur besseren Veraunschaulichung des zugrundeliegenden Metamodellls wird dieses nachfolgend in einer vereinfachten Form dargestellt.
-
-% \begin{itemize}
-%     \item \textbf{Property}: einfaches Merkmal mit bestimmten Datentyp, z.B. Name
-%     \item \textbf{Entity}: Eigenständiges Teilobjekt eines Assets, z.B. ein Bauteil 
-%     \item \textbf{File}: Eingebettete oder referenzierte Datei, z.B. CAD-Modell
-%     \item \textbf{ReferencElement}: Verweis auf anderes (externes) Element oder Objekt
-%     \item \textbf{RelationShipElement}: Beziehung verschiedener Elemente oder Assets
-%     \item \textbf{SubmodelElementCollection}: Sammlung von Submodellelementen
-% \end{itemize}
-% Zur Veraunschaulichung des Metamodellls wird diese nachfolgend in einer vereinfachten Form dargestellt.
 
 \newpage
 \begin{figure}[htbp]
@@ -406,9 +402,9 @@ Erste Referenzimplementierungen liegen zwar bereits häufig schon in Form rollen
 
 
 \subsection{Digitaler Produktpass}
-Der \acs{dpp} ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation.
+Der \acs{dpp} ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation. 
 Ziel ist es, die Transparenz über ökologische Merkmale von Produkten wie verwendete Materialien, Recylcebarkeit oder die CO\textsubscript{2}-Bilanz deutlich zu verbessern.
-Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg aufgezeichnet und in einem menschen -und maschinenlesbarem Format bereitgestellt werden.
+Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg aufgezeichnet und in einem menschen -und maschinenlesbarem Format bereitgestellt werden. \cite{DPPEinführung}
 Langfristig soll dies zu einer Kreislaufwirtschaft und digitalen Wirtschaft innerhalb der EU führen.
 
 Das Konzept des \acs{dpp} wurde erstmals im Rahmen des European Green Deal von der Europäischen Kommission im Jahr 2019 vorgestellt \cite{GreenDeal}.
@@ -424,7 +420,7 @@ Die Daten sollen dabei über einen zentralen Server bzw. ein Registry verwaltet 
 \cite{CIRPASS}
 
 Während die regulatorischen Rahmenbedingungen mehr oder weniger final ausgearbeitet sind, bleibt die Frage der konkreten technologischen Umsetzung.
-Eine dezentrale Lösung bildet der von der ZVEI vorgestellte digitale Produktpass für Industrie 4.0 (\acs{dpp40}) \cite{DPP40}.
+Eine dezentrale Lösung bildet der von der \acs{zvei} vorgestellte digitale Produktpass für Industrie 4.0 (\acs{dpp40}) \cite{DPP40}.
 Dieser basiert auf zwei etablierten Standards. 
 Zum Einen das digitale Typenschild, und zum Anderen die \acs{aas} (siehe auch Kapitel~\nameref{chap:AAS}).
 Das digitale Typenschild ermöglicht, gemäß der Norm IEC 61406 \cite{TypenschildIEC61406-1}, die eindeutige Identifikation von Produkten über eine einzigartige \acs{assetid}.
@@ -448,7 +444,7 @@ Während beispielsweise das Typenschild oder der \acs{pcf} öffentlich zugängli
 %     \label{fig:dpp40}
 % \end{figure}
 
-Das Konzept der ZVEI sieht darüber hinaus vor, dass Unternehmen ihre \acsp{dpp} entgegen den Anforderungen der \acs{espr} dezentral in einem eigenen Repository verwalten. 
+Das Konzept der \acs{zvei} sieht darüber hinaus vor, dass Unternehmen ihre \acsp{dpp} entgegen den Anforderungen der \acs{espr} dezentral in einem eigenen Repository verwalten. 
 Diese können entweder vom produzierenden Unternehmen selbst oder von Dritten, etwa Cloud-Dienstleistern, im Auftrag betrieben werden. 
 Ziel ist es, Unternehmen die Möglichkeit zu geben, ihre Daten bei Bedarf eigenständig zu aktualisieren und gleichzeitig die Kontrolle über sensible Informationen zu behalten.
 

@@ -2,29 +2,30 @@
 \subsection{Motivation}
 \label{sec:Motivation}
 Im Zuge der vierten industriellen Revolution gewinnen digitale Zwillinge zunehmend an Bedeutung. 
-Sie ermöglichen die digitale Abbildung physischer Assets und sollen helfen, Prozesse transparenter und effizienter zu gestalten.
-Viele Unternehmen setzen bereits auf proprietäre Lösungen, die jedoch häufig nicht interoperabel sind und somit den Austasch von Daten über System -und Unternehmensgrenzen hinweg erschweren.
+Sie ermöglichen die digitale Abbildung physischer Assets und schaffen damit die Grundlage für transparentere und effizientere industrielle Prozesse.
+Viele Unternehmen setzen bereits auf solche digitalen Abbilder, verwenden dabei jedoch häufig proprietäre Lösungen, die nicht interoperabel sind und somit den Austausch von Daten über System- und Unternehmensgrenzen hinweg erschweren. 
 
-Mit der steigenden Nachfrage nach digitalen Zwillingen wächst daher auch der Bedarf an standardisierten und herstellerunabhängigen Lösungen.
-Als Antwort auf diese Frage hat die Plattform Industrie 4.0 in den vergangenen jahren das Konzept der AA
+Mit der steigenden Nachfrage nach digitalen Zwillingen wächst auch der Bedarf an standardisierten und herstellerunabhängigen Lösungen. 
+In den vergangenen Jahren hat sich die Plattform Industrie 4.0 intensiv mit dieser Thematik auseinandergesetzt und als Antwort auf diese Herausforderung die sogenannte \ac{aas} etabliert.
+Sie stellt ein standardisiertes Rahmenwerk zur interoperablen Umsetzung digitaler Zwillinge dar, mit dem sämtliche relevanten Informationen zu einem Asset über dessen gesamten Lebenszyklus hinweg digital erfasst, strukturiert und dokumentiert werden können.
 
-In den vergangenen Jahren hat sich die \ac{idta} intensiv mit dieser Thematik ausseinandergesetzt und als Lösung die sogenannte \ac{aas} etabliert.
-Diese ermöglicht eine interoperable Umsetzung digitaler Zwillinge, wobei sämtliche relevanten Informationen zu einem Asset über dessen gesamten Lebenszyklus hinweg digital erfasst, strukturiert und dokumentiert werden können. 
+Die zunehmende Beschäftigung zahlreicher Unternehmen mit dem Konzept der \acs{aas} sowie die Umsetzung in Pilotprojekten und ersten produktiven Anwendungen unterstreichen die hohe Relevanz und das Potenzial dieser Lösung. 
+Gleichzeitig verdeutlichen regulatorische Anforderungen, wie der digitale Produktpass (\acs{dpp}), der von der EU entwickelt und künftig für viele Produktgruppen verpflichtend sein wird, die Notwendigkeit eines einheitlichen Konzepts zur standardisierten und semantischen Beschreibung von Produkten.
 
-Die zunehmende Beschäftigung zahlreicher Unternehmen mit dem Konzept der \acs{aas}, die Umsetzung in Pilotprojekten und ersten produktiven Anwendungen unterstereichen die hohe Relevanz und das Potenzial dieser standardisierten Lösung.
-Aber auch regulatorische Anforderungen wie der digitale Produktpass (\acs{dpp}), der von der EU entwickelt und künftig für viele Produktgruppen verpflichtend wird, zeigen die Notwendigkeit einheitlicher digitaler Zwillingen. 
-Um am Puls der Zeit zu bleiben und den wachsenden Anforderungen an Transparenz, Rückverfolgbarkeit und Effizienz gerecht zu werden, ist es für Unternehmen unerlässlich, sich frühzeitig mit der \acs{aas} auseinanderzusetzten.
+Um den wachsenden Anforderungen an Transparenz, Rückverfolgbarkeit und Effizienz gerecht zu werden und technologisch auf dem neuesten Stand zu bleiben, ist es für Unternehmen daher unerlässlich, sich bereits frühzeitig mit der \acs{aas} auseinanderzusetzen.
 
 \subsection{Zielsetzung}
-Ziel diser Arbeit ist die prototypische Modellierung eines digitalen Zwillings für das Abfüll- und Verschließmodul der robocell-Linie der Firma groninger.
-Dabei soll untersucht werden, ob der Einsatz der \acs{aas} für das Unternehmen einen Mehrwert bietet - insbesondere im Hinblick auf Interoperabilität, Produktivität und Nachverfolgbarkeit.
-Unter Interoperabilität wird dabei die herstellerunabhängige und standardisierte Kommunikation zwischen Maschinen und Systemen verstanden, die eine nahtlose Vernetzung über Unternehmensgrenzen hinweg ermöglicht.
+Ziel dieser Arbeit ist die prototypische Modellierung eines \acs{aas}-basierten digitalen Zwillings für das Abfüll- und Verschließmodul der robocell-Linie der Firma groninger. 
+Dabei soll untersucht werden, inwiefern der Einsatz dieses Konzepts dem Unternehmen einen Mehrwert bietet, insbesondere im Hinblick auf Interoperabilität, Produktivität und Nachverfolgbarkeit.
+
+Unter Interoperabilität wird dabei die herstellerunabhängige und standardisierte Kommunikation zwischen Maschinen und Systemen verstanden, die eine nahtlose Vernetzung in einem Unternehmen als auch über Unternehmensgrenzen hinweg ermöglicht.
 Hinsichtlich der Produktivität steht die effiziente Bereitstellung und der Austausch von Informationen im Fokus, mit Potenzialen zur Optimierung von Prozessen, etwa durch vorausschauende Instandhaltungsmaßnahmen. 
 Die Nachverfolgbarkeit schließlich umfasst die lückenlose Erfassung und Rückverfolgung aller relevanten Asset-Daten über den gesamten Lebenszyklus, wodurch Zustandsänderungen und Ereignisse transparent und nachvollziehbar werden.
-Für die Umsetzung sollen verschieden Open-Source-Tools zum Einsatz kommen, die unter anderem von der IDTA bereitgestellt oder im Rahmen des Eclipse-Projekts entwickelt wurden, wie etwa der AASX Package Explorer, die AASX Test Engine oder Eclipse BaSyx.
-Neben der Evaluierung dieser Werkzeuge soll zudem eine mögliche Architektur zur Verwaltung und Bereitstellung \acs{aas}-basierter digitaler Zwillinge aufgezeigt werden.
-Ebenfalls soll die Einsatzmöglichkeit von Künstlicher Intelligenz im Kontext der \acs{aas} diskutiert werden, um potenzielle Optimierungsansätze und weiterführende Anwendungsmöglichkeiten zu identifizieren.
+
+Die Modellierung sowie die Bereitstellung in einem Industrie 4.0-Ökosystem soll mithilfe verschiedener Open-Source-Tools erfolgen, die unter anderem von der \ac{idta} bereitgestellt werden. 
+Zudem soll ein KI-gestütztes Konzept zur Optimierung anhand der im digitalen Zwilling abgebildeten Daten evaluiert und dessen Umsetzung aufgezeigt werden. 
 Auf Grundlage der gewonnen Erkenntnisse soll abschließend eine Handlungsempfehlung für groninger formuliert werden, die den möglichen Nutzen und die Relevanz des Einsatzes der \acs{aas} für das Unternehmen bewertet.
+
 \subsection{Vorgehensweise}
 Die Arbeit beginnt mit einer eingehenden Betrachtung grundlegender Konzepte, die für das Verständnis der Arbeit notwendig sind. 
 Dabei wird insbesondere die Frage geklärt, was die \acs{aas} und der digitale Zwilling überhaupt sind und wie diese sich im industriellen Kontext, insbesondere im Rahmen von Industrie 4.0, einordnen.
