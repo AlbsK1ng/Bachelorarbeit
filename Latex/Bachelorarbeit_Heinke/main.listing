@@ -1,4 +1,4 @@
-[ caption={Beispielhafte JSON-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
+[ caption={Beispielhafte \acs{json}-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
 {
     "uniqueId"        : "Submodel/ProcessData/Pressure",
     "submodelEndpoint": "http://aas-env:8081/submodels/{smId}",

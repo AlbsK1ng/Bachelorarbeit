@@ -1,7 +1,7 @@
 \newpage
 \section{Entwicklung}
 In diesem Kapitel wird die schrittweise Entwicklung des digitalen Zwillings für das Abfüll- und Verschließmodul der robocell-Linie dargestellt.
-Ziel ist es, das physische Asset gemäß dem Konzept der \acs{aas} digital abzubilden und in ein Industrie 4.0-konformes System zu integrieren.
+Ziel ist es, das physische Asset gemäß dem Konzept der \acs{aas} digital abzubilden und in ein Industrie-4.0-konformes System zu integrieren.
 Abbildung \ref{fig:Entwicklungsschritte} veranschaulicht den Ablauf des zugrundeliegenden Entwicklungsprozesses.
 
 \begin{figure}[htbp]
@@ -50,7 +50,7 @@ Diese sind jeweils in einer Submodellspezifikation der \acs{idta} dokumentiert.
 Darüber hinaus besteht jedoch auch die Möglichkeit, eigene Submodelle zu entwerfen, die gezielt auf projektspezifische Anforderungen zugeschnitten sind.
 Diese können entweder vollständig neu konzipiert oder aus bestehenden Vorlagen abgeleitet werden.
 
-Die konkrete Auswahl der Submodelle in dieser Arbeit orientiert sich hauptsächlich an typischen Industrie 4.0-Anwendungsfällen, die unter anderem auf der Website der \acs{idta} dokumentiert sind \cite{idtaUseCases}.
+Die konkrete Auswahl der Submodelle in dieser Arbeit orientiert sich hauptsächlich an typischen Industrie-4.0-Anwendungsfällen, die unter anderem auf der Website der \acs{idta} dokumentiert sind \cite{idtaUseCases}.
 Diese Anwendungsfälle zeigen auf, welche Submodelle in der Praxis besonders relevant sind.
 Eines der wichtigsten ist vermutlich das digitale Typenschild, da dieses häufig die erste Anlaufstelle für die Identifikation und grundlegende Informationen eines Assets darstellt.
 Daneben wurden aber auch projektspezifische Anforderungen berücksichtigt, die sich aus den verfügbaren Daten sowie dem fachlichen Austausch mit Industriepartnern wie Wittenstein ergaben.
@@ -66,7 +66,7 @@ Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, 
 Im Rahmen dieser Arbeit ist die Modellierung der \acs{aas} bzw. der verschiedenen Submodelle als Instanz vorgesehen.
 Auch wenn es sich bei dem Abfüll -und Verschließmodul grundsätzlich um ein generisches Modul innerhalb der robocell-Linie handelt und somit technisch gesehen als Typ klassifiziert werden könnte, steht in diesem Projekt die exemplarische Umsetzung eines konkreten digitalen Zwillings im Vordergrund.
 Dies begründet sich vor allem durch die vorgesehene Anbindung von Echtzeit- und Zeitreihendaten sowie die Abbildung einer Betriebsumgebung, was dem digitalen Zwilling einen klaren Instanzcharakter verleiht.
-Außerdem unterstützt dies die spätere Demonstration der konkreten \acs{aas} im Industrie 4.0-Systemkontext.
+Außerdem unterstützt dies die spätere Demonstration der konkreten \acs{aas} im Industrie-4.0-Systemkontext.
 % Im Rahmen dieser Arbeit ist die Modellierung der AAS als Instanz vorgesehen.
 % Auch wenn es sich bei der robocell grundsätzlich um ein generisches Modul einer Maschinenfamil technisch um einen Typ handelt und keine
 % In diesem Projekt exemplarische Umsertzung eines konkreten digitalen Zwillings im Vordergrund da echtzeitdaten un dzeitreihendaten angebunden werden und eine betriebsumgebung abgtebildet wird instanzcharackter.
@@ -201,7 +201,7 @@ Alternativ kann die \acs{aas} auch als \ac{json}- oder \ac{xml}-Datei gespeicher
 Diese Formate beeinhalten allerdings ausschließlich die strukturierte Beschreibung der \acs{aas}, eignen sich jedoch besonders für die Nutzung in \acsp{api} oder zur Anbindung an bestehende Softwaresysteme.
 
 Zusätzlich unterstützt der Package Explorer auch den gezielten Export einzelner Submodelle oder Concept Descriptions.
-Diese lassen sich seperat, etwa als JSON-Datei abspeichern und können so gezielt in anderen \acs{aas}-Projekten wiederverwendet werden.
+Diese lassen sich seperat, etwa als \acs{json}-Datei abspeichern und können so gezielt in anderen \acs{aas}-Projekten wiederverwendet werden.
 
 % \subsubsection{Abbildung hierarchischer Strukturen und Beziehungen}
 % Zur Abbildung hierarchischer Strukturen, insbesondere im Submodell \acs{bom}, werden sogenannte Entities verwendet. 
@@ -219,7 +219,7 @@ Diese lässt sich direkt mit pip, dem Paktemanager von Python, installieren und 
 Mit dem Befehl 
 \tcbox[inlinebox]{{aas\_test\_engine check\_files}} 
 kann beispielsweise die Validierung der zuvor erstellten \acs{aas} gestartet werden.
-Unterstützt werden sowohl AASX- als auch JSON-Dateien.
+Unterstützt werden sowohl AASX- als auch \acs{json}-Dateien.
 Dabei wird zunächst geprüft, ob diese formal korrekt aufgebaut sind, insbesondere hinsichtlich der internen Struktur und ihrer Beziehungen.
 Anschließend erfolgt die Kontrolle der enthaltenen \acs{aas} gegen die Metamodell-Spezifikationen der \acs{idta} (Teil~1 \cite{SpezifikationPart1} und 3a \cite{SpezifikationPart3a}).
 Zuletzt erfolgt ein Abgleich der Submodelle mit den zugehörigen Templates, sofern diese für das jeweilige Submodell definiert wurden.
@@ -247,7 +247,7 @@ Die enge Verzahnung beider Komponenten ermöglicht somit eine unkomplizierte Ber
 Für komplexere Anwendungsszenarien, insbesondere solche mit Anforderungen an Echtzeitfähigkeit sowie an flexible und erweiterbare Submodelle, stößt der AASX Server Blazor jedoch an seine funktionalen und architektonischen Grenzen. 
 So fehlen beispielsweise Schnittstellen zur Anbindung dynamischer Datenquellen sowie Möglichkeiten zur Skalierung und zur verteilten Systemintegration.
 Aus diesem Grund wird im weiteren Verlauf dieses Projekts die Eclipse BaSyx-Plattform eingesetzt.
-Durch ihre modulare Architektur und die klare Trennung verschiedener Komponenten wie den Registries oder den Repositories bietet sie eine deutlich flexiblere Grundlage für die Umsetzung anspruchsvoller Industrie 4.0-Szenarien.
+Durch ihre modulare Architektur und die klare Trennung verschiedener Komponenten wie den Registries oder den Repositories bietet sie eine deutlich flexiblere Grundlage für die Umsetzung anspruchsvoller Industrie-4.0-Szenarien.
 
 Die einfachste Möglichkeit, BaSyx zu installieren, besteht in der Nutzung von Docker.
 Alle benötigten Komponenten stehen als vorgefertigte Images öffentlich über den Docker Hub \cite{BaSyxDockerHub} zur Verfügung. 
@@ -282,7 +282,7 @@ Diese Methode eignet sich besonders gut für Tests oder kleinere Anpassungen, da
 Die flexibelste, jedoch auch technisch anspruchsvollste Methode zur Bereitstellung einer \acs{aas} ist die manuelle Registrierung über die \acs{rest}-\acs{api}. 
 Dabei kann nicht einfach eine AASX-Datei hochgeladen werden. 
 Stattdessen müssen die AAS, ihre Submodelle sowie deren Beziehungen explizit über die bereitgestellten Schnittstellen des BaSyx-Systems erstellt werden. 
-Dies erfolgt durch das Senden strukturierter JSON-Daten im Body der jeweiligen HTTP-Anfragen.
+Dies erfolgt durch das Senden strukturierter \acs{json}-Daten im Body der jeweiligen HTTP-Anfragen.
 Ein typischer Ablauf dieser Registrierung ist in Tabelle \ref{tab:BereitstellungInBaSyx} dargestellt. 
 Sie zeigt die notwendigen Schritte sowie die zugehörigen \acs{rest}-Endpunkte.
 Diese sind dabei verschiedenen Services innerhalb der AAS Environment zugeordnet.
@@ -317,11 +317,11 @@ Diese steht, wie alle anderen Komponenten auch, als Docker-Container zur Verfüg
 Sie unterstützt eine Vielzahl von Protokollen, darunter insbesondere auch \acs{opcua} oder MQTT.
 Dabei dient sie als Vermittler zwischen einem Datenendpunkt und einem Submodell innerhalb der \acs{aas}.
 
-Die Konfiguration der Databridge erfolgt über mehrere JSON-Dateien.
+Die Konfiguration der Databridge erfolgt über mehrere \acs{json}-Dateien.
 In einer zentralen Konfigurationsdatei werden sowohl die Datenquelle als auch die Datensenke definiert.
 Außerdem können Transformatoren angegeben werden, die beispielsweise Einheitenumrechnungen oder Typkonvertierungen übernehmen.
 
-Als Datenquelle muss der \acs{opcua} Server des Datengenerators angegeben werden, dessen Konfiguration typischerweise in einer separaten JSON-Datei erfolgt.
+Als Datenquelle muss der \acs{opcua} Server des Datengenerators angegeben werden, dessen Konfiguration typischerweise in einer separaten \acs{json}-Datei erfolgt.
 Darin sind sowohl die Verbindungsparameter des Servers (z.B. \acs{url} (Uniform Resource Locator) und Port) als auch die zu überwachenden Knoten anzugeben.
 Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua} Server die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
 
@@ -337,11 +337,11 @@ Außerdem muss der zu verwendende \acs{opcua} Client festgelegt werden.
 In diesem Projekt wird Eclipse Milo eingesetzt, der auf einem Subscription-Modell basiert.
 Im Gegensatz zu einem Polling-Ansatz werden hier gezielt bestimmte Knoten (Nodes) abonniert, sodass neue Werte automatisch bei Änderung übermittelt werden.
 
-Ein Beispiel für eine entsprechende JSON-Konfiguration der Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für den Druckwert dargestellt.
+Ein Beispiel für eine entsprechende \acs{json}-Konfiguration der Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für den Druckwert dargestellt.
 Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall können zusätzlich angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
 
 \newpage
-\begin{lstlisting}[language=json, caption={Beispielhafte JSON-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
+\begin{lstlisting}[language=json, caption={Beispielhafte \acs{json}-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
 {
     "uniqueId"       : "pressure",
     "nodeInformation": "ns=4;i=113",
@@ -353,14 +353,14 @@ Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertra
 
 Zur Anpassung der eingehenden Daten an die Struktur der Ziel-Property lassen sich verschiedene Transformatoren einsetzen.
 Die Databridge unterstützt hierfür unter anderem JSONata-Ausdrücke oder JsonJacksonTransformers.
-Mithilfe dieser Mechanismen können die vom \acs{opcua}-Server empfangenen Rohdaten zunächst in ein JSON-Objekt überführt und anschließend gezielt extrahiert und weiterverarbeitet werden.
+Mithilfe dieser Mechanismen können die vom \acs{opcua}-Server empfangenen Rohdaten zunächst in ein \acs{json}-Objekt überführt und anschließend gezielt extrahiert und weiterverarbeitet werden.
 
 Im Anschluss erfolgt die Konfiguration der Datensenke, also der Zielkomponente innerhalb der \acs{aas}.
-Auch diese erfolgt über eine separate JSON-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version definiert werden.
+Auch diese erfolgt über eine separate \acs{json}-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete API-Version definiert werden.
 Listing~\ref{lst:jsonDatensenke} zeigt ein Beispiel einer entsprechenden Konfiguration.
 Der Platzhalter \{smId\} steht dabei für die Base64-kodierte ID des Submodells Prozessdaten, wie sie in der \acs{rest}-API der \acs{aas} verwendet wird.
 
-\begin{lstlisting}[language=json, caption={Beispielhafte JSON-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
+\begin{lstlisting}[language=json, caption={Beispielhafte \acs{json}-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
 {
     "uniqueId"        : "Submodel/ProcessData/Pressure",
     "submodelEndpoint": "http://aas-env:8081/submodels/{smId}",
@@ -420,9 +420,9 @@ Die über das LinkedSegment referenzierten Zeitreihendaten lassen sich dort in v
 Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne dass diese physisch in der \acs{aas} gespeichert werden müssen.
 
 \subsection{KI-Modell zur Optimierung}
-Im Folgenden wird ein \acs{ki}-gestütztes Konzept zur Optimierung der zustandsbasierten Prozessüberwachung innerhalb des digitalen Zwillings vorgestellt und prototypisch umgesetzt.
-Ziel ist es, mithilfe maschinellen Lernens Anomalien im Betrieb des Abfüll -und Verschließmoduls der robocell frühzeitig zu erkennen und dadurch eine Grundlage für prädiktive Instandhaltungsstrategien zu schaffen.
-Darüber hinaus werden die Methoden der \acs{ki} mit den Strukturen der \acs{aas} verknüpft, um eine standardisierte, interoperable Verwaltung des resultierenden Modells im Sinne der Industrie-4.0 zu ermöglichen.
+Im Folgenden wird ein \acs{ki}-gestütztes Konzept zur Optimierung der zustandsbasierten Prozessüberwachung vorgestellt und prototypisch umgesetzt.
+Ziel ist es, mithilfe maschinellen Lernens Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen und dadurch eine Grundlage für prädiktive Instandhaltungsmaßnahmen zu schaffen.
+Darüber hinaus werden die Methoden der \acs{ki} mit den Strukturen der \acs{aas} verknüpft, um eine standardisierte, interoperable Verwaltung des resultierenden Modells im Sinne der Industrie-4.0-Vision zu ermöglichen.
 
 \subsubsection{Konzeptidee}
 Mit der fortschreitenden Digitalisierung industrieller Prozesse entstehen zunehmend umfangreiche Datenmengen, die wertvolle Informationen über den Zustand und das Verhalten eines Assets liefern. 
@@ -452,20 +452,20 @@ Zur Bewertung der Leistungsfähigkeit des Autoencoders wird die resultierende Au
 Die Differenz zwischen beiden wird als Rekonstruktionsfehler bezeichnet. \cite{Autoencoder}
 
 Autoencoder eignen sich hervorragend zur Erkennung von Anomalien in Zeitreihendaten, insbesondere im Rahmen des unüberwachten Lernens.
-Klassische Autoencoder werden dabei ausschließlich mit Daten aus dem Normalbetrieb trainiert.
+Im Kontext dieser Arbeit soll das Training ausschließlich mit Daten aus dem Normalbetrieb erfolgen.
 Dabei lernt das Modell, typische Muster zu erkennen und ist in der Lage, normale Betriebszustände zuverlässig zu rekonstruieren.
 Weichen neue Eingangsdaten deutlich vom erlernten Schema ab, gelingt die Rekonstruktion nicht mehr vollständig.
 Dies führt zu einem erhöhten Rekonstruktionsfehler, der als Indikator für eine potenzielle Anomalie gewertet werden kann.
 
 \subsubsection{Prototypische Umsetzung}
-Für die prototypische Umsetzung des Autoencoders wird die Programmiersprache Python verwendet.
+Für die prototypische Umsetzung des Autoencoders wird Python verwendet.
 Als Datengrundlage dienen die simulierten Temperaturverläufe, die mithilfe des Datengenerators erzeugt und, wie auch in Kapitel \ref{sec: VerarbeitungZeitreihen} beschrieben, in einer InfluxDB gespeichert sind.
-Um diese vorzubereiten, wird ein Python-basierter InfluxDB-Client verwendet, der über ein \acs{api}-Token sowie die \acs{url} des Datenbanksystems mit der Datenquelle kommuniziert.
-Die relevanten Temperaturdaten werden über eine gezielte Abfrage aus der Datenbank extrahiert.
+Zur Vorbereitung der Daten kann ein InfluxDB-Client eingesetzt werden, der über ein \acs{api}-Token sowie die \acs{url} des Containers mit der Datenquelle kommuniziert.
+Die relevanten Temperaturdaten lassen sich anschließend durch gezielte Abfragen aus der entsprechenden Tabelle extrahieren.
 In dieser Umsetzung wird dabei ein Zeitraum von 7 Tagen betrachtet.
 
-Die extrahierten Daten lassen sich anschließend mit NumPy in ein geeignetes Array-Format überführen und in Sequenzen unterteilen, um sie für das Training des Autoencoders vorzubereiten.
-Dabei werden Zeitfenster mit einer Länge von 30 Werten bei einer Abtastrate von 1 Hz gebildet, was einem Zeitraum von 30 Sekunden entspricht.
+Die Temperaturdaten lassen sich anschließend mit dem NumPy-Paket in ein geeignetes Array-Format überführen und in Sequenzen unterteilen, um sie für das Training des Autoencoders vorzubereiten.
+In dieser Umsetzung werden Zeitfenster mit einer Länge von 30 Werten bei einer Abtastrate von 1 Hz gebildet, was einem Zeitraum von 30 Sekunden entspricht.
 Diese Fenstergröße wird gewählt, da relevante Veränderungen im Prozessverlauf typischerweise innerhalb kurzer Zeiträume auftreten.
 Abschließend müssen die Sequenzen in einen Tensor umgewandelt werden. 
 In diesem Fall handelt es sich um einen zweidimensionalen Tensor, bei dem jede Zeile eine Zeitfenster-Sequenz mit 30 Temperaturwerten enthält.
@@ -473,16 +473,16 @@ In diesem Fall handelt es sich um einen zweidimensionalen Tensor, bei dem jede Z
 Im Anschluss an die Datenvorbereitung muss der Autoencoder konfiguriert werden. 
 Dies erfolgt mit dem Deep-Learning-Framework PyTorch \cite{PyTorch}. 
 In dieser Umsetzung wird ein einfaches Modell verwendet. 
-Der Encoder ist so aufgebaut, dass er die Eingabesequenz mit 30 Temperaturwerten zunächst auf 5 Neuronen reduziert und anschließend auf 2 Neuronen verdichtet. 
+Der Encoder wird so aufgebaut, dass er die Eingabesequenz mit 30 Temperaturwerten zunächst auf 5 Neuronen reduziert und anschließend auf 2 Neuronen verdichtet. 
 Diese beiden Neuronen bilden den latenten Raum. 
 Der Decoder ist spiegelbildlich aufgebaut, erweitert die Darstellung aus dem latenten Raum zunächst wieder auf 5 Neuronen und generiert schließlich 30 Ausgabewerte, die der ursprünglichen Eingabesequenz entsprechen.
 
-Nach der Konfiguration des Autoencoders folgt das Training mit einer festgelegten Anzahl an Epochen. 
-Dabei werden dem Modell die zuvor definierten Tensoren mit den Zeitfenster-Sequenzen als Eingabe übergeben. 
-Die Rekonstruktion erfolgt für alle Sequenzen parallel. 
-Anschließend wird die mittlere quadratische Abweichung (MSE) zwischen Eingabe und Ausgabe berechnet. 
-Dieser Fehlerwert dient als Grundlage für die Anpassung der Modellparameter, beispielsweise durch Backpropagation. 
-Der Vorgang wird iterativ über alle Epochen hinweg wiederholt, um die Genauigkeit des Modells sukzessive zu optimieren.
+Nach der Konfiguration des Autoencoders erfolgt das Training des Modells. 
+Als Eingabe dienen die zuvor definierten Tensoren, welche die Zeitfenster-Sequenzen enthalten. 
+Die Rekonstruktion der Eingabedaten erfolgt parallel für alle Sequenzen. 
+Anschließend wird der mittlere quadratische Fehler (MSE) zwischen Eingabe und Ausgabe berechnet. 
+Dieser Fehlerwert bildet die Grundlage für die Anpassung der Modellparameter, beispielsweise durch Backpropagation. 
+Durch die wiederholte Durchführung dieses Prozesses über mehrere Epochen hinweg kann die Genauigkeit des Modells sukzessive verbessert werden.
 
 Das fertig trainierte Modell kann anschließend zur Erkennung von Anomalien in neuen Temperaturdaten eingesetzt werden. 
 Diese Daten sind analog zu den Trainingsdaten aufgebaut, enthalten jedoch gezielt eingefügte Ausreißer bzw. Unregelmäßigkeiten. 
@@ -621,7 +621,7 @@ Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutige
 Für jeden Client kann optional ein Service Account aktiviert werden, der als technisches Benutzerkonto agiert und - analog zu realen Benutzern - mit spezifischen Rollen ausgestattet wird.  
 Dies ermöglicht eine differenzierte Zugriffsteuerung auch für automatisierte Systemzugriffe.
 
-Die Rechtevergabe innerhalb von Eclipse BaSyx erfolgt rollenbasiert über externe Konfigurationsdateien (i.~d.~R. im JSON-Format).  
+Die Rechtevergabe innerhalb von Eclipse BaSyx erfolgt rollenbasiert über externe Konfigurationsdateien (i.~d.~R. im \acs{json}-Format).  
 Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE ) auf bestimmte Elemente wie \acs{aas}, Submodelle oder Concept Descriptions erhalten.  
 Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um z.~B. den Zugriff auf alle Submodelle einer BaSyx-Komponente zu gewähren.  
 Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Services.
