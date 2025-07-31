@@ -1,17 +1,17 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Klassifizierung des digitalen Zwillings}}{8}{figure.caption.14}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Industrie 4.0 Komponente}}{10}{figure.caption.21}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Vereinfachtes Metamodell der \acs {aas}}}{12}{figure.caption.23}%
-\contentsline {figure}{\numberline {4}{\ignorespaces robocell Abfüll- und Verschließmodul \blx@tocontentsinit {0}\cite {RobocellBetriebsanleitung}}}{17}{figure.caption.48}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Benutzeroberfläche Package Explorer}}{18}{figure.caption.51}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Benutzeroberfläche AAS Web UI}}{20}{figure.caption.57}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Ablauf der Entwicklung des digitalen Zwillings}}{21}{figure.caption.58}%
-\contentsline {figure}{\numberline {8}{\ignorespaces AAS-Paket im Package Explorer}}{25}{figure.caption.64}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Package Explorer: Ausschnitt Submodell Typenschild}}{27}{figure.caption.85}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Submodell Prozessdaten}}{32}{figure.caption.96}%
-\contentsline {figure}{\numberline {11}{\ignorespaces OPC UA Datenknoten}}{33}{figure.caption.99}%
-\contentsline {figure}{\numberline {12}{\ignorespaces SMT Time Series Data}}{35}{figure.caption.102}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Aufbau eines Autoencoders}}{37}{figure.caption.104}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{48}{figure.caption.138}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{49}{figure.caption.139}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{50}{figure.caption.140}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Klassifizierung des digitalen Zwillings}}{8}{figure.caption.15}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Industrie 4.0 Komponente}}{10}{figure.caption.22}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Vereinfachtes Metamodell der \acs {aas}}}{12}{figure.caption.24}%
+\contentsline {figure}{\numberline {4}{\ignorespaces robocell Abfüll- und Verschließmodul}}{17}{figure.caption.49}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Benutzeroberfläche Package Explorer}}{18}{figure.caption.52}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Benutzeroberfläche AAS Web UI}}{20}{figure.caption.58}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Ablauf der Entwicklung des digitalen Zwillings}}{21}{figure.caption.59}%
+\contentsline {figure}{\numberline {8}{\ignorespaces AAS-Paket im Package Explorer}}{25}{figure.caption.65}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Package Explorer: Ausschnitt Submodell Typenschild}}{27}{figure.caption.86}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Submodell Prozessdaten}}{32}{figure.caption.97}%
+\contentsline {figure}{\numberline {11}{\ignorespaces OPC UA Datenknoten}}{33}{figure.caption.100}%
+\contentsline {figure}{\numberline {12}{\ignorespaces SMT Time Series Data}}{35}{figure.caption.103}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Aufbau eines Autoencoders}}{37}{figure.caption.105}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{47}{figure.caption.135}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{50}{figure.caption.136}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{51}{figure.caption.140}%

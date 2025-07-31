@@ -36,24 +36,24 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Konzeptidee}{36}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Prototypische Umsetzung}{38}{subsubsection.3.4.2}%
 \contentsline {subsubsection}{\numberline {3.4.3}Verwaltung der Metadaten in der \acs {aas}}{39}{subsubsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.5}Anwendungsfall Digitaler Produktpass}{40}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.5}Anwendungsfall Digitaler Produktpass}{41}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Umsetzung mit dem Teilmodell Carbon Footprint}{41}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Zugriffsrechte und Datensicherheit}{42}{subsubsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.6}Anwendungsfall automatisierte Generierung von AAS}{45}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.5.2}Zugriffsrechte und Datensicherheit}{43}{subsubsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.6}Anwendungsfall automatisierte Generierung von AAS}{44}{subsection.3.6}%
 \contentsline {subsubsection}{\numberline {3.6.1}Arbeiten mit Submodel Templates}{45}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Automatisiertes Befüllen mit strukturierten Daten}{46}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.2}Automatisiertes Befüllen mit strukturierten Daten}{45}{subsubsection.3.6.2}%
 \contentsline {section}{\numberline {4}Ergebnisse}{47}{section.4}%
-\contentsline {subsection}{\numberline {4.1}AAS-Demonstrator für die robocell}{51}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Systemarchitektur}{51}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Statische }{51}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Eingesetzte Teilmodelle}{51}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}Herausforderungen bei der Erstellung}{51}{subsubsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.2}Evaluation des KI-Modells}{51}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Bewertung des prototypischen KI-Einsatzes}{51}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Ausblick: Predictive Maintenance}{51}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Weiterführende Einsatzmöglichkeiten}{51}{subsubsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.3}Anwendungsfall Digitaler Produktpass}{51}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Abbildung des PCF}{51}{subsubsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.1}AAS-Demonstrator für die robocell}{47}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Systemarchitektur}{48}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Statische Submodelle}{48}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Dynamische Submodelle}{48}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Herausforderungen bei der Implementierung}{49}{subsubsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.2}Evaluation des KI-Modells}{49}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Bewertung des prototypischen KI-Einsatzes}{49}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Ausblick: Predictive Maintenance}{49}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Weiterführende Einsatzmöglichkeiten}{49}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Anwendungsfall Digitaler Produktpass}{49}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Abbildung des PCF}{49}{subsubsection.4.3.1}%
 \contentsline {subsubsection}{\numberline {4.3.2}Rollenbasierter Zugriff auf Submodelle}{51}{subsubsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.4}Anwendungsfall automatisierte Generierung der AAS}{52}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Evaluierung eingesetzter Tools und Software}{52}{subsection.4.5}%
@@ -65,5 +65,4 @@
 \contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{52}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{52}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{52}{subsection.5.3}%
-\contentsline {section}{Glossar und Abkürzungsverzeichnis}{53}{section*.141}%
 \contentsline {section}{\numberline {A}Anhang 1}{59}{appendix.A}%

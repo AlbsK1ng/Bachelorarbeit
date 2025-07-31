@@ -7,7 +7,7 @@ Abbildung \ref{fig:Entwicklungsschritte} veranschaulicht den Ablauf des zugrunde
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/vorgehenEntwicklungsteil.pdf}
-    \caption{Ablauf der Entwicklung des digitalen Zwillings}
+    \caption[Ablauf der Entwicklung des digitalen Zwillings]{Ablauf der Entwicklung des digitalen Zwillings (eigene Darstellung)}
     \label{fig:Entwicklungsschritte}
 \end{figure}
 \vspace{-1em}
@@ -114,7 +114,7 @@ Für erste Modellierungszwecke empfiehlt es sich, auf automatisch generierte Bei
 \begin{figure}[htbp]
     \centering
     \includegraphics{Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG}
-    \caption{AAS-Paket im Package Explorer}
+    \caption[AAS-Paket im Package Explorer]{AAS-Paket im Package Explorer (eigene Darstellung)}
     \label{fig:NeuesAASPaket}
 \end{figure}
 
@@ -160,7 +160,7 @@ Abbildung \ref{fig:SubmodellTypenschild} zeigt den strukturellen Aufbau anhand e
 \begin{figure}[htbp]
     \centering
     \includegraphics{Bilder/ModellierungAAS/Final/SubmodellErweitert.PNG}
-    \caption{Package Explorer: Ausschnitt Submodell Typenschild}
+    \caption[Package Explorer: Ausschnitt Submodell Typenschild]{Package Explorer: Ausschnitt Submodell Typenschild (eigene Darstellung)}
     \label{fig:SubmodellTypenschild}
 \end{figure}
 
@@ -309,7 +309,7 @@ Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten
     \centering
     % 0.88
     \includegraphics[width=1\textwidth]{Bilder/OPCUA/SubmodellProzessdaten.pdf}
-    \caption{Submodell Prozessdaten}
+    \caption[Submodell Prozessdaten]{Submodell Prozessdaten (eigene Darstellung)}
     \label{fig:SubmodellProzessdaten}
 \end{figure}
 
@@ -330,7 +330,7 @@ Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua
     \centering
     % 0.88
     \includegraphics{Bilder/OPCUA/OPCUADaten.pdf}
-    \caption{OPC UA Datenknoten}
+    \caption[OPC UA Datenknoten]{OPC UA Datenknoten (eigene Darstellung)}
     \label{fig:OPCUADatenStruktur}
 \end{figure}
 
@@ -398,7 +398,7 @@ Der strukturelle Aufbau ist in Abbildung \ref{fig:SMTTimeSeriesData} dargestellt
     \centering
     % 0.88
     \includegraphics[width=1\textwidth]{Bilder/TimeSeries/SM_TimeSeriesData.pdf}
-    \caption{SMT Time Series Data}
+    \caption[SMT Time Series Data]{SMT Time Series Data (in Anlehnung an \cite{SpezifikationTimeSeriesData})}
     \label{fig:SMTTimeSeriesData}
 \end{figure}
 
@@ -423,7 +423,7 @@ Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne da
 \subsection{KI-Modell zur Optimierung}
 Im Folgenden wird ein \acs{ki}-gestütztes Konzept zur Optimierung der zustandsbasierten Prozessüberwachung vorgestellt und prototypisch umgesetzt.
 Ziel ist es, mithilfe maschinellen Lernens Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen und dadurch eine Grundlage für prädiktive Instandhaltungsmaßnahmen zu schaffen.
-Darüber hinaus werden die Methoden der \acs{ki} mit den Strukturen der \acs{aas} verknüpft, um eine standardisierte, interoperable Verwaltung des resultierenden Modells im Sinne der Industrie-4.0-Vision zu ermöglichen.
+Darüber hinaus wird gezeigt, wie das resultierende \acs{ki}-Modell mithilfe der \acs{aas} standardisiert und interoperabel verwaltet werden kann.
 
 \subsubsection{Konzeptidee}
 Mit der fortschreitenden Digitalisierung industrieller Prozesse entstehen zunehmend umfangreiche Datenmengen, die wertvolle Informationen über den Zustand und das Verhalten eines Assets liefern. 
@@ -440,58 +440,65 @@ Der prinzipielle Aufbau eines Autoencoders ist in Abbildung \ref{fig:Autoencoder
     \centering
     % 0.88
     \includegraphics[width=1\textwidth]{Bilder/Autoencoder/AutoencoderModell.pdf}
-    \caption{Aufbau eines Autoencoders}
+    \caption[Aufbau eines Autoencoders]{Aufbau eines Autoencoders (in Anlehnung an \cite{AutoencoderBild})}
     \label{fig:Autoencoder}
 \end{figure}
 
 Der Encoder besteht aus mehreren Schichten, die die Eingabedaten schrittweise in eine komprimierte Form überführen. Dabei erfolgt eine Dimensionsreduktion, das heißt, die Daten werden im Verlauf auf weniger Dimensionen verdichtet. 
 Das Ziel ist es, die für die Rekonstruktion wesentlichen Merkmale zu extrahieren und irrelevante Informationen zu filtern.
+
 Der dabei entstehende latente Raum bildet die am stärksten komprimierte Repräsentation der Daten ab und dient als Ausgangspunkt für den Decoder.
 Dieser übernimmt die Aufgabe, die komprimierte Darstellung wieder in die ursprüngliche Eingabe zu rekonstruieren. 
 Auch er besteht aus mehreren Schichten, die die Daten schrittweise dekomprimieren.
-Zur Bewertung der Leistungsfähigkeit des Autoencoders wird die resultierende Ausgabe mit der ursprünglichen Eingabe verglichen. 
+Zur Bewertung der Leistungsfähigkeit eines Autoencoders kann die resultierende Ausgabe mit der ursprünglichen Eingabe verglichen werden. 
 Die Differenz zwischen beiden wird als Rekonstruktionsfehler bezeichnet. \cite{Autoencoder}
 
-Autoencoder eignen sich hervorragend zur Erkennung von Anomalien in Zeitreihendaten, insbesondere im Rahmen des unüberwachten Lernens.
-Im Kontext dieser Arbeit soll das Training ausschließlich mit Daten aus dem Normalbetrieb erfolgen.
-Dabei lernt das Modell, typische Muster zu erkennen und ist in der Lage, normale Betriebszustände zuverlässig zu rekonstruieren.
-Weichen neue Eingangsdaten deutlich vom erlernten Schema ab, gelingt die Rekonstruktion nicht mehr vollständig.
-Dies führt zu einem erhöhten Rekonstruktionsfehler, der als Indikator für eine potenzielle Anomalie gewertet werden kann.
+Im Rahmen dieser Arbeit soll ein Autoencoder zur Erkennung von Anomalien in Zeitreihendaten eingesetzt werden. 
+Geplant ist ein Training mit Daten aus dem Normalbetrieb. 
+Da diese nicht gelabelt sind, wird ein unüberwachter Lernansatz verfolgt. 
+Ziel ist es, dass das Modell typische Muster des Normalbetriebs eigenständig erkennt und rekonstruieren kann. 
+Weichen neue Eingangsdaten deutlich vom gelernten Muster ab, steigt der Rekonstruktionsfehler.
+Dieser dient als Indikator für eine potenzielle Anomalie.
 
 \subsubsection{Prototypische Umsetzung}
-Für die prototypische Umsetzung des Autoencoders wird Python verwendet.
+Für die prototypische Umsetzung des Autoencoders wird die Programmiersprache Python verwendet. 
+Aufgrund ihrer Vielzahl an spezialisierten Frameworks für maschinelles Lernen gilt sie als Standardwerkzeug für datengetriebene Analysen \cite{Python}.
 Als Datengrundlage dienen die simulierten Temperaturverläufe, die mithilfe des Datengenerators erzeugt und, wie auch in Kapitel \ref{sec: VerarbeitungZeitreihen} beschrieben, in einer InfluxDB gespeichert sind.
-Zur Vorbereitung der Daten kann ein InfluxDB-Client eingesetzt werden, der über ein \acs{api}-Token sowie die \acs{url} des Containers mit der Datenquelle kommuniziert.
+
+Im ersten Schritt gilt es, die für das Training notwendigen Daten vorzubereiten. 
+Hierzu kann ein InfluxDB-Client eingesetzt werden, der über ein \acs{api}-Token sowie die \acs{url} des Containers mit der Datenquelle kommuniziert.
 Die relevanten Temperaturdaten lassen sich anschließend durch gezielte Abfragen aus der entsprechenden Tabelle extrahieren.
 In dieser Umsetzung wird dabei ein Zeitraum von 7 Tagen betrachtet.
 
-Die Temperaturdaten lassen sich anschließend mit dem NumPy-Paket in ein geeignetes Array-Format überführen und in Sequenzen unterteilen, um sie für das Training des Autoencoders vorzubereiten.
-In dieser Umsetzung werden Zeitfenster mit einer Länge von 30 Werten bei einer Abtastrate von 1 Hz gebildet, was einem Zeitraum von 30 Sekunden entspricht.
-Diese Fenstergröße wird gewählt, da relevante Veränderungen im Prozessverlauf typischerweise innerhalb kurzer Zeiträume auftreten.
-Abschließend müssen die Sequenzen in einen Tensor umgewandelt werden. 
-In diesem Fall handelt es sich um einen zweidimensionalen Tensor, bei dem jede Zeile eine Zeitfenster-Sequenz mit 30 Temperaturwerten enthält.
+Um dem Autoencoder das Erkennen typischer Muster innerhalb dieser Daten zu ermöglichen, müssen diese zunächst in Segmente unterteilt werden.
+Da relevante Prozessänderungen typischerweise innerhalb kurzer Zeitabschnitte auftreten, wird in dieser Arbeit eine Fenstergröße von 30 Werten gewählt. 
+Bei einer Abtastrate von 1 Hz entspricht dies einem Zeitraum von 30 Sekunden.
 
-Im Anschluss an die Datenvorbereitung muss der Autoencoder konfiguriert werden. 
-Dies erfolgt mit dem Deep-Learning-Framework PyTorch \cite{PyTorch}. 
-In dieser Umsetzung wird ein einfaches Modell verwendet. 
+Die resultierenden Sequenzen können anschließend in einem Tensor zusammengeführt werden.
+Dabei handelt es sich um ein mehrdimensionales Array, in diesem Fall eine zweidimensionale Matrix, bei der jede Zeile ein Zeitfenster mit 30 Temperaturwerten abbildet.
+
+Der Autoencoder selbst wird mit dem Deep-Learning-Framework PyTorch \cite{PyTorch} implementiert. 
 Der Encoder wird so aufgebaut, dass er die Eingabesequenz mit 30 Temperaturwerten zunächst auf 5 Neuronen reduziert und anschließend auf 2 Neuronen verdichtet. 
-Diese beiden Neuronen bilden den latenten Raum. 
-Der Decoder ist spiegelbildlich aufgebaut, erweitert die Darstellung aus dem latenten Raum zunächst wieder auf 5 Neuronen und generiert schließlich 30 Ausgabewerte, die der ursprünglichen Eingabesequenz entsprechen.
+Der Decoder ist spiegelbildlich aufgebaut, erweitert die Darstellung aus dem latenten Raum zunächst wieder auf 5 Neuronen und generiert schließlich Ausgabewerte, die der ursprünglichen Eingangsgröße entsprechen.
 
-Nach erfolgreicher Konfiguration muss das Modell trainiert werden.
-Als Eingabe dienen die zuvor definierten Tensoren, welche die Zeitfenster-Sequenzen enthalten. 
-Die Rekonstruktion der Eingabedaten erfolgt parallel für alle Sequenzen. 
-Anschließend wird der mittlere quadratische Fehler (MSE) zwischen Eingabe und Ausgabe berechnet. 
-Dieser Fehlerwert bildet die Grundlage für die Anpassung der Modellparameter, beispielsweise durch Backpropagation. 
-Durch die wiederholte Durchführung dieses Prozesses über mehrere Epochen hinweg kann die Genauigkeit des Modells sukzessive verbessert werden.
+Als Eingabe für das Training dienen die zuvor definierten Tensoren.
+Das Ziel ist es, die Eingabedaten möglichst exakt zu rekonstruieren.
+Nach jedem Trainingsdurchgang wird hierzu der mittlere quadratische Fehler zwischen Eingabe- und Ausgabedaten berechnet.
+Dieser Fehlerwert wird verwendet, um die Gewichte des Netzes, typischerweise mittels Backpropagation, anzupassen.
+Durch die iterative Wiederholung dieses Prozesses über mehrere Trainingszyklen (Epochen) wird der Rekonstruktionsfehler sukzessive verringert und somit die Fähigkeit des Modells, die Eingabedaten genau nachzubilden, kontinuierlich verbessert.
 
-Das fertig trainierte Modell kann anschließend zur Erkennung von Anomalien eingesetzt werden.
-Analog zum Training werden erneut simulierte Temperaturverläufe verwendet, die jedoch gezielt Ausreißer bzw. Unregelmäßigkeiten enthalten.
-Diese Testdaten sind strukturell identisch zu den Trainingsdaten, unterscheiden sich aber durch die eingefügten Anomalien.
+Für die Anomalieerkennung wird das trainierte Modell im Evaluierungsmodus eingesetzt, sodass während der Auswertung keine weiteren Anpassungen der Modellparameter erfolgen.
+Wie beim Training werden dabei erneut simulierte Temperaturverläufe verwendet, die jedoch gezielt Ausreißer und Unregelmäßigkeiten enthalten.
+Diese Testdaten sind in ihrer Struktur mit den Trainingsdaten vergleichbar, unterscheiden sich jedoch durch die gezielt eingefügten Anomalien.
 
-Während der Ausführung des Autoencoders muss für jede Sequenz der Rekonstruktionsfehler berechnet werden, der die durchschnittliche Abweichung zwischen den Eingabewerten und den rekonstruierten Ausgabewerten beschreibt.
-Um Anomalien zu identifizieren, kann dieser Fehler mit einem definierten Schwellenwert verglichen werden, beispielsweise dem 95. Perzentil der Fehlerverteilung oder dem Mittelwert zuzüglich des Zweifachen der Standardabweichung. 
-Überschreitet der Rekonstruktionsfehler diesen Wert, so wird die gesamte Sequenz, also das vollständige Zeitfenster mit 30 Werten, als Anomalie klassifiziert.
+Der Autoencoder durchläuft dabei schrittweise jede Sequenz. 
+Zur Erkennung von unnormalem Verhalten wird jeweils der Rekonstruktionsfehler berechnet, welcher die durchschnittliche Abweichung zwischen den Eingabewerten und den rekonstruierten Ausgabewerten misst.
+Zudem muss ein Schwellenwert definiert werden.
+Überschreitet der Rekonstruktionsfehler diesen, wird die gesamte Sequenz, also das entsprechende Zeitfenster mit 30 Werten, als Anomalie eingestuft.
+
+Die Wahl des Schwellenwertes ist dabei entscheidend.
+Ein zu niedriger Wert führt zu vielen Fehlklassifikationen, während ein zu hoher Wert dazu führen kann, dass echte Anomalien übersehen werden.
+Als geeignete Referenzwerte bieten sich beispielsweise das 95. Perzentil der Fehlerverteilung aus den Trainingsdaten oder, wie in dieser Umsetzung,  der Mittelwert zuzüglich des Zweifachen der Standardabweichung an.
 
 \subsubsection{Verwaltung der Metadaten in der \acs{aas}}
 \acs{ki}-Modelle lassen sich als digitale Assets betrachten, da sie, analog zu physischen Komponenten, über einen eigenen Lebenszyklus verfügen.  
@@ -524,71 +531,65 @@ Weitere Elemente zur Beschreibung gelabelter bzw. realer Datensätze sind ebenfa
 Für die Beschreibung der Modellbereitstellung kann ergänzend das \acs{smt} AIDeployment \cite{SpezifikationAIDeployement} eingesetzt werden, das unter anderem Angaben zu Hard- und Softwareanforderungen, Bereitstellungsoptionen, Überwachungsmechanismen sowie zur Leistungsbewertung enthält.
 Im Rahmen der prototypischen Umsetzung besteht hierfür jedoch kein Bedarf, weshalb dieses Submodell an dieser Stelle lediglich der Vollständigkeit halber erwähnt wird.
 
+\newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
 Im Kontext steigender Anforderungen an Nachhaltigkeit und Transparenz entlang des gesamten Produktlebenszyklus eines Assets gewinnt der \acs{dpp} zunehmend an Bedeutung. 
-Der Fokus dieses Anwendungsfalls liegt auf zwei zentralen Aspekten: der Abbildung des \acs{pcf} sowie der technischen Umsetzung der Zugriffsrechte auf die im \acs{dpp} enthaltenen Daten.
-
-Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\-valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
-Seine Bedeutung zeigt sich auch in der EU-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt, der die erste konkrete Umsetzung eines \acs{dpp} darstellt und daher als Ausgangspunkt für weitere Branchen wie den Maschinen- und Anlagenbau dient.
-Darin wird unter anderem die verpflichtende Angabe des \acs{pcf}, insbesondere für die Phasen Material, Produktion und die Gesamtbetrachtung (Cradle to Gate) gefordert, welche im Rahmen dieses Anwendungsfalls exemplarisch umgesetzt werden. 
-Für weiterführende Lebenszyklusphasen wie die Nutzung ist die Angabe derzeit noch nicht vorgeschrieben.
+Der Fokus dieses Anwendungsfalls liegt auf zwei zentralen Aspekten: der Abbildung des \acs{pcf} sowie der Realisierung der Zugriffsrechte auf die im \acs{dpp} enthaltenen Daten.
 
 Die technische Umsetzung orientiert sich an dem vom \acs{zvei} vorgestellten Konzept des \acs{dpp40}, das unter anderem gemeinsam mit der \acs{idta} im Rahmen eines \acs{pcf}-Showcases auf einer Website demonstriert wird \cite{PCFShowcas}.
 Aufbauend auf diesem Konzept wird gezeigt, wie ein \acs{dpp} mithilfe der \acs{aas} modelliert und prototypisch realisiert werden kann.
 
 Konkret wird der digitale Zwilling des Abfüll- und Verschließmoduls der robocell um ein Submodell zur Abbildung des \acs{pcf} erweitert. 
-Der Fokus liegt auf der exemplarischen Aggregation von CO\textsubscript{2}-Daten aus Zulieferkomponenten, um den \acs{pcf} des Moduls zu berechnen. 
-Ergänzend wird demonstriert, wie sich Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen mithilfe der Eclipse BaSyx-Plattform umsetzen lassen.
+Der Fokus liegt auf der exemplarischen Aggregation von CO\textsubscript{2}-Daten aus Zulieferkomponenten, um den Gesamt-\acs{pcf} des Moduls zu berechnen. 
+Ergänzend dazu wird demonstriert, wie sich Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen mithilfe der Eclipse BaSyx-Plattform umsetzen lassen.
 
 \subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
-Zur exemplarischen Abbildung und dynamischen Berechnung des \acs{pcf} der Gesamtmaschine wird das von der \acs{idta} spezifizierte \acs{smt} \acs{cf} \cite{SpezifikaitonPCF} eingesetzt.  
-Dieses Template definiert eine standardisierte Struktur zur Erfassung von CO\textsubscript{2}-Äquivalenten entlang des Produktlebenszyklus.  
-Es unterscheidet zwischen dem \acs{pcf} und dem Transport Carbon Footprint (TCF), wobei im Rahmen dieses Anwendungsfalls ausschließlich der \acs{pcf} betrachtet wird.
+Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\-valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
+Seine Bedeutung zeigt sich auch in der EU-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt, der die erste konkrete Umsetzung eines \acs{dpp} darstellt und daher als Ausgangspunkt für weitere Branchen wie den Maschinen- und Anlagenbau dient.
+Darin wird unter anderem die verpflichtende Angabe des \acs{pcf}, insbesondere für die Phasen Material, Produktion und die Gesamtbetrachtung (Cradle to Gate) gefordert. 
+Für weiterführende Lebenszyklusphasen ist die Angabe derzeit noch nicht vorgeschrieben.
+
+Zur praktischen Umsetzung der geforderten Angaben in den genannten Lebenszyklusphasen bietet sich das von der \acs{idta} spezifizierte \acs{smt} \acs{cf} \cite{SpezifikaitonPCF} an.
+Es definiert eine standardisierte Struktur zur Erfassung von CO\textsubscript{2}-Äquivalenten entlang des gesamten Lebenszyklus.  
+Dabei wird zwischen dem \acs{pcf} und dem Transport Carbon Footprint (TCF) unterschieden, allerdings ist für diesen Anwendungsfall ausschließlich der \acs{pcf} relevant.
 
 Das \acs{smt} gibt die Struktur des \acs{pcf} in Form einer \acs{smc} vor.  
-Diese Sammlung enthält standardisierte Elemente wie den CO\textsubscript{2}-Wert, die zugehörige Lebenszyklusphase, die verwendete Berechnungsmethode sowie den Gültigkeitszeitraum.
-Wie bereits zuvor beschrieben, liegt der Fokus auf den Lebenszyklusphasen Material, Produktion und Cradle to Gate.  
-Für jede dieser Phasen empfiehlt es sich, eine eigene \acs{smc} gemäß der Submodellspezifikation zu erstellen.  
-Diese Sammlungen dienen als Basis für die spätere Aggregation der \acs{pcf}-Werte der Gesamtmaschine und werden im weiteren Verlauf dynamisch mit Werten befüllt.
+Diese Sammlung enthält standardisierte Elemente wie den CO\textsubscript{2}-Wert, die zugehörige Zyklusphase, die verwendete Berechnungsmethode sowie den Gültigkeitszeitraum.
+Wie bereits zuvor beschrieben, liegt der Fokus auf den Phasen Material, Produktion und Cradle to Gate.  
+Für diese empfiehlt es sich, jeweils eine eigene \acs{smc} gemäß der Submodellspezifikation zu erstellen.  
+Die konkreten Werte bleiben allerdings zunächst leer, werden später dann aber mit den aggregierten Ergebnissen gefüllt.
 
-Für die exemplarische Berechnung des \acs{pcf} wurde eine Auswahl an Steuerungskomponenten festgelegt, die in der robocell verbaut sind.  
-Diese Auswahl beschränkt sich auf Siemens-Komponenten, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule.  
-Die Komponenten wurden als Typ-1-\acs{aas} zur Verfügung gestellt, wobei jede \acs{aas} ein eigenes Submodell gemäß des \acs{smt} \acs{cf} enthält.
+Für die Berechnung des \acs{pcf} wurde eine Auswahl an Steuerungskomponenten festgelegt, die in der robocell verbaut sind.  
+Diese Auswahl beschränkt sich auf Siemens-Komponenten, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule.
+Die zugehörigen \acs{aas} wurden auf persönliche Anfrage von der Siemens AG bereitgestellt, wobei jede dieser ein eigenes Submodell gemäß des \acs{smt} \acs{cf} enthält.
+% Abbildung \ref{fig:PCFSiemens} zeigt den Aufbau am Beispiel des \acs{cf}-Submolls eines digitalen Ausgabemoduls, der SIMATIC ET 200SP.
 
-Um diese in die \acs{pcf}-Berechnung einzubeziehen, können sie direkt im \acs{cf}-Submodell der robocell referenziert werden. 
-In diesem Anwendungsfall erfolgt dies über eine \acs{sml}, in der die Komponenten als Entities unter Angabe ihrer jeweiligen globalAssetId eingebunden sind. 
-Alternativ wäre auch eine Referenzierung direkt über das \acs{bom}-Submodell möglich.
-
-Für die dynamische Berechnung müssen sowohl die \acs{aas} der robocell als auch die zugehörigen Komponenten-\acs{aas} in einer Laufzeitumgebung verfügbar sein. 
-Die Bereitstellung erfolgt über die Eclipse BaSyx-Plattform.
-Zur Benutzerinteraktion wird das bestehendes Vue.js-Plugin für den Carbon Fooprint der AAS Web UI genutzt.
-Dieses wird im Rahmen dieses Anwendungsfalls um eine Schaltfläche zur Initialisierung der Aggregation erweitert.
-
-Die Aggregationslogik ist als eigenständiger, Node.js-basierter Microservice mit einer Web-API implementiert. 
-Diese wertet die Komponenten-\acs{aas} aus, berechnet die aggregierten Werte für die zuvor definierten Lebenszyklusphasen und schreibt diese in das \acs{cf}-Submodell der Haupt-AAS der robocell zurück. 
-Die Auslösung des Microservice erfolgt über die Schaltfläche im erweiterten Plugin.
-
-Alternativ wäre auch eine clientseitige Berechnung direkt im \acs{cf}-Plugin denkbar. 
-In der vorliegenden Umsetzung liegt die gesamte Aggregationslogik jedoch zentral und serverseitig im Microservice. 
-Der Ablauf ist in Abbildung \ref{fig:SequenzdiagrammPCF} als Sequenzdiagramm dargestellt.
-
-% \newpage
 % \begin{figure}[htbp]
 %     \centering
-%         \includegraphics[width=1\textwidth]{Bilder/DPP/PCF_Aggregation_SmallLine.pdf}
-    
-%     \caption{Sequenzdiagramm zur Aggregation des PCF}
-%     \label{fig:SequenzdiagrammPCF}
+%     % 0.88
+%     \includegraphics{Bilder/PCF/SiemensBeispiel.PNG}
+%     \caption{CF-Submodell der SIMATIC ET 200SP}
+%     \label{fig:PCFSiemens}
 % \end{figure}
 
-% !!!! Das und das Bidl vielleicht schon Ergebnisse !!!!
-Der Microservice nutzt die \acs{rest}-Schnittstelle des Submodel Repositories der AAS Environment, um zunächst alle in der \acs{aas} der robocell hinterlegten Komponenten auszulesen. 
+Um die Komponenten automatisch in die Berechnung einzubeziehen, können sie direkt im \acs{cf}-Submodell der robocell referenziert werden. 
+In diesem Anwendungsfall erfolgt dies über eine \acs{sml}, in der diese als Self-Managed Entities unter Angabe ihrer globalAssetId eingebunden sind. 
+Zwar wäre auch eine Referenzierung über das \acs{bom}-Submodell denkbar, jedoch wären dann nicht mehr sämtliche für die Berechnung erforderlichen Daten in einem Submodell gebündelt, was diese erheblich erschweren könnte.
+
+Die Bereitstellung der aktualisierten \acs{aas} der robocell sowie der zugehörigen Komponenten-\acs{aas} erfolgt über die Eclipse BaSyx-Plattform.
+Zur Benutzerinteraktion kann das bestehende Vue.js-Plugin für den \acs{cf} der AAS Web UI genutzt werden.
+
+Um eine klare Trennung von Logik und Benutzeroberfläche zu gewährleisten, wird die Aggregationslogik als eigenständiger, Node.js-basierter Microservice mit einer Web-API implementiert.
+Im \acs{cf}-Plugin wird hierfür ein Button integriert, der eine Anfrage an den Microservice sendet und somit die Berechnung auslöst.
+Alternativ wäre auch eine clientseitige Berechnung direkt im \acs{cf}-Plugin denkbar, in dieser Umsetzung erfolgt die Aggregation jedoch zentral und serverseitig.
+
+Der Microservice nutzt dabei die \acs{rest}-Schnittstelle des Submodel Repositories der AAS Environment, um zunächst alle in der \acs{aas} der robocell hinterlegten Komponenten auszulesen. 
 Mithilfe des Discovery Service werden auf Basis ihrer globalAssetIds die zugehörigen Komponenten-\acs{aas} identifiziert und anschließend vom AAS Repository abgerufen.
 Für jede dieser Komponenten wird geprüft, ob ein \acs{cf}-Submodell vorhanden ist. 
-Falls dies zutrifft, wird das Submodell ausgelesen und die enthaltenen Werte extrahiert.
+Falls dies zutrifft, wird das Submodell ausgelesen und die enthaltenen \acs{pcf}-Werte extrahiert.
 
-Aus den ermittelten Einzelwerten berechnet der Microservice schließlich die aggregierten CO\textsubscript{2}-Äquivalente für die Phasen Produktion, Material sowie Cradle to Gate. 
-Die berechneten Werte werden abschließend in das \acs{cf}-Submodell der Haupt-\acs{aas} der robocell geschrieben und stehen dort strukturiert zur Verfügung.
+Zum Schluss werden die einzelnen CO\textsubscript{2}-Äquivalente für die einzelnen Phasen aggregiert und in das \acs{cf}-Submodell der robocell zurückgeschrieben.
+Damit die Werte auch direkt in der Weboberfläche sichtbar sind, muss nach erfolgreicher Ausführung eine Aktualisierung im Plugin erfolgen, sodass die neuen Werte aus der AAS Environment abgefragt und visualisiert werden.
 
 \subsubsection{Zugriffsrechte und Datensicherheit}
 
@@ -624,14 +625,15 @@ Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutige
 Für jeden Client kann optional ein Service Account aktiviert werden, der als technisches Benutzerkonto agiert und - analog zu realen Benutzern - mit spezifischen Rollen ausgestattet wird.  
 Dies ermöglicht eine differenzierte Zugriffsteuerung auch für automatisierte Systemzugriffe.
 
-Die Rechtevergabe innerhalb von Eclipse BaSyx erfolgt rollenbasiert über externe Konfigurationsdateien (i.~d.~R. im \acs{json}-Format).  
+Die Rechtevergabe innerhalb der einzelnen BaSyx-Komponenten erfolgt rollenbasiert über externe Konfigurationsdateien (i.~d.~R. im \acs{json}-Format).  
 Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE ) auf bestimmte Elemente wie \acs{aas}, Submodelle oder Concept Descriptions erhalten.  
 Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um z.~B. den Zugriff auf alle Submodelle einer BaSyx-Komponente zu gewähren.  
 Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Services.
 
-Im Rahmen dieses Szenarios erhält die Rolle Groninger-Mitarbeiter vollständige Zugriffsrechte auf alle Submodelle des \acs{dpp}, während die Rolle Kunde ausschließlich Leserechte auf ausgewählte Submodelle (z.B. Typenschild oder Technische Daten) besitzt.  
-Die Rolle Service-Techniker hingegen verfügt über Lese- und Schreibrechte auf wartungsrelevante Submodelle (z.\,B. Wartung, Kontrollkomponente), jedoch ohne Zugriff auf das \acs{pcf}-Submodell, das für diese Rolle nicht vorgesehen ist.  
-Eine exemplarische \acs{rbac}-Konfiguration der Rolle Groninger-Mitarbeiter für die AAS Environment ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
+Im Rahmen dieses Szenarios erhält die Rolle Groninger-Mitarbeiter beispielsweise vollständige Zugriffsrechte auf alle Submodelle des \acs{dpp}, während die Rolle Kunde ausschließlich Leserechte auf ausgewählte Submodelle (z.B. Typenschild oder Technische Daten) besitzt.  
+Die Rolle Service-Techniker hingegen verfügt über Lese- und Schreibrechte auf wartungsrelevante Submodelle (z.\,B. Wartung, Kontrollkomponente), jedoch ohne Zugriff auf das \acs{pcf}-Submodell, da dieses für sie nicht relevant ist.  
+
+Eine exemplarische \acs{rbac}-Konfiguration der Rolle Groninger-Mitarbeiter für Submodelle innerhalb der AAS Environment ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
 
 \begin{lstlisting}[language=json, caption={RBAC-Konfiguration für die Rolle Groninger-Mitarbeiter}, label={lst:groningerMitarbeiterRBAC}]
 {
@@ -644,16 +646,6 @@ Eine exemplarische \acs{rbac}-Konfiguration der Rolle Groninger-Mitarbeiter für
     }
 }
 \end{lstlisting}
-
-Eine Möglichkeit, die im \acs{dpp} enthaltenen Informationen einzusehen, bietet die AAS Web UI. 
-Ist \acs{rbac} aktiviert, wird der Benutzer beim Aufruf der Oberfläche zur Keycloak-Anmeldeseite weitergeleitet.  
-Nach erfolgreicher Authentifizierung erhält der registrierte Client (AAS Web UI) ein Zugriffstoken, das die Rolleninformationen des Nutzers enthält.  
-Dieses Token wird im Hintergrund an die angebundenen BaSyx-Komponenten (z.\,B. AAS Environment, Registry) weitergegeben.  
-Die Entscheidung über die tatsächliche Zugriffsberechtigung trifft dabei nicht die AAS Web UI, sondern der jeweilige Service, indem er die im Token enthaltenen Rollen gegen die hinterlegten RBAC-Regeln prüft.
-
-Alternativ ist auch ein direkter Zugriff über die \acs{api} möglich, etwa durch technische Clients oder externe Anwendungen.  
-In diesem Fall muss das Zugriffstoken aktiv über den Token-Endpunkt des entsprechenden Realms bei Keycloak angefordert und anschließend im \acs{http}-Header der Anfrage übermittelt werden.  
-Die Autorisierung erfolgt analog zur Web-Oberfläche durch die jeweiligen BaSyx-Komponenten basierend auf den Rollen im Token und den definierten \acs{rbac}-Konfigurationen.
 
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 Ziel dieses Anwendungsfalls ist es, den Prozess der automatisierten Generierung einer \acs{aas} exemplarisch darzustellen. 
