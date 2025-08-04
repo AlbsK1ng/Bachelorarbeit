@@ -12,6 +12,7 @@
 \contentsline {figure}{\numberline {11}{\ignorespaces OPC UA Datenknoten}}{33}{figure.caption.100}%
 \contentsline {figure}{\numberline {12}{\ignorespaces SMT Time Series Data}}{35}{figure.caption.103}%
 \contentsline {figure}{\numberline {13}{\ignorespaces Aufbau eines Autoencoders}}{37}{figure.caption.105}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{47}{figure.caption.135}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{50}{figure.caption.136}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{51}{figure.caption.140}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{48}{figure.caption.138}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{50}{figure.caption.139}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Visualisierung der aggregierten PCF-Werte im Plugin}}{51}{figure.caption.142}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{52}{figure.caption.145}%

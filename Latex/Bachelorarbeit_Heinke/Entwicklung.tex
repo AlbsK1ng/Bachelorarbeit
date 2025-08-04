@@ -544,52 +544,42 @@ Der Fokus liegt auf der exemplarischen Aggregation von CO\textsubscript{2}-Daten
 Ergänzend dazu wird demonstriert, wie sich Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen mithilfe der Eclipse BaSyx-Plattform umsetzen lassen.
 
 \subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
-Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\-valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
-Seine Bedeutung zeigt sich auch in der EU-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt, der die erste konkrete Umsetzung eines \acs{dpp} darstellt und daher als Ausgangspunkt für weitere Branchen wie den Maschinen- und Anlagenbau dient.
-Darin wird unter anderem die verpflichtende Angabe des \acs{pcf}, insbesondere für die Phasen Material, Produktion und die Gesamtbetrachtung (Cradle to Gate) gefordert. 
+Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\\valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
+Seine Relevanz zeigt sich unter anderem in der EU-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt. 
+Dieser stellt die erste konkrete Umsetzung eines \acs{dpp} dar und dient als Ausgangspunkt für weitere Branchen wie den Maschinen- und Anlagenbau. 
+Die Verordnung fordert unter anderem die verpflichtende Angabe des \acs{pcf}, insbesondere für die Phasen Material, Produktion und die Gesamtbetrachtung (Cradle to Gate). 
 Für weiterführende Lebenszyklusphasen ist die Angabe derzeit noch nicht vorgeschrieben.
 
 Zur praktischen Umsetzung der geforderten Angaben in den genannten Lebenszyklusphasen bietet sich das von der \acs{idta} spezifizierte \acs{smt} \acs{cf} \cite{SpezifikaitonPCF} an.
 Es definiert eine standardisierte Struktur zur Erfassung von CO\textsubscript{2}-Äquivalenten entlang des gesamten Lebenszyklus.  
-Dabei wird zwischen dem \acs{pcf} und dem Transport Carbon Footprint (TCF) unterschieden, allerdings ist für diesen Anwendungsfall ausschließlich der \acs{pcf} relevant.
+Dabei wird zwischen dem \acs{pcf} und dem \ac{tcf} unterschieden, wobei für diesen Anwendungsfall ausschließlich der \acs{pcf} relevant.
 
-Das \acs{smt} gibt die Struktur des \acs{pcf} in Form einer \acs{smc} vor.  
+Das \acs{smt} gibt die Struktur dessen in Form einer \acs{smc} vor.  
 Diese Sammlung enthält standardisierte Elemente wie den CO\textsubscript{2}-Wert, die zugehörige Zyklusphase, die verwendete Berechnungsmethode sowie den Gültigkeitszeitraum.
-Wie bereits zuvor beschrieben, liegt der Fokus auf den Phasen Material, Produktion und Cradle to Gate.  
-Für diese empfiehlt es sich, jeweils eine eigene \acs{smc} gemäß der Submodellspezifikation zu erstellen.  
-Die konkreten Werte bleiben allerdings zunächst leer, werden später dann aber mit den aggregierten Ergebnissen gefüllt.
+Wie bereits beschrieben, liegt der Fokus auf den Phasen Material, Produktion und Cradle to Gate.  
+Für jede dieser Phasen empfiehlt es sich, jeweils eine eigene \acs{smc} gemäß der Submodellspezifikation zu erstellen.  
+Die konkreten Werte bleiben zunächst leer und werden im weiteren Verlauf mit den dynamisch berechneten Werten gefüllt.
 
-Für die Berechnung des \acs{pcf} wurde eine Auswahl an Steuerungskomponenten festgelegt, die in der robocell verbaut sind.  
-Diese Auswahl beschränkt sich auf Siemens-Komponenten, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule.
-Die zugehörigen \acs{aas} wurden auf persönliche Anfrage von der Siemens AG bereitgestellt, wobei jede dieser ein eigenes Submodell gemäß des \acs{smt} \acs{cf} enthält.
-% Abbildung \ref{fig:PCFSiemens} zeigt den Aufbau am Beispiel des \acs{cf}-Submolls eines digitalen Ausgabemoduls, der SIMATIC ET 200SP.
+Hierzu wurde eine Auswahl an Steuerungskomponenten festgelegt, die in der robocell verbaut sind. 
+Diese Auswahl beschränkt sich auf acht Siemens-Komponenten, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule. 
+Die Entscheidung für Siemens-Komponenten basiert auf der aktuellen Verfügbarkeit von \acs{aas}-Daten: Viele Komponentenhersteller haben die \acs{aas} bislang noch nicht vollständig umgesetzt, insbesondere nicht in Kombination mit dem \acs{cf}-Submodell. 
+Siemens zählt zu den wenigen Herstellern, die bereits entsprechende Strukturen für ihre Produkte entwickelt haben, auch wenn diese derzeit noch nicht öffentlich verfügbar sind. 
+Die zugehörigen \acs{aas} wurden im Rahmen dieses Projekts auf persönliche Anfrage von der Siemens AG bereitgestellt und enthalten jeweils ein eigenes Submodell gemäß des \acs{smt} \acs{cf}.
 
-% \begin{figure}[htbp]
-%     \centering
-%     % 0.88
-%     \includegraphics{Bilder/PCF/SiemensBeispiel.PNG}
-%     \caption{CF-Submodell der SIMATIC ET 200SP}
-%     \label{fig:PCFSiemens}
-% \end{figure}
+Um die Komponenten automatisch in die Berechnung einzubeziehen, werden sie direkt im \acs{cf}-Submodell der robocell referenziert. 
+In diesem Anwendungsfall erfolgt dies über eine \acs{sml}, in der die Komponenten als Self-Managed Entities unter Angabe ihrer globalAssetId eingebunden sind. 
+Self-Managed Entities sind eigenständige Assets, die über eine eigene \acs{aas} verfügen und somit unabhängig adressierbar sind. 
+Zwar wäre auch eine Referenzierung über das \acs{bom}-Submodell denkbar, jedoch wären dann nicht mehr sämtliche für die Berechnung erforderlichen Daten in einem Submodell gebündelt, was die Aggregation erheblich erschweren könnte.
 
-Um die Komponenten automatisch in die Berechnung einzubeziehen, können sie direkt im \acs{cf}-Submodell der robocell referenziert werden. 
-In diesem Anwendungsfall erfolgt dies über eine \acs{sml}, in der diese als Self-Managed Entities unter Angabe ihrer globalAssetId eingebunden sind. 
-Zwar wäre auch eine Referenzierung über das \acs{bom}-Submodell denkbar, jedoch wären dann nicht mehr sämtliche für die Berechnung erforderlichen Daten in einem Submodell gebündelt, was diese erheblich erschweren könnte.
+Die aktualisierte \acs{aas} der robocell sowie die zugehörigen Komponenten-\acs{aas} werden über die Eclipse BaSyx-Plattform bereitgestellt und bilden die Grundlage für die technische Umsetzung. 
+Für die Benutzerinteraktion kommt das bestehende Vue.js-Plugin der AAS Web UI zum Einsatz, das um eine Funktion zur Ermittlung der Gesamt-\acs{pcf}-Werte erweitert wird. 
+Zur Gewährleistung einer klaren Trennung zwischen Logik und Benutzeroberfläche wird ein eigenständiger, Node.js-basierter Microservice implementiert. 
+Dieser stellt eine Web-\acs{api} bereit, über die die Berechnung der CO\textsubscript{2}-Äquivalente ausgelöst werden kann. 
+Alternativ wäre auch eine clientseitige Berechnung direkt im Plugin denkbar, in der vorliegenden Umsetzung erfolgt die Aggregation jedoch zentral und serverseitig.
 
-Die Bereitstellung der aktualisierten \acs{aas} der robocell sowie der zugehörigen Komponenten-\acs{aas} erfolgt über die Eclipse BaSyx-Plattform.
-Zur Benutzerinteraktion kann das bestehende Vue.js-Plugin für den \acs{cf} der AAS Web UI genutzt werden.
-
-Um eine klare Trennung von Logik und Benutzeroberfläche zu gewährleisten, wird die Aggregationslogik als eigenständiger, Node.js-basierter Microservice mit einer Web-API implementiert.
-Im \acs{cf}-Plugin wird hierfür ein Button integriert, der eine Anfrage an den Microservice sendet und somit die Berechnung auslöst.
-Alternativ wäre auch eine clientseitige Berechnung direkt im \acs{cf}-Plugin denkbar, in dieser Umsetzung erfolgt die Aggregation jedoch zentral und serverseitig.
-
-Der Microservice nutzt dabei die \acs{rest}-Schnittstelle des Submodel Repositories der AAS Environment, um zunächst alle in der \acs{aas} der robocell hinterlegten Komponenten auszulesen. 
-Mithilfe des Discovery Service werden auf Basis ihrer globalAssetIds die zugehörigen Komponenten-\acs{aas} identifiziert und anschließend vom AAS Repository abgerufen.
-Für jede dieser Komponenten wird geprüft, ob ein \acs{cf}-Submodell vorhanden ist. 
-Falls dies zutrifft, wird das Submodell ausgelesen und die enthaltenen \acs{pcf}-Werte extrahiert.
-
-Zum Schluss werden die einzelnen CO\textsubscript{2}-Äquivalente für die einzelnen Phasen aggregiert und in das \acs{cf}-Submodell der robocell zurückgeschrieben.
-Damit die Werte auch direkt in der Weboberfläche sichtbar sind, muss nach erfolgreicher Ausführung eine Aktualisierung im Plugin erfolgen, sodass die neuen Werte aus der AAS Environment abgefragt und visualisiert werden.
+Der Microservice übernimmt die Aufgabe, die im \acs{cf}-Submodell der robocell referenzierten Komponenten auszulesen, deren \acs{pcf}-Werte zusammenzuführen und die berechneten CO\textsubscript{2}-Äquivalente in die zuvor vorbereiteten \acsp{smc} der robocell-\acs{aas} zurückzuschreiben. 
+Zusätzlich können weitere Metadaten wie die verwendete Berechnungsmethode oder der Gültigkeitszeitraum berücksichtigt werden. 
+In diesem Anwendungsfall sind diese Werte jedoch bei allen Komponenten identisch, sodass keine Differenzierung erforderlich ist.
 
 \subsubsection{Zugriffsrechte und Datensicherheit}
 
@@ -605,7 +595,7 @@ Keycloak steht dabei als Docker-Container zur Verfügung und kann nahtlos in die
 
 Im ersten Schritt muss ein dediziertes Realm eingerichtet werden, das als gekapselte Umgebung für alle projektbezogenen Identitäten dient.  
 Innerhalb dieses Realms lassen sich sowohl Benutzerkonten als auch Rollen definieren, wobei die Zuweisung über sogenannte Role Mappings erfolgt.  
-Ein Benutzer kann dabei einer oder mehreren Rollen gleichzeitig zugewiesen sein.
+Ein Benutzer kann dabei einer oder mehreren Rollen gleichzeitig zugeordnet sein.
 
 Jedes Benutzerkonto verfügt über einen eindeutigen Benutzernamen sowie ein initiales Passwort zur Authentifizierung.  
 Zur Erhöhung der Sicherheit kann dieses Passwort als temporär markiert werden, wodurch der Benutzer bei der ersten Anmeldung zu einer Änderung gezwungen wird.  

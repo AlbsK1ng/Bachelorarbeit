@@ -1,56 +1,55 @@
 \newpage
 \section{Ergebnisse}
 Dieses Kapitel stellt die zentralen Ergebnisse des Projekts vor. 
-Zunächst wird der \acs{aas}-Demonstrator der robocell vorgestellt.
-Im Anschluss folgt die Analyse des eingesetzten \acs{ki}-Modells sowie die Präsentation der beiden Anwendungsfälle. 
-Abschließend werden die eingesetzten Tools und Softwarelösungen evaluiert.
+Zunächst wird der entwickelte \acs{aas}-Demonstrator der robocell vorgestellt.
+Im Anschluss efolgt die Analyse des eingesetzten \acs{ki}-Modells sowie die Präsentation der beiden Anwendungsfälle. 
+Abschließend wird eine Bewertung der verwendeten Softwarelösungen und Tools vorgenommen.
 
-% \newpage
-% \begin{figure}[htbp]
-%     \centering
-%         \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/2025-07-23_15-06.png}
-    
-%     \caption{Sequenzdiagramm zur Aggregation des PCF}
-%     \label{fig:SequenzdiagrammPCF}
-% \end{figure}
-
-
-
-% \begin{figure}[htbp]
-%     \centering
-%         \includegraphics{Bilder/Ergebnisse/DPP/PluginAggregation.png}
-    
-%     \caption{Sequenzdiagramm zur Aggregation des PCF}
-%     \label{fig:SequenzdiagrammPCF}
-% \end{figure}
-%AAS Demonstrator
 \subsection{AAS-Demonstrator für die robocell}
-Die statische Mollierung erfolgte ausschließlich mit dem Package Explorer.
-Zur Überführung in eine Typ-2-\acs{aas} wurd zu Beginn des Projekts der AASX Server Blazor eingesetzt, der aber relativ schnell durch die Eclipse BaSyx-Plattform abgelöst wurde.
+Im Rahmen dieses Projekts wurde für das Abfüll- und Verschließmodul ein digitaler Zwiling auf Basis der \acs{aas} realisiert.
+Dafür wurde ein \acs{aas}-Demonstrator entwickelt, der sowohl auf standardisierte Templates der \acs{idta} als auch auf individuell angepasste Submodelle zurückgreift. 
+Der Zwilling wurde als Instanz modelliert, obwohl kein reales physisches Asset als Vorlage diente. 
+Die Umsetzung erfolgte dennoch so, als handle es sich um eine konkrete Maschine und nicht nur den Maschinentyp.
 
-Das Konzept der AAS war neu für groninger
-Im folgenden wird die Gesamtarchitektur des Systems aufgezeigt.
+Die statische Modellierung wurde vollständig mit dem Package Explorer durchgeführt. 
+Alle relevanten statischen Informationen wurden manuell eingetragen. 
+Als Hauptdatenquellen dienten technische Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem \acs{plm}-System Agile.
+Zeitabhängige Daten der Maschine wurden simuliert und flossen in dynamische Submodelle ein.
 
-Nachfolgende Abbildung zeigt den grundelgenden Aufbau des Systems zur Verwaltung des digitalen Zwillings.
-Dieses ist essenziell, da somit erst ein digitaler Zwilling entsteht
+\subsubsection{Systemarchitektur}
+Die Gesamtarchitektur des Demonstrators basiert vollständig auf containerisierten Komponenten, wodurch eine skalierbare und modulare Struktur entsteht. 
+Als zentrale Plattform zur Verwaltung und Bereitstellung der \acs{aas} dient Eclipse BaSyx. 
+Ursprünglich war der AASX Server Blazor vorgesehen, dieser wurde jedoch frühzeitig durch BaSyx ersetzt, da die Plattform eine deutlich flexiblere und umfassendere Umgebung für digitale Zwillinge bietet.
+Alle Komponenten wurden dabei als Docker-Container implementiert.
+
+Für die Bereitstellung dynamischer Daten bildeten der Maschinensimulator und der Datengenerator die Grundlage.
+Der Maschinensimulator war bereits vorhanden und konnte direkt in das System eingebunden werden. 
+Der Datengenerator hingegen wurde im Rahmen des Projekts als Node.js-Anwendung neu entwickelt. 
+Beide Komponenten stellen die Maschinendaten über einen integrierten \acs{opcua} Server bereit und ermöglichen so die Echtzeitkommunikation mit dem digitalen Zwilling. 
+Die Datenübertragung erfolgt über die Databridge, welche die Verbindung zwischen den simulierten Datenquellen und den dynamischen Submodellen der \acs{aas} herstellt.
+
+Zur Speicherung und Analyse der Maschinendaten wurde zusätzlich Telegraf eingesetzt, um die Daten in eine InfluxDB zu übertragen. 
+Dies ermöglicht nicht nur die Verarbeitung von Echtzeitdaten, sondern auch die Analyse historischer Datenbestände.
+
+Die zugrundeliegende Architektur ist in Abbildung \ref{fig:Systemarchitektur} dargestellt.
 
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DynamischeDaten/Architektur.pdf}
-    
-    \caption{Sequenzdiagramm zur Aggregation des PCF}
-    \label{fig:SequenzdiagrammPCF}
+    \caption{Systemarchitektur AAS-Demonstrator}
+    \label{fig:Systemarchitektur}
 \end{figure}
 
+Da Einträge in den Discovery Service noch nicht automatisch von stattten gehen wurde zu diesem ein Node.js Skript geschreiben, das diese Funktionalität übernimmt.
+Dieses erstellt beim Start der BaSyx-Umgebung automatisch die in einer JSON-Datei hinterlegten Einträge, bei denen das jeweilige Asset mit seiner zugehörogen AAS verknüpft wird.
+Dies ist besonders wichtig, um eine AAS finden zu können auch wenn man nur die Asset-ID hat. In dieser Arbeit war dies vor allem zur Abbildung hierarchischer Strukturen sowie für den Anwenungsfall zum DPP notwendig.
+Beim Starten der Anwendung werden die Eintröge schließlich automatisch geposted.
+In Zukunft erwartet das beu BaSyx das auch automatisch beim Hochladen einer neuen AAS erfolgt und man das nicht mehr selber umsetzen musss, da das sonst sehr aufwendig ist.
+
+Zur Visualisierung der AAS wurde neben der AAS Web UI ebenfalss der Mnestix Browser eingesetzt, da dieser in der Architektur einfach mit dieser ausgetauscht werden kann.
+Eine dertailliertere Beschreibung der Tools findet sich in Kapitel !!!.
 
 
-
-\subsubsection{Systemarchitektur}
-Die Gesamtarchitektur des Demonstrators basiert vollständig auf containerisierten Komponenten, wodurch eine sklaierbare Struktur entsteht.
-Es ist wichtig zu verstehen, ein richtiger digitaler Zwilling entsteht erst durch die Anbindung an das Asset und idealerweise auch
-Nachfolgend Gesamtarchitektur.
-Alle Kompnonenten als DOcker, BaSyx, Datengeneraot, Machinensimulator auch Docerk aber node.js und OPC UA Server.
-Dann Telegraf mit dem die Daten in 
 \subsubsection{Statische Submodelle}
 
 \subsubsection{Dynamische Submodelle}
@@ -83,44 +82,56 @@ Die Databridge holt die jeweiligen Werte
 \subsubsection{Weiterführende Einsatzmöglichkeiten}
 
 % Digitaler Produktpass
+\newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
 \subsubsection{Abbildung des PCF}
+Zur Abbildung des \acs{pcf} der Gesamtmaschine wurde ein Mechanismus in der AAS Web UI integriert. 
+Im Visualisierungsbereich wurde eine Schaltfläche implementiert, über die die Aggregation der CO\textsubscript{2}-Äquivalente ausgelöst werden kann. 
+Beim Betätigen dieser wird eine \acs{http}-GET-Anfrage an den Microservice gesendet, der die Berechnung durchführt.
 
-Die Aggregationslogik ist als eigenständiger, Node.js-basierter Microservice mit einer Web-API implementiert. 
-Diese wertet die Komponenten-\acs{aas} aus, berechnet die aggregierten Werte für die zuvor definierten Lebenszyklusphasen und schreibt diese in das \acs{cf}-Submodell der Haupt-AAS der robocell zurück. 
-Die Auslösung des Microservice erfolgt über die Schaltfläche im erweiterten Plugin.
-
-Alternativ wäre auch eine clientseitige Berechnung direkt im \acs{cf}-Plugin denkbar. 
-In der vorliegenden Umsetzung liegt die gesamte Aggregationslogik jedoch zentral und serverseitig im Microservice. 
-
-
+Der Microservice, der ebenfalls als Docker-Container implementiert wurde, reagiert auf die Anfrage und startet den Berechnungsprozess. 
 Der Ablauf ist in Abbildung \ref{fig:SequenzdiagrammPCF} als Sequenzdiagramm dargestellt.
 
-\newpage
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/DPP/PCF_Aggregation_SmallLine.pdf}
-    
+        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DPP/AggregationNue.pdf}
     \caption{Sequenzdiagramm zur Aggregation des PCF}
     \label{fig:SequenzdiagrammPCF}
 \end{figure}
 
-Der Microservice nutzt die \acs{rest}-Schnittstelle des Submodel Repositories der AAS Environment, um zunächst alle in der \acs{aas} der robocell hinterlegten Komponenten auszulesen. 
+Der Microservice nutzt die \acs{rest}-Schnittstelle des Submodel Repositories der AAS Environment, um zunächst alle in der Komponentenliste des \acs{cf}-Submodells der robocell hinterlegten Komponenten auszulesen. 
 Mithilfe des Discovery Service werden auf Basis ihrer globalAssetIds die zugehörigen Komponenten-\acs{aas} identifiziert und anschließend vom AAS Repository abgerufen.
 Für jede dieser Komponenten wird geprüft, ob ein \acs{cf}-Submodell vorhanden ist. 
-Falls dies zutrifft, wird das Submodell ausgelesen und die enthaltenen Werte extrahiert.
+Falls dies zutrifft, wird das Submodell ausgelesen und die enthaltenen \acs{pcf}-Werte extrahiert.
 
-Aus den ermittelten Einzelwerten berechnet der Microservice schließlich die aggregierten CO\textsubscript{2}-Äquivalente für die Phasen Produktion, Material sowie Cradle to Gate. 
+Aus den ermittelten Einzelwerten berechnet der Microservice die aggregierten CO\textsubscript{2}-Äquivalente für die Phasen Produktion, Material sowie Cradle to Gate. 
 Die berechneten Werte werden abschließend in das \acs{cf}-Submodell der Haupt-\acs{aas} der robocell geschrieben und stehen dort strukturiert zur Verfügung.
 
+Nach Abschluss der Berechnung sendet der Microservice eine Bestätigung an das Plugin zurück. 
+Dieses reagiert darauf, indem es das aktualisierte \acs{cf}-Submodell über die \acs{rest}-Schnittstelle der AAS Environment erneut abfragt. 
+Die relevanten Submodellelemente werden dabei herausgefiltert und in der Benutzeroberfläche aktualisiert. 
+Dadurch werden die aggregierten \acs{pcf}-Werte unmittelbar sichtbar, ohne dass ein manuelles Neuladen erforderlich ist.
+
+Abbildung \ref{fig:PluginAggregation} zeigt die entsprechende Visualisierung. 
+Auf der linken Seite sind die berechneten CO\textsubscript{2}-Äquivalente dargestellt, auf der rechten Seite die zugehörigen Lebenszyklusphasen.
+
+\begin{figure}[htbp]
+    \centering
+        \includegraphics{Bilder/Ergebnisse/DPP/PluginAggregation.png}
+    \caption{Visualisierung der aggregierten PCF-Werte im Plugin}
+    \label{fig:PluginAggregation}
+\end{figure}
+
 Die beschriebene Lösung ermöglicht es, den \acs{pcf} dynamisch auf Basis der in der Komponentenliste referenzierten Steuerungselemente zu berechnen. 
-Auch wenn derzeit nur ausgewählte Komponenten berücksichtigt werden, lässt sich die Liste bei Verfügbarkeit weiterer Komponenten-\acs{aas} unkompliziert erweitern, sodass sukzessive die gesamte Maschine in die Berechnung einbezogen werden kann. 
+Auch wenn derzeit nur acht Siemens-Komponenten berücksichtigt werden, lässt sich die Liste bei Verfügbarkeit weiterer Komponenten-\acs{aas} unkompliziert erweitern, sodass sukzessive die gesamte Maschine in die Berechnung einbezogen werden kann.
+
 Perspektivisch lässt sich die Berechnung zudem um weitere Lebenszyklusphasen wie Nutzung oder Entsorgung ergänzen, um eine ganzheitliche Betrachtung von der Herstellung bis zum Lebensende eines Produkts bzw. einer Maschine zu ermöglichen.
+Darüber hinaus könnte auch der \acs{tcf} berücksichtigt werden, beispielsweise im Rahmen der Auslieferung einer Maschine, wodurch eine noch umfassendere Bilanzierung der Umweltauswirkungen ermöglicht wird.
 
 \subsubsection{Rollenbasierter Zugriff auf Submodelle}
 Eine Möglichkeit, die im \acs{dpp} enthaltenen Informationen einzusehen, bietet die AAS Web UI. 
 Ist \acs{rbac} aktiviert, wird der Benutzer beim Aufruf der Oberfläche zur Keycloak-Anmeldeseite weitergeleitet. 
-Wie in Abbildung dargestellt, kann der Nutzer sich dort mit Nutzernamen und Passwort anmelden.
+Wie in Abbildung dargestellt, kann der Nutzer sich dort mit dem in Keycloak definierten Nutzernamen und Passwort anmelden.
 
 \begin{figure}[htbp]
     \centering
