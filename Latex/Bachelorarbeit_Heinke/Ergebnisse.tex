@@ -6,25 +6,23 @@ Im Anschluss efolgt die Analyse des eingesetzten \acs{ki}-Modells sowie die Prä
 Abschließend wird eine Bewertung der verwendeten Softwarelösungen und Tools vorgenommen.
 
 \subsection{AAS-Demonstrator für die robocell}
-Im Rahmen dieses Projekts wurde für das Abfüll- und Verschließmodul ein digitaler Zwiling auf Basis der \acs{aas} realisiert.
-Dafür wurde ein \acs{aas}-Demonstrator entwickelt, der sowohl auf standardisierte Templates der \acs{idta} als auch auf individuell angepasste Submodelle zurückgreift. 
-Der Zwilling wurde als Instanz modelliert, obwohl kein reales physisches Asset als Vorlage diente. 
-Die Umsetzung erfolgte dennoch so, als handle es sich um eine konkrete Maschine und nicht nur den Maschinentyp.
+Im Rahmen dieses Projekts wurde für das Abfüll- und Verschließmodul ein digitaler Zwilling auf Basis der \acs{aas} realisiert.  
+Dazu wurde ein \acs{aas}-Demonstrator entwickelt, der sowohl auf standardisierte Templates der \acs{idta} als auch auf individuell angepasste Submodelle zurückgreift.  
+Der Zwilling wurde als konkrete Instanz modelliert, um die Anbindung von Echtzeitdaten zu ermöglichen und praxisnahe Anwendungsfälle zu demonstrieren.
 
-Die statische Modellierung wurde vollständig mit dem Package Explorer durchgeführt. 
-Alle relevanten statischen Informationen wurden manuell eingetragen. 
-Als Hauptdatenquellen dienten technische Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem \acs{plm}-System Agile.
-Zeitabhängige Daten der Maschine wurden simuliert und flossen in dynamische Submodelle ein.
+Obwohl keine spezifische physische Maschine zugrunde liegt, erlaubt die instanzbasierte Modellierung die Darstellung typischer Maschinendaten wie Prozesswerte, Maschinenstatus oder historische Informationen.  
+Eine rein typisierte Modellierung hätte hingegen überwiegend leere Felder zur Folge und wäre für die Veranschaulichung funktionaler Zusammenhänge weniger geeignet.  
+Nichtsdestotrotz kann die entwickelte Struktur als Vorlage für zukünftige Projekte dienen.  
+Die verwendeten Daten erheben dabei keinen Anspruch auf Vollständigkeit, sondern dienen der exemplarischen Demonstration.
 
 \subsubsection{Systemarchitektur}
 Die Gesamtarchitektur des Demonstrators basiert vollständig auf containerisierten Komponenten, wodurch eine skalierbare und modulare Struktur entsteht. 
 Als zentrale Plattform zur Verwaltung und Bereitstellung der \acs{aas} dient Eclipse BaSyx. 
 Ursprünglich war der AASX Server Blazor vorgesehen, dieser wurde jedoch frühzeitig durch BaSyx ersetzt, da die Plattform eine deutlich flexiblere und umfassendere Umgebung für digitale Zwillinge bietet.
-Alle Komponenten wurden dabei als Docker-Container implementiert.
 
 Für die Bereitstellung dynamischer Daten bildeten der Maschinensimulator und der Datengenerator die Grundlage.
 Der Maschinensimulator war bereits vorhanden und konnte direkt in das System eingebunden werden. 
-Der Datengenerator hingegen wurde im Rahmen des Projekts als Node.js-Anwendung neu entwickelt. 
+Der Datengenerator hingegen wurde im Rahmen des Projekts als Node.js-Anwendung entwickelt. 
 Beide Komponenten stellen die Maschinendaten über einen integrierten \acs{opcua} Server bereit und ermöglichen so die Echtzeitkommunikation mit dem digitalen Zwilling. 
 Die Datenübertragung erfolgt über die Databridge, welche die Verbindung zwischen den simulierten Datenquellen und den dynamischen Submodellen der \acs{aas} herstellt.
 
@@ -50,10 +48,16 @@ Zur Visualisierung der AAS wurde neben der AAS Web UI ebenfalss der Mnestix Brow
 Eine dertailliertere Beschreibung der Tools findet sich in Kapitel !!!.
 
 
-\subsubsection{Statische Submodelle}
+\subsubsection{Statische Modellierung der Submodelle}
+
+Die statische Modellierung wurde vollständig mit dem Package Explorer durchgeführt. 
+Alle relevanten statischen Informationen wurden manuell eingetragen. 
+Als Hauptdatenquellen dienten technische Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem \acs{plm}-System Agile.
+
 
 \subsubsection{Dynamische Submodelle}
 
+Zeitabhängige Daten der Maschine wurden simuliert und flossen in dynamische Submodelle ein.
 Für die Inegration des Mashcinenstatus wurde die Databridge eingesetzt.
 Für Submodell Kontrollkomponente wurde hierfür ein Submodell entworfen, das den aktuellen Zustand der Maschine abbildet.
 Dabei stand ein Plugin zur Verfügung das bereits einen solchen Zustandsautomat abbildet.
@@ -131,32 +135,56 @@ Darüber hinaus könnte auch der \acs{tcf} berücksichtigt werden, beispielsweis
 \subsubsection{Rollenbasierter Zugriff auf Submodelle}
 Eine Möglichkeit, die im \acs{dpp} enthaltenen Informationen einzusehen, bietet die AAS Web UI. 
 Ist \acs{rbac} aktiviert, wird der Benutzer beim Aufruf der Oberfläche zur Keycloak-Anmeldeseite weitergeleitet. 
-Wie in Abbildung dargestellt, kann der Nutzer sich dort mit dem in Keycloak definierten Nutzernamen und Passwort anmelden.
+Wie in Abbildung \ref{fig:KeycloakAnmeldeSeite} dargestellt, kann sich der Nutzer dort mit dem in Keycloak hinterlegten Benutzernamen und Passwort authentifizieren.
 
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=0.7\textwidth]{Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png}
-    
     \caption{Keycloak-Anmeldeseite für die AAS Web UI}
-    \label{fig:SequenzdiagrammPCF}
+    \label{fig:KeycloakAnmeldeSeite}
 \end{figure}
 
-Nach erfolgreicher Authentifizierung erhält der registrierte Client (AAS Web UI) ein Zugriffstoken, das die Rolleninformationen des Nutzers enthält.  
-Dieses Token wird im Hintergrund an die angebundenen BaSyx-Komponenten (z.\,B. AAS Environment, Registry) weitergegeben.  
+Nach erfolgreicher Anmeldung erhält der registrierte Client (AAS Web UI) ein Zugriffstoken, das die Rolleninformationen des Nutzers enthält.  
+Dieses Token wird im Hintergrund an die angebundenen BaSyx-Komponenten (z.\,B. AAS Environment, Registries) weitergegeben.  
 Die Entscheidung über die tatsächliche Zugriffsberechtigung trifft dabei nicht die AAS Web UI, sondern der jeweilige Service, indem er die im Token enthaltenen Rollen gegen die hinterlegten RBAC-Regeln prüft.
+Ist keine Konfiguration hinterlegt, werden keine AAS angezeigt.
 
-+++ Wie ist es wenn nicht alles konfiguriert \\
-Beipsiel an Rolle Servgice kann nicht shocladen z.B.\\
- Funkltioniert alles +++\\
+Meldet sich beispielsweise der Benutzer customer.doe an, so sieht er zwar den \acs{dpp}, jedoch nur die Submodelle, die in den RBAC-Konfigurationsdateien für die Rolle Kunde freigegeben sind. 
+Dazu zählen beispielsweise das Typenschild, Technische Daten oder der \acs{cf}. 
+Andere Submodelle wie 3D-Modelle oder Wartungsinformationen werden nicht angezeigt und erscheinen als nicht gefunden. 
+Darüber hinaus besitzt der Benutzer lediglich Leserechte, sodass keine Änderungen an den Inhalten vorgenommen werden können. 
+Versucht er, eine neue \acs{aas} über die Benutzeroberfläche hochzuladen, wird der Vorgang mit einem \acs{http}-Fehler 403 abgelehnt.
 
-Alternativ ist auch ein direkter Zugriff über die \acs{api} möglich, etwa durch technische Clients oder externe Anwendungen.  
-In diesem Fall muss das Zugriffstoken aktiv über den Token-Endpunkt des entsprechenden Realms bei Keycloak angefordert und anschließend im \acs{http}-Header der Anfrage übermittelt werden.  
-Die Autorisierung erfolgt analog zur Web-Oberfläche durch die jeweiligen BaSyx-Komponenten basierend auf den Rollen im Token und den definierten \acs{rbac}-Konfigurationen.
+Neben dem Zugriff über die AAS Web UI ist auch ein direkter Zugriff auf die BaSyx-Komponenten über die \acs{api} möglich.
+Dies ist insbesondere für technische Clients oder externe Anwendungen relevant, die automatisiert auf die im \acs{dpp} enthaltenen Informationen zugreifen sollen.
+In diesem Fall muss ein Zugriffstoken aktiv über den Token-Endpunkt des entsprechenden Realms in Keycloak angefordert und anschließend im \acs{http}-Header der Anfrage übermittelt werden.
 
-+++ Mit Postman zeigen +++\\
-+++ Für jede Rolle +++\\
+Für diesen Anwendungsfall wurden in Keycloak drei Clients eingerichtet, denen jeweils ein Service Account zugewiesen wurde.
+Diese Service Accounts sind mit den Rollen Groninger-Mitarbeiter, Service-Techniker und Kunde ausgestattet.
+Durch die Zuweisung der Rollen erhalten die Clients somit dieselben Zugriffsrechte wie die entsprechenden Benutzerkonten.
 
-+++ Fazit +++ \\
+Zum Testen von Client-Zugriffen wurde das Tool Postman verwendet.
+Dabei muss zunächst ein Zugriffstoken über den Token-Endpunkt des entsprechenden Realms in Keycloak angefordert werden, abhängig davon, welcher Client den \acs{api}-Aufruf durchführen soll.
+Die Authentifizierung erfolgt über das OAuth 2.0 Password Grant-Verfahren, das die Grundlage des in Keycloak verwendeten OpenID Connect-Protokolls bildet.
+
+Für die Anfrage eines Tokens in Postman sind folgende Informationen erforderlich:
+
+\begin{itemize}[noitemsep, leftmargin=*]
+    \item \textbf{Client-ID und Client-Secret:} Diese dienen zur Authentifizierung des Clients. Die Client-ID entspricht dem Namen des Clients in Keycloak, während das zugehörige Secret automatisch generiert wird und dort eingesehen werden kann.
+    \item \textbf{Benutzerkonto:} Ein Benutzername und Passwort eines Kontos, das der im Service Account zugewiesenen Rolle entspricht.
+\end{itemize}
+
+Im Folgenden werden die Zugriffsrechte am Beispiel des Service Techmnikers gezeigt.
+Nach dem Erhalt eines Tiokens kkann eine Anfrage gestellt werden.
+
+Get auf Wartungs Submodell mit erfolgreicher Anfrage 
+
+Put mit neuem Wartungtsdatum
+
+Get auf CF Submodell mit Fehler
+
+Delete Versuch mit Fehler
+
 
 Zeigt dass sich differenzierte Zugriffskontrollen auf Submodell-Ebene technisch realisieren lassen. 
 Dies bietet Potenzial für zukünftige Szenarien, bei denen sensible Nachhaltigkeitsdaten nur bestimmten Akteuren entlang der Wertschöpfungskette zugänglich gemacht werden sollen.

@@ -104,7 +104,7 @@ In der geöffneten Umgebung lässt sich eine neue \acs{aas} anlegen, die sowohl 
 Abbildung~\ref{fig:NeuesAASPaket} zeigt den initialen Aufbau im Package Explorer, der im weiteren Verlauf sukzessive um Submodelle und deren Inhalte erweitert wird.
 Dateien, wie ein Titelbild für die robocell können dabei bereits zu Beginn in die \acs{aas}-Umgebung eingebettet werden und sind ein integraler Bestandteil des digitalen Zwillings.
 
-Darin müssen zunächst die Metadaten der \acs{aas} sowie des zugehörigen Asset spezifiziert werden.
+Innerhalb dieses Pakets müssen zunächst die Metadaten der \acs{aas} sowie des zugehörigen Asset spezifiziert werden.
 Neben der Auswahl des Asset-Typs ist insbesondere die eindeutige Identifikation von zentraler Bedeutung.
 Das Asset selbst wird über eine globalAssetId referenziert, während die \acs{aas} eine eigene ID und eine idShort erhält.
 Diese vereinfachen nicht nur den späteren Austausch der \acs{aas}, sondern ermöglichen auch deren systemweites Auffinden innerhalb eines Industrie-4.0-Ökosystems.
@@ -155,14 +155,14 @@ Nach dem Strukturaufbau können konkrete Inhalte wie Werte, Dokumente oder Refer
 Dies beschränkt sich jedoch auf statische Submodelle wie Technische Daten oder Dokumentation.
 Dynamische Inhalte, etwa Betriebsdaten werden nicht direkt im Package Explorer gepflegt, sondern über externe Datenquellen (z.B. Maschinensimulator oder Datengenerator) zur Laufzeit angebunden.
 
-Abbildung \ref{fig:SubmodellTypenschild} zeigt den strukturellen Aufbau anhand eines Auschnitts des statischen Submodells Typenschild mit bereits eingetragenen Werten.
+% Abbildung \ref{fig:SubmodellTypenschild} zeigt den strukturellen Aufbau anhand eines Auschnitts des statischen Submodells Typenschild mit bereits eingetragenen Werten.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics{Bilder/ModellierungAAS/Final/SubmodellErweitert.PNG}
-    \caption[Package Explorer: Ausschnitt Submodell Typenschild]{Package Explorer: Ausschnitt Submodell Typenschild (eigene Darstellung)}
-    \label{fig:SubmodellTypenschild}
-\end{figure}
+% \begin{figure}[htbp]
+%     \centering
+%     \includegraphics{Bilder/ModellierungAAS/Final/SubmodellErweitert.PNG}
+%     \caption[Package Explorer: Ausschnitt Submodell Typenschild]{Package Explorer: Ausschnitt Submodell Typenschild (eigene Darstellung)}
+%     \label{fig:SubmodellTypenschild}
+% \end{figure}
 
 \subsubsection*{Semantische Beschreibung mit Concept Descriptions}
 \vspace{-0.5em}
@@ -253,6 +253,7 @@ Durch ihre modulare Architektur und die klare Trennung verschiedener Komponenten
 Die einfachste Möglichkeit, BaSyx zu installieren, besteht in der Nutzung von Docker.
 Alle benötigten Komponenten stehen als vorgefertigte Images öffentlich über den Docker Hub \cite{BaSyxDockerHub} zur Verfügung. 
 Alternativ kann der Quellcode auch von GitHub \cite{BaSyxGithub} bezogen werden, um einzelne Komponenten individuell anzupassen oder zu erweitern.
+
 Die verschiedenen Services, darunter die \acs{aas} Environment, Registries für \acs{aas} und Submodelle, der Discovery Service, sowie die MongoDB als persistenter Speicher, können zentral in einer docker-compose.yml-Datei verwaltet werden.
 Die Konfiguration erfolgt in der Regel über Umgebungsvariablen oder seperate Konfigurationsdateien, die in der docker-compose.yml referenziert werden.
 % Mit dem Befehl docker compose up lassen sich anschließend alle Komponenten gemeinsam starten.
@@ -288,7 +289,6 @@ Ein typischer Ablauf dieser Registrierung ist in Tabelle \ref{tab:Bereitstellung
 Sie zeigt die notwendigen Schritte sowie die zugehörigen \acs{rest}-Endpunkte.
 Diese sind dabei verschiedenen Services innerhalb der AAS Environment zugeordnet.
 
-\newpage
 \input{TabelleBereitstellungBaSyxMitAPI.tex}
 
 Neben der Bereitstellung in der AAS Environment kann eine \acs{aas} optional auch im Discovery Service registriert werden.
@@ -322,10 +322,6 @@ Die Konfiguration der Databridge erfolgt über mehrere \acs{json}-Dateien.
 In einer zentralen Konfigurationsdatei werden sowohl die Datenquelle als auch die Datensenke definiert.
 Außerdem können Transformatoren angegeben werden, die beispielsweise Einheitenumrechnungen oder Typkonvertierungen übernehmen.
 
-Als Datenquelle muss der \acs{opcua} Server des Datengenerators angegeben werden, dessen Konfiguration typischerweise in einer separaten \acs{json}-Datei erfolgt.
-Darin sind sowohl die Verbindungsparameter des Servers (z.B. \acs{url} (Uniform Resource Locator) und Port) als auch die zu überwachenden Knoten anzugeben.
-Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua} Server die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
-
 \begin{figure}[htbp]
     \centering
     % 0.88
@@ -334,6 +330,10 @@ Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua
     \label{fig:OPCUADatenStruktur}
 \end{figure}
 
+Als Datenquelle muss der \acs{opcua} Server des Datengenerators angegeben werden, dessen Konfiguration typischerweise in einer separaten \acs{json}-Datei erfolgt.
+Darin sind sowohl die Verbindungsparameter des Servers (z.B. \acs{url} (Uniform Resource Locator) und Port) als auch die zu überwachenden Knoten anzugeben.
+Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua} Server die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
+
 Außerdem muss der zu verwendende \acs{opcua} Client festgelegt werden.
 In diesem Projekt wird Eclipse Milo eingesetzt, der auf einem Subscription-Modell basiert.
 Im Gegensatz zu einem Polling-Ansatz werden hier gezielt bestimmte Knoten (Nodes) abonniert, sodass neue Werte automatisch bei Änderung übermittelt werden.
@@ -341,7 +341,6 @@ Im Gegensatz zu einem Polling-Ansatz werden hier gezielt bestimmte Knoten (Nodes
 Ein Beispiel für eine entsprechende \acs{json}-Konfiguration der Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für den Druckwert dargestellt.
 Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall können zusätzlich angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
 
-\newpage
 \begin{lstlisting}[language=json, caption={Beispielhafte \acs{json}-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
 {
     "uniqueId"       : "pressure",
@@ -377,14 +376,16 @@ Somit bildet die Databridge eine flexible und protokolloffene Lösung zur Echtze
 
 \subsubsection{Verarbeitung von Zeitreihendaten}
 \label{sec: VerarbeitungZeitreihen}
-Grundsätzlich lassen sich Zeitreihendaten auf unterschiedlichste Weise in eine \acs{aas} einbinden.
+Grundsätzlich lassen sich Zeitreihendaten auf unterschiedliche Weise in eine \acs{aas} integrieren.
 Das \acs{smt} Time Series Data \cite{SpezifikationTimeSeriesData} bietet hierfür mehrere standardisierte Lösungsansätze.
-Eine Möglichkeit besteht darin, diese direkt über ein InternalSegment in der \acs{aas} zu speichern.
+Eine Möglichkeit besteht darin, die Daten direkt innerhalb der \acs{aas} zu speichern. 
+Dies erfolgt über ein InternalSegment, das die entsprechenden Einträge enthält.
 Diese Variante eignet sich jedoch nur für kleinere Datenmengen.
-Alternativ können die Daten in Form einer Datei abgespeichert werden.
-Diese können dann entweder direkt in die \acs{aas} eingebunden oder extern über ein ExternalSegment referenziert werden.
-Für größere Datenmengen bietet sich die externe Speicherung an einem seperaten Ort, wie etwa einer Datenbank, an.
-Diese kann über ein LinkedSegment mit der \acs{aas} verknüpft werden.
+
+Alternativ können die Zeitreihendaten in Form einer Datei abgelegt werden. 
+Diese Datei kann entweder direkt in die \acs{aas} eingebunden oder über ein ExternalSegment referenziert werden.
+Für größere Datenmengen empfiehlt sich die externe Speicherung an einem separaten Ort, beispielsweise in einer Datenbank.
+Die Verknüpfung mit der \acs{aas} erfolgt in diesem Fall über ein LinkedSegment.
 
 Im Folgenden wird die zuletzt genannte Option näher betrachtet.
 Hierzu werden die simulierten Werte für Druck und Temperatur des Datengenerators extern in einer InfluxDB gespeichert.
@@ -392,7 +393,13 @@ Die über \acs{opcua} bereitgestellten Daten werden dabei mithilfe von Telegraf,
 InfluxDB sowie Telegraf stehen beide als Docker-Container zur Verfügung und lassen sich so nahtlos in das bestehende BaSyx-System integrieren.
 
 Um die in der Datenbank gespeicherten Daten in die \acs{aas} einzubinden, kann das bereits genannte \acs{smt} Time Series Data verwendet werden.
-Der strukturelle Aufbau ist in Abbildung \ref{fig:SMTTimeSeriesData} dargestellt.
+Der strukturelle Aufbau ist in Abbildung \ref{fig:SMTTimeSeriesData} dargestellt. 
+Dabei sind ausschließlich die Elemente berücksichtigt, die für die externe Anbindung erforderlich sind.
+
+Zuerst müssen die Metadaten eingetragen werden. 
+Dazu gehören ein eindeutiger Name, eine Beschreibung sowie die Festlegung der Struktur der aufzuzeichnenden Datenpunkte in der \acs{smc} Records.
+Ein Record kann mit einer Spaltenbeschreibung in einer Tabelle verglichen werden.
+Er beschreibt, welche Variablen, in diesem Fall Druck und Temperatur, in einem Zeitreihen-Datensatz enthalten sind und wie diese zu interpretieren sind.
 
 \begin{figure}[htbp]
     \centering
@@ -401,11 +408,6 @@ Der strukturelle Aufbau ist in Abbildung \ref{fig:SMTTimeSeriesData} dargestellt
     \caption[SMT Time Series Data]{SMT Time Series Data (in Anlehnung an \cite{SpezifikationTimeSeriesData})}
     \label{fig:SMTTimeSeriesData}
 \end{figure}
-
-Zuerst müssen die Metadaten eingetragen werden. 
-Dazu gehören ein eindeutiger Name, eine Beschreibung sowie die Festlegung der Struktur der aufzuzeichnenden Datenpunkte in der \acs{smc} Records.
-Ein Record kann mit einer Spaltenbeschreibung in einer Tabelle verglichen werden.
-Er beschreibt, welche Variablen, in diesem Fall Druck und Temperatur, in einem Zeitreihen-Datensatz enthalten sind und wie diese zu interpretieren sind.
 
 Anschließend folgt die Konfiguration des LinkedSegments. 
 Dieses stellt die eigentliche Verbindung zu den extern gespeicherten Zeitreihendaten her.
@@ -422,7 +424,7 @@ Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne da
 
 \subsection{KI-Modell zur Optimierung}
 Im Folgenden wird ein \acs{ki}-gestütztes Konzept zur Optimierung der zustandsbasierten Prozessüberwachung vorgestellt und prototypisch umgesetzt.
-Ziel ist es, mithilfe maschinellen Lernens Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen und dadurch eine Grundlage für prädiktive Instandhaltungsmaßnahmen zu schaffen.
+Ziel ist es, mithilfe maschinellen Lernens potenzielle Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen und dadurch eine Grundlage für prädiktive Instandhaltungsmaßnahmen zu schaffen.
 Darüber hinaus wird gezeigt, wie das resultierende \acs{ki}-Modell mithilfe der \acs{aas} standardisiert und interoperabel verwaltet werden kann.
 
 \subsubsection{Konzeptidee}
@@ -433,6 +435,7 @@ Die manuelle Analyse dieser Daten kann sich als sehr herausfordernd gestalten. A
 Ein vielversprechender Ansatz, der genau diese Problematik adressiert, ist der sogenannte Autoencoder. 
 Dieser stellt eine spezielle Architektur tiefer neuronaler Netze dar und besteht typischerweise aus zwei Hauptkomponenten: einem Encoder und einem Decoder, die gemeinsam eine komprimierte, latente Repräsentation der Eingangsdaten erlernen.
 \cite{Lempitsky2019}
+
 Der prinzipielle Aufbau eines Autoencoders ist in Abbildung \ref{fig:Autoencoder} dargestellt.
 
 % \vspace{-1em}
@@ -531,7 +534,6 @@ Weitere Elemente zur Beschreibung gelabelter bzw. realer Datensätze sind ebenfa
 Für die Beschreibung der Modellbereitstellung kann ergänzend das \acs{smt} AIDeployment \cite{SpezifikationAIDeployement} eingesetzt werden, das unter anderem Angaben zu Hard- und Softwareanforderungen, Bereitstellungsoptionen, Überwachungsmechanismen sowie zur Leistungsbewertung enthält.
 Im Rahmen der prototypischen Umsetzung besteht hierfür jedoch kein Bedarf, weshalb dieses Submodell an dieser Stelle lediglich der Vollständigkeit halber erwähnt wird.
 
-\newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
 Im Kontext steigender Anforderungen an Nachhaltigkeit und Transparenz entlang des gesamten Produktlebenszyklus eines Assets gewinnt der \acs{dpp} zunehmend an Bedeutung. 
 Der Fokus dieses Anwendungsfalls liegt auf zwei zentralen Aspekten: der Abbildung des \acs{pcf} sowie der Realisierung der Zugriffsrechte auf die im \acs{dpp} enthaltenen Daten.

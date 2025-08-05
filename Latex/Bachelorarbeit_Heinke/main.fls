@@ -758,11 +758,6 @@ INPUT TabelleSubmodellElemente.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
-INPUT ./Bilder/ModellierungAAS/Final/SubmodellErweitert.PNG
-INPUT ./Bilder/ModellierungAAS/Final/SubmodellErweitert.PNG
-INPUT ./Bilder/ModellierungAAS/Final/SubmodellErweitert.PNG
-INPUT ./Bilder/ModellierungAAS/Final/SubmodellErweitert.PNG
-INPUT ./Bilder/ModellierungAAS/Final/SubmodellErweitert.PNG
 INPUT ./DataSpecificationContent.tex
 INPUT ./DataSpecificationContent.tex
 INPUT DataSpecificationContent.tex
