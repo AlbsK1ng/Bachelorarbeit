@@ -1849,5 +1849,120 @@
     \field{urlmonth}{07}
     \field{urlyear}{2025}
   \endentry
+
+  \entry{HTW1}{inproceedings}{}{}
+    \name{author}{6}{}{%
+      {{hash=SS}{%
+         family={Schäfer},
+         familyi={S\bibinitperiod},
+         given={Stephan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Schöttke},
+         familyi={S\bibinitperiod},
+         given={Dirk},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kämpfe},
+         familyi={K\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LO}{%
+         family={Lachmann},
+         familyi={L\bibinitperiod},
+         given={Oliver},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=ZA}{%
+         family={Zielstorff},
+         familyi={Z\bibinitperiod},
+         given={Aaron},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TB}{%
+         family={Tauber},
+         familyi={T\bibinitperiod},
+         given={Bernd},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {SCITEPRESS - Science}%
+      {Technology Publications, Lda}%
+    }
+    \strng{namehash}{SS+1}
+    \strng{fullhash}{SSSDKTLOZATB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 3rd International Conference on Innovative Intelligent Industrial Production and Logistics (IN4PL 2022)}
+    \verb{doi}
+    \verb 10.5220/0011527200003329
+    \endverb
+    \field{isbn}{978-989-758-612-5}
+    \field{pages}{75\bibrangedash 84}
+    \field{title}{Industrial Controls and Asset Administration Shells: An Approach to the Synchronization of Plant Segments}
+    \field{year}{2022}
+  \endentry
+
+  \entry{HTW2}{inproceedings}{}{}
+    \name{author}{6}{}{%
+      {{hash=SS}{%
+         family={Schäfer},
+         familyi={S\bibinitperiod},
+         given={Stephan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Schöttke},
+         familyi={S\bibinitperiod},
+         given={Dirk},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KT}{%
+         family={Kämpfe},
+         familyi={K\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LO}{%
+         family={Lachmann},
+         familyi={L\bibinitperiod},
+         given={Oliver},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=ZA}{%
+         family={Zielstorff},
+         familyi={Z\bibinitperiod},
+         given={Aaron},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TB}{%
+         family={Tauber},
+         familyi={T\bibinitperiod},
+         given={Bernd},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{SS+1}
+    \strng{fullhash}{SSSDKTLOZATB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{IECON 2022 - 48th Annual Conference of the IEEE Industrial Electronics Society}
+    \verb{doi}
+    \verb 10.1109/IECON49645.2022.9968774
+    \endverb
+    \field{isbn}{978-1-6654-8025-3}
+    \field{title}{Integration of PLC for synchronization of plant segments with Asset Administration Shells}
+    \list{location}{1}{%
+      {Brussels, Belgium}%
+    }
+    \field{year}{2022}
+  \endentry
 \enddatalist
 \endinput

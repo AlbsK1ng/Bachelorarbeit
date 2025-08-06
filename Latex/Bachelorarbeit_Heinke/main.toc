@@ -45,24 +45,24 @@
 \contentsline {section}{\numberline {4}Ergebnisse}{47}{section.4}%
 \contentsline {subsection}{\numberline {4.1}AAS-Demonstrator für die robocell}{47}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Systemarchitektur}{47}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Statische Modellierung der Submodelle}{49}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Dynamische Submodelle}{49}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}Herausforderungen bei der Implementierung}{50}{subsubsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.2}Evaluation des KI-Modells}{50}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Bewertung des prototypischen KI-Einsatzes}{50}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Ausblick: Predictive Maintenance}{50}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Weiterführende Einsatzmöglichkeiten}{50}{subsubsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.3}Anwendungsfall Digitaler Produktpass}{51}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Abbildung des PCF}{51}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Rollenbasierter Zugriff auf Submodelle}{53}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4}Anwendungsfall automatisierte Generierung der AAS}{55}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Evaluierung eingesetzter Tools und Software}{55}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}AASX Package Explorer}{55}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Eclipse AASX Server}{55}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}BaSyx}{55}{subsubsection.4.5.3}%
-\contentsline {subsubsection}{\numberline {4.5.4}Mnestix Browser}{55}{subsubsection.4.5.4}%
-\contentsline {section}{\numberline {5}Zusammenfassung und Ausblick}{55}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{55}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{55}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{55}{subsection.5.3}%
-\contentsline {section}{\numberline {A}Anhang 1}{62}{appendix.A}%
+\contentsline {subsubsection}{\numberline {4.1.2}AAS-Struktur}{49}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Statische Submodelle}{49}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Dynamische Submodelle}{49}{subsubsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.2}Evaluation des KI-Modells}{53}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Bewertung des prototypischen KI-Einsatzes}{53}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Ausblick: Predictive Maintenance}{53}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Weiterführende Einsatzmöglichkeiten}{53}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Anwendungsfall Digitaler Produktpass}{54}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Abbildung des PCF}{54}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Rollenbasierter Zugriff auf Submodelle}{56}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Anwendungsfall automatisierte Generierung der AAS}{58}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Evaluierung eingesetzter Tools und Software}{58}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}AASX Package Explorer}{58}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Eclipse AASX Server}{58}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}BaSyx}{58}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Mnestix Browser}{58}{subsubsection.4.5.4}%
+\contentsline {section}{\numberline {5}Zusammenfassung und Ausblick}{58}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{58}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{58}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{58}{subsection.5.3}%
+\contentsline {section}{\numberline {A}Anhang 1}{65}{appendix.A}%

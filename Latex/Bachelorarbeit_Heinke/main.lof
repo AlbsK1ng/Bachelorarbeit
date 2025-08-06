@@ -12,6 +12,9 @@
 \contentsline {figure}{\numberline {11}{\ignorespaces SMT Time Series Data}}{35}{figure.caption.103}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Aufbau eines Autoencoders}}{36}{figure.caption.104}%
 \contentsline {figure}{\numberline {13}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{48}{figure.caption.137}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{51}{figure.caption.138}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Visualisierung der aggregierten PCF-Werte im Plugin}}{52}{figure.caption.141}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{53}{figure.caption.144}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{50}{figure.caption.138}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Plugin Submodell Kontrollkomponente}}{51}{figure.caption.140}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Zeitreihendaten in der AAS Web UI}}{53}{figure.caption.141}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{54}{figure.caption.142}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Visualisierung der aggregierten PCF-Werte im Plugin}}{55}{figure.caption.145}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{56}{figure.caption.148}%

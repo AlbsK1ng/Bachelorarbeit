@@ -47,37 +47,128 @@ In Zukunft erwartet das beu BaSyx das auch automatisch beim Hochladen einer neue
 Zur Visualisierung der AAS wurde neben der AAS Web UI ebenfalss der Mnestix Browser eingesetzt, da dieser in der Architektur einfach mit dieser ausgetauscht werden kann.
 Eine dertailliertere Beschreibung der Tools findet sich in Kapitel !!!.
 
+\subsubsection{AAS-Struktur}
 
-\subsubsection{Statische Modellierung der Submodelle}
++ Metadaten des Assets und der AAS zB bilder von PE
++ Modellierung untergeordneter komponenten mit eigener AAS
++ Wie QR Code bei groninger. Gibt es nichtr nicht es wurde beispiel id verwendet um das umzusetzten an die MAaschine euiien Code mit der Asset ID
++ Wenn man den scanntn kommt man dahin
+
+\subsubsection{Statische Submodelle}
 
 Die statische Modellierung wurde vollständig mit dem Package Explorer durchgeführt. 
 Alle relevanten statischen Informationen wurden manuell eingetragen. 
 Als Hauptdatenquellen dienten technische Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem \acs{plm}-System Agile.
 
+\subsubsection*{Typenschild}
+\vspace{-0.5em}
+
+\subsubsection*{\acs{bom}}
+\vspace{-0.5em}
+
+\subsubsection*{Technische Daten}
+\vspace{-0.5em}
+
+\subsubsection*{Dokumentation}
+\vspace{-0.5em}
+
+\subsubsection*{3D-Modelle}
+\vspace{-0.5em}
+
+\subsubsection*{Wartung}
+\vspace{-0.5em}
 
 \subsubsection{Dynamische Submodelle}
+Eine rein statisch modellierte \acs{aas} bildet lediglich die Struktur und Metadaten eines Assets ab und erfüllt damit noch nicht die Anforderungen an einen digitalen Zwilling gemäß der in Kapitel \ref{sec: DT} dargestellten Klassifizierung. 
+Erst durch die Integration von Echtzeitdaten sowie der Möglichkeit zur Interaktion mit dem physischen System entsteht eine digitale Repräsentation, die über eine reine Beschreibung hinausgeht.
 
-Zeitabhängige Daten der Maschine wurden simuliert und flossen in dynamische Submodelle ein.
-Für die Inegration des Mashcinenstatus wurde die Databridge eingesetzt.
-Für Submodell Kontrollkomponente wurde hierfür ein Submodell entworfen, das den aktuellen Zustand der Maschine abbildet.
-Dabei stand ein Plugin zur Verfügung das bereits einen solchen Zustandsautomat abbildet.
-Allerdings wurde dieses nicht ausfürlich beschrieben, bzw. nur im Rahmne eines Forschungsprojekts von ... vorgestellt.
-Darin wird es beschrieben.
-Das von denen entwickelte Vue.js Plugin wurde also angepasst.
+Die Erweiterung der \acs{aas} um dynamische Daten wurde in dieser Arbeit durch die Umsetzung von drei Submodellen realisiert, die nachfolgend vorgestellt werden. 
+Diese wurden zunächst im Package Explorer strukturiert und anschließend zur Laufzeit in der BaSyx-Umgebung mit simulierten Daten befüllt bzw. aktualisiert.
 
-Dazu wurde eine Logik implementiert, die wenn das Plugin aktiv ist den Maschinesatuts in regelmäßigen Abständen pollt.
-Ändert sich dieser so wird der entsprechende Status gesetzt und zudem die OOperatiuonen die ausgeführt werden können.
+\subsubsection*{Prozessdaten}
+\vspace{-0.5em}
 
-Die Kontrollkomponenten ermöglicht also theoretisch die Steuerung der Maschine.
-Der Maschinensimulator wurde so konfiguriert das wenn der Status geändert wird zum Beispiel drückt ein Nutzer den Stop Button so wird der Zustand der Maschin, wie im Mashcinesimulator abgebildet gestoppt.
-Das ist im Sinne eines richtigen digitalen Zwillings wenn das ganze automatisiert wird könnte zum Beispiel der digitale Zwiloing analig Einfluss auf die Maschine nehmen, zum Beispiel wenn Fehler erkannt werden
+Die Maschine wurde durch einen Datengenerator sowie einen Maschinensimulator repräsentiert. 
+Im Submodell Prozessdaten werden simulierte Werte wie Füllstand, Durchfluss, Anzahl abgefüllter Einheiten sowie Druck erfasst. 
+Diese Werte werden mithilfe der Databridge aktualisiert, die ein Subscription-Modell verwendet. 
+Änderungen werden sofort erkannt, transformiert und in die entsprechenden Properties des Submodells geschrieben, genauer gesagt in das Submodel Repository der AAS Environment.
 
+Der Datengenerator erzeugt Daten im Sekundentakt. 
+In der AAS Web UI wurde ein Plugin implementiert, das diese Werte visualisiert. 
+Die Anwendung fragt die \acs{aas}-Daten der hinterlegten Services in einem konfigurierbaren Intervall (z. B. alle 4 Sekunden) ab und aktualisiert die Anzeige entsprechend.
 
+\begin{figure}[htbp]
+    \centering
+        \includegraphics{Bilder/Ergebnisse/DynamischeDaten/ProcessData/Visualisierung.PNG}
+    \caption{Systemarchitektur AAS-Demonstrator}
+    \label{fig:Systemarchitektur}
+\end{figure}
 
-Der Macshinensimulator simuliert PackML dabei die Werte über OPC UA
-Die Databridge holt die jeweiligen Werte
+\subsubsection*{Kontrollkomponente}
+\vspace{-0.5em}
+Ein vergleichbarer Mechanismus wie bei den Prozessdaten kommt auch im Submodell Kontrollkomponente zum Einsatz. 
+Die Zustandsdaten des Maschinensimulators werden über \acs{opcua} abgefragt und mithilfe der Databridge in das entsprechende Submodell der \acs{aas} geschrieben. 
+Da der Simulator numerische Zustände liefert, erfolgt eine semantische Umwandlung mittels JSONata, um diese in sprechende Zustandsbezeichnungen wie Execute, Stopped oder Suspending zu überführen.
 
-\subsubsection{Herausforderungen bei der Implementierung}
+Die Zustände orientieren sich am PackML-Standard, der insgesamt 17 definierte Maschinenzustände umfasst. 
+Diese standardisierte Struktur ermöglicht eine konsistente Erfassung und Interpretation des Maschinenstatus und wird auch für die robocell-Linie eingesetzt.
+Der Maschinenstatus selbst ist in einer \acs{smc} organisiert, in der eine Property den aktuellen Zustand abbildet.
+
+Zur Visualisierung wurde ein bestehendes Vue.js-Plugin verwendet, das ursprünglich im Rahmen eines Forschungsprojekts an der Hochschule für Technik und Wirtschaft Berlin entwickelt wurde \cite{HTW1}\cite{HTW2}. 
+Da das Plugin nicht weiter gepflegt wurde, wurde es funktional angepasst und in die AAS Web UI integriert, um es für den Demonstrator nutzbar zu machen.
+
+Die aktuellen Zustandsinformationen werden darin visuell in Form eines PackML-Zu\-standsautomaten dargestellt, wie Abbildung \ref{fig:PackMLZustandsautomat} zeigt. 
+Um Änderungen direkt anzuzeigen, wurde eine Polling-Logik implementiert, die den Maschinenstatus in regelmäßigen Abständen vom Submodel Repository der AAS Environment abfragt.
+
+\begin{figure}[htbp] 
+    \centering 
+        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/PackMl.PNG} 
+    \caption{Plugin Submodell Kontrollkomponente} 
+    \label{fig:PackMLZustandsautomat} 
+\end{figure}
+
+Wie auch in der Abbildung zu erkennen besteht neben der Visualisierung auch die Möglichkeit, den Maschinenmodus direkt über die AAS Web UI zu ändern. 
+Über interaktive Schaltflächen können Nutzer konforme Zustandsübergänge gemäß PackML auslösen. 
+Befindet sich die Maschine beispielsweise im Zustand Execute, sind die Befehle Stop, Hold, Suspend und Abort möglich. 
+Nicht erlaubt wären direkte Übergänge zu Zuständen wie Idle, Reset oder Completed.
+
+Zusätzlich kann der Maschinenmodus gesetzt werden. 
+Die vorliegende Umsetzung unterstützt drei Betriebsmodi: Produktion, Manuell und Wartung. 
+Diese werden analog zum Maschinenstatus über eine entsprechende Property im Submodell Kontrollkomponente im Submodel Repository der AAS Environment verwaltet.
+
+Im Demonstrator wird der Maschinenzustand direkt über eine WebSocket-Verbindung vom Plugin an den Maschinensimulator übermittelt und ohne weitere Prüfung übernommen. 
+Dadurch entsteht eine einfache Feedback-Schleife zwischen Benutzeroberfläche und Simulator, die eine direkte Steuerung aus der \acs{aas} ermöglicht.
+
+In einer realen Maschinenumgebung würde der Steuerbefehl zunächst mit einem geeigneten Industrieprotokoll wie \acs{opcua} an die speicherprogrammierbare Steuerung (SPS) der Maschine übertragen werden müssen. 
+Nach erfolgreicher Validierung und der Durchführung notwendiger Operationen, etwa dem Abschalten von Motoren oder dem Schließen von Ventilen, würde der neue Zustand gesetzt und anschließend an die \acs{aas} zurückgemeldet werden.
+
+\subsubsection*{Zeitreihendaten}
+\vspace{-0.5em}
+Das dritte Submodell, das ebenfalls als dynamisches Submodell eingeordnet werden kann, ist die Darstellung von Zeitreihendaten. 
+Datengrundlage bilden erneut die simulierten Prozesswerte des Datengenerators.
+Diese werden kontinuierlich über Telegraf in eine InfluxDB geschrieben und stehen somit für zeitbasierte Auswertungen zur Verfügung.
+
+Die AAS Web UI ermöglicht den direkten Zugriff auf diese Daten. 
+Über die im Submodell hinterlegten Parameter kann eine gezielte Abfrage an die Datenbank gestellt werden. 
+Die Ergebnisse werden anschließend im Visualisierungsbereich der Benutzeroberfläche dargestellt. 
+Dabei muss das gewünschte Segment sowie die darzustellenden Messgrößen ausgewählt werden.
+
+Zur Visualisierung stehen verschiedene Diagrammtypen zur Verfügung. 
+Die Datenbankabfrage selbst ist im LinkedSegment hinterlegt und definiert den Zeitraum, über den die Daten abgefragt werden.
+Unabhängig davon kann der Zeitraum, der in der Visualisierung angezeigt wird, individuell angepasst werden.
+
+Abbildung \ref{fig:LiniendiagrammBaSyx} zeigt die Darstellung von Druck und Temperatur über einen Zeitraum von einer Minute in einem Liniendiagramm.
+
+\begin{figure}[htbp]
+    \centering
+        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/line.png}
+    \caption{Zeitreihendaten in der AAS Web UI}
+    \label{fig:LiniendiagrammBaSyx}
+\end{figure}
+
+Ein wesentlicher Vorteil dieser Umsetzung ist die Entkopplung der Datenspeicherung von der AAS selbst. 
+Da die \acs{aas} keine Datenbank ist, eignet sich dieser Mechanismus besonders für die Integration großer oder historischer Datenmengen. 
+Er lässt sich flexibel auf beliebige Datensätze anwenden und erweitert so die Funktionalität der \acs{aas} sinnvoll um zeitbasierte Analyse- und Visualisierungsoptionen.
 
 %KI-Modell
 \subsection{Evaluation des KI-Modells}
