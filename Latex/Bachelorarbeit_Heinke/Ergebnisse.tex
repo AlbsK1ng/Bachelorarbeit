@@ -65,6 +65,27 @@ Als Hauptdatenquellen dienten technische Dokumentationen der robocell, insbesond
 
 \subsubsection*{\acs{bom}}
 \vspace{-0.5em}
+Das \acs{bom}-Submodell dient der Darstellung hierarchischer Strukturen innerhalb des \acs{aas}-Demonstrators.
+Die Idee in dieser Arbeit war es, exemplarisch eine Stückliste abzubilden, nicht vollständig, sondern anhand einer Auswahl relevanter Komponenten.
+Jede dieser Komponenten wurde als eigenständige \acs{aas} modelliert, wodurch eine modulare und erweiterbare Struktur entsteht.
+
+Abbildung \ref{fig:BOM} zeigt die hierarchische Struktur diese Submodells.
+Im Zentrum befindet sich das Submodell der Haupt-\acs{aas}, das die erste untergeordnete Ebene abbildet.
+Links und rechts sind jeweils referenzierte Komponenten-\acs{aas} dargestellt, die über Entity-Elemente mit dem Submodell der Haupt-\acs{aas} verknüpft sind.
+
+\begin{figure}[htbp]
+    \centering
+        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/StatischeDaten/BOM.png}
+    \caption{Systemarchitektur AAS-Demonstrator}
+    \label{fig:BOM}
+\end{figure}
+
+Die einzelnen Komponenten sind als Self-Managed Entities modelliert, da sie jeweils über eine eigene \acs{aas} verfügen.
+Die Referenzierung erfolgt dabei über die globalAssetId, wodurch eine direkte Verbindung zur jeweiligen Komponente hergestellt wird.
+
+Zur Abbildung der Beziehungen zwischen den Komponenten wird ein RelationshipElement verwendet.
+Primär kommt dabei die Beziehung HasPart zum Einsatz, deren Bedeutung über eine zugewiesene semanticId eindeutig beschrieben ist.
+Auf diese Weise lässt sich die Struktur einer Maschine rekursiv modellieren: Jede Komponente kann wiederum über ein eigenes \acs{bom}-Submodell verfügen, in dem weitere Unterkomponenten referenziert sind.
 
 \subsubsection*{Technische Daten}
 \vspace{-0.5em}
@@ -77,9 +98,30 @@ Als Hauptdatenquellen dienten technische Dokumentationen der robocell, insbesond
 
 \subsubsection*{Wartung}
 \vspace{-0.5em}
+Das Submodell Wartung bildet den digitalen Wartungsplan der robocell-Maschine ab. 
+Es enthält strukturierte Informationen zu einzelnen Komponenten, darunter der letzte Wartungszeitpunkt, das Wartungsinterval, die zuständige Person oder Organisation sowie die durchzuführenden Maßnahmen. 
+Diese Informationen sind für jede Komponente in einer SubmodelElementCollection (SMC) organisiert.
 
+Sofern die AAS über eine geeignete Plattform wie Eclipse BaSyx bereitgestellt wird, besteht die Möglichkeit, Wartungsmaßnahmen direkt in der AAS zu erfassen und in den Wartungsplan einzutragen. 
+Bedienpersonal sowie interne oder externe Wartungsteams könnten über entsprechende Schnittstellen oder Benutzeroberflächen Einträge vornehmen, wodurch eine nachvollziehbare Dokumentation aller Wartungsaktivitäten gewährleistet wird.
+
+Abbildung \ref{fig:Wartung} zeigt exemplarisch die Wartungsinformationen für zwei Komponenten des Füllmoduls.
+
+\begin{figure}[htbp]
+    \centering
+        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/StatischeDaten/Wartung.png}
+    \caption{Systemarchitektur AAS-Demonstrator}
+    \label{fig:Wartung}
+\end{figure}
+
+Das Submodell wurde so entworfen, dass es künftig dynamisch erweitert werden kann. 
+Beispielsweise könnte ein Betriebsstundenzähler angebunden werden. 
+Eine entsprechende Logik oder ein Skript könnte dann den aktuellen Wert mit dem letzten Wartungszeitpunkt vergleichen und automatisch den Wartungsbedarf erkennen. 
+In jeder \acs{smc} wurde dafür eine Property implementiert, die über ein Boolean-Feld angibt, ob eine Wartung fällig ist.
+
+\newpage
 \subsubsection{Dynamische Submodelle}
-Eine rein statisch modellierte \acs{aas} bildet lediglich die Struktur und Metadaten eines Assets ab und erfüllt damit noch nicht die Anforderungen an einen digitalen Zwilling gemäß der in Kapitel \ref{sec: DT} dargestellten Klassifizierung. 
+Die rein statisch modellierte \acs{aas} bildet lediglich die Struktur und Metadaten der robocell-Maschine ab und erfüllt damit noch nicht die Anforderungen an einen digitalen Zwilling gemäß der in Kapitel \ref{sec: DT} dargestellten Klassifizierung. 
 Erst durch die Integration von Echtzeitdaten sowie der Möglichkeit zur Interaktion mit dem physischen System entsteht eine digitale Repräsentation, die über eine reine Beschreibung hinausgeht.
 
 Die Erweiterung der \acs{aas} um dynamische Daten wurde in dieser Arbeit durch die Umsetzung von drei Submodellen realisiert, die nachfolgend vorgestellt werden. 
@@ -88,21 +130,32 @@ Diese wurden zunächst im Package Explorer strukturiert und anschließend zur La
 \subsubsection*{Prozessdaten}
 \vspace{-0.5em}
 
-Die Maschine wurde durch einen Datengenerator sowie einen Maschinensimulator repräsentiert. 
-Im Submodell Prozessdaten werden simulierte Werte wie Füllstand, Durchfluss, Anzahl abgefüllter Einheiten sowie Druck erfasst. 
-Diese Werte werden mithilfe der Databridge aktualisiert, die ein Subscription-Modell verwendet. 
-Änderungen werden sofort erkannt, transformiert und in die entsprechenden Properties des Submodells geschrieben, genauer gesagt in das Submodel Repository der AAS Environment.
+Im Submodell Prozessdaten werden simulierte Werte für Füllstand, Durchfluss, Anzahl abgefüllter Einheiten sowie Druck erfasst.
+Diese stammen vom Datengenerator und werden im Sekundentakt erzeugt.
+In realen Anwendungen sind jedoch deutlich kürzere Intervalle üblich.
+Die kontinuierliche Erfassung und Übertragung der Daten in das Submodell erfolgt über die Databridge, wobei ein Subscription-Modell verwendet wird.
+Dadurch werden Änderungen nahezu in Echtzeit in das Submodell überführt.
 
-Der Datengenerator erzeugt Daten im Sekundentakt. 
-In der AAS Web UI wurde ein Plugin implementiert, das diese Werte visualisiert. 
-Die Anwendung fragt die \acs{aas}-Daten der hinterlegten Services in einem konfigurierbaren Intervall (z. B. alle 4 Sekunden) ab und aktualisiert die Anzeige entsprechend.
+Die Rohdaten werden zunächst mithilfe des Jackson-Transformers in ein JSON-Objekt transformiert.
+Anschließend erfolgt die Extraktion der relevanten Werte mithilfe von JSONata, bevor diese in die entsprechenden Properties des Submodells geschrieben werden.
+Genauer gesagt werden die Werte im Submodel Repository der AAS Environment aktualisiert.
 
-\begin{figure}[htbp]
-    \centering
-        \includegraphics{Bilder/Ergebnisse/DynamischeDaten/ProcessData/Visualisierung.PNG}
-    \caption{Systemarchitektur AAS-Demonstrator}
-    \label{fig:Systemarchitektur}
-\end{figure}
+Die Werte können über die AAS Web UI visualisiert werden, entweder über die klassische Elemente-Ansicht oder über ein speziell entwickeltes Plugin.
+Zur Aktualisierung bietet die Anwendung zusätzlich die Möglichkeit, eine Synchronisation zu aktivieren.
+Dabei werden alle relevanten \acs{aas}-Daten in einem definierten Intervall automatisch von den zugrunde liegenden Services abgefragt und anschließend in der Benutzeroberfläche dargestellt.
+Die Anzeige der Prozessdaten erfolgt somit nicht in Echtzeit, sondern in regelmäßigen Abständen, beispielsweise alle vier Sekunden, und unabhängig von der tatsächlichen Erzeugungs- oder Übertragungsfrequenz der Daten durch den Datengenerator bzw. die Databridge.
+
+% \begin{figure}[htbp]
+%     \centering
+%         \includegraphics{Bilder/Ergebnisse/DynamischeDaten/ProcessData/Visualisierung.png}
+%     \caption{Systemarchitektur AAS-Demonstrator}
+%     \label{fig:Systemarchitektur}
+% \end{figure}
+
+Der implementierte Mechanismus zur Datenintegration ist protokolloffen und lässt sich flexibel auf verschiedene Kommunikationsprotokolle wie \acs{mqtt} oder \acs{rest} anwenden.
+Eine automatisierte Anbindung externer Datenquellen ist somit problemlos möglich.
+Aktuell sind die Datenflüsse jedoch primär darauf ausgelegt, Daten von externen Quellen in die \acs{aas} zu übertragen.
+Eine Rückführung von Daten aus der \acs{aas} in externe Systeme, beispielsweise über \acs{opcua}, ist bislang noch nicht umgesetzt.
 
 \subsubsection*{Kontrollkomponente}
 \vspace{-0.5em}
@@ -151,24 +204,35 @@ Diese werden kontinuierlich über Telegraf in eine InfluxDB geschrieben und steh
 Die AAS Web UI ermöglicht den direkten Zugriff auf diese Daten. 
 Über die im Submodell hinterlegten Parameter kann eine gezielte Abfrage an die Datenbank gestellt werden. 
 Die Ergebnisse werden anschließend im Visualisierungsbereich der Benutzeroberfläche dargestellt. 
-Dabei muss das gewünschte Segment sowie die darzustellenden Messgrößen ausgewählt werden.
+Wie in Abbildung \ref{fig:KonfigurationZeitreihen} zu erkennen, muss hierzu das gewünschte Segment sowie die darzustellenden Messgrößen ausgewählt werden.
+
+\begin{figure}[htbp]
+    \centering
+        \includegraphics{Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Konfiguration.png}
+    \caption{Zeitreihendaten in der AAS Web UI}
+    \label{fig:KonfigurationZeitreihen}
+\end{figure}
 
 Zur Visualisierung stehen verschiedene Diagrammtypen zur Verfügung. 
 Die Datenbankabfrage selbst ist im LinkedSegment hinterlegt und definiert den Zeitraum, über den die Daten abgefragt werden.
 Unabhängig davon kann der Zeitraum, der in der Visualisierung angezeigt wird, individuell angepasst werden.
 
-Abbildung \ref{fig:LiniendiagrammBaSyx} zeigt die Darstellung von Druck und Temperatur über einen Zeitraum von einer Minute in einem Liniendiagramm.
+Abbildung \ref{fig:LiniendiagrammBaSyx} zeigt die Darstellung von Druck und Temperatur über einen Zeitraum von fünf Minuten in einem Liniendiagramm.
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/line.png}
+        \includegraphics{Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png}
     \caption{Zeitreihendaten in der AAS Web UI}
     \label{fig:LiniendiagrammBaSyx}
 \end{figure}
 
-Ein wesentlicher Vorteil dieser Umsetzung ist die Entkopplung der Datenspeicherung von der AAS selbst. 
+Ein wesentlicher Vorteil dieser Umsetzung ist die Entkopplung der Datenspeicherung von der \acs{aas} selbst. 
 Da die \acs{aas} keine Datenbank ist, eignet sich dieser Mechanismus besonders für die Integration großer oder historischer Datenmengen. 
 Er lässt sich flexibel auf beliebige Datensätze anwenden und erweitert so die Funktionalität der \acs{aas} sinnvoll um zeitbasierte Analyse- und Visualisierungsoptionen.
+
+Dabei enthält das Submodell alle notwendigen Informationen, um auch außerhalb der AAS Web UI verwendet zu werden.
+Die darin definierten Parameter und Abfragebeschreibungen ermöglichen externen Anwendungen einen gezielten Zugriff auf die zugrunde liegenden Zeitreihendaten.
+Das Submodell dient somit als standardisierte Schnittstelle zur Datenbereitstellung und kann für weiterführende Anwendungen wie Analyse-Tools, Monitoring-Systeme oder KI-basierte Verfahren, wie in dieser Arbeit zur Anomalieerkennung demonstriert, genutzt werden.
 
 %KI-Modell
 \subsection{Evaluation des KI-Modells}
@@ -289,6 +353,28 @@ Dies bietet Potenzial für zukünftige Szenarien, bei denen sensible Nachhaltigk
 %Evaluation der eingesetzten Software
 \subsection{Evaluierung eingesetzter Tools und Software}
 \subsubsection{AASX Package Explorer}
+
+Stärken
+Benutzerfreundliche Oberfläche: Intuitiv bedienbar, auch für weniger technisch versierte Nutzer.
+Komplette Modellierung möglich: Alle Elemente der AAS (Submodelle, Properties, Beziehungen etc.) können erstellt und bearbeitet werden.
+Grafische Darstellung: Struktur der AAS ist visuell nachvollziehbar.
+Import von Submodel Templates: Erleichtert Standardisierung und Wiederverwendung.
+Einfache Einbettung von Dokumenten.
+Vielfältige Exportmöglichkeiten: z.B. AASX-Dateien, JSON, XML.
+Verbindung zu AAS Server möglich: Praktisch für lokale Tests und das Verhalten in Laufzeitumgebungen.
+Eingabemasken für Concept Descriptions (CD): Strukturierte Erfassung semantischer Informationen.
+Direkter Import von ECLASS-Katalogen: Erleichtert semantische Modellierung und Interoperabilität.
+Plugin-Unterstützung also es gibt Viewer: z.B. für Typenschild, Dokumenten oder hierarchische Strukturenb .
+copy Refactor: ELemente eines AAS Pakets können kopier tund wiederverwendet werden
+
+
+Schwächen
+Validierungsfunktion unzuverlässig: Nicht vollständig abgestimmt mit externen Tools wie der BaSyx Test Engine.
+Nicht alle Funktionen stabil oder vollständig implementiert.
+Keine direkte Integration in modulare BaSyx-Umgebung: Verbindung nur zu einem AAS Server möglich. Nicht zu BaSyx weil modular also keinen klassischen Server
+Manuelle Bereitstellung notwendig: Für komplexe Szenarien mit mehreren Submodellen oder dynamischen Daten ist zusätzliche Konfiguration erforderlich.
+Projektstatus „Incubating“: Tool befindet sich noch in Entwicklung, was zu Änderungen und eingeschränkter Stabilität führen kann.
+
 \subsubsection{Eclipse AASX Server}
 \subsubsection{BaSyx}
 \subsubsection{Mnestix Browser}
