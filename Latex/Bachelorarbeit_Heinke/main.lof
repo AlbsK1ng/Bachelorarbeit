@@ -11,12 +11,15 @@
 \contentsline {figure}{\numberline {10}{\ignorespaces OPC UA Datenknoten}}{32}{figure.caption.98}%
 \contentsline {figure}{\numberline {11}{\ignorespaces SMT Time Series Data}}{35}{figure.caption.103}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Aufbau eines Autoencoders}}{36}{figure.caption.104}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{48}{figure.caption.137}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{50}{figure.caption.138}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{50}{figure.caption.139}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Plugin Submodell Kontrollkomponente}}{54}{figure.caption.144}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Zeitreihendaten in der AAS Web UI}}{55}{figure.caption.145}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Zeitreihendaten in der AAS Web UI}}{56}{figure.caption.146}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{57}{figure.caption.147}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Visualisierung der aggregierten PCF-Werte im Plugin}}{58}{figure.caption.150}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{59}{figure.caption.153}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{48}{figure.caption.138}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Metadatenstruktur im Submodell Dokumentation}}{49}{figure.caption.140}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Metadatenstruktur im Submodell Dokumentation}}{50}{figure.caption.142}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{51}{figure.caption.143}%
+\contentsline {figure}{\numberline {17}{\ignorespaces BOM-Visualisierung der Grundmaschine in der AAS Web UI}}{52}{figure.caption.144}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{53}{figure.caption.146}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Plugin Submodell Kontrollkomponente}}{55}{figure.caption.151}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Zeitreihendaten in der AAS Web UI}}{57}{figure.caption.152}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Zeitreihendaten in der AAS Web UI}}{57}{figure.caption.153}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Sequenzdiagramm zur Aggregation des PCF}}{59}{figure.caption.154}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Visualisierung der aggregierten PCF-Werte im Plugin}}{60}{figure.caption.157}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{61}{figure.caption.160}%
