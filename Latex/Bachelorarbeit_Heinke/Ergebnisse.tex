@@ -1,30 +1,29 @@
 \newpage
 \section{Ergebnisse}
-Dieses Kapitel stellt die zentralen Ergebnisse der Arbeit vor. 
-Zunächst wird der entwickelte \acs{aas}-Demonstrator der robocell beschrieben.
-Im Anschluss erfolgt die Analyse des eingesetzten Modells zur Anomalieerkennung sowie eine Diskussion weiterer Einsatzmöglichkeiten von \acs{ki}.
-Daraufhin werden die beiden Anwendungsfälle zum \acs{dpp} und zur automatisierten Generierung der \acs{aas} vorgestellt.
-Abschließend wird eine Bewertung der in diesem Projekt eingesetzten Softwarelösungen und Tools vorgenommen.
+In diesem Kapitel werden die zentralen Ergebnisse der Arbeit präsentiert. 
+Schwerpunkt ist der entwickelte \acs{aas}-Demonstrator für die robocell, gefolgt von der Analyse des eingesetzten Modells zur Anomalieerkennung und einer Diskussion weiterer \acs{ki}-Anwendungen. 
+Anschließend werden die beiden Anwendungsfälle \acs{dpp} und automatisierte Generierung der \acs{aas} vorgestellt. 
+Den Abschluss bildet eine Bewertung der im Projekt eingesetzten Softwarelösungen und Tools.
 
 \subsection{AAS-Demonstrator für die robocell}
-Im Rahmen dieses Projekts wurde für das Abfüll- und Verschließmodul ein digitaler Zwilling auf Basis der \acs{aas} realisiert.  
-Dazu wurde ein \acs{aas}-Demonstrator entwickelt, der sowohl auf standardisierte Templates der \acs{idta} als auch auf individuell angepasste Submodelle zurückgreift.  
-Der Zwilling wurde als konkrete Instanz modelliert, um die Anbindung von Echtzeitdaten zu ermöglichen und praxisnahe Anwendungsfälle zu demonstrieren.
+Für das Abfüll- und Verschließmodul der robocell wurde ein digitaler Zwilling auf Basis der \acs{aas} entwickelt.  
+Der Demonstrator kombiniert standardisierte Templates der \acs{idta} mit individuell angepassten Submodellen und wurde als konkrete Instanz modelliert, um Echtzeitdaten anzubinden und praxisnahe Anwendungsfälle darzustellen.
+Die entwickelte Struktur kann dabei als Vorlage für zukünftige Projekte dienen.  
+Die verwendeten Daten erheben keinen Anspruch auf Vollständigkeit, sondern dienen in erster Linie der exemplarischen Demonstration.
 
-Obwohl keine spezifische physische Maschine zugrunde liegt, erlaubt die instanzbasierte Modellierung die Darstellung typischer Maschinendaten wie Prozesswerte, Maschinenstatus oder historische Informationen.  
-Eine rein typisierte Modellierung hätte hingegen überwiegend leere Felder zur Folge und wäre für die Veranschaulichung funktionaler Zusammenhänge weniger geeignet.  
-Nichtsdestotrotz kann die entwickelte Struktur als Vorlage für zukünftige Projekte dienen.  
-Die verwendeten Daten erheben dabei keinen Anspruch auf Vollständigkeit, sondern dienen der exemplarischen Demonstration.
+Im Folgenden wird zunächst die Systemarchitektur des Demonstrators aufgezeigt.  
+Darauf aufbauend erfolgt ein Überblick über den strukturellen Aufbau, bevor die enthaltenen Submodelle im Detail vorgestellt werden.  
+Diese gliedern sich in statische Submodelle zur Abbildung von Stammdaten sowie in dynamische Submodelle zur Erfassung von Zustands- und Prozessdaten.
 
 \subsubsection{Systemarchitektur}
-Die Architektur des Demonstrators basiert vollständig auf containerisierten Komponenten, die innerhalb eines gemeinsamen Docker-Stacks organisiert sind.
-Dies ermöglicht eine modulare und skalierbare Umgebung, die sich flexibel erweitern und anpassen lässt.
+Die Architektur des Demonstrators basiert vollständig auf containerisierten Komponenten, die innerhalb einer gemeinsamen Docker-Umgebung organisiert sind.
+Dies ermöglicht eine modulare und skalierbare Infrastruktur, die sich flexibel erweitern und anpassen lässt.
 Als zentrale Plattform zur Verwaltung und Bereitstellung der \acs{aas} wurde Eclipse BaSyx eingesetzt.
 Ursprünglich war der Einsatz des AASX Server Blazor vorgesehen, dieser wurde jedoch frühzeitig durch BaSyx ersetzt, da es eine deutlich flexiblere und umfassendere Umgebung für digitale Zwillinge bietet.
 
 Die vollständige Systemarchitektur ist in Abbildung~\ref{fig:Systemarchitektur} dargestellt.
-Sie erlaubt die Integration sowohl statischer als auch dynamischer Submodelle, die Kommunikation über standardisierte Schnittstellen sowie die Anbindung von Echtzeit- und Zeitreihendaten.
-\acs{aas}-spezifische Daten werden in einer MongoDB persistiert, während Zeitreihendaten in einer InfluxDB gespeichert werden.
+Sie unterstützt die Integration sowohl statischer als auch dynamischer Submodelle, die Kommunikation über standardisierte Schnittstellen sowie die Anbindung von Echtzeit- und Zeitreihendaten.
+\acs{aas}-spezifische Daten werden dabei in einer MongoDB persistiert, während Zeitreihendaten in einer InfluxDB gespeichert werden.
 
 \begin{figure}[htbp]
     \centering
@@ -33,9 +32,14 @@ Sie erlaubt die Integration sowohl statischer als auch dynamischer Submodelle, d
     \label{fig:Systemarchitektur}
 \end{figure}
 
-Da Einträge im Discovery Service derzeit nicht automatisch beim Hochladen einer \acs{aas}-Datei gesetzt werden, wurde ergänzend ein Node.js-Skript entwickelt, das diese Funktionalität übernimmt.
-Beim Start der BaSyx-Umgebung liest das Skript eine JSON-Datei mit den relevanten Asset-Informationen aus und erstellt automatisch die zugehörigen Einträge im Discovery Service.
-Diese Funktion ist insbesondere für die Abbildung hierarchischer Strukturen sowie für den Anwendungsfall zur Berechnung des \acs{pcf} im Rahmen des \acs{dpp} von zentraler Bedeutung.
+% Eine weitere, in der Abbildung nicht dargestellte Komponente ist ein als Docker-Container ausgeführtes Node.js-Skript, das beim Start der BaSyx-Umgebung automatisch fehlende Einträge im Discovery Service anlegt.
+% Hierzu werden relevante Asset-Informationen aus einer JSON-Datei ausgelesen und in den Service eingetragen.
+% Diese Funktionalität ist insbesondere für die Abbildung hierarchischer Strukturen sowie für den Anwendungsfall der PCF-Berechnung im Rahmen des \acs{dpp} von Bedeutung.
+
+Ein wesentlicher Vorteil der gewählten Architektur besteht darin, dass sich die AAS Web UI jederzeit durch alternative Frontends oder zusätzliche Services ersetzen lässt.
+Dadurch können sowohl eigene Anwendungen als auch externe Softwarelösungen flexibel integriert werden.
+Im Rahmen dieser Arbeit wurde beispielsweise alternativ der Mnestix Browser eingesetzt, der eine vergleichbare Funktionalität wie die AAS Web UI bietet \cite{Quelle}.
+Eine detaillierte Evaluierung dieses Werkzeugs erfolgt in Kapitel~\ref{ref}.
 
 \subsubsection{Aufbau und Metadaten}
 
@@ -46,7 +50,7 @@ Diese Funktion ist insbesondere für die Abbildung hierarchischer Strukturen sow
 
 \subsubsection{Stammdaten}
 
-Die statische Modellierung der \acs{aas} und ihrer Submodelle wurde vollständig mit dem Package Explorer durchgeführt. 
+Die statische Modellierung der \acs{aas} und ihrer Submodelle erfolgte ausschließlich mit dem Package Explorer. 
 Sämtliche Stammdaten der Maschine wurden dabei manuell eingepflegt.
 Als Hauptdatenquellen für die statischen Informationen dienten die technische Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem \acs{plm}-System Agile.
 
@@ -248,14 +252,15 @@ Diese werden kontinuierlich über Telegraf in eine InfluxDB geschrieben und steh
 Die AAS Web UI ermöglicht den direkten Zugriff auf diese Daten. 
 Über die im Submodell hinterlegten Parameter kann eine gezielte Abfrage an die Datenbank gestellt werden. 
 Die Ergebnisse werden anschließend im Visualisierungsbereich der Benutzeroberfläche dargestellt. 
-Wie in Abbildung \ref{fig:KonfigurationZeitreihen} zu erkennen, muss hierzu das gewünschte Segment sowie die darzustellenden Messgrößen ausgewählt werden.
+Hierzu muss ein Nutzer lediglich das gewünschte Segment sowie die darzustellenden Messgrößen auswählen.
 
-\begin{figure}[htbp]
-    \centering
-        \includegraphics{Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Konfiguration.png}
-    \caption{Zeitreihendaten in der AAS Web UI}
-    \label{fig:KonfigurationZeitreihen}
-\end{figure}
+% Wie in Abbildung \ref{fig:KonfigurationZeitreihen} zu erkennen, muss hierzu das gewünschte Segment sowie die darzustellenden Messgrößen ausgewählt werden.
+% \begin{figure}[htbp]
+%     \centering
+%         \includegraphics{Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Konfiguration.png}
+%     \caption{Zeitreihendaten in der AAS Web UI}
+%     \label{fig:KonfigurationZeitreihen}
+% \end{figure}
 
 Zur Visualisierung stehen verschiedene Diagrammtypen zur Verfügung. 
 Die Datenbankabfrage selbst ist im LinkedSegment hinterlegt und definiert den Zeitraum, über den die Daten abgefragt werden.
