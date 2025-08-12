@@ -474,15 +474,21 @@ Die relevanten Temperaturdaten lassen sich anschließend durch gezielte Abfragen
 In dieser Umsetzung wird dabei ein Zeitraum von 7 Tagen betrachtet.
 
 Um dem Autoencoder das Erkennen typischer Muster innerhalb dieser Daten zu ermöglichen, müssen diese zunächst in Segmente unterteilt werden.
-Da relevante Prozessänderungen typischerweise innerhalb kurzer Zeitabschnitte auftreten, wird in dieser Arbeit eine Fenstergröße von 30 Werten gewählt. 
-Bei einer Abtastrate von 1 Hz entspricht dies einem Zeitraum von 30 Sekunden.
+Die Wahl der Fenstergröße spielt dabei eine entscheidende Rolle, da sie die Fähigkeit des Modells beeinflusst, relevante Prozessänderungen zu erfassen.
+Da diese Änderungen in der Regel innerhalb kurzer Zeitabschnitte auftreten, ist es wichtig, eine geeignete Fensterlänge zu wählen, die ausreichend Kontext liefert, ohne zu große Zeiträume zusammenzufassen.
 
-Die resultierenden Sequenzen können anschließend in einem Tensor zusammengeführt werden.
-Dabei handelt es sich um ein mehrdimensionales Array, in diesem Fall eine zweidimensionale Matrix, bei der jede Zeile ein Zeitfenster mit 30 Temperaturwerten abbildet.
 
-Der Autoencoder selbst wird mit dem Deep-Learning-Framework PyTorch \cite{PyTorch} implementiert. 
-Der Encoder wird so aufgebaut, dass er die Eingabesequenz mit 30 Temperaturwerten zunächst auf 5 Neuronen reduziert und anschließend auf 2 Neuronen verdichtet. 
-Der Decoder ist spiegelbildlich aufgebaut, erweitert die Darstellung aus dem latenten Raum zunächst wieder auf 5 Neuronen und generiert schließlich Ausgabewerte, die der ursprünglichen Eingangsgröße entsprechen.
+% Da relevante Prozessänderungen typischerweise innerhalb kurzer Zeitabschnitte auftreten ein kleiner Abschnitt
+% , wird in dieser Arbeit eine Fenstergröße von 30 Werten gewählt. 
+% Bei einer Abtastrate von 1 Hz entspricht dies einem Zeitraum von 30 Sekunden.
+
+Die resultierenden Sequenzen können anschließend in einem Tensor zusammengeführt werden. 
+Dabei handelt es sich um ein mehrdimensionales Array, in diesem Fall eine zweidimensionale Matrix, bei der jede Zeile ein Zeitfenster mit einer definierten Anzahl an Temperaturwerten abbildet. 
+Diese Struktur ist speziell für \acs{ki}-Modelle ausgelegt und erlaubt es dem Autoencoder, typische Muster in den Zeitreihendaten zu erlernen.
+
+Der Autoencoder selbst wird mit dem Deep-Learning-Framework PyTorch \cite{PyTorch} implementiert.
+Der Encoder komprimiert die Eingabesequenz schrittweise von 64 auf 16 und schließlich auf 4 Neuronen, welche den latenten Raum repräsentieren.
+Der Decoder ist spiegelbildlich aufgebaut und rekonstruiert aus dem latenten Raum die ursprüngliche Eingabesequenz, indem er die Dimensionen in umgekehrter Reihenfolge auf 16, 64 und schließlich auf die ursprüngliche Sequenzlänge erweitert.
 
 Als Eingabe für das Training dienen die zuvor definierten Tensoren.
 Das Ziel ist es, die Eingabedaten möglichst exakt zu rekonstruieren.
@@ -490,18 +496,9 @@ Nach jedem Trainingsdurchgang wird hierzu der mittlere quadratische Fehler zwisc
 Dieser Fehlerwert wird verwendet, um die Gewichte des Netzes, typischerweise mittels Backpropagation, anzupassen.
 Durch die iterative Wiederholung dieses Prozesses über mehrere Trainingszyklen (Epochen) wird der Rekonstruktionsfehler sukzessive verringert und somit die Fähigkeit des Modells, die Eingabedaten genau nachzubilden, kontinuierlich verbessert.
 
-Für die Anomalieerkennung wird das trainierte Modell im Evaluierungsmodus eingesetzt, sodass während der Auswertung keine weiteren Anpassungen der Modellparameter erfolgen.
-Wie beim Training werden dabei erneut simulierte Temperaturverläufe verwendet, die jedoch gezielt Ausreißer und Unregelmäßigkeiten enthalten.
-Diese Testdaten sind in ihrer Struktur mit den Trainingsdaten vergleichbar, unterscheiden sich jedoch durch die gezielt eingefügten Anomalien.
-
-Der Autoencoder durchläuft dabei schrittweise jede Sequenz. 
-Zur Erkennung von unnormalem Verhalten wird jeweils der Rekonstruktionsfehler berechnet, welcher die durchschnittliche Abweichung zwischen den Eingabewerten und den rekonstruierten Ausgabewerten misst.
-Zudem muss ein Schwellenwert definiert werden.
-Überschreitet der Rekonstruktionsfehler diesen, wird die gesamte Sequenz, also das entsprechende Zeitfenster mit 30 Werten, als Anomalie eingestuft.
-
-Die Wahl des Schwellenwertes ist dabei entscheidend.
-Ein zu niedriger Wert führt zu vielen Fehlklassifikationen, während ein zu hoher Wert dazu führen kann, dass echte Anomalien übersehen werden.
-Als geeignete Referenzwerte bieten sich beispielsweise das 95. Perzentil der Fehlerverteilung aus den Trainingsdaten oder, wie in dieser Umsetzung,  der Mittelwert zuzüglich des Zweifachen der Standardabweichung an.
+Das trainierte Modell kann anschließend zur Erkennung von Anomalien in neuen Daten genutzt werden.
+Dabei dient der Rekonstruktionsfehler nicht mehr zur Optimierung, sondern als Maß für Abweichungen von der Normalität.
+Überschreitet der Fehler eines Zeitfensters einen definierten Schwellenwert, so liegt eine Anomalie vor.
 
 \subsubsection{Verwaltung der Metadaten in der \acs{aas}}
 \acs{ki}-Modelle lassen sich als digitale Assets betrachten, da sie, analog zu physischen Komponenten, über einen eigenen Lebenszyklus verfügen.  

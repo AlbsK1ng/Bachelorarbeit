@@ -39,32 +39,29 @@
 \contentsline {subsection}{\numberline {3.5}Anwendungsfall Digitaler Produktpass}{40}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Umsetzung mit dem Teilmodell Carbon Footprint}{40}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\numberline {3.5.2}Zugriffsrechte und Datensicherheit}{42}{subsubsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.6}Anwendungsfall automatisierte Generierung von AAS}{44}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.6}Anwendungsfall automatisierte Generierung von AAS}{43}{subsection.3.6}%
 \contentsline {subsubsection}{\numberline {3.6.1}Arbeiten mit Submodel Templates}{44}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Automatisiertes Befüllen mit strukturierten Daten}{45}{subsubsection.3.6.2}%
-\contentsline {section}{\numberline {4}Ergebnisse}{47}{section.4}%
-\contentsline {subsection}{\numberline {4.1}AAS-Demonstrator für die robocell}{47}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Systemarchitektur}{47}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Aufbau und Metadaten}{48}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Stammdaten}{48}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}Zustands- und Prozessdaten}{53}{subsubsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.2}Evaluation des KI-Modells}{57}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Bewertung des prototypischen KI-Einsatzes}{57}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Ausblick: Predictive Maintenance}{57}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Weiterführende Einsatzmöglichkeiten}{57}{subsubsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.3}Anwendungsfall Digitaler Produktpass}{58}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Abbildung des PCF}{58}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Rollenbasierter Zugriff auf Submodelle}{60}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4}Anwendungsfall automatisierte Generierung der AAS}{62}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Evaluierung eingesetzter Tools und Software}{62}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}AASX Package Explorer}{62}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Eclipse AASX Server}{63}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}BaSyx}{63}{subsubsection.4.5.3}%
-\contentsline {subsubsection}{\numberline {4.5.4}Mnestix Browser}{63}{subsubsection.4.5.4}%
-\contentsline {section}{\numberline {5}Zusammenfassung und Ausblick}{63}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{63}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{63}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{63}{subsection.5.3}%
-\contentsline {section}{\numberline {A}Anhang A: UML-Diagramme der AAS}{71}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}A.1 Submodell Typenschild}{71}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}A.2 Submodell}{71}{subsection.A.2}%
+\contentsline {subsubsection}{\numberline {3.6.2}Automatisiertes Befüllen mit strukturierten Daten}{44}{subsubsection.3.6.2}%
+\contentsline {section}{\numberline {4}Ergebnisse}{46}{section.4}%
+\contentsline {subsection}{\numberline {4.1}AAS-Demonstrator für die robocell}{46}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Systemarchitektur}{46}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Statische Submodelle}{48}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Dynamische Submodelle}{52}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Herausforderungen bei der Implementierung}{56}{subsubsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.2}KI-Modell zur Anomalieerkennung}{58}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Anwendungsfall Digitaler Produktpass}{60}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Abbildung des PCF}{60}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Rollenbasierter Zugriff auf Submodelle}{62}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Anwendungsfall automatisierte Generierung der AAS}{64}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Evaluierung eingesetzter Tools und Software}{64}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Package Explorer}{64}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Eclipse AASX Server}{65}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}BaSyx}{65}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Mnestix Browser}{65}{subsubsection.4.5.4}%
+\contentsline {section}{\numberline {5}Zusammenfassung und Ausblick}{65}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{65}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{65}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{66}{subsection.5.3}%
+\contentsline {section}{\numberline {A}Anhang A: UML-Diagramme der AAS}{74}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}A.1 Submodell Typenschild}{74}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}A.2 Submodell}{74}{subsection.A.2}%
