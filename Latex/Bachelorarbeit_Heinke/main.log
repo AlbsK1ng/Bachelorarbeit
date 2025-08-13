@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  13 AUG 2025 21:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  13 AUG 2025 23:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2205,26 +2205,26 @@ Package acronym Info: Label `acro:smc' overridden on input line 315.
 <Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png, id=1751, 638.385pt x 381.67593pt>
 File: Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png Graphic file (type png)
 <use Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png  used on input line 347.
+Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png  used on input line 354.
 (pdftex.def)             Requested size: 426.79135pt x 255.16827pt.
-Package acronym Info: Label `acro:mqtt' overridden on input line 352.
-Package acronym Info: Label `acro:rest' overridden on input line 352.
+Package acronym Info: Label `acro:mqtt' overridden on input line 359.
+Package acronym Info: Label `acro:rest' overridden on input line 359.
 
 
 [54 <./Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png (PNG copy)>]
 <Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png, id=1767, 596.98032pt x 572.89032pt>
 File: Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png Graphic file (type png)
 <use Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png  used on input line 372.
+Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png  used on input line 379.
 (pdftex.def)             Requested size: 426.79135pt x 409.56976pt.
 
 
 [55 <./Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png (PNG copy)>]
-Package acronym Info: Label `acro:smc' overridden on input line 391.
+Package acronym Info: Label `acro:smc' overridden on input line 398.
 <Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png, id=1785, 637.63219pt x 382.42876pt>
 File: Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png Graphic file (type png)
 <use Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png  used on input line 400.
+Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png  used on input line 407.
 (pdftex.def)             Requested size: 426.79135pt x 255.975pt.
 
 
@@ -2236,7 +2236,7 @@ Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Linie
 <Bilder/Ergebnisse/KI/Fall1.pdf, id=1813, 426.25058pt x 172.71465pt>
 File: Bilder/Ergebnisse/KI/Fall1.pdf Graphic file (type pdf)
 <use Bilder/Ergebnisse/KI/Fall1.pdf>
-Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall1.pdf  used on input line 464.
+Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall1.pdf  used on input line 471.
 (pdftex.def)             Requested size: 426.79135pt x 172.9461pt.
 
 
@@ -2244,60 +2244,60 @@ Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall1.pdf  used on input line 464.
 <Bilder/Ergebnisse/KI/Fall2.pdf, id=1856, 426.25058pt x 172.87837pt>
 File: Bilder/Ergebnisse/KI/Fall2.pdf Graphic file (type pdf)
 <use Bilder/Ergebnisse/KI/Fall2.pdf>
-Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall2.pdf  used on input line 477.
+Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall2.pdf  used on input line 484.
 (pdftex.def)             Requested size: 426.79135pt x 173.11006pt.
 
 
 [60 <./Bilder/Ergebnisse/KI/Fall2.pdf>]
 
-LaTeX Warning: Reference `xy' on page 61 undefined on input line 496.
+LaTeX Warning: Reference `xy' on page 61 undefined on input line 503.
 
-Package acronym Info: Label `acro:smc' overridden on input line 500.
-Package acronym Info: Label `acro:smc' overridden on input line 503.
+Package acronym Info: Label `acro:smc' overridden on input line 507.
+Package acronym Info: Label `acro:smc' overridden on input line 510.
 <Bilder/Ergebnisse/DPP/SubmodellCF.png, id=1903, 453.94594pt x 196.48407pt>
 File: Bilder/Ergebnisse/DPP/SubmodellCF.png Graphic file (type png)
 <use Bilder/Ergebnisse/DPP/SubmodellCF.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DPP/SubmodellCF.png  used on input line 507.
+Package pdftex.def Info: Bilder/Ergebnisse/DPP/SubmodellCF.png  used on input line 514.
 (pdftex.def)             Requested size: 426.79135pt x 184.73102pt.
-Package acronym Info: Label `acro:rest' overridden on input line 517.
+Package acronym Info: Label `acro:rest' overridden on input line 524.
 
 
 [61 <./Bilder/Ergebnisse/DPP/SubmodellCF.png>]
-Package acronym Info: Label `acro:rest' overridden on input line 523.
-Package acronym Info: Label `acro:api' overridden on input line 523.
-Package acronym Info: Label `acro:rest' overridden on input line 526.
+Package acronym Info: Label `acro:rest' overridden on input line 530.
+Package acronym Info: Label `acro:api' overridden on input line 530.
+Package acronym Info: Label `acro:rest' overridden on input line 533.
 <Bilder/Ergebnisse/DPP/PluginTest.png, id=1924, 575.14874pt x 447.92343pt>
 File: Bilder/Ergebnisse/DPP/PluginTest.png Graphic file (type png)
 <use Bilder/Ergebnisse/DPP/PluginTest.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DPP/PluginTest.png  used on input line 535.
+Package pdftex.def Info: Bilder/Ergebnisse/DPP/PluginTest.png  used on input line 542.
 (pdftex.def)             Requested size: 426.79135pt x 332.3945pt.
 
 
 [62 <./Bilder/Ergebnisse/DPP/PluginTest.png (PNG copy)>]
-Package acronym Info: Label `acro:dpp' overridden on input line 547.
-Package acronym Info: Label `acro:dpp' overridden on input line 548.
-Package acronym Info: Label `acro:dpp' overridden on input line 551.
-Package acronym Info: Label `acro:rbac' overridden on input line 552.
+Package acronym Info: Label `acro:dpp' overridden on input line 554.
+Package acronym Info: Label `acro:dpp' overridden on input line 555.
+Package acronym Info: Label `acro:dpp' overridden on input line 558.
+Package acronym Info: Label `acro:rbac' overridden on input line 559.
 <Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png, id=1939, 520.19344pt x 369.63094pt>
 File: Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png Graphic file (type png)
 <use Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png  used on input line 557.
+Package pdftex.def Info: Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png  used on input line 564.
 (pdftex.def)             Requested size: 298.75264pt x 212.28232pt.
-Package acronym Info: Label `acro:rbac' overridden on input line 564.
+Package acronym Info: Label `acro:rbac' overridden on input line 571.
 
 
 [63 <./Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png (PNG copy)>]
-Package acronym Info: Label `acro:dpp' overridden on input line 567.
-Package acronym Info: Label `acro:dpp' overridden on input line 570.
-Package acronym Info: Label `acro:api' overridden on input line 572.
-Package acronym Info: Label `acro:dpp' overridden on input line 573.
+Package acronym Info: Label `acro:dpp' overridden on input line 574.
+Package acronym Info: Label `acro:dpp' overridden on input line 577.
+Package acronym Info: Label `acro:api' overridden on input line 579.
+Package acronym Info: Label `acro:dpp' overridden on input line 580.
 <Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png, id=1955, 429.85594pt x 216.05719pt>
 File: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png Graphic file (type png)
 <use Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png  used on input line 583.
+Package pdftex.def Info: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png  used on input line 590.
 (pdftex.def)             Requested size: 429.85489pt x 216.05664pt.
 
-Overfull \hbox (3.06354pt too wide) in paragraph at lines 583--584
+Overfull \hbox (3.06354pt too wide) in paragraph at lines 590--591
  [][] 
  []
 
