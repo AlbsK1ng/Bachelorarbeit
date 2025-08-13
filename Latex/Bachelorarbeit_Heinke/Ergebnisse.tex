@@ -200,14 +200,13 @@ Eine detaillierte Evaluierung  folgt in Kapitel~\ref{ref}.
 \newpage
 \subsubsection{Statische Submodelle}
 Die statische Modellierung des Demonstrators erfolgte vollständig im Package Explorer.
-Hierbei wurden alle relevanten Submodelle angelegt, mit Inhalten befüllt und mit einer eindeutigen ID versehen.
-Als Hauptdatenquellen dienten die technischen Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem \acs{plm}-System Agile.
-Dynamische Submodelle werden in einem separaten Kapitel behandelt.
+Dazu wurden alle relevanten Submodelle angelegt, mit Inhalten befüllt und mit einer eindeutigen ID versehen.
+Als Hauptdatenquellen dienten die technischen Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem PLM-System Agile.
 
-Abbildung~\ref{fig:PackageExplorerRobocell} zeigt die Gesamtübersicht des Demonstrators des Füll -und Verschließmoduls im Package Explorer.
-Statische Submodell sind darin mit einer Nummer gekennzeichent, die der im Folgenden verwendeten Gliederung entspricht.
-Zur besseren Veranschaulichung werden die Submodell Technische Daten und \acs{bom} detaillierter beschrieben.
-Die grundlegende Struktur der übrigen Submodelle ist im Anhang~\ref{sec:anhang_submodelle} mit Screenshots dokumentiert.
+Abbildung~\ref{fig:PackageExplorerRobocell} zeigt die Gesamtübersicht des Abfüll- und Verschließmoduls im Package Explorer.
+Die statischen Submodelle sind darin mit einer Nummer gekennzeichnet, die der im Folgenden verwendeten Gliederung entspricht.
+Zur besseren Veranschaulichung seiner Funktionsweise wird das Submodell BOM ausführlicher beschrieben.
+Die grundlegende Struktur der übrigen Submodelle ist im Anhang~\ref{sec:AnhangSubmodelle} anhand von Screenshots dokumentiert.
 
 \begin{figure}[htbp]
     \centering
@@ -225,13 +224,10 @@ Dadurch können die Daten nicht nur lokal angezeigt, sondern auch automatisiert 
 
 \textbf{Inhalte:}  
 Die Struktur basiert auf dem \acs{smt} Digital Nameplate for Industrial Equipment~\cite{SpezifikationTypenschild}.  
-Erfasst werden grundlegende Identifikationsdaten (z.\,B. Hersteller, Seriennummer, Produkttyp) 
-sowie erweiterte Informationen wie Softwareversionen, Zertifikate, Logos, Kontaktinformationen 
-und weitere produktspezifische Details.
+Erfasst werden grundlegende Identifikationsdaten (z.\,B. Hersteller, Seriennummer, Produkttyp) sowie erweiterte Informationen wie Softwareversionen, Zertifikate, Logos, Kontaktinformationen und weitere produktspezifische Details.
 
 \textbf{Besonderheiten:}  
-Das digitale Typenschild ermöglicht eine erweiterte Darstellung im Vergleich zu klassischen Maschinentypenschildern.  
-In der AAS Web UI kann das Submodell als eigenes Plugin visualisiert werden. 
+Das digitale Typenschild ermöglicht eine erweiterte Darstellung im Vergleich zu klassischen Maschinentypenschildern. In der AAS Web UI kann das Submodell als eigenes Plugin visualisiert werden. 
 Die Ansicht ist dabei in zwei Bereiche gegliedert: Herstellerinformationen und Produktinformationen.
 
 \subsubsection*{2) Technische Daten}
@@ -240,13 +236,15 @@ Die Ansicht ist dabei in zwei Bereiche gegliedert: Herstellerinformationen und P
 Das Submodell Technische Daten dient als digitales technisches Datenblatt der Maschine.
 Es ermöglicht eine standardisierte und strukturierte Abbildung aller relevanten Maschineneigenschaften und ersetzt damit die klassischen technischen Angaben aus der Betriebsanleitung.
 
-\textbf{Inhalte:}  
-Basierend auf dem generischen SMT Technical Data \cite{SpezifikaitonTechnischeDaten} wurden spezifische Eigenschaften der Maschine integriert und in eigenen \acsp{smc} organisiert. 
-Diese umfassen allgemeine Informationen, Produktionsmedien, Umgebungsbedingungen, elektrische Daten sowie den Verarbeitungsbereich.
+\textbf{Inhalte:} 
+Die Struktur orientiert sich am generischen SMT Technical Data~\cite{SpezifikaitonTechnischeDaten} und gliedert sich in zwei Hauptbereiche: Allgemeine Informationen und Technische Eigenschaften.
+Letztere sind in mehreren \acsp{smc} organisiert, darunter Produktionsmedien, Umgebungsbedingungen, elektrische Daten sowie der Verarbeitungsbereich.
+Jede \acs{smc} enthält verschiedene Elemente, überwiegend Properties oder Ranges, die einzelne Parameter, beispielsweise elektrische Kenndaten der Maschine, beschreiben.
+Ein Überblick über die Struktur des Submodells ist im Anhang~\ref{subsec:TechnischeDaten} in Abbildung~\ref{fig:SMTechnischeDaten} dargestellt.
 
 \textbf{Besonderheiten:}  
-Das Submodell kann leicht erweitert werden und um weitere technische Paramter ergänzt werden.
-Dadurch stehen alle Daten interoperabel zur Verfügung und können beispielsweise von anderen Systemen genutz werden, beispielsweise im Zusammenhang mit Simulations Tools.
+Alle zentralen technischen Informationen der Maschine sind in diesem Submodell strukturiert an einem Ort gebündelt.
+Dadurch entfällt die Notwendigkeit, diese Daten in verschiedenen Systemen oder Dokumenten separat zu pflegen.
 
 \subsubsection*{3) BOM}
 \vspace{-0.5em}
@@ -256,17 +254,15 @@ Im Rahmen des Demonstrators wurde eine repräsentative Auswahl dieser Komponente
 Das BOM-Submodell dient dazu, diese Struktur sichtbar zu machen und die Beziehungen zwischen den Komponenten hierarchisch abzubilden, vergleichbar mit einer digitalen Stückliste.
 
 \textbf{Inhalte:}  
-Zur Umsetzung wurde das SMT Hierarchical Structures enabling Bills of Material~\cite{SpezifikationHierachischeStrukturen} verwendet.
-Das BOM-Submodell enthält Entity-Elemente, die jeweils eine untergeordnete Komponente repräsentieren.
-Diese Entities sind als Self-Managed Entities angelegt, was bedeutet, dass sie auf eine eigene AAS (eigenlich ja auf eine globaqlAssetId) verweisen.
-Die Verknüpfung erfolgt über die globalAssetId, die eindeutig auf die zugehörige AAS zeigt.
-im Demonstrator wurden hierfür Beispiel-IDs eingesetzt
-Die Beziehungen zwischen den Komponenten werden über Relationship-Elemente beschrieben, die durch eine semanticId eindeutig spezifiziert sind.
+Die Umsetzung orientiert sich an der SMT-Spezifikation Hierarchical Structures enabling Bills of Material~\cite{SpezifikationHierachischeStrukturen}.  
+Das BoM-Submodell enthält Entity-Elemente, die jeweils eine untergeordnete Komponente repräsentieren.  
+Self-Managed Entities verweisen dabei über ihre globalAssetId eindeutig auf eine eigene AAS.  
+Die Beziehungen zwischen den Komponenten werden über Relationship-Elemente mit einer eindeutigen semanticId gemäß der SMT-Spezifikation beschrieben.  
 
-Die Funktionsweise lässt sich anschaulich am Beispiel der Grundmaschine erläutern.
-Abbildung~\ref{fig:BOMSubmodelGrundmashcine} zeigt das BOM-Submodell dieser im Package Explorer.
-Darin sind mehrere untergeordnete Komponenten aufgeführt, eine davon ist der Bedientableau.
-Dieser ist als Self-Managed Entity modelliert und über seine globalAssetId referenziert, die wiederrum auf die zugehörige AAS verweist.
+Zur Veranschaulichung wurde das Bedientableau als Beispiel gewählt, da es weniger komplex als die Maschinenebene ist, aber dennoch alle relevanten Strukturelemente enthält.  
+Abbildung~\ref{fig:BOMSubmodelGrundmashcine} zeigt das BoM-Submodell der Grundmaschine, in dem das Bedientableau als Self-Managed Entity aufgeführt ist.  
+Über die globalAssetId ist es mit seiner eigenen AAS verknüpft (Abbildung~\ref{fig:AASBedientableau}), die wiederum ein eigenes BoM-Submodell mit weiteren Unterkomponenten enthält.  
+Dieses Beispiel verdeutlicht die rekursive Struktur, mit der sich die gesamte Maschine in beliebig viele Hierarchieebenen gliedern lässt.
 
 \begin{figure}[htbp]
     \centering
@@ -275,43 +271,39 @@ Dieser ist als Self-Managed Entity modelliert und über seine globalAssetId refe
     \label{fig:BOMSubmodelGrundmashcine}
 \end{figure}
 
-Die AAS des Bedientableau ist in Abbildung \ref{fig:AASBedientableau} dargestellt.
-Auch dieser verfügt über ein eigenes BOM-Submodell bei dem analog zur Grundmaschine wieder weitere Komponenten aufgeführt sind.
-
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/Bedientableau+.PNG}
-    \caption{Package Explorer: AAS des Bedientableau}
+    \caption{Package Explorer: AAS des Bedientableaus}
     \label{fig:AASBedientableau}
 \end{figure}
 
 \textbf{Besonderheiten:}  
-Mit dem hier gezeigten Prinzip lässt sich die gesamte Maschine rekursiv und strukturiert Ebene für Eben modellieren.
-Der entschiedende Vorteil ist die Modluarität. 
-So kann jede Komponente als eigenes Asset mit AAS betrachtet werden und ist losgelöst von der Haupt-Komponente.
-Wo sollte das hin: Discovery Service genau hierfür Ist die Id einer AAS einer Komponente nicht bekannst os kann diese über den Discovery Service in baSyx herausgefunden werden.
+Das BOM-Submodell ermöglicht eine modulare Modellierung, bei der jede Komponente als eigenständiges Asset mit eigener AAS geführt wird.  
+Dadurch bleibt die Struktur flexibel erweiterbar und unabhängig von der Hauptkomponente.  
+Falls die globalAssetId einer Komponente nicht bekannt ist, kann diese über den Discovery Service in Eclipse BaSyx ermittelt werden, was eine dynamische Suche und Verknüpfung von AAS im Gesamtsystem ermöglicht.
 
 \subsubsection*{4), 5) Dokumentation und 3D-Modelle}
 \vspace{-0.5em}
-
 \textbf{Funktion:}  
-Die Submodelle Dokumentation und 3D-Modelle dienen der digitalen Bereitstellung von Maschineninformationen in Dateiform.
-Während das Submodell Dokumentation allgemeine technische Unterlagen wie Betriebsanleitungen oder Zeichnungen verwaltet, enthält das Submodell 3D-Modelle digitale Geometriedaten, die den Aufbau der Maschine und ihrer Komponenten beschreiben.
+Die Submodelle Dokumentation und 3D-Modelle dienen der strukturierten Bereitstellung und semantischen Klassifizierung von digitalen Dateien.  
+Während das Submodell Dokumentation allgemeine technische Unterlagen wie Betriebsanleitungen oder Zeichnungen verwaltet, umfasst das Submodell 3D-Modelle digitale Geometriedaten, die den Aufbau der Maschine und ihrer Komponenten beschreiben. 
 
 \textbf{Inhalte:}  
-Die Struktur des Submodells Dokumentation basiert auf dem SMT Handover Documentation~\cite{SpezifikationDokumentation}.
-Es umfasst verschiedene technische Unterlagen wie eine Funktionsspezifikation, Netzwerkübersicht oder Projektzeichnung des Abfüll- und Verschließmoduls.
-Diese sind als File-Elemente direkt in die AAS eingebettet und werden jeweils in einer eigenen \acs{smc} organisiert.
-Jede \acs{smc} enthält zentrale Metainformationen wie Identifikation, Klassifikation und Versionsinformationen, wodurch die darin enthaltenen Dokumente eindeutig beschrieben und rückverfolgbar sind.
+Die Struktur des Submodells Dokumentation basiert auf dem SMT Handover Documentation~\cite{SpezifikationDokumentation}.  
+Es enthält technische Unterlagen wie beispielsweise die Netzwerkübersicht oder die Projektzeichnung des Abfüll- und Verschließmoduls.  
+Diese sind als File-Elemente direkt in die AAS eingebettet und jeweils in einer eigenen \acs{smc} organisiert.  
+Jede smc enthält zentrale Metainformationen wie Identifikation, Klassifikation und Versionsinformationen, wodurch die Dokumente eindeutig beschrieben und rückverfolgbar sind.  
+Die vollständige Struktur einer solchen \acs{smc} ist exemplarisch im Anhang in Abbildung~\ref{fig:SMDokumentation} am Beispiel Funktionsspezifikationen dargestellt.
 
-Das Submodell 3D-Modelle orientiert sich am SMT Provision of 3D-Models~\cite{Spezifikation3DModelle}, wurde im Demonstrator jedoch in vereinfachter Form umgesetzt.
-Die Geometriedaten umfassen Konstruktionsdateien in Form von CAD-Modellen und sind analog zur Dokumentation eingebettet und beschrieben.
-Eine Erweiterung um zusätzliche Metadaten wie Darstellungsoptionen oder Geometrieinformationen wäre möglich, wurde im Demonstrator jedoch nicht umgesetzt.
+Das Submodell 3D-Modelle orientiert sich am SMT Provision of 3D-Models~\cite{Spezifikation3DModelle}, wurde im Demonstrator jedoch in vereinfachter Form umgesetzt.  
+Die Geometriedaten umfassen Konstruktionsdateien in Form von CAD-Modellen und sind analog zum Submodell Dokumentation eingebettet und beschrieben.  
+Eine Erweiterung um zusätzliche Metadaten, wie Darstellungsoptionen oder Geometrieinformationen, wäre möglich, wurde im Demonstrator jedoch nicht umgesetzt.  
 
 \textbf{Besonderheiten:}  
-Beide Submodelle sind universell einsetzbar und können flexibel erweitert werden, beispielsweise um zusätzliche Formate oder Metainformationen.
-Durch die standardisierte Struktur und Beschreibung gemäß SMT-Spezifikation können die enthaltenen Inhalte sowohl von Menschen als auch von Maschinen interpretiert und weiterverwendet werden.
-In der AAS Web UI sowie im Package Explorer stehen außerdem spezielle Plugins zur Verfügung, über die die Inhalte direkt angezeigt und die hinterlegten Dateien bzw. Modelle heruntergeladen werden können.
+Beide Submodelle sind universell einsetzbar und können flexibel um zusätzliche Dokumente oder Modelle erweitert werden.  
+Die eindeutige Beschreibung der Inhalte gemäß SMT-Spezifikation stellt sicher, dass sie sowohl von Menschen als auch von technischen Systemen interpretiert und über den gesamten Lebenszyklus hinweg rückverfolgt werden können.  
+In der AAS Web UI sowie im Package Explorer stehen zudem spezielle Plugins zur Verfügung, über die die Inhalte direkt angezeigt oder die hinterlegten Dateien heruntergeladen werden können, wodurch ein schneller Zugriff und eine einfache Weiterverwendung ermöglicht wird.
 
 \subsubsection*{6) Wartung}
 \vspace{-0.5em}
@@ -326,12 +318,6 @@ Diese Struktur erlaubt eine gezielte und übersichtliche Dokumentation aller War
 \textbf{Besonderheiten:}  
 Das Submodell ist so konzipiert, dass es zukünftig dynamisch erweitert werden kann, beispielsweise durch die Anbindung eines Betriebsstundenzählers, der Wartungsbedarf automatisch erkennen kann.  
 Ebenso ist die Integration von Predictive-Maintenance-Ansätzen denkbar, um Wartungsbedarf vorausschauend anhand von Sensordaten zu ermitteln.
-
-\subsubsection*{Zusammenfassung}
-
-Die beschriebenen statischen Submodelle bilden die Grundlage für die digitale Abbildung der Maschine im Demonstrator. 
-Sie stellen alle wesentlichen Informationen strukturiert und standardisiert bereit, wodurch Interoperabilität, Wiederverwendbarkeit und einfache Integration in unterschiedliche Systeme gewährleistet werden. 
-Die Umsetzung im Package Explorer sowie die Visualisierung in der AAS Web UI ermöglichen eine klare Darstellung und einfache Bedienung der Inhalte.
 
 \newpage
 \subsubsection{Dynamische Submodelle}
@@ -664,5 +650,3 @@ Projektstatus „Incubating“: Tool befindet sich noch in Entwicklung, was zu �
 
 \subsubsection{Eclipse AASX Server}
 \subsubsection{BaSyx}
-\subsubsection{Mnestix Browser}
-Optional davor halt nicht drauf eingeganen\dots
