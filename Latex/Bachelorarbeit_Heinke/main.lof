@@ -11,14 +11,19 @@
 \contentsline {figure}{\numberline {10}{\ignorespaces OPC UA Datenknoten}}{32}{figure.caption.98}%
 \contentsline {figure}{\numberline {11}{\ignorespaces SMT Time Series Data}}{35}{figure.caption.103}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Aufbau eines Autoencoders}}{36}{figure.caption.104}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{47}{figure.caption.138}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Statische Submodelle des AAS-Demonstrators}}{48}{figure.caption.139}%
-\contentsline {figure}{\numberline {15}{\ignorespaces AAS Web UI: Prozessdaten}}{53}{figure.caption.143}%
-\contentsline {figure}{\numberline {16}{\ignorespaces AAS Web UI: PackML-Zustandsautomat}}{54}{figure.caption.146}%
-\contentsline {figure}{\numberline {17}{\ignorespaces AAS Web UI: Zeitreihendaten (Liniendiagramm)}}{56}{figure.caption.148}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Anomalieerkennung Fall 1: Überhöhte Daten}}{58}{figure.caption.149}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Anomalieerkennung Fall 2: Linearer Anstieg}}{59}{figure.caption.150}%
-\contentsline {figure}{\numberline {20}{\ignorespaces CF-Submodell der robocell}}{60}{figure.caption.153}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Visualisierung der aggregierten PCF-Werte}}{61}{figure.caption.158}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{62}{figure.caption.163}%
-\contentsline {figure}{\numberline {23}{\ignorespaces DELETE-Anfrage des Service-Techniker-Clients in Postman}}{64}{figure.caption.169}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Systemarchitektur AAS-Demonstrator}}{47}{figure.caption.137}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Package Explorer: Gesamtübersicht AAS-Demonstrator}}{48}{figure.caption.138}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Package Explorer: BOM-Submodell der Grundmaschine}}{50}{figure.caption.140}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Package Explorer: AAS des Bedientableau}}{50}{figure.caption.141}%
+\contentsline {figure}{\numberline {17}{\ignorespaces AAS Web UI: Prozessdaten}}{54}{figure.caption.145}%
+\contentsline {figure}{\numberline {18}{\ignorespaces AAS Web UI: PackML-Zustandsautomat}}{55}{figure.caption.148}%
+\contentsline {figure}{\numberline {19}{\ignorespaces AAS Web UI: Zeitreihendaten (Liniendiagramm)}}{57}{figure.caption.150}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Anomalieerkennung Fall 1: Überhöhte Daten}}{59}{figure.caption.151}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Anomalieerkennung Fall 2: Linearer Anstieg}}{60}{figure.caption.152}%
+\contentsline {figure}{\numberline {22}{\ignorespaces CF-Submodell der robocell}}{61}{figure.caption.155}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Visualisierung der aggregierten PCF-Werte}}{62}{figure.caption.160}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{63}{figure.caption.165}%
+\contentsline {figure}{\numberline {25}{\ignorespaces DELETE-Anfrage des Service-Techniker-Clients in Postman}}{65}{figure.caption.171}%
+\contentsline {figure}{\numberline {26}{\ignorespaces DELETE-Anfrage des Service-Techniker-Clients in Postman}}{76}{figure.caption.172}%
+\contentsline {figure}{\numberline {27}{\ignorespaces DELETE-Anfrage des Service-Techniker-Clients in Postman}}{77}{figure.caption.173}%
+\contentsline {figure}{\numberline {28}{\ignorespaces DELETE-Anfrage des Service-Techniker-Clients in Postman}}{78}{figure.caption.174}%
