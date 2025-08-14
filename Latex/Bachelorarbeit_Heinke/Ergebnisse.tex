@@ -1,61 +1,68 @@
 \newpage
 \section{Ergebnisse}
-In diesem Kapitel werden die zentralen Ergebnisse der Arbeit präsentiert. 
-Im Fokus steht der entwickelte \acs{aas}-Demonstrator für die robocell, gefolgt von der Analyse des eingesetzten Modells zur Anomalieerkennung.
-Anschließend werden die beiden Anwendungsfälle \acs{dpp} und automatisierte Generierung der \acs{aas} vorgestellt. 
-Den Abschluss bildet eine Evaluierung der im Projekt eingesetzten Softwarelösungen und Tools.
+In diesem Kapitel werden die zentralen Ergebnisse der Arbeit präsentiert.
+Im Mittelpunkt steht der entwickelte \acs{aas}-Demonstrator, der die prototypische Umsetzung des digitalen Zwillings des Abfüll- und Verschließmoduls der robocell-Linie zeigt.
+Darauf folgt die Analyse des eingesetzten Autoencoder-Modells zur Anomalieerkennung sowie die Vorstellung der beiden Anwendungsfälle \acs{dpp} und automatisierte Generierung der \acs{aas}.
+Abschließend werden die im Projekt eingesetzten Softwarelösungen und Tools evaluiert.
 
 \subsection{AAS-Demonstrator für die robocell}
+Der \acs{aas}-Demonstrator basiert auf dem standardisierten Konzept der \acs{aas}.
+Als zentrale Laufzeitumgebung kommt die Eclipse BaSyx-Plattform zum Einsatz, während für die Datenanbindung standardisierte Protokolle wie OPC~UA verwendet werden.
+Neben der Haupt-AAS der robocell-Maschine sind auch exemplarische AAS untergeordneter Komponenten integriert, wodurch eine modulare und hierarchisch aufgebaute digitale Repräsentation entsteht.
 
-Der entwickelte \acs{aas}-Demonstrator bildet den digitalen Zwilling des Abfüll- und Verschließmoduls der robocell-Linie.  
-Die Umsetzung basiert auf dem Konzept der \acs{aas} sowie auf standardisierten Technologien wie Eclipse BaSyx zur Bereitstellung oder OPC UA als Protokoll zur Datenanbindung. 
-
-Im Rahmen dieses Kapitels wird zunächst die Systemarchitektur des Demonstrators vorgestellt, die als technische Grundlage dient.  
-Anschließend werden die in der \acs{aas} abgebildeten Aspekte der Maschine beschrieben, gegliedert in statische und dynamische Submodelle.  
+Im weiteren Verlauf wird zunächst die Architektur des Gesamtsystems vorgestellt.
+Sie dient der Verwaltung und Bereitstellung aller modellierten \acs{aas} und bildet die Grundlage für die dynamische Erweiterung um Echtzeit- und Zeitreihendaten.
+Anschließend werden die im Demonstrator abgebildeten Aspekte der Maschine beschrieben, gegliedert in statische und dynamische Submodelle.
 Den Abschluss bildet eine kurze Reflexion über zentrale Herausforderungen, die während der Implementierung aufgetreten sind.
 
-% Für eigens entwickelte Submodelle wurde, sofern verfügbar, auf bestehende semantische Beschreibungen aus ECLASS zurückgegriffen.
-% Andernfalls erfolgte die Semantikdefinition manuell anhand der im Package Explorer bereitgestellten Vorlagen.
-
-% Für die Bereitstellung als Typ-2-\acs{aas} wurde Eclipse BaSyx eingesetzt.
-% Dies ermöglichte nicht nur die Verwaltung und den standardisierten Zugriff in einer Laufzeitumgebung, sondern auch die Erweiterung um dynamische Daten und deren Integration in die \acs{aas}.
-
-% Im Folgenden wird zunächst die Systemarchitektur des Demonstrators aufgezeigt.  
-% Darauf aufbauend erfolgt ein Überblick über den strukturellen Aufbau, bevor die enthaltenen Submodelle im Detail vorgestellt werden.  
-% Diese gliedern sich in statische Submodelle zur Abbildung von Stammdaten sowie in dynamische Submodelle zur Erfassung von Zustands- und Prozessdaten.
-
 \subsubsection{Systemarchitektur}
-Der Demonstrator basiert nicht nur auf der \acs{aas} selbst, sondern umfasst ein ganzheitliches System aus mehreren Komponenten, die miteinander kommunizieren und so einen aktiven digitalen Zwilling ermöglichen.
-Die Architektur setzt vollständig auf containerisierte Komponenten, die innerhalb einer gemeinsamen Docker-Umgebung organisiert sind.
-Dadurch entsteht eine modulare und skalierbare Infrastruktur, die sich flexibel erweitern und anpassen lässt.
+Die eingesetzte Architektur besteht aus mehreren Komponenten, die gemeinsam einen aktiven digitalen Zwilling im Sinne einer Typ-2-\acs{aas} ermöglichen.
+Sie basiert vollständig auf containerisierten Diensten, die innerhalb einer gemeinsamen Docker-Umgebung über ein gemeinsames Netzwerk miteinander kommunizieren.
+Dadurch entsteht eine modulare, skalierbare Infrastruktur, die sich flexibel erweitern und an veränderte Anforderungen anpassen lässt.
 
-Die vollständige Systemarchitektur ist in Abbildung~\ref{fig:Systemarchitektur} dargestellt.
-Als zentrale Plattform zur Verwaltung und Bereitstellung der \acs{aas} kommt Eclipse BaSyx zum Einsatz.
-Die MongoDB ist an das BaSyx-Backend angebunden und persistiert sämtliche darin enthaltenen AAS-spezifischen Daten.
-Ursprünglich war der Einsatz des AASX Server Blazor vorgesehen, dieser wurde jedoch frühzeitig durch BaSyx ersetzt, da die Plattform eine deutlich flexiblere und umfassendere Umgebung für digitale Zwillinge bietet.
-
-Das physische Asset, also die Maschine, wird durch den Datengenerator und den Maschinensimulator repräsentiert.
-Diese sind über \acs{opcua} sowie die Databridge direkt an das BaSyx-Backend, genauer gesagt an die AAS Environment, angebunden.
-
-Zusätzlich werden die Daten mittels Telegraf in einer InfluxDB gespeichert.
-Der zugehörige Endpunkt sowie die Abfrageparameter sind in einem Submodell im Backend hinterlegt.
-Die AAS Web UI hat Zugriff auf diese Informationen und kann so die gespeicherten Daten abrufen und visualisieren.
+Als zentrale Plattform zur Bereitstellung und Verwaltung der \acs{aas} dient Eclipse BaSyx.
+Ursprünglich war der Einsatz des AASX Server Blazor vorgesehen, dieser wurde jedoch frühzeitig durch BaSyx ersetzt, da sie eine deutlich flexiblere und funktionsreichere Umgebung für die Umsetzung digitaler Zwillinge bietet.
+Abbildung~\ref{fig:BaSyxArchitektur} zeigt den Aufbau des zugrundeliegenden Systems.
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DynamischeDaten/Architektur.pdf}
-    \caption{Systemarchitektur AAS-Demonstrator}
-    \label{fig:Systemarchitektur}
+        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/Systemarchitektur/BaSyx.pdf}
+    \caption{???}
+    \label{fig:BaSyxArchitektur}
 \end{figure}
 
-% Eine weitere, in der Abbildung nicht dargestellte Komponente ist ein als Docker-Container ausgeführtes Node.js-Skript, das beim Start der BaSyx-Umgebung automatisch fehlende Einträge im Discovery Service anlegt.
-% Hierzu werden relevante Asset-Informationen aus einer JSON-Datei ausgelesen und in den Service eingetragen.
-% Diese Funktionalität ist insbesondere für die Abbildung hierarchischer Strukturen sowie für den Anwendungsfall der PCF-Berechnung im Rahmen des \acs{dpp} von Bedeutung.
+Der Discovery Service übernimmt die Auflösung einer Asset-ID (globalAssetId) in die zugehörige \acs{aas}-ID und ermöglicht so das gezielte Auffinden einer \acs{aas} im Gesamtsystem. 
+Die Registries dienen als Verzeichnisse aller registrierten \acs{aas} und Submodelle einschließlich ihrer Endpunkte innerhalb der \acs{aas} Environment, wobei die \acs{aas} Registry optional auch Referenzen auf die Submodel Registry (SM Registry) enthalten kann. 
 
-Ein wesentlicher Vorteil der gewählten Architektur besteht darin, dass sich die AAS Web UI jederzeit durch alternative Frontends oder zusätzliche Services ersetzen lässt.
-Dadurch können sowohl eigene Anwendungen als auch externe Softwarelösungen flexibel integriert werden.
-Im Rahmen dieser Arbeit wurde beispielsweise alternativ der Mnestix Browser eingesetzt, der eine vergleichbare Funktionalität wie die AAS Web UI bietet \cite{Quelle}.
-Eine detaillierte Evaluierung  folgt in Kapitel~\ref{ref}.
+Die \acs{aas} Environment selbst beherbergt die eigentlichen Inhalte und ist in drei Repositories gegliedert. 
+Das AAS Repository verwaltet die \acs{aas} einschließlich Asset-Metadaten und Referenzen auf Submodelle. 
+Das Submodel Repository (SM Repository) speichert die Submodelle mit ihren jeweiligen Inhalten und Referenzen auf Concept Descriptions. 
+Das \acs{cd} Repository enthält die zugehörigen semantischen Beschreibungen. 
+
+Alle Komponenten verfügen über eine standardisierte REST-API, die sowohl anderen Systemen als auch den Komponenten selbst einen einheitlichen Zugriff auf ihre Inhalte ermöglicht. 
+Zudem sind sie an eine gemeinsame MongoDB angebunden, in der sämtliche Daten persistent gespeichert werden.
+
+\begin{figure}[htbp]
+    \centering
+        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf}
+    \caption{???}
+    \label{fig:BaSyxArchitektur}
+\end{figure}
+
+Die dynamische Erweiterung des Demonstrators ergänzt die BaSyx-Kernarchitektur um eine Anbindung von Echtzeit- und historischen Daten. 
+Abbildung~\ref{fig:DynamischeErweiterung} zeigt den Aufbau der zusätzlichen Komponenten und deren Zusammenspiel mit dem bestehenden System.
+
+Die Datenquellen bilden der Maschinensimulator sowie der Datengenerator, die sowohl Echtzeitdaten als auch historische Daten erzeugen. 
+Diese werden über eine Datenanbindung (Data Bridge) in das System eingespeist. 
+Für die Erfassung und Zwischenspeicherung von Echtzeitdaten kommt \textit{Telegraf} zum Einsatz, während die Zeitreihendaten in einer \textit{InfluxDB} persistiert werden. 
+Das BaSyx Backend greift auf diese Daten zu und stellt sie in den entsprechenden Submodellen der \acs{aas} bereit. 
+Über das AAS Web UI können die aktuellen Werte und historischen Verläufe visualisiert und analysiert werden.
+% Ein wesentlicher Vorteil der gewählten Architektur besteht darin, dass sich die AAS Web UI jederzeit durch alternative Frontends oder zusätzliche Services ersetzen lässt.
+% Dadurch können sowohl eigene Anwendungen als auch externe Softwarelösungen flexibel integriert werden.
+% Im Rahmen dieser Arbeit wurde beispielsweise alternativ der Mnestix Browser eingesetzt, der eine vergleichbare Funktionalität wie die AAS Web UI bietet \cite{Quelle}.
+% Eine detaillierte Evaluierung  folgt in Kapitel~\ref{ref}.
+
+% -----------------
 
 % \subsubsection{Stammdaten}
 % \subsubsection*{Typenschild}
@@ -200,7 +207,7 @@ Eine detaillierte Evaluierung  folgt in Kapitel~\ref{ref}.
 \newpage
 \subsubsection{Statische Submodelle}
 Die statische Modellierung des Demonstrators erfolgte vollständig im Package Explorer.
-Dazu wurden alle relevanten Submodelle angelegt, mit Inhalten befüllt und mit einer eindeutigen ID versehen.
+Dazu wurden alle relevanten AAS sowie die zugehörigen Submodelle angelegt, mit Inhalten befüllt und mit einer eindeutigen ID versehen.
 Als Hauptdatenquellen dienten die technischen Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem PLM-System Agile.
 
 Abbildung~\ref{fig:PackageExplorerRobocell} zeigt die Gesamtübersicht des Abfüll- und Verschließmoduls im Package Explorer.
