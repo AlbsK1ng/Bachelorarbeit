@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  14 AUG 2025 23:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  15 AUG 2025 15:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1371,9 +1371,6 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 \@quotereset=\count580
 (./main.aux
 
-LaTeX Warning: Label `fig:BaSyxArchitektur' multiply defined.
-
-
 LaTeX Warning: Label `fig:KeycloakAnmeldeSeite' multiply defined.
 
 )
@@ -1596,42 +1593,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 \openout5 = `main.ist'.
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Bilder/groninger_Logo_Transparent_RGB.png> <./Bilder/HHN.png>]) (./sperrvermerk.tex
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--15
-
- []
-
-) (./ehrenwoertlichErklärung.tex
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Bilder/groninger_Logo_Transparent_RGB.png> <./Bilder/HHN.png>]) (./sperrvermerk.tex) (./ehrenwoertlichErklärung.tex
 
 [2])
 Underfull \hbox (badness 10000) in paragraph at lines 5--202
@@ -1737,7 +1699,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
 [7]
-<Bilder/klassifizierung_DT.pdf, id=693, 592.13219pt x 220.9053pt>
+<Bilder/klassifizierung_DT.pdf, id=691, 592.13219pt x 220.9053pt>
 File: Bilder/klassifizierung_DT.pdf Graphic file (type pdf)
 <use Bilder/klassifizierung_DT.pdf>
 Package pdftex.def Info: Bilder/klassifizierung_DT.pdf  used on input line 159.
@@ -1759,7 +1721,7 @@ although it is yet undefined on input line 212.
 Package acronym Info: Label `acro:idta' newly defined as it shall be overridden
 although it is yet undefined on input line 217.
 Package acronym Info: Label `acro:idta' overridden on input line 219.
-<Bilder/I4Komponente/I4KomponenteNeu.pdf, id=749, 385.44pt x 129.6042pt>
+<Bilder/I4Komponente/I4KomponenteNeu.pdf, id=747, 385.44pt x 129.6042pt>
 File: Bilder/I4Komponente/I4KomponenteNeu.pdf Graphic file (type pdf)
 <use Bilder/I4Komponente/I4KomponenteNeu.pdf>
 Package pdftex.def Info: Bilder/I4Komponente/I4KomponenteNeu.pdf  used on input line 237.
@@ -1772,7 +1734,7 @@ although it is yet undefined on input line 258.
 
 
 [11]
-<Bilder/Metamodell/MetamodellFarbig.pdf, id=798, 412.4208pt x 426.63388pt>
+<Bilder/Metamodell/MetamodellFarbig.pdf, id=796, 412.4208pt x 426.63388pt>
 File: Bilder/Metamodell/MetamodellFarbig.pdf Graphic file (type pdf)
 <use Bilder/Metamodell/MetamodellFarbig.pdf>
 Package pdftex.def Info: Bilder/Metamodell/MetamodellFarbig.pdf  used on input line 273.
@@ -1824,7 +1786,7 @@ Package acronym Info: Label `acro:dpp' overridden on input line 365.
 [15]
 Package acronym Info: Label `acro:dpp' overridden on input line 373.
 Package acronym Info: Label `acro:dpp' overridden on input line 379.
-<Bilder/robocell/filling_closing_module.png, id=951, 876.27374pt x 884.55469pt>
+<Bilder/robocell/filling_closing_module.png, id=949, 876.27374pt x 884.55469pt>
 File: Bilder/robocell/filling_closing_module.png Graphic file (type png)
 <use Bilder/robocell/filling_closing_module.png>
 Package pdftex.def Info: Bilder/robocell/filling_closing_module.png  used on input line 391.
@@ -1837,7 +1799,7 @@ Package acronym Info: Label `acro:rest' overridden on input line 406.
 
 
 [17 <./Bilder/robocell/filling_closing_module.png>]
-<Bilder/ModellierungAAS/Final/Grundlagen_PE.PNG, id=983, 557.08125pt x 316.18124pt>
+<Bilder/ModellierungAAS/Final/Grundlagen_PE.PNG, id=981, 557.08125pt x 316.18124pt>
 File: Bilder/ModellierungAAS/Final/Grundlagen_PE.PNG Graphic file (type png)
 <use Bilder/ModellierungAAS/Final/Grundlagen_PE.PNG>
 Package pdftex.def Info: Bilder/ModellierungAAS/Final/Grundlagen_PE.PNG  used on input line 413.
@@ -1871,7 +1833,7 @@ Package acronym Info: Label `acro:bom' newly defined as it shall be overridden
 although it is yet undefined on input line 443.
 Package acronym Info: Label `acro:api' overridden on input line 445.
 Package acronym Info: Label `acro:rest' overridden on input line 448.
-<Bilder/BaSyx/Grundlagen.png, id=1009, 545.03625pt x 251.43938pt>
+<Bilder/BaSyx/Grundlagen.png, id=1007, 545.03625pt x 251.43938pt>
 File: Bilder/BaSyx/Grundlagen.png Graphic file (type png)
 <use Bilder/BaSyx/Grundlagen.png>
 Package pdftex.def Info: Bilder/BaSyx/Grundlagen.png  used on input line 459.
@@ -1881,7 +1843,7 @@ Package pdftex.def Info: Bilder/BaSyx/Grundlagen.png  used on input line 459.
 [19{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}]) (./Entwicklung.tex
 
 [20 <./Bilder/BaSyx/Grundlagen.png>]
-<Bilder/vorgehenEntwicklungsteil.pdf, id=1038, 403.5075pt x 65.2839pt>
+<Bilder/vorgehenEntwicklungsteil.pdf, id=1036, 403.5075pt x 65.2839pt>
 File: Bilder/vorgehenEntwicklungsteil.pdf Graphic file (type pdf)
 <use Bilder/vorgehenEntwicklungsteil.pdf>
 Package pdftex.def Info: Bilder/vorgehenEntwicklungsteil.pdf  used on input line 9.
@@ -1909,7 +1871,7 @@ Package acronym Info: Label `acro:idta' overridden on input line 61.
 )
 
 [23]
-<Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG, id=1169, 423.08063pt x 197.98969pt>
+<Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG, id=1167, 423.08063pt x 197.98969pt>
 File: Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG Graphic file (type png)
 <use Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG>
 Package pdftex.def Info: Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG  used on input line 116.
@@ -1989,14 +1951,14 @@ Package acronym Info: Label `acro:rest' overridden on input line 296.
 
 
 [31]
-<Bilder/OPCUA/SubmodellProzessdaten.pdf, id=1330, 562.01968pt x 99.2508pt>
+<Bilder/OPCUA/SubmodellProzessdaten.pdf, id=1328, 562.01968pt x 99.2508pt>
 File: Bilder/OPCUA/SubmodellProzessdaten.pdf Graphic file (type pdf)
 <use Bilder/OPCUA/SubmodellProzessdaten.pdf>
 Package pdftex.def Info: Bilder/OPCUA/SubmodellProzessdaten.pdf  used on input line 311.
 (pdftex.def)             Requested size: 426.79135pt x 75.3723pt.
 Package acronym Info: Label `acro:mqtt' newly defined as it shall be overridden
 although it is yet undefined on input line 318.
-<Bilder/OPCUA/OPCUADaten.pdf, id=1337, 425.67029pt x 116.35469pt>
+<Bilder/OPCUA/OPCUADaten.pdf, id=1335, 425.67029pt x 116.35469pt>
 File: Bilder/OPCUA/OPCUADaten.pdf Graphic file (type pdf)
 <use Bilder/OPCUA/OPCUADaten.pdf>
 Package pdftex.def Info: Bilder/OPCUA/OPCUADaten.pdf  used on input line 328.
@@ -2015,7 +1977,7 @@ Package acronym Info: Label `acro:rest' overridden on input line 361.
 
 [33]
 Package acronym Info: Label `acro:smc' overridden on input line 400.
-<Bilder/TimeSeries/SM_TimeSeriesData.pdf, id=1421, 530.94356pt x 241.86359pt>
+<Bilder/TimeSeries/SM_TimeSeriesData.pdf, id=1419, 530.94356pt x 241.86359pt>
 File: Bilder/TimeSeries/SM_TimeSeriesData.pdf Graphic file (type pdf)
 <use Bilder/TimeSeries/SM_TimeSeriesData.pdf>
 Package pdftex.def Info: Bilder/TimeSeries/SM_TimeSeriesData.pdf  used on input line 407.
@@ -2025,7 +1987,7 @@ Package pdftex.def Info: Bilder/TimeSeries/SM_TimeSeriesData.pdf  used on input 
 [34]
 
 [35 <./Bilder/TimeSeries/SM_TimeSeriesData.pdf>]
-<Bilder/Autoencoder/AutoencoderModell.pdf, id=1454, 469.755pt x 233.9139pt>
+<Bilder/Autoencoder/AutoencoderModell.pdf, id=1452, 469.755pt x 233.9139pt>
 File: Bilder/Autoencoder/AutoencoderModell.pdf Graphic file (type pdf)
 <use Bilder/Autoencoder/AutoencoderModell.pdf>
 Package pdftex.def Info: Bilder/Autoencoder/AutoencoderModell.pdf  used on input line 445.
@@ -2079,188 +2041,182 @@ although it is yet undefined on input line 588.
 
 [42]
 Package acronym Info: Label `acro:rbac' overridden on input line 620.
-Package acronym Info: Label `acro:dpp' overridden on input line 622.
-Package acronym Info: Label `acro:rbac' overridden on input line 625.
-
-
-[43]
 Package acronym Info: Label `acro:smc' overridden on input line 648.
 
 
-[44]
+[43]
 Package acronym Info: Label `acro:rest' overridden on input line 672.
+
+
+[44]
 Package acronym Info: Label `acro:rest' overridden on input line 691.
 ) (./Ergebnisse.tex
 
 [45]
 Package acronym Info: Label `acro:dpp' overridden on input line 5.
-<Bilder/Ergebnisse/Systemarchitektur/BaSyx.pdf, id=1681, 381.34468pt x 129.6042pt>
+<Bilder/Ergebnisse/Systemarchitektur/BaSyx.pdf, id=1663, 383.51279pt x 129.6042pt>
 File: Bilder/Ergebnisse/Systemarchitektur/BaSyx.pdf Graphic file (type pdf)
 <use Bilder/Ergebnisse/Systemarchitektur/BaSyx.pdf>
 Package pdftex.def Info: Bilder/Ergebnisse/Systemarchitektur/BaSyx.pdf  used on input line 29.
-(pdftex.def)             Requested size: 426.79135pt x 145.06076pt.
+(pdftex.def)             Requested size: 426.79135pt x 144.23413pt.
 
 
 [46]
-<Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf, id=1695, 387.36719pt x 123.5817pt>
+<Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf, id=1678, 406.3983pt x 123.5817pt>
 File: Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf Graphic file (type pdf)
 <use Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf>
-Package pdftex.def Info: Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf  used on input line 47.
-(pdftex.def)             Requested size: 426.79135pt x 136.16655pt.
+Package pdftex.def Info: Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf  used on input line 54.
+(pdftex.def)             Requested size: 426.79135pt x 129.7891pt.
 
 
-LaTeX Warning: Reference `fig:DynamischeErweiterung' on page 47 undefined on input line 53.
-
-
-
-[47 <./Bilder/Ergebnisse/Systemarchitektur/BaSyx.pdf> <./Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf>]
-
-[48]
-<Bilder/ErgebnissePackageExplorer/AASrobocell.PNG, id=1737, 706.13812pt x 359.09157pt>
+[47 <./Bilder/Ergebnisse/Systemarchitektur/BaSyx.pdf>]
+<Bilder/ErgebnissePackageExplorer/AASrobocell.PNG, id=1700, 706.13812pt x 359.09157pt>
 File: Bilder/ErgebnissePackageExplorer/AASrobocell.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/AASrobocell.PNG>
-Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/AASrobocell.PNG  used on input line 220.
+Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/AASrobocell.PNG  used on input line 79.
 (pdftex.def)             Requested size: 426.79135pt x 217.03462pt.
 
 
+[48 <./Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf>]
+Package acronym Info: Label `acro:smc' overridden on input line 106.
+Package acronym Info: Label `acro:smc' overridden on input line 107.
+
+
 [49 <./Bilder/ErgebnissePackageExplorer/AASrobocell.PNG>]
-Package acronym Info: Label `acro:smc' overridden on input line 248.
-Package acronym Info: Label `acro:smc' overridden on input line 249.
-
-
-[50]
-<Bilder/ErgebnissePackageExplorer/GundmaschneEntitie.PNG, id=1759, 640.64343pt x 212.29312pt>
+<Bilder/ErgebnissePackageExplorer/GundmaschneEntitie.PNG, id=1737, 640.64343pt x 212.29312pt>
 File: Bilder/ErgebnissePackageExplorer/GundmaschneEntitie.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/GundmaschneEntitie.PNG>
-Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/GundmaschneEntitie.PNG  used on input line 276.
+Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/GundmaschneEntitie.PNG  used on input line 131.
 (pdftex.def)             Requested size: 426.79135pt x 141.42906pt.
-<Bilder/ErgebnissePackageExplorer/Bedientableau+.PNG, id=1760, 595.47469pt x 355.3275pt>
+<Bilder/ErgebnissePackageExplorer/Bedientableau+.PNG, id=1738, 595.47469pt x 355.3275pt>
 File: Bilder/ErgebnissePackageExplorer/Bedientableau+.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/Bedientableau+.PNG>
-Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/Bedientableau+.PNG  used on input line 283.
+Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/Bedientableau+.PNG  used on input line 138.
 (pdftex.def)             Requested size: 426.79135pt x 254.66989pt.
 
 
-[51 <./Bilder/ErgebnissePackageExplorer/GundmaschneEntitie.PNG> <./Bilder/ErgebnissePackageExplorer/Bedientableau+.PNG>]
-Package acronym Info: Label `acro:smc' overridden on input line 302.
-Package acronym Info: Label `acro:smc' overridden on input line 304.
+[50 <./Bilder/ErgebnissePackageExplorer/GundmaschneEntitie.PNG>]
+Package acronym Info: Label `acro:smc' overridden on input line 157.
+Package acronym Info: Label `acro:smc' overridden on input line 159.
+
+
+[51 <./Bilder/ErgebnissePackageExplorer/Bedientableau+.PNG>]
+Package acronym Info: Label `acro:smc' overridden on input line 177.
 
 
 [52]
-Package acronym Info: Label `acro:smc' overridden on input line 322.
-
 
 [53]
-
-[54]
-<Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png, id=1793, 638.385pt x 381.67593pt>
+<Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png, id=1771, 638.385pt x 381.67593pt>
 File: Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png Graphic file (type png)
 <use Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png  used on input line 361.
+Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png  used on input line 216.
 (pdftex.def)             Requested size: 426.79135pt x 255.16827pt.
-Package acronym Info: Label `acro:mqtt' overridden on input line 366.
-Package acronym Info: Label `acro:rest' overridden on input line 366.
+Package acronym Info: Label `acro:mqtt' overridden on input line 221.
+Package acronym Info: Label `acro:rest' overridden on input line 221.
 
 
-[55 <./Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png (PNG copy)>]
-<Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png, id=1809, 596.98032pt x 572.89032pt>
+[54 <./Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png (PNG copy)>]
+<Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png, id=1787, 596.98032pt x 572.89032pt>
 File: Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png Graphic file (type png)
 <use Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png  used on input line 386.
+Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png  used on input line 241.
 (pdftex.def)             Requested size: 426.79135pt x 409.56976pt.
 
 
-[56 <./Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png (PNG copy)>]
-Package acronym Info: Label `acro:smc' overridden on input line 405.
-<Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png, id=1827, 637.63219pt x 382.42876pt>
+[55 <./Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png (PNG copy)>]
+Package acronym Info: Label `acro:smc' overridden on input line 260.
+<Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png, id=1805, 637.63219pt x 382.42876pt>
 File: Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png Graphic file (type png)
 <use Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png  used on input line 414.
+Package pdftex.def Info: Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png  used on input line 269.
 (pdftex.def)             Requested size: 426.79135pt x 255.975pt.
 
 
-[57]
+[56]
 
-[58 <./Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png (PNG copy)>]
+[57 <./Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png (PNG copy)>]
 
-[59]
-<Bilder/Ergebnisse/KI/Fall1.pdf, id=1856, 426.25058pt x 172.71465pt>
+[58]
+<Bilder/Ergebnisse/KI/Fall1.pdf, id=1833, 426.25058pt x 172.71465pt>
 File: Bilder/Ergebnisse/KI/Fall1.pdf Graphic file (type pdf)
 <use Bilder/Ergebnisse/KI/Fall1.pdf>
-Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall1.pdf  used on input line 478.
+Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall1.pdf  used on input line 333.
 (pdftex.def)             Requested size: 426.79135pt x 172.9461pt.
 
 
-[60 <./Bilder/Ergebnisse/KI/Fall1.pdf>]
-<Bilder/Ergebnisse/KI/Fall2.pdf, id=1899, 426.25058pt x 172.87837pt>
+[59 <./Bilder/Ergebnisse/KI/Fall1.pdf>]
+<Bilder/Ergebnisse/KI/Fall2.pdf, id=1877, 426.25058pt x 172.87837pt>
 File: Bilder/Ergebnisse/KI/Fall2.pdf Graphic file (type pdf)
 <use Bilder/Ergebnisse/KI/Fall2.pdf>
-Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall2.pdf  used on input line 491.
+Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall2.pdf  used on input line 346.
 (pdftex.def)             Requested size: 426.79135pt x 173.11006pt.
 
 
-[61 <./Bilder/Ergebnisse/KI/Fall2.pdf>]
+[60 <./Bilder/Ergebnisse/KI/Fall2.pdf>]
 
-LaTeX Warning: Reference `xy' on page 62 undefined on input line 510.
+LaTeX Warning: Reference `xy' on page 61 undefined on input line 365.
 
-Package acronym Info: Label `acro:smc' overridden on input line 514.
-Package acronym Info: Label `acro:smc' overridden on input line 517.
-<Bilder/Ergebnisse/DPP/SubmodellCF.png, id=1946, 453.94594pt x 196.48407pt>
+Package acronym Info: Label `acro:smc' overridden on input line 369.
+Package acronym Info: Label `acro:smc' overridden on input line 372.
+<Bilder/Ergebnisse/DPP/SubmodellCF.png, id=1924, 453.94594pt x 196.48407pt>
 File: Bilder/Ergebnisse/DPP/SubmodellCF.png Graphic file (type png)
 <use Bilder/Ergebnisse/DPP/SubmodellCF.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DPP/SubmodellCF.png  used on input line 521.
+Package pdftex.def Info: Bilder/Ergebnisse/DPP/SubmodellCF.png  used on input line 376.
 (pdftex.def)             Requested size: 426.79135pt x 184.73102pt.
-Package acronym Info: Label `acro:rest' overridden on input line 531.
+Package acronym Info: Label `acro:rest' overridden on input line 386.
 
 
-[62 <./Bilder/Ergebnisse/DPP/SubmodellCF.png>]
-Package acronym Info: Label `acro:rest' overridden on input line 537.
-Package acronym Info: Label `acro:api' overridden on input line 537.
-Package acronym Info: Label `acro:rest' overridden on input line 540.
-<Bilder/Ergebnisse/DPP/PluginTest.png, id=1967, 575.14874pt x 447.92343pt>
+[61 <./Bilder/Ergebnisse/DPP/SubmodellCF.png>]
+Package acronym Info: Label `acro:rest' overridden on input line 392.
+Package acronym Info: Label `acro:api' overridden on input line 392.
+Package acronym Info: Label `acro:rest' overridden on input line 395.
+<Bilder/Ergebnisse/DPP/PluginTest.png, id=1945, 575.14874pt x 447.92343pt>
 File: Bilder/Ergebnisse/DPP/PluginTest.png Graphic file (type png)
 <use Bilder/Ergebnisse/DPP/PluginTest.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DPP/PluginTest.png  used on input line 549.
+Package pdftex.def Info: Bilder/Ergebnisse/DPP/PluginTest.png  used on input line 404.
 (pdftex.def)             Requested size: 426.79135pt x 332.3945pt.
 
 
-[63 <./Bilder/Ergebnisse/DPP/PluginTest.png (PNG copy)>]
-Package acronym Info: Label `acro:dpp' overridden on input line 561.
-Package acronym Info: Label `acro:dpp' overridden on input line 562.
-Package acronym Info: Label `acro:dpp' overridden on input line 565.
-Package acronym Info: Label `acro:rbac' overridden on input line 566.
-<Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png, id=1983, 520.19344pt x 369.63094pt>
+[62 <./Bilder/Ergebnisse/DPP/PluginTest.png (PNG copy)>]
+Package acronym Info: Label `acro:dpp' overridden on input line 416.
+Package acronym Info: Label `acro:dpp' overridden on input line 429.
+Package acronym Info: Label `acro:dpp' overridden on input line 449.
+Package acronym Info: Label `acro:rbac' overridden on input line 450.
+<Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png, id=1961, 520.19344pt x 369.63094pt>
 File: Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png Graphic file (type png)
 <use Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png  used on input line 571.
+Package pdftex.def Info: Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png  used on input line 455.
 (pdftex.def)             Requested size: 298.75264pt x 212.28232pt.
-Package acronym Info: Label `acro:rbac' overridden on input line 578.
+Package acronym Info: Label `acro:rbac' overridden on input line 462.
 
 
-[64 <./Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png (PNG copy)>]
-Package acronym Info: Label `acro:dpp' overridden on input line 581.
-Package acronym Info: Label `acro:dpp' overridden on input line 584.
-Package acronym Info: Label `acro:api' overridden on input line 586.
-Package acronym Info: Label `acro:dpp' overridden on input line 587.
-<Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png, id=1998, 429.85594pt x 216.05719pt>
+[63]
+Package acronym Info: Label `acro:dpp' overridden on input line 465.
+Package acronym Info: Label `acro:dpp' overridden on input line 468.
+Package acronym Info: Label `acro:api' overridden on input line 470.
+Package acronym Info: Label `acro:dpp' overridden on input line 471.
+<Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png, id=1978, 429.85594pt x 216.05719pt>
 File: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png Graphic file (type png)
 <use Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png  used on input line 597.
+Package pdftex.def Info: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png  used on input line 481.
 (pdftex.def)             Requested size: 429.85489pt x 216.05664pt.
 
-Overfull \hbox (3.06354pt too wide) in paragraph at lines 597--598
+Overfull \hbox (3.06354pt too wide) in paragraph at lines 481--482
  [][] 
  []
 
 
 
-[65]
+[64 <./Bilder/Ergebnisse/DPP/KeycloakAnmeldeSeite.png (PNG copy)>]
+Package acronym Info: Label `acro:dpp' overridden on input line 491.
 
-[66 <./Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png (PNG copy)>]) (./Zusammenfassung.tex)
+
+[65 <./Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png (PNG copy)>]) (./Zusammenfassung.tex
+
+[66])
 
 [67]
-
-[68]
 Overfull \hbox (16.95044pt too wide) in paragraph at lines 269--269
 []$\T1/zi4/m/n/12 https : / / www . zvei . org / presse -[] medien / publikationen / umsetzungsstrategie -[]
  []
@@ -2277,7 +2233,7 @@ Overfull \hbox (5.37175pt too wide) in paragraph at lines 269--269
 
 
 
-[69
+[68
 
 ]
 Overfull \hbox (16.48056pt too wide) in paragraph at lines 269--269
@@ -2286,43 +2242,43 @@ Overfull \hbox (16.48056pt too wide) in paragraph at lines 269--269
 
 
 
-[70]
+[69]
 
-[71]
+[70]
 Overfull \hbox (27.87973pt too wide) in paragraph at lines 269--269
 \T1/zi4/m/n/12 1 -[] 1 _ Submodel _ HierarchicalStructuresEnablingBoM . pdf$[] \T1/ptm/m/n/12 (-20) (be-sucht am 27. 06. 2025). 
  []
 
 
 
+[71]
+
 [72]
 
-[73]
+[73] (./Anhang.tex
 
-[74] (./Anhang.tex
-
-[75]
-<Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG, id=2196, 435.87843pt x 650.43pt>
+[74]
+<Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG, id=2177, 429.10312pt x 648.92438pt>
 File: Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG  used on input line 8.
-(pdftex.def)             Requested size: 384.1096pt x 573.17415pt.
+(pdftex.def)             Requested size: 384.1096pt x 580.88768pt.
 
 
-[76 <./Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG>]
-<Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG, id=2203, 431.36156pt x 512.66531pt>
+[75 <./Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG>]
+<Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG, id=2185, 442.65375pt x 609.77812pt>
 File: Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG  used on input line 16.
-(pdftex.def)             Requested size: 384.1096pt x 456.52101pt.
+(pdftex.def)             Requested size: 384.1096pt x 529.16284pt.
 
 
-[77 <./Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG>]
-<Bilder/ErgebnissePackageExplorer/Wartung.PNG, id=2210, 432.11438pt x 511.15968pt>
+[76 <./Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG>]
+<Bilder/ErgebnissePackageExplorer/Wartung.PNG, id=2192, 447.92343pt x 530.73282pt>
 File: Bilder/ErgebnissePackageExplorer/Wartung.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/Wartung.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/Wartung.PNG  used on input line 24.
-(pdftex.def)             Requested size: 426.79135pt x 504.87968pt.
+(pdftex.def)             Requested size: 426.79135pt x 505.7077pt.
 )
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
@@ -2331,7 +2287,7 @@ This document will not have a glossary.
 
 
 
-[78 <./Bilder/ErgebnissePackageExplorer/Wartung.PNG>] (./main.aux)
+[77 <./Bilder/ErgebnissePackageExplorer/Wartung.PNG>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2360,20 +2316,20 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  55595 strings out of 473190
- 1117509 string characters out of 5715806
- 2065113 words of memory out of 5000000
- 77111 multiletter control sequences out of 15000+600000
- 648405 words of font info for 380 fonts, out of 8000000 for 9000
+ 1117523 string characters out of 5715806
+ 2065089 words of memory out of 5000000
+ 77114 multiletter control sequences out of 15000+600000
+ 651462 words of font info for 386 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  84i,15n,116p,2471b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{glo:SPS} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (88 pages, 4912167 bytes).
+Output written on main.pdf (87 pages, 4918911 bytes).
 PDF statistics:
- 2346 PDF objects out of 2487 (max. 8388607)
- 1978 compressed objects within 20 object streams
- 454 named destinations out of 1000 (max. 500000)
- 82104 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 2326 PDF objects out of 2487 (max. 8388607)
+ 1959 compressed objects within 20 object streams
+ 442 named destinations out of 1000 (max. 500000)
+ 86200 words of extra memory for PDF output out of 89155 (max. 10000000)
 

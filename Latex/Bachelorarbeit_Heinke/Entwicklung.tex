@@ -601,13 +601,13 @@ Zur Erhöhung der Sicherheit kann dieses Passwort als temporär markiert werden,
 Darüber hinaus bietet Keycloak ebenfalls die Möglichkeit, sogenannte Required Actions zu definieren, etwa zur E-Mail-Verifizierung oder zur erzwungenen Passwortänderung beim nächsten Login.  
 Dies erlaubt eine flexible Anpassung des Authentifizierungsprozesses an projektspezifische Sicherheitsanforderungen.
 
-Im Rahmen dieses Anwendungsfalls werden exemplarisch folgende Benutzer eingerichtet:
+% Im Rahmen dieses Anwendungsfalls werden exemplarisch folgende Benutzer eingerichtet:
 
-\begin{itemize}[noitemsep, leftmargin=*, label=\textbullet]
-  \item \makebox[6cm][l]{\textbf{groninger.meyer}} (Rolle: \textit{Groninger-Mitarbeiter})
-  \item \makebox[6cm][l]{\textbf{customer.doe}} (Rolle: \textit{Kunde})
-  \item \makebox[6cm][l]{\textbf{technician.john}} (Rolle: \textit{Service-Techniker})
-\end{itemize}
+% \begin{itemize}[noitemsep, leftmargin=*, label=\textbullet]
+%   \item \makebox[6cm][l]{\textbf{groninger.meyer}} (Rolle: \textit{Groninger-Mitarbeiter})
+%   \item \makebox[6cm][l]{\textbf{customer.doe}} (Rolle: \textit{Kunde})
+%   \item \makebox[6cm][l]{\textbf{technician.john}} (Rolle: \textit{Service-Techniker})
+% \end{itemize}
 
 Neben der Verwaltung menschlicher Benutzer unterstützt Keycloak auch die Administration technischer Clients, die z.B. maschinelle Anwendungen oder externe Systeme repräsentieren.  
 Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutiger Client-ID und einem geheimen Schlüssel (Client Secret) gemäß dem OpenID Connect-Protokoll.  
@@ -619,22 +619,22 @@ Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DE
 Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um z.~B. den Zugriff auf alle Submodelle einer BaSyx-Komponente zu gewähren.  
 Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Services.
 
-Im Rahmen dieses Szenarios erhält die Rolle Groninger-Mitarbeiter beispielsweise vollständige Zugriffsrechte auf alle Submodelle des \acs{dpp}, während die Rolle Kunde ausschließlich Leserechte auf ausgewählte Submodelle (z.B. Typenschild oder Technische Daten) besitzt.  
-Die Rolle Service-Techniker hingegen verfügt über Lese- und Schreibrechte auf wartungsrelevante Submodelle (z.\,B. Wartung, Kontrollkomponente), jedoch ohne Zugriff auf das \acs{pcf}-Submodell, da dieses für sie nicht relevant ist.  
+% Im Rahmen dieses Szenarios erhält die Rolle Groninger-Mitarbeiter beispielsweise vollständige Zugriffsrechte auf alle Submodelle des \acs{dpp}, während die Rolle Kunde ausschließlich Leserechte auf ausgewählte Submodelle (z.B. Typenschild oder Technische Daten) besitzt.  
+% Die Rolle Service-Techniker hingegen verfügt über Lese- und Schreibrechte auf wartungsrelevante Submodelle (z.\,B. Wartung, Kontrollkomponente), jedoch ohne Zugriff auf das \acs{pcf}-Submodell, da dieses für sie nicht relevant ist.  
 
-Eine exemplarische \acs{rbac}-Konfiguration der Rolle Groninger-Mitarbeiter für Submodelle innerhalb der AAS Environment ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
+% Eine exemplarische \acs{rbac}-Konfiguration der Rolle Groninger-Mitarbeiter für Submodelle innerhalb der AAS Environment ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
 
-\begin{lstlisting}[language=json, caption={RBAC-Konfiguration für die Rolle Groninger-Mitarbeiter}, label={lst:groningerMitarbeiterRBAC}]
-{
-    "role": "groninger-employee",
-    "action": ["CREATE", "READ", "UPDATE", "DELETE"],
-    "targetInformation": {
-        "@type": "submodel",
-        "submodelIds": "*",
-        "submodelElementIdShortPaths": "*"
-    }
-}
-\end{lstlisting}
+% \begin{lstlisting}[language=json, caption={RBAC-Konfiguration für die Rolle Groninger-Mitarbeiter}, label={lst:groningerMitarbeiterRBAC}]
+% {
+%     "role": "groninger-employee",
+%     "action": ["CREATE", "READ", "UPDATE", "DELETE"],
+%     "targetInformation": {
+%         "@type": "submodel",
+%         "submodelIds": "*",
+%         "submodelElementIdShortPaths": "*"
+%     }
+% }
+% \end{lstlisting}
 
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 Ziel dieses Anwendungsfalls ist es, den Prozess der automatisierten Generierung einer \acs{aas} exemplarisch darzustellen. 

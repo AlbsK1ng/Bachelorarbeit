@@ -11,20 +11,20 @@
 \contentsline {figure}{\numberline {10}{\ignorespaces OPC UA Datenknoten}}{32}{figure.caption.99}%
 \contentsline {figure}{\numberline {11}{\ignorespaces SMT Time Series Data}}{35}{figure.caption.104}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Aufbau eines Autoencoders}}{36}{figure.caption.105}%
-\contentsline {figure}{\numberline {13}{\ignorespaces ???}}{47}{figure.caption.138}%
-\contentsline {figure}{\numberline {14}{\ignorespaces ???}}{47}{figure.caption.139}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Package Explorer: Gesamtübersicht AAS-Demonstrator}}{49}{figure.caption.140}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Package Explorer: BOM-Submodell der Grundmaschine}}{51}{figure.caption.143}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Package Explorer: AAS des Bedientableaus}}{51}{figure.caption.144}%
-\contentsline {figure}{\numberline {18}{\ignorespaces AAS Web UI: Prozessdaten}}{55}{figure.caption.148}%
-\contentsline {figure}{\numberline {19}{\ignorespaces AAS Web UI: PackML-Zustandsautomat}}{56}{figure.caption.151}%
-\contentsline {figure}{\numberline {20}{\ignorespaces AAS Web UI: Zeitreihendaten (Liniendiagramm)}}{58}{figure.caption.153}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Anomalieerkennung Fall 1: Überhöhte Daten}}{60}{figure.caption.154}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Anomalieerkennung Fall 2: Linearer Anstieg}}{61}{figure.caption.155}%
-\contentsline {figure}{\numberline {23}{\ignorespaces CF-Submodell der robocell}}{62}{figure.caption.158}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Visualisierung der aggregierten PCF-Werte}}{63}{figure.caption.163}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{64}{figure.caption.168}%
-\contentsline {figure}{\numberline {26}{\ignorespaces DELETE-Anfrage des Service-Techniker-Clients in Postman}}{66}{figure.caption.174}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Package Explorer: Struktur des Submodells Technische Daten}}{76}{figure.caption.175}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Package Explorer: Struktur des Submodells Dokumentation}}{77}{figure.caption.176}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Package Explorer: Struktur des Submodells Wartung}}{78}{figure.caption.177}%
+\contentsline {figure}{\numberline {13}{\ignorespaces BaSyx-Backend}}{47}{figure.caption.136}%
+\contentsline {figure}{\numberline {14}{\ignorespaces BaSyx Backend}}{48}{figure.caption.137}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Package Explorer: Gesamtübersicht AAS-Demonstrator}}{49}{figure.caption.138}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Package Explorer: BOM-Submodell der Grundmaschine}}{50}{figure.caption.141}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Package Explorer: AAS des Bedientableaus}}{51}{figure.caption.142}%
+\contentsline {figure}{\numberline {18}{\ignorespaces AAS Web UI: Prozessdaten}}{54}{figure.caption.146}%
+\contentsline {figure}{\numberline {19}{\ignorespaces AAS Web UI: PackML-Zustandsautomat}}{55}{figure.caption.149}%
+\contentsline {figure}{\numberline {20}{\ignorespaces AAS Web UI: Zeitreihendaten (Liniendiagramm)}}{57}{figure.caption.151}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Anomalieerkennung Fall 1: Überhöhte Daten}}{59}{figure.caption.152}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Anomalieerkennung Fall 2: Linearer Anstieg}}{60}{figure.caption.153}%
+\contentsline {figure}{\numberline {23}{\ignorespaces CF-Submodell der robocell}}{61}{figure.caption.156}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Visualisierung der aggregierten PCF-Werte}}{62}{figure.caption.161}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{64}{figure.caption.166}%
+\contentsline {figure}{\numberline {26}{\ignorespaces DELETE-Anfrage des Service-Techniker-Clients in Postman}}{65}{figure.caption.172}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Package Explorer: Struktur des Submodells Technische Daten}}{75}{figure.caption.174}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Package Explorer: Struktur des Submodells Dokumentation}}{76}{figure.caption.175}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Package Explorer: Struktur des Submodells Wartung}}{77}{figure.caption.176}%
