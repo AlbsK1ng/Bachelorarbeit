@@ -6,6 +6,7 @@ Darauf folgt die Analyse des eingesetzten Autoencoder-Modells zur Anomalieerkenn
 Abschließend werden die im Projekt eingesetzten Softwarelösungen und Tools evaluiert.
 
 \subsection{AAS-Demonstrator für die robocell}
+\label{sec:AAS-Demonstrator}
 Der \acs{aas}-Demonstrator basiert auf dem standardisierten Konzept der \acs{aas}.
 Als zentrale Laufzeitumgebung kommt die Eclipse BaSyx-Plattform zum Einsatz, während für die Datenanbindung standardisierte Protokolle wie OPC~UA sowie HTTP/REST verwendet werden.
 Der Demonstrator umfasst neben der Haupt-AAS der robocell-Maschine auch exemplarische AAS untergeordneter Komponenten, wodurch eine modulare und hierarchisch aufgebaute digitale Repräsentation entsteht.
@@ -66,13 +67,14 @@ Die AAS Web UI nutzt diesen Endpunkt, um die historischen Daten direkt aus der D
 
 \subsubsection{Statische Submodelle}
 Die statische Modellierung des Demonstrators erfolgte im Package Explorer.
-Dazu wurden alle relevanten AAS sowie die zugehörigen Submodelle angelegt, mit Inhalten befüllt und mit eindeutigen Identifikatoren versehen.
+Dazu wurden alle relevanten AAS sowie die zugehörigen Submodelle angelegt, mit Inhalten befüllt, semantisch angereichert und mit eindeutigen Identifikatoren versehen.
 Als Hauptdatenquellen dienten die technischen Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem PLM-System Agile.
 
-Abbildung~\ref{fig:PackageExplorerRobocell} zeigt die Gesamtübersicht des Abfüll- und Verschließmoduls im Package Explorer.
-Die statischen Submodelle sind darin mit einer Nummer gekennzeichnet, die der im Folgenden verwendeten Gliederung entspricht.
-Zur besseren Veranschaulichung seiner Funktionsweise wird das Submodell BOM ausführlicher beschrieben.
-Die grundlegende Struktur der übrigen Submodelle ist im Anhang~\ref{sec:AnhangSubmodelle} anhand von Screenshots dokumentiert.
+Abbildung~\ref{fig:PackageExplorerRobocell} zeigt die Gesamtübersicht des Abfüll- und Verschließmoduls. 
+Die statischen Submodelle sind darin mit einer Nummer gekennzeichnet, die der im Folgenden verwendeten Gliederung entspricht. 
+Sie beinhalten feststehende, beschreibende Inhalte, die nicht zur Laufzeit geändert werden. 
+Zur besseren Veranschaulichung wird das Submodell BOM ausführlicher beschrieben.
+Die grundlegende Struktur der weiteren statischen Submodelle ist im Anhang~\ref{sec:AnhangSubmodelle} ergänzend anhand von Screenshots dokumentiert.
 
 \begin{figure}[htbp]
     \centering
@@ -82,49 +84,31 @@ Die grundlegende Struktur der übrigen Submodelle ist im Anhang~\ref{sec:AnhangS
 \end{figure}
 
 \subsubsection*{1) Typenschild}
-\vspace{-0.5em}
-\textbf{Funktion:}  
-Das Submodell Typenschild bildet die zentrale digitale Identifikationsstelle der Maschine.
-Es entspricht funktional einem physischen Typenschild, erweitert dessen Informationen jedoch um maschinenlesbare und interoperable Inhalte.
-
-\textbf{Inhalte:}  
-Die Struktur basiert auf dem \acs{smt} Digital Nameplate for Industrial Equipment~\cite{SpezifikationTypenschild}. 
-Erfasst werden grundlegende Identifikationsdaten (z.\,B. Hersteller, Seriennummer, Produkttyp) sowie erweiterte Informationen wie Softwareversionen, Zertifikate, Logos, Kontaktinformationen und weitere produktspezifische Details.
-
-\textbf{Besonderheiten:}  
-Das digitale Typenschild ermöglicht eine erweiterte Darstellung im Vergleich zu klassischen Maschinentypenschildern. 
-Dadurch was 
+\vspace{-0.5em} 
+Das Submodell Typenschild bildet die zentrale Identifikationsstelle der Maschine innerhalb der AAS. 
+Es erfasst grundlegende Angaben wie Hersteller, Seriennummer, Produkttyp oder Softwareversionen. 
+Funktional entspricht es einem physischen Typenschild, erweitert dieses jedoch um maschinenlesbare und interoperable Inhalte. 
+Darüber hinaus bietet es den Vorteil, dass auch zusätzliche Dateien wie Zertifikate oder Logos direkt eingebunden werden können.
 
 \subsubsection*{2) Technische Daten}
 \vspace{-0.5em}
-\textbf{Funktion:}  
-Das Submodell Technische Daten dient als digitales technisches Datenblatt der Maschine.
-Es ermöglicht eine standardisierte und strukturierte Abbildung aller relevanten Maschineneigenschaften und ersetzt damit die klassischen technischen Angaben aus der Betriebsanleitung.
 
-\textbf{Inhalte:} 
-Die Struktur orientiert sich am generischen SMT Technical Data~\cite{SpezifikaitonTechnischeDaten} und gliedert sich in zwei Hauptbereiche: Allgemeine Informationen und Technische Eigenschaften.
-Letztere sind in mehreren \acsp{smc} organisiert, darunter Produktionsmedien, Umgebungsbedingungen, elektrische Daten sowie der Verarbeitungsbereich.
-Jede \acs{smc} enthält verschiedene Elemente, überwiegend Properties oder Ranges, die einzelne Parameter, beispielsweise elektrische Kenndaten der Maschine, beschreiben.
-Ein Überblick über die Struktur des Submodells ist im Anhang~\ref{subsec:TechnischeDaten} in Abbildung~\ref{fig:SMTechnischeDaten} dargestellt.
-
-\textbf{Besonderheiten:}  
-Alle zentralen technischen Informationen der Maschine sind in diesem Submodell strukturiert an einem Ort gebündelt.
-Dadurch entfällt die Notwendigkeit, diese Daten in verschiedenen Systemen oder Dokumenten separat zu pflegen.
+Das Submodell Technische Daten dient als technisches Datenblatt der Maschine.  
+Es gliedert sich in die Bereiche Allgemeine Informationen sowie Technische Eigenschaften. 
+Letztere sind in mehreren \acsp{smc} organisiert, beispielsweise für Produktionsmedien, Umgebungsbedingungen, elektrische Daten oder den Verarbeitungsbereich. 
+Die einzelnen \acsp{smc} enthalten überwiegend Properties oder Ranges, die Parameter wie etwa elektrische Kenndaten beschreiben. 
+Auf diese Weise sind alle relevanten technischen Angaben an einem zentralen Ort gebündelt, was der redundanten Pflege in verschiedenen Systemen oder Dokumenten entgegenwirkt. 
 
 \subsubsection*{3) BOM}
 \vspace{-0.5em}
-\textbf{Funktion:}  
-Die betrachtete robocell-Maschine besteht aus einer Vielzahl unterschiedlicher Komponenten.
-Das BOM-Submodell dient dazu, diese Struktur sichtbar zu machen und die Beziehungen zwischen den Komponenten hierarchisch abzubilden, vergleichbar mit einer digitalen Stückliste.
 
-\textbf{Inhalte:}  
-Die Umsetzung orientiert sich an der SMT-Spezifikation Hierarchical Structures enabling Bills of Material~\cite{SpezifikationHierachischeStrukturen}.
-Das Submodell enthält verschiedene Entitäten, die jeweils eine untergeordnete Komponente repräsentieren.
-Die Beziehungen zwischen den Komponenten werden über Relationship-Elemente mit einer eindeutigen semanticId gemäß der Submodellspezifikation hergestellt.
+Das BOM-Submodell dient dazu, die Maschinenstruktur sichtbar zu machen und die Beziehungen zwischen ihren einzelnen Komponenten hierarchisch abzubilden, vergleichbar mit einer digitalen Stückliste.
+Dabei enthält es verschiedene Entitäten, die jeweils eine untergeordnete Komponente repräsentieren.
+Die Beziehungen zwischen den Komponenten werden über Relationship-Elemente mit einer eindeutigen semanticId gemäß dem \acs{smt} Hierarchical Structures enabling Bills of Material \cite{SpezifikationHierachischeStrukturen} hergestellt.
 
 Zur Veranschaulichung wurde die Grundmaschine als Beispiel gewählt, da sie weniger komplex als die Maschinenebene ist, aber dennoch alle relevanten Strukturelemente enthält.
 Abbildung~\ref{fig:BOMSubmodelGrundmashcine} zeigt das entsprechende Submodell, in dem weitere untergeordnete Komponenten aufgeführt sind, darunter auch das Bedientableau.
-Es ist als Self-Managed Entity angelegt und über die globalAssetId mit seiner AAS verknüpft (Abbildung~\ref{fig:AASBedientableau}), die wiederum ein eigenes BOM-Submodell mit weiteren Unterkomponenten enthält.
+Dieses ist als Self-Managed Entity angelegt und über die globalAssetId mit seiner AAS verknüpft (Abbildung~\ref{fig:AASBedientableau}), die wiederum ein eigenes BOM-Submodell mit weiteren Unterkomponenten enthält.
 
 \begin{figure}[htbp]
     \centering
@@ -140,53 +124,33 @@ Es ist als Self-Managed Entity angelegt und über die globalAssetId mit seiner A
     \label{fig:AASBedientableau}
 \end{figure}
 
-\textbf{Besonderheiten:}  
-Mit dem hier gezeigten Prinzip lässt sich die gesamte Maschine rekursiv abbilden.
-Jede Komponente wird separat als eigenständige AAS geführt und ist somit unabhängig von der übergeordneten Struktur wiederverwendbar.
-Für Szenarien, in denen die AAS einer Komponente nicht bekannt ist, kann der Discovery Service genutzt werden, um diese dynamisch aufzufinden.
+Mit diesem Prinzip lässt sich die gesamte Maschine rekursiv abbilden. 
+Jede Komponente wird als eigenständige AAS geführt und ist somit unabhängig von der übergeordneten Struktur wiederverwendbar. 
+Dies ermöglicht eine modulare und herstellerübergreifende Integration, da auch externe Komponenten eingebunden werden können.
 
 \subsubsection*{4), 5) Dokumentation und 3D-Modelle}
 \vspace{-0.5em}
-\textbf{Funktion:}  
-Die Submodelle Dokumentation und 3D-Modelle dienen der strukturierten Bereitstellung und semantischen Klassifizierung von digitalen Dateien.  
-Während das Submodell Dokumentation allgemeine technische Unterlagen wie Betriebsanleitungen oder Zeichnungen verwaltet, umfasst das Submodell 3D-Modelle digitale Geometriedaten, die den Aufbau der Maschine und ihrer Komponenten beschreiben. 
 
-\textbf{Inhalte:}  
-Die Struktur des Submodells Dokumentation basiert auf dem SMT Handover Documentation~\cite{SpezifikationDokumentation}.  
-Es enthält technische Unterlagen wie beispielsweise die Netzwerkübersicht oder die Projektzeichnung der Maschine.  
-Diese sind als File-Elemente direkt in die AAS eingebettet und jeweils in einer eigenen \acs{smc} organisiert.  
-Jede smc enthält zentrale Metainformationen wie Identifikation, Klassifikation und Versionsinformationen, wodurch die Dokumente eindeutig beschrieben und rückverfolgbar sind.  
-Die vollständige Struktur einer solchen \acs{smc} ist exemplarisch im Anhang in Abbildung~\ref{fig:SMDokumentation} am Beispiel Funktionsspezifikationen dargestellt.
-
-Das Submodell 3D-Modelle orientiert sich am SMT Provision of 3D-Models~\cite{Spezifikation3DModelle}, wurde im Demonstrator jedoch in vereinfachter Form umgesetzt.  
-Die Geometriedaten umfassen Konstruktionsdateien in Form von CAD-Modellen und sind analog zum Submodell Dokumentation eingebettet und beschrieben.  
-Eine Erweiterung um zusätzliche Metadaten, wie Darstellungsoptionen oder Geometrieinformationen, wäre möglich, wurde im Demonstrator jedoch nicht umgesetzt.  
-
-\textbf{Besonderheiten:}  
-Beide Submodelle sind universell einsetzbar und können flexibel um zusätzliche Dokumente oder Modelle erweitert werden.  
-Die eindeutige Beschreibung der Inhalte gemäß SMT-Spezifikation stellt sicher, dass sie sowohl von Menschen als auch von technischen Systemen interpretiert und über den gesamten Lebenszyklus hinweg rückverfolgt werden können.  
-In der AAS Web UI sowie im Package Explorer stehen zudem spezielle Plugins zur Verfügung, über die die Inhalte direkt angezeigt oder die hinterlegten Dateien heruntergeladen werden können, wodurch ein schneller Zugriff und eine einfache Weiterverwendung ermöglicht wird.
+Beide Submodelle dienen der Bereitstellung und Klassifizierung zentraler Maschinendateien. 
+Das Submodell Dokumentation umfasst technische Unterlagen wie die Betriebsanleitung oder die Netzwerkübersicht, während das Submodell 3D-Modelle CAD-Daten zur Geometrie beeinhaltet. 
+Alle Dateien sind als File-Elemente direkt in die Struktur der AAS eingebettet und jeweils in eigenen \acsp{smc} organisiert, die zusätzlich Metainformationen zu Identifikation, Klassifikation und Versionierung enthalten. 
+Das Submodell 3D-Modelle könnte darüber hinaus um weitere Metadaten, etwa zu Darstellungsoptionen oder Geometrieinformationen, ergänzt werden, was im Demonstrator jedoch nicht umgesetzt wurde. 
+Dadurch ermöglichen beide Submodelle nicht nur das Einbetten von Dateien, sondern auch deren eindeutige Beschreibung und Rückverfolgbarkeit über den gesamten Lebenszyklus hinweg.
 
 \subsubsection*{6) Wartung}
-\vspace{-0.5em}
-\textbf{Funktion:}  
-Das Submodell Wartung bildet den digitalen Wartungsplan der Maschine ab.  
-Es ermöglicht die strukturierte Verwaltung von Wartungsinformationen innerhalb des Demonstrators und gewährleistet dadurch eine nachvollziehbare Dokumentation, beispielsweise für Wartungspersonal.
+Das Submodell Wartung bildet den digitalen Wartungsplan der Maschine ab. 
+Für jede wartungsrelevante Komponente sind in eigenen \acsp{smc} letzte Wartungszeitpunkte, Intervalle, zuständige Personen oder Organisationen sowie die vorgesehenen Maßnahmen hinterlegt. 
+Es ermöglicht damit die strukturierte Verwaltung sowohl bereits durchgeführter als auch anstehender Wartungen und gewährleistet eine nachvollziehbare Dokumentation. 
+Darüber hinaus schafft das Submodell die Grundlage für eine dynamische Erweiterung. 
+So könnte beispielsweise ein Betriebsstundenzähler angebunden werden, der automatisch Wartungsbedarf erkennt, oder es könnte in Kombination mit Predictive-Maintenance-Ansätzen genutzt werden, um auf Basis von Sensordaten proaktiv Wartungsmaßnahmen abzuleiten und diese direkt in der AAS darzustellen. 
 
-\textbf{Inhalte:}  
-Für jede Komponente werden letzte Wartungszeitpunkte, Wartungsintervalle, zuständige Personen oder Organisationen sowie durchzuführende Maßnahmen in eigenen \acs{smc} erfasst.  
-Diese Struktur erlaubt eine gezielte und übersichtliche Dokumentation aller Wartungsaktivitäten.
+\textbf{Zusammenfassung}  
 
-\textbf{Besonderheiten:}  
-Das Submodell ist so konzipiert, dass es zukünftig dynamisch erweitert werden kann, beispielsweise durch die Anbindung eines Betriebsstundenzählers, der Wartungsbedarf automatisch erkennen kann.  
-Ebenso ist die Integration von Predictive-Maintenance-Ansätzen denkbar, um Wartungsbedarf vorausschauend anhand von Sensordaten zu ermitteln.
-
-% \textbf{Zusammenfassung}  
-% Die Stammdaten der Maschine zentral an einem Ort
-% Darin alle standardisiert beschriben mit enideutiger Semantik beschreiben mit Concept Descripotions, dadurch auch maschinenverständlich
-% Was ist jetzt der Vorteil davon. Die Daten können alle ganz einfach als Typ-1-AAS im AASX Datei Format an Interessenten weitergegeben werden
-% Diese Könnten die dann einfach an die bestehenden Unternehmenssystem angebunden und autimatisch im ERP oder PLM die Datenn gemappt, sofern eine geeignet Struktur vorhanden also hier will ich sagen das die aas quasi der robocell weitergegebn werden kann
-% Genauso aber auch umgekehrt, wie mit der hierachischen Abbildung gezeigt so auch bei groninger hier dann umgekehrt für groninger auch, weil interessant für Maschinenabuer und nicht nur für die System sondern auch direkt in den die AAS der Maschine eingebettet
+Die statischen Submodelle bündeln alle relevanten Stammdaten der Maschine zentral an einem Ort. 
+Dadurch wird eine einfache Weitergabe der Informationen entlang der Wertschöpfungskette ermöglicht. 
+So kann die AAS beispielsweise in Form einer AASX-Datei an einen Betreiber übergeben werden, der direkten Zugriff auf die Daten benötigt. 
+Ebenso können AAS einzelner Komponenten nahtlos in den digitalen Zwilling der Gesamtmaschine integriert werden. 
+Durch die Orientierung an standardisierten \acsp{smt} und die semantische Beschreibung sind die Inhalte zudem interoperabel und können von unterschiedlichen Systemen oder Personen gleichermaßen interpretiert und genutzt werden. 
 
 \newpage
 \subsubsection{Dynamische Submodelle}
@@ -361,15 +325,13 @@ Diese Ansätze wurden aufgrund begrenzter Rechenressourcen im Rahmen dieser Arbe
 % Digitaler Produktpass
 \newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
-Im Rahmen dieses Anwendungsfalls wird gezeigt, wie PCF-Werte für verschiedene Lebenszyklusphasen dynamisch ermittelt, aggregiert und in ein Submodell geschrieben werden. 
-Grundlage bildet der in Kapitel \ref{xy} vorgestellte AAS-Demonstrator, der zu diesem Zweck um ein Submodell zur Abbildung des \acs{cf} erweitert wurde.
-Anschließend wird erläutert, wie der Zugriff auf die im DPP enthaltenen Informationen geregelt ist und wie unterschiedliche Nutzergruppen sowie technische Clients auf die Inhalte zugreifen können.
+Der Anwendungsfall Digitaler Produktpass demonstriert, wie Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten direkt in der AAS einer Maschine abgebildet werden können.
+Grundlage bildet der in Kapitel \ref{sec:AAS-Demonstrator} vorgestellte AAS-Demonstrator, der zu diesem Zweck um ein Submodell zur Abbildung des \acs{cf} erweitert wurde.
+Neben der dynamischen Berechnung und Aggregation dieser Werte wird im Folgenden auch dargestellt, wie der Zugriff auf die im DPP enthaltenen Informationen durch unterschiedliche Nutzerrollen und technische Clients geregelt ist.
 
 \subsubsection{Abbildung des PCF}
-Das \acs{cf}-Submodell enthält drei \acsp{smc}, die die Lebenszyklusphasen Material, Produktion und Cradle to Gate abbilden.
-Zusätzlich ist eine Komponentenliste integriert, über die die relevanten Steuerungselemente referenziert sind.
-Abbildung \ref{fig:SubmodellCF} zeigt einen Ausschnitt dieses Submodells.
-Zu erkennen ist die \acs{smc} für die Phase Cradle to Gate sowie die Komponentenliste mit ausgewählten Siemens-Komponenten.
+Das CF-Submodell bildet die Lebenszyklusphasen Material, Produktion und Cradle to Gate jeweils in eigenen \acsp{smc} ab.
+Abbildung~\ref{fig:SubmodellCF} zeigt exemplarisch die \acs{smc} für die Phase Cradle to Gate (links) sowie die integrierte Komponentenliste (rechts), in der die für die Berechnung herangezogenen Siemens-Komponenten hinterlegt sind.
 
 \begin{figure}[htbp]
     \centering
@@ -378,26 +340,14 @@ Zu erkennen ist die \acs{smc} für die Phase Cradle to Gate sowie die Komponente
     \label{fig:SubmodellCF}
 \end{figure}
 
-Die dynamische Berechnung der Gesamt-\acs{pcf}-Werte der einzelnen Phasen kann über die AAS Web UI ausgelöst werden.
-Im Visualisierungsbereich wurde hierzu eine Schaltfläche implementiert, die die Aggregation der CO\textsubscript{2}-Äquivalente auslöst. 
-Dies erfolgt durch das Senden einer \acs{http}-GET-Anfrage an den Microservice, der die Berechnung ausführt.
+Die Aggregation der CO\textsubscript{2}-Äquivalente erfolgt dynamisch über einen Microservice. 
+Dieser ist als Docker-Container implementiert und greift über die REST-Schnittstellen des BaSyx-Backends auf die in der Komponentenliste hinterlegten Entitäten zu. 
+Mithilfe des Discovery Service werden deren AAS identifiziert und vorhandene CF-Submodelle ausgelesen. 
+Die enthaltenen PCF-Werte werden anschließend zu Gesamtwerten für die einzelnen Lebenszyklusphasen aggregiert und in das CF-Submodell der Haupt-AAS zurückgeschrieben.
 
-Der Microservice, der als Docker-Container implementiert wurde, reagiert auf die Anfrage und startet den Berechnungsprozess. 
-Dabei nutzt er die \acs{rest}-Schnittstelle des Submodel Repositories der AAS Environment, um zunächst alle in der Komponentenliste hinterlegten Entitäten auszulesen. 
-Mithilfe des Discovery Service werden auf Basis ihrer globalAssetIds die zugehörigen Komponenten-\acs{aas} identifiziert und anschließend vom AAS Repository abgerufen.
-
-Für jede dieser Komponenten wird geprüft, ob ein \acs{cf}-Submodell vorhanden ist. 
-Falls dies zutrifft, wird das Submodell ausgelesen und die darin enthaltenen \acs{pcf}-Werte extrahiert. 
-Aus den ermittelten Einzelwerten berechnet der Microservice anschließend die aggregierten CO\textsubscript{2}-Äquivalente für die Phasen Produktion, Material sowie Cradle to Gate. 
-Die berechneten Werte werden über die \acs{rest}-\acs{api} in das \acs{cf}-Submodell der Haupt-\acs{aas} geschrieben und stehen dort strukturiert zur Verfügung.
-
-Außerdem sendet der Microservice eine Bestätigung an das Plugin zurück. 
-Dieses reagiert darauf, indem es das aktualisierte \acs{cf}-Submodell über die \acs{rest}-Schnittstelle des Submodel Repositories abfragt. 
-Die relevanten Submodellelemente werden dabei herausgefiltert und in der Benutzeroberfläche aktualisiert. 
-Dadurch werden die aggregierten \acs{pcf}-Werte unmittelbar sichtbar, ohne dass ein manuelles Neuladen erforderlich ist.
-
-Abbildung \ref{fig:PluginAggregation} zeigt die entsprechende Visualisierung. 
-Auf der linken Seite sind die berechneten CO\textsubscript{2}-Äquivalente dargestellt, auf der rechten Seite die zugehörigen Lebenszyklusphasen.
+Die Berechnung kann direkt über ein Plugin in der AAS Web UI ausgelöst werden.
+ Nach Abschluss des Berechnungsprozesses werden die aktualisierten Werte automatisch vom Submodel Repository abgefragt und in der Benutzeroberfläche aktualisiert.
+Abbildung~\ref{fig:PluginAggregation} zeigt die entsprechende Visualisierung: links die aggregierten CO\textsubscript{2}-Äquivalente, rechts die zugehörigen Lebenszyklusphasen.
 
 \begin{figure}[htbp]
     \centering
@@ -406,45 +356,33 @@ Auf der linken Seite sind die berechneten CO\textsubscript{2}-Äquivalente darge
     \label{fig:PluginAggregation}
 \end{figure}
 
-Die beschriebene Lösung ermöglicht es, den \acs{pcf} dynamisch auf Basis der in der Komponentenliste referenzierten Steuerungselemente zu berechnen. 
-Auch wenn derzeit nur acht Siemens-Komponenten berücksichtigt werden, lässt sich die Liste bei Verfügbarkeit weiterer Komponenten-\acs{aas} unkompliziert erweitern, sodass sukzessive die gesamte Maschine in die Berechnung einbezogen werden kann.
-
-Perspektivisch lässt sich die Berechnung zudem um weitere Lebenszyklusphasen wie Nutzung oder Entsorgung ergänzen, um eine ganzheitliche Betrachtung von der Herstellung bis zum Lebensende eines Produkts bzw. einer Maschine zu ermöglichen.
-Darüber hinaus könnte auch der \acs{tcf} berücksichtigt werden, beispielsweise im Rahmen der Auslieferung einer Maschine, wodurch eine noch umfassendere Bilanzierung der Umweltauswirkungen ermöglicht wird.
+Der Ansatz ist flexibel erweiterbar.
+Bei Verfügbarkeit weiterer Komponenten-AAS lässt sich die Liste unkompliziert ergänzen, sodass sukzessive die gesamte Maschine berücksichtigt werden kann. 
+Perspektivisch ist auch eine Erweiterung auf weitere Lebenszyklusphasen, wie Nutzung oder Entsorgung, sowie die Einbeziehung des TCF denkbar, um eine ganzheitliche ökologische Bilanzierung zu ermöglichen.
 
 \subsubsection{Rollenbasierter Zugriff auf Submodelle}
-Der \acs{dpp} wird in diesem Anwendungsfall durch die erweiterte AAS der robocell-Maschine repräsentiert.
-Um sicherzustellen, dass nur autorisierte Nutzer auf spezifische Submodelle zugreifen können, wurde eine rollenbasierte Zugriffskontrolle implementiert.
+Der digitale Produktpass wird im Demonstrator durch die erweiterte AAS der robocell-Maschine repräsentiert. 
+Um sensible Inhalte gezielt und sicher bereitzustellen, wurde eine rollenbasierte Zugriffskontrolle implementiert. 
 Die Authentifizierung und Autorisierung erfolgt über Keycloak, das als Docker-Container in die BaSyx-Architektur integriert ist.
 
-Exemplarisch wurden folgende Benutzer mit zugehörigen Rollen eingerichtet:
+Exemplarisch wurden drei Nutzer mit zugehörigen Rollen eingerichtet, deren Rechte in separaten Konfigurationsdateien für die jeweiligen BaSyx-Dienste hinterlegt sind.
 
+\newpage
 \begin{itemize}[noitemsep, leftmargin=*, label=\textbullet]
   \item \makebox[6cm][l]{\textbf{groninger.meyer}} (Rolle: \textit{Groninger-Mitarbeiter})
+    \begin{itemize}[noitemsep, leftmargin=2em, label=--]
+      \item uneingeschränkter Zugriff auf alle Submodelle
+    \end{itemize}
   \item \makebox[6cm][l]{\textbf{customer.doe}} (Rolle: \textit{Kunde})
+    \begin{itemize}[noitemsep, leftmargin=2em, label=--]
+      \item Zugriff auf ausgewählte Submodelle (z.\,B. Typenschild, CF)
+    \end{itemize}
   \item \makebox[6cm][l]{\textbf{technician.john}} (Rolle: \textit{Service-Techniker})
+    \begin{itemize}[noitemsep, leftmargin=2em, label=--]
+      \item Lese- und Schreibrechte auf wartungsrelevante Submodelle
+    \end{itemize}
 \end{itemize}
-
-Jede Rolle verfügt über differenzierte Zugriffsrechte, die jeweils in separaten Konfigurationsdateien für die einzelnen Dienste der BaSyx-Plattform hinterlegt sind.
-Die Rolle Groninger-Mitarbeiter besitzt vollständige Rechte auf alle Submodelle des \acs{dpp}, während die Rolle Kunde ausschließlich Leserechte auf ausgewählte Submodelle (z.B. Typenschild, Technische Daten) besitzt.
-Die Rolle Service-Techniker hingegen verfügt über Lese- und Schreibrechte auf wartungsrelevante Submodelle wie Wartung oder Kontrollkomponente, hat jedoch keinen Zugriff auf nicht relevante Bereiche wie das \acs{pcf}-Submodell.
-
-% Die \acs{rbac}-Konfiguration der Rolle Groninger-Mitarbeiter für den Zugriff auf das Submodel Repository innerhalb der AAS Environment ist in Listin dargestellt Submodelle innerhalb der AAS Environment ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
-% Jeder Nutzer verfügt dabei über ein eigenes Benutzerkonto, indem ....
-% Vlt anderes Submodel mit Submodell IDS und ein zwei Sätze noch
-% Oder überhaupt das hier zeigen ???
-
-% \begin{lstlisting}[language=json, caption={RBAC-Konfiguration für die Rolle Groninger-Mitarbeiter}, label={lst:groningerMitarbeiterRBAC}]
-% {
-%     "role": "groninger-employee",
-%     "action": ["CREATE", "READ", "UPDATE", "DELETE"],
-%     "targetInformation": {
-%         "@type": "submodel",
-%         "submodelIds": "*",
-%         "submodelElementIdShortPaths": "*"
-%     }
-% }
-% \end{lstlisting}
+\vspace{0.5em}
 
 Eine Möglichkeit zur Einsicht der im \acs{dpp} enthaltenen Informationen bietet die AAS Web UI.
 Ist \acs{rbac} aktiviert, wird der Benutzer beim Aufruf der Oberfläche automatisch zur Keycloak-Anmeldeseite weitergeleitet.
@@ -457,24 +395,22 @@ Wie in Abbildung~\ref{fig:KeycloakAnmeldeSeite} dargestellt, erfolgt die Authent
     \label{fig:KeycloakAnmeldeSeite}
 \end{figure}
 
-Nach erfolgreicher Anmeldung erhält die AAS Web UI ein Zugriffstoken, das die Rolleninformationen des Nutzers enthält.  
-Dieses Token wird im Hintergrund an die angebundenen BaSyx-Komponenten weitergegeben.  
-Die Entscheidung über die tatsächliche Zugriffsberechtigung trifft nicht die Web UI selbst, sondern der jeweilige Service, indem er die im Token enthaltenen Rollen gegen die hinterlegten \acs{rbac}-Regeln prüft.  
-Liegt keine entsprechende Konfiguration vor, wird der Zugriff verweigert.
+Nach erfolgreicher Anmeldung erhält die AAS Web UI ein Zugriffstoken mit den Rolleninformationen des Nutzers.
+Dieses Token wird bei allen Anfragen an die BaSyx-Komponenten automatisch mitgesendet.
+Die jeweiligen Dienste prüfen es gegen die hinterlegten \acs{rbac}-Regeln und entscheiden so über die tatsächliche Zugriffsberechtigung.
 
-Meldet sich beispielsweise der Nutzer customer.doe an, so erhält er Zugriff auf den \acs{dpp}, jedoch sieht er ausschließlich jene Submodelle, die für seine Rolle freigegeben sind, etwa das Typenschild, technische Daten oder der \acs{cf}.  
-Andere Submodelle wie 3D-Modelle oder Wartungsinformationen bleiben verborgen.  
-Zudem besitzt der Benutzer lediglich Leserechte.
-Veruscht er Änderungen an den Inhalten des \acs{dpp} vorzunehmen, so wird dies mit einem Fehler abgelehnt.
+Meldet sich beispielsweise der Nutzer customer.doe an, so sieht er nur die für seine Rolle freigegebenen Submodelle. 
+Andere Submodelle wie Kontrollkomponente oder Wartung bleiben verborgen. 
+Zudem besitzt er ausschließlich Leserechte, das heißt Änderungsversuche werden mit einem Fehler abgelehnt.
 
-Neben dem Zugriff über die AAS Web UI ist auch ein direkter Zugriff auf die BaSyx-Komponenten über die \acs{api} möglich. 
-Dies ist insbesondere für technische Clients oder externe Anwendungen relevant, die automatisiert auf die im \acs{dpp} enthaltenen Informationen zugreifen möchten.
-Zu diesem Zweck wurden in Keycloak drei Clients eingerichtet, denen jeweils ein Service Account zugewiesen ist.
-Den Service Accounts sind wiederum die Rollen Groninger-Mitarbeiter, Kunde und Service-Techniker zugewiesen.
-Dadurch erhalten die Clients dieselben Berechtigungen wie die zuvor beschriebenen Benutzerkonten und können entsprechend auf die für ihre Rolle freigegebenen Submodelle zugreifen.
+Neben der AAS Web UI ist auch ein direkter Zugriff auf die BaSyx-Komponenten über die REST-API möglich, der insbesondere für technische Clients relevant ist. 
+Dafür wurden in Keycloak drei Clients mit Service Accounts angelegt, die denselben Rollen wie die Benutzerkonten entsprechen und somit identische Berechtigungen besitzen.
 
-Zur Validierung der Zugriffskonfiguration wurde das Tool Postman verwendet.
-Die Zugriffstokens wurden über den Token-Endpunkt des Realms mithilfe der Client-Anmeldedaten abgerufen und für die API-Aufrufe verwendet.
+Zur Validierung der Konfiguration wurde Postman eingesetzt. 
+Die Clients rufen dabei über den Token-Endpunkt von Keycloak Zugriffstokens ab und nutzen diese für API-Anfragen. 
+Abbildung~\ref{fig:KeycloakAnmeldeSeite} zeigt exemplarisch eine DELETE-Anfrage des Service-Techniker-Clients. 
+Da dieser nur Leserechte besitzt, wird die Anfrage mit HTTP 403 Forbidden abgelehnt. 
+Mit dem Groninger-Client hingegen gelingt der Löschvorgang, da dessen Rolle uneingeschränkte Rechte umfasst (HTTP 204 No Content).
 
 \begin{figure}[htbp]
     \centering
@@ -483,15 +419,24 @@ Die Zugriffstokens wurden über den Token-Endpunkt des Realms mithilfe der Clien
     \label{fig:KeycloakAnmeldeSeite}
 \end{figure}
 
-Abbildung \ref{fig:KeycloakAnmeldeSeite} zeigt eine DELETE-Anfrage, bei der der Service-Techniker-Client versucht, das CF-Submodell aus der AAS-Umgebung zu löschen.
-Da dieser Client lediglich über Leserechte verfügt, wird die Anfrage mit dem HTTP-Statuscode 403 Forbidden abgelehnt.
-Wird dieselbe Anfrage hingegen mit dem Groninger-Client ausgeführt, gelingt der Löschvorgang.
-Dank der Rolle Groninger-Mitarbeiter besitzt dieser die erforderlichen Rechte und erhält den Statuscode 204 No Content.
-
-Die Umsetzung der Zugriffskontrolle mit BaSyx und Keycloak zeigt, dass sich die im \acs{dpp} geforderten Berechtigungen technisch zuverlässig auf die AAS und ihre Submodelle abbilden lassen.
-Damit bestätigt sich die Eignung der AAS als technische Grundlage für den DPP und bietet zugleich Potenzial für zukünftige Szenarien, in denen sensible Informationen, etwa Nachhaltigkeitsdaten wie der zuvor betrachtete PCF, gezielt und sicher entlang der Wertschöpfungskette bereitgestellt werden können.
+Die Zugriffskontrolle mit BaSyx und Keycloak zeigt, dass sich Berechtigungen zuverlässig auf die AAS und ihre Submodelle übertragen lassen.
+Dies bestätigt die Eignung der AAS als technische Grundlage für den \acs{dpp} und eröffnet Potenziale für Szenarien, in denen sensible Informationen, etwa Nachhaltigkeitsdaten, differenziert entlang der Wertschöpfungskette bereitgestellt werden.
 
 \subsection{Anwendungsfall automatisierte Generierung der AAS}
+
+Im Rahmen des Demonstrators konnte gezeigt werden, dass sich AAS-Instanzen aus vorhandenen strukturierten Daten automatisiert erzeugen und in das BaSyx-System integrieren lassen. 
+Als Grundlage diente das im Entwicklungsteil erstellte unternehmensspezifische Submodel Template „Technische Daten“, aus dem ein Typ-Submodell abgeleitet wurde. 
+Mithilfe eines Node.js-Skripts wurde dieses automatisiert mit vordefinierten Beispieldaten befüllt und in eine neu erzeugte AAS-Instanz eingebettet. 
+Die Instanz konnte anschließend erfolgreich über die REST-Schnittstellen im BaSyx-Backend registriert und über die AAS Web UI angezeigt werden. 
+
+Damit wurde nachgewiesen, dass sich der aufwendige manuelle Modellierungsprozess im Package Explorer deutlich vereinfachen und standardisieren lässt. 
+Die automatisierte Generierung erhöht nicht nur die Effizienz, sondern sorgt zugleich für Konsistenz in der Struktur, da alle Instanzen auf denselben semantischen Vorlagen basieren. 
+Der Ansatz ist grundsätzlich auf weitere Maschinentypen übertragbar und könnte in der industriellen Praxis direkt mit bestehenden PLM- oder ERP-Systemen verknüpft werden, sodass AAS-Instanzen ohne manuelle Zwischenschritte bereitgestellt werden. 
+
+Einschränkend ist festzuhalten, dass im Demonstrator lediglich statische Beispieldaten verarbeitet wurden und keine vollständige Anbindung an reale Unternehmenssysteme erfolgte. 
+Zudem wurde die Umsetzung auf ein einzelnes Submodell beschränkt. 
+Eine Erweiterung auf komplexere Submodelle oder eine direkte Integration in bestehende Datenlandschaften ist jedoch technisch naheliegend und bietet Potenzial für die künftige Nutzung in der Praxis. 
+
 
 
 %Evaluation der eingesetzten Software
