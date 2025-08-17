@@ -1,30 +1,31 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Klassifizierung des digitalen Zwillings}}{8}{figure.caption.15}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Industrie 4.0 Komponente}}{10}{figure.caption.22}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Vereinfachtes Metamodell der \acs {aas}}}{12}{figure.caption.24}%
-\contentsline {figure}{\numberline {4}{\ignorespaces robocell Abfüll- und Verschließmodul}}{17}{figure.caption.49}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Benutzeroberfläche Package Explorer}}{18}{figure.caption.52}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Benutzeroberfläche AAS Web UI}}{20}{figure.caption.58}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Ablauf der Entwicklung des digitalen Zwillings}}{21}{figure.caption.59}%
-\contentsline {figure}{\numberline {8}{\ignorespaces AAS-Paket im Package Explorer}}{25}{figure.caption.65}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Submodell Prozessdaten}}{32}{figure.caption.96}%
-\contentsline {figure}{\numberline {10}{\ignorespaces OPC UA Datenknoten}}{32}{figure.caption.98}%
-\contentsline {figure}{\numberline {11}{\ignorespaces SMT Time Series Data}}{35}{figure.caption.103}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Aufbau eines Autoencoders}}{36}{figure.caption.104}%
-\contentsline {figure}{\numberline {13}{\ignorespaces BaSyx-Backend}}{47}{figure.caption.135}%
-\contentsline {figure}{\numberline {14}{\ignorespaces BaSyx Backend}}{48}{figure.caption.136}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Package Explorer: Gesamtübersicht AAS-Demonstrator}}{49}{figure.caption.137}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Package Explorer: BOM-Submodell der Grundmaschine}}{50}{figure.caption.140}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Package Explorer: AAS des Bedientableaus}}{50}{figure.caption.141}%
-\contentsline {figure}{\numberline {18}{\ignorespaces AAS Web UI: Prozessdaten}}{53}{figure.caption.144}%
-\contentsline {figure}{\numberline {19}{\ignorespaces AAS Web UI: PackML-Zustandsautomat}}{54}{figure.caption.147}%
-\contentsline {figure}{\numberline {20}{\ignorespaces AAS Web UI: Zeitreihendaten (Liniendiagramm)}}{56}{figure.caption.149}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Anomalieerkennung Fall 1: Überhöhte Daten}}{58}{figure.caption.150}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Anomalieerkennung Fall 2: Linearer Anstieg}}{59}{figure.caption.151}%
-\contentsline {figure}{\numberline {23}{\ignorespaces CF-Submodell der robocell}}{60}{figure.caption.154}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Visualisierung der aggregierten PCF-Werte}}{61}{figure.caption.155}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{62}{figure.caption.158}%
-\contentsline {figure}{\numberline {26}{\ignorespaces DELETE-Anfrage des Service-Techniker-Clients in Postman}}{63}{figure.caption.160}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Package Explorer: Struktur des Submodells Technische Daten}}{73}{figure.caption.162}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Package Explorer: Struktur des Submodells Dokumentation}}{74}{figure.caption.163}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Package Explorer: Struktur des Submodells Wartung}}{75}{figure.caption.164}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Klassifizierung des digitalen Zwillings}}{8}{figure.caption.18}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Industrie 4.0 Komponente}}{10}{figure.caption.25}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Vereinfachtes Metamodell der \acs {aas}}}{12}{figure.caption.27}%
+\contentsline {figure}{\numberline {4}{\ignorespaces robocell Abfüll- und Verschließmodul}}{17}{figure.caption.52}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Benutzeroberfläche Package Explorer}}{18}{figure.caption.55}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Benutzeroberfläche AAS Web UI}}{20}{figure.caption.61}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Ablauf der Entwicklung des digitalen Zwillings}}{21}{figure.caption.62}%
+\contentsline {figure}{\numberline {8}{\ignorespaces AAS-Paket im Package Explorer}}{25}{figure.caption.68}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Submodell Prozessdaten}}{32}{figure.caption.99}%
+\contentsline {figure}{\numberline {10}{\ignorespaces OPC UA Datenknoten}}{32}{figure.caption.101}%
+\contentsline {figure}{\numberline {11}{\ignorespaces SMT Time Series Data}}{35}{figure.caption.106}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Aufbau eines Autoencoders}}{36}{figure.caption.107}%
+\contentsline {figure}{\numberline {13}{\ignorespaces BaSyx-Backend}}{47}{figure.caption.138}%
+\contentsline {figure}{\numberline {14}{\ignorespaces BaSyx Backend}}{48}{figure.caption.139}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Package Explorer: Gesamtübersicht AAS-Demonstrator}}{49}{figure.caption.140}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Package Explorer: BOM-Submodell der Grundmaschine}}{50}{figure.caption.143}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Package Explorer: AAS des Bedientableaus}}{50}{figure.caption.144}%
+\contentsline {figure}{\numberline {18}{\ignorespaces AAS Web UI: Prozessdaten}}{53}{figure.caption.147}%
+\contentsline {figure}{\numberline {19}{\ignorespaces AAS Web UI: PackML-Zustandsautomat}}{54}{figure.caption.150}%
+\contentsline {figure}{\numberline {20}{\ignorespaces AAS Web UI: Zeitreihendaten (Liniendiagramm)}}{56}{figure.caption.152}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Anomalieerkennung Fall 1: Überhöhte Daten}}{58}{figure.caption.153}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Anomalieerkennung Fall 2: Linearer Anstieg}}{59}{figure.caption.154}%
+\contentsline {figure}{\numberline {23}{\ignorespaces CF-Submodell der robocell}}{60}{figure.caption.157}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Visualisierung der aggregierten PCF-Werte}}{61}{figure.caption.158}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Keycloak-Anmeldeseite für die AAS Web UI}}{62}{figure.caption.161}%
+\contentsline {figure}{\numberline {26}{\ignorespaces DELETE-Anfrage des Service-Techniker-Clients in Postman}}{63}{figure.caption.163}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Package Explorer: Submodell Typenschild}}{73}{figure.caption.167}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Package Explorer: Submodell Technische Daten}}{74}{figure.caption.168}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Package Explorer: Submodell Dokumentation (stellvertretend auch für 3D-Modelle)}}{75}{figure.caption.169}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Package Explorer: Submodell Wartung}}{76}{figure.caption.170}%

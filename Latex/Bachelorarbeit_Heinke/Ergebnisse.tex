@@ -78,7 +78,7 @@ Die grundlegende Struktur der weiteren statischen Submodelle ist im Anhang~\ref{
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/AASrobocell.PNG}
+        \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/AASrobocellTestAuflösung.PNG}
     \caption{Package Explorer: Gesamtübersicht AAS-Demonstrator}
     \label{fig:PackageExplorerRobocell}
 \end{figure}
@@ -112,17 +112,18 @@ Dieses ist als Self-Managed Entity angelegt und über die globalAssetId mit sein
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/GundmaschneEntitie.PNG}
+        \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/AASGrundmaschine.PNG}
     \caption{Package Explorer: BOM-Submodell der Grundmaschine}
     \label{fig:BOMSubmodelGrundmashcine}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/Bedientableau+.PNG}
+        \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/BedientableauTest.PNG}
     \caption{Package Explorer: AAS des Bedientableaus}
     \label{fig:AASBedientableau}
 \end{figure}
+
 
 Mit diesem Prinzip lässt sich die gesamte Maschine rekursiv abbilden. 
 Jede Komponente wird als eigenständige AAS geführt und ist somit unabhängig von der übergeordneten Struktur wiederverwendbar. 
@@ -175,9 +176,10 @@ Damit die Werte in der Benutzeroberfläche aktuell bleiben, kann eine Synchronis
 Dabei ruft die Weboberfläche die relevanten Daten in festen Intervallen, beispielsweise alle vier Sekunden, automatisch vom Repository ab.
 
 \newpage
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DynamischeDaten/ProcessData/VisualisierungNeu.png}
+    \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/ProcessData.png}
     \caption{AAS Web UI: Prozessdaten}
     \label{fig:Processdata}
 \end{figure}
@@ -202,10 +204,11 @@ Damit Statusänderungen unmittelbar sichtbar werden, ist eine Polling-Logik impl
 
 \begin{figure}[htbp]
     \centering 
-    \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DynamischeDaten/Kontrollkomponente/Visualisierung.png} 
+    \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png} 
     \caption{AAS Web UI: PackML-Zustandsautomat} 
     \label{fig:PackMLZustandsautomat} 
 \end{figure}
+
 
 Neben der reinen Statusanzeige erlaubt das Plugin auch die Steuerung zulässiger Zustandsübergänge direkt aus der Benutzeroberfläche heraus.
 Befindet sich die Maschine beispielsweise im Zustand Execute, können Befehle wie Stop, Hold, Suspend oder Abort ausgelöst werden.
@@ -230,7 +233,7 @@ Abbildung~\ref{fig:LiniendiagrammBaSyx} zeigt exemplarisch ein Liniendiagramm mi
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DynamischeDaten/ZeitreihenDaten/Liniendiagramm.png}
+        \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/Zeitreihen.png}
     \caption{AAS Web UI: Zeitreihendaten (Liniendiagramm)}
     \label{fig:LiniendiagrammBaSyx}
 \end{figure}
@@ -335,7 +338,7 @@ Abbildung~\ref{fig:SubmodellCF} zeigt exemplarisch die \acs{smc} für die Phase 
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DPP/SubmodellCF.png}
+        \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png}
     \caption{CF-Submodell der robocell}
     \label{fig:SubmodellCF}
 \end{figure}

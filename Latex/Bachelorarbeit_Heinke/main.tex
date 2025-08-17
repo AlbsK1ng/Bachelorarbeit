@@ -14,6 +14,7 @@
 \usepackage{subcaption}
 \usepackage{tocbibind}
 \usepackage{hyperref}
+\usepackage{bookmark} 
 % \usepackage{cleveref}
 % cleveref sorgt für Probleme mit acronym
 
@@ -212,12 +213,16 @@
   \newpage
   \end{spacing}
 
+\newpage
+\phantomsection
 \listoffigures
-\newpage
 
+\newpage
+\phantomsection
 \listoftables
-\newpage
 
+\newpage
+\phantomsection
 \lstlistoflistings 
 
 \newpage
@@ -263,14 +268,21 @@ Zur Verwendung des Glossars \gls{SPS} verwenden.
 
 
 \newpage
-\printbibliography
+\phantomsection 
+\printbibliography[heading=bibintoc]
 % \bibliographystyle{abbrvnat}
 % \bibliography{references}
+% \renewcommand{\appendixname}{Anhang}
+% \renewcommand{\appendixpagename}{Anhang}
+% \renewcommand{\appendixtocname}{Anhang}
 
+\clearpage
+\newpage
 \begin{appendix}
-
-\input{Anhang.tex}
-
+  \fancyhead[LE,RO]{ANHANG}
+  \input{Anhang}
+  \clearpage 
+  \fancyhead[LE,RO]{\rightmark} 
 \end{appendix}
 
 \end{document}
