@@ -153,7 +153,6 @@ So kann die AAS beispielsweise in Form einer AASX-Datei an einen Betreiber über
 Ebenso können AAS einzelner Komponenten nahtlos in den digitalen Zwilling der Gesamtmaschine integriert werden. 
 Durch die Orientierung an standardisierten \acsp{smt} und die semantische Beschreibung sind die Inhalte zudem interoperabel und können von unterschiedlichen Systemen oder Personen gleichermaßen interpretiert und genutzt werden. 
 
-\newpage
 \subsubsection{Dynamische Submodelle}
 \label{sec:DynamischeSubmodelle}
 Neben den statischen Submodellen wurden im Demonstrator auch dynamische Submodelle umgesetzt.
@@ -171,18 +170,17 @@ Die Werte stammen aus dem \acs{opcua}-Server des Datengenerators, der sie im Sek
 Vor der Speicherung im Submodel Repository erfolgt eine zweistufige Transformation.
 Zunächst werden die Rohdaten mithilfe des Jackson-Transformers in ein JSON-Format überführt, anschließend extrahiert JSONata die relevanten Messgrößen, die schließlich den entsprechenden Properties des Submodells zugeordnet werden.
 
-Die Visualisierung der Prozessdaten erfolgt in der klassischen Elemente-Ansicht der AAS Web UI, wie in Abbildung~\ref{fig:Processdata} dargestellt, oder über ein speziell entwickeltes Plugin.
-Damit die Werte in der Benutzeroberfläche aktuell bleiben, kann eine Synchronisationsfunktion aktiviert werden.
-Dabei ruft die Weboberfläche die relevanten Daten in festen Intervallen, beispielsweise alle vier Sekunden, automatisch vom Repository ab.
-
-\newpage
-
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/ProcessData.png}
     \caption{AAS Web UI: Prozessdaten}
     \label{fig:Processdata}
 \end{figure}
+\vspace{-0.5em}
+
+Die Visualisierung der Prozessdaten erfolgt in der klassischen Elemente-Ansicht der AAS Web UI, wie in Abbildung~\ref{fig:Processdata} dargestellt, oder über ein speziell entwickeltes Plugin.
+Damit die Werte in der Benutzeroberfläche aktuell bleiben, kann eine Synchronisationsfunktion aktiviert werden.
+Dabei ruft die Weboberfläche die relevanten Daten in festen Intervallen, beispielsweise alle vier Sekunden, automatisch vom Repository ab.
 
 Die Umsetzung ist protokolloffen und könnte grundsätzlich auf weitere Kommunikationsstandards wie \acs{mqtt} oder \acs{rest} erweitert werden.
 Eine automatische bidirektionale Kommunikation, etwa das Zurückschreiben von Werten aus der \acs{aas} in externe Systeme, ist mit der eingesetzten Databridge derzeit jedoch nicht möglich.
@@ -199,20 +197,22 @@ Dieses Konzept kommt auch bei der robocell-Linie zum Einsatz und ermöglicht ein
 
 Die Visualisierung erfolgt über ein in die AAS Web UI integriertes Vue.js-Plugin, das den Maschinenstatus als PackML-Zustandsautomat darstellt.
 Das Plugin basiert auf einer Entwicklung der Hochschule für Technik und Wirtschaft Berlin \cite{HTW1, HTW2} und wurde funktional angepasst, um es in die AAS Web UI zu integrieren und die im Demonstrator benötigten Steuer- und Anzeigeoptionen zu unterstützen.
-Abbildung~\ref{fig:PackMLZustandsautomat} zeigt die Darstellung des PackML-Zustandsautomaten in der Benutzeroberfläche.
+
+Abbildung~\ref{fig:PackMLZustandsautomat} zeigt die Darstellung des Zustandsautomaten in der Benutzeroberfläche.
 Damit Statusänderungen unmittelbar sichtbar werden, ist eine Polling-Logik implementiert, die den aktuellen Maschinenstatus in festen Intervallen aus dem Submodel Repository der AAS Environment abruft und im Zustandsautomaten aktualisiert.
 
+Neben der reinen Statusanzeige erlaubt das Plugin auch die Steuerung zulässiger Zustandsübergänge direkt aus der Benutzeroberfläche heraus.
+Befindet sich die Maschine beispielsweise im Zustand Execute, können Befehle wie Stop, Hold, Suspend oder Abort ausgelöst werden.
+Darüber hinaus lässt sich der Betriebsmodus (Produktion, Manuell oder Wartung) setzen, der ebenfalls als Property im Submodell verwaltet wird.
+
+\newpage
 \begin{figure}[htbp]
     \centering 
     \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png} 
     \caption{AAS Web UI: PackML-Zustandsautomat} 
     \label{fig:PackMLZustandsautomat} 
 \end{figure}
-
-
-Neben der reinen Statusanzeige erlaubt das Plugin auch die Steuerung zulässiger Zustandsübergänge direkt aus der Benutzeroberfläche heraus.
-Befindet sich die Maschine beispielsweise im Zustand Execute, können Befehle wie Stop, Hold, Suspend oder Abort ausgelöst werden.
-Darüber hinaus lässt sich der Betriebsmodus (Produktion, Manuell oder Wartung) setzen, der ebenfalls als Property im Submodell verwaltet wird.
+\vspace{-0.5em}
 
 Im Demonstrator werden Befehle direkt per WebSocket an den Maschinensimulator übermittelt und dort ohne weitere Prüfungen übernommen. 
 Dadurch entsteht eine direkte Feedback-Schleife zwischen der \acs{aas} und dem simulierten Asset.
@@ -237,12 +237,12 @@ Abbildung~\ref{fig:LiniendiagrammBaSyx} zeigt exemplarisch ein Liniendiagramm mi
     \caption{AAS Web UI: Zeitreihendaten (Liniendiagramm)}
     \label{fig:LiniendiagrammBaSyx}
 \end{figure}
+\vspace{-0.5em}
 
 Ein wesentlicher Vorteil dieser Umsetzung liegt in der Entkopplung von Datenspeicherung und \acs{aas}. 
 Da die \acs{aas} selbst nicht für die Ablage großer oder historischer Datenmengen ausgelegt ist, ermöglicht die Auslagerung in eine externe Zeitreihendatenbank eine effiziente Speicherung und Verarbeitung. 
 Zudem können die Daten durch die strukturierte Referenzierung über das LinkedSegment einfach in weiteren Anwendungen, wie Analysesystemen oder KI-gestützten Verfahren, weiterverwendet werden.
 
-\newpage
 \subsubsection{Herausforderungen bei der Implementierung}
 Im Rahmen der Implementierung des Demonstrators traten verschiedene Herausforderungen auf, die sowohl technische als auch methodische Aspekte betrafen. 
 Diese ergaben sich unter anderem aus der noch jungen Verbreitung der \acs{aas} im Maschinenbau, der eingeschränkten Datenverfügbarkeit sowie den Limitierungen der eingesetzten Werkzeuge. 
@@ -274,7 +274,6 @@ Die wesentlichen Punkte sind im Folgenden zusammengefasst:
     Die Fehlerbehebung erforderte eine manuelle Anpassung der \acsp{smt}, was zusätzlichen Aufwand verursachte.
 \end{enumerate}
 
-%KI-Modell
 \newpage
 \subsection{KI-Modell zur Anomalieerkennung}
 
@@ -302,6 +301,7 @@ Erst wenn mehrere aufeinanderfolgende Werte vom Normalverlauf abweichen, steigt 
     \caption{Anomalieerkennung Fall 1: Überhöhte Daten}
     \label{fig:Fall1}
 \end{figure}
+\vspace{-0.5em}
 
 In Abbildung~\ref{fig:Fall2} ist ein Temperaturverlauf mit einem gleichmäßigen, linearen Anstieg im Bereich t = 25343 - 25393 (gezielt eingefügte Anomalie) dargestellt. 
 Auch hier klassifiziert das Modell den Verlauf korrekt als Anomalie. 
@@ -313,9 +313,9 @@ Dies zeigt, dass die Erkennung nicht nur auf plötzliche Ausreißer reagiert, so
         \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/KI/Fall2.pdf}
         \vspace{-2em}
     \caption{Anomalieerkennung Fall 2: Linearer Anstieg}
-    
     \label{fig:Fall2}
 \end{figure}
+\vspace{-0.5em}
 
 In allen Testfällen mit künstlich erzeugten Anomalien erfolgte die Klassifikation korrekt, ohne Fehlalarme. 
 Aufgrund der Fenstergröße und der Mittelwertbildung tritt die Markierung jedoch häufig leicht verzögert auf, wodurch einzelne Sequenzen innerhalb einer Anomaliephase nicht als abweichend markiert werden. 
@@ -325,7 +325,11 @@ Zur Verbesserung könnten umfangreichere und variantenreichere Trainings- und Te
 Auch leistungsfähigere Architekturen wie tiefere Autoencoder oder LSTM-basierte Netze (Long Short-Term Memory, eine spezielle Form rekurrenter neuronaler Netze zur Verarbeitung von Zeitreihen) bieten Potenzial, zeitliche Abhängigkeiten präziser zu erfassen.
 Diese Ansätze wurden aufgrund begrenzter Rechenressourcen im Rahmen dieser Arbeit nicht weiterverfolgt, können aber eine Grundlage für zukünftige Entwicklungen bilden.
 
-% Digitaler Produktpass
+Dennoch zeigt sich, dass das gewählte Konzept grundsätzlich umsetzbar ist und sich für eine Einbettung in industrielle Szenarien eignet. 
+In Verbindung mit realen Maschinendaten können erkannte Anomalien genutzt werden, um proaktive Wartungsmaßnahmen einzuleiten. 
+Dadurch ließe sich die Anlagenverfügbarkeit erhöhen und ungeplante Stillstandszeiten verringern.
+Werden neben Sensordaten zusätzlich technische Stammdaten oder standardisierte Beschreibungen berücksichtigt, wie sie auch im AAS-Demonstrator hinterlegt sind, wird eine noch umfassendere Analyse möglich, die zugleich die Grundlage für weiterführende Predictive-Maintenance-Ansätze bilden könnte.
+
 \newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
 Der Anwendungsfall Digitaler Produktpass demonstriert, wie Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten direkt in der AAS einer Maschine abgebildet werden können.
@@ -444,50 +448,24 @@ Eine Erweiterung auf komplexere Submodelle oder eine direkte Integration in best
 
 %Evaluation der eingesetzten Software
 \subsection{Evaluierung eingesetzter Tools und Software}
+
 \subsubsection{Package Explorer}
 
-Der Package Explorer wurde während der gesamten Projektlaufzeit als zentrales Modellierungstool eingesetzt. 
-Er diente zur Erstellung, Bearbeitung und Visualisierung der \acs{aas}, einschließlich Submodellen und Concept Descriptions.
-Dabei überzeugte das Tool vor allem durch seine benutzerfreundliche und intuitive Oberfläche, welche die Modellierung deutlich vereinfachte. 
-So wurden beispielsweise automatische Hinweise gegeben, wenn gegen bestimmte Vorgaben verstoßen wurde, wodurch Fehler frühzeitig erkannt und vermieden werden konnten.
+Der Package Explorer wurde während der gesamten Projektlaufzeit als zentrales Modellierungstool eingesetzt.
+Er ermöglichte die Erstellung, Bearbeitung und Visualisierung von AAS einschließlich ihrer Submodelle und Submodellelemente.
+Ein besonderer Vorteil war die Möglichkeit, semantische Beschreibungen direkt aus ECLASS-Katalogen zu importieren.
+Dadurch verringerte sich der ansonsten sehr aufwendige manuelle Aufbau eigener Concept Descriptions deutlich, was den Modellierungsprozess spürbar beschleunigte.
+Zudem überzeugte die benutzerfreundliche Oberfläche, die den Einstieg erleichterte, das Verständnis der AAS-Strukturen förderte und Verstöße gegen die Spezifikation der IDTA unmittelbar kenntlich machte.
 
-Trotz der zahlreichen positiven Eigenschaften weist der Package Explorer an einigen Stellen noch Mängel in Stabilität und Funktionalität auf. 
-Besonders die Validierungsfunktion erwies sich als unzuverlässig, weshalb auch ergänzend externe Testwerkzeuge eingesetzt werden mussten. 
-Zudem wird das Tool nicht regelmäßig an neue Versionen der \acs{aas}-Spezifikationen angepasst, was potenziell zu Inkonsistenzen zwischen den Modellen und den Spezifikationen führen kann.
+In der praktischen Anwendung zeigten sich jedoch auch Einschränkungen.
+Die integrierte Validierungsfunktion erwies sich als unzuverlässig, sodass zur Absicherung eine separate Test-Engine erforderlich war.
+Während die Anbindung an den AASX Server Blazor problemlos funktionierte, war eine direkte Integration in modulare Laufzeitsysteme wie Eclipse BaSyx nicht möglich.
+Die AAS mussten daher manuell bereitgestellt werden, was insbesondere bei einer größeren Anzahl oder häufigen Änderungen mit erheblichem Mehraufwand verbunden war.
+Darüber hinaus wich der Package Explorer in einzelnen Punkten von den aktuellen AAS-Spezifikationen ab, was vereinzelt zu fehlerhaften semantischen Angaben führte, die nachträglich korrigiert werden mussten.
 
-
-
-Import von SMT
-Vielfältige Exportmöglichkeiten: z.B. AASX-Dateien, JSON, XML.
-Verbindung zu AAS Server möglich: Praktisch für lokale Tests und das Verhalten in Laufzeitumgebungen.
-Eingabemasken für Concept Descriptions (CD): Strukturierte Erfassung semantischer Informationen.
-Direkter Import von ECLASS-Katalogen: Erleichtert semantische Modellierung und Interoperabilität.
-copy Refactor: ELemente eines AAS Pakets können kopier tund wiederverwendet werden
-
-
-
-
-
-Stärken
-Benutzerfreundliche Oberfläche: Intuitiv bedienbar, auch für weniger technisch versierte Nutzer.
-Komplette Modellierung möglich: Alle Elemente der AAS (Submodelle, Properties, Beziehungen etc.) können erstellt und bearbeitet werden.
-Grafische Darstellung: Struktur der AAS ist visuell nachvollziehbar.
-Import von Submodel Templates: Erleichtert Standardisierung und Wiederverwendung.
-Einfache Einbettung von Dokumenten.
-Import von SMT
-Vielfältige Exportmöglichkeiten: z.B. AASX-Dateien, JSON, XML.
-Verbindung zu AAS Server möglich: Praktisch für lokale Tests und das Verhalten in Laufzeitumgebungen.
-Eingabemasken für Concept Descriptions (CD): Strukturierte Erfassung semantischer Informationen.
-Direkter Import von ECLASS-Katalogen: Erleichtert semantische Modellierung und Interoperabilität.
-copy Refactor: ELemente eines AAS Pakets können kopier tund wiederverwendet werden
-
-
-Schwächen
-Validierungsfunktion unzuverlässig: Nicht vollständig abgestimmt mit externen Tools wie der BaSyx Test Engine.
-Nicht alle Funktionen stabil oder vollständig implementiert.
-Keine direkte Integration in modulare BaSyx-Umgebung: Verbindung nur zu einem AAS Server möglich. Nicht zu BaSyx weil modular also keinen klassischen Server
-Manuelle Bereitstellung notwendig: Für komplexe Szenarien mit mehreren Submodellen oder dynamischen Daten ist zusätzliche Konfiguration erforderlich.
-Projektstatus „Incubating“: Tool befindet sich noch in Entwicklung, was zu Änderungen und eingeschränkter Stabilität führen kann.
+Insgesamt erwies sich der Package Explorer als hilfreiches Werkzeug für die statische Modellierung von AAS.
+Die vorhandenen Exportfunktionen, insbesondere im AASX-Format, erleichterten die Weiterverwendung und Weitergabe maßgeblich.
+Für automatisierte Szenarien bot das Tool hingegen nur eingeschränkte Unterstützung, die sich im Wesentlichen auf das Anlegen eigener \acsp{smt} beschränkte.
 
 \subsubsection{Eclipse AASX Server}
 \subsubsection{BaSyx}
