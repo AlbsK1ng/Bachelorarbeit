@@ -358,7 +358,7 @@ Abbildung~\ref{fig:PluginAggregation} zeigt die entsprechende Visualisierung: li
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/DPP/PluginTest.png}
+        \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/CarbonFootprint.png}
     \caption{Visualisierung der aggregierten PCF-Werte}
     \label{fig:PluginAggregation}
 \end{figure}
@@ -430,25 +430,35 @@ Die Zugriffskontrolle mit BaSyx und Keycloak zeigt, dass sich Berechtigungen zuv
 Dies bestätigt die Eignung der AAS als technische Grundlage für den \acs{dpp} und eröffnet Potenziale für Szenarien, in denen sensible Informationen, etwa Nachhaltigkeitsdaten, differenziert entlang der Wertschöpfungskette bereitgestellt werden.
 
 \subsection{Anwendungsfall automatisierte Generierung der AAS}
+Dieser Anwendungsfall demonstriert, wie sich AAS-Instanzen automatisiert erzeugen und in das BaSyx-System integrieren lassen.
+Abbildung \ref{fig:AutomatisierteGenerierungAblauf} veranschaulicht den Ablauf.
+Ausgangspunkt bildet ein unternehmensspezifisches Typ-Submodell, das mithilfe des Package Explorers aus dem SMT Generic Frame for Technical Data for Industrial Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
+Dieses Template wird anschließend über ein Node.js-basiertes Mapping-Skript mit Beispieldaten ergänzt und in eine neue AAS-Instanz eingebettet.
+Das Skript übernimmt auch die Registrierung im BaSyx-Backend, sodass die erzeugte AAS unmittelbar zur Verfügung steht und beispielsweise in der AAS Web UI visualisiert werden kann.
 
-Im Rahmen des Demonstrators konnte gezeigt werden, dass sich AAS-Instanzen aus vorhandenen strukturierten Daten automatisiert erzeugen und in das BaSyx-System integrieren lassen. 
-Als Grundlage diente das im Entwicklungsteil erstellte unternehmensspezifische Submodel Template „Technische Daten“, aus dem ein Typ-Submodell abgeleitet wurde. 
-Mithilfe eines Node.js-Skripts wurde dieses automatisiert mit vordefinierten Beispieldaten befüllt und in eine neu erzeugte AAS-Instanz eingebettet. 
-Die Instanz konnte anschließend erfolgreich über die REST-Schnittstellen im BaSyx-Backend registriert und über die AAS Web UI angezeigt werden. 
+\begin{figure}[htbp]
+    \centering
+        \includegraphics{Bilder/ErgebnisseAutomatisierteGenerierung/ARchitektur.pdf}
+    \caption[Ablauf der automatisierten Generierung einer AAS]{Ablauf der automatisierten Generierung einer AAS (eigene Darstellung; Bildbestandteile: \cite{SpezifikaitonTechnischeDaten}, \cite{ECLASSLogo} )}
+    \label{fig:AutomatisierteGenerierungAblauf}
+\end{figure}
 
-Damit wurde nachgewiesen, dass sich der aufwendige manuelle Modellierungsprozess im Package Explorer deutlich vereinfachen und standardisieren lässt. 
-Die automatisierte Generierung erhöht nicht nur die Effizienz, sondern sorgt zugleich für Konsistenz in der Struktur, da alle Instanzen auf denselben semantischen Vorlagen basieren. 
-Der Ansatz ist grundsätzlich auf weitere Maschinentypen übertragbar und könnte in der industriellen Praxis direkt mit bestehenden PLM- oder ERP-Systemen verknüpft werden, sodass AAS-Instanzen ohne manuelle Zwischenschritte bereitgestellt werden. 
+Der entwickelte Ansatz verdeutlicht, dass sich der manuelle Modellierungsaufwand im Package Explorer durch den teilautomatisierten Prozess erheblich reduzieren lässt. 
+In diesem Anwendungsfall wurden zwar statische Beispieldaten eingesetzt, in einer produktiven Umgebung könnten jedoch die technischen Produktinformationen direkt aus bestehenden IT-Systemen übernommen werden. 
+Bei groninger stammen diese primär aus dem PLM-System Agile. 
+Eine entsprechende Anbindung war im Rahmen dieser Arbeit jedoch nicht umsetzbar.
 
-Einschränkend ist festzuhalten, dass im Demonstrator lediglich statische Beispieldaten verarbeitet wurden und keine vollständige Anbindung an reale Unternehmenssysteme erfolgte. 
-Zudem wurde die Umsetzung auf ein einzelnes Submodell beschränkt. 
-Eine Erweiterung auf komplexere Submodelle oder eine direkte Integration in bestehende Datenlandschaften ist jedoch technisch naheliegend und bietet Potenzial für die künftige Nutzung in der Praxis. 
-
-
+Darüber hinaus ist der Prozess grundsätzlich auch auf weitere Submodelle übertragbar, sodass perspektivisch die AAS einer gesamten Maschine automatisiert erstellt werden könnte. 
+Zudem wäre es möglich, die Mapping-Logik in eine Laufzeitumgebung zu integrieren. 
+Dadurch ließe sich die Generierung, Bereitstellung und Aktualisierung von AAS-Instanzen vollständig automatisieren.
 
 %Evaluation der eingesetzten Software
 \subsection{Evaluierung eingesetzter Tools und Software}
+Zur Umsetzung des AAS-Demonstrators sowie der zugehörigen Anwendungsfälle kamen zwei zentrale Softwarelösungen zum Einsatz.
+Im Folgenden werden diese Werkzeuge hinsichtlich ihrer Funktionalität, Stärken und Schwächen evaluiert.
+Die Bewertung stützt sich auf die Erfahrungen aus der praktischen Anwendung und berücksichtigt sowohl technische Aspekte als auch die Benutzerfreundlichkeit.
 
+\newpage
 \subsubsection{Package Explorer}
 
 Der Package Explorer wurde während der gesamten Projektlaufzeit als zentrales Modellierungstool eingesetzt.
@@ -467,5 +477,41 @@ Insgesamt erwies sich der Package Explorer als hilfreiches Werkzeug für die sta
 Die vorhandenen Exportfunktionen, insbesondere im AASX-Format, erleichterten die Weiterverwendung und Weitergabe maßgeblich.
 Für automatisierte Szenarien bot das Tool hingegen nur eingeschränkte Unterstützung, die sich im Wesentlichen auf das Anlegen eigener \acsp{smt} beschränkte.
 
-\subsubsection{Eclipse AASX Server}
-\subsubsection{BaSyx}
+\newpage
+\subsubsection{Eclipse BaSyx}
+
+Die Eclipse-BaSyx-Plattform bildete in diesem Projekt die zentrale Laufzeitumgebung für den Betrieb von AAS. 
+Ein wesentlicher Vorteil war der modulare Aufbau, der die Umsetzung praxisnaher Industrieszenarien erlaubte und zugleich eine flexible Konfiguration einzelner Komponenten zuließ. 
+Ebenso eröffneten die standardisierten REST-APIs einen direkten Zugriff auf die einzelnen Komponenten, der dank der integrierten Swagger-Dokumentation unmittelbar getestet und transparent nachvollzogen werden konnte. 
+Darüber hinaus erleichterte die DataBridge die Anbindung unterschiedlicher Protokolle, insbesondere von OPC UA, wodurch eine dynamische Erweiterung der AAS und die Umsetzung dynamischer Submodelle möglich wurde.
+
+Außerdem stand mit der AAS WebUI eine Benutzeroberfläche zur Verfügung, die sowohl die Darstellung als auch die Anpassung von AAS-Inhalten erlaubte. 
+Besonders hervorzuheben ist, dass für zentrale Submodelle bereits spezialisierte Plugins bereitstanden. 
+Aufgrund des Open-Source-Charakters ließen sich diese problemlos erweitern oder durch eigene Entwicklungen ergänzen, sodass auch weitere Submodelle integriert und projektspezifische Anforderungen berücksichtigt werden konnten. 
+Als besonders hilfreich erwies sich zudem die Synchronisationsfunktion, die insbesondere in dynamischen Szenarien sicherstellte, dass die angezeigten Daten stets aktuell blieben.
+
+Erste Satz kommt noch..
+Aufgrund des ausgiebigen Systems erwies sich der initiale Konfigurationsaufwand hoch.
+Dies zeigte sich auch beim Einreichten von \acs{rbac}, bei dem jede Komponente seperat eingerichtet werden musste.
+Zudem gestalltete sich der Start des Systems in der Docker.-Umgebung als sehr zeitintensiv.
+Einige Komponenten wiesen Wartezeiten von bis zu mehreren Minuten auf, was natürlich was bei Testläufen oder häufigen Änderungen hinderte
+
+
+Trotz dieser Vorteile zeigten sich in der praktischen Anwendung auch Einschränkungen. 
+Der initiale Konfigurationsaufwand erwies sich als hoch, insbesondere bei der Einrichtung des rollenbasierten Zugriffskontrollsystems (RBAC), das für jede einzelne Komponente separat konfiguriert werden musste. 
+Hinzu kam, dass der Start des Gesamtsystems als Docker vlt sagen? vergleichsweise lange dauerte, da die einzelnen Services nacheinander hochgefahren wurden, was Wartezeiten von bis zu mehreren Minuten verursachte. 
+UNd es ist so das einzelne Services schon fast 2 minuten gebraucht haben weis nicht genau
+Dies erwies sich vor allem bei Testläufen oder häufigen Anpassungen als hinderlich. 
+Ergänzend zeigte sich, dass Änderungen an eingebundenen AAS nicht immer zuverlässig übernommen wurden. So wurden etwa aktualisierte Concept Descriptions nicht automatisch aus dem Repository synchronisiert, was zu Inkonsistenzen führte und manuelle Nacharbeit erforderte.
+
+Negativ:
+
+komplex hoher Konfigurationsaufwadn.
+Zeigte sich insbesondere bei RBAC wo für jede Komponente einzeln aufgesetzt
+Weis nicht ob das relevant ist aber die Umgebun gbrauchte immer richtig lang zum starten also einzelnbe Services bis hin zu 100s das könnte ich natürlich auch noch nachschauen 
+das ist natürlich ärgerlich wenn man änderungen vornimmt oder etwas testen will.
+ergänzend nicht gesatrtet wenn aktualisierte AAS über das eingebundene Repository eingebunden, weil CDS besipielsweise nicht aktuaölisiert wurden
+
+
+
+Absatz 3: wünschenswert Änderungen an der AAS anzeigen 
