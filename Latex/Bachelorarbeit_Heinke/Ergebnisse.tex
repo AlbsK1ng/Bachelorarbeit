@@ -326,7 +326,7 @@ Auch leistungsfähigere Architekturen wie tiefere Autoencoder oder LSTM-basierte
 Diese Ansätze wurden aufgrund begrenzter Rechenressourcen im Rahmen dieser Arbeit nicht weiterverfolgt, können aber eine Grundlage für zukünftige Entwicklungen bilden.
 
 Dennoch zeigt sich, dass das gewählte Konzept grundsätzlich umsetzbar ist und sich für eine Einbettung in industrielle Szenarien eignet. 
-In Verbindung mit realen Maschinendaten können erkannte Anomalien genutzt werden, um proaktive Wartungsmaßnahmen einzuleiten. 
+In Verbindung mit realen Maschinendaten könnten erkannte Anomalien genutzt werden, um proaktive Wartungsmaßnahmen einzuleiten. 
 Dadurch ließe sich die Anlagenverfügbarkeit erhöhen und ungeplante Stillstandszeiten verringern.
 Werden neben Sensordaten zusätzlich technische Stammdaten oder standardisierte Beschreibungen berücksichtigt, wie sie auch im AAS-Demonstrator hinterlegt sind, wird eine noch umfassendere Analyse möglich, die zugleich die Grundlage für weiterführende Predictive-Maintenance-Ansätze bilden könnte.
 
@@ -455,15 +455,14 @@ Dadurch ließe sich die Generierung, Bereitstellung und Aktualisierung von AAS-I
 %Evaluation der eingesetzten Software
 \subsection{Evaluierung eingesetzter Tools und Software}
 Zur Umsetzung des AAS-Demonstrators sowie der zugehörigen Anwendungsfälle kamen zwei zentrale Softwarelösungen zum Einsatz.
-Im Folgenden werden diese Werkzeuge hinsichtlich ihrer Funktionalität, Stärken und Schwächen evaluiert.
-Die Bewertung stützt sich auf die Erfahrungen aus der praktischen Anwendung und berücksichtigt sowohl technische Aspekte als auch die Benutzerfreundlichkeit.
+Im Folgenden werden diese mit Blick auf ihre Funktionalität sowie ihre Stärken und Schwächen evaluiert.
+Die Bewertung stützt sich dabei auf die Erfahrungen aus der praktischen Anwendung und berücksichtigt sowohl technische Aspekte als auch die Benutzerfreundlichkeit.
 
-\newpage
 \subsubsection{Package Explorer}
 
 Der Package Explorer wurde während der gesamten Projektlaufzeit als zentrales Modellierungstool eingesetzt.
 Er ermöglichte die Erstellung, Bearbeitung und Visualisierung von AAS einschließlich ihrer Submodelle und Submodellelemente.
-Ein besonderer Vorteil war die Möglichkeit, semantische Beschreibungen direkt aus ECLASS-Katalogen zu importieren.
+Besonders hilfreich war die Möglichkeit, semantische Beschreibungen direkt aus ECLASS-Katalogen zu importieren.
 Dadurch verringerte sich der ansonsten sehr aufwendige manuelle Aufbau eigener Concept Descriptions deutlich, was den Modellierungsprozess spürbar beschleunigte.
 Zudem überzeugte die benutzerfreundliche Oberfläche, die den Einstieg erleichterte, das Verständnis der AAS-Strukturen förderte und Verstöße gegen die Spezifikation der IDTA unmittelbar kenntlich machte.
 
@@ -477,41 +476,37 @@ Insgesamt erwies sich der Package Explorer als hilfreiches Werkzeug für die sta
 Die vorhandenen Exportfunktionen, insbesondere im AASX-Format, erleichterten die Weiterverwendung und Weitergabe maßgeblich.
 Für automatisierte Szenarien bot das Tool hingegen nur eingeschränkte Unterstützung, die sich im Wesentlichen auf das Anlegen eigener \acsp{smt} beschränkte.
 
-\newpage
 \subsubsection{Eclipse BaSyx}
 
-Die Eclipse-BaSyx-Plattform bildete in diesem Projekt die zentrale Laufzeitumgebung für den Betrieb von AAS. 
-Ein wesentlicher Vorteil war der modulare Aufbau, der die Umsetzung praxisnaher Industrieszenarien erlaubte und zugleich eine flexible Konfiguration einzelner Komponenten zuließ. 
-Ebenso eröffneten die standardisierten REST-APIs einen direkten Zugriff auf die einzelnen Komponenten, der dank der integrierten Swagger-Dokumentation unmittelbar getestet und transparent nachvollzogen werden konnte. 
+Die Eclipse-BaSyx-Plattform bildete in diesem Projekt die zentrale Laufzeitumgebung für den Betrieb von \acs{aas}.
+Ein wesentlicher Vorteil war der modulare Aufbau, der die Umsetzung praxisnaher Industrieszenarien erlaubte und zugleich eine flexible Konfiguration einzelner Komponenten zuließ.
+Ebenso eröffneten die standardisierten REST-APIs einen direkten Zugriff auf die einzelnen Komponenten, der dank der integrierten Swagger-Dokumentation unmittelbar getestet und transparent nachvollzogen werden konnte.
 Darüber hinaus erleichterte die DataBridge die Anbindung unterschiedlicher Protokolle, insbesondere von OPC UA, wodurch eine dynamische Erweiterung der AAS und die Umsetzung dynamischer Submodelle möglich wurde.
 
-Außerdem stand mit der AAS WebUI eine Benutzeroberfläche zur Verfügung, die sowohl die Darstellung als auch die Anpassung von AAS-Inhalten erlaubte. 
-Besonders hervorzuheben ist, dass für zentrale Submodelle bereits spezialisierte Plugins bereitstanden. 
-Aufgrund des Open-Source-Charakters ließen sich diese problemlos erweitern oder durch eigene Entwicklungen ergänzen, sodass auch weitere Submodelle integriert und projektspezifische Anforderungen berücksichtigt werden konnten. 
+Mit der AAS Web UI stand zudem eine Benutzeroberfläche zur Verfügung, die sowohl die Darstellung als auch die Anpassung von AAS-Inhalten erlaubte. 
+Für zentrale Submodelle waren bereits spezialisierte Plugins vorhanden, die sich aufgrund des Open-Source-Charakters leicht erweitern oder durch eigene Entwicklungen ergänzen ließen.
+Auf diese Weise konnten weitere Submodelle integriert und projektspezifische Anforderungen berücksichtigt werden.
 Als besonders hilfreich erwies sich zudem die Synchronisationsfunktion, die insbesondere in dynamischen Szenarien sicherstellte, dass die angezeigten Daten stets aktuell blieben.
 
-Erste Satz kommt noch..
-Aufgrund des ausgiebigen Systems erwies sich der initiale Konfigurationsaufwand hoch.
-Dies zeigte sich auch beim Einreichten von \acs{rbac}, bei dem jede Komponente seperat eingerichtet werden musste.
-Zudem gestalltete sich der Start des Systems in der Docker.-Umgebung als sehr zeitintensiv.
-Einige Komponenten wiesen Wartezeiten von bis zu mehreren Minuten auf, was natürlich was bei Testläufen oder häufigen Änderungen hinderte
+Aufgrund der Komplexität des Gesamtsystems war jedoch ein erheblicher Konfigurationsaufwand erforderlich.
+Dies betraf nicht nur die initiale Einrichtung, sondern zeigte sich auch bei der Konfiguration der rollenbasierten Zugriffskontrolle (\acs{rbac}), die für jede Komponente separat vorgenommen werden musste.
+Hinzu kam, dass der Start des Systems in der Docker-Umgebung vergleichsweise lange dauerte, da einzelne Komponenten teilweise bis zu mehreren Minuten für den Startvorgang benötigten.
+Dies erwies sich insbesondere bei häufigen Anpassungen oder Testläufen als hinderlich.
 
+Darüber hinaus zeigte sich, dass die Plattform in einzelnen Bereichen noch nicht vollständig ausgereift ist.
+So war es beispielsweise beim Ändern von Werten innerhalb einer Property über die REST-API nur möglich, String-Werte einzutragen, auch wenn ein anderer Datentyp, wie etwa ein Integer, vorgesehen war.
+Zudem erfolgte beim Ablegen aktualisierter \acs{aas} in das gemountete Volume der AAS Environment nicht immer eine zuverlässige Synchronisierung der zugehörigen Concept Descriptions.
+In diesen Fällen war ein Start des Gesamtsystems nicht möglich, sodass die betreffenden Einträge in der angebundenen MongoDB gelöscht und anschließend mithilfe eines Skripts nachgeführt werden mussten.
 
-Trotz dieser Vorteile zeigten sich in der praktischen Anwendung auch Einschränkungen. 
-Der initiale Konfigurationsaufwand erwies sich als hoch, insbesondere bei der Einrichtung des rollenbasierten Zugriffskontrollsystems (RBAC), das für jede einzelne Komponente separat konfiguriert werden musste. 
-Hinzu kam, dass der Start des Gesamtsystems als Docker vlt sagen? vergleichsweise lange dauerte, da die einzelnen Services nacheinander hochgefahren wurden, was Wartezeiten von bis zu mehreren Minuten verursachte. 
-UNd es ist so das einzelne Services schon fast 2 minuten gebraucht haben weis nicht genau
-Dies erwies sich vor allem bei Testläufen oder häufigen Anpassungen als hinderlich. 
-Ergänzend zeigte sich, dass Änderungen an eingebundenen AAS nicht immer zuverlässig übernommen wurden. So wurden etwa aktualisierte Concept Descriptions nicht automatisch aus dem Repository synchronisiert, was zu Inkonsistenzen führte und manuelle Nacharbeit erforderte.
-
-Negativ:
-
-komplex hoher Konfigurationsaufwadn.
-Zeigte sich insbesondere bei RBAC wo für jede Komponente einzeln aufgesetzt
-Weis nicht ob das relevant ist aber die Umgebun gbrauchte immer richtig lang zum starten also einzelnbe Services bis hin zu 100s das könnte ich natürlich auch noch nachschauen 
-das ist natürlich ärgerlich wenn man änderungen vornimmt oder etwas testen will.
-ergänzend nicht gesatrtet wenn aktualisierte AAS über das eingebundene Repository eingebunden, weil CDS besipielsweise nicht aktuaölisiert wurden
+Insgesamt erwies sich Eclipse BaSyx als leistungsfähige Plattform, die bereits für Typ-2-\acs{aas} geeignet ist und perspektivisch auch als Grundlage für Typ-3-\acs{aas} dienen kann.
+Der praktische Einsatz zeigte jedoch auch, dass einzelne Funktionalitäten noch fehlen oder unausgereift sind.
+Aufgrund der offenen Architektur können diese zwar eigenständig implementiert werden, allerdings erfordert dies zusätzlichen Entwicklungsaufwand.
 
 
 
-Absatz 3: wünschenswert Änderungen an der AAS anzeigen 
+
+
+
+
+
+
