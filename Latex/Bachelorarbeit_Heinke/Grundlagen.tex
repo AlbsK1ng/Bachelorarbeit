@@ -388,16 +388,16 @@ Im Rahmen dieser Arbeit liegt der Fokus auf dem in Abbildung~\ref{fig:robocell} 
 \vspace{-0.25em}
 \subsection{Technologische Grundlagen}
 Im Folgenden werden die technologischen Grundlagen erläutert, die für das Verständnis und die Umsetzung dieser Arbeit besonders relevant sind.
-\subsubsection{AASX Package Exlporer}
+\subsubsection{AASX Package Explorer}
 Der AASX Package Explorer, nachfolgend als Package Explorer bezeichnet, wurde als Referenzimplementierung für die \acs{aas} gemäß den Spezifikationen der \acs{idta} entwickelt.
 Das Tool ist als Open-Source-Software \cite{AASXPackageExplorer} verfügbar und ermöglicht das Erstellen und Bearbeiten von \acs{aas} im standardisierten AASX-Dateiformat.
 
 Der Package Explorer verfügt dabei über eine benutzerfreundliche grafische Oberfläche (siehe Abbildung \ref{fig:AASXPackageExplorer}), die insbesondere Einsteigern den Zugang zur Modellierung erleichtert.
 Dabei können Submodelle, Eigenschaften, semantische Referenzen sowie Metadaten strukturiert definiert und verwaltet werden.
-Gleichzeitig bietet der Package Explorer auch erweiterte Funktionen, wie das Erstellen von \acsp{smt}, wodurch er sich auch für den profesionellen Einsatz eignet.
+Gleichzeitig bietet der Package Explorer auch erweiterte Funktionen, wie das Erstellen von \acsp{smt}, wodurch er sich auch für den professionellen Einsatz eignet.
 
 Neben der lokalen Modellierung erlaubt das Tool ebenfalls die Verbindung zu einem AAS-Server über standardisierte Schnittstellen (z.B. \acs{opcua} oder \acs{http}/\acs{rest}).
-Dies ermöglicht den Betrieb von \acs{aas} in verteiltelten Systemen.
+Dies ermöglicht den Betrieb von \acs{aas} in verteilten Systemen.
 Besonders geeignet hierfür \linebreak \newpage ist der Referenzserver des Eclipse-AAS-Projekts \cite{AASXServer}, der das Hosten und Bereitstellen von AASX-Paketen ermöglicht sowie eine nahtlose Integration mit dem Package Explorer erlaubt.
 
 \begin{figure}[htbp]
@@ -418,7 +418,7 @@ Eine der wichtigsten Komponenten ist die Registry.
 Sie ist, genau wie alle anderen Komponenten, auf den Spezifikationen der \acs{aas} aufgebaut, insbesondere auf der Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2}.
 In ihr können neue \acs{aas} registriert und bereits vorhandene \acs{aas} anhand ihrer eindeutigen Kennung gesucht werden.
 Sie bildet damit die zentrale Anlaufstelle für Geräte und Anwendungen innerhalb des BaSyx-Systems.
-Analog dazu existiert eine seperate Registry für die Verwaltung von Submodellen.
+Analog dazu existiert eine separate Registry für die Verwaltung von Submodellen.
 
 \newpage
 Die eigentlichen Daten werden in der sogenannten \acs{aas} Environment gespeichert und organisiert.

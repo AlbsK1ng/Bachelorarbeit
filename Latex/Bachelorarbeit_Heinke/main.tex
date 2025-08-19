@@ -13,6 +13,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tocbibind}
+% Links nicht mit visuller Box [hidebox]
 \usepackage{hyperref}
 \usepackage{bookmark} 
 % \usepackage{cleveref}
@@ -49,6 +50,9 @@
 % % Literatur
 \usepackage[backend=bibtex,style=numeric-comp,sorting=none]{biblatex}
 \addbibresource{references.bib}
+
+% Bibliographie weniger streng umbrechen (gegen Hurenkinder/Überläufe)
+\appto\bibsetup{\sloppy}
 
 % Hinweis-Box
 \usepackage{tcolorbox}

@@ -24,7 +24,7 @@ Im ersten Anwendungsfall steht die Umsetzung eines \acs{dpp} im Vordergrund.
 Der Fokus liegt hierbei auf der strukturierten Abbildung des \acs{pcf} sowie der Implementierung differenzierter Zugriffsrechte auf die verschiedenen Bestandteile.
 Im zweiten Anwendungsfall wird gezeigt, wie \acs{aas}-Instanzen automatisiert generiert und bereitgestellt werden können.
 
-\subsection{Konzeptionierung des digitalen Zwilling}
+\subsection{Konzeptionierung des digitalen Zwillings}
 Ziel dieses Abschnittes ist es, eine grundlegende Basis für die Erstellung des digitalen Zwillings zu schaffen.
 Dabei wird untersucht, welche Daten für die Modellierung erforderlich sind, wo diese herkommen und wie sie in (standardisierten) Submodellen der \acs{aas} strukturiert werden können.
 \subsubsection{Identifikation relevanter Datenquellen}
@@ -65,7 +65,7 @@ Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, 
 \input{TabelleSubmodelle.tex}
 
 Im Rahmen dieser Arbeit ist die Modellierung der \acs{aas} bzw. der verschiedenen Submodelle als Instanz vorgesehen.
-Auch wenn es sich bei dem Abfüll -und Verschließmodul grundsätzlich um ein generisches Modul innerhalb der robocell-Linie handelt und somit technisch gesehen als Typ klassifiziert werden könnte, steht in diesem Projekt die exemplarische Umsetzung eines konkreten digitalen Zwillings im Vordergrund.
+Auch wenn es sich bei dem Abfüll- und Verschließmodul grundsätzlich um ein generisches Modul innerhalb der robocell-Linie handelt und somit technisch gesehen als Typ klassifiziert werden könnte, steht in diesem Projekt die exemplarische Umsetzung eines konkreten digitalen Zwillings im Vordergrund.
 Dies begründet sich vor allem durch die vorgesehene Anbindung von Echtzeit- und Zeitreihendaten sowie die Abbildung einer Betriebsumgebung, was dem digitalen Zwilling einen klaren Instanzcharakter verleiht.
 Außerdem unterstützt dies die spätere Demonstration der konkreten \acs{aas} im Industrie-4.0-Systemkontext.
 % Im Rahmen dieser Arbeit ist die Modellierung der AAS als Instanz vorgesehen.
@@ -256,7 +256,7 @@ Alle benötigten Komponenten stehen als vorgefertigte Images öffentlich über d
 Alternativ kann der Quellcode auch von GitHub \cite{BaSyxGithub} bezogen werden, um einzelne Komponenten individuell anzupassen oder zu erweitern.
 
 Die verschiedenen Services, darunter die \acs{aas} Environment, Registries für \acs{aas} und Submodelle, der Discovery Service, sowie die MongoDB als persistenter Speicher, können zentral in einer docker-compose.yml-Datei verwaltet werden.
-Die Konfiguration erfolgt in der Regel über Umgebungsvariablen oder seperate Konfigurationsdateien, die in der docker-compose.yml referenziert werden.
+Die Konfiguration erfolgt in der Regel über Umgebungsvariablen oder separate Konfigurationsdateien, die in der docker-compose.yml referenziert werden.
 % Mit dem Befehl docker compose up lassen sich anschließend alle Komponenten gemeinsam starten.
 
 Nach erfolgreichem Start der BaSyx-Umgebung stehen verschiedene Möglichkeiten zur Verfügung, um eine \acs{aas} bereitzustellen und in das System zu integrieren. 
@@ -428,7 +428,7 @@ Alle relevanten Informationen zur externen Speicherung der Zeitreihendaten sind 
 \subsection{KI-Modell zur Optimierung}
 Im Folgenden wird ein \acs{ki}-gestütztes Konzept zur Optimierung der zustandsbasierten Prozessüberwachung vorgestellt und prototypisch umgesetzt.
 Ziel ist es, mithilfe maschinellen Lernens potenzielle Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen und dadurch eine Grundlage für prädiktive Instandhaltungsmaßnahmen zu schaffen.
-Darüber hinaus wird gezeigt, wie das resultierende \acs{ki}-Modell mithilfe der \acs{aas} standardisiert und interoperabel verwaltet werden kann.
+% Darüber hinaus wird gezeigt, wie das resultierende \acs{ki}-Modell mithilfe der \acs{aas} standardisiert und interoperabel verwaltet werden kann.
 
 \subsubsection{Konzeptidee}
 Mit der fortschreitenden Digitalisierung industrieller Prozesse entstehen zunehmend umfangreiche Datenmengen, die wertvolle Informationen über den Zustand und das Verhalten eines Assets liefern. 
@@ -503,36 +503,36 @@ Das trainierte Modell kann anschließend zur Erkennung von Anomalien in neuen Da
 Dabei dient der Rekonstruktionsfehler nicht mehr zur Optimierung, sondern als Maß für Abweichungen von der Normalität.
 Überschreitet der Fehler eines Zeitfensters einen definierten Schwellenwert, so liegt eine Anomalie vor.
 
-\subsubsection{Verwaltung der Metadaten in der \acs{aas}}
-\acs{ki}-Modelle lassen sich als digitale Assets betrachten, da sie, analog zu physischen Komponenten, über einen eigenen Lebenszyklus verfügen.  
-Für deren standardisierte und interoperable Verwaltung bietet sich die Integration in einen digitalen Zwilling an.  
-Im Folgenden wird daher gezeigt, wie das zuvor entwickelte \acs{ki}-Modell zur Anomalieerkennung mithilfe der \acs{aas} abgebildet und verwaltet werden kann.
+% \subsubsection{Verwaltung der Metadaten in der \acs{aas}}
+% \acs{ki}-Modelle lassen sich als digitale Assets betrachten, da sie, analog zu physischen Komponenten, über einen eigenen Lebenszyklus verfügen.  
+% Für deren standardisierte und interoperable Verwaltung bietet sich die Integration in einen digitalen Zwilling an.  
+% Im Folgenden wird daher gezeigt, wie das zuvor entwickelte \acs{ki}-Modell zur Anomalieerkennung mithilfe der \acs{aas} abgebildet und verwaltet werden kann.
 
-Für die standardisierte Beschreibung kann das \acs{smt} AIModelNameplate \cite{SpezifikationAIModelNameplate} eingesetzt werden. 
-Es erfüllt eine vergleichbare Funktion wie das digitale Typenschild für physische Assets und enthält zentrale Metadaten zur Identifikation sowie Dokumentation des Modells über dessen gesamten Lebenszyklus hinweg.
+% Für die standardisierte Beschreibung kann das \acs{smt} AIModelNameplate \cite{SpezifikationAIModelNameplate} eingesetzt werden. 
+% Es erfüllt eine vergleichbare Funktion wie das digitale Typenschild für physische Assets und enthält zentrale Metadaten zur Identifikation sowie Dokumentation des Modells über dessen gesamten Lebenszyklus hinweg.
 
-Zu den abbildbaren Informationen zählen beispielsweise die \acs{url} des Modells, der Speicherort, die Versionsnummer sowie die Art des Trainingsverfahrens. 
-Darüber hinaus lassen sich auch die Ein- und Ausgänge des Modells über entsprechende \acsp{smc} spezifizieren. 
-Hierzu gehören unter anderem Angaben zur Art der Ein- bzw. Ausgabedaten sowie deren Struktur und Dimension. 
-Im Fall des hier eingesetzten Autoencoders ist der Eingabetyp beispielsweise, wie zuvor beschrieben, eine Sequenz mit einer Dimension von 30.
+% Zu den abbildbaren Informationen zählen beispielsweise die \acs{url} des Modells, der Speicherort, die Versionsnummer sowie die Art des Trainingsverfahrens. 
+% Darüber hinaus lassen sich auch die Ein- und Ausgänge des Modells über entsprechende \acsp{smc} spezifizieren. 
+% Hierzu gehören unter anderem Angaben zur Art der Ein- bzw. Ausgabedaten sowie deren Struktur und Dimension. 
+% Im Fall des hier eingesetzten Autoencoders ist der Eingabetyp beispielsweise, wie zuvor beschrieben, eine Sequenz mit einer Dimension von 30.
 
-Eine weitere zentrale Komponente bildet die \acs{smc} Details, in der technische Informationen wie das verwendete Framework (PyTorch), die Programmiersprache (Python) sowie die Dateiendung des gespeicherten Modells (z. B. .pt oder .onnx) dokumentiert werden. 
-Ergänzend können auch Abhängigkeiten hinterlegt werden, beispielsweise in Form einer referenzierten Textdatei, die alle benötigten Python-Bibliotheken aufführt.
+% Eine weitere zentrale Komponente bildet die \acs{smc} Details, in der technische Informationen wie das verwendete Framework (PyTorch), die Programmiersprache (Python) sowie die Dateiendung des gespeicherten Modells (z. B. .pt oder .onnx) dokumentiert werden. 
+% Ergänzend können auch Abhängigkeiten hinterlegt werden, beispielsweise in Form einer referenzierten Textdatei, die alle benötigten Python-Bibliotheken aufführt.
 
-Das Submodell bietet außerdem die Möglichkeit, unterstützende Visualisierungen einzubinden. 
-Dies können beispielsweise Grafiken zur Modellarchitektur oder Diagramme zum Trainingsverlauf sein, die direkt in Python generiert werden können. 
-Solche Visualisierungen können entweder als Dateien direkt in die \acs{smc} Plots eingebettet oder über externe Referenzen verlinkt werden.
+% Das Submodell bietet außerdem die Möglichkeit, unterstützende Visualisierungen einzubinden. 
+% Dies können beispielsweise Grafiken zur Modellarchitektur oder Diagramme zum Trainingsverlauf sein, die direkt in Python generiert werden können. 
+% Solche Visualisierungen können entweder als Dateien direkt in die \acs{smc} Plots eingebettet oder über externe Referenzen verlinkt werden.
 
-Nicht zuletzt enthält das AIModelNameplate eine Verknüpfung zu einem weiteren Submodell, das mit dem \acs{smt} AIDataset \cite{SpezifikationAIDataset} realisiert wird.
-Dieses dient der strukturierten Beschreibung der für das Modelltraining verwendeten Daten.
-Obwohl das \acs{smt} primär für gelabelte Datensätze ausgelegt ist, lässt es sich auch zur Beschreibung synthetisch erzeugter Daten einsetzen, wie im vorliegenden Fall des durch den Datengenerator erzeugten Temperaturdatensatzes.
+% Nicht zuletzt enthält das AIModelNameplate eine Verknüpfung zu einem weiteren Submodell, das mit dem \acs{smt} AIDataset \cite{SpezifikationAIDataset} realisiert wird.
+% Dieses dient der strukturierten Beschreibung der für das Modelltraining verwendeten Daten.
+% Obwohl das \acs{smt} primär für gelabelte Datensätze ausgelegt ist, lässt es sich auch zur Beschreibung synthetisch erzeugter Daten einsetzen, wie im vorliegenden Fall des durch den Datengenerator erzeugten Temperaturdatensatzes.
 
-Die wichtigsten Elemente umfassen, analog zum AIModelNameplate, zentrale Metainformationen wie die \acs{url}, die Versionsnummer und den Speicherort des Datensatzes.
-Darüber hinaus ermöglicht die \acs{smc} SizeInformation eine strukturierte Angabe zur Datenmenge, etwa zur Anzahl der Datenpunkte in Trainings-, Validierungs- und Testdatensatz, zur Gesamtdatenmenge sowie zum Verhältnis ihrer Aufteilung.
-Weitere Elemente zur Beschreibung gelabelter bzw. realer Datensätze sind ebenfalls Teil des Submodells, werden im Kontext des hier verwendeten unüberwachten Lernens mit synthetisch erzeugten Daten jedoch nicht berücksichtigt.
+% Die wichtigsten Elemente umfassen, analog zum AIModelNameplate, zentrale Metainformationen wie die \acs{url}, die Versionsnummer und den Speicherort des Datensatzes.
+% Darüber hinaus ermöglicht die \acs{smc} SizeInformation eine strukturierte Angabe zur Datenmenge, etwa zur Anzahl der Datenpunkte in Trainings-, Validierungs- und Testdatensatz, zur Gesamtdatenmenge sowie zum Verhältnis ihrer Aufteilung.
+% Weitere Elemente zur Beschreibung gelabelter bzw. realer Datensätze sind ebenfalls Teil des Submodells, werden im Kontext des hier verwendeten unüberwachten Lernens mit synthetisch erzeugten Daten jedoch nicht berücksichtigt.
 
-Für die Beschreibung der Modellbereitstellung kann ergänzend das \acs{smt} AIDeployment \cite{SpezifikationAIDeployement} eingesetzt werden, das unter anderem Angaben zu Hard- und Softwareanforderungen, Bereitstellungsoptionen, Überwachungsmechanismen sowie zur Leistungsbewertung enthält.
-Im Rahmen der prototypischen Umsetzung besteht hierfür jedoch kein Bedarf, weshalb dieses Submodell an dieser Stelle lediglich der Vollständigkeit halber erwähnt wird.
+% Für die Beschreibung der Modellbereitstellung kann ergänzend das \acs{smt} AIDeployment \cite{SpezifikationAIDeployement} eingesetzt werden, das unter anderem Angaben zu Hard- und Softwareanforderungen, Bereitstellungsoptionen, Überwachungsmechanismen sowie zur Leistungsbewertung enthält.
+% Im Rahmen der prototypischen Umsetzung besteht hierfür jedoch kein Bedarf, weshalb dieses Submodell an dieser Stelle lediglich der Vollständigkeit halber erwähnt wird.
 
 \subsection{Anwendungsfall Digitaler Produktpass}
 Im Kontext steigender Anforderungen an Nachhaltigkeit und Transparenz entlang des gesamten Produktlebenszyklus eines Assets gewinnt der \acs{dpp} zunehmend an Bedeutung. 
