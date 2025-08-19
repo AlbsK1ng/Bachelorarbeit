@@ -1,5 +1,6 @@
 \newpage
 \section{Ergebnisse}
+\label{sec:Ergebnisse}
 In diesem Kapitel werden die zentralen Ergebnisse der Arbeit präsentiert.
 Im Mittelpunkt steht der entwickelte \acs{aas}-Demonstrator, der die prototypische Umsetzung des digitalen Zwillings des Abfüll- und Verschließmoduls der robocell-Linie zeigt.
 Darauf folgt die Analyse des eingesetzten Autoencoder-Modells zur Anomalieerkennung sowie die Vorstellung der beiden Anwendungsfälle \acs{dpp} und automatisierte Generierung der \acs{aas}.
@@ -221,7 +222,7 @@ In einer realen Maschine würden diese Signale hingegen zunächst über ein geei
 \subsubsection*{Zeitreihendaten}
 Das Submodell Zeitreihendaten dient der Einbettung historischer Messwerte in die \acs{aas}. 
 Im Demonstrator werden hierfür exemplarisch die Messgrößen Druck und Temperatur verwendet, die kontinuierlich vom \acs{opcua}-Server des Datengenerators bereitgestellt werden. 
-Anstatt diese Werte direkt in der \acs{aas} abzulegen, werden sie mithilfe von Telegraf in eine externe InfluxDB-Datenbank übertragen. 
+Anstatt diese Werte direkt in der \acs{aas} abzulegen, werden sie mithilfe von Telegraf in die externe InfluxDB-Datenbank übertragen. 
 Telegraf abonniert dazu die relevanten Variablen des \acs{opcua}-Servers und schreibt geänderte Werte unmittelbar in die Datenbank.
 
 Die Anbindung an die \acs{aas} erfolgt über ein LinkedSegment (eine \acs{smc}) im Submodell, das alle für die Datenabfrage erforderlichen Parameter enthält, wie den Endpunkt der InfluxDB und die zugehörige Abfragebeschreibung. 

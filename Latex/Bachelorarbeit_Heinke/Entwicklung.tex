@@ -1,5 +1,6 @@
 \newpage
 \section{Entwicklung}
+\label{sec:Entwicklung}
 In diesem Kapitel wird die schrittweise Entwicklung des digitalen Zwillings für das Abfüll- und Verschließmodul der robocell-Linie dargestellt.
 Ziel ist es, das physische Asset gemäß dem Konzept der \acs{aas} digital abzubilden und in ein Industrie-4.0-konformes System zu integrieren.
 Abbildung \ref{fig:Entwicklungsschritte} veranschaulicht den Ablauf des zugrundeliegenden Entwicklungsprozesses.
@@ -387,9 +388,9 @@ Diese Datei kann entweder direkt in die \acs{aas} eingebunden oder über ein Ext
 Für größere Datenmengen empfiehlt sich die externe Speicherung an einem separaten Ort, beispielsweise in einer Datenbank.
 Die Verknüpfung mit der \acs{aas} erfolgt in diesem Fall über ein LinkedSegment.
 
-Im Folgenden wird die zuletzt genannte Option näher betrachtet.
+In dieser Arbeit wird die zuletzt genannte Option näher untersucht und praktisch umgesetzt.
 Hierzu werden die simulierten Werte für Druck und Temperatur des Datengenerators extern in einer InfluxDB gespeichert.
-Die über \acs{opcua} bereitgestellten Daten werden dabei mithilfe von Telegraf, einem leichtgewichtigen Agenten zur Datenerfassung und -weiterleitung \cite{Influx}, kontinuierlich in eine speziell für diesen Anwendungsfall angelegte Tabelle geschrieben.
+Die über \acs{opcua} bereitgestellten Daten werden mithilfe von Telegraf, einem leichtgewichtigen Agenten zur Datenerfassung und -weiterleitung \cite{Influx}, kontinuierlich in eine speziell für diesen Anwendungsfall angelegte Tabelle geschrieben.
 InfluxDB sowie Telegraf stehen beide als Docker-Container zur Verfügung und lassen sich so nahtlos in das bestehende BaSyx-System integrieren.
 
 Um die in der Datenbank gespeicherten Daten in die \acs{aas} einzubinden, kann das bereits genannte \acs{smt} Time Series Data verwendet werden.
@@ -412,15 +413,17 @@ Er beschreibt, welche Variablen, in diesem Fall Druck und Temperatur, in einem Z
 Anschließend folgt die Konfiguration des LinkedSegments. 
 Dieses stellt die eigentliche Verbindung zu den extern gespeicherten Zeitreihendaten her.
 Hierfür sind sowohl der Datenendpunkt als als auch die Query, mit der die gewünschten Werte ausgelesen werden sollen, zu spezifizieren.
-Im vorliegenden Fall handelt es sich dabei um die Adresse des InfluxDB-Containers sowie die Abfrage, mit der die Werte für Druck und Temperatur aus der zugehörigen Tabelle extrahiert werden können.
+Im vorliegenden Fall handelt es sich um die Adresse des InfluxDB-Containers sowie die Abfrage, mit der die Werte für Druck und Temperatur aus der zugehörigen Tabelle extrahiert werden können.
 
 Dabei ist zu beachten, dass der entsprechende Port der InfluxDB nach außen freigegeben ist, da andernfalls kein Zugriff durch externe Anwendungen möglich ist.
 Ergänzend können weitere Metadaten angegeben werden, beispielsweise die Abtastrate (samplingRate), der durch das Segment abgedeckte Zeitraum oder ein recordCount, der die erwartete Anzahl an Einträgen innerhalb dieses Zeitfensters beschreibt.
 
-Zur Visualisierung der Zeitreihendaten bietet das BaSyx-System eine praktische Lösung.
-Über ein entsprechendes Plugin können die im Submodell Time Series Data enthaltenen Informationen direkt in der Benutzeroberfläche der AAS Web UI dargestellt werden.
-Die über das LinkedSegment referenzierten Zeitreihendaten lassen sich dort in verschiedenen Diagrammen visualisieren, beispielsweise als Linien- oder Balkendiagramm.
-Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne dass diese physisch in der \acs{aas} gespeichert werden müssen.
+Alle relevanten Informationen zur externen Speicherung der Zeitreihendaten sind somit im Submodell enthalten, wodurch externen Clients ein strukturierter und standardisierter Zugriff auf die Daten ermöglicht wird.
+
+% Zur Visualisierung der Zeitreihendaten bietet das BaSyx-System eine praktische Lösung.
+% Über ein entsprechendes Plugin können die im Submodell Time Series Data enthaltenen Informationen direkt in der Benutzeroberfläche der AAS Web UI dargestellt werden.
+% Die über das LinkedSegment referenzierten Zeitreihendaten lassen sich dort in verschiedenen Diagrammen visualisieren, beispielsweise als Linien- oder Balkendiagramm.
+% Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne dass diese physisch in der \acs{aas} gespeichert werden müssen.
 
 \subsection{KI-Modell zur Optimierung}
 Im Folgenden wird ein \acs{ki}-gestütztes Konzept zur Optimierung der zustandsbasierten Prozessüberwachung vorgestellt und prototypisch umgesetzt.

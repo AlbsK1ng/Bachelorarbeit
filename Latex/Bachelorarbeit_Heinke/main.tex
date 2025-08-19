@@ -18,7 +18,7 @@
 % \usepackage{cleveref}
 % cleveref sorgt für Probleme mit acronym
 
-%\usepackage{geometry}
+% \usepackage{geometry}
 \usepackage[onehalfspacing]{setspace}
 \usepackage{color}
 \usepackage{attachfile}
@@ -117,12 +117,6 @@
 %%% inline %%%
 %----------Code listings------------
 
-%----------Autoencoder-------------------
-\usepackage{neuralnetwork}
-\newcommand{\xin}[2]{$x_#2$}
-\newcommand{\xout}[2]{$\hat x_#2$}
-%----------Autoencoder-------------------
-
 %----------Farben-------------------
 \definecolor{swaggerget}{HTML}{61affe}
 \definecolor{swaggerpost}{HTML}{49cc90}
@@ -161,7 +155,7 @@
   width=\textwidth
 }}
 %----------Aufzählung-------------------
-\usepackage[a4paper, asymmetric, left=3cm,right=3cm,top=1cm,bottom=1.5cm,includeheadfoot, headheight=40pt]{geometry}
+\usepackage[a4paper, asymmetric, left=3cm,right=3cm,top=1cm,bottom=1.5cm,includeheadfoot, headheight=40pt, footskip=30pt, headsep=25pt]{geometry}
 
 \pagestyle{plain} %nur Seitenzahl in der Fußzeile (LaTeX-Standard)
 
@@ -248,12 +242,12 @@
 
 \input{commands.tex}
 %=======================BEGIN HAUPTTEIL===================================%
+\clearpage
 \input{Einleitung.tex}
 \input{Grundlagen.tex}
 \input{Entwicklung.tex}
 \input{Ergebnisse.tex}
 \input{Zusammenfassung.tex}
-Zur Verwendung des Glossars \gls{SPS} verwenden.
 %=======================ENDE HAUPTTEIL====================================%
 
 \clearpage
