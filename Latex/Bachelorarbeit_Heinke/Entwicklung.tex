@@ -8,10 +8,10 @@ Abbildung \ref{fig:Entwicklungsschritte} veranschaulicht den Ablauf des zugrunde
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/vorgehenEntwicklungsteil.pdf}
-    \caption[Ablauf der Entwicklung des digitalen Zwillings]{Ablauf der Entwicklung des digitalen Zwillings (eigene Darstellung)}
+    \caption[Ablauf der Entwicklung des digitalen Zwillings]{Ablauf der Entwicklung des digitalen Zwillings}
     \label{fig:Entwicklungsschritte}
 \end{figure}
-\vspace{-1em}
+\vspace{-0.5em}
 
 Aufbauend auf einer konzeptionellen Grundlage erfolgt zunächst die statische Modellierung der \acs{aas} mithilfe des Package Explorers. 
 Die resultierende Struktur wird anschließend mit einer Test Engine validiert.
@@ -29,7 +29,9 @@ Ziel dieses Abschnittes ist es, eine grundlegende Basis für die Erstellung des 
 Dabei wird untersucht, welche Daten für die Modellierung erforderlich sind, wo diese herkommen und wie sie in (standardisierten) Submodellen der \acs{aas} strukturiert werden können.
 \subsubsection{Identifikation relevanter Datenquellen}
 Ein digitaler Zwilling basiert immmer auf einer Vielzahl unterschiedlicher Daten, die gemeinsam ein umfassendes digitales Abbild eines Assets ermöglichen. 
-Dabei werden sowohl statische Informationen (z.B. Datenblätter oder Konstruktionsdaten) als auch dynamische Daten, die während des Betriebs einer Maschine anfallen, benötigt.
+Dabei werden%
+\pagebreak 
+~sowohl statische Informationen (z.B. Datenblätter oder Konstruktionsdaten) als auch dynamische Daten, die während des Betriebs einer Maschine anfallen, benötigt.
 Im ersten Schritt gilt es daher, alle relevanten Datenquellen zu identifizieren, die für die Modellierung des digitalen Zwillings erforderlich sind.
 
 In industriellen Umgebungen kommen typischerweise verschiedene Systeme zur Erfassung, Verwaltung und Speicherung von Maschinendaten zum Einsatz.
@@ -64,31 +66,11 @@ Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, 
 
 \input{TabelleSubmodelle.tex}
 
+\newpage
 Im Rahmen dieser Arbeit ist die Modellierung der \acs{aas} bzw. der verschiedenen Submodelle als Instanz vorgesehen.
 Auch wenn es sich bei dem Abfüll- und Verschließmodul grundsätzlich um ein generisches Modul innerhalb der robocell-Linie handelt und somit technisch gesehen als Typ klassifiziert werden könnte, steht in diesem Projekt die exemplarische Umsetzung eines konkreten digitalen Zwillings im Vordergrund.
 Dies begründet sich vor allem durch die vorgesehene Anbindung von Echtzeit- und Zeitreihendaten sowie die Abbildung einer Betriebsumgebung, was dem digitalen Zwilling einen klaren Instanzcharakter verleiht.
-Außerdem unterstützt dies die spätere Demonstration der konkreten \acs{aas} im Industrie-4.0-Systemkontext.
-% Im Rahmen dieser Arbeit ist die Modellierung der AAS als Instanz vorgesehen.
-% Auch wenn es sich bei der robocell grundsätzlich um ein generisches Modul einer Maschinenfamil technisch um einen Typ handelt und keine
-% In diesem Projekt exemplarische Umsertzung eines konkreten digitalen Zwillings im Vordergrund da echtzeitdaten un dzeitreihendaten angebunden werden und eine betriebsumgebung abgtebildet wird instanzcharackter.
-% Unterstützt zudem die Demonstration der aasa im Systemkontext.
-
-
-% Ein besonders wichtiges Submodell stellt die Stückliste (\acs{bom}) dar.
-% Mit diesem lässt sich die hierarchische Struktur eines Assets abbilden, das aus mehreren verschachtelten Komponenten besteht.
-% Für komplexe Maschinen oder Anlagen, wie im Fall der robocell, wird im Rahmen dieser Konzeption vorgesehen, einzelne ausgewählte Komponenten jeweils als eigene \acs{aas}-Instanzen zu modellieren und in der übergeordneten Haupt-\acs{aas} zu referenzieren.
-% Diese werden im weiteren Verlauf als Komponenten-\acs{aas} bezeichnet.
-% Auf diese Weise soll eine höhere Modularität und Wiederverwendbarkeit erreicht werden.
-
-% Zur Verdeutlichung der zugrunde liegenden Architektur sowie der Beziehungen zwischen den identifizierten Datenquellen, \acs{aas} und Submodellen dient Abbildung~\ref{fig:konzeptionierungAAS}. 
-% Die \acs{aas} der robocell bildet dabei das zentrale digitale Abbild, in das die relevanten Informationen aus den in diesem Kapitel beschriebenen Submodellen integriert werden sollen.
-
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=1\textwidth]{Bilder/Konzeptionierung/konzeptionierungNeu.pdf}
-%     \caption{\acs{aas}-Konzept der robocell}
-%     \label{fig:konzeptionierungAAS}
-% \end{figure}
+Zudem erleichtert dies die spätere Demonstration der \acs{aas} im Industrie-4.0-Systemkontext.
 
 \subsection{Modellierung mit der AAS}
 In diesem Abschnitt wird beschrieben, wie die zuvor ausgewählten Submodelle in eine \acs{aas} integriert und mit konkreten Daten sowie semantischen Informationen angereichert werden können.
@@ -107,17 +89,17 @@ Dateien, wie ein Titelbild für die robocell können dabei bereits zu Beginn in 
 
 Innerhalb dieses Pakets müssen zunächst die Metadaten der \acs{aas} sowie des zugehörigen Asset spezifiziert werden.
 Neben der Auswahl des Asset-Typs ist insbesondere die eindeutige Identifikation von zentraler Bedeutung.
-Das Asset selbst wird über eine globalAssetId referenziert, während die \acs{aas} eine eigene ID und eine idShort erhält.
+Das Asset selbst wird über eine globalAssetId referenziert, während die \acs{aas} eine eigene \acs{id} und eine idShort erhält.
 Diese vereinfachen nicht nur den späteren Austausch der \acs{aas}, sondern ermöglichen auch deren systemweites Auffinden innerhalb eines Industrie-4.0-Ökosystems.
-Für erste Modellierungszwecke empfiehlt es sich, auf automatisch generierte Beispiel-IDs zurückzugreifen, die direkt im Package Explorer erzeugt werden können.
+Für erste Modellierungszwecke empfiehlt es sich, auf automatisch generierte Beispiel-IDs zurückzugreifen.
 
-% \vspace{-1em}
 \begin{figure}[htbp]
     \centering
-    \includegraphics{Bilder/ModellierungAAS/Final/NeuesAASPaket.PNG}
-    \caption[AAS-Paket im Package Explorer]{AAS-Paket im Package Explorer (eigene Darstellung)}
+    \includegraphics[width=\textwidth]{Bilder/ModellierungAAS/Final/AASPaketPackageExplorer.PNG}
+    \caption[AAS-Paket im Package Explorer]{AAS-Paket im Package Explorer}
     \label{fig:NeuesAASPaket}
 \end{figure}
+
 
 
 \subsubsection*{Strukturierung durch Submodelle}
@@ -125,7 +107,7 @@ Für erste Modellierungszwecke empfiehlt es sich, auf automatisch generierte Bei
 
 Im nächsten Schritt müssen die benötigten Submodelle zur \acs{aas} hinzugefügt werden.
 Diese lassen sich entweder als Instanz, Typ oder auch Template anlegen, was eine flexible Modellierung je nach Anwendungsfall ermöglicht.
-Jedes Submodell erhält dabei wie die \acs{aas} auch eine eindeutige ID, über die diese später identifiziert werden können.
+Jedes Submodell erhält dabei wie die \acs{aas} auch eine eindeutige \acs{id}, über die diese später identifiziert werden können.
 Zusätzlich können optionale Administrationsinformationen angegeben werden, wie beispielsweise die Versionsnummer oder der Name des Autors.
 
 Beim Erstellen eines Submodells ist dieses zunächst leer. 
@@ -140,7 +122,7 @@ Gemäß der Metamodellspezifikation \cite{SpezifikationPart1} wird zwischen Data
 DataElements bilden stets die unterste Ebene im Modell. Sie enthalten konkrete Informationen wie Werte oder Dateien und können keine weiteren Elemente enthalten.
 SubmodelElements hingegen sind komplexere Strukturen die wiederum als Container für untergeordnete Elemente dienen.
 
-Submodellelemente erhalten im Gegensatz zu Submodellen keine eigene ID, sondern werden über ihre idShort eindeutig referenziert.
+Submodellelemente erhalten im Gegensatz zu Submodellen keine eigene \acs{id}, sondern werden über ihre idShort eindeutig referenziert.
 Diese muss innerhalb eines Submodells einzigartig sein.
 Eine Ausnahme bilden \acsp{sml}, in denen die enthaltenen Elemente nicht über eine idShort, sondern nur über ihre Position (Index) identifiziert werden.
 
@@ -156,15 +138,6 @@ Nach dem Strukturaufbau können konkrete Inhalte wie Werte, Dokumente oder Refer
 Dies beschränkt sich jedoch auf statische Submodelle wie Technische Daten oder Dokumentation.
 Dynamische Inhalte, etwa Betriebsdaten werden nicht direkt im Package Explorer gepflegt, sondern über externe Datenquellen (z.B. Maschinensimulator oder Datengenerator) zur Laufzeit angebunden.
 
-% Abbildung \ref{fig:SubmodellTypenschild} zeigt den strukturellen Aufbau anhand eines Auschnitts des statischen Submodells Typenschild mit bereits eingetragenen Werten.
-
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics{Bilder/ModellierungAAS/Final/SubmodellErweitert.PNG}
-%     \caption[Package Explorer: Ausschnitt Submodell Typenschild]{Package Explorer: Ausschnitt Submodell Typenschild (eigene Darstellung)}
-%     \label{fig:SubmodellTypenschild}
-% \end{figure}
-
 \subsubsection*{Semantische Beschreibung mit Concept Descriptions}
 \vspace{-0.5em}
 
@@ -178,7 +151,15 @@ Allerdings unterscheiden sich je nach Elementtyp die verpflichtenden und empfohl
 Das bedeutet, dass für verschiedene Elemente (z.B. Property oder Relationship) jeweils unterschiedliche Felder als zwingend erforderlich gelten, während andere optional oder gar nicht vorgesehen sind.
 Die Struktur wird im Folgenden am Beispiel einer Property für die physikalische Größe Frequenz dargestellt.
 
-\input{DataSpecificationContent.tex}
+\vspace{0.25em}
+\begin{figure}[htbp]
+    \centering
+    \input{DataSpecificationContent.tex}
+    \vspace{-0.5em}
+    \caption[Eingabemaske einer \acs{cd}]{Eingabemaske einer \acs{cd} (in Anlehnung an \cite{SpezifikationPart3a})}
+    \label{fig:SubmodellTypenschild}
+\end{figure}
+\vspace{-0.35em}
 
 Alternativ können auch externe Standards referenziert werden. 
 Der Package Explorer unterstützt diesen Ansatz durch eine erweiterte Funktionalität, mit der sich vorgefertigte ECLASS-Kataloge direkt in das Tool importieren lassen. 
@@ -204,14 +185,6 @@ Diese Formate beeinhalten allerdings ausschließlich die strukturierte Beschreib
 Zusätzlich unterstützt der Package Explorer auch den gezielten Export einzelner Submodelle oder Concept Descriptions.
 Diese lassen sich seperat, etwa als \acs{json}-Datei abspeichern und können so gezielt in anderen \acs{aas}-Projekten wiederverwendet werden.
 
-% \subsubsection{Abbildung hierarchischer Strukturen und Beziehungen}
-% Zur Abbildung hierarchischer Strukturen, insbesondere im Submodell \acs{bom}, werden sogenannte Entities verwendet. 
-% Eine Entitie repräsentiert dabei ein untergeordnetes Asset innerhalb der Gesamtstruktur. 
-% Grundsätzlich lassen sich zwei Typen unterscheiden. 
-% CoManagedEntities besitzen keine eigene \acs{aas} und werden innerhalb der AAS der übergeordneten Hauptkomponente mitverwaltet. 
-% SelfManagedEntities hingegen, wie sie im Rahmen der Konzeption dieser Arbeit vorgesehen sind, verfügen über eine eigene \acs{aas} und können somit unabhängig verwaltet und referenziert werden. 
-% Die Identifikation erfolgt über die jeweils zugewiesene globalAssetId.
-
 \subsubsection{Validierung}
 Im Anschluss an die Modellierung der \acs{aas} sollte eine Überprüfung der Konformität erfolgen.
 Hierzu kann eine von der \acs{idta} bereitgestellte Test Engine \cite{TestEngine} eingesetzt werden. 
@@ -219,10 +192,12 @@ Diese lässt sich direkt mit pip, dem Paktemanager von Python, installieren und 
 
 Mit dem Befehl 
 \tcbox[inlinebox]{{aas\_test\_engine check\_files}} 
-kann beispielsweise die Validierung der zuvor erstellten \acs{aas} gestartet werden.
+kann die Validierung der zuvor erstellten \acs{aas} gestartet werden.
 Unterstützt werden sowohl AASX- als auch \acs{json}-Dateien.
 Dabei wird zunächst geprüft, ob diese formal korrekt aufgebaut sind, insbesondere hinsichtlich der internen Struktur und ihrer Beziehungen.
-Anschließend erfolgt die Kontrolle der enthaltenen \acs{aas} gegen die Metamodell-Spezifikationen der \acs{idta} (Teil~1 \cite{SpezifikationPart1} und 3a \cite{SpezifikationPart3a}).
+Anschließend erfolgt die Kontrolle der enthaltenen \acs{aas} gegen die Metamodell-Spezifikationen (Teil~1 \cite{SpezifikationPart1} und%
+\pagebreak 
+~3a \cite{SpezifikationPart3a}).
 Zuletzt erfolgt ein Abgleich der Submodelle mit den zugehörigen Templates, sofern diese für das jeweilige Submodell definiert wurden.
 
 Treten bei der Validierung formale oder semantische Fehler auf, beispielsweise durch fehlende Referenzen oder ungültige IDs, gibt die Test Engine eine detaillierte Fehlermeldung in der Konsole aus. 
@@ -246,17 +221,20 @@ Dadurch lassen sich AASX-Dateien ohne zusätzlichen Konfigurationsaufwand direkt
 Ebenso können auf dem Server gespeicherte \acs{aas} über den Explorer eingesehen und bearbeitet werden.
 Die enge Verzahnung beider Komponenten ermöglicht somit eine unkomplizierte Bereitstellung und Verwaltung von \acs{aas}-Paketen und eignet sich besonders für erste Testszenarien oder prototypische Anwendungen.
 
-Für komplexere Anwendungsszenarien, insbesondere solche mit Anforderungen an Echtzeitfähigkeit sowie an flexible und erweiterbare Submodelle, stößt der AASX Server Blazor jedoch an seine funktionalen und architektonischen Grenzen. 
+Für komplexere Anwendungsszenarien, insbesondere solche mit Anforderungen an Echtzeitfähigkeit sowie an flexible und erweiterbare Submodelle, stößt der%
+\pagebreak
+~AASX Server Blazor jedoch an seine funktionalen und architektonischen Grenzen. 
 So fehlen beispielsweise Schnittstellen zur Anbindung dynamischer Datenquellen sowie Möglichkeiten zur Skalierung und zur verteilten Systemintegration.
 Aus diesem Grund wird im weiteren Verlauf dieses Projekts die Eclipse BaSyx-Plattform eingesetzt.
 Durch ihre modulare Architektur und die klare Trennung verschiedener Komponenten wie den Registries oder den Repositories bietet sie eine deutlich flexiblere Grundlage für die Umsetzung anspruchsvoller Industrie-4.0-Szenarien.
 
 Die einfachste Möglichkeit, BaSyx zu installieren, besteht in der Nutzung von Docker.
 Alle benötigten Komponenten stehen als vorgefertigte Images öffentlich über den Docker Hub \cite{BaSyxDockerHub} zur Verfügung. 
-Alternativ kann der Quellcode auch von GitHub \cite{BaSyxGithub} bezogen werden, um einzelne Komponenten individuell anzupassen oder zu erweitern.
+Alternativ kann der Quellcode von GitHub \cite{BaSyxGithub} bezogen werden, um einzelne Komponenten individuell anzupassen oder zu erweitern.
+Für die vorliegende Arbeit ist dies insbesondere im Zusammenhang mit der AAS Web UI von Vorteil, da sich benutzerdefinierte Plugins flexibel integrieren lassen.
 
-Die verschiedenen Services, darunter die \acs{aas} Environment, Registries für \acs{aas} und Submodelle, der Discovery Service, sowie die MongoDB als persistenter Speicher, können zentral in einer docker-compose.yml-Datei verwaltet werden.
-Die Konfiguration erfolgt in der Regel über Umgebungsvariablen oder separate Konfigurationsdateien, die in der docker-compose.yml referenziert werden.
+Die verschiedenen Services, darunter die AAS Web UI, die \acs{aas} Environment, Registries für \acs{aas} und Submodelle, der Discovery Service, sowie die MongoDB als persistenter Speicher, können zentral in einer docker-compose.yml-Datei verwaltet werden.
+Die Konfiguration erfolgt über Umgebungsvariablen sowie separate Konfigurationsdateien, die in der docker-compose.yml referenziert werden.
 % Mit dem Befehl docker compose up lassen sich anschließend alle Komponenten gemeinsam starten.
 
 Nach erfolgreichem Start der BaSyx-Umgebung stehen verschiedene Möglichkeiten zur Verfügung, um eine \acs{aas} bereitzustellen und in das System zu integrieren. 
@@ -282,9 +260,9 @@ Diese Methode eignet sich besonders gut für Tests oder kleinere Anpassungen, da
 
 \vspace{0.5em}
 \noindent\textbf{C. REST-API}\\
-Die flexibelste, jedoch auch technisch anspruchsvollste Methode zur Bereitstellung einer \acs{aas} ist die manuelle Registrierung über die \acs{rest}-\acs{api}. 
+Die flexibelste, jedoch auch technisch anspruchsvollste Methode zur Bereitstellung ist die manuelle Registrierung über die \acs{rest}-\acs{api}. 
 Dabei kann nicht einfach eine AASX-Datei hochgeladen werden. 
-Stattdessen müssen die AAS, ihre Submodelle sowie deren Beziehungen explizit über die bereitgestellten Schnittstellen des BaSyx-Systems erstellt werden. 
+Stattdessen müssen die \acs{aas}, ihre Submodelle sowie deren Beziehungen explizit über die bereitgestellten Schnittstellen des BaSyx-Systems erstellt werden. 
 Dies erfolgt durch das Senden strukturierter \acs{json}-Daten im Body der jeweiligen \acs{http}-Anfragen.
 Ein typischer Ablauf dieser Registrierung ist in Tabelle \ref{tab:BereitstellungInBaSyx} dargestellt. 
 Sie zeigt die notwendigen Schritte sowie die zugehörigen \acs{rest}-Endpunkte.
@@ -293,18 +271,19 @@ Diese sind dabei verschiedenen Services innerhalb der AAS Environment zugeordnet
 \input{TabelleBereitstellungBaSyxMitAPI.tex}
 
 Neben der Bereitstellung in der AAS Environment kann eine \acs{aas} optional auch im Discovery Service registriert werden.
-Über einen sogenannten assetLink kann diese dabei logisch mit ihrem zugehörigen Asset verknüpft werden.
+Über einen sogenannten assetLink kann sie dabei logisch mit ihrem zugehörigen physischen Asset verknüpft werden.
 Die Registrierung erfolgt analog zur AAS Environment über einen \acs{rest}-Endpunkt.
-Besonders bei der Darstellung von hierarchischen Strukturen, etwa einer \acs{bom} mit mehreren verschachtelten Assets, hilft der Discovery Service bei der eindeutigen Zuordnung der jeweiligen \acs{aas} zu ihrem physischen Gegenstück.
+Dies erleichtert insbesondere die eindeutige Zuordnung in komplexen, hierarchisch aufgebauten AAS, die wiederum mehrere verschachtelte Assets digital abbilden.
 
 \subsubsection{Integration von Echtzeitdaten über OPC UA}
-Nach der Erstellung der statischen \acs{aas} der robocell und der Integration in das BaSyx-System gilt es nun, diese um dynamische Informationen zu erweitern.
-Diese sind essenziell, um den aktuellen Maschinenzustand präzise und in Echtzeit abzubilden.
-Die Datenbasis bilden die beiden zuvor vorgestellten Anwendungen, die Maschinen- bzw. Sensordaten über einen \acs{opcua} Server bereitstellen.
 
-Die Integration der Echtzeidaten in die \acs{aas} wird im Folgenden am Beispiel des Submodells Prozessdaten erläutert.
-Wie in Abbildung \ref{fig:SubmodellProzessdaten} dargestellt, existieren innerhalb dieses Submodells verschiedene Properties, die jeweils bestimmte Werte, wie beispielsweise den Druck oder die Anzahl abefüllter Einheiten, repräsentieren. %(siehe Abbildung \ref{fig:UMLSubmodellProcessData}). 
-Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten, die über \acs{opcua} bereitgestellt werden, aktualisiert werden.
+Nach der Erstellung der statischen \acs{aas} des Abfüll- und Verschließmoduls sowie deren Integration in das BaSyx-System soll diese nun um dynamische Informationen ergänzt werden.
+Diese sind erforderlich, um den aktuellen Maschinenzustand präzise und in Echtzeit abzubilden.
+Grundlage hierfür bilden die beiden zuvor beschriebenen Anwendungen, welche simulierte Maschinen- und Sensordaten über einen \acs{opcua}-Server bereitstellen.
+
+Die Integration der Echtzeitdaten in die \acs{aas} wird im Folgenden exemplarisch anhand des Submodells Prozessdaten erläutert.
+Wie in Abbildung \ref{fig:SubmodellProzessdaten} dargestellt, enthält dieses Submodell verschiedene Properties, die jeweils spezifische Werte, wie etwa den Druck oder die Anzahl abgefüllter Einheiten, repräsentieren.
+Diese Properties sollen im weiteren Verlauf dynamisch mit den über \acs{opcua} bereitgestellten Werten aktualisiert werden.
 
 \begin{figure}[htbp]
     \centering
@@ -313,31 +292,34 @@ Diese Properties sollen im weiteren Verlauf dynamisch mit den simulierten Werten
     \caption[Submodell Prozessdaten]{Submodell Prozessdaten (eigene Darstellung)}
     \label{fig:SubmodellProzessdaten}
 \end{figure}
+\vspace{-0.25em}
 
 Das Eclipse BaSyx-Projekt stellt hierfür eine weitere Komponente bereit, die sogenannte Databridge \cite{BaSyxDatabridge}.
-Diese steht, wie alle anderen Komponenten auch, als Docker-Container zur Verfügung und ermöglicht die Anbindung verschiedenster Datenquellen an eine \acs{aas}.
-Sie unterstützt eine Vielzahl von Protokollen, darunter insbesondere auch \acs{opcua} oder \acs{mqtt} (Message Queuing Telemetry Transport).
+Diese steht, wie alle anderen Komponenten, als Docker-Container zur Verfügung und ermöglicht die Anbindung verschiedenster Datenquellen an eine \acs{aas}.
+Sie unterstützt eine Vielzahl von Protokollen, darunter insbesondere \acs{opcua} und \acs{mqtt} (Message Queuing Telemetry Transport).
 Dabei dient sie als Vermittler zwischen einem Datenendpunkt und einem Submodell innerhalb der \acs{aas}.
 
 Die Konfiguration der Databridge erfolgt über mehrere \acs{json}-Dateien.
 In einer zentralen Konfigurationsdatei werden sowohl die Datenquelle als auch die Datensenke definiert.
-Außerdem können Transformatoren angegeben werden, die beispielsweise Einheitenumrechnungen oder Typkonvertierungen übernehmen.
+Zusätzlich können Transformatoren angegeben werden, die beispielsweise Einheitenumrechnungen oder Typkonvertierungen übernehmen.
 
+Im Kontext des Submodells Prozessdaten erfolgt die Anbindung der simulierten Werte über den \acs{opcua}-Server des Datengenerators, der als Datenquelle für die Databridge dient.
+Die Konfiguration erfolgt in einer separaten \acs{json}-Datei.
+Darin sind sowohl die Verbindungsparameter des Servers (z.~B. \acs{url} (Uniform Resource Locator) und Port) als auch die zu überwachenden Knoten anzugeben.
+Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua} Server die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
+
+\newpage
 \begin{figure}[htbp]
     \centering
     % 0.88
     \includegraphics{Bilder/OPCUA/OPCUADaten.pdf}
-    \caption[OPC UA Datenknoten]{OPC UA Datenknoten (eigene Darstellung)}
+    \caption[OPC UA Datenknoten]{OPC UA Datenknoten}
     \label{fig:OPCUADatenStruktur}
 \end{figure}
 
-Als Datenquelle muss der \acs{opcua} Server des Datengenerators angegeben werden, dessen Konfiguration typischerweise in einer separaten \acs{json}-Datei erfolgt.
-Darin sind sowohl die Verbindungsparameter des Servers (z.B. \acs{url} (Uniform Resource Locator) und Port) als auch die zu überwachenden Knoten anzugeben.
-Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua} Server die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
-
-Außerdem muss der zu verwendende \acs{opcua} Client festgelegt werden.
-In diesem Projekt wird Eclipse Milo eingesetzt, der auf einem Subscription-Modell basiert.
-Im Gegensatz zu einem Polling-Ansatz werden hier gezielt bestimmte Knoten (Nodes) abonniert, sodass neue Werte automatisch bei Änderung übermittelt werden.
+Darüber hinaus muss der zu verwendende \acs{opcua}-Client festgelegt werden.
+In diesem Projekt kommt Eclipse Milo zum Einsatz, der auf einem Subscription-Modell basiert.
+Im Gegensatz zu einem Polling-Ansatz werden hierbei gezielt bestimmte Knoten abonniert, sodass neue Werte bei Änderungen automatisch übermittelt werden.
 
 Ein Beispiel für eine entsprechende \acs{json}-Konfiguration der Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für den Druckwert dargestellt.
 Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall können zusätzlich angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
@@ -352,15 +334,16 @@ Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertra
 }
 \end{lstlisting}
 
-Zur Anpassung der eingehenden Daten an die Struktur der Ziel-Property lassen sich verschiedene Transformatoren einsetzen.
-Die Databridge unterstützt hierfür unter anderem JSONata-Ausdrücke oder Jackson-basierte Transformer.
-Mithilfe dieser Mechanismen können die vom \acs{opcua}-Server empfangenen Rohdaten zunächst in ein \acs{json}-Objekt überführt und anschließend gezielt extrahiert und weiterverarbeitet werden.
+Zur Anpassung der eingehenden Daten an die Struktur der Ziel-Property können verschiedene Transformatoren eingesetzt werden.
+Die Databridge unterstützt hierfür unter anderem JSONata-Ausdrücke sowie Jackson-basierte Transformer.
+Mithilfe dieser Mechanismen lassen sich die vom \acs{opcua}-Server empfangenen Rohdaten zunächst in ein \acs{json}-Objekt überführen und anschließend gezielt extrahieren sowie weiterverarbeiten.
 
 Im Anschluss erfolgt die Konfiguration der Datensenke, also der Zielkomponente innerhalb der \acs{aas}.
 Auch diese erfolgt über eine separate \acs{json}-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete \acs{api}-Version definiert werden.
 Listing~\ref{lst:jsonDatensenke} zeigt ein Beispiel einer entsprechenden Konfiguration.
-Der Platzhalter \{smId\} steht dabei für die Base64-kodierte ID des Submodells Prozessdaten, wie sie in der \acs{rest}-API der \acs{aas} verwendet wird.
+Der Platzhalter \{smId\} steht dabei für die Base64-kodierte \acs{id} des Submodells Prozessdaten, wie sie in der \acs{rest}-API der \acs{aas} verwendet wird.
 
+\newpage
 \begin{lstlisting}[language=json, caption={Beispielhafte \acs{json}-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
 {
     "uniqueId"        : "Submodel/ProcessData/Pressure",
@@ -372,8 +355,7 @@ Der Platzhalter \{smId\} steht dabei für die Base64-kodierte ID des Submodells 
 
 Nach erfolgreicher Konfiguration übernimmt die Databridge die automatisierte Übertragung der \acs{opcua}-Werte in die entsprechenden Properties des Submodells.
 Dieses Prinzip lässt sich nicht nur auf Prozesswerte anwenden, sondern auch zur Abbildung des Maschinenzustands oder anderer dynamischer Betriebsdaten nutzen.
-Somit bildet die Databridge eine flexible und protokolloffene Lösung zur Echtzeitanbindung externer Datenquellen an eine \acs{aas}.
-
+Damit stellt die Databridge eine zentrale Komponente zur Echtzeitanbindung externer Datenquellen dar und trägt wesentlich zur dynamischen Erweiterung der \acs{aas} bei.
 
 \subsubsection{Verarbeitung von Zeitreihendaten}
 \label{sec: VerarbeitungZeitreihen}
@@ -393,14 +375,8 @@ Hierzu werden die simulierten Werte für Druck und Temperatur des Datengenerator
 Die über \acs{opcua} bereitgestellten Daten werden mithilfe von Telegraf, einem leichtgewichtigen Agenten zur Datenerfassung und -weiterleitung \cite{Influx}, kontinuierlich in eine speziell für diesen Anwendungsfall angelegte Tabelle geschrieben.
 InfluxDB sowie Telegraf stehen beide als Docker-Container zur Verfügung und lassen sich so nahtlos in das bestehende BaSyx-System integrieren.
 
-Um die in der Datenbank gespeicherten Daten in die \acs{aas} einzubinden, kann das bereits genannte \acs{smt} Time Series Data verwendet werden.
-Der strukturelle Aufbau ist in Abbildung \ref{fig:SMTTimeSeriesData} dargestellt. 
-Dabei sind ausschließlich die Elemente berücksichtigt, die für die externe Anbindung erforderlich sind.
-
-Zuerst müssen die Metadaten eingetragen werden. 
-Dazu gehören ein eindeutiger Name, eine Beschreibung sowie die Festlegung der Struktur der aufzuzeichnenden Datenpunkte in der \acs{smc} Records.
-Ein Record kann mit einer Spaltenbeschreibung in einer Tabelle verglichen werden.
-Er beschreibt, welche Variablen, in diesem Fall Druck und Temperatur, in einem Zeitreihen-Datensatz enthalten sind und wie diese zu interpretieren sind.
+Zur Einbindung der in der Datenbank gespeicherten Daten in die \acs{aas} kann das bereits genannte \acs{smt} verwendet werden.
+Abbildung \ref{fig:SMTTimeSeriesData} zeigt den strukturellen Aufbau, wobei ausschließlich die für die externe Anbindung relevanten Elemente berücksichtigt sind.
 
 \begin{figure}[htbp]
     \centering
@@ -410,22 +386,23 @@ Er beschreibt, welche Variablen, in diesem Fall Druck und Temperatur, in einem Z
     \label{fig:SMTTimeSeriesData}
 \end{figure}
 
+Zuerst müssen die Metadaten eingetragen werden. 
+Dazu gehören ein eindeutiger Name, eine Beschreibung sowie die Festlegung der Struktur der aufzuzeichnenden Datenpunkte in der \acs{smc} Records.
+Ein Record kann mit einer Spaltenbeschreibung in einer Tabelle verglichen werden.
+Er beschreibt, welche Variablen, in diesem Fall Druck und Temperatur, in einem Zeitreihen-Datensatz enthalten sind und wie diese zu interpretieren sind.
+
 Anschließend folgt die Konfiguration des LinkedSegments. 
 Dieses stellt die eigentliche Verbindung zu den extern gespeicherten Zeitreihendaten her.
 Hierfür sind sowohl der Datenendpunkt als als auch die Query, mit der die gewünschten Werte ausgelesen werden sollen, zu spezifizieren.
 Im vorliegenden Fall handelt es sich um die Adresse des InfluxDB-Containers sowie die Abfrage, mit der die Werte für Druck und Temperatur aus der zugehörigen Tabelle extrahiert werden können.
-
 Dabei ist zu beachten, dass der entsprechende Port der InfluxDB nach außen freigegeben ist, da andernfalls kein Zugriff durch externe Anwendungen möglich ist.
-Ergänzend können weitere Metadaten angegeben werden, beispielsweise die Abtastrate (samplingRate), der durch das Segment abgedeckte Zeitraum oder ein recordCount, der die erwartete Anzahl an Einträgen innerhalb dieses Zeitfensters beschreibt.
 
-Alle relevanten Informationen zur externen Speicherung der Zeitreihendaten sind somit im Submodell enthalten, wodurch externen Clients ein strukturierter und standardisierter Zugriff auf die Daten ermöglicht wird.
+Ergänzend können weitere Metadaten angegeben werden, beispielsweise die Abtastrate, der durch das Segment abgedeckte Zeitraum oder ein recordCount, der die erwartete Anzahl an Einträgen innerhalb dieses Zeitfensters beschreibt.
+Alle relevanten Informationen zur externen Speicherung der Zeitreihendaten sind somit im Submodell enthalten, wodurch externen Clients ein strukturierter und standardisierter Zugang zu den Daten ermöglicht wird.
 
-% Zur Visualisierung der Zeitreihendaten bietet das BaSyx-System eine praktische Lösung.
-% Über ein entsprechendes Plugin können die im Submodell Time Series Data enthaltenen Informationen direkt in der Benutzeroberfläche der AAS Web UI dargestellt werden.
-% Die über das LinkedSegment referenzierten Zeitreihendaten lassen sich dort in verschiedenen Diagrammen visualisieren, beispielsweise als Linien- oder Balkendiagramm.
-% Dadurch wird eine benutzerfreundliche Darstellung der Daten ermöglicht, ohne dass diese physisch in der \acs{aas} gespeichert werden müssen.
-
+\newpage
 \subsection{KI-Modell zur Optimierung}
+Die gefällt mitr noch nicht!!!
 Im Folgenden wird ein \acs{ki}-gestütztes Konzept zur Optimierung der zustandsbasierten Prozessüberwachung vorgestellt und prototypisch umgesetzt.
 Ziel ist es, mithilfe maschinellen Lernens potenzielle Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen und dadurch eine Grundlage für prädiktive Instandhaltungsmaßnahmen zu schaffen.
 % Darüber hinaus wird gezeigt, wie das resultierende \acs{ki}-Modell mithilfe der \acs{aas} standardisiert und interoperabel verwaltet werden kann.
@@ -456,7 +433,7 @@ Das Ziel ist es, die für die Rekonstruktion wesentlichen Merkmale zu extrahiere
 Der dabei entstehende latente Raum bildet die am stärksten komprimierte Repräsentation der Daten ab und dient als Ausgangspunkt für den Decoder.
 Dieser übernimmt die Aufgabe, die komprimierte Darstellung wieder in die ursprüngliche Eingabe zu rekonstruieren. 
 Auch er besteht aus mehreren Schichten, die die Daten schrittweise dekomprimieren.
-Zur Bewertung der Leistungsfähigkeit eines Autoencoders kann die resultierende Ausgabe mit der ursprünglichen Eingabe verglichen werden. 
+Zur Bewertung der Leistungsfähigkeit kann die resultierende Ausgabe mit der ursprünglichen Eingabe verglichen werden. 
 Die Differenz zwischen beiden wird als Rekonstruktionsfehler bezeichnet. \cite{Autoencoder}
 
 Im Rahmen dieser Arbeit soll ein Autoencoder zur Erkennung von Anomalien in Zeitreihendaten eingesetzt werden. 
@@ -588,107 +565,81 @@ In diesem Anwendungsfall sind diese Werte jedoch bei allen Komponenten identisch
 Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Informationen ist essenziell, insbesondere im Hinblick auf Datenschutz, regulatorische Vorgaben sowie den Schutz geistigen Eigentums.  
 Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} hierfür die Nutzung eines attributbasiertes Zugriffskontrollmodell (\acs{abac}) vor.
 
-Da die \acs{abac}-Funktionalität in aktuellen Referenzimplementierungen wie dem AASX Server Blazor oder Eclipse BaSyx jedoch noch nicht vollständig verfügbar ist, wird im Rahmen dieses Anwendungsfalls exemplarisch ein rollenbasiertes Zugriffskontrollmodell (\acs{rbac}) eingesetzt, wie es von der Eclipse BaSyx-Plattform unterstützt wird.  
-Die Zugriffskontrolle erfolgt dabei durch die Zuweisung spezifischer Berechtigungen an vordefinierte Rollen, denen wiederum Benutzer oder technische Clients zugeordnet werden.
+Da die \acs{abac}-Funktionalität in aktuellen Referenzimplementierungen wie dem AASX Server Blazor oder Eclipse BaSyx jedoch noch nicht vollständig verfügbar ist, wird im Rahmen dieses Anwendungsfalls exemplarisch ein rollenbasiertes Zugriffsmodell (\acs{rbac}) umgesetzt, wie es von der Eclipse BaSyx-Plattform unterstützt wird.  
+Im Gegensatz zum \acs{abac}-Ansatz erfolgt die Zugriffskontrolle hierbei durch die Zuweisung spezifischer Berechtigungen an vordefinierte Rollen, denen wiederum Benutzer oder technische Clients zugeordnet sind.
 
-Zur Umsetzung von Authentifizierung und Autorisierung wird der Open-Source Identity Provider Keycloak verwendet \cite{Keycloak}.  
+Zur Umsetzung von Authentifizierung und Autorisierung wird der Open-Source Identity Provider Keycloak eingesetzt \cite{Keycloak}.  
 Dieser ermöglicht die zentrale Verwaltung von Benutzern, Rollen und Clients und unterstützt eine tokenbasierte Zugriffskontrolle auf Basis von \acsp{jwt}.  
-Keycloak steht dabei als Docker-Container zur Verfügung und kann nahtlos in die BaSyx-Systemarchitektur integriert werden.
+Keycloak steht als Docker-Container zur Verfügung und kann nahtlos in die BaSyx-Systemarchitektur integriert werden.
 
 Im ersten Schritt muss ein dediziertes Realm eingerichtet werden, das als gekapselte Umgebung für alle projektbezogenen Identitäten dient.  
 Innerhalb dieses Realms lassen sich sowohl Benutzerkonten als auch Rollen definieren, wobei die Zuweisung über sogenannte Role Mappings erfolgt.  
-Ein Benutzer kann dabei einer oder mehreren Rollen gleichzeitig zugeordnet sein.
+Ein Benutzer kann einer oder mehreren Rollen gleichzeitig zugeordnet sein.
 
-Jedes Benutzerkonto verfügt über einen eindeutigen Benutzernamen sowie ein initiales Passwort zur Authentifizierung.  
+Jedes Benutzerkonto verfügt dabei über einen eindeutigen Benutzernamen sowie ein initiales Passwort zur Authentifizierung.  
 Zur Erhöhung der Sicherheit kann dieses Passwort als temporär markiert werden, wodurch der Benutzer bei der ersten Anmeldung zu einer Änderung gezwungen wird.  
 Darüber hinaus bietet Keycloak ebenfalls die Möglichkeit, sogenannte Required Actions zu definieren, etwa zur E-Mail-Verifizierung oder zur erzwungenen Passwortänderung beim nächsten Login.  
 Dies erlaubt eine flexible Anpassung des Authentifizierungsprozesses an projektspezifische Sicherheitsanforderungen.
 
-% Im Rahmen dieses Anwendungsfalls werden exemplarisch folgende Benutzer eingerichtet:
-
-% \begin{itemize}[noitemsep, leftmargin=*, label=\textbullet]
-%   \item \makebox[6cm][l]{\textbf{groninger.meyer}} (Rolle: \textit{Groninger-Mitarbeiter})
-%   \item \makebox[6cm][l]{\textbf{customer.doe}} (Rolle: \textit{Kunde})
-%   \item \makebox[6cm][l]{\textbf{technician.john}} (Rolle: \textit{Service-Techniker})
-% \end{itemize}
-
 Neben der Verwaltung menschlicher Benutzer unterstützt Keycloak auch die Administration technischer Clients, die z.B. maschinelle Anwendungen oder externe Systeme repräsentieren.  
-Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutiger Client-ID und einem geheimen Schlüssel (Client Secret) gemäß dem OpenID Connect-Protokoll.  
-Für jeden Client kann optional ein Service Account aktiviert werden, der als technisches Benutzerkonto agiert und - analog zu realen Benutzern - mit spezifischen Rollen ausgestattet wird.  
+Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutiger Client-\acs{id} und einem geheimen Schlüssel (Client Secret) gemäß dem OpenID Connect-Protokoll.  
+Für jeden Client kann optional ein Service Account aktiviert werden, der als technisches Benutzerkonto agiert und, analog zu realen Benutzern, mit spezifischen Rollen ausgestattet ist.  
 Dies ermöglicht eine differenzierte Zugriffsteuerung auch für automatisierte Systemzugriffe.
 
-Die Rechtevergabe innerhalb der einzelnen BaSyx-Komponenten erfolgt rollenbasiert über externe Konfigurationsdateien (i.~d.~R. im \acs{json}-Format).  
-Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE ) auf bestimmte Elemente wie \acs{aas}, Submodelle oder Concept Descriptions erhalten.  
-Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um z.~B. den Zugriff auf alle Submodelle einer BaSyx-Komponente zu gewähren.  
+Die Rechtevergabe innerhalb der einzelnen BaSyx-Komponenten erfolgt rollenbasiert über externe Konfigurationsdateien im \acs{json}-Format.  
+Darin wird definiert, welch Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE ) auf bestimmte Elemente wie \acs{aas}, Submodelle oder Concept Descriptions erhalten.  
+Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um beispielsweise den Zugriff auf alle Submodelle einer BaSyx-Komponente zu gewähren.  
 Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Services.
 
-% Im Rahmen dieses Szenarios erhält die Rolle Groninger-Mitarbeiter beispielsweise vollständige Zugriffsrechte auf alle Submodelle des \acs{dpp}, während die Rolle Kunde ausschließlich Leserechte auf ausgewählte Submodelle (z.B. Typenschild oder Technische Daten) besitzt.  
-% Die Rolle Service-Techniker hingegen verfügt über Lese- und Schreibrechte auf wartungsrelevante Submodelle (z.\,B. Wartung, Kontrollkomponente), jedoch ohne Zugriff auf das \acs{pcf}-Submodell, da dieses für sie nicht relevant ist.  
-
-% Eine exemplarische \acs{rbac}-Konfiguration der Rolle Groninger-Mitarbeiter für Submodelle innerhalb der AAS Environment ist in Listing~\ref{lst:groningerMitarbeiterRBAC} dargestellt.
-
-% \begin{lstlisting}[language=json, caption={RBAC-Konfiguration für die Rolle Groninger-Mitarbeiter}, label={lst:groningerMitarbeiterRBAC}]
-% {
-%     "role": "groninger-employee",
-%     "action": ["CREATE", "READ", "UPDATE", "DELETE"],
-%     "targetInformation": {
-%         "@type": "submodel",
-%         "submodelIds": "*",
-%         "submodelElementIdShortPaths": "*"
-%     }
-% }
-% \end{lstlisting}
-
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
-Ziel dieses Anwendungsfalls ist es, den Prozess der automatisierten Generierung einer \acs{aas} exemplarisch darzustellen. 
-Hierzu wird im ersten Schritt ein unternehmensspezifisches \acs{smt} erstellt, das anschließend in ein Typ-Submodell überführt wird.
-Dieses bildet die Grundlage für die automatisierte Erstellung eines Instanz-Submodells, das mit konkreten Daten befüllt, in eine \acs{aas} eingebettet und schließlich in das BaSyx-System integriert wird.
+Im folgenden Anwendungsfall wird gezeigt, wie eine \acs{aas} automatisiert erstellt und bereitgestellt werden kann.  
+Ausgangspunkt ist ein unternehmensspezifisch angepasstes \acs{smt}, das als Grundlage für die Ableitung eines Typ-Submodells dient.  
+Dieses wird anschließend mit konkreten Daten befüllt, in eine vollständige \acs{aas}-Instanz eingebettet und abschließend in das Eclipse BaSyx-System integriert.
 
 \subsubsection{Arbeiten mit Submodel Templates}
 \label{chap:ErstellenvonSubmodelTemplates}
 Für die automatisierte Generierung einer \acs{aas} ist eine konsistente Submodellstruktur erforderlich, die sich aus wiederverwendbaren Vorlagen ableiten lässt.
-Im vorliegenden Anwendungsfall dient das standardisierte \acs{smt} Technische Daten \cite{SpezifikaitonTechnischeDaten} als Ausgangspunkt. 
-Dieses definiert eine generische Struktur zur Beschreibung technischer Merkmale, gegliedert in Kategorien (\acsp{smc}) wie Generelle Informationen, Technische Informationen oder Produktklassifikation. 
-Es bildet somit den semantischen Rahmen, enthält jedoch zunächst keine konkreten Ausprägungen.
+Im Rahmen dieses Anwendungsfalls dient das standardisierte \acs{smt} Technische Daten \cite{SpezifikaitonTechnischeDaten} als Grundlage. 
+Es definiert eine generische Struktur zur Beschreibung technischer Merkmale, gegliedert in Kategorien (\acsp{smc}) wie Generelle Informationen, Technische Informationen oder Produktklassifikation. 
+Damit bildet es den semantischen Rahmen, enthält jedoch zunächst keine konkreten Ausprägungen.
 
 Auf Unternehmensebene kann das generische Template an spezifische Anforderungen angepasst werden, beispielsweise für einen bestimmten Maschinentyp wie die robocell.
 Branchenspezifische Varianten sind grundsätzlich ebenfalls denkbar, werden in diesem Anwendungsfall jedoch nicht weiter betrachtet.
 
-Die Anpassung kann mithilfe des Package Explorers erfolgen.
-Über diesen lässt sich das standardisierte \acs{smt} importieren und anschließend gezielt erweitern.
-So können etwa produktspezifische Anforderungen, wie Umgebungsbedingungen oder der Verarbeitungsbereich, mithilfe geeigneter Submodellelemente ergänzt werden.
+Die Anpassung erfolgt mithilfe des Package Explorers, über den sich das \acs{smt} importieren und erweitern lässt.
+So können beispielsweise produktspezifische Anforderungen, wie Umgebungsbedingungen oder der Verarbeitungsbereich, mithilfe geeigneter Submodellelemente ergänzt werden.
 Das resultierende unternehmensspezifische Template erhält eine eigene semanticId, bleibt jedoch zusätzlich mit der ursprünglichen semanticId des generischen Templates verknüpft, um die Rückverfolgbarkeit zur standardisierten Vorlage sicherzustellen.
 
-Anschließend kann aus dem angepassten Template ein Typ-Submodell abgeleitet werden, das nicht nur die Struktur, sondern bereits allgemeingültige Merkmale einer Produktgruppe enthält, beispielsweise den Einsatzort oder die maximal zulässige Umgebungstemperatur.
-Dieses Typ-Submodell dient als Vorlage für die spätere Erstellung konkreter \acs{aas}-Instanzen, die anschließend mit produktspezifischen Werten wie einer Seriennummer vervollständigt werden.
-Die Verbindung zur ursprünglichen sowie zur unternehmensspezifischen Template-Struktur wird dabei über entsprechende semanticId-Verknüpfungen beibehalten.
-
+Aus dem angepassten Template kann anschließend ein Typ-Submodell abgeleitet werden, das nicht nur die Struktur, sondern auch allgemeingültige Merkmale einer Produktgruppe enthält, etwa den Einsatzort oder die maximal zulässige Umgebungstemperatur.
+Dieses Typ-Submodell dient als Vorlage für die spätere Erstellung konkreter \acs{aas}-Instanzen, die mit produktspezifischen Werten wie Seriennummern ergänzt werden.
+Die Verbindung zur ursprünglichen sowie zur unternehmensspezifischen Template-Struktur bleibt dabei über entsprechende semanticId-Verknüpfungen erhalten.
 
 \subsubsection{Automatisiertes Befüllen mit strukturierten Daten}
-Nach der Erstellung eines Typ-Submodells stellt sich die Frage, wie dieses effizient mit konkreten Produktinformationen befüllt und anschließend in eine vollständige \acs{aas}-Instanz überführt werden kann.
 
-In der industriellen Praxis liegen die benötigten Daten meist bereits strukturiert in bestehenden IT-Systemen wie \acs{plm}- oder \acs{erp}-Lösungen vor.
-Da eine direkte Systemintegration im Rahmen dieser Arbeit nicht realisierbar ist, wird der Prozess exemplarisch anhand vordefinierter Beispieldaten demonstriert.
-Diese Daten enthalten typische technische Merkmale, wie sie auch in realen Unternehmenssystemen vorzufinden sind, und bilden die Grundlage für die automatisierte Erstellung eines Instanz-Submodells.
+Nach der Ableitung eines Typ-Submodells stellt sich die Frage, wie dieses effizient mit konkreten Produktinformationen befüllt und in eine vollständige \acs{aas}-Instanz überführt werden kann.
 
-Die technische Umsetzung erfolgt über ein Skript, das diese Daten automatisiert in die vorgegebene Submodellstruktur überträgt und anschließend in eine neu erzeugte \acs{aas}-Instanz einbettet.
-In diesem Projekt wird dazu die serverseitige JavaScript-Laufzeitumgebung Node.js \cite{nodejs} verwendet, da sie eine einfache Verarbeitung von \acs{json}-Daten sowie eine unkomplizierte Kommunikation mit \acs{rest}-Schnittstellen ermöglicht. 
+In der industriellen Praxis liegen die benötigten Daten häufig bereits strukturiert in bestehenden IT-Systemen wie \acs{plm}- oder \acs{erp}-Lösungen vor.
+Da eine direkte Systemintegration im Rahmen dieser Arbeit jedoch nicht realisierbar ist, wird der Prozess anhand vordefinierter Beispieldaten demonstriert.
+Diese enthalten typische technische Merkmale, wie sie auch in realen Unternehmenssystemen vorzufinden sind, und bilden die Grundlage für die automatisierte Erstellung eines Instanz-Submodells.
 
-Als Basis werden drei zentrale \acs{json}-Komponenten benötigt:
+Die automatisierte Befüllung erfolgt mithilfe eines Skripts, das die Beispieldaten in die vorgegebene Submodellstruktur überträgt und in eine neue \acs{aas}-Instanz einbettet.
+Zum Einsatz kommt die serverseitige JavaScript-Laufzeitumgebung Node.js \cite{nodejs}, da sie eine effiziente Verarbeitung von \acs{json}-Daten sowie eine unkomplizierte Kommunikation mit \acs{rest}-Schnittstellen ermöglicht.
+
+Die Basis bilden drei strukturierte \acs{json}-Dateien:
 
 \begin{enumerate}[noitemsep, leftmargin=*, label=\textbf{\arabic*.}]
     \item \textbf{Datenquelle:} Technische Produktinformationen
-    \item \textbf{Submodell-Vorlage:} Struktur und Semantik des Submodells
+    \item \textbf{Typ-Submodell:} Struktur und Semantik des Submodells
     \item \textbf{AAS-Vorlage:} Aufbau und Struktur der \acs{aas}-Instanz
 \end{enumerate}
 
-Die Datenquelle ist hierarchisch aufgebaut und enthält verschachtelte Schlüssel-Wert-Paare. 
-Jeder Schlüssel entspricht einem idShort-Wert eines Elements innerhalb der Submodell-Vorlage. 
-Diese wiederum ist so konzipiert, dass Platzhalter an den relevanten Stellen eingefügt sind, die bei der Skriptausführung mit den zugehörigen Werten aus der Datenquelle ersetzt werden.
+Die Datenquelle ist hierarchisch aufgebaut und enthält verschachtelte Schlüssel-Wert-Paare.
+Jeder Schlüssel entspricht einem idShort-Wert eines Submodellelements innerhalb des Typ-Submodells.
+Dieses ist so konzipiert, dass Platzhalter an den relevanten Stellen eingefügt sind, die bei der Skriptausführung durch die zugehörigen Werte aus der Datenquelle ersetzt werden.
 
-Nach der Befüllung des Instanz-Submodells mit konkreten Werten muss dieses in eine neu erzeugte \acs{aas}-Instanz eingebunden werden.
-Die zugrunde liegende \acs{aas}-Vorlage definiert die grundlegende Struktur in einer separaten Datei, enthält jedoch noch keine spezifischen Identifikatoren, wie beispielsweise die eindeutige ID der \acs{aas} oder des zugehörigen Assets.
+Das resultierende Instanz-Submodell muss anschließend in eine \acs{aas}-Instanz eingebunden werden.
+Die AAS-Vorlage definiert hierfür zwar die grundlegende Struktur, enthält jedoch noch keine spezifischen Identifikatoren wie die \acs{id} der \acs{aas} oder des zugehörigen Assets.
 Um diese hinzuzufügen, können während der Skriptausführung zufällig generierte UUID-Werte (Universally Unique Identifier) an den entsprechenden Stellen in die Vorlage eingefügt werden.
 
-Im letzten Schritt erfolgt die Bereitstellung der AAS-Instanz innerhalb des Eclipse BaSyx-Systems. 
+Im letzten Schritt muss die \acs{aas}-Instanz innerhalb des Eclipse BaSyx-Systems bereitgestellt werden.
 Hierzu kann die \acs{aas} sowie das zugehörige Submodell, analog zur Möglichkeit~C \acs{rest}-API aus Kapitel~\ref{sec:bereitstellungAAS}, eingebunden und registriert werden.

@@ -164,8 +164,9 @@ Eine Übersicht der drei Kategorien zeigt Abbildung \ref{fig:klassifizierungDT}.
 \vspace{-0.5em}
 
 Im industriellen Umfeld werden digitale Zwillinge in vielen unterschiedlichen Bereichen genutzt.
-Sie kommen entlang des gesamten Lebenszyklus eines Assets zum Einsatz, von der Entwicklung über die Produktion bis hin zum Betrieb und der Wartung. 
-\linebreak \newpage Dabei ist jedoch zu beachten, das in der Praxis häufig auch digital Modelle oder digitale Schatten als digitale Zwillinge bezeichnet werden, obwohl sie technisch gesehen nicht alle Merkmale eines echten digitalen Zwillings aufweisen und somit ebenfalls nicht ihr volles Potenzial entfalten.
+Sie kommen entlang des gesamten Lebenszyklus eines Assets zum Einsatz, von der Entwicklung über die Produktion bis hin zum Betrieb und der Wartung.%
+\pagebreak 
+~Dabei ist jedoch zu beachten, das in der Praxis häufig auch digital Modelle oder digitale Schatten als digitale Zwillinge bezeichnet werden, obwohl sie technisch gesehen nicht alle Merkmale eines echten digitalen Zwillings aufweisen und somit ebenfalls nicht ihr volles Potenzial entfalten.
 
 Bereits bei der Entwicklung von Produkten können digitale Zwillinge einen erheblichen Vorteil bieten. 
 Indem bereits frühzeitig digitale Modelle oder Simulationen eingesetzt werden, entfällt die Notwendigkeit physischer Prototypen, was Entwicklungszeiten und Kosten deutlich senken kann. Während der Produktion ermöglichen sie eine durchgängige Überwachung, Analyse und Optimierung von Fertigungsprozessen durch die Integration von Echtzeitdaten.
@@ -184,21 +185,12 @@ Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch 
 Es ist daher essenziell, digitale Zwillinge in einem interoperablen Format bereitzustellen, um eine einheitliche Interpretation und Nutzung auch über Unternehmensgrenzen hinweg zu ermöglichen.
 \cite{DTandAASConceptsInI4.0}
 
-
-% Definition nach Stark und Damerau des DT: 
-
-% A digital twin is a digital representation of an active unique product (real device, object, machine, service, or intangible asset) or unique product-service system (a system consisting of a product and a related service) that comprises its selected characteristics, properties, conditions, and behaviors by means of models, information, and data within a single or even across multiple life cycle phases.
-
-% \url{https://link.springer.com/referenceworkentry/10.1007/978-3-642-35950-7_16870-1#citeas}
-
 \newpage
 \subsection{Asset Administration Shell}
 \label{chap:AAS}
-
 % Das \ac{rami} ist ein Leitfaden für die Industrie und dient als Hilfestellung um die digitale Transformation in einem Unternehmen systematisch umzusetzten.
 % Es wird in der DIN SPEC 91345 \cite{RAMI4.0} standardisiert und soll helfen, die komplexen Anforderungen an die Industrie 4.0 für die Allgemeinheit verständlich zu machen.
 % Das Modell ist als dreidimensionales Koordinatensystem konzipiert und umfässt die Achsen ... .
-
 
 Die \acs{aas} - deutsch Verwaltungsschale - ist eine Schlüsselkomponente innerhalb des \ac{rami} \cite{RAMI4.0} und bildet die Grundlage für die Umsetzung und Entwicklung interoperabler digitaler Zwillinge im industriellen Umfeld.
 Sie wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und erstmals im Jahr 2016 als Teil von \acs{rami} vorgestellt.
@@ -246,7 +238,7 @@ Das vermutlich am häufigsten verwendete Datenelement ist das Submodellelement P
 Es lässt sich mit einer Variablen aus der Softwareentwicklung vergleichen, da es einfache Merkmale wie etwa einen Namen oder eine Seriennummer repräsentiert und dabei über einen definierten Datentyp wie String, Integer oder Boolean verfügt.
 
 Wichtig ist, sowohl die \acs{aas} selbst als auch ihre Submodelle müssen global eindeutig identifizierbar sein.
-Dies wird durch die Verwendung von eindeutigen Identifikatoren der Klasse Identifiable wie einer URI (Uniform Resource Identifier) oder \acs{irdi} (International Registration Data Identifier) sichergestellt.
+Dies wird durch die Verwendung von eindeutigen Identifikatoren (\acsp{id}) der Klasse Identifiable wie einer URI (Uniform Resource Identifier) oder \acs{irdi} (International Registration Data Identifier) sichergestellt.
 Für die Elemente innerhalb eines Submodells ist eine lokale Kennung ausreichend. 
 Dies erfolgt in der Regel anhand einer idShort der Klasse Referable, die einen kurzen, aussagekräftigen Namen enthält.
 
@@ -267,7 +259,7 @@ Zur besseren Veranschaulichung der zugrunde liegenden Struktur der \acs{aas} die
 \end{figure}
 
 Eine eindeutige semantische Beschreibung aller Submodelle und ihrer Elemente ist essenziell, um ein einheitliches Verständnis zwischen unterschiedlichen Systemen sicherzustellen.
-Hierfür wird die sogenannte semanticID der Klasse HasSemantics verwendet, welche eine semantische Referenz enthält.
+Hierfür wird die sogenannte semanticId der Klasse HasSemantics verwendet, welche eine semantische Referenz enthält.
 Diese verweist entweder auf einen externen Standard oder auf eine lokale \ac{cd}, die direkt in der \acs{aas} eingebettet ist.
 Ein häufig verwendeter externer Standard ist zum Beispiel ECLASS, welcher auf der Norm IEC 61360 \cite{ECLASSIEC61360} basiert.
 
@@ -300,7 +292,7 @@ Die Aufgabe der Verwaltung und Registrierung übernehmen sogenannte Registries.
 Sie ermöglichen das systemweite Auffinden von \acs{aas} und stellen sicher, dass diese eindeutig referenzierbar sind.
 
 Ergänzend dazu bieten Discovery Services eine erweiterte Suchfunktionalität, indem sie Beziehungen verschiedener Entitäten mittels verschiedener Schlüsselwertpaare speichern.
-Eine \acs{aas} kann so zum Beispiel logisch mit einer \acs{assetid} (Asset Identifier) verknüpft werden und somit schnell innerhalb komplexer Systeme identifiziert werden.
+Eine \acs{aas} kann so zum Beispiel logisch mit einer Asset-\acs{id} verknüpft werden und somit schnell innerhalb komplexer Systeme identifiziert werden.
 Der Zugriff auf diese Systeme bzw. ihrer Inhalte wird in Form von Schnittstellen standardisiert, wodurch eine hohe Interoperabilität gewährleistet wird.
 Ein besonderer Fokus liegt dabei auf der Nutzung von \ac{http} gemäß dem \acs{rest}-Architekturstil (Representational State Transfer), der eine strukturierte Kommunikation über Methoden wie GET, POST, PUT oder DELETE ermöglicht.
 
@@ -323,7 +315,9 @@ Ein besonderer Vorteil des \acs{abac}-Modells liegt dabei in seiner hohen Flexib
 
 Die beschriebenen Kontrollmechanismen lassen sich nicht nur auf die Inhalte der \acs{aas} selbst, sondern insbesondere auch auf die Schnittstellen von Registries und Repositories anwenden.
 So kann beispielsweise sichergestellt werden, das nur authorisierte Systeme Zugriff auf ein bestimmtes Submodell erhalten oder nur bestimmte Nutzergruppen neue \acs{aas}-Instanzen registrieren können.
-Diese Sicherheits-Konzepte sind jedoch noch \linebreak \newpage vergleichsweise neu und müssen in der Praxis erst noch weiter erprobt werden.
+Diese Sicherheits-Konzepte sind jedoch noch%
+\pagebreak
+~vergleichsweise neu und müssen in der Praxis erst noch weiter erprobt werden.
 Erste Referenzimplementierungen liegen zwar bereits häufig schon in Form rollenbasierter Zugriffskontrollen vor, eine vollständige Integration des \acs{abac}-Ansatzes steht jedoch noch aus.
 
 
@@ -349,7 +343,7 @@ Während die regulatorischen Rahmenbedingungen mehr oder weniger final ausgearbe
 Eine dezentrale Lösung bildet der von der \acs{zvei} vorgestellte digitale Produktpass für Industrie 4.0 (\acs{dpp40}) \cite{DPP40}.
 Dieser basiert auf zwei etablierten Standards. 
 Zum Einen das digitale Typenschild, und zum Anderen die \acs{aas} (siehe auch Kapitel~\nameref{chap:AAS}).
-Das digitale Typenschild ermöglicht, gemäß der Norm IEC 61406 \cite{TypenschildIEC61406-1}, die eindeutige Identifikation von Produkten über eine einzigartige \acs{assetid}.
+Das digitale Typenschild ermöglicht, gemäß der Norm IEC 61406 \cite{TypenschildIEC61406-1}, die eindeutige Identifikation von Produkten über eine einzigartige Asset-\acs{id}.
 Typischerweise wird diese in Form eines maschinenlesbarem Links oder QR-Codes an einem Produkt angebracht, die direkt zu dem zugehörigen \acs{dpp} führt.
 
 Organisiert werden die Daten im \acs{dpp40} in verschiedenen Submodellen der \acs{aas}. 
@@ -375,8 +369,9 @@ Sie zeichnet sich dadurch aus, dass alle Prozesschritte vollständig automatisie
 Durch den gezielten Einsatz von Robotern kann der menschliche Eingriff auf ein Minimum reduziert werden, wodurch maximale Sicherheit, Flexibilität und Effizienz im Abfüllprozess gewährleistet wird \cite{RobocellWebsite}.
 
 Die Linie besteht aus mehreren modular aufgebauten Einzelmaschinen, die jeweils spezifische Aufgaben entlang des Produktionsprozesses übernehmen. 
-Im Rahmen dieser Arbeit liegt der Fokus auf dem in Abbildung~\ref{fig:robocell} gezeigten hochautomatisierten Abfüll- und \linebreak 
-\newpage Verschließmodul, das für das vollautomatisierte Abfüllen und Verschließen von Behältnissen verantwortlich ist.
+Im Rahmen dieser Arbeit liegt der Fokus auf dem in Abbildung~\ref{fig:robocell} gezeigten hochautomatisierten Abfüll- und%
+\pagebreak
+~Verschließmodul, das für das vollautomatisierte Abfüllen und Verschließen von Behältnissen verantwortlich ist.
 
 \begin{figure}[htbp]
     \centering
@@ -398,12 +393,14 @@ Gleichzeitig bietet der Package Explorer auch erweiterte Funktionen, wie das Ers
 
 Neben der lokalen Modellierung erlaubt das Tool ebenfalls die Verbindung zu einem AAS-Server über standardisierte Schnittstellen (z.B. \acs{opcua} oder \acs{http}/\acs{rest}).
 Dies ermöglicht den Betrieb von \acs{aas} in verteilten Systemen.
-Besonders geeignet hierfür \linebreak \newpage ist der Referenzserver des Eclipse-AAS-Projekts \cite{AASXServer}, der das Hosten und Bereitstellen von AASX-Paketen ermöglicht sowie eine nahtlose Integration mit dem Package Explorer erlaubt.
+Besonders geeignet hierfür%
+\pagebreak
+~ist der Referenzserver des Eclipse-AAS-Projekts \cite{AASXServer}, der das Hosten und Bereitstellen von AASX-Paketen ermöglicht sowie eine nahtlose Integration mit dem Package Explorer erlaubt.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=0.765]{Bilder/ModellierungAAS/Final/Grundlagen_PE.PNG}
-    \caption[Benutzeroberfläche Package Explorer]{Benutzeroberfläche Package Explorer (eigene Darstellung)} 
+    \caption[Benutzeroberfläche Package Explorer]{Benutzeroberfläche Package Explorer} 
     \label{fig:AASXPackageExplorer}
 \end{figure}
 
@@ -433,7 +430,6 @@ Typische \acs{rest}-Endpunkte sind beispielsweise:
 \vspace{-0.5em}
 
 Im BaSyx-System ermöglicht ein Discovery Service die Verknüpfung physischer Assets mit iheren zugehörigen \acs{aas}.
-% Dabei wird eine spezifische \acs{assetid} mit der entsprechenden AAS-ID verlinkt.
 Dies ist insbesondere für die Abbildung von hierarchischen Strukturen wie Stücklisten (\ac{bom}) von großer Bedeutung.
 Ein übergeordnetes Asset (z.B. Maschine) kann so beispielsweise mit untergeordneten Komponenten (z.B. Antrieb, Sensoren) logisch über deren AAS verbunden werden.
 Einträge in den Discovery Service müssen derzeit allerdings noch manuell über die \acs{api} (Aplication Programming Interface) vorgenommen werden.
@@ -444,7 +440,7 @@ Sie zeigt alle registrierten \acs{aas} in einer Liste an und bietet die Möglich
 
 Ein weiteres zentrales Merkmal der AAS Web UI ist der sogenannte AAS Viewer.
 In nachfolgender Abbildung ist dieser auf der rechten Seite angeordnet.
-Er erlaubt die Visualisierung von Submodellen und deren Elementen anhand ihrer semanticID. 
+Er erlaubt die Visualisierung von Submodellen und deren Elementen anhand ihrer semanticId. 
 Hierfür stehen verschiedene vordefinierte Plugins zur Verfügung, die bestimmte Submodelle, wie beispielsweise das Typenschild oder hierarchische Strukturen, grafisch darstellen.
 Da die Lösung Open Source ist besteht zudem die Möglichkeit, eigene benutzerdefinierte Plugins für weitere Submodelle zu erstellen. \cite{BaSyxWiki} \cite{BaSyxEclipse}
 
@@ -452,7 +448,7 @@ Da die Lösung Open Source ist besteht zudem die Möglichkeit, eigene benutzerde
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/AASWebUZIGrundlagen.png}
-    \caption[Benutzeroberfläche AAS Web UI]{Benutzeroberfläche AAS Web UI (eigene Darstellung)}
+    \caption[Benutzeroberfläche AAS Web UI]{Benutzeroberfläche AAS Web UI}
     \label{fig:BasyxWebUI}
 \end{figure}
 
