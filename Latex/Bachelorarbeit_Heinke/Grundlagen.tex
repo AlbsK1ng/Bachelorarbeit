@@ -132,7 +132,7 @@ Während ein einfacher digitaler Zwilling lediglich ein einfaches Modell mit sta
 Für ein besseres Verständnis und zur tieferen Klassifizierung ist es zunächst hilfreich, zwischen Typen und Instanzen des digitalen Zwillings zu unterscheiden.
 Typen sind allgemeine Abbilder, die grundlegende Eigenschaften und Verhaltensmodelle einer Produktgruppe beschreiben. 
 Sie können mit einer Klasse in der Softwarentwicklung verglichen werden, die als Vorlage für konkrete Instanzen dienen.
-Typen können beispielsweise einen bestimmten Maschinentyp hinsichtlich Aufbau, Stuktur oder Schnittstellen beschreiben, ohne dabei Bezug zu einer einzelnen physischen Maschine zu nehmen.
+Typen können beispielsweise einen bestimmten Maschinentyp hinsichtlich Aufbau, Struktur oder Schnittstellen beschreiben, ohne dabei Bezug zu einer einzelnen physischen Maschine zu nehmen.
 Instanzen wiederrum sind einzigartig, und beschreiben ein konkretes Produkt, etwa eine Maschine, die einzigartig über eine Seriennummer identifizierbar ist.
 Häufig sind Instanzen Aussprägungen eines Types mit einer Verbindung zu einem realen Objekt, wodurch beispielsweise die Überwachung des Zustands einer Produktionsanlage ermöglicht wird.
 Analog zur Softwarentwicklung können diese als instanziiertes Objekt einer Klasse gesehen werden. \cite{ZEISS}
@@ -142,10 +142,10 @@ Obwohl diese Begriffe im allgemeinen Sprachgebrauch oft synonym verwendet werden
 
 Digitale Modelle sind statische Abbilder physischer Objekte, haben jedoch keine Verbindung zu diesen. 
 Oft werden sie zur Veranschauclichung oder Konstruktion genutzt, wie zum Beispiel ein 3D-Modell einer Maschine.
-Zwar können reale Daten, wie etwa Maße oder Materialeigenschaften einer Anlage oder Maschine in ein solches Modell integriert werden, allerdings erfolgt die Eingabe dabei immmer manuell.
+Zwar können reale Daten, wie etwa Maße oder Materialeigenschaften einer Anlage oder Maschine in ein solches Modell integriert werden, allerdings erfolgt die Eingabe dabei immer manuell.
 Änderungen an dem realen Objekt werden nicht automatisch aktualisiert und bleiben somit ohne Einfluss auf das digitale Modell.
 
-Der digitale Schatten ergänzt das digitale Modell um eine unindirektionale Verbindung zum realen Objekt.
+Der digitale Schatten ergänzt das digitale Modell um eine unidirektionale Verbindung zum realen Objekt.
 Dabei fließen Daten des physischen Objekts meist in Echtzeit über zum Beispiel geeignete Sensoren zum digitalen Objekt.
 Der Schatten bildet den aktuellen Zustand des Objekts ab, hat aber keine Rückkoplung zu diesem.
 Ein typisches Beispiel für einen digitalen Schatten wäre das Condition Monitoring, wobei der Zustand einer Maschine mit geeigneten Sensoren abgebildet wird.
@@ -181,7 +181,7 @@ Solche sogenannten Informationssilos können die Umsetzung eines konsistenten di
 
 Hinzu kommt, das diese Daten oftmals in unterschiedlichen, nicht standardisierten Formaten vorliegen, was eine automatisierte Integration zusätzlich erschwert.
 Diese Problematik zeigt sich nicht nur innerhalb einzelner Unterhnehmen, sondern auch entlang der gesamten Wertschöpfungskette, etwa wenn verschiedene Akteure einer Lieferkette heterogene Datenformate und proprietäre Austauschprotokolle verwenden.
-Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einer Anwendung oder einem weitern digitalen Zwilling eines Unternehmens B nicht ohne Weiteres intepretiert oder verwendet werden.
+Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einer Anwendung oder einem weitern digitalen Zwilling eines Unternehmens B nicht ohne Weiteres interpretiert oder verwendet werden.
 Es ist daher essenziell, digitale Zwillinge in einem interoperablen Format bereitzustellen, um eine einheitliche Interpretation und Nutzung auch über Unternehmensgrenzen hinweg zu ermöglichen.
 \cite{DTandAASConceptsInI4.0}
 
@@ -208,7 +208,7 @@ Sie fungiert somit als digitales Gegenstück eines realen Objekts - also als dig
 Die Informationen sind in sogenannten Submodellen organisiert, die jeweils spezifische Aspekte eines Assets abbilden.
 Dabei kann es sich sowohl um physische Assets (z.B. Maschinen, Anlagen) als auch um virtuelle Assets (z.B. Software, Konzepte) handeln. 
 Eine \acs{aas} ist dabei stets einem Asset zugeordnet und global eindeutig identifizierbar. 
-Durch die Kombination eines Assets mit seiner \acs{aas} entsteht eine sogenannte Industrie 4.0-Komponente (siehe Abbildung \ref{fig:Industrie4Komponente}).
+Durch die Kombination eines Assets mit seiner \acs{aas} entsteht eine sogenannte Industrie-4.0-Komponente (siehe Abbildung \ref{fig:Industrie4Komponente}).
 
 % Durch die standardisierte Struktur bildet die Verwaltungsschale die Grundlage für einen einheitlichen Informationsaustausch über System -und Unternehmensgrenzen hinweg.
 % Verwaltungsschalen repräsentieren immer genau ein Asset und müssen global eindeutig identifizierbar sein.
@@ -218,7 +218,7 @@ Durch die Kombination eines Assets mit seiner \acs{aas} entsteht eine sogenannte
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/I4Komponente/I4KomponenteNeu.pdf}
-    \caption[Industrie 4.0 Komponente]{Industrie 4.0 Komponente (Bildbestandteil: \cite{robocellLogo})}
+    \caption[Industrie-4.0-Komponente]{Industrie-4.0-Komponente (Bildbestandteil: \cite{robocellLogo})}
     \label{fig:Industrie4Komponente}
 \end{figure}
 
@@ -232,7 +232,7 @@ Die Auswahl und Struktur der Submodelle ist domänenspezifisch und hängt stark 
 Dabei kann eine \acs{aas} beliebig viele Submodelle enthalten, die bei Bedarf auch erweitert werden können. 
 
 Die Daten innerhalb eines Submodells werden in verschiedenen Submodellelementen strukturiert.
-Diese umfassen Dateneigenschaften, Operationen sowie weitere Sutrukturellemente die für eine umfassende Beschreibung eines digitalen Modells eines Assets erforderlich sind.
+Diese umfassen Dateneigenschaften, Operationen sowie weitere Strukturelemente die für eine umfassende Beschreibung eines digitalen Modells eines Assets erforderlich sind.
 So erlaubt beispielsweise das RelationshipElement die Modellierung von Beziehungen oder das ReferenceElement die Referenzierung von internen oder externen Inhalten.
 Das vermutlich am häufigsten verwendete Datenelement ist das Submodellelement Property.
 Es lässt sich mit einer Variablen aus der Softwareentwicklung vergleichen, da es einfache Merkmale wie etwa einen Namen oder eine Seriennummer repräsentiert und dabei über einen definierten Datentyp wie String, Integer oder Boolean verfügt.
@@ -286,7 +286,7 @@ Dabei werden sämtliche Daten, Beziehungen, Strukturen sowie zugehörige Dateien
 Diese Datei kann anschließend über ein digitales Medium, etwa per E-Mail oder eine Cloud-Plattform, weitergegeben werden. 
 
 Eine Typ-2-\acs{aas} hingegen wird von einer Laufzeitumgebung gehosted, wodurch ein direkter und dynamischer Zugriff auf ihre Inhalte ermöglicht wird. 
-Die Spezifikitation Part 2: Aplication Programming Interfaces \cite{SpezifikationPart2} beschreibt hierfür nicht nur standardisierte Schnittstellen, sonder auch ein ganzheitliches System für das Verwalten, Bereitstellen und Auffinden der \acs{aas}.
+Die Spezifikitation Part 2: Application Programming Interfaces \cite{SpezifikationPart2} beschreibt hierfür nicht nur standardisierte Schnittstellen, sonder auch ein ganzheitliches System für das Verwalten, Bereitstellen und Auffinden der \acs{aas}.
 Repositories dienen dabei als zentraler Speicherort für die Inhalte einer \acs{aas}, einschließlich ihrer Submodelle und Concept Descriptions.
 Die Aufgabe der Verwaltung und Registrierung übernehmen sogenannte Registries.
 Sie ermöglichen das systemweite Auffinden von \acs{aas} und stellen sicher, dass diese eindeutig referenzierbar sind.
@@ -323,7 +323,7 @@ Erste Referenzimplementierungen liegen zwar bereits häufig schon in Form rollen
 
 \subsection{Digitaler Produktpass}
 Der \acs{dpp} ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation. 
-Ziel ist es, die Transparenz über ökologische Merkmale von Produkten wie verwendete Materialien, Recylcebarkeit oder die CO\textsubscript{2}-Bilanz deutlich zu verbessern.
+Ziel ist es, die Transparenz über ökologische Merkmale von Produkten wie verwendete Materialien, Recycelbarkeit oder die CO\textsubscript{2}-Bilanz deutlich zu verbessern.
 Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg aufgezeichnet und in einem menschen -und maschinenlesbarem Format bereitgestellt werden. \cite{DPPEinführung}
 Langfristig soll dies zu einer Kreislaufwirtschaft und digitalen Wirtschaft innerhalb der EU führen.
 
@@ -352,7 +352,7 @@ Darüber hinaus können auch zusätzliche, nicht verpflichtende Informationen in
 Der Zugriff auf die Daten ist über ein webbasiertes Portal vorgesehen. 
 
 Verschiedene Interessengruppen erhalten dabei unterschiedliche Zugriffsrechte. 
-Hierfür werden bestimmmte Submodelle gezielt für unterschiedliche Gruppen freigegeben oder eingeschränkt.
+Hierfür werden bestimmte Submodelle gezielt für unterschiedliche Gruppen freigegeben oder eingeschränkt.
 Während beispielsweise das Typenschild oder der \acs{pcf} öffentlich zugänglich sind, werden sensible Informationen wie technische Dokumentationen oder sicherheitsrelevante Details nur bestimmten autorisierten Gruppen zugänglich gemacht.
 
 Das Konzept der \acs{zvei} sieht darüber hinaus vor, dass Unternehmen ihre \acsp{dpp} entgegen den Anforderungen der \acs{espr} dezentral in einem eigenen Repository verwalten. 
@@ -376,7 +376,7 @@ Im Rahmen dieser Arbeit liegt der Fokus auf dem in Abbildung~\ref{fig:robocell} 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Bilder/robocell/filling_closing_module.png}
-    \caption[robocell Abfüll- und Verschließmodul]{robocell Abfüll- und Verschließmodul (Quelle: \cite{RobocellBetriebsanleitung})}
+    \caption[robocell: Abfüll- und Verschließmodul]{robocell: Abfüll- und Verschließmodul (Quelle: \cite{RobocellBetriebsanleitung})}
     \label{fig:robocell}
 \end{figure}
 
@@ -400,7 +400,7 @@ Besonders geeignet hierfür%
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=0.765]{Bilder/ModellierungAAS/Final/Grundlagen_PE.PNG}
-    \caption[Package Explorer - Benutzeroberfläche]{Package Explorer - Benutzeroberfläche} 
+    \caption[Benutzeroberfläche Package Explorer]{Benutzeroberfläche Package Explorer} 
     \label{fig:AASXPackageExplorer}
 \end{figure}
 
@@ -421,7 +421,7 @@ Analog dazu existiert eine separate Registry für die Verwaltung von Submodellen
 Die eigentlichen Daten werden in der sogenannten \acs{aas} Environment gespeichert und organisiert.
 Sie umfasst Repositories für \acs{aas}, Submodelle und Concept Descriptions.
 In der Regel ist eine Datenbank, standardmäßig eine MongoDB als persistenter Speicher hinterlegt.
-Wie auch alle anderen Komponente stellen diese Repositories standardisierte Schnittstellen basierend auf der \acs{api}-Spezifikation zur Verfügung.
+Wie auch alle anderen Komponenten stellen diese Repositories standardisierte Schnittstellen basierend auf der \acs{api}-Spezifikation zur Verfügung.
 Dies erlaubt z.~B. das Abfragen, Erstellen oder Aktualisieren einer \acs{aas} samt ihrer Submodelle und Inhalte.
 Alle verfügbaren Endpunkte dieser Schnittstellen können unter anderem in der automatisch generierten Swagger-Dokumentation eingesehen und ausgeführt werden. 
 Typische \acs{rest}-Endpunkte sind beispielsweise:
@@ -429,10 +429,10 @@ Typische \acs{rest}-Endpunkte sind beispielsweise:
 \input{TabelleBasyxEndpunkte.tex}
 \vspace{-0.5em}
 
-Im BaSyx-System ermöglicht ein Discovery Service die Verknüpfung physischer Assets mit iheren zugehörigen \acs{aas}.
+Im BaSyx-System ermöglicht ein Discovery Service die Verknüpfung physischer Assets mit ihren zugehörigen \acs{aas}.
 Dies ist insbesondere für die Abbildung von hierarchischen Strukturen wie Stücklisten (\ac{bom}) von großer Bedeutung.
 Ein übergeordnetes Asset (z.B. Maschine) kann so beispielsweise mit untergeordneten Komponenten (z.B. Antrieb, Sensoren) logisch über deren AAS verbunden werden.
-Einträge in den Discovery Service müssen derzeit allerdings noch manuell über die \acs{api} (Aplication Programming Interface) vorgenommen werden.
+Einträge in den Discovery Service müssen derzeit allerdings noch manuell über die \acs{api} (Application Programming Interface) vorgenommen werden.
 
 Zur benutzerfreundlichen Visualisierung und Interaktion kann die sogenannte AAS Web UI genutzt werden.
 Die webbasierte Benutzeroberfläche, wie in Abbildung \ref{fig:BasyxWebUI} dargestellt ist, wurde mit dem JavaScript-Framework Vue.js entwickelt und kommuniziert über die standardisierte \acs{rest}-API mit den zentralen Komponenten der BaSyx-Plattform, darunter die Repositories, Registries und der Discovery Service.
@@ -448,7 +448,7 @@ Da die Lösung Open Source ist besteht zudem die Möglichkeit, eigene benutzerde
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/AASWebUZIGrundlagen.png}
-    \caption[AAS Web UI - Benutzeroberfläche]{AAS Web UI - Benutzeroberfläche}
+    \caption[Benutzeroberfläche AAS Web UI]{Benutzeroberfläche AAS Web UI}
     \label{fig:BasyxWebUI}
 \end{figure}
 

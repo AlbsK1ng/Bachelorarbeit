@@ -39,7 +39,7 @@ Die Registries dienen als Verzeichnisse aller registrierten \acs{aas} und Submod
 Die \acs{aas} Environment selbst beherbergt die eigentlichen Inhalte und ist in drei Repositories gegliedert. 
 Das AAS Repository verwaltet die \acs{aas} einschließlich Asset-Metadaten und Referenzen auf Submodelle. 
 Das Submodel Repository (SM Repository) speichert die Submodelle mit ihren jeweiligen Inhalten und Referenzen auf die zugehörigen Concept Descriptions. 
-Diese werden im \acs{cd} Repository verwaltet und beeinhalten alle semantischen Beschreibungen.
+Diese werden im \acs{cd} Repository verwaltet und beinhalten alle semantischen Beschreibungen.
 
 Alle Komponenten verfügen dabei über eine standardisierte REST-API, die sowohl anderen Systemen als auch den Komponenten selbst einen einheitlichen Zugriff auf ihre Inhalte ermöglicht. 
 Zudem sind sie an eine gemeinsame MongoDB angebunden, in der sämtliche Daten persistent gespeichert werden.
@@ -48,7 +48,7 @@ Die dynamische Erweiterung ergänzt die Kernarchitektur um die Fähigkeit zur Ve
 Abbildung~\ref{fig:DynamischeErweiterungArchitektur} zeigt den Aufbau der zusätzlichen Komponenten sowie deren Zusammenspiel mit dem bestehenden System.
 
 Der Datengenerator und der Maschinensimulator simulieren die robocell-Maschine und erzeugen sowohl Zustands- als auch kontinuierlich Prozessdaten. 
-Beide Anwendungen stellen ihre Daten über einen OPC UA Server bereit und sind über die Databridge direkt an die AAS Environment im BaSyx-Backend angebunden.
+Beide Anwendungen stellen ihre Daten über einen \acs{opcua} Server bereit und sind über die Databridge direkt an die AAS Environment im BaSyx-Backend angebunden.
 Zusätzlich werden die vom Datengenerator simulierten Werte mithilfe von Telegraf kontinuierlich in eine InfluxDB geschrieben, wodurch eine historische Datenbasis entsteht. 
 
 \begin{figure}[htbp]
@@ -67,7 +67,7 @@ Bei Zeitreihendaten hingegen ist nicht der eigentliche Dateninhalt in der AAS ge
 Die AAS Web UI nutzt diesen Endpunkt, um die historischen Daten direkt aus der Datenbank abzurufen und in der Web-Oberfläche zu visualisieren.
 
 \subsubsection{Statische Submodelle}
-Die statische Modellierung des Demonstrators erfolgte im Package Explorer.
+Die statische Modellierung des Demonstrators erfolgte ausschließlich im Package Explorer.
 Dazu wurden alle relevanten AAS sowie die zugehörigen Submodelle angelegt, mit Inhalten befüllt, semantisch angereichert und mit eindeutigen Identifikatoren versehen.
 Als Hauptdatenquellen dienten die technischen Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem PLM-System Agile.
 
@@ -80,7 +80,7 @@ Die grundlegende Struktur der weiteren statischen Submodelle ist im Anhang~\ref{
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/AASrobocellTestAuflösung.PNG}
-    \caption{Gesamtübersicht der \acs{aas} für das Abfüll- und Verschließmodul}
+    \caption{Gesamtübersicht der \acs{aas} des Abfüll- und Verschließmoduls}
     \label{fig:PackageExplorerRobocell}
 \end{figure}
 
@@ -134,26 +134,32 @@ Dies ermöglicht eine modulare und herstellerübergreifende Integration, da auch
 \vspace{-0.5em}
 
 Beide Submodelle dienen der Bereitstellung und Klassifizierung zentraler Maschinendateien. 
-Das Submodell Dokumentation umfasst technische Unterlagen wie die Betriebsanleitung oder die Netzwerkübersicht, während das Submodell 3D-Modelle CAD-Daten zur Geometrie beeinhaltet. 
+Das Submodell Dokumentation umfasst technische Unterlagen wie die Betriebsanleitung oder die Netzwerkübersicht, während das Submodell 3D-Modelle CAD-Daten zur Geometrie beinhaltet. 
 Alle Dateien sind als File-Elemente direkt in die Struktur der AAS eingebettet und jeweils in eigenen \acsp{smc} organisiert, die zusätzlich Metainformationen zu Identifikation, Klassifikation und Versionierung enthalten. 
 Das Submodell 3D-Modelle könnte darüber hinaus um weitere Metadaten, etwa zu Darstellungsoptionen oder Geometrieinformationen, ergänzt werden, was im Demonstrator jedoch nicht umgesetzt wurde. 
 Dadurch ermöglichen beide Submodelle nicht nur das Einbetten von Dateien, sondern auch deren eindeutige Beschreibung und Rückverfolgbarkeit über den gesamten Lebenszyklus hinweg.
 
 \subsubsection*{6) Wartung}
+\vspace{-0.5em}
+
 Das Submodell Wartung bildet den digitalen Wartungsplan der Maschine ab. 
 Für jede wartungsrelevante Komponente sind in eigenen \acsp{smc} letzte Wartungszeitpunkte, Intervalle, zuständige Personen oder Organisationen sowie die vorgesehenen Maßnahmen hinterlegt. 
 Es ermöglicht damit die strukturierte Verwaltung sowohl bereits durchgeführter als auch anstehender Wartungen und gewährleistet eine nachvollziehbare Dokumentation. 
 Darüber hinaus schafft das Submodell die Grundlage für eine dynamische Erweiterung. 
 So könnte beispielsweise ein Betriebsstundenzähler angebunden werden, der automatisch Wartungsbedarf erkennt, oder es könnte in Kombination mit Predictive-Maintenance-Ansätzen genutzt werden, um auf Basis von Sensordaten proaktiv Wartungsmaßnahmen abzuleiten und diese direkt in der AAS darzustellen. 
 
-\textbf{Zusammenfassung}  
+\subsubsection*{Zusammenfassung}
+\vspace{-0.5em}
 
-Die statischen Submodelle bündeln alle relevanten Stammdaten der Maschine zentral an einem Ort. 
+Die statischen Submodelle verdeutlichen, wie zentrale Stammdaten einer Maschine strukturiert und standardisiert in der \acs{aas} gebündelt werden können. 
 Dadurch wird eine einfache Weitergabe der Informationen entlang der Wertschöpfungskette ermöglicht. 
-So kann die AAS beispielsweise in Form einer AASX-Datei an einen Betreiber übergeben werden, der direkten Zugriff auf die Daten benötigt. 
-Ebenso können AAS einzelner Komponenten nahtlos in den digitalen Zwilling der Gesamtmaschine integriert werden. 
-Durch die Orientierung an standardisierten \acsp{smt} und die semantische Beschreibung sind die Inhalte zudem interoperabel und können von unterschiedlichen Systemen oder Personen gleichermaßen interpretiert und genutzt werden. 
+Die \acs{aas} lässt sich beispielsweise in Form einer AASX-Datei an einen Betreiber übergeben, der direkten Zugriff auf die Daten benötigt.
+Zugleich erlaubt die rekursive Einbindung von Komponenten-\acs{aas} die nahtlose Integration in den digitalen Zwilling der Gesamtmaschine. 
 
+Durch die Orientierung an standardisierten \acsp{smt} und die Nutzung von Concept Descriptions zur semantischen Beschreibung können die Inhalte dabei von unterschiedlichen Systemen oder Personen gleichermaßen interpretiert und genutzt werden. 
+Auf diese Weise wird nicht nur die Interoperabilität gewährleistet, sondern auch die Rückverfolgbarkeit von Maschinendaten über den gesamten Lebenszyklus gestärkt.
+
+\newpage
 \subsubsection{Dynamische Submodelle}
 \label{sec:DynamischeSubmodelle}
 Neben den statischen Submodellen wurden im Demonstrator auch dynamische Submodelle umgesetzt.
@@ -164,12 +170,11 @@ Die technische Umsetzung und die zugrunde liegenden Datenflüsse orientieren sic
 Durch diese Erweiterung erfüllt der Demonstrator die Anforderungen an einen digitalen Zwilling gemäß der in Kapitel~\ref{sec: DT} beschriebenen Klassifizierung.
 
 \subsubsection*{Prozessdaten}
-
-Das Submodell Prozessdaten dient der Erfassung und Bereitstellung zentraler Betriebsinformationen.
-Im Rahmen dieser Arbeit wurden exemplarisch die Messgrößen Füllstand, Durchfluss, Anzahl abgefüllter Einheiten und Druck implementiert.
-Die Werte stammen aus dem \acs{opcua}-Server des Datengenerators, der sie im Sekundentakt aktualisiert und über die Databridge nahezu in Echtzeit an die \acs{aas} überträgt.
-Vor der Speicherung im Submodel Repository erfolgt eine zweistufige Transformation.
-Zunächst werden die Rohdaten mithilfe des Jackson-Transformers in ein JSON-Format überführt, anschließend extrahiert JSONata die relevanten Messgrößen, die schließlich den entsprechenden Properties des Submodells zugeordnet werden.
+\vspace{-0.5em}
+Das Submodell Prozessdaten erfasst die Prozessgrößen Füllstand, Durchfluss, Anzahl abgefüllter Einheiten und Druck.
+Die Werte stammen aus dem \acs{opcua} Server des Datengenerators, werden dort im Sekundentakt aktualisiert und über die Databridge nahezu in Echtzeit an die \acs{aas} übertragen.
+Innerhalb der Databridge erfolgt dabei eine zweistufige Transformation.
+Mithilfe des Jackson-Transformers werden die Rohdaten zunächst in ein JSON-Objekt überführt und anschließend mit JSONata gefiltert, sodass nur die relevanten Messgrößen in die Properties des Submodells übernommen werden.
 
 \begin{figure}[htbp]
     \centering
@@ -177,7 +182,6 @@ Zunächst werden die Rohdaten mithilfe des Jackson-Transformers in ein JSON-Form
     \caption{Visualisierung Submodell Prozessdaten}
     \label{fig:Processdata}
 \end{figure}
-\vspace{-0.5em}
 
 Die Visualisierung der Prozessdaten erfolgt in der klassischen Elemente-Ansicht der AAS Web UI, wie in Abbildung~\ref{fig:Processdata} dargestellt, oder über ein speziell entwickeltes Plugin.
 Damit die Werte in der Benutzeroberfläche aktuell bleiben, kann eine Synchronisationsfunktion aktiviert werden.
@@ -187,8 +191,9 @@ Die Umsetzung ist protokolloffen und könnte grundsätzlich auf weitere Kommunik
 Eine automatische bidirektionale Kommunikation, etwa das Zurückschreiben von Werten aus der \acs{aas} in externe Systeme, ist mit der eingesetzten Databridge derzeit jedoch nicht möglich.
 
 \subsubsection*{Kontrollkomponente}
+\vspace{-0.5em}
 Das Submodell Kontrollkomponente dient der Abbildung und Visualisierung des aktuellen Maschinenstatus sowie der unterstützten Betriebsmodi.
-Die Zustandsinformationen stammen aus dem Maschinensimulator, der sie in numerischer Form über einen \acs{opcua}-Server bereitstellt.
+Die Zustandsinformationen stammen aus dem Maschinensimulator, der sie in numerischer Form über einen \acs{opcua} Server bereitstellt.
 Über die Databridge werden diese Werte in nahezu Echtzeit in die \acs{aas} übertragen.
 Vor der Speicherung erfolgt eine semantische Umwandlung mithilfe von JSONata, um die numerischen Codes in sprechende Zustandsbezeichnungen zu überführen.
 
@@ -206,7 +211,6 @@ Neben der reinen Statusanzeige erlaubt das Plugin auch die Steuerung zulässiger
 Befindet sich die Maschine beispielsweise im Zustand Execute, können Befehle wie Stop, Hold, Suspend oder Abort ausgelöst werden.
 Darüber hinaus lässt sich der Betriebsmodus (Produktion, Manuell oder Wartung) setzen, der ebenfalls als Property im Submodell verwaltet wird.
 
-\newpage
 \begin{figure}[htbp]
     \centering 
     \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png} 
@@ -215,20 +219,25 @@ Darüber hinaus lässt sich der Betriebsmodus (Produktion, Manuell oder Wartung)
 \end{figure}
 \vspace{-0.5em}
 
+Neben der reinen Statusanzeige erlaubt das Plugin auch die Steuerung zulässiger Zustandsübergänge direkt aus der Benutzeroberfläche heraus.
+Befindet sich die Maschine beispielsweise im Zustand Execute, können Befehle wie Stop, Hold, Suspend oder Abort ausgelöst werden.
+Darüber hinaus lässt sich der Betriebsmodus (Produktion, Manuell oder Wartung) setzen, der ebenfalls als Property im Submodell verwaltet wird.
+
+
 Im Demonstrator werden Befehle direkt per WebSocket an den Maschinensimulator übermittelt und dort ohne weitere Prüfungen übernommen. 
 Dadurch entsteht eine direkte Feedback-Schleife zwischen der \acs{aas} und dem simulierten Asset.
 In einer realen Maschine würden diese Signale hingegen zunächst über ein geeignetes Industrieprotokoll wie \acs{opcua} an die speicherprogrammierbare Steuerung (SPS) übertragen und dort validiert werden müssen, bevor der neue Zustand an die \acs{aas} zurückgemeldet wird.
 
 \subsubsection*{Zeitreihendaten}
-Das Submodell Zeitreihendaten dient der Einbettung historischer Messwerte in die \acs{aas}. 
-Im Demonstrator werden hierfür exemplarisch die Messgrößen Druck und Temperatur verwendet, die kontinuierlich vom \acs{opcua}-Server des Datengenerators bereitgestellt werden. 
-Anstatt diese Werte direkt in der \acs{aas} abzulegen, werden sie mithilfe von Telegraf in die externe InfluxDB-Datenbank übertragen. 
-Telegraf abonniert dazu die relevanten Variablen des \acs{opcua}-Servers und schreibt geänderte Werte unmittelbar in die Datenbank.
+\vspace{-0.5em}
+
+Das Submodell Zeitreihendaten dient der Einbettung historischer Messwerte in die AAS.
+Im Demonstrator werden exemplarisch die Messgrößen Druck und Temperatur genutzt, die vom \acs{opcua} Server des Datengenerators bereitgestellt und mithilfe von Telegraf fortlaufend in der InfluxDB gespeichert werden.
 
 Die Anbindung an die \acs{aas} erfolgt über ein LinkedSegment (eine \acs{smc}) im Submodell, das alle für die Datenabfrage erforderlichen Parameter enthält, wie den Endpunkt der InfluxDB und die zugehörige Abfragebeschreibung. 
 Dadurch können Anwendungen, die auf die \acs{aas} zugreifen, die Zeitreihendaten gezielt abrufen, ohne Details zur technischen Implementierung der Datenbank kennen zu müssen.
 
-Zur Visualisierung steht in der AAS Web UI ein spezielles Plugin zur Verfügung, das auf die im LinkedSegment hinterlegten Parametern zugreift und Abfragen an die InfluxDB stellt. 
+Zur Visualisierung steht in der AAS Web UI ein Plugin bereit, das die im LinkedSegment hinterlegten Parameter nutzt, um Abfragen an die InfluxDB zu stellen.
 Ein Nutzer kann dabei auswählen, ob einzelne Messgrößen oder kombinierte Ansichten mehrerer Werte angezeigt werden sollen. 
 Abbildung~\ref{fig:LiniendiagrammBaSyx} zeigt exemplarisch ein Liniendiagramm mit den zeitlichen Verläufen von Druck und Temperatur über einen Zeitraum von fünf Minuten.
 
@@ -242,7 +251,7 @@ Abbildung~\ref{fig:LiniendiagrammBaSyx} zeigt exemplarisch ein Liniendiagramm mi
 
 Ein wesentlicher Vorteil dieser Umsetzung liegt in der Entkopplung von Datenspeicherung und \acs{aas}. 
 Da die \acs{aas} selbst nicht für die Ablage großer oder historischer Datenmengen ausgelegt ist, ermöglicht die Auslagerung in eine externe Zeitreihendatenbank eine effiziente Speicherung und Verarbeitung. 
-Zudem können die Daten durch die strukturierte Referenzierung über das LinkedSegment einfach in weiteren Anwendungen, wie Analysesystemen oder KI-gestützten Verfahren, weiterverwendet werden.
+Zudem können die Daten durch die strukturierte Referenzierung über das LinkedSegment einfach in weiteren Anwendungen, wie Analysesystemen oder KI gestützten Verfahren, weiterverwendet werden.
 
 \subsubsection{Herausforderungen bei der Implementierung}
 Im Rahmen der Implementierung des Demonstrators traten verschiedene Herausforderungen auf, die sowohl technische als auch methodische Aspekte betrafen. 
@@ -376,7 +385,7 @@ Insgesamt verdeutlicht die Umsetzung, dass sich mit der AAS ein \acs{dpp} realis
 
 \newpage
 \subsubsection{Rollenbasierter Zugriff auf Submodelle}
-Der \acs{dpp} wird durch die erweiterte \acs{aas} des Abfüll- und Verschließmoduls repräsentiert. 
+Der \acs{dpp} wird durch die zuvor erweiterte \acs{aas} des Abfüll- und Verschließmoduls repräsentiert. 
 Um sensible Inhalte gezielt und sicher bereitzustellen, wurde eine rollenbasierte Zugriffskontrolle implementiert. 
 Die Authentifizierung und Autorisierung erfolgt über Keycloak, das als Docker-Container in die BaSyx-Architektur integriert ist.
 
@@ -484,7 +493,7 @@ Die Eclipse-BaSyx-Plattform bildete in diesem Projekt die zentrale Laufzeitumgeb
 Ein wesentlicher Vorteil war der modulare Aufbau, der praxisnahe Szenarien und zugleich eine flexible Konfiguration ermöglichte.
 %der die Umsetzung praxisnaher Industrieszenarien erlaubte und zugleich eine flexible Konfiguration einzelner Komponenten zuließ.
 Ebenso eröffneten die standardisierten REST-APIs einen direkten Zugriff auf die einzelnen Komponenten, der dank der integrierten Swagger-Dokumentation unmittelbar getestet und transparent nachvollzogen werden konnte.
-Darüber hinaus erleichterte die DataBridge die Anbindung unterschiedlicher Protokolle, insbesondere von OPC UA, wodurch eine dynamische Erweiterung der AAS und die Umsetzung dynamischer Submodelle möglich wurde.
+Darüber hinaus erleichterte die DataBridge die Anbindung unterschiedlicher Protokolle, insbesondere von \acs{opcua}, wodurch eine dynamische Erweiterung der AAS und die Umsetzung dynamischer Submodelle möglich wurde.
 
 Mit der AAS Web UI stand zudem eine Benutzeroberfläche zur Verfügung, die sowohl die Darstellung als auch die Anpassung von AAS erlaubte. 
 Für zentrale Submodelle existieren bereits spezialisierte Plugins, die sich aufgrund des Open-Source-Charakters einfach erweitern oder ergänzen ließen.

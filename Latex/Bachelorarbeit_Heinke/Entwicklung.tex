@@ -28,7 +28,7 @@ Im zweiten Anwendungsfall wird gezeigt, wie \acs{aas}-Instanzen automatisiert ge
 Ziel dieses Abschnittes ist es, eine grundlegende Basis für die Erstellung des digitalen Zwillings zu schaffen.
 Dabei wird untersucht, welche Daten für die Modellierung erforderlich sind, wo diese herkommen und wie sie in (standardisierten) Submodellen der \acs{aas} strukturiert werden können.
 \subsubsection{Identifikation relevanter Datenquellen}
-Ein digitaler Zwilling basiert immmer auf einer Vielzahl unterschiedlicher Daten, die gemeinsam ein umfassendes digitales Abbild eines Assets ermöglichen. 
+Ein digitaler Zwilling basiert immer auf einer Vielzahl unterschiedlicher Daten, die gemeinsam ein umfassendes digitales Abbild eines Assets ermöglichen. 
 Dabei werden%
 \pagebreak 
 ~sowohl statische Informationen (z.B. Datenblätter oder Konstruktionsdaten) als auch dynamische Daten, die während des Betriebs einer Maschine anfallen, benötigt.
@@ -180,7 +180,7 @@ Das bevorzugte Format in diesem Projekt ist das AASX-Format, das sich als standa
 Es enthält alle modellierten Inhalte, einschließlich eingebetteter Dateien wie Bilder oder Dokumente, und eignet sich daher besonders für die Weitergabe einer Typ-1-\acs{aas}.
 
 Alternativ kann die \acs{aas} auch als \ac{json}- oder \ac{xml}-Datei gespeichert werden.
-Diese Formate beeinhalten allerdings ausschließlich die strukturierte Beschreibung der \acs{aas}, eignen sich jedoch besonders für die Nutzung in \acsp{api} oder zur Anbindung an bestehende Softwaresysteme.
+Diese Formate beinhalten allerdings ausschließlich die strukturierte Beschreibung der \acs{aas}, eignen sich jedoch besonders für die Nutzung in \acsp{api} oder zur Anbindung an bestehende Softwaresysteme.
 
 Zusätzlich unterstützt der Package Explorer auch den gezielten Export einzelner Submodelle oder Concept Descriptions.
 Diese lassen sich seperat, etwa als \acs{json}-Datei abspeichern und können so gezielt in anderen \acs{aas}-Projekten wiederverwendet werden.
@@ -279,7 +279,7 @@ Dies erleichtert insbesondere die eindeutige Zuordnung in komplexen, hierarchisc
 
 Nach der Erstellung der statischen \acs{aas} des Abfüll- und Verschließmoduls sowie deren Integration in das BaSyx-System soll diese nun um dynamische Informationen ergänzt werden.
 Diese sind erforderlich, um den aktuellen Maschinenzustand präzise und in Echtzeit abzubilden.
-Grundlage hierfür bilden die beiden zuvor beschriebenen Anwendungen, welche simulierte Maschinen- und Sensordaten über einen \acs{opcua}-Server bereitstellen.
+Grundlage hierfür bilden die beiden zuvor beschriebenen Anwendungen, welche simulierte Maschinen- und Sensordaten über einen \acs{opcua} Server bereitstellen.
 
 Die Integration der Echtzeitdaten in die \acs{aas} wird im Folgenden exemplarisch anhand des Submodells Prozessdaten erläutert.
 Wie in Abbildung \ref{fig:SubmodellProzessdaten} dargestellt, enthält dieses Submodell verschiedene Properties, die jeweils spezifische Werte, wie etwa den Druck oder die Anzahl abgefüllter Einheiten, repräsentieren.
@@ -303,7 +303,7 @@ Die Konfiguration der Databridge erfolgt über mehrere \acs{json}-Dateien.
 In einer zentralen Konfigurationsdatei werden sowohl die Datenquelle als auch die Datensenke definiert.
 Zusätzlich können Transformatoren angegeben werden, die beispielsweise Einheitenumrechnungen oder Typkonvertierungen übernehmen.
 
-Im Kontext des Submodells Prozessdaten erfolgt die Anbindung der simulierten Werte über den \acs{opcua}-Server des Datengenerators, der als Datenquelle für die Databridge dient.
+Im Kontext des Submodells Prozessdaten erfolgt die Anbindung der simulierten Werte über den \acs{opcua} Server des Datengenerators, der als Datenquelle für die Databridge dient.
 Die Konfiguration erfolgt in einer separaten \acs{json}-Datei.
 Darin sind sowohl die Verbindungsparameter des Servers (z.~B. \acs{url} (Uniform Resource Locator) und Port) als auch die zu überwachenden Knoten anzugeben.
 Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua} Server die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
@@ -313,11 +313,11 @@ Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua
     \centering
     % 0.88
     \includegraphics{Bilder/OPCUA/OPCUADaten.pdf}
-    \caption[OPC UA Datenknoten des Datengenerators]{OPC UA Datenknoten des Datengenerators}
+    \caption[\acs{opcua} Datenknoten des Datengenerators]{\acs{opcua} Datenknoten des Datengenerators}
     \label{fig:OPCUADatenStruktur}
 \end{figure}
 
-Darüber hinaus muss der zu verwendende \acs{opcua}-Client festgelegt werden.
+Darüber hinaus muss der zu verwendende \acs{opcua} Client festgelegt werden.
 In diesem Projekt kommt Eclipse Milo zum Einsatz, der auf einem Subscription-Modell basiert.
 Im Gegensatz zu einem Polling-Ansatz werden hierbei gezielt bestimmte Knoten abonniert, sodass neue Werte bei Änderungen automatisch übermittelt werden.
 
@@ -336,7 +336,7 @@ Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertra
 
 Zur Anpassung der eingehenden Daten an die Struktur der Ziel-Property können verschiedene Transformatoren eingesetzt werden.
 Die Databridge unterstützt hierfür unter anderem JSONata-Ausdrücke sowie Jackson-basierte Transformer.
-Mithilfe dieser Mechanismen lassen sich die vom \acs{opcua}-Server empfangenen Rohdaten zunächst in ein \acs{json}-Objekt überführen und anschließend gezielt extrahieren sowie weiterverarbeiten.
+Mithilfe dieser Mechanismen lassen sich die vom \acs{opcua} Server empfangenen Rohdaten zunächst in ein \acs{json}-Objekt überführen und anschließend gezielt extrahieren sowie weiterverarbeiten.
 
 Im Anschluss erfolgt die Konfiguration der Datensenke, also der Zielkomponente innerhalb der \acs{aas}.
 Auch diese erfolgt über eine separate \acs{json}-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete \acs{api}-Version definiert werden.
@@ -353,7 +353,7 @@ Der Platzhalter \{smId\} steht dabei für die Base64-kodierte \acs{id} des Submo
 }
 \end{lstlisting}
 
-Nach erfolgreicher Konfiguration übernimmt die Databridge die automatisierte Übertragung der \acs{opcua}-Werte in die entsprechenden Properties des Submodells.
+Nach erfolgreicher Konfiguration übernimmt die Databridge die automatisierte Übertragung der OPC-UA-Werte in die entsprechenden Properties des Submodells.
 Dieses Prinzip lässt sich nicht nur auf Prozesswerte anwenden, sondern auch zur Abbildung des Maschinenzustands oder anderer dynamischer Betriebsdaten nutzen.
 Damit stellt die Databridge eine zentrale Komponente zur Echtzeitanbindung externer Datenquellen dar und trägt wesentlich zur dynamischen Erweiterung der \acs{aas} bei.
 
@@ -589,7 +589,7 @@ Da eine direkte Systemintegration im Rahmen dieser Arbeit jedoch nicht realisier
 Diese enthalten typische technische Merkmale, wie sie auch in realen Unternehmenssystemen vorzufinden sind, und bilden die Grundlage für die automatisierte Erstellung eines Instanz-Submodells.
 
 Die automatisierte Befüllung erfolgt mithilfe eines Skripts, das die Beispieldaten in die vorgegebene Submodellstruktur überträgt und in eine neue \acs{aas}-Instanz einbettet.
-Zum Einsatz kommt die serverseitige JavaScript-Laufzeitumgebung Node.js \cite{nodejs}, da sie eine effiziente Verarbeitung von \acs{json}-Daten sowie eine unkomplizierte Kommunikation mit \acs{rest}-Schnittstellen ermöglicht.
+Zum Einsatz kommt die serverseitige JavaScript-Laufzeitumgebung Node.js, da sie eine effiziente Verarbeitung von \acs{json}-Daten sowie eine unkomplizierte Kommunikation mit \acs{rest}-Schnittstellen ermöglicht \cite{nodejs}.
 
 Die Basis bilden drei strukturierte \acs{json}-Dateien:
 
