@@ -8,7 +8,7 @@ Abbildung \ref{fig:Entwicklungsschritte} veranschaulicht den Ablauf des zugrunde
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/vorgehenEntwicklungsteil.pdf}
-    \caption[Ablauf der Entwicklung des digitalen Zwillings]{Ablauf der Entwicklung des digitalen Zwillings}
+    \caption[Entwicklungsprozess des digitalen Zwillings]{Entwicklungsprozess des digitalen Zwillings}
     \label{fig:Entwicklungsschritte}
 \end{figure}
 \vspace{-0.5em}
@@ -96,7 +96,7 @@ Für erste Modellierungszwecke empfiehlt es sich, auf automatisch generierte Bei
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{Bilder/ModellierungAAS/Final/AASPaketPackageExplorer.PNG}
-    \caption[AAS-Paket im Package Explorer]{AAS-Paket im Package Explorer}
+    \caption[Initiales \acs{aas}-Paket im Package Explorer]{Initiales \acs{aas}-Paket im Package Explorer}
     \label{fig:NeuesAASPaket}
 \end{figure}
 
@@ -156,7 +156,7 @@ Die Struktur wird im Folgenden am Beispiel einer Property für die physikalische
     \centering
     \input{DataSpecificationContent.tex}
     \vspace{-0.5em}
-    \caption[Eingabemaske einer \acs{cd}]{Eingabemaske einer \acs{cd} (in Anlehnung an \cite{SpezifikationPart3a})}
+    \caption[Eingabemaske einer Concept Description]{Eingabemaske einer Concept Description (in Anlehnung an \cite{SpezifikationPart3a})}
     \label{fig:SubmodellTypenschild}
 \end{figure}
 \vspace{-0.35em}
@@ -288,11 +288,11 @@ Diese Properties sollen im weiteren Verlauf dynamisch mit den über \acs{opcua} 
 \begin{figure}[htbp]
     \centering
     % 0.88
-    \includegraphics[width=1\textwidth]{Bilder/OPCUA/SubmodellProzessdaten.pdf}
-    \caption[Submodell Prozessdaten]{Submodell Prozessdaten (eigene Darstellung)}
+    \includegraphics[width=1\textwidth]{Bilder/OPCUA/ProcessData.pdf}
+    \caption[Struktur des Submodells Prozessdaten]{Struktur des Submodells Prozessdaten}
     \label{fig:SubmodellProzessdaten}
 \end{figure}
-\vspace{-0.25em}
+\vspace{-0.5em}
 
 Das Eclipse BaSyx-Projekt stellt hierfür eine weitere Komponente bereit, die sogenannte Databridge \cite{BaSyxDatabridge}.
 Diese steht, wie alle anderen Komponenten, als Docker-Container zur Verfügung und ermöglicht die Anbindung verschiedenster Datenquellen an eine \acs{aas}.
@@ -313,7 +313,7 @@ Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua
     \centering
     % 0.88
     \includegraphics{Bilder/OPCUA/OPCUADaten.pdf}
-    \caption[OPC UA Datenknoten]{OPC UA Datenknoten}
+    \caption[OPC UA Datenknoten des Datengenerators]{OPC UA Datenknoten des Datengenerators}
     \label{fig:OPCUADatenStruktur}
 \end{figure}
 
@@ -381,8 +381,8 @@ Abbildung \ref{fig:SMTTimeSeriesData} zeigt den strukturellen Aufbau, wobei auss
 \begin{figure}[htbp]
     \centering
     % 0.88
-    \includegraphics[width=1\textwidth]{Bilder/TimeSeries/SM_TimeSeriesData.pdf}
-    \caption[SMT Time Series Data]{SMT Time Series Data (in Anlehnung an \cite{SpezifikationTimeSeriesData})}
+    \includegraphics[width=1\textwidth]{Bilder/TimeSeries/TimeSeriesData.pdf}
+    \caption[Struktur des Submodel Templates Time Series Data]{Struktur des Submodel Templates Time Series Data (in Anlehnung an \cite{SpezifikationTimeSeriesData})}
     \label{fig:SMTTimeSeriesData}
 \end{figure}
 
@@ -402,9 +402,12 @@ Alle relevanten Informationen zur externen Speicherung der Zeitreihendaten sind 
 
 \newpage
 \subsection{KI-Modell zur Optimierung}
-Die gefällt mitr noch nicht!!!
-Im Folgenden wird ein \acs{ki}-gestütztes Konzept zur Optimierung der zustandsbasierten Prozessüberwachung vorgestellt und prototypisch umgesetzt.
-Ziel ist es, mithilfe maschinellen Lernens potenzielle Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen und dadurch eine Grundlage für prädiktive Instandhaltungsmaßnahmen zu schaffen.
+In diesem Abschnitt wird ein Konzept zur Optimierung der zustandsbasierten Prozessüberwachung auf Basis von \acs{ki} vorgestellt und prototypisch umgesetzt.
+Ziel ist es, mithilfe maschinellen Lernens potenzielle Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen.
+Damit wird eine Grundlage für proaktive Instandhaltungsmaßnahmen geschaffen, die zur Optimierung des Betriebs beitragen können.
+
+
+% und dadurch eine Grundlage für prädiktive Instandhaltungsmaßnahmen zu schaffen.
 % Darüber hinaus wird gezeigt, wie das resultierende \acs{ki}-Modell mithilfe der \acs{aas} standardisiert und interoperabel verwaltet werden kann.
 
 \subsubsection{Konzeptidee}
@@ -418,16 +421,19 @@ Dieser stellt eine spezielle Architektur tiefer neuronaler Netze dar und besteht
 
 Der prinzipielle Aufbau eines Autoencoders ist in Abbildung \ref{fig:Autoencoder} dargestellt.
 
-% \vspace{-1em}
 \begin{figure}[htbp]
     \centering
     % 0.88
     \includegraphics[width=1\textwidth]{Bilder/Autoencoder/AutoencoderModell.pdf}
-    \caption[Aufbau eines Autoencoders]{Aufbau eines Autoencoders (in Anlehnung an \cite{AutoencoderBild})}
+    \caption[Architektur eines Autoencoders]{Architektur eines Autoencoders (in Anlehnung an \cite{AutoencoderBild})}
     \label{fig:Autoencoder}
 \end{figure}
 
-Der Encoder besteht aus mehreren Schichten, die die Eingabedaten schrittweise in eine komprimierte Form überführen. Dabei erfolgt eine Dimensionsreduktion, das heißt, die Daten werden im Verlauf auf weniger Dimensionen verdichtet. 
+\vspace{-0.75em}
+Der Encoder besteht aus mehreren Schichten, die die Eingabedaten schrittweise in%
+\pagebreak
+~eine komprimierte Form überführen. 
+Dabei erfolgt eine Dimensionsreduktion, das heißt, die Daten werden im Verlauf auf weniger Dimensionen verdichtet. 
 Das Ziel ist es, die für die Rekonstruktion wesentlichen Merkmale zu extrahieren und irrelevante Informationen zu filtern.
 
 Der dabei entstehende latente Raum bildet die am stärksten komprimierte Repräsentation der Daten ab und dient als Ausgangspunkt für den Decoder.
@@ -480,85 +486,45 @@ Das trainierte Modell kann anschließend zur Erkennung von Anomalien in neuen Da
 Dabei dient der Rekonstruktionsfehler nicht mehr zur Optimierung, sondern als Maß für Abweichungen von der Normalität.
 Überschreitet der Fehler eines Zeitfensters einen definierten Schwellenwert, so liegt eine Anomalie vor.
 
-% \subsubsection{Verwaltung der Metadaten in der \acs{aas}}
-% \acs{ki}-Modelle lassen sich als digitale Assets betrachten, da sie, analog zu physischen Komponenten, über einen eigenen Lebenszyklus verfügen.  
-% Für deren standardisierte und interoperable Verwaltung bietet sich die Integration in einen digitalen Zwilling an.  
-% Im Folgenden wird daher gezeigt, wie das zuvor entwickelte \acs{ki}-Modell zur Anomalieerkennung mithilfe der \acs{aas} abgebildet und verwaltet werden kann.
-
-% Für die standardisierte Beschreibung kann das \acs{smt} AIModelNameplate \cite{SpezifikationAIModelNameplate} eingesetzt werden. 
-% Es erfüllt eine vergleichbare Funktion wie das digitale Typenschild für physische Assets und enthält zentrale Metadaten zur Identifikation sowie Dokumentation des Modells über dessen gesamten Lebenszyklus hinweg.
-
-% Zu den abbildbaren Informationen zählen beispielsweise die \acs{url} des Modells, der Speicherort, die Versionsnummer sowie die Art des Trainingsverfahrens. 
-% Darüber hinaus lassen sich auch die Ein- und Ausgänge des Modells über entsprechende \acsp{smc} spezifizieren. 
-% Hierzu gehören unter anderem Angaben zur Art der Ein- bzw. Ausgabedaten sowie deren Struktur und Dimension. 
-% Im Fall des hier eingesetzten Autoencoders ist der Eingabetyp beispielsweise, wie zuvor beschrieben, eine Sequenz mit einer Dimension von 30.
-
-% Eine weitere zentrale Komponente bildet die \acs{smc} Details, in der technische Informationen wie das verwendete Framework (PyTorch), die Programmiersprache (Python) sowie die Dateiendung des gespeicherten Modells (z. B. .pt oder .onnx) dokumentiert werden. 
-% Ergänzend können auch Abhängigkeiten hinterlegt werden, beispielsweise in Form einer referenzierten Textdatei, die alle benötigten Python-Bibliotheken aufführt.
-
-% Das Submodell bietet außerdem die Möglichkeit, unterstützende Visualisierungen einzubinden. 
-% Dies können beispielsweise Grafiken zur Modellarchitektur oder Diagramme zum Trainingsverlauf sein, die direkt in Python generiert werden können. 
-% Solche Visualisierungen können entweder als Dateien direkt in die \acs{smc} Plots eingebettet oder über externe Referenzen verlinkt werden.
-
-% Nicht zuletzt enthält das AIModelNameplate eine Verknüpfung zu einem weiteren Submodell, das mit dem \acs{smt} AIDataset \cite{SpezifikationAIDataset} realisiert wird.
-% Dieses dient der strukturierten Beschreibung der für das Modelltraining verwendeten Daten.
-% Obwohl das \acs{smt} primär für gelabelte Datensätze ausgelegt ist, lässt es sich auch zur Beschreibung synthetisch erzeugter Daten einsetzen, wie im vorliegenden Fall des durch den Datengenerator erzeugten Temperaturdatensatzes.
-
-% Die wichtigsten Elemente umfassen, analog zum AIModelNameplate, zentrale Metainformationen wie die \acs{url}, die Versionsnummer und den Speicherort des Datensatzes.
-% Darüber hinaus ermöglicht die \acs{smc} SizeInformation eine strukturierte Angabe zur Datenmenge, etwa zur Anzahl der Datenpunkte in Trainings-, Validierungs- und Testdatensatz, zur Gesamtdatenmenge sowie zum Verhältnis ihrer Aufteilung.
-% Weitere Elemente zur Beschreibung gelabelter bzw. realer Datensätze sind ebenfalls Teil des Submodells, werden im Kontext des hier verwendeten unüberwachten Lernens mit synthetisch erzeugten Daten jedoch nicht berücksichtigt.
-
-% Für die Beschreibung der Modellbereitstellung kann ergänzend das \acs{smt} AIDeployment \cite{SpezifikationAIDeployement} eingesetzt werden, das unter anderem Angaben zu Hard- und Softwareanforderungen, Bereitstellungsoptionen, Überwachungsmechanismen sowie zur Leistungsbewertung enthält.
-% Im Rahmen der prototypischen Umsetzung besteht hierfür jedoch kein Bedarf, weshalb dieses Submodell an dieser Stelle lediglich der Vollständigkeit halber erwähnt wird.
-
+\newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
-Im Kontext steigender Anforderungen an Nachhaltigkeit und Transparenz entlang des gesamten Produktlebenszyklus eines Assets gewinnt der \acs{dpp} zunehmend an Bedeutung. 
-Der Fokus dieses Anwendungsfalls liegt auf zwei zentralen Aspekten: der Abbildung des \acs{pcf} sowie der Realisierung der Zugriffsrechte auf die im \acs{dpp} enthaltenen Daten.
-
-Die technische Umsetzung orientiert sich an dem vom \acs{zvei} vorgestellten Konzept des \acs{dpp40}, das unter anderem gemeinsam mit der \acs{idta} im Rahmen eines \acs{pcf}-Showcases auf einer Website demonstriert wird \cite{PCFShowcas}.
-Aufbauend auf diesem Konzept wird gezeigt, wie ein \acs{dpp} mithilfe der \acs{aas} modelliert und prototypisch realisiert werden kann.
-
-Konkret wird der digitale Zwilling des Abfüll- und Verschließmoduls der robocell um ein Submodell zur Abbildung des \acs{pcf} erweitert. 
-Der Fokus liegt auf der exemplarischen Aggregation von CO\textsubscript{2}-Daten aus Zulieferkomponenten, um den Gesamt-\acs{pcf} des Moduls zu berechnen. 
-Ergänzend dazu wird demonstriert, wie sich Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen mithilfe der Eclipse BaSyx-Plattform umsetzen lassen.
+Angesichts steigender Anforderungen an Nachhaltigkeit und Transparenz über den gesamten Produktlebenszyklus gewinnt der \acs{dpp} zunehmend an Bedeutung.
+Aufbauend auf dem von \acs{zvei} und \acs{idta} vorgestellten Konzept des \acs{dpp40}, das unter anderem in einem \acs{pcf}-Showcase \cite{PCFShowcas} demonstriert wird, wird in diesem Anwendungsfall untersucht, wie sich zentrale Herausforderungen mithilfe der \acs{aas} umsetzen lassen.
+Im Mittelpunkt stehen dabei die Erfassung des \acs{pcf} sowie die Realisierung differenzierte Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen.
+Grundlage bildet die zuvor erstellte \acs{aas} des Abfüll- und Verschließmoduls, das um ein Submodell zur Abbildung des \acs{cf} erweitert wird.
 
 \subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
 Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\\valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
 Seine Relevanz zeigt sich unter anderem in der EU-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt. 
 Dieser stellt die erste konkrete Umsetzung eines \acs{dpp} dar und dient als Ausgangspunkt für weitere Branchen wie den Maschinen- und Anlagenbau. 
-Die Verordnung fordert unter anderem die verpflichtende Angabe des \acs{pcf}, insbesondere für die Phasen Material, Produktion und die Gesamtbetrachtung (Cradle to Gate). 
+Die Verordnung fordert unter anderem die verpflichtende Angabe des \acs{pcf} für die Phasen Material, Produktion und die Gesamtbetrachtung (Cradle to Gate). 
 Für weiterführende Lebenszyklusphasen ist die Angabe derzeit noch nicht vorgeschrieben.
 
-Zur praktischen Umsetzung der geforderten Angaben in den genannten Lebenszyklusphasen bietet sich das von der \acs{idta} spezifizierte \acs{smt} \acs{cf} \cite{SpezifikaitonPCF} an.
-Es definiert eine standardisierte Struktur zur Erfassung von CO\textsubscript{2}-Äquivalenten entlang des gesamten Lebenszyklus.  
-Dabei wird zwischen dem \acs{pcf} und dem \ac{tcf} unterschieden, wobei für diesen Anwendungsfall ausschließlich der \acs{pcf} relevant.
+Für die Umsetzung bietet sich das von der \acs{idta} spezifizierte \acs{smt} \acs{cf} \cite{SpezifikaitonPCF} an.
+Es definiert eine standardisierte Struktur zur Erfassung von CO\textsubscript{2}-Äquivalenten und unterscheidet zwischen dem \acs{pcf} und dem \ac{tcf}, wobei in diesem Anwendungsfall ausschließlich der \acs{pcf} betrachtet wird.
+Die Modellierung erfolgt über \acsp{smc}, die standardisierte Elemente wie den CO\textsubscript{2}-Wert, die betrachtete Lebenszyklusphase, die Berechnungsmethode sowie den Gültigkeitszeitraum enthalten.
+Für jede relevante Phase empfiehlt es sich, eine eigene \acs{smc} anzulegen.
+Die konkreten Werte bleiben zunächst leer und werden im weiteren Verlauf dynamisch gefüllt.
 
-Das \acs{smt} gibt die Struktur dessen in Form einer \acs{smc} vor.  
-Diese Sammlung enthält standardisierte Elemente wie den CO\textsubscript{2}-Wert, die zugehörige Zyklusphase, die verwendete Berechnungsmethode sowie den Gültigkeitszeitraum.
-Wie bereits beschrieben, liegt der Fokus auf den Phasen Material, Produktion und Cradle to Gate.  
-Für jede dieser Phasen empfiehlt es sich, jeweils eine eigene \acs{smc} gemäß der Submodellspezifikation zu erstellen.  
-Die konkreten Werte bleiben zunächst leer und werden im weiteren Verlauf mit den dynamisch berechneten Werten gefüllt.
+Zur Demonstration wurde eine Auswahl von acht im Abfüll- und Verschließmodul der robocell verbauten Siemens-Steuerungskomponenten getroffen, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule.
+Die Entscheidung für Siemens basiert darauf, dass für deren Produkte bereits \acs{aas}-Strukturen mit nachhaltigkeitsbezogenen Informationen vorliegen, auch wenn diese derzeit noch nicht öffentlich verfügbar sind.
+Die zugehörigen \acs{aas} wurden im Rahmen des Projekts auf persönliche Anfrage von der Siemens AG bereitgestellt und enthalten jeweils ein eigenes Submodell gemäß dem \acs{smt} \acs{cf}.
 
-Hierzu wurde eine Auswahl an Steuerungskomponenten festgelegt, die in der robocell verbaut sind. 
-Diese Auswahl beschränkt sich auf acht Siemens-Komponenten, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule. 
-Die Entscheidung für Siemens-Komponenten basiert auf der aktuellen Verfügbarkeit von \acs{aas}-Daten: Viele Komponentenhersteller haben die \acs{aas} bislang noch nicht vollständig umgesetzt, insbesondere nicht in Kombination mit dem \acs{cf}-Submodell. 
-Siemens zählt zu den wenigen Herstellern, die bereits entsprechende Strukturen für ihre Produkte entwickelt haben, auch wenn diese derzeit noch nicht öffentlich verfügbar sind. 
-Die zugehörigen \acs{aas} wurden im Rahmen dieses Projekts auf persönliche Anfrage von der Siemens AG bereitgestellt und enthalten jeweils ein eigenes Submodell gemäß des \acs{smt} \acs{cf}.
+\clearpage
+Die Referenzierung der Komponenten erfolgt im \acs{cf}-Submodell der \acs{aas} des Abfüll- und Verschließmoduls, nachfolgend als Haupt-\acs{aas} bezeichnet.
+Dies geschieht über eine \acs{sml}, in der die ausgewählten Einheiten als Self-Managed Entities unter Angabe ihrer globalAssetId eingebunden sind.
+Self-Managed Entities sind eigenständige Assets, die über eine eigene \acs{aas} verfügen und somit unabhängig adressierbar sind.
+Zwar wäre auch eine Referenzierung über das \acs{bom}-Submodell denkbar, jedoch wären dadurch die für die Berechnung relevanten Daten auf verschiedene Submodelle verteilt, was die Aggregation erschweren würde.
 
-Um die Komponenten automatisch in die Berechnung einzubeziehen, werden sie direkt im \acs{cf}-Submodell der robocell referenziert. 
-In diesem Anwendungsfall erfolgt dies über eine \acs{sml}, in der die Komponenten als Self-Managed Entities unter Angabe ihrer globalAssetId eingebunden sind. 
-Self-Managed Entities sind eigenständige Assets, die über eine eigene \acs{aas} verfügen und somit unabhängig adressierbar sind. 
-Zwar wäre auch eine Referenzierung über das \acs{bom}-Submodell denkbar, jedoch wären dann nicht mehr sämtliche für die Berechnung erforderlichen Daten in einem Submodell gebündelt, was die Aggregation erheblich erschweren könnte.
+Die aktualisierte Haupt-\acs{aas} sowie die zugehörigen Komponenten-\acs{aas} werden über die Eclipse~BaSyx-Plattform bereitgestellt und bilden die Grundlage für die technische Umsetzung.
+Zur Benutzerinteraktion dient das bestehende Vue.js-Plugin der AAS Web UI, das um eine Funktion zur Ermittlung der Gesamt-\acs{pcf}-Werte erweitert wurde.
+Zur Trennung von Logik und Benutzeroberfläche wird ein eigenständiger, Node.js-basierter Microservice implementiert, der eine Web-\acs{api} bereitstellt.
+Über diese kann die Berechnung der CO\textsubscript{2}-Äquivalente ausgelöst werden.
+Die Aggregation erfolgt damit zentral und serverseitig, anstatt direkt im Plugin clientseitig.
 
-Die aktualisierte \acs{aas} der robocell sowie die zugehörigen Komponenten-\acs{aas} werden über die Eclipse BaSyx-Plattform bereitgestellt und bilden die Grundlage für die technische Umsetzung. 
-Für die Benutzerinteraktion kommt das bestehende Vue.js-Plugin der AAS Web UI zum Einsatz, das um eine Funktion zur Ermittlung der Gesamt-\acs{pcf}-Werte erweitert wird. 
-Zur Gewährleistung einer klaren Trennung zwischen Logik und Benutzeroberfläche wird ein eigenständiger, Node.js-basierter Microservice implementiert. 
-Dieser stellt eine Web-\acs{api} bereit, über die die Berechnung der CO\textsubscript{2}-Äquivalente ausgelöst werden kann. 
-Alternativ wäre auch eine clientseitige Berechnung direkt im Plugin denkbar, in der vorliegenden Umsetzung erfolgt die Aggregation jedoch zentral und serverseitig.
-
-Der Microservice übernimmt die Aufgabe, die im \acs{cf}-Submodell der robocell referenzierten Komponenten auszulesen, deren \acs{pcf}-Werte zusammenzuführen und die berechneten CO\textsubscript{2}-Äquivalente in die zuvor vorbereiteten \acsp{smc} der robocell-\acs{aas} zurückzuschreiben. 
-Zusätzlich können weitere Metadaten wie die verwendete Berechnungsmethode oder der Gültigkeitszeitraum berücksichtigt werden. 
-In diesem Anwendungsfall sind diese Werte jedoch bei allen Komponenten identisch, sodass keine Differenzierung erforderlich ist.
+Der Microservice liest die im \acs{cf}-Submodell des Abfüll- und Verschließmoduls referenzierten Komponenten aus, fasst deren \acs{pcf}-Werte zusammen und schreibt die berechneten CO\textsubscript{2}-Äquivalente in die vorbereiteten \acsp{smc} der Haupt-\acs{aas} zurück.
+Zusätzlich können weitere Metadaten wie die verwendete Berechnungsmethode oder der Gültigkeitszeitraum berücksichtigt werden.
+Da diese Werte im vorliegenden Anwendungsfall bei allen Komponenten identisch sind, ist keine Differenzierung erforderlich.
 
 \subsubsection{Zugriffsrechte und Datensicherheit}
 
