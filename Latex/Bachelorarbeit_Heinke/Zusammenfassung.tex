@@ -1,50 +1,53 @@
 \newpage
 \section{Zusammenfassung und Ausblick}
 \label{sec:Zusammenfassung}
-In diesem Kapitel werden zunächst die zentralen Ergebnisse der Arbeit zusammengefasst.
-Daraufhin wird eine Handlungsempfehlung für groninger abgeleitet, die den möglichen Einsatz und Nutzen der \acs{aas} für das Unternehmen bewertet.
-Abschließend folgt ein Ausblick auf zukünftige Weiterentwicklungen.
+
+Auf Grundlage der in den vorhergehenden Kapiteln dargestellten Ergebnisse werden im Folgenden die zentralen Erkenntnisse der Arbeit zusammengefasst. 
+Daraufhin wird eine Handlungsempfehlung für das Unternehmen groninger abgeleitet, die den möglichen Einsatz und Nutzen der AAS bewertet. 
+Den Abschluss bildet ein Ausblick, der mögliche Weiterentwicklungen und künftige Ergänzungen dieser Arbeit aufzeigt.
 
 \subsection{Zusammenfassung der Arbeit}
+
 Ausgehend von den theoretischen Grundlagen wurde ein Demonstrator entwickelt, mit dem sich die Umsetzung digitaler Zwillinge auf Basis der \acs{aas} erproben ließ.
 Anhand statischer Submodelle wurde gezeigt, wie Stammdaten einer Maschine interoperabel und nachvollziehbar in der \acs{aas} abgebildet werden können.
-Darauf aufbauend folgte eine dynamische Erweiterung, bei der die \acs{aas} als Typ-2-Ausprägung in einer Laufzeitumgebung bereitgestellt wurde und die Integration von Prozess -und Zeitreihendaten ermöglichte.
-Dadurch entstand ein vollwertiger digitaler Zwilling, der nicht nur statische Informationen bereitstellt, sondern auch den aktuellen Betriebszustand der Maschine wiederspiegelt.
+Darauf aufbauend folgte eine dynamische Erweiterung, bei der die \acs{aas} als Typ-2-Ausprägung in einer Laufzeitumgebung bereitgestellt wurde und die Integration von Prozess- und Zeitreihendaten ermöglichte.
+Dadurch entstand ein vollwertiger digitaler Zwilling, der nicht nur statische Informationen bereitstellt, sondern auch den aktuellen Betriebszustand der Maschine widerspiegelt.
 
 Ferner wurde ein \acs{ki}-Modell zur Anomalieerkennung konzipiert und prototypisch umgesetzt, das auf einem Autoencoder basiert und Temperaturdaten nutzt, die im digitalen Zwilling enthalten sind.
-In Tests mit synthetisch erzeugten Anomalien gelang eine zuverlässige Erkennung, womit das Potenzial zur Optimierung der Anlagenverfügbarkeit und zur Reduzierung ungeplannter Stillstandzeiten aufgezeigt wurde.
+In Tests mit synthetisch erzeugten Anomalien gelang eine zuverlässige Erkennung, womit das Potenzial zur Optimierung der Anlagenverfügbarkeit und zur Reduzierung ungeplanter Stillstandzeiten aufgezeigt wurde.
 
-Darüber hinaus wurden zwei praxisnahe Anwenungsfälle realisiert.
+Darüber hinaus wurden zwei praxisnahe Anwendungsfälle realisiert.
 Der Anwendungsfall des \acs{dpp} zeigte, dass Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten transparent abgebildet und über Eclipse BaSyx rollenbasiert bereitgestellt werden können.
-Damit wurde bestätigt, dass die \acs{aas} eine vielversprechende Grundlage für die praktische Umsetzung des \acs{dpp} gemäß dem von \acs{zvei} und \acs{idta} entwickelten Konzept des \acs{dpp40} ist.
-Ergänzend ließ sich mit dem Anwendungsfall der automatisierten Generierung von \acs{aas} demonstrieren, wie sich der manuelle Modellierungsaufwand einzelner Instanzen verringern lässt und dadurch die effiziente Erstellung zahlreicher Instanzen in der industriellen Praxis möglich wäre.
+Dies bestätigte, dass die \acs{aas} eine vielversprechende Grundlage für die praktische Umsetzung des \acs{dpp} gemäß dem von \acs{zvei} und \acs{idta} entwickelten Konzept des \acs{dpp40} ist.
+Ergänzend ließ sich mit dem Anwendungsfall der automatisierten Generierung von \acs{aas} demonstrieren, wie sich der manuelle Modellierungsaufwand reduzieren lässt und dadurch die effiziente Erstellung von \acs{aas}-Instanzen in der industriellen Praxis möglich wäre.
 
 \newpage
 \subsection{Handlungsempfehlung für groninger}
 
-Für groninger ergibt sich aus den in dieser Arbeit gewonnenen Erkenntnissen, dass die AAS eine geeignete Möglichkeit bietet, alle relevanten Maschinendaten gebündelt, interoperabel und maschinenlesbar bereitzustellen. 
-Dadurch entsteht eine konsistente Informationsbasis, die sowohl intern genutzt als auch standardisiert an Partner weitergegeben werden kann. 
-So könnte die AAS einer Maschine beispielsweise problemlos an einen Betreiber übermittelt werden, wenn dieser einen eigenen digitalen Zwilling erstellen möchte.
+Aus den in dieser Arbeit gewonnenen Erkenntnissen ergibt sich für groninger, dass die AAS ein geeignetes Instrument darstellt, um Maschinendaten strukturiert, interoperabel und maschinenlesbar bereitzustellen. 
+Dadurch entsteht eine konsistente Informationsbasis, die sowohl intern genutzt als auch standardisiert an externe Partner weitergegeben werden kann. 
+So ließe sich beispielsweise die AAS einer Maschine problemlos an einen Betreiber übermitteln, wenn dieser einen eigenen digitalen Zwilling aufbauen möchte.
 
-In der praktischen Anwendung erweist sich der Einsatz der AAS allerdings noch als nicht optimal, da das \acs{plm}-System Agile keine direkte Integration unterstützt. 
-Die Erstellung einzelner \acs{aas} müsste daher gegenwärtig überwiegend manuell erfolgen, was mit erheblichem Aufwand verbunden wäre. 
-Mittelfristig könnte sich dies mit dem geplanten Umstieg auf die CIM Database von CONTACT Software ändern.
-Mit der Erweiterung CONTACT Elements for IoT eröffnen sich dort Möglichkeiten, \acs{aas} automatisiert zu erzeugen und einzubinden. 
-Einerseits könnten \acs{aas} direkt aus \acs{plm}-Einträgen generiert und andererseits von Komponentenherstellern bereitgestellte \acs{aas} in das System übernommen werden. 
-In Kombination entstünde so die Grundlage für eine weitgehend automatisierte Erstellung digitaler Zwillinge.
+In der praktischen Anwendung ist der Einsatz der \acs{aas} allerdings noch eingeschränkt, da das bestehende PLM-System Agile keine direkte Integration unterstützt. 
+Die Erstellung einzelner AAS müsste derzeit manuell erfolgen und wäre mit hohem Aufwand verbunden.
+Mit dem geplanten Umstieg auf die CIM Database von CONTACT Software eröffnen sich für groninger jedoch mittelfristig aussichtsreiche Perspektiven, diesen Prozess deutlich zu vereinfachen. 
+Über CONTACT Elements for IoT könnten AAS einerseits direkt aus PLM-Einträgen generiert und andererseits von Komponentenherstellern bereitgestellte AAS in das System übernommen werden. 
+Es wird empfohlen, dass groninger den geplanten Umstieg gezielt dazu nutzt, die Möglichkeiten einer Integration der AAS in das PLM-System zu erproben, um so die Grundlage für eine skalierbare Erstellung digitaler Zwillinge zu schaffen.
 
 Voraussetzung für eine solche Vorgehensweise ist, dass Zulieferer eigene \acs{aas} in ausreichendem Umfang bereitstellen. 
-Da der Standard bislang nur begrenzt verbreitet ist und erst von wenigen Unternehmen produktiv eingesetzt wird, stehen entsprechende \acs{aas} derzeit allerdings nur selten zur Verfügung. 
-Es ist jedoch davon auszugehen, dass sich dieser Zustand mit der fortschreitenden Digitalisierung in den kommenden Jahren ändern wird.
+Da der Standard bislang erst von wenigen Unternehmen produktiv eingesetzt wird, stehen entsprechende \acs{aas} derzeit allerdings nur begrenzt zur Verfügung. 
+Es ist jedoch zu erwarten, dass sich die Verbreitung der AAS mit der fortschreitenden Digitalisierung in den kommenden Jahren deutlich erhöhen wird. 
+Groninger sollte diesen Trend aktiv beobachten und gegebenenfalls frühzeitig Kooperationen mit relevanten Zulieferern anstreben, um die notwendige Datenbasis sicherzustellen.
 
+Darüber hinaus hat die Arbeit gezeigt, dass eine Kopplung der AAS mit realen Maschinen grundsätzlich möglich ist, etwa zur Erfassung von Betriebs- oder Zustandsdaten. 
+Für groninger wird jedoch empfohlen, hierfür vorrangig spezialisierte Internet of Things (\acs{iot})-Lösungen einzusetzen, beispielsweise im Bereich Condition Monitoring oder OEE.
+Auch für datengetriebene Analysen sollte die AAS nicht als primärer Speicher dienen, sondern vielmehr als übergeordnete Plattform, die zentrale Metadaten und Schnittstellen für den Datenzugriff verwaltet und dadurch die Basis für solche Anwendungen bildet.
 
-Mittelfristig, mit dem geplanten Umstieg auf Contact Elements, 
-+ kurzfristig nicht optimal
-+ PLM-System ist nicht dafür ausgelget mit der AAS zu arbeiten - in Zukunft wird aber auf Contact Elements umgestiegen dann könnte es durchaus sinnn machen
-+ Daten interoperabel Bereitstellen allles an einem ort gebündelt zum Beispiel wenn Betreiber eigenen Digitalen Zwilling, dann aber mit 3-D Simulationen
-+ Iwan wird der digitale Produktpass kommen, dafür wäre es gut geeignet
+Hinsichtlich steigender Anforderungen an Transparenz, insbesondere mit Blick auf regulatorische Vorgaben wie den zukünftig verpflichtenden \acs{dpp}, bietet die AAS erhebliches Potenzial. 
+Auch wenn der \acs{dpp} zunächst nur für ausgewählte Branchen verpflichtend eingeführt wird, ist davon auszugehen, dass die Anforderungen langfristig auch den Sondermaschinenbau erreichen werden. 
+Wie in dieser Arbeit gezeigt, bietet die \acs{aas} hierfür eine geeignete Grundlage, um nachhaltigkeitsbezogene Informationen standardisiert abzubilden und gezielt für unterschiedliche Interessengruppen bereitzustellen. 
+Es wird daher empfohlen, dass groninger die weitere Entwicklung des DPP eng verfolgt und sich frühzeitig strategisch darauf vorbereitet, die AAS als technologische Grundlage für eine künftige Umsetzung zu nutzen.
 
-\newpage
 \subsection{Ausblick auf zukünftige Entwicklungen}
 
 
