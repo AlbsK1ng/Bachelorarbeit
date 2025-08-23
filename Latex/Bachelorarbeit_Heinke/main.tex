@@ -14,7 +14,7 @@
 \usepackage{subcaption}
 \usepackage{tocbibind}
 % Links nicht mit visuller Box [hidebox]
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{bookmark} 
 % \usepackage{cleveref}
 % cleveref sorgt für Probleme mit acronym
@@ -226,7 +226,7 @@
 
 \newpage
 \thispagestyle{empty}
-\cleardoublepage
+% \cleardoublepage
 
 \pagenumbering{arabic}
 %arabische Seitenzahlen im Hauptteil
@@ -239,9 +239,10 @@
 
 \renewcommand{\footrulewidth}{0.4pt}% default is 0pt
 
-\fancyhead[LE, RO]{\rightmark}
+\fancyhead[RE, RO]{\rightmark}
+\fancyfoot[C]{\thepage}
 
-\fancyfoot[LE, RO]{\thepage}% Seitenzahl in Fußzeile (Links auf ungeraden LO und Rechts auf geraden Seiten RE) 
+% \fancyfoot[LE, RO]{\thepage}% Seitenzahl in Fußzeile (Links auf ungeraden LO und Rechts auf geraden Seiten RE) 
 %\fancyfoot[LE, RO]{Albert Heinke 2025}% Name und Jahreszahl in Fußzeile (Links auf geraden LE und Rechts auf ungeraden Seiten RO)
 
 \input{commands.tex}
@@ -278,10 +279,10 @@
 \clearpage
 \newpage
 \begin{appendix}
-  \fancyhead[LE,RO]{ANHANG}
+  \fancyhead[RE,RO]{ANHANG}
   \input{Anhang}
   \clearpage 
-  \fancyhead[LE,RO]{\rightmark} 
+  \fancyhead[RE,RO]{\rightmark} 
 \end{appendix}
 
 \end{document}

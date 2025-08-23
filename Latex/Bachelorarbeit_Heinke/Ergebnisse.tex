@@ -22,9 +22,9 @@ Die eingesetzte Architektur besteht aus mehreren Komponenten, die gemeinsam eine
 Sie basiert vollständig auf containerisierten Diensten, die innerhalb einer gemeinsamen Docker-Umgebung über ein gemeinsames Netzwerk miteinander kommunizieren.
 Dadurch entsteht eine modulare, skalierbare Infrastruktur, die sich flexibel erweitern und an veränderte Anforderungen anpassen lässt.
 
-Als zentrale Plattform zur Bereitstellung und Verwaltung der \acs{aas} dient Eclipse BaSyx.
-Ursprünglich war der Einsatz des AASX Server Blazor vorgesehen, dieser wurde jedoch frühzeitig durch BaSyx ersetzt, da sie eine deutlich flexiblere und funktionsreichere Umgebung für die Umsetzung digitaler Zwillinge bietet.
-Abbildung~\ref{fig:BaSyxArchitektur} zeigt den Aufbau des zugrundeliegenden Systems, das als zentrales BaSyx-Backend die Verwaltung aller AAS-Komponenten übernimmt.
+Als Plattform zur Bereitstellung und Verwaltung der \acs{aas} dient Eclipse BaSyx.
+Ursprünglich war der Einsatz des AASX Server Blazor vorgesehen, dieser wurde jedoch frühzeitig durch BaSyx ersetzt, da sie eine flexiblere und funktionsreichere Umgebung für die Umsetzung digitaler Zwillinge bietet.
+Abbildung~\ref{fig:BaSyxArchitektur} zeigt den Aufbau des eingesetzten Systems, das als zentrales BaSyx-Backend die Verwaltung aller AAS-Komponenten übernimmt.
 
 \begin{figure}[htbp]
     \centering
@@ -32,6 +32,7 @@ Abbildung~\ref{fig:BaSyxArchitektur} zeigt den Aufbau des zugrundeliegenden Syst
     \caption{Architektur des BaSyx-Backends}
     \label{fig:BaSyxArchitektur}
 \end{figure}
+\vspace{-0.5em}
 
 Der Discovery Service übernimmt die Auflösung einer Asset-\acs{id} (globalAssetId) in die zugehörige \acs{aas}-\acs{id} und ermöglicht so das gezielte Auffinden einer \acs{aas} im Gesamtsystem. 
 Die Registries dienen als Verzeichnisse aller registrierten \acs{aas} und Submodelle einschließlich ihrer Endpunkte innerhalb der \acs{aas} Environment, wobei die \acs{aas} Registry optional auch Referenzen auf die Submodel Registry (SM Registry) enthalten kann. 
@@ -51,19 +52,28 @@ Der Datengenerator und der Maschinensimulator simulieren die robocell-Maschine u
 Beide Anwendungen stellen ihre Daten über einen \acs{opcua} Server bereit und sind über die Databridge direkt an die AAS Environment im BaSyx-Backend angebunden.
 Zusätzlich werden die vom Datengenerator simulierten Werte mithilfe von Telegraf kontinuierlich in eine InfluxDB geschrieben, wodurch eine historische Datenbasis entsteht. 
 
+% \begin{figure}[htbp]
+%     \centering
+%         \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf}
+%     \caption{Dynamische Erweiterung der BaSyx-Architektur}
+%     \label{fig:DynamischeErweiterungArchitektur}
+% \end{figure}
+
+\newpage
 \begin{figure}[htbp]
     \centering
-        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterung.pdf}
+        \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterungNeu.pdf}
     \caption{Dynamische Erweiterung der BaSyx-Architektur}
     \label{fig:DynamischeErweiterungArchitektur}
 \end{figure}
 
+\vspace{-0.5em}
 Zur Weiterverarbeitung und Visualisierung, sowohl der statischen Inhalte der AAS als auch der durch die dynamische Erweiterung ergänzten Echtzeit- und Zeitreihendaten, kommt die AAS Web UI zum Einsatz. 
 Alternativ könnten auch benutzerdefinierte Anwendungen verwendet werden, die beispielsweise zusätzliche Analysen ermöglichen oder spezifische Anforderungen erfüllen.
 
 Die AAS Web UI greift über die standardisierten Schnittstellen der Komponenten des zuvor vorgestellten BaSyx-Backends auf die Registrierungsdaten der AAS sowie deren Submodelle und Inhalte zu. 
 Statische Daten und Echtzeitdaten werden dabei direkt aus dem Submodel Repository abgefragt. 
-Bei Zeitreihendaten hingegen ist nicht der eigentliche Dateninhalt in der AAS gespeichert, sondern lediglich ein Verweis auf den zugehörigen Endpunkt in der InfluxDB hinterlegt. 
+Bei Zeitreihendaten hingegen ist nicht der eigentliche Dateninhalt in der AAS gespeichert, sondern lediglich ein Verweis auf den Endpunkt der InfluxDB hinterlegt. 
 Die AAS Web UI nutzt diesen Endpunkt, um die historischen Daten direkt aus der Datenbank abzurufen und in der Web-Oberfläche zu visualisieren.
 
 \subsubsection{Statische Submodelle}
@@ -134,7 +144,9 @@ Dies ermöglicht eine modulare und herstellerübergreifende Integration, da auch
 \vspace{-0.5em}
 
 Beide Submodelle dienen der Bereitstellung und Klassifizierung zentraler Maschinendateien. 
-Das Submodell Dokumentation umfasst technische Unterlagen wie die Betriebsanleitung oder die Netzwerkübersicht, während das Submodell 3D-Modelle CAD-Daten zur Geometrie beinhaltet. 
+Das Submodell Dokumentation umfasst technische Unterlagen wie%
+\pagebreak
+~die Betriebsanleitung oder die Netzwerkübersicht, während das Submodell 3D-Modelle CAD-Daten zur Geometrie beinhaltet. 
 Alle Dateien sind als File-Elemente direkt in die Struktur der AAS eingebettet und jeweils in eigenen \acsp{smc} organisiert, die zusätzlich Metainformationen zu Identifikation, Klassifikation und Versionierung enthalten. 
 Das Submodell 3D-Modelle könnte darüber hinaus um weitere Metadaten, etwa zu Darstellungsoptionen oder Geometrieinformationen, ergänzt werden, was im Demonstrator jedoch nicht umgesetzt wurde. 
 Dadurch ermöglichen beide Submodelle nicht nur das Einbetten von Dateien, sondern auch deren eindeutige Beschreibung und Rückverfolgbarkeit über den gesamten Lebenszyklus hinweg.
@@ -146,7 +158,7 @@ Das Submodell Wartung bildet den digitalen Wartungsplan der Maschine ab.
 Für jede wartungsrelevante Komponente sind in eigenen \acsp{smc} letzte Wartungszeitpunkte, Intervalle, zuständige Personen oder Organisationen sowie die vorgesehenen Maßnahmen hinterlegt. 
 Es ermöglicht damit die strukturierte Verwaltung sowohl bereits durchgeführter als auch anstehender Wartungen und gewährleistet eine nachvollziehbare Dokumentation. 
 Darüber hinaus schafft das Submodell die Grundlage für eine dynamische Erweiterung. 
-So könnte beispielsweise ein Betriebsstundenzähler angebunden werden, der automatisch Wartungsbedarf erkennt, oder es könnte in Kombination mit Predictive-Maintenance-Ansätzen genutzt werden, um auf Basis von Sensordaten proaktiv Wartungsmaßnahmen abzuleiten und diese direkt in der AAS darzustellen. 
+So könnte beispielsweise ein Betriebsstundenzähler angebunden werden, der automatisch Wartungsbedarf erkennt, oder es könnte in Kombination mit \acs{pm}-Ansätzen genutzt werden, um auf Basis von Sensordaten proaktiv Wartungsmaßnahmen abzuleiten und diese direkt in der AAS darzustellen. 
 
 \subsubsection*{Zusammenfassung}
 \vspace{-0.5em}
@@ -341,7 +353,7 @@ Diese Ansätze wurden aufgrund begrenzter Rechenressourcen im Rahmen dieser Arbe
 Dennoch zeigt sich, dass das gewählte Konzept grundsätzlich umsetzbar ist und sich für eine Einbettung in industrielle Szenarien eignet. 
 In Verbindung mit realen Maschinendaten könnten erkannte Anomalien genutzt werden, um proaktive Wartungsmaßnahmen einzuleiten. 
 Dadurch ließe sich die Anlagenverfügbarkeit erhöhen und ungeplante Stillstandszeiten verringern.
-Werden neben Sensordaten zusätzlich technische Stammdaten oder standardisierte Beschreibungen berücksichtigt, wie sie auch im AAS-Demonstrator hinterlegt sind, wird eine noch umfassendere Analyse möglich, die zugleich die Grundlage für weiterführende Predictive-Maintenance-Ansätze bilden könnte.
+Werden neben Sensordaten zusätzlich technische Stammdaten oder standardisierte Beschreibungen berücksichtigt, wie sie auch im AAS-Demonstrator hinterlegt sind, wird eine noch umfassendere Analyse möglich, die zugleich die Grundlage für weiterführende \acs{pm}-Ansätze bilden könnte.
 
 \newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
@@ -452,7 +464,7 @@ Das Skript übernimmt auch die Registrierung im BaSyx-Backend, sodass die erzeug
 \end{figure}
 
 Der entwickelte Ansatz verdeutlicht, dass sich der manuelle Modellierungsaufwand im Package Explorer durch den teilautomatisierten Prozess erheblich reduzieren lässt. 
-In diesem Anwendungsfall wurden zwar statische Beispieldaten eingesetzt, in einer produktiven Umgebung könnten jedoch die technischen Produktinformationen direkt aus bestehenden IT-Systemen übernommen werden. 
+In diesem Anwendungsfall wurden zwar statische Beispieldaten eingesetzt, in einer produktiven Umgebung könnten jedoch die technischen Produktinformationen direkt aus bestehenden \acs{it}-Systemen übernommen werden. 
 Bei groninger stammen diese primär aus dem PLM-System Agile. 
 Eine entsprechende Anbindung war im Rahmen dieser Arbeit jedoch nicht umsetzbar.
 
