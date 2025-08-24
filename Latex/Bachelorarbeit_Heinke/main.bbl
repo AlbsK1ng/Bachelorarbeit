@@ -360,29 +360,6 @@
     \field{urlyear}{2025}
   \endentry
 
-  \entry{DLEinordnung}{misc}{}{}
-    \name{author}{1}{}{%
-      {{hash=GAT}{%
-         family={GmbH},
-         familyi={G\bibinitperiod},
-         given={Alexander\bibnamedelima Thamm},
-         giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{GAT1}
-    \strng{fullhash}{GAT1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Deep Learning: Kompakt erklärt}
-    \verb{url}
-    \verb https://www.alexanderthamm.com/de/blog/deep-learning-in-der-praxis/
-    \endverb
-    \field{year}{2025}
-    \field{urlday}{24}
-    \field{urlmonth}{06}
-    \field{urlyear}{2025}
-  \endentry
-
   \entry{DLDefinition}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=BB}{%
@@ -405,6 +382,29 @@
     \field{isbn}{978-3-662-67276-1}
     \field{title}{Maschinelles Lernen - Grundlagen und Anwendungen}
     \field{year}{2023}
+  \endentry
+
+  \entry{DLEinordnung}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=GAT}{%
+         family={GmbH},
+         familyi={G\bibinitperiod},
+         given={Alexander\bibnamedelima Thamm},
+         giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GAT1}
+    \strng{fullhash}{GAT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Deep Learning: Kompakt erklärt}
+    \verb{url}
+    \verb https://www.alexanderthamm.com/de/blog/deep-learning-in-der-praxis/
+    \endverb
+    \field{year}{2025}
+    \field{urlday}{24}
+    \field{urlmonth}{06}
+    \field{urlyear}{2025}
   \endentry
 
   \entry{GenerativeKI}{misc}{}{}
@@ -855,6 +855,32 @@
     \field{version}{3.0.3}
     \field{month}{10}
     \field{year}{2024}
+    \field{urlday}{26}
+    \field{urlmonth}{05}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{I4Sprache}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=PI}{%
+         family={4.0},
+         familyi={\bibinitperiod},
+         given={Plattform\bibnamedelima Industrie},
+         giveni={P\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PI1}
+    \strng{fullhash}{PI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{I4.0-Sprache - Vokabular, Nachrichtenstruktur und semantische
+  Interaktionsprotokolle der I4.0-Sprache}
+    \verb{url}
+    \verb https://www.plattform-i40.de/IP/Redaktion/DE/Downloads/Publikation/hm
+    \verb -2018-sprache.html
+    \endverb
+    \field{month}{04}
+    \field{year}{2018}
     \field{urlday}{26}
     \field{urlmonth}{05}
     \field{urlyear}{2025}
@@ -1773,6 +1799,30 @@
     \field{urlyear}{2025}
   \endentry
 
+  \entry{OpenID}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=FO}{%
+         family={Foundation},
+         familyi={F\bibinitperiod},
+         given={OpenID},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FO1}
+    \strng{fullhash}{FO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{OpenID Connect Core 1.0 incorporating errata set 2}
+    \verb{url}
+    \verb https://openid.net/specs/openid-connect-core-1_0.html
+    \endverb
+    \field{month}{12}
+    \field{year}{2023}
+    \field{urlday}{21}
+    \field{urlmonth}{07}
+    \field{urlyear}{2025}
+  \endentry
+
   \entry{nodejs}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=FO}{%
@@ -1782,8 +1832,8 @@
          giveni={O\bibinitperiod},
       }}%
     }
-    \strng{namehash}{FO1}
-    \strng{fullhash}{FO1}
+    \strng{namehash}{FO2}
+    \strng{fullhash}{FO2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Introduction to Node.js}
@@ -2011,6 +2061,31 @@
     \endverb
     \field{year}{o. J.}
     \field{urlday}{18}
+    \field{urlmonth}{08}
+    \field{urlyear}{2025}
+  \endentry
+
+  \entry{CONTACT}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=SC}{%
+         family={Software},
+         familyi={S\bibinitperiod},
+         given={CONTACT},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SC1}
+    \strng{fullhash}{SC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{CONTACT Elements for IoT - Operative Exzellenz mit
+  IoT-Software}
+    \verb{url}
+    \verb https://www.contact-software.com/de/produkte/iot-software-elements-fo
+    \verb r-iot/
+    \endverb
+    \field{year}{o. J.}
+    \field{urlday}{20}
     \field{urlmonth}{08}
     \field{urlyear}{2025}
   \endentry

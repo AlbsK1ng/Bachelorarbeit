@@ -19,10 +19,10 @@ Im weiteren Verlauf wird die \acs{aas} mit der Eclipse BaSyx-Plattform bereitges
 Dabei werden sowohl Echtzeitdaten über \acs{opcua} als auch Zeitreihendaten über eine InfluxDB eingebunden.
 
 Nach der Implementierung des digitalen Zwillings wird ein \acs{ki}-Modell zur Analyse und Optimierung der darin enthaltenen Daten vorgestellt und prototypisch umgesetzt.
-Außerdem wird die Entwicklung von zwei exemplarischen Anwendungsfällen betrachtet.
+Zudem wird die Entwicklung von zwei exemplarischen Anwendungsfällen betrachtet.
 Im ersten Anwendungsfall steht die Umsetzung eines \acs{dpp} im Vordergrund. 
-Der Fokus liegt hierbei auf der strukturierten Abbildung des \acs{pcf} sowie der Implementierung differenzierter Zugriffsrechte auf die verschiedenen Bestandteile.
-Im zweiten Anwendungsfall wird gezeigt, wie \acs{aas}-Instanzen automatisiert generiert und bereitgestellt werden können.
+Der Fokus liegt auf der strukturierten Abbildung des \ac{pcf} sowie der Implementierung differenzierter Zugriffsrechte auf die verschiedenen Bestandteile.
+Der zweite Anwendungsfall zeigt, wie \acs{aas}-Instanzen automatisiert generiert und bereitgestellt werden können.
 
 \subsection{Konzeptionierung des digitalen Zwillings}
 Ziel dieses Abschnittes ist es, eine grundlegende Basis für die Erstellung des digitalen Zwillings zu schaffen.
@@ -68,7 +68,7 @@ Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, 
 
 \newpage
 Im Rahmen dieser Arbeit ist die Modellierung der \acs{aas} bzw. der verschiedenen Submodelle als Instanz vorgesehen.
-Auch wenn es sich bei dem Abfüll- und Verschließmodul grundsätzlich um ein generisches Modul innerhalb der robocell-Linie handelt und somit technisch gesehen als Typ klassifiziert werden könnte, steht in diesem Projekt die exemplarische Umsetzung eines konkreten digitalen Zwillings im Vordergrund.
+Auch wenn es sich bei dem Abfüll- und Verschließmodul grundsätzlich um ein generisches Modul innerhalb der robocell-Linie handelt und somit technisch gesehen als Typ klassifiziert werden könnte, steht in diesem Projekt die Umsetzung eines konkreten digitalen Zwillings im Vordergrund.
 Dies begründet sich vor allem durch die vorgesehene Anbindung von Echtzeit- und Zeitreihendaten sowie die Abbildung einer Betriebsumgebung, was dem digitalen Zwilling einen klaren Instanzcharakter verleiht.
 Zudem erleichtert dies die spätere Demonstration der \acs{aas} im Industrie-4.0-Systemkontext.
 
@@ -85,7 +85,7 @@ Die Modellierung beginnt mit dem Erstellen eines neuen \acs{aas}-Pakets im Packa
 Dieses dient als Container für die digitalen Inhalte eines Assets.  
 In der geöffneten Umgebung lässt sich eine neue \acs{aas} anlegen, die sowohl allgemeine als auch assetspezifische Daten enthält. 
 Abbildung~\ref{fig:NeuesAASPaket} zeigt den initialen Aufbau im Package Explorer, der im weiteren Verlauf sukzessive um Submodelle und deren Inhalte erweitert wird.
-Dateien, wie ein Titelbild für die robocell können dabei bereits zu Beginn in die \acs{aas}-Umgebung eingebettet werden und sind ein integraler Bestandteil des digitalen Zwillings.
+Dateien, wie ein Titelbild für das Abfüll- und Verschließmodul können dabei bereits zu Beginn in die \acs{aas}-Umgebung eingebettet werden und sind ein integraler Bestandteil des digitalen Zwillings.
 
 Innerhalb dieses Pakets müssen zunächst die Metadaten der \acs{aas} sowie des zugehörigen Asset spezifiziert werden.
 Neben der Auswahl des Asset-Typs ist insbesondere die eindeutige Identifikation von zentraler Bedeutung.
@@ -105,7 +105,7 @@ Für erste Modellierungszwecke empfiehlt es sich, auf automatisch generierte Bei
 \subsubsection*{Strukturierung durch Submodelle}
 \vspace{-0.5em}
 
-Im nächsten Schritt müssen die benötigten Submodelle zur \acs{aas} hinzugefügt werden.
+Als nächstes müssen die benötigten Submodelle zur \acs{aas} hinzugefügt werden.
 Diese lassen sich entweder als Instanz, Typ oder auch Template anlegen, was eine flexible Modellierung je nach Anwendungsfall ermöglicht.
 Jedes Submodell erhält dabei wie die \acs{aas} auch eine eindeutige \acs{id}, über die diese später identifiziert werden können.
 Zusätzlich können optionale Administrationsinformationen angegeben werden, wie beispielsweise die Versionsnummer oder der Name des Autors.
@@ -136,7 +136,7 @@ Ein vertiefter Ansatz zur Template-Nutzung findet sich in Kapitel~\ref{chap:Erst
 
 Nach dem Strukturaufbau können konkrete Inhalte wie Werte, Dokumente oder Referenzen eingepflegt werden.
 Dies beschränkt sich jedoch auf statische Submodelle wie Technische Daten oder Dokumentation.
-Dynamische Inhalte, etwa Betriebsdaten werden nicht direkt im Package Explorer gepflegt, sondern über externe Datenquellen (z.B. Maschinensimulator oder Datengenerator) zur Laufzeit angebunden.
+Dynamische Inhalte, etwa Betriebsdaten werden nicht direkt im Package Explorer gepflegt, sondern über externe Datenquellen (Maschinensimulator und Datengenerator) zur Laufzeit angebunden.
 
 \subsubsection*{Semantische Beschreibung mit Concept Descriptions}
 \vspace{-0.5em}
@@ -195,7 +195,7 @@ Mit dem Befehl
 kann die Validierung der zuvor erstellten \acs{aas} gestartet werden.
 Unterstützt werden sowohl AASX- als auch \acs{json}-Dateien.
 Dabei wird zunächst geprüft, ob diese formal korrekt aufgebaut sind, insbesondere hinsichtlich der internen Struktur und ihrer Beziehungen.
-Anschließend erfolgt die Kontrolle der enthaltenen \acs{aas} gegen die Metamodell-Spezifikationen (Teil~1 \cite{SpezifikationPart1} und%
+Daraufhin folgt die Kontrolle der enthaltenen \acs{aas} gegen die Metamodell-Spezifikationen (Teil~1 \cite{SpezifikationPart1} und%
 \pagebreak 
 ~3a \cite{SpezifikationPart3a}).
 Zuletzt erfolgt ein Abgleich der Submodelle mit den zugehörigen Templates, sofern diese für das jeweilige Submodell definiert wurden.
@@ -239,7 +239,7 @@ Die Konfiguration erfolgt über Umgebungsvariablen sowie separate Konfigurations
 
 Nach erfolgreichem Start der BaSyx-Umgebung stehen verschiedene Möglichkeiten zur Verfügung, um eine \acs{aas} bereitzustellen und in das System zu integrieren. 
 Welche Methode dabei zum Einsatz kommt, hängt stark von den jeweiligen Anforderungen und Rahmenbedingungen des Anwendungsszenarios ab.
-Nachfolgend werden drei ausgewählte Ansätze zur Bereitstellung näher betrachtet.
+Nachfolgend werden drei ausgewählte Ansätze zur Bereitstellung näher betrachtet, die in dieser Arbeit Anwendung finden.
 
 \vspace{0.5em}
 \noindent\textbf{A. Volume}\\
@@ -265,8 +265,7 @@ Dabei kann nicht einfach eine AASX-Datei hochgeladen werden.
 Stattdessen müssen die \acs{aas}, ihre Submodelle sowie deren Beziehungen explizit über die bereitgestellten Schnittstellen des BaSyx-Systems erstellt werden. 
 Dies erfolgt durch das Senden strukturierter \acs{json}-Daten im Body der jeweiligen \acs{http}-Anfragen.
 Ein typischer Ablauf dieser Registrierung ist in Tabelle \ref{tab:BereitstellungInBaSyx} dargestellt. 
-Sie zeigt die notwendigen Schritte sowie die zugehörigen \acs{rest}-Endpunkte.
-Diese sind dabei verschiedenen Services innerhalb der AAS Environment zugeordnet.
+Sie zeigt die notwendigen Schritte sowie die zugehörigen \acs{rest}-Endpunkte, die den jeweiligen Repositories der AAS Environment zugeordnet sind.
 
 \input{TabelleBereitstellungBaSyxMitAPI.tex}
 
@@ -289,7 +288,7 @@ Diese Properties sollen im weiteren Verlauf dynamisch mit den über \acs{opcua} 
     \centering
     % 0.88
     \includegraphics[width=1\textwidth]{Bilder/OPCUA/ProcessData.pdf}
-    \caption[Struktur des Submodells Prozessdaten]{Struktur des Submodells Prozessdaten}
+    \caption[Struktur Submodell Prozessdaten]{Struktur Submodell Prozessdaten}
     \label{fig:SubmodellProzessdaten}
 \end{figure}
 \vspace{-0.5em}
@@ -353,7 +352,7 @@ Der Platzhalter \{smId\} steht dabei für die Base64-kodierte \acs{id} des Submo
 }
 \end{lstlisting}
 
-Nach erfolgreicher Konfiguration übernimmt die Databridge die automatisierte Übertragung der OPC-UA-Werte in die entsprechenden Properties des Submodells.
+Nach erfolgreicher Konfiguration übernimmt die Databridge die automatisierte Übertragung der \acs{opcua} Werte in die entsprechenden Properties des Submodells.
 Dieses Prinzip lässt sich nicht nur auf Prozesswerte anwenden, sondern auch zur Abbildung des Maschinenzustands oder anderer dynamischer Betriebsdaten nutzen.
 Damit stellt die Databridge eine zentrale Komponente zur Echtzeitanbindung externer Datenquellen dar und trägt wesentlich zur dynamischen Erweiterung der \acs{aas} bei.
 
@@ -382,19 +381,19 @@ Abbildung \ref{fig:SMTTimeSeriesData} zeigt den strukturellen Aufbau, wobei auss
     \centering
     % 0.88
     \includegraphics[width=1\textwidth]{Bilder/TimeSeries/TimeSeriesData.pdf}
-    \caption[Struktur des Submodel Templates Time Series Data]{Struktur des Submodel Templates Time Series Data (in Anlehnung an \cite{SpezifikationTimeSeriesData})}
+    \caption[Struktur \acs{smt} Time Series Data]{Struktur \acs{smt} Time Series Data (in Anlehnung an \cite{SpezifikationTimeSeriesData})}
     \label{fig:SMTTimeSeriesData}
 \end{figure}
 
 Zuerst müssen die Metadaten eingetragen werden. 
 Dazu gehören ein eindeutiger Name, eine Beschreibung sowie die Festlegung der Struktur der aufzuzeichnenden Datenpunkte in der \acs{smc} Records.
 Ein Record kann mit einer Spaltenbeschreibung in einer Tabelle verglichen werden.
-Er beschreibt, welche Variablen, in diesem Fall Druck und Temperatur, in einem Zeitreihen-Datensatz enthalten sind und wie diese zu interpretieren sind.
+Er beschreibt, welche Variablen, in diesem Fall Druck und Temperatur, ein Zeitreihendatensatz enthält und wie diese zu interpretieren sind.
 
-Anschließend folgt die Konfiguration des LinkedSegments. 
-Dieses stellt die eigentliche Verbindung zu den extern gespeicherten Zeitreihendaten her.
-Hierfür sind sowohl der Datenendpunkt als als auch die Query, mit der die gewünschten Werte ausgelesen werden sollen, zu spezifizieren.
-Im vorliegenden Fall handelt es sich um die Adresse des InfluxDB-Containers sowie die Abfrage, mit der die Werte für Druck und Temperatur aus der zugehörigen Tabelle extrahiert werden können.
+Die Konfiguration des LinkedSegments bildet den nächsten Schritt.
+Dieses stellt die eigentliche Verbindung zu den extern gespeicherten Zeitreihendaten her. 
+Hierfür sind sowohl der Datenendpunkt als auch die Abfrage zu spezifizieren, mit der die gewünschten Werte ausgelesen werden können. 
+Im vorliegenden Fall handelt es sich um die Adresse des InfluxDB-Containers sowie die Abfrage, mit der die Werte für Druck und Temperatur aus der zugehörigen Tabelle extrahiert werden. 
 Dabei ist zu beachten, dass der entsprechende Port der InfluxDB nach außen freigegeben ist, da andernfalls kein Zugriff durch externe Anwendungen möglich ist.
 
 Ergänzend können weitere Metadaten angegeben werden, beispielsweise die Abtastrate, der durch das Segment abgedeckte Zeitraum oder ein recordCount, der die erwartete Anzahl an Einträgen innerhalb dieses Zeitfensters beschreibt.
@@ -404,7 +403,7 @@ Alle relevanten Informationen zur externen Speicherung der Zeitreihendaten sind 
 \subsection{KI-Modell zur Optimierung}
 In diesem Abschnitt wird ein Konzept zur Optimierung der zustandsbasierten Prozessüberwachung auf Basis von \acs{ki} vorgestellt und prototypisch umgesetzt.
 Ziel ist es, mithilfe maschinellen Lernens potenzielle Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen.
-Damit wird eine Grundlage für proaktive Instandhaltungsmaßnahmen geschaffen, die zur Optimierung des Betriebs beitragen können.
+Damit wird eine Grundlage für proaktive Instandhaltungsmaßnahmen geschaffen, die zur Optimierung des Betriebs einer Maschine beitragen können.
 
 
 % und dadurch eine Grundlage für prädiktive Instandhaltungsmaßnahmen zu schaffen.
@@ -425,7 +424,7 @@ Der prinzipielle Aufbau eines Autoencoders ist in Abbildung \ref{fig:Autoencoder
     \centering
     % 0.88
     \includegraphics[width=1\textwidth]{Bilder/Autoencoder/AutoencoderModell.pdf}
-    \caption[Architektur eines Autoencoders]{Architektur eines Autoencoders (in Anlehnung an \cite{AutoencoderBild})}
+    \caption[Aufbau eines Autoencoders]{Aufbau eines Autoencoders (in Anlehnung an \cite{AutoencoderBild})}
     \label{fig:Autoencoder}
 \end{figure}
 
@@ -487,6 +486,8 @@ Dabei dient der Rekonstruktionsfehler nicht mehr zur Optimierung, sondern als Ma
 Überschreitet der Fehler eines Zeitfensters einen definierten Schwellenwert, so liegt eine Anomalie vor.
 
 \newpage
+% Seitenumbruch im Inhaltsverzeichnis
+\addtocontents{toc}{\protect\newpage}
 \subsection{Anwendungsfall Digitaler Produktpass}
 Angesichts steigender Anforderungen an Nachhaltigkeit und Transparenz über den gesamten Produktlebenszyklus gewinnt der \acs{dpp} zunehmend an Bedeutung.
 Aufbauend auf dem von \acs{zvei} und \acs{idta} vorgestellten Konzept des \acs{dpp40}, das unter anderem in einem \acs{pcf}-Showcase \cite{PCFShowcas} demonstriert wird, wird in diesem Anwendungsfall untersucht, wie sich zentrale Herausforderungen mithilfe der \acs{aas} umsetzen lassen.
@@ -508,7 +509,8 @@ Die konkreten Werte bleiben zunächst leer und werden im weiteren Verlauf dynami
 
 Zur Demonstration wurde eine Auswahl von acht im Abfüll- und Verschließmodul der robocell verbauten Siemens-Steuerungskomponenten getroffen, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule.
 Die Entscheidung für Siemens basiert darauf, dass für deren Produkte bereits \acs{aas}-Strukturen mit nachhaltigkeitsbezogenen Informationen vorliegen, auch wenn diese derzeit noch nicht öffentlich verfügbar sind.
-Die zugehörigen \acs{aas} wurden im Rahmen des Projekts auf persönliche Anfrage von der Siemens AG bereitgestellt und enthalten jeweils ein eigenes Submodell gemäß dem \acs{smt} \acs{cf}.
+Die zugehörigen \acs{aas} wurden im Rahmen des Projekts auf persönliche Anfrage von der Siemens AG bereitgestellt. 
+Dabei enthalten sie jeweils ein eigenes Submodell gemäß dem \acs{smt} \acs{cf}.
 
 \clearpage
 Die Referenzierung der Komponenten erfolgt im \acs{cf}-Submodell der \acs{aas} des Abfüll- und Verschließmoduls, nachfolgend als Haupt-\acs{aas} bezeichnet.
@@ -524,7 +526,7 @@ Die Aggregation erfolgt damit zentral und serverseitig, anstatt direkt im Plugin
 
 Der Microservice liest die im \acs{cf}-Submodell des Abfüll- und Verschließmoduls referenzierten Komponenten aus, fasst deren \acs{pcf}-Werte zusammen und schreibt die berechneten CO\textsubscript{2}-Äquivalente in die vorbereiteten \acsp{smc} der Haupt-\acs{aas} zurück.
 Zusätzlich können weitere Metadaten wie die verwendete Berechnungsmethode oder der Gültigkeitszeitraum berücksichtigt werden.
-Da diese Werte im vorliegenden Anwendungsfall bei allen Komponenten identisch sind, ist keine Differenzierung erforderlich.
+Da diese Werte im vorliegenden Anwendungsfall jedoch bei allen Komponenten identisch sind, ist keine Differenzierung erforderlich.
 
 \subsubsection{Zugriffsrechte und Datensicherheit}
 
@@ -544,11 +546,11 @@ Ein Benutzer kann einer oder mehreren Rollen gleichzeitig zugeordnet sein.
 
 Jedes Benutzerkonto verfügt dabei über einen eindeutigen Benutzernamen sowie ein initiales Passwort zur Authentifizierung.  
 Zur Erhöhung der Sicherheit kann dieses Passwort als temporär markiert werden, wodurch der Benutzer bei der ersten Anmeldung zu einer Änderung gezwungen wird.  
-Darüber hinaus bietet Keycloak ebenfalls die Möglichkeit, sogenannte Required Actions zu definieren, etwa zur E-Mail-Verifizierung oder zur erzwungenen Passwortänderung beim nächsten Login.  
+Darüber hinaus bietet Keycloak ebenfalls die Möglichkeit, sogenannte Required Actions (erforderliche Aktionen) zu definieren, etwa zur E-Mail-Verifizierung oder zur erzwungenen Passwortänderung beim nächsten Login.  
 Dies erlaubt eine flexible Anpassung des Authentifizierungsprozesses an projektspezifische Sicherheitsanforderungen.
 
 Neben der Verwaltung menschlicher Benutzer unterstützt Keycloak auch die Administration technischer Clients, die z.B. maschinelle Anwendungen oder externe Systeme repräsentieren.  
-Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutiger Client-\acs{id} und einem geheimen Schlüssel (Client Secret) gemäß dem OpenID Connect-Protokoll.  
+Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutiger Client-\acs{id} und einem geheimen Schlüssel (Client Secret) gemäß dem OpenID Connect-Protokoll \cite{OpenID}.  
 Für jeden Client kann optional ein Service Account aktiviert werden, der als technisches Benutzerkonto agiert und, analog zu realen Benutzern, mit spezifischen Rollen ausgestattet ist.  
 Dies ermöglicht eine differenzierte Zugriffsteuerung auch für automatisierte Systemzugriffe.
 

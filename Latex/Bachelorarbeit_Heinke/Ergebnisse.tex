@@ -18,18 +18,20 @@ Anschließend werden die im Demonstrator abgebildeten Aspekte der Maschine besch
 Den Abschluss bildet eine kurze Reflexion über zentrale Herausforderungen, die während der Implementierung aufgetreten sind.
 
 \subsubsection{Systemarchitektur}
-Die eingesetzte Architektur besteht aus mehreren Komponenten, die gemeinsam einen aktiven digitalen Zwilling im Sinne einer Typ-2-\acs{aas} ermöglichen.
-Sie basiert vollständig auf containerisierten Diensten, die innerhalb einer gemeinsamen Docker-Umgebung über ein gemeinsames Netzwerk miteinander kommunizieren.
-Dadurch entsteht eine modulare, skalierbare Infrastruktur, die sich flexibel erweitern und an veränderte Anforderungen anpassen lässt.
 
-Als Plattform zur Bereitstellung und Verwaltung der \acs{aas} dient Eclipse BaSyx.
-Ursprünglich war der Einsatz des AASX Server Blazor vorgesehen, dieser wurde jedoch frühzeitig durch BaSyx ersetzt, da sie eine flexiblere und funktionsreichere Umgebung für die Umsetzung digitaler Zwillinge bietet.
-Abbildung~\ref{fig:BaSyxArchitektur} zeigt den Aufbau des eingesetzten Systems, das als zentrales BaSyx-Backend die Verwaltung aller AAS-Komponenten übernimmt.
+Die Architektur besteht aus mehreren Komponenten, die zusammen einen aktiven digitalen Zwilling im Sinne einer Typ-2-\acs{aas} ermöglichen.
+Sie basiert auf containerisierten Diensten, die in einer gemeinsamen Docker-Umgebung verwaltet werden und über ein internes Netzwerk miteinander kommunizieren.
+Der modulare Aufbau erleichtert Erweiterungen und Anpassungen und schafft so eine skalierbare Infrastruktur für unterschiedliche Anforderungen.
 
+Als Laufzeitumgebung zur Bereitstellung und Verwaltung der \acs{aas} kommt Eclipse BaSyx zum Einsatz.
+Der ursprünglich vorgesehene AASX Server Blazor wurde zugunsten von BaSyx ersetzt, da die Plattform mehr Flexibilität und zusätzliche Funktionen für die Umsetzung digitaler Zwillinge bietet.
+Abbildung~\ref{fig:BaSyxArchitektur} zeigt den Aufbau des Systems, das als zentrales BaSyx-Backend für die Verwaltung aller \acs{aas}-Komponenten zuständig ist.
+
+\newpage
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/Systemarchitektur/BaSyx.pdf}
-    \caption{Architektur des BaSyx-Backends}
+    \caption{Systemarchitektur BaSyx-Backend}
     \label{fig:BaSyxArchitektur}
 \end{figure}
 \vspace{-0.5em}
@@ -48,7 +50,7 @@ Zudem sind sie an eine gemeinsame MongoDB angebunden, in der sämtliche Daten pe
 Die dynamische Erweiterung ergänzt die Kernarchitektur um die Fähigkeit zur Verarbeitung von Echtzeit- und Zeitreihendaten. 
 Abbildung~\ref{fig:DynamischeErweiterungArchitektur} zeigt den Aufbau der zusätzlichen Komponenten sowie deren Zusammenspiel mit dem bestehenden System.
 
-Der Datengenerator und der Maschinensimulator simulieren die robocell-Maschine und erzeugen sowohl Zustands- als auch kontinuierlich Prozessdaten. 
+Der Datengenerator und der Maschinensimulator simulieren das Abfüll- und Verschließmodul und erzeugen sowohl Zustands- als auch Prozessdaten. 
 Beide Anwendungen stellen ihre Daten über einen \acs{opcua} Server bereit und sind über die Databridge direkt an die AAS Environment im BaSyx-Backend angebunden.
 Zusätzlich werden die vom Datengenerator simulierten Werte mithilfe von Telegraf kontinuierlich in eine InfluxDB geschrieben, wodurch eine historische Datenbasis entsteht. 
 
@@ -63,11 +65,11 @@ Zusätzlich werden die vom Datengenerator simulierten Werte mithilfe von Telegra
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterungNeu.pdf}
-    \caption{Dynamische Erweiterung der BaSyx-Architektur}
+    \caption{Erweiterung der BaSyx-Architektur}
     \label{fig:DynamischeErweiterungArchitektur}
 \end{figure}
 
-\vspace{-0.5em}
+% \vspace{-0.5em}
 Zur Weiterverarbeitung und Visualisierung, sowohl der statischen Inhalte der AAS als auch der durch die dynamische Erweiterung ergänzten Echtzeit- und Zeitreihendaten, kommt die AAS Web UI zum Einsatz. 
 Alternativ könnten auch benutzerdefinierte Anwendungen verwendet werden, die beispielsweise zusätzliche Analysen ermöglichen oder spezifische Anforderungen erfüllen.
 
@@ -90,7 +92,7 @@ Die grundlegende Struktur der weiteren statischen Submodelle ist im Anhang~\ref{
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/AASrobocellTestAuflösung.PNG}
-    \caption{Gesamtübersicht der \acs{aas} des Abfüll- und Verschließmoduls}
+    \caption{\acs{aas} des Abfüll- und Verschließmoduls}
     \label{fig:PackageExplorerRobocell}
 \end{figure}
 
@@ -107,13 +109,13 @@ Darüber hinaus bietet es den Vorteil, dass auch zusätzliche Dateien wie Zertif
 Das Submodell Technische Daten dient als technisches Datenblatt der Maschine.  
 Es gliedert sich in die Bereiche Allgemeine Informationen sowie Technische Eigenschaften. 
 Letztere sind in mehreren \acsp{smc} organisiert, beispielsweise für Produktionsmedien, Umgebungsbedingungen, elektrische Daten oder den Verarbeitungsbereich. 
-Die einzelnen \acsp{smc} enthalten überwiegend Properties oder Ranges, die Parameter wie etwa elektrische Kenndaten beschreiben. 
+Die einzelnen \acsp{smc} enthalten überwiegend Properties oder Ranges, die Parameter, beispielsweise elektrische Kenndaten, beschreiben.
 Auf diese Weise sind alle relevanten technischen Angaben an einem zentralen Ort gebündelt, was der redundanten Pflege in verschiedenen Systemen oder Dokumenten entgegenwirkt. 
 
 \subsubsection*{3) BOM}
 \vspace{-0.5em}
 
-Das BOM-Submodell dient dazu, die Maschinenstruktur sichtbar zu machen und die Beziehungen zwischen ihren einzelnen Komponenten hierarchisch abzubilden, vergleichbar mit einer digitalen Stückliste.
+Das Submodell \acs{bom} dient dazu, die Maschinenstruktur sichtbar zu machen und die Beziehungen zwischen ihren einzelnen Komponenten hierarchisch abzubilden, vergleichbar mit einer digitalen Stückliste.
 Dabei enthält es verschiedene Entitäten, die jeweils eine untergeordnete Komponente repräsentieren.
 Die Beziehungen zwischen den Komponenten werden über Relationship-Elemente mit einer eindeutigen semanticId gemäß dem \acs{smt} Hierarchical Structures enabling Bills of Material \cite{SpezifikationHierachischeStrukturen} hergestellt.
 
@@ -124,7 +126,7 @@ Dieses ist als Self-Managed Entity angelegt und über die globalAssetId mit sein
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/AASGrundmaschine.PNG}
-    \caption{\acs{bom}-Submodell der Grundmaschine}
+    \caption{Submodell \acs{bom} der Grundmaschine}
     \label{fig:BOMSubmodelGrundmashcine}
 \end{figure}
 
@@ -206,7 +208,7 @@ Eine automatische bidirektionale Kommunikation, etwa das Zurückschreiben von We
 \vspace{-0.5em}
 Das Submodell Kontrollkomponente dient der Abbildung und Visualisierung des aktuellen Maschinenstatus sowie der unterstützten Betriebsmodi.
 Die Zustandsinformationen stammen aus dem Maschinensimulator, der sie in numerischer Form über einen \acs{opcua} Server bereitstellt.
-Über die Databridge werden diese Werte in nahezu Echtzeit in die \acs{aas} übertragen.
+Über die Databridge werden diese Werte in die \acs{aas} übertragen.
 Vor der Speicherung erfolgt eine semantische Umwandlung mithilfe von JSONata, um die numerischen Codes in sprechende Zustandsbezeichnungen zu überführen.
 
 Die Zustände orientieren sich am PackML-Standard (Packaging Machine Language), einem von der OMAC (Organization for Machine Automation and Control) entwickelten Modell zur einheitlichen Beschreibung von Maschinenzuständen und zulässigen Zustandsübergängen, insbesondere für Verpackungsmaschinen \cite{OMAC}. 
@@ -221,12 +223,12 @@ Damit Statusänderungen unmittelbar sichtbar werden, ist eine Polling-Logik impl
 
 Neben der reinen Statusanzeige erlaubt das Plugin auch die Steuerung zulässiger Zustandsübergänge direkt aus der Benutzeroberfläche heraus.
 Befindet sich die Maschine beispielsweise im Zustand Execute, können Befehle wie Stop, Hold, Suspend oder Abort ausgelöst werden.
-Darüber hinaus lässt sich der Betriebsmodus (Produktion, Manuell oder Wartung) setzen, der ebenfalls als Property im Submodell verwaltet wird.
+Darüber hinaus lässt sich der Betriebsmodus setzen, der ebenfalls als Property im Submodell verwaltet wird.
 
 \begin{figure}[htbp]
     \centering 
     \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png} 
-    \caption{Visualisierung Submodell Kontrollkomponente (PackML-Zustandsautomat)} 
+    \caption[Visualisierung Submodell Kontrollkomponente]{Visualisierung Submodell Kontrollkomponente (PackML-Zustandsautomat)} 
     \label{fig:PackMLZustandsautomat} 
 \end{figure}
 \vspace{-0.5em}
@@ -256,7 +258,7 @@ Abbildung~\ref{fig:LiniendiagrammBaSyx} zeigt exemplarisch ein Liniendiagramm mi
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/Zeitreihen.png}
-    \caption{Visualisierung Submodell Zeitreihendaten (Liniendiagramm)}
+    \caption[Visualisierung Submodell Zeitreihendaten]{Visualisierung Submodell Zeitreihendaten (Liniendiagramm)}
     \label{fig:LiniendiagrammBaSyx}
 \end{figure}
 \vspace{-0.5em}
@@ -288,7 +290,7 @@ Die wesentlichen Punkte sind im Folgenden zusammengefasst:
     Die verwendeten Werkzeuge unterstützten nicht alle benötigten Funktionen.  
     So wurden beispielsweise beim Hochladen von Dateien in der AAS Web UI keine Einträge im Discovery Service erzeugt.  
     Da diese Funktionalität erforderlich war, musste sie mithilfe eines eigens entwickelten Skripts ergänzt werden.  
-    Eine detaillierte Evaluierung der eingesetzten Tools erfolgt in Kapitel \ref{subsec:EvaluierungTools}.
+    Eine detailliertere Evaluierung der eingesetzten Tools erfolgt in Kapitel \ref{subsec:EvaluierungTools}.
 
     \item \textbf{Inkonsistenzen zwischen Spezifikationen und Tools:}  
     \acsp{smt} und die zugehörigen Spezifikationen wiesen teilweise Inkonsistenzen auf, etwa unterschiedliche Werte in der Dokumentation im Vergleich zu den AASX-Vorlagen.  
@@ -321,7 +323,7 @@ Erst wenn mehrere aufeinanderfolgende Werte vom Normalverlauf abweichen, steigt 
     \centering
         \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/KI/Fall1.pdf}
         \vspace{-2em}
-    \caption{Anomalieerkennung - Fall 1: Temperaturverlauf mit überhöhten Werten}
+    \caption[Anomalieerkennung - Fall 1]{Anomalieerkennung - Fall 1: Temperaturverlauf mit überhöhten Werten}
     \label{fig:Fall1}
 \end{figure}
 \vspace{-0.75em}
@@ -337,7 +339,7 @@ Dies zeigt, dass die Erkennung nicht nur auf plötzliche Ausreißer reagiert, so
     \centering
         \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/KI/Fall2.pdf}
         \vspace{-2em}
-    \caption{Anomalieerkennung - Fall 2: Temperaturverlauf mit linearem Anstieg}
+    \caption[Anomalieerkennung - Fall 2]{Anomalieerkennung - Fall 2: Temperaturverlauf mit linearem Anstieg}
     \label{fig:Fall2}
 \end{figure}
 \vspace{-0.75em}
@@ -357,9 +359,13 @@ Werden neben Sensordaten zusätzlich technische Stammdaten oder standardisierte 
 
 \newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
-Der Anwendungsfall \acs{dpp} demonstriert, wie Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten direkt in der AAS einer Maschine abgebildet und anschließend nutzer- bzw. rollenabhängig bereitgestellt werden können. 
-Grundlage bildet der in Kapitel \ref{sec:AAS-Demonstrator} vorgestellte AAS-Demonstrator, der um ein Submodell zur Abbildung des \acs{cf} erweitert wurde. 
-Neben der dynamischen Berechnung und Aggregation dieser Werte wird daher auch gezeigt, wie der Zugriff auf die im DPP enthaltenen Informationen durch unterschiedliche Nutzerrollen und technische Clients geregelt ist.
+% Der Anwendungsfall \acs{dpp} demonstriert, wie Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten direkt in der AAS einer Maschine abgebildet und anschließend nutzer- bzw. rollenabhängig bereitgestellt werden können. 
+% Grundlage bildet der in Kapitel \ref{sec:AAS-Demonstrator} vorgestellte AAS-Demonstrator, der um ein Submodell zur Abbildung des \acs{cf} erweitert wurde. 
+% Neben der dynamischen Berechnung und Aggregation dieser Werte wird daher auch gezeigt, wie der Zugriff auf die im DPP enthaltenen Informationen durch unterschiedliche Nutzerrollen und technische Clients geregelt ist.
+
+Mit dem Anwendungsfall \acs{dpp} konnte gezeigt werden, dass Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten direkt in der AAS einer Maschine abgebildet und nutzer- bzw. rollenabhängig bereitgestellt werden können.
+Im Folgenden wird hierzu sowohl die Aggregation der Werte als auch die Umsetzung des rollenbasierten Zugriffs durch unterschiedliche Nutzerrollen und technische Clients dargestellt.
+Grundlage bildet der in Kapitel~\ref{sec:AAS-Demonstrator} vorgestellte AAS-Demonstrator, der um ein Submodell zur Abbildung des \acs{cf} erweitert wurde.
 
 \subsubsection{Abbildung des PCF}
 Das CF-Submodell bildet die Lebenszyklusphasen Material, Produktion und Cradle to Gate jeweils in eigenen \acsp{smc} ab.
@@ -368,9 +374,10 @@ Abbildung~\ref{fig:SubmodellCF} zeigt exemplarisch die \acs{smc} für die Phase 
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png}
-    \caption{Ausschnitt des CF-Submodells der Haupt-\acs{aas}}
+    \caption{Ausschnitt Submodell Carbon Footprint}
     \label{fig:SubmodellCF}
 \end{figure}
+\vspace{-0.5em}
 
 Die Aggregation der CO\textsubscript{2}-Äquivalente erfolgt dynamisch über einen Microservice. 
 Dieser ist als Docker-Container implementiert und greift über die REST-Schnittstellen des BaSyx-Backends auf die in der Komponentenliste hinterlegten Entitäten zu. 
@@ -384,9 +391,10 @@ Abbildung~\ref{fig:PluginAggregation} zeigt die entsprechende Visualisierung: li
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/CarbonFootprint.png}
-    \caption{Visualisierung der \acs{pcf}-Werte je Lebenszyklusphase}
+    \caption{Visualisierung \acs{pcf}-Werte je Lebenszyklusphase}
     \label{fig:PluginAggregation}
 \end{figure}
+\vspace{-0.5em}
 
 Der Ansatz ist flexibel erweiterbar.
 Bei Verfügbarkeit weiterer Komponenten-AAS lässt sich die Liste unkompliziert ergänzen, sodass sukzessive die gesamte Maschine berücksichtigt werden kann. 
@@ -414,7 +422,7 @@ Wie in Abbildung~\ref{fig:KeycloakAnmeldeSeite} dargestellt, erfolgt die Authent
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=0.7\textwidth]{Bilder/KeycloakAnmeldeSeite.png}
-    \caption{Keycloak-Anmeldeseite für den Zugriff auf die AAS Web UI}
+    \caption{Keycloak-Anmeldeseite der AAS Web UI}
     \label{fig:KeycloakAnmeldeSeite}
 \end{figure}
 
@@ -439,7 +447,7 @@ Mit dem Groninger-Client hingegen gelingt der Löschvorgang, da dessen Rolle une
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=0.95\textwidth]{Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png}
-    \caption{DELETE-Anfrage des Service-Techniker-Clients in Postman}
+    \caption[DELETE-Anfrage eines Service-Techniker-Clients]{DELETE-Anfrage eines Service-Techniker-Clients (Postman)}
     \label{fig:DELETEServiceTechniker}
 \end{figure}
 \vspace{-0.25em}
@@ -450,27 +458,28 @@ Gleichzeitig bleibt der \acs{rbac}-Ansatz in seiner Flexibilität begrenzt, soda
 
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
-Dieser Anwendungsfall demonstriert, wie sich AAS-Instanzen automatisiert erzeugen und in das BaSyx-System integrieren lassen.
-Abbildung \ref{fig:AutomatisierteGenerierungAblauf} veranschaulicht den Ablauf.
+
+Der Anwendungsfall der automatisierten Generierung zeigt, wie sich \acs{aas}-Instanzen automatisch erzeugen und in das BaSyx-Backend integrieren lassen.
+Abbildung~\ref{fig:AutomatisierteGenerierungAblauf} veranschaulicht den Ablauf.
 Ausgangspunkt bildet ein unternehmensspezifisches Typ-Submodell, das mithilfe des Package Explorers aus dem SMT Generic Frame for Technical Data for Industrial Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
-Dieses Template wird anschließend über ein Node.js-basiertes Mapping-Skript mit Beispieldaten ergänzt und in eine neue AAS-Instanz eingebettet.
-Das Skript übernimmt auch die Registrierung im BaSyx-Backend, sodass die erzeugte AAS unmittelbar zur Verfügung steht und beispielsweise in der AAS Web UI visualisiert werden kann.
+Dieses Template wird durch ein Node.js-basiertes Mapping-Skript mit Beispieldaten angereichert und in eine neue AAS-Instanz eingebettet.
+Das Skript übernimmt zusätzlich die Registrierung im BaSyx-Backend, sodass die erzeugte Instanz unmittelbar verfügbar ist und beispielsweise in der AAS Web UI visualisiert werden kann.
 
 \begin{figure}[htbp]
     \centering
         \includegraphics{Bilder/ErgebnisseAutomatisierteGenerierung/ARchitektur.pdf}
-    \caption[Ablauf der automatisierten Generierung einer AAS]{Ablauf der automatisierten Generierung einer AAS (eigene Darstellung; Bildbestandteile: \cite{SpezifikaitonTechnischeDaten}, \cite{ECLASSLogo} )}
+    \caption[Automatisierte Generierung einer AAS]{Automatisierte Generierung einer AAS (eigene Darstellung; Bildbestandteile: \cite{SpezifikaitonTechnischeDaten}, \cite{ECLASSLogo} )}
     \label{fig:AutomatisierteGenerierungAblauf}
 \end{figure}
 
-Der entwickelte Ansatz verdeutlicht, dass sich der manuelle Modellierungsaufwand im Package Explorer durch den teilautomatisierten Prozess erheblich reduzieren lässt. 
-In diesem Anwendungsfall wurden zwar statische Beispieldaten eingesetzt, in einer produktiven Umgebung könnten jedoch die technischen Produktinformationen direkt aus bestehenden \acs{it}-Systemen übernommen werden. 
-Bei groninger stammen diese primär aus dem PLM-System Agile. 
-Eine entsprechende Anbindung war im Rahmen dieser Arbeit jedoch nicht umsetzbar.
+Der entwickelte Ansatz reduziert den manuellen Modellierungsaufwand im Package Explorer erheblich, da AAS-Instanzen durch den teilautomatisierten Prozess schneller und konsistenter erstellt werden können.
+Dies ist insbesondere bei komplexeren Strukturen von Vorteil.
+Während in diesem Anwendungsfall statische Beispieldaten verwendet wurden, könnten in einer produktiven Umgebung die technischen Produktinformationen direkt aus bestehenden \acs{it}-Systemen übernommen werden. 
+Bei groninger liegen diese Daten zwar überwiegend im PLM-System Agile vor, eine technische Anbindung ist dort jedoch derzeit nicht möglich und konnte im Rahmen dieser Arbeit nicht umgesetzt werden.
 
-Darüber hinaus ist der Prozess grundsätzlich auch auf weitere Submodelle übertragbar, sodass perspektivisch die AAS einer gesamten Maschine automatisiert erstellt werden könnte. 
-Zudem wäre es möglich, die Mapping-Logik in eine Laufzeitumgebung zu integrieren. 
-Dadurch ließe sich die Generierung, Bereitstellung und Aktualisierung von AAS-Instanzen vollständig automatisieren.
+Grundsätzlich ist der Prozess auch auf weitere Submodelle übertragbar, sodass perspektivisch die AAS einer gesamten Maschine automatisiert generiert werden könnte. 
+Darüber hinaus ließe sich die Mapping-Logik in eine Laufzeitumgebung integrieren, wodurch Generierung, Bereitstellung und Aktualisierung von \acs{aas}-Instanzen vollständig automatisiert erfolgen könnten. 
+Damit eröffnet der Ansatz die Möglichkeit, den Aufbau digitaler Zwillinge zukünftig wesentlich effizienter zu gestalten und die Interoperabilität weiter zu erhöhen.
 
 %Evaluation der eingesetzten Software
 \newpage
