@@ -34,7 +34,6 @@ Abbildung~\ref{fig:BaSyxArchitektur} zeigt den Aufbau des Systems, das als zentr
     \caption{Systemarchitektur BaSyx-Backend}
     \label{fig:BaSyxArchitektur}
 \end{figure}
-\vspace{-0.5em}
 
 Der Discovery Service übernimmt die Auflösung einer Asset-\acs{id} (globalAssetId) in die zugehörige \acs{aas}-\acs{id} und ermöglicht so das gezielte Auffinden einer \acs{aas} im Gesamtsystem. 
 Die Registries dienen als Verzeichnisse aller registrierten \acs{aas} und Submodelle einschließlich ihrer Endpunkte innerhalb der \acs{aas} Environment, wobei die \acs{aas} Registry optional auch Referenzen auf die Submodel Registry (SM Registry) enthalten kann. 
@@ -461,23 +460,35 @@ Gleichzeitig bleibt der \acs{rbac}-Ansatz in seiner Flexibilität begrenzt, soda
 
 Der Anwendungsfall der automatisierten Generierung zeigt, wie sich \acs{aas}-Instanzen automatisch erzeugen und in das BaSyx-Backend integrieren lassen.
 Abbildung~\ref{fig:AutomatisierteGenerierungAblauf} veranschaulicht den Ablauf.
-Ausgangspunkt bildet ein unternehmensspezifisches Typ-Submodell, das mithilfe des Package Explorers aus dem SMT Generic Frame for Technical Data for Industrial Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
-Dieses Template wird durch ein Node.js-basiertes Mapping-Skript mit Beispieldaten angereichert und in eine neue AAS-Instanz eingebettet.
-Das Skript übernimmt zusätzlich die Registrierung im BaSyx-Backend, sodass die erzeugte Instanz unmittelbar verfügbar ist und beispielsweise in der AAS Web UI visualisiert werden kann.
+Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mithilfe des Package Explorers aus dem generischen SMT Generic Frame for Technical Data for Industrial Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
+
+% \begin{figure}[htbp]
+%     \centering
+%         \includegraphics{Bilder/ErgebnisseAutomatisierteGenerierung/ARchitektur.pdf}
+%     \caption[Automatisierte Generierung einer AAS]{Automatisierte Generierung einer AAS (eigene Darstellung; Bildbestandteile: \cite{SpezifikaitonTechnischeDaten}, \cite{ECLASSLogo} )}
+%     \label{fig:AutomatisierteGenerierungAblauf}
+% \end{figure}
+% \vspace{-0.5em}
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics{Bilder/ErgebnisseAutomatisierteGenerierung/ARchitektur.pdf}
+        \includegraphics[width=\textwidth]{Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf}
     \caption[Automatisierte Generierung einer AAS]{Automatisierte Generierung einer AAS (eigene Darstellung; Bildbestandteile: \cite{SpezifikaitonTechnischeDaten}, \cite{ECLASSLogo} )}
     \label{fig:AutomatisierteGenerierungAblauf}
 \end{figure}
+\vspace{-0.5em}
 
-Der entwickelte Ansatz reduziert den manuellen Modellierungsaufwand im Package Explorer erheblich, da AAS-Instanzen durch den teilautomatisierten Prozess schneller und konsistenter erstellt werden können.
-Dies ist insbesondere bei komplexeren Strukturen von Vorteil.
-Während in diesem Anwendungsfall statische Beispieldaten verwendet wurden, könnten in einer produktiven Umgebung die technischen Produktinformationen direkt aus bestehenden \acs{it}-Systemen übernommen werden. 
-Bei groninger liegen diese Daten zwar überwiegend im PLM-System Agile vor, eine technische Anbindung ist dort jedoch derzeit nicht möglich und konnte im Rahmen dieser Arbeit nicht umgesetzt werden.
+Das resultierende Typ-Submodell wird durch ein Node.js-basiertes Mapping-Skript mit Beispieldaten angereichert und in eine neue \acs{aas}-Instanz eingebettet. 
+Das Skript übernimmt zusätzlich die Registrierung im BaSyx-Backend, sodass die erzeugte \acs{aas} unmittelbar zur Verfügung steht und beispielsweise in der AAS Web UI visualisiert werden kann.
 
-Grundsätzlich ist der Prozess auch auf weitere Submodelle übertragbar, sodass perspektivisch die AAS einer gesamten Maschine automatisiert generiert werden könnte. 
+In der prototypischen Umsetzung zeigte sich, dass der entwickelte Ansatz den manuellen Modellierungsaufwand im Package Explorer potenziell erheblich reduzieren kann, insbesondere bei komplexen Submodellstrukturen wäre dies ein großer Vorteil. 
+Zudem ist der Prozess grundsätzlich auch auf weitere Submodelle übertragbar, sodass perspektivisch die \acs{aas} einer gesamten Maschine automatisiert generiert werden könnte. 
+
+Im Rahmen dieses Anwendungsfalls wurden zwar statische Beispieldaten verwendet. 
+In einer produktiven Umgebung könnten die technischen Produktinformationen jedoch direkt aus bestehenden \acs{it}-Systemen übernommen werden. 
+Bei groninger liegen diese Daten überwiegend im \acs{plm}-System Agile vor. 
+Eine technische Anbindung ist dort derzeit allerdings nicht möglich und konnte in dieser Arbeit nicht realisiert werden.
+
 Darüber hinaus ließe sich die Mapping-Logik in eine Laufzeitumgebung integrieren, wodurch Generierung, Bereitstellung und Aktualisierung von \acs{aas}-Instanzen vollständig automatisiert erfolgen könnten. 
 Damit eröffnet der Ansatz die Möglichkeit, den Aufbau digitaler Zwillinge zukünftig wesentlich effizienter zu gestalten und die Interoperabilität weiter zu erhöhen.
 

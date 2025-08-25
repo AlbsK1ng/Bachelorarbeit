@@ -12,7 +12,7 @@
 \usepackage[ngerman]{babel}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{tocbibind}
+\usepackage[nottoc]{tocbibind}
 % Links nicht mit visuller Box [hidebox]
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark} 
@@ -199,9 +199,11 @@
 \input{sperrvermerk.tex}
 \input{ehrenwoertlichErklärung.tex}
 
+\input{Kurzfassung.tex}
 
 \newpage
 \phantomsection
+\pdfbookmark[1]{Inhaltsverzeichnis}{inhaltsverzeichnis}
 \begin{spacing}{1.0}
 \tableofcontents %Inhaltsverzeichnis
 \newpage
@@ -222,6 +224,7 @@
 
 \newpage
 \phantomsection
+\addcontentsline{toc}{section}{Listings}
 \lstlistoflistings 
 
 \newpage
