@@ -2,7 +2,7 @@
 \section{Grundlagen}
 \label{sec:Grundlagen}
 Das folgende Kapitel stellt die theoretischen und technologischen Grundlagen vor, die für das Verständnis und die Umsetzung dieser Arbeit erforderlich sind.
-Es beginnt mit einer Einführung in die Industrie 4.0, und vermittelt ein grundlegendes Verständnis für das Konzept des digitalen Zwillings.
+Es beginnt mit einer Einführung in die Industrie 4.0 und vermittelt ein grundlegendes Verständnis für das Konzept des digitalen Zwillings.
 Anschließend werden die Struktur und Funktion der \acs{aas} sowie die Rolle des \acs{dpp} erläutert.
 Den Abschluss bilden die technologischen Voraussetzungen für die praktische Umsetzung, darunter beispielsweise die Open-Source-Plattform Eclipse BaSyx oder der Kommunikationsstandard \acs{opcua}.
 \subsection{Industrie 4.0}
@@ -16,7 +16,7 @@ Industrie 4.0 steht dabei für die vierte industrielle Revolution und beschreibt
 Im Zentrum steht die intelligente Vernetzung von Menschen, Maschinen und Produkten über moderne digitale Kommunikationsnetzwerke, durch die eine weitreichende Integration der physischen mit der digitalen Welt ermöglicht wird.
 
 Zur besseren Einordnung von Industrie 4.0 ist ein Blick auf die vorangegangenen industriellen Revolutionen hilfreich.
-Die Industrialisierung begann bereits Mitte des 18. Jahrhunderts in Großbritannien und breitete sich von dort an weltweit aus. 
+Die Industrialisierung begann bereits Mitte des 18. Jahrhunderts in Großbritannien und breitete sich von dort weltweit aus. 
 Mit der Entwicklung der ersten Dampfmaschine setzte die erste industrielle Revolution ein. 
 Sie ermöglichte erstmals die Mechanisierung der Fertigung durch den Einsatz von Arbeits- und Kraftmaschinen. 
 Dadurch konnten manuelle Tätigkeiten zunehmend durch Maschinenkraft ersetzt werden, insbesondere in der Textil-, Eisen- und Stahlindustrie, die zu den ersten Branchen gehörten, die von dieser Entwicklung profitierten.
@@ -62,8 +62,8 @@ Insgesamnt trägt Industrie 4.0 somit nicht nur zur Verbesserung der Wirtschaftl
 % Künstliche Intelligenz ist eine Schlüsselkomponente der Industrie 4.0.
 Mit der zunehmenden Vernetzung von Maschinen und Anlagen entstehen immer größere Datenmengen entlang von Produktionsprozessen.
 Diese Daten bieten enorme Potenziale zur Optimierung industrieller Abläufe, beispielsweise zur Steigerung der Anlagenverfügbarkeit, zur Reduzierung von Ausschuss oder zur Verbesserug der Produktqualität.
-Zudem erlauben intelligente Produkte, das Hersteller auch während der Nutzungsphase Informationen über den Einsatz und Zustand eines Produktes erhalten.
-Auf Basis dieser lassen sich neue Dienstleistungen und Anwendungen entwickeln, wie etwa die vorrauschaunde Instandhaltung oder die dynamische Optimierung von Betriebsparametern.
+Zudem erlauben intelligente Produkte, dass Hersteller auch während der Nutzungsphase Informationen über den Einsatz und Zustand eines Produktes erhalten.
+Auf Basis dieser lassen sich neue Dienstleistungen und Anwendungen entwickeln, wie etwa die vorausschauende Instandhaltung oder die dynamische Optimierung von Betriebsparametern.
 
 Damit solche datengetriebenen Ansätze erfolgreich umgesetzt werden können, benötigt es leistungsfähige Technologien zur Analyse und Interpretation.
 Genau hier setzt \acs{ki} an.
@@ -84,14 +84,16 @@ Beim überwachten Lernen wird ein Modell anhand eines Datensatzes trainiert, der
 Der Algorithmus lernt dabei, Zusammenhänge und Muster in den Daten zu erkennen, um daraus eine Funktion abzuleiten, die neue Eingaben korrekt vorhersagen kann.
 Typische Anwendungsbereiche sind die Klassifikation (z. B. die Einteilung von Bildern in Kategorien) und die Regression (z. B. die Vorhersage numerischer Werte wie Temperatur oder Energieverbrauch).
 
-Beim unüberwachtem Lernen hingegen wird ein Modell mit ungelabelten Daten trainiert, das heißt ohne vorgegeben Zielwerte. 
-Der Algorithmus versucht selbstständig Strukturen oder Muster in den vorgegeben Daten zu finden.
+Beim unüberwachtem Lernen hingegen wird ein Modell mit ungelabelten Daten trainiert, das heißt ohne vorgegebene Zielwerte. 
+Der Algorithmus versucht selbstständig Strukturen oder Muster in den vorgegebenen Daten zu finden.
 Ein häufig eingesetztes Verfahren ist die Clusteranalyse, bei der ähnliche Datenpunkte zu Gruppen, sogenannten Clustern, zusammengefasst werden. 
 Eine typische Anwendung ist beispielsweise die Anomalieerkennung, bei der Abweichungen von einem erwarteten Normalverhalten erkannt werden können. \cite{DLDefinition}
 
 Ein besonders leistungsfähiger Ansatz innerhalb des maschinellen Lernens ist das Deep Learning \cite{DLEinordnung}.
 Es basiert auf künstlichen neuronalen Netzen, die in ihrer Struktur an das Verhalten von Neuronen im menschlichen Gehirn angelehnt sind.
-Während klassische maschinelle Lernmodelle meist aus nur wenigen Schichten bestehen, kommen beim Deep Learning sogenannte tiefe neuronale Netze mit vielen hintereinandergeschachtelten Schichten zum Einsatz.
+Während klassische maschinelle Lernmodelle meist aus nur wenigen Schichten bestehen, kommen beim 
+\linebreak
+Deep Learning sogenannte tiefe neuronale Netze mit vielen hintereinandergeschachtelten Schichten zum Einsatz.
 Diese ermöglichen das Erkennen hochkomplexer und abstrakter Zusammenhänge in großen Datenmengen, etwa bei der Bilderkennung oder der Sprachverarbeitung. \cite{DLDefinition}
 Ein besonders aktuelles Beispiel für die Anwendung tiefer neuronaler Netzwerke ist die generative \acs{ki}. 
 Sie beschäftigt sich mit der Erstellung neuer Inhalte wie Text oder Sprache. 
@@ -114,11 +116,11 @@ Dabei kommen verschiedene Methoden des Deep Learnings zum Einsatz, um aus große
 \subsection{Digitaler Zwilling}
 \label{sec: DT}
 Digitale Zwillinge gelten als eine der Schlüsseltechnologien der Industrie 4.0.
-Als digitales Gegenstück eines physischen Objekts, sei es eine Maschine ein Produkt oder eine komplette Anlage, bilden sie dessen Zustand, Verhalten und Leistung virtuell ab.
-Dadurch ermöglichen sie eine konsistenete Erfassung von Daten, das Simulieren von Prozessen und das frühzeitige Erkennen von Optimierungspotenzialen.
+Als digitales Gegenstück eines physischen Objekts, sei es eine Maschine, ein Produkt oder eine komplette Anlage, bilden sie dessen Zustand, Verhalten und Leistung virtuell ab.
+Dadurch ermöglichen sie eine konsistente Erfassung von Daten, das Simulieren von Prozessen und das frühzeitige Erkennen von Optimierungspotenzialen.
 
 Das Konzept selbst wurde erstmals von Michael Grieves im Jahr 2003 in einer Präsentation zum \ac{plm} vorgestellt. 
-Grieves definierte drei grundlegende Komponenten \cite{DTGrieves} , die zusammen das Informationsmodell des digitalen Zwilling bilden:
+Grieves definierte drei grundlegende Komponenten \cite{DTGrieves} , die zusammen das Informationsmodell des digitalen Zwillings bilden:
 \begin{itemize}
     \item ein reales Objekt in der physischen Welt,
     \item ein digitales Abbild dieses Objekts in einem virtuellen Raum, sowie
@@ -128,13 +130,13 @@ Grieves definierte drei grundlegende Komponenten \cite{DTGrieves} , die zusammen
 Auf Basis des von Grieves entwickelten Informationsmodells hat sich der Begriff des digitalen Zwillings kontinuierlich weiterentwickelt.
 Aufgrund verschiedener Fachgebiete und inkonsistenter Definitionen haben sich in der Vergangenheit allerdings eine Vielzahl unterschiedlicher Ausprägungen des Begriffs gebildet.
 Diese unterscheiden sich insbesondere in der Tiefe der Datenintegration zwischen dem physischen Objekt und seinem virtuellen Abbild.
-Während ein einfacher digitaler Zwilling lediglich ein einfaches Modell mit statischen Daten ist, ermöglichen fortgeschrittene Zwillinge einen bidrektionalen Datenaustausch zwischen physischem und virtuellem Objekt. 
+Während ein einfacher digitaler Zwilling lediglich ein einfaches Modell mit statischen Daten ist, ermöglichen fortgeschrittene Zwillinge einen bidirektionalen Datenaustausch zwischen physischem und virtuellem Objekt. 
 
 Für ein besseres Verständnis und zur tieferen Klassifizierung ist es zunächst hilfreich, zwischen Typen und Instanzen des digitalen Zwillings zu unterscheiden.
 Typen sind allgemeine Abbilder, die grundlegende Eigenschaften und Verhaltensmodelle einer Produktgruppe beschreiben. 
 Sie können mit einer Klasse in der Softwarentwicklung verglichen werden, die als Vorlage für konkrete Instanzen dienen.
 Typen können beispielsweise einen bestimmten Maschinentyp hinsichtlich Aufbau, Struktur oder Schnittstellen beschreiben, ohne dabei Bezug zu einer einzelnen physischen Maschine zu nehmen.
-Instanzen wiederrum sind einzigartig, und beschreiben ein konkretes Produkt, etwa eine Maschine, die einzigartig über eine Seriennummer identifizierbar ist.
+Instanzen wiederrum sind einzigartig und beschreiben ein konkretes Produkt, etwa eine Maschine, die einzigartig über eine Seriennummer identifizierbar ist.
 Häufig sind Instanzen Aussprägungen eines Types mit einer Verbindung zu einem realen Objekt, wodurch beispielsweise die Überwachung des Zustands einer Produktionsanlage ermöglicht wird.
 Analog zur Softwarentwicklung können diese als instanziiertes Objekt einer Klasse gesehen werden. \cite{ZEISS}
 
@@ -142,16 +144,16 @@ Je nach Art des Informationsflusses sowie dem Grad der Ausprägung der Verbindun
 Obwohl diese Begriffe im allgemeinen Sprachgebrauch oft synonym verwendet werden, unterscheiden sie sich deutlich hinsichtlich ihrer Funktion und Kopplung zum realen Objekt.
 
 Digitale Modelle sind statische Abbilder physischer Objekte, haben jedoch keine Verbindung zu diesen. 
-Oft werden sie zur Veranschauclichung oder Konstruktion genutzt, wie zum Beispiel ein 3D-Modell einer Maschine.
+Oft werden sie zur Veranschaulichung oder Konstruktion genutzt, wie zum Beispiel ein 3D-Modell einer Maschine.
 Zwar können reale Daten, wie etwa Maße oder Materialeigenschaften einer Anlage oder Maschine in ein solches Modell integriert werden, allerdings erfolgt die Eingabe dabei immer manuell.
 Änderungen an dem realen Objekt werden nicht automatisch aktualisiert und bleiben somit ohne Einfluss auf das digitale Modell.
 
 Der digitale Schatten ergänzt das digitale Modell um eine unidirektionale Verbindung zum realen Objekt.
 Dabei fließen Daten des physischen Objekts meist in Echtzeit über zum Beispiel geeignete Sensoren zum digitalen Objekt.
-Der Schatten bildet den aktuellen Zustand des Objekts ab, hat aber keine Rückkoplung zu diesem.
+Der Schatten bildet den aktuellen Zustand des Objekts ab, hat aber keine Rückkopplung zu diesem.
 Ein typisches Beispiel für einen digitalen Schatten wäre das Condition Monitoring, wobei der Zustand einer Maschine mit geeigneten Sensoren abgebildet wird.
 
-Mit einer aktiven Rückkoplung zum realen Objekt wird der digitale Schatten zum digitalen Zwilling.
+Mit einer aktiven Rückkopplung zum realen Objekt wird der digitale Schatten zum digitalen Zwilling.
 Es entsteht eine Feedback-Schleife, die es dem virtuellen Objekt erlaubt, Einfluss auf das reale System zu nehmen.
 Eine Übersicht der drei Kategorien zeigt Abbildung \ref{fig:klassifizierungDT}. 
 % Quelle: file:///C:/Users/Heinke/Documents/Bachelorarbeit/02%20Literatur/Digitaler_Zwilling/Klassifizierung_DT.pdf
@@ -167,7 +169,7 @@ Eine Übersicht der drei Kategorien zeigt Abbildung \ref{fig:klassifizierungDT}.
 Im industriellen Umfeld werden digitale Zwillinge in vielen unterschiedlichen Bereichen genutzt.
 Sie kommen entlang des gesamten Lebenszyklus eines Assets zum Einsatz, von der Entwicklung über die Produktion bis hin zum Betrieb und der Wartung.%
 \pagebreak 
-~Dabei ist jedoch zu beachten, das in der Praxis häufig auch digital Modelle oder digitale Schatten als digitale Zwillinge bezeichnet werden, obwohl sie technisch gesehen nicht alle Merkmale eines echten digitalen Zwillings aufweisen und somit ebenfalls nicht ihr volles Potenzial entfalten.
+~Dabei ist jedoch zu beachten, dass in der Praxis häufig auch digitale Modelle oder digitale Schatten als digitale Zwillinge bezeichnet werden, obwohl sie technisch gesehen nicht alle Merkmale eines echten digitalen Zwillings aufweisen und somit ebenfalls nicht ihr volles Potenzial entfalten.
 
 Bereits bei der Entwicklung von Produkten können digitale Zwillinge einen erheblichen Vorteil bieten. 
 Indem bereits frühzeitig digitale Modelle oder Simulationen eingesetzt werden, entfällt die Notwendigkeit physischer Prototypen, was Entwicklungszeiten und Kosten deutlich senken kann. Während der Produktion ermöglichen sie eine durchgängige Überwachung, Analyse und Optimierung von Fertigungsprozessen durch die Integration von Echtzeitdaten.
@@ -181,9 +183,9 @@ Sowohl innerhalb eines Unternehmens als auch unternehmensübergreifend bilden si
 Solche sogenannten Informationssilos können die Umsetzung eines konsistenten digitalen Zwillings erheblich erschweren, da die relevanten Informationen und Daten zunächst aus unterschiedlichen Systemen wie \ac{erp}, \ac{mes} oder \ac{cad} zusammengeführt werden müssen.
 
 Hinzu kommt, das diese Daten oftmals in unterschiedlichen, nicht standardisierten Formaten vorliegen, was eine automatisierte Integration zusätzlich erschwert.
-Diese Problematik zeigt sich nicht nur innerhalb einzelner Unterhnehmen, sondern auch entlang der gesamten Wertschöpfungskette, etwa wenn verschiedene Akteure einer Lieferkette heterogene Datenformate und proprietäre Austauschprotokolle verwenden.
-Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einer Anwendung oder einem weitern digitalen Zwilling eines Unternehmens B nicht ohne Weiteres interpretiert oder verwendet werden.
-Es ist daher essenziell, digitale Zwillinge in einem interoperablen Format bereitzustellen, um eine einheitliche Interpretation und Nutzung auch über Unternehmensgrenzen hinweg zu ermöglichen.
+Diese Problematik zeigt sich nicht nur innerhalb einzelner Unternehmen, sondern auch entlang der gesamten Wertschöpfungskette, etwa wenn verschiedene Akteure einer Lieferkette heterogene Datenformate und proprietäre Austauschprotokolle verwenden.
+Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einer Anwendung oder einem weiteren digitalen Zwilling eines Unternehmens B nicht ohne Weiteres interpretiert oder verwendet werden.
+Es ist daher essenziell, digitale Zwillinge in einem interope\-rablen Format bereitzustellen, um eine einheitliche Interpretation und Nutzung auch über Unternehmensgrenzen hinweg zu ermöglichen.
 \cite{DTandAASConceptsInI4.0}
 
 \newpage
@@ -230,7 +232,7 @@ Die Auswahl und Struktur der Submodelle ist domänenspezifisch und hängt stark 
 Dabei kann eine \acs{aas} beliebig viele Submodelle enthalten, die bei Bedarf auch erweitert werden können. 
 
 Die Daten innerhalb eines Submodells werden in verschiedenen Submodellelementen strukturiert.
-Diese umfassen Dateneigenschaften, Operationen sowie weitere Strukturelemente die für eine umfassende Beschreibung eines digitalen Modells eines Assets erforderlich sind.
+Diese umfassen Dateneigenschaften, Operationen sowie weitere Strukturelemente, die für eine umfassende Beschreibung eines digitalen Modells eines Assets erforderlich sind.
 So erlaubt beispielsweise das RelationshipElement die Modellierung von Beziehungen oder das ReferenceElement die Referenzierung von internen oder externen Inhalten.
 Das vermutlich am häufigsten verwendete Datenelement ist das Submodellelement Property.
 Es lässt sich mit einer Variablen aus der Softwareentwicklung vergleichen, da es einfache Merkmale wie etwa einen Namen oder eine Seriennummer repräsentiert und dabei über einen definierten Datentyp wie String, Integer oder Boolean verfügt.
@@ -273,8 +275,8 @@ Darin enthalten sind unter anderem Definitionen, Einheiten, Wertebereiche, zulä
 
 Um die Erstellung von Submodellen zu erleichtern und gleichzeitig Interoperabilität zu gewährleisten, stellt die \acs{idta} standardisierte Submodellvorlagen - sogenannte \acp{smt} - zur Verfügung.
 Diese Templates decken eine Vielzahl industrieller Anwendungsfälle ab und werden kontinuierlich weiterentwickelt und ergänzt.
-Die bereits verfügbaren Templates enthalten unteranderem Submodelle wie das digitale Typenschild oder den \ac{cf}.
-Alle Eigenschaften innerhalb dieser Vorlagen werden dabei in Verbindung mit dem ECLASS-Standard einheiltich semantisch beschrieben.
+Die bereits verfügbaren Templates enthalten unter anderem Submodelle wie das digitale Typenschild oder den \ac{cf}.
+Alle Eigenschaften innerhalb dieser Vorlagen werden dabei in Verbindung mit dem ECLASS-Standard einheitlich semantisch beschrieben.
 Diese Templates könen über ein zentrales Repository \cite{idtaTemplates} bezogen werden und bilden die Basis für eine interoperable semantische Datenstruktur.
 
 \subsubsection{Informationsaustausch}
@@ -284,13 +286,13 @@ Dabei werden sämtliche Daten, Beziehungen, Strukturen sowie zugehörige Dateien
 Diese Datei kann anschließend über ein digitales Medium, etwa per E-Mail oder eine Cloud-Plattform, weitergegeben werden. 
 
 Eine Typ-2-\acs{aas} hingegen wird von einer Laufzeitumgebung gehosted, wodurch ein direkter und dynamischer Zugriff auf ihre Inhalte ermöglicht wird. 
-Die Spezifikitation Part 2: Application Programming Interfaces \cite{SpezifikationPart2} beschreibt hierfür nicht nur standardisierte Schnittstellen, sonder auch ein ganzheitliches System für das Verwalten, Bereitstellen und Auffinden der \acs{aas}.
+Die Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2} beschreibt hierfür nicht nur standardisierte Schnittstellen, sondern auch ein ganzheitliches System für das Verwalten, Bereitstellen und Auffinden der \acs{aas}.
 Repositories dienen dabei als zentraler Speicherort für die Inhalte einer \acs{aas}, einschließlich ihrer Submodelle und Concept Descriptions.
 Die Aufgabe der Verwaltung und Registrierung übernehmen sogenannte Registries.
 Sie ermöglichen das systemweite Auffinden von \acs{aas} und stellen sicher, dass diese eindeutig referenzierbar sind.
 
 Ergänzend dazu bieten Discovery Services eine erweiterte Suchfunktionalität, indem sie Beziehungen verschiedener Entitäten mittels verschiedener Schlüsselwertpaare speichern.
-Eine \acs{aas} kann so zum Beispiel logisch mit einer Asset-\acs{id} verknüpft werden und somit schnell innerhalb komplexer Systeme identifiziert werden.
+Eine \acs{aas} kann so zum Beispiel logisch mit einer Asset-\acs{id} verknüpft und somit schnell innerhalb komplexer Systeme identifiziert werden.
 Der Zugriff auf diese Systeme bzw. ihrer Inhalte wird in Form von Schnittstellen standardisiert, wodurch eine hohe Interoperabilität gewährleistet wird.
 Ein besonderer Fokus liegt dabei auf der Nutzung von \ac{http} gemäß dem \acs{rest}-Architekturstil (Representational State Transfer), der eine strukturierte Kommunikation über Methoden wie GET, POST, PUT oder DELETE ermöglicht.
 
@@ -307,8 +309,10 @@ Die Sicherheit wird dabei mithilfe eines attributbasierten Zugriffsmodells (\ac{
 Bei jeder Anfrage auf bestimmte Objekte innerhalb der \acs{aas} wird dabei anhand verschiedener Merkmale (Attribute) geprüft, ob ein Zugriff erlaubt ist.
 Dazu zählen sogenannte Subjektattribute (also wer die Anfrage stellt), Objektattribute (z.B. welches Submodell, welche Property oder welches Submodellelement betroffen ist), die gewünschte Aktion (z.B. Lesen oder Schreiben) sowie kontextbezogene Bedingungen (z.B. Zeitpunkt der Anfrage oder Zustand des Systems).
 
-Die zur Prüfung notwendigen Informationen liefert in der Regel ein Token, das vom Identity Provider bereitgestellt wird. Die Spezifikation sieht hierfür die Nutzung sogenannter \acp{jwt} vor.
-Die Attribute werden schließlich von dem Policy Service mit den dort hinterlegenen Zugriffsrichtlinen abgeglichen und basierend darauf eine Zugriffsentscheidung getroffen.
+Die zur Prüfung notwendigen Informationen liefert in der Regel ein Token, das vom 
+\linebreak
+Identity Provider bereitgestellt wird. Die Spezifikation sieht hierfür die Nutzung sogenannter \acp{jwt} vor.
+Die Attribute werden schließlich von dem Policy Service mit den dort hinterlegten Zugriffsrichtlinen abgeglichen und basierend darauf eine Zugriffsentscheidung getroffen.
 Ein besonderer Vorteil des \acs{abac}-Modells liegt dabei in seiner hohen Flexibilität. Rollen können ebenfalls als Attribute behandelt werden, wodurch sich auch problemlos rollenbasierte Zugriffskonzepte (RBAC) umsetzen lassen. 
 
 Die beschriebenen Kontrollmechanismen lassen sich nicht nur auf die Inhalte der \acs{aas} selbst, sondern insbesondere auch auf die Schnittstellen von Registries und Repositories anwenden.
@@ -322,13 +326,13 @@ Erste Referenzimplementierungen liegen zwar bereits häufig schon in Form rollen
 \subsection{Digitaler Produktpass}
 Der \acs{dpp} ist ein zentrales Instrument der Europäischen Union zur Umsetzung einer nachhaltigen, digitalen Transformation. 
 Ziel ist es, die Transparenz über ökologische Merkmale von Produkten wie verwendete Materialien, Recycelbarkeit oder die CO\textsubscript{2}-Bilanz deutlich zu verbessern.
-Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg aufgezeichnet und in einem menschen -und maschinenlesbarem Format bereitgestellt werden. \cite{DPPEinführung}
+Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg aufgezeichnet und in einem menschen- und maschinenlesbaren Format bereitgestellt werden. \cite{DPPEinführung}
 Langfristig soll dies zu einer Kreislaufwirtschaft und digitalen Wirtschaft innerhalb der EU führen.
 
 Das Konzept des \acs{dpp} wurde erstmals im Rahmen des European Green Deal von der Europäischen Kommission im Jahr 2019 vorgestellt \cite{GreenDeal}.
 Im Zuge der Ökodesign-Verordnung (\ac{espr}) \cite{ESPR} wird er aktuell als verpflichtendes Mittel für zahlreiche Produktgruppen eingeführt.
 Als erste konkrete Anwendung wird der \acs{dpp} erstmals im Jahr 2027 für Batterien verpflichtend.
-Weitere Produktkategorien, darunter auch die Elektroindustrie und der Maschinen -und Anlagenbau werden in den nächsten Jahren folgen.
+Weitere Produktkategorien, darunter auch die Elektroindustrie und der Maschinen- und Anlagenbau werden in den nächsten Jahren folgen.
 
 Die Bereitstellung der Produktpässe erfolgt gemäß den Anforderungen der \acs{espr} in elektronischer Form. 
 Dabei müssen diese untereinander interoperabel kommunizieren können.
@@ -340,9 +344,9 @@ Die Daten sollen dabei über einen zentralen Server bzw. ein Registry verwaltet 
 Während die regulatorischen Rahmenbedingungen mehr oder weniger final ausgearbeitet sind, bleibt die Frage der konkreten technologischen Umsetzung.
 Eine dezentrale Lösung bildet der von der \acs{zvei} vorgestellte digitale Produktpass für Industrie 4.0 (\acs{dpp40}) \cite{DPP40}.
 Dieser basiert auf zwei etablierten Standards. 
-Zum Einen das digitale Typenschild, und zum Anderen die \acs{aas} (siehe auch Kapitel~\ref{chap:AAS}).
+Zum einen das digitale Typenschild, und zum anderen die \acs{aas} (siehe auch Kapitel~\ref{chap:AAS}).
 Das digitale Typenschild ermöglicht, gemäß der Norm IEC 61406 \cite{TypenschildIEC61406-1}, die eindeutige Identifikation von Produkten über ihre einzigartige Asset-\acs{id}.
-Typischerweise wird diese in Form eines maschinenlesbarem Links oder QR-Codes an einem Produkt angebracht, die direkt zu dem zugehörigen \acs{dpp} führt.
+Typischerweise wird diese in Form eines maschinenlesbaren Links oder Quick Response Codes (\acs{qr}-Code) an einem Produkt angebracht, der direkt zum zugehörigen \acs{dpp} führt.
 
 \clearpage
 Organisiert werden die Daten im \acs{dpp40} in verschiedenen Submodellen der \acs{aas}. 
@@ -358,11 +362,11 @@ Das Konzept der \acs{zvei} sieht darüber hinaus vor, dass Unternehmen ihre \acs
 Diese können entweder vom produzierenden Unternehmen selbst oder von Dritten, etwa Cloud-Dienstleistern, im Auftrag betrieben werden. 
 Ziel ist es, Unternehmen die Möglichkeit zu geben, ihre Daten bei Bedarf eigenständig zu aktualisieren und gleichzeitig die Kontrolle über sensible Informationen zu behalten.
 
-Zur Koordination dieser dezentralen Systeme ist ein zentrales Registry vorgesehen, in der alle Repositories registriert werden.
+Zur Koordination dieser dezentralen Systeme ist ein zentrales Registry vorgesehen, in dem alle Repositories registriert werden.
 Über dieses können interessierte Akteure relevante Server identifizieren und gezielt auf freigegebene Submodelle eines Produktpasses zugreifen.
 So wird sichergestellt, dass trotz der dezentralen Struktur eine durchgängige Interoperabilität gewährleistet ist, wie sie für die Umsetzung des \acs{dpp} auf europäischer Ebene erforderlich ist.
 
-\subsection{Robocell}
+\subsection{robocell}
 Die robocell ist eine von groninger in Zusammenarbeit mit SKAN entwickelte Maschinenlinie zur aseptischen Abfüllung von genesteten Spritzen, Zylinderampulen und Vials.
 Sie zeichnet sich dadurch aus, dass alle Prozesschritte vollständig automatisiert ablaufen.
 Durch den gezielten Einsatz von Robotern kann der menschliche Eingriff auf ein Minimum reduziert werden, wodurch maximale Sicherheit, Flexibilität und Effizienz im Abfüllprozess gewährleistet wird \cite{RobocellWebsite}.
@@ -375,7 +379,7 @@ Im Rahmen dieser Arbeit liegt der Fokus auf dem in Abbildung~\ref{fig:robocell} 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{Bilder/robocell/filling_closing_module.png}
-    \caption[Robocell: Abfüll- und Verschließmodul]{Robocell: Abfüll- und Verschließmodul (Quelle: \cite{RobocellBetriebsanleitung})}
+    \caption[robocell: Abfüll- und Verschließmodul]{robocell: Abfüll- und Verschließmodul (Quelle: \cite{RobocellBetriebsanleitung})}
     \label{fig:robocell}
 \end{figure}
 
@@ -434,14 +438,14 @@ Ein übergeordnetes Asset (z.B. Maschine) kann so mit untergeordneten Komponente
 Einträge in den Discovery Service müssen derzeit allerdings noch manuell über die \acs{api} vorgenommen werden.
 
 Zur benutzerfreundlichen Visualisierung und Interaktion kann die sogenannte AAS Web UI genutzt werden.
-Die webbasierte Benutzeroberfläche, wie in Abbildung \ref{fig:BasyxWebUI} dargestellt ist, wurde mit dem JavaScript-Framework Vue.js entwickelt und kommuniziert über die standardisierte \acs{rest}-API mit den zentralen Komponenten der BaSyx-Plattform, darunter die Repositories, Registries und der Discovery Service.
+Die webbasierte Benutzeroberfläche, wie in Abbildung \ref{fig:BasyxWebUI} dargestellt, wurde mit dem JavaScript-Framework Vue.js entwickelt und kommuniziert über die standardisierte \acs{rest}-API mit den zentralen Komponenten der BaSyx-Plattform, darunter die Repositories, Registries und der Discovery Service.
 Sie zeigt alle registrierten \acs{aas} in einer Liste an und bietet die Möglichkeit, einzelne \acs{aas} in einer Baumstruktur sowohl zu visualisieren als auch zu bearbeiten. 
 
 Ein weiteres zentrales Merkmal der AAS Web UI ist der sogenannte AAS Viewer.
 In nachfolgender Abbildung ist dieser auf der rechten Seite angeordnet.
 Er erlaubt die Visualisierung von Submodellen und deren Elementen anhand ihrer semanticId. 
 Hierfür stehen verschiedene vordefinierte Plugins zur Verfügung, die bestimmte Submodelle, wie beispielsweise das Typenschild oder hierarchische Strukturen, grafisch darstellen.
-Da die Lösung Open Source ist besteht zudem die Möglichkeit, eigene benutzerdefinierte Plugins für weitere Submodelle zu erstellen. \cite{BaSyxWiki,BaSyxEclipse} 
+Da die Lösung Open Source ist, besteht zudem die Möglichkeit, eigene benutzerdefinierte Plugins für weitere Submodelle zu erstellen. \cite{BaSyxWiki,BaSyxEclipse} 
 
 \vspace{0.5em}
 \begin{figure}[htbp]

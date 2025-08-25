@@ -1,8 +1,8 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{Abkürzungsverzeichnis}{VIII}{section*.5}%
-\contentsline {section}{Abbildungsverzeichnis}{X}{section*.6}%
-\contentsline {section}{Tabellenverzeichnis}{XI}{section*.11}%
-\contentsline {section}{Listings}{XII}{section*.12}%
+\contentsline {section}{Abkürzungsverzeichnis}{VII}{section*.7}%
+\contentsline {section}{Abbildungsverzeichnis}{IX}{section*.8}%
+\contentsline {section}{Tabellenverzeichnis}{X}{section*.13}%
+\contentsline {section}{Listings}{XI}{section*.14}%
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Zielsetzung}{1}{subsection.1.2}%
@@ -16,7 +16,7 @@
 \contentsline {subsubsection}{\numberline {2.4.2}Informationsaustausch}{13}{subsubsection.2.4.2}%
 \contentsline {subsubsection}{\numberline {2.4.3}Sicherheit}{14}{subsubsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.5}Digitaler Produktpass}{15}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Robocell}{16}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.6}robocell}{16}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Technologische Grundlagen}{17}{subsection.2.7}%
 \contentsline {subsubsection}{\numberline {2.7.1}AASX Package Explorer}{17}{subsubsection.2.7.1}%
 \contentsline {subsubsection}{\numberline {2.7.2}Eclipse BaSyx }{18}{subsubsection.2.7.2}%
@@ -36,7 +36,7 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Konzeptidee}{36}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Prototypische Umsetzung}{37}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}Anwendungsfall Digitaler Produktpass}{39}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Umsetzung mit dem Teilmodell Carbon Footprint}{39}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.1}Umsetzung mit dem \acs {smt} Carbon Footprint}{39}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\numberline {3.5.2}Zugriffsrechte und Datensicherheit}{40}{subsubsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.6}Anwendungsfall automatisierte Generierung von AAS}{42}{subsection.3.6}%
 \contentsline {subsubsection}{\numberline {3.6.1}Arbeiten mit Submodel Templates}{42}{subsubsection.3.6.1}%
@@ -59,8 +59,8 @@
 \contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{64}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{65}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{66}{subsection.5.3}%
-\contentsline {section}{Literatur}{67}{section*.154}%
-\contentsline {section}{Anhang}{74}{section*.155}%
+\contentsline {section}{Literatur}{67}{section*.168}%
+\contentsline {section}{Anhang}{74}{section*.169}%
 \setcounter {tocdepth}{-1}
 \contentsline {section}{\numberline {A}Statische Submodelle des AAS-Demonstrators}{74}{appendix.A}%
 \contentsline {subsection}{\numberline {A.1}Typenschild}{74}{subsection.A.1}%

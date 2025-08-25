@@ -61,7 +61,7 @@ Daneben wurden aber auch projektspezifische Anforderungen berücksichtigt, die s
 Tabelle \ref{tab:Submodelle} liefert einen Überblick über die initiale Auswahl dieser Submodelle sowie den zugehörigen Datenquellen.
 Diese werden in späteren Anwendungsfällen gezielt erweitert.
 Zur besseren Übersicht sind dynamische Submodelle farblich hervorgehoben, während statische Submodelle weiß hinterlegt sind.
-Sofern vorhanden, verweist die Spalte Standardisierung auf das jeweils zugehörige \acs{smt} mittels der offiziellen Dokumentennummer der \acs{idta}, in der die bettrefende Version spezifiziert ist.
+Sofern vorhanden, verweist die Spalte Standardisierung auf das jeweils zugehörige \acs{smt} mittels der offiziellen Dokumentennummer der \acs{idta}, in der die betreffende Version spezifiziert ist.
 Die in der Spalte Vorgesehene Inhalte genannten Punkte zeigen beispielhaft auf, welche Informationen im weiteren Verlauf im digitalen Zwilling abgebildet werden sollen.
 
 \input{TabelleSubmodelle.tex}
@@ -85,7 +85,7 @@ Die Modellierung beginnt mit dem Erstellen eines neuen \acs{aas}-Pakets im Packa
 Dieses dient als Container für die digitalen Inhalte eines Assets.  
 In der geöffneten Umgebung lässt sich eine neue \acs{aas} anlegen, die sowohl allgemeine als auch assetspezifische Daten enthält. 
 Abbildung~\ref{fig:NeuesAASPaket} zeigt den initialen Aufbau im Package Explorer, der im weiteren Verlauf sukzessive um Submodelle und deren Inhalte erweitert wird.
-Dateien, wie ein Titelbild für das Abfüll- und Verschließmodul können dabei bereits zu Beginn in die \acs{aas}-Umgebung eingebettet werden und sind ein integraler Bestandteil des digitalen Zwillings.
+Dateien wie ein Titelbild für das Abfüll- und Verschließmodul können dabei bereits zu Beginn in die \acs{aas}-Umgebung eingebettet werden und sind ein integraler Bestandteil des digitalen Zwillings.
 
 Innerhalb dieses Pakets müssen zunächst die Metadaten der \acs{aas} sowie des zugehörigen Asset spezifiziert werden.
 Neben der Auswahl des Asset-Typs ist insbesondere die eindeutige Identifikation von zentraler Bedeutung.
@@ -120,7 +120,7 @@ Tabelle~\ref{tab:Submodellelemente} gibt einen Überblick über die wichtigsten 
 
 Gemäß der Metamodellspezifikation \cite{SpezifikationPart1} wird zwischen DataElements und SubmodelElements unterschieden.
 DataElements bilden stets die unterste Ebene im Modell. Sie enthalten konkrete Informationen wie Werte oder Dateien und können keine weiteren Elemente enthalten.
-SubmodelElements hingegen sind komplexere Strukturen die wiederum als Container für untergeordnete Elemente dienen.
+SubmodelElements hingegen sind komplexere Strukturen, die wiederum als Container für untergeordnete Elemente dienen.
 
 Submodellelemente erhalten im Gegensatz zu Submodellen keine eigene \acs{id}, sondern werden über ihre idShort eindeutig referenziert.
 Diese muss innerhalb eines Submodells einzigartig sein.
@@ -130,13 +130,13 @@ Alternativ zur manuellen Modellierung können die im Rahmen der Konzeption ausge
 Diese stammen beispielsweise aus dem offiziellen Repository der \acs{idta} \cite{idtaTemplates} und lassen sich als AASX-Dateien importieren.
 Im Package Explorer erfolgt dies über ein sogenanntes Auxiliary AAS, das als sekundäre Umgebung zur Template-Verwaltung dient.
 
-Die importierten Templates enthalten eine strukturierte Vorlage mit typischen Submodellelementen und reduzieren somit den Modellierungsaufwand erheblich.
+Die importierten Templates enthalten eine strukturierte Vorlage mit typischen Submodell\-elementen und reduzieren somit den Modellierungsaufwand erheblich.
 Auch unternehmensspezifische Ableitungen lassen sich darauf aufbauend erstellen.
 Ein vertiefter Ansatz zur Template-Nutzung findet sich in Kapitel~\ref{chap:ErstellenvonSubmodelTemplates}.
 
 Nach dem Strukturaufbau können konkrete Inhalte wie Werte, Dokumente oder Referenzen eingepflegt werden.
 Dies beschränkt sich jedoch auf statische Submodelle wie Technische Daten oder Dokumentation.
-Dynamische Inhalte, etwa Betriebsdaten werden nicht direkt im Package Explorer gepflegt, sondern über externe Datenquellen (Maschinensimulator und Datengenerator) zur Laufzeit angebunden.
+Dynamische Inhalte, etwa Betriebsdaten, werden nicht direkt im Package Explorer gepflegt, sondern über externe Datenquellen (Maschinensimulator und Datengenerator) zur Laufzeit angebunden.
 
 \subsubsection*{Semantische Beschreibung mit Concept Descriptions}
 \vspace{-0.5em}
@@ -183,12 +183,12 @@ Alternativ kann die \acs{aas} auch als \ac{json}- oder \ac{xml}-Datei gespeicher
 Diese Formate beinhalten allerdings ausschließlich die strukturierte Beschreibung der \acs{aas}, eignen sich jedoch besonders für die Nutzung in \acsp{api} oder zur Anbindung an bestehende Softwaresysteme.
 
 Zusätzlich unterstützt der Package Explorer auch den gezielten Export einzelner Submodelle oder Concept Descriptions.
-Diese lassen sich seperat, etwa als \acs{json}-Datei abspeichern und können so gezielt in anderen \acs{aas}-Projekten wiederverwendet werden.
+Diese lassen sich seperat, etwa als \acs{json}-Datei, abspeichern und können so gezielt in anderen \acs{aas}-Projekten wiederverwendet werden.
 
 \subsubsection{Validierung}
 Im Anschluss an die Modellierung der \acs{aas} sollte eine Überprüfung der Konformität erfolgen.
 Hierzu kann eine von der \acs{idta} bereitgestellte Test Engine \cite{TestEngine} eingesetzt werden. 
-Diese lässt sich direkt mit pip, dem Paktemanager von Python, installieren und anschließend über die Kommandozeile nutzen.
+Diese lässt sich direkt mit pip, dem Paketmanager von Python, installieren und anschließend über die Kommandozeile nutzen.
 
 Mit dem Befehl 
 \tcbox[inlinebox]{{aas\_test\_engine check\_files}} 
@@ -494,7 +494,7 @@ Aufbauend auf dem von \acs{zvei} und \acs{idta} vorgestellten Konzept des \acs{d
 Im Mittelpunkt stehen dabei die Erfassung des \acs{pcf} sowie die Realisierung differenzierte Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen.
 Grundlage bildet die zuvor erstellte \acs{aas} des Abfüll- und Verschließmoduls, das um ein Submodell zur Abbildung des \acs{cf} erweitert wird.
 
-\subsubsection{Umsetzung mit dem Teilmodell Carbon Footprint}
+\subsubsection{Umsetzung mit dem \acs{smt} Carbon Footprint}
 Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\\valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
 Seine Relevanz zeigt sich unter anderem in der EU-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt. 
 Dieser stellt die erste konkrete Umsetzung eines \acs{dpp} dar und dient als Ausgangspunkt für weitere Branchen wie den Maschinen- und Anlagenbau. 
