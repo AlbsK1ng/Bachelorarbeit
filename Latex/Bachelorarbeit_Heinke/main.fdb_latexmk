@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1756217897.13936 "main.aux" "main.bbl" "main" 1756219434.76899 0
-  "./main-blx.bib" 1756219434.02436 343 bf1f0c75b5bafd473925320ac9611e26 ""
+["bibtex main"] 1756222501.96515 "main.aux" "main.bbl" "main" 1756222520.83782 0
+  "./main-blx.bib" 1756222520.04083 343 bf1f0c75b5bafd473925320ac9611e26 ""
   "./references.bib" 1756205303.11525 24261 eb727fc9bb50b1d77f9b3e80fe0836a3 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1711143581 65510 b1f696b0241395385f422f67543c37fd ""
-  "main.aux" 1756219433.98935 91038 7f9825d4e30fd0bdc05ba7639f24c50c "pdflatex"
+  "main.aux" 1756222520.00792 91038 7f9825d4e30fd0bdc05ba7639f24c50c "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1756219421.63591 "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1756219434.7695 0
+["pdflatex"] 1756222502.23677 "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1756222520.83829 0
   "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" 1756207862.55938 7168 2b9e4677bca78b1d9f2ecb9f56f3427d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc" 1558214095 7631 5169ff1acd97ff1c4ab83563c99f96f4 ""
@@ -337,10 +337,10 @@
   "Bilder/robocell/filling_closing_module.png" 1752042626.16109 1239254 f7e59c7777a8e4978c341bef0126eb78 ""
   "Bilder/vorgehenEntwicklungsteil.pdf" 1752743459 33526 4e1ffbc066f27312ef67a22a9d118e5d ""
   "DataSpecificationContent.tex" 1755681754.28255 1053 4498f4360312eaf62649bf22b1b2eca2 ""
-  "Einleitung.tex" 1756218931.33945 4856 efef5268a6647d8aa3d9ad1e9165b534 ""
+  "Einleitung.tex" 1756220078.4559 4850 9e463c439f41b6398255b5473ee29745 ""
   "Entwicklung.tex" 1756203655.79462 55038 9eae2766d9d36b918552d55fad357a72 ""
   "Ergebnisse.tex" 1756204001.87493 45200 0562579ed7a70366e674b7bb45c01d5b ""
-  "Grundlagen.tex" 1756219421.39711 48005 e20c531aab0b0c6e1c3e43600ae9c69a ""
+  "Grundlagen.tex" 1756222512.19173 47993 c5f96b732e09fb26c2e253047da052ca ""
   "Kurzfassung.tex" 1756218501.87856 3378 b6362f7998c39336df68df6340ff4a64 ""
   "TabelleBasyxEndpunkte.tex" 1752214751.11938 937 6bab53cf74d6951f7fb31efa1247ce1d ""
   "TabelleBereitstellungBaSyxMitAPI.tex" 1756194065.15849 694 239faab6eea7f95d2374e5bbd0fc35f0 ""
@@ -353,14 +353,14 @@
   "commands.tex" 1747647607.92526 0 d41d8cd98f00b204e9800998ecf8427e ""
   "ehrenwoertlichErklärung.tex" 1747385158.63477 557 4ec48bd316d1a5d701d88a7edd0ff2cb ""
   "glossary.tex" 1523254870 167 69e8ece9b7c85abdb3646b31f274c667 ""
-  "main.aux" 1756219433.98935 91038 7f9825d4e30fd0bdc05ba7639f24c50c "pdflatex"
-  "main.bbl" 1756217897.2587 58085 9e3e4889abb9fcabc26d6df11dfca596 "bibtex main"
-  "main.lof" 1756219434.02636 3740 4d2268e2f2ffa5b1eb09dbd9bf5629a3 "pdflatex"
-  "main.lol" 1756219434.02636 243 062d975ad8018e4b31d13c7f4d96c589 "pdflatex"
-  "main.lot" 1756219434.02636 511 d21a2c09ebd024e318c36bc0edb677ce "pdflatex"
-  "main.run.xml" 1756219434.02616 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
+  "main.aux" 1756222520.00792 91038 7f9825d4e30fd0bdc05ba7639f24c50c "pdflatex"
+  "main.bbl" 1756222502.22987 58085 9e3e4889abb9fcabc26d6df11dfca596 "bibtex main"
+  "main.lof" 1756222520.04312 3740 4d2268e2f2ffa5b1eb09dbd9bf5629a3 "pdflatex"
+  "main.lol" 1756222520.04312 243 062d975ad8018e4b31d13c7f4d96c589 "pdflatex"
+  "main.lot" 1756222520.04312 511 d21a2c09ebd024e318c36bc0edb677ce "pdflatex"
+  "main.run.xml" 1756222520.04312 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
   "main.tex" 1756207862.55938 7168 2b9e4677bca78b1d9f2ecb9f56f3427d ""
-  "main.toc" 1756219434.02616 6264 d3dd4d2bef291188976497628ee6af54 "pdflatex"
+  "main.toc" 1756222520.04312 6264 d3dd4d2bef291188976497628ee6af54 "pdflatex"
   "sperrvermerk.tex" 1755240525.56696 1403 61f0423a08084ff13faa2476f0d0cc12 ""
   (generated)
   "main-blx.bib"
