@@ -207,14 +207,14 @@ Aktuell bildet die \acs{aas}-Version 3 den neuesten Entwicklungsstand und ist eb
 In diesem Zusammenhang bildet die \acs{aas} das digitale Abbild eines Assets und stellt damit die Grundlage für den digitalen Zwilling bereit, indem sie alle relevanten Daten, Eigenschaften und Funktionen über den gesamten Lebenszyklus hinweg in strukturierter und standardisierter Form bereitstellt.
 Die Informationen sind in sogenannten Submodellen organisiert, die jeweils spezifische Aspekte eines Assets abbilden.
 Dabei kann es sich sowohl um physische Assets (z.B. Maschinen, Anlagen) als auch um virtuelle Assets (z.B. Software, Konzepte) handeln. 
-Eine \acs{aas} ist dabei stets einem Asset zugeordnet und global eindeutig identifizierbar. 
+Eine \acs{aas} ist stets einem Asset zugeordnet und global eindeutig identifizierbar. 
 Durch die Kombination eines Assets mit seiner \acs{aas} entsteht eine sogenannte Industrie-4.0-Komponente (siehe Abbildung \ref{fig:Industrie4Komponente}).
 
 % Durch die standardisierte Struktur bildet die Verwaltungsschale die Grundlage für einen einheitlichen Informationsaustausch über System -und Unternehmensgrenzen hinweg.
 % Verwaltungsschalen repräsentieren immer genau ein Asset und müssen global eindeutig identifizierbar sein.
 % In der Industrie können Assets physische Objekte, wie eine Anlage oder eine Maschine sein oder aber auch virtuelle Elemente wie Software oder eine Idee.
 % In RAMI 4.0 wird davon ausgegangen, das Assets immmer einen konkreten Nutzen für ein Unternehmen bzw. eine Organisation bieten.
-\vspace{1em}
+\vspace{1.5em}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/I4Komponente/I4KomponenteNeu.pdf}
@@ -274,10 +274,11 @@ Darin enthalten sind unter anderem Definitionen, Einheiten, Wertebereiche, zulä
 %Erst durch die zugehörige semantische Beschreibung, in der die Einheit und Bedeutung definiert werden, wird der Wert eindeutig interpretierbar. 
 
 Um die Erstellung von Submodellen zu erleichtern und gleichzeitig Interoperabilität zu gewährleisten, stellt die \acs{idta} standardisierte Submodellvorlagen - sogenannte \acp{smt} - zur Verfügung.
-Diese Templates decken eine Vielzahl industrieller Anwendungsfälle ab und werden kontinuierlich weiterentwickelt und ergänzt.
-Die bereits verfügbaren Templates enthalten unter anderem Submodelle wie das digitale Typenschild oder den \ac{cf}.
-Alle Eigenschaften innerhalb dieser Vorlagen werden dabei in Verbindung mit dem ECLASS-Standard einheitlich semantisch beschrieben.
-Diese Templates könen über ein zentrales Repository \cite{idtaTemplates} bezogen werden und bilden die Basis für eine interoperable semantische Datenstruktur.
+Diese decken eine Vielzahl industrieller Anwendungsfälle ab und werden kontinuierlich weiterentwickelt und ergänzt.
+Bereits verfügbare Templates umfassen unter anderem Submodelle wie das digitale Typenschild oder den \ac{cf}.
+% Die bereits verfügbaren Templates enthalten unter anderem Submodelle wie das digitale Typenschild oder den \ac{cf}.
+Alle Submodellelemente innerhalb dieser Vorlagen sind in Verbindung mit dem ECLASS-Standard einheitlich semantisch beschrieben.
+Die Templates können über ein zentrales Repository \cite{idtaTemplates} bezogen werden und bilden die Basis für eine interoperable Datenstruktur.
 
 \subsubsection{Informationsaustausch}
 Der Austausch von Informationen über die \acs{aas} kann auf unterschiedliche Weise erfolgen.
@@ -304,16 +305,16 @@ Gerade wenn Informationen aus der \acs{aas} über die Grenzen des eigenen Untern
 Die neueste Spezifikation Part 4: Security \cite{SpezifikationPart4} der \acs{idta} liefert hierfür die technische und konzeptionelle Grundlage.
 Sie beschreibt, wie Zugriffe auf Daten in der \acs{aas} sicher gesteuert werden können, insbesondere in vernetzten Umgebungen wie Datenräumen.
 
-Zum Einsatz kommen dabei Dienste wie ein Identity Provider zur Authentifizierung oder ein Policy Service zur Durchsetzung von Richtlinien.
-Die Sicherheit wird dabei mithilfe eines attributbasierten Zugriffsmodells (\ac{abac}) gewährleistet.
-Bei jeder Anfrage auf bestimmte Objekte innerhalb der \acs{aas} wird dabei anhand verschiedener Merkmale (Attribute) geprüft, ob ein Zugriff erlaubt ist.
-Dazu zählen sogenannte Subjektattribute (also wer die Anfrage stellt), Objektattribute (z.B. welches Submodell, welche Property oder welches Submodellelement betroffen ist), die gewünschte Aktion (z.B. Lesen oder Schreiben) sowie kontextbezogene Bedingungen (z.B. Zeitpunkt der Anfrage oder Zustand des Systems).
+Zum Einsatz kommen Dienste wie ein Identity Provider zur Authentifizierung oder ein Policy Service zur Durchsetzung von Richtlinien.
+Die Sicherheit wird mithilfe eines attributbasierten Zugriffsmodells (\ac{abac}) gewährleistet.
+Bei jeder Anfrage auf bestimmte Objekte innerhalb der \acs{aas} wird anhand verschiedener Merkmale (Attribute) geprüft, ob ein Zugriff erlaubt ist.
+Dazu zählen sogenannte Subjekt\-attribute (also wer die Anfrage stellt), Objektattribute (z.B. welches Submodell, welche Property oder welches Submodellelement betroffen ist), die gewünschte Aktion (z.B. Lesen oder Schreiben) sowie kontextbezogene Bedingungen (z.B. Zeitpunkt der Anfrage oder Zustand des Systems).
 
-Die zur Prüfung notwendigen Informationen liefert in der Regel ein Token, das vom 
-\linebreak
-Identity Provider bereitgestellt wird. Die Spezifikation sieht hierfür die Nutzung sogenannter \acp{jwt} vor.
-Die Attribute werden schließlich von dem Policy Service mit den dort hinterlegten Zugriffsrichtlinen abgeglichen und basierend darauf eine Zugriffsentscheidung getroffen.
-Ein besonderer Vorteil des \acs{abac}-Modells liegt dabei in seiner hohen Flexibilität. Rollen können ebenfalls als Attribute behandelt werden, wodurch sich auch problemlos rollenbasierte Zugriffskonzepte (RBAC) umsetzen lassen. 
+Die zur Prüfung notwendigen Informationen liefert ein Token, das vom Identity Provider bereitgestellt wird. 
+Die Spezifikation sieht die Nutzung sogenannter \acp{jwt} vor.
+Die darin enthaltenen Attribute werden vom Policy Service mit den dort hinterlegten Zugriffsrichtlinen abgeglichen und basierend darauf eine Zugriffsentscheidung getroffen.
+Ein besonderer Vorteil des \acs{abac}-Modells liegt dabei in seiner hohen Flexibilität. 
+Rollen können ebenfalls als Attribute behandelt werden, wodurch sich auch problemlos rollenbasierte Zugriffskonzepte (\ac{rbac}) umsetzen lassen. 
 
 Die beschriebenen Kontrollmechanismen lassen sich nicht nur auf die Inhalte der \acs{aas} selbst, sondern insbesondere auch auf die Schnittstellen von Registries und Repositories anwenden.
 So kann beispielsweise sichergestellt werden, das nur authorisierte Systeme Zugriff auf ein bestimmtes Submodell erhalten oder nur bestimmte Nutzergruppen neue \acs{aas}-Instanzen registrieren können.
@@ -342,7 +343,7 @@ Die Daten sollen dabei über einen zentralen Server bzw. ein Registry verwaltet 
 \cite{CIRPASS}
 
 Während die regulatorischen Rahmenbedingungen mehr oder weniger final ausgearbeitet sind, bleibt die Frage der konkreten technologischen Umsetzung.
-Eine dezentrale Lösung bildet der von der \acs{zvei} vorgestellte digitale Produktpass für Industrie 4.0 (\acs{dpp40}) \cite{DPP40}.
+Eine dezentrale Lösung bildet der von der \acs{zvei} vorgestellte Digitale Produktpass für Industrie 4.0 (\acs{dpp40}) \cite{DPP40}.
 Dieser basiert auf zwei etablierten Standards. 
 Zum einen das digitale Typenschild, und zum anderen die \acs{aas} (siehe auch Kapitel~\ref{chap:AAS}).
 Das digitale Typenschild ermöglicht, gemäß der Norm IEC 61406 \cite{TypenschildIEC61406-1}, die eindeutige Identifikation von Produkten über ihre einzigartige Asset-\acs{id}.

@@ -721,7 +721,8 @@
     \field{labeltitlesource}{title}
     \field{title}{Specification of the Asset Administration Shell - Part 1: Metamodel}
     \verb{url}
-    \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+    \verb https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.0.1
+    \verb /index.html
     \endverb
     \field{version}{3.0.1}
     \field{month}{06}
@@ -765,7 +766,8 @@
     \field{labeltitlesource}{title}
     \field{title}{Specification of the Asset Administration Shell - Part 3a: Data Specification - IEC 61360}
     \verb{url}
-    \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+    \verb https://industrialdigitaltwin.io/aas-specifications/IDTA-01003-a/v3.0
+    \verb .2/index.html
     \endverb
     \field{version}{3.0.2}
     \field{month}{07}
@@ -809,7 +811,8 @@
     \field{labeltitlesource}{title}
     \field{title}{Specification of the Asset Administration Shell - Part 5: Package File Format (AASX)}
     \verb{url}
-    \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+    \verb https://industrialdigitaltwin.io/aas-specifications/IDTA-01005/v3.0.1
+    \verb /index.html
     \endverb
     \field{version}{3.0.1}
     \field{month}{06}
@@ -832,7 +835,8 @@
     \field{labeltitlesource}{title}
     \field{title}{Specification of the Asset Administration Shell - Part 2: Application Programming Interfaces}
     \verb{url}
-    \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+    \verb https://industrialdigitaltwin.io/aas-specifications/IDTA-01002/v3.0.3
+    \verb /index.html
     \endverb
     \field{version}{3.0.3}
     \field{month}{10}
@@ -880,7 +884,8 @@
     \field{labeltitlesource}{title}
     \field{title}{Specification of the Asset Administration Shell - Part 4: Security}
     \verb{url}
-    \verb https://industrialdigitaltwin.org/en/content-hub/aasspecifications
+    \verb https://industrialdigitaltwin.io/aas-specifications/IDTA-01004/v3.0/i
+    \verb ndex.html
     \endverb
     \field{version}{3.0}
     \field{month}{05}
