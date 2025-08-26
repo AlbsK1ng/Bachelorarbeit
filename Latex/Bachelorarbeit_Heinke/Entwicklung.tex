@@ -156,7 +156,7 @@ Die Struktur wird im Folgenden am Beispiel einer Property für die physikalische
     \centering
     \input{DataSpecificationContent.tex}
     \vspace{-0.5em}
-    \caption[Eingabemaske einer Concept Description]{Eingabemaske einer Concept Description (in Anlehnung an \cite{SpezifikationPart3a})}
+    \caption[Eingabemaske einer \acs{cd}]{Eingabemaske einer \acs{cd} (in Anlehnung an \cite{SpezifikationPart3a})}
     \label{fig:SubmodellTypenschild}
 \end{figure}
 \vspace{-0.35em}
@@ -321,9 +321,9 @@ In diesem Projekt kommt Eclipse Milo zum Einsatz, der auf einem Subscription-Mod
 Im Gegensatz zu einem Polling-Ansatz werden hierbei gezielt bestimmte Knoten abonniert, sodass neue Werte bei Änderungen automatisch übermittelt werden.
 
 Ein Beispiel für eine entsprechende \acs{json}-Konfiguration der Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für den Druckwert dargestellt.
-Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall können zusätzlich angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
+Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall, können zusätzlich angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
 
-\begin{lstlisting}[language=json, caption={Beispielhafte \acs{json}-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
+\begin{lstlisting}[language=json, caption={\acs{json}-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
 {
     "uniqueId"       : "pressure",
     "nodeInformation": "ns=4;i=113",
@@ -343,7 +343,7 @@ Listing~\ref{lst:jsonDatensenke} zeigt ein Beispiel einer entsprechenden Konfigu
 Der Platzhalter \{smId\} steht dabei für die Base64-kodierte \acs{id} des Submodells Prozessdaten, wie sie in der \acs{rest}-API der \acs{aas} verwendet wird.
 
 \newpage
-\begin{lstlisting}[language=json, caption={Beispielhafte \acs{json}-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
+\begin{lstlisting}[language=json, caption={\acs{json}-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
 {
     "uniqueId"        : "Submodel/ProcessData/Pressure",
     "submodelEndpoint": "http://aas-env:8081/submodels/{smId}",
@@ -432,8 +432,8 @@ Der prinzipielle Aufbau eines Autoencoders ist in Abbildung \ref{fig:Autoencoder
 Der Encoder besteht aus mehreren Schichten, die die Eingabedaten schrittweise in%
 \pagebreak
 ~eine komprimierte Form überführen. 
-Dabei erfolgt eine Dimensionsreduktion, das heißt, die Daten werden im Verlauf auf weniger Dimensionen verdichtet. 
-Das Ziel ist es, die für die Rekonstruktion wesentlichen Merkmale zu extrahieren und irrelevante Informationen zu filtern.
+Dabei erfolgt eine Dimensionsreduktion, das heißt, die Daten werden im Verlauf auf wenigere Dimensionen verdichtet. 
+Das Ziel ist, die für die Rekonstruktion wesentlichen Merkmale zu extrahieren und irrelevante Informationen zu filtern.
 
 Der dabei entstehende latente Raum bildet die am stärksten komprimierte Repräsentation der Daten ab und dient als Ausgangspunkt für den Decoder.
 Dieser übernimmt die Aufgabe, die komprimierte Darstellung wieder in die ursprüngliche Eingabe zu rekonstruieren. 
@@ -469,14 +469,14 @@ Da diese Änderungen in der Regel innerhalb kurzer Zeitabschnitte auftreten, ist
 
 Die resultierenden Sequenzen können anschließend in einem Tensor zusammengeführt werden. 
 Dabei handelt es sich um ein mehrdimensionales Array, in diesem Fall eine zweidimensionale Matrix, bei der jede Zeile ein Zeitfenster mit einer definierten Anzahl an Temperaturwerten abbildet. 
-Diese Struktur ist speziell für \acs{ki}-Modelle ausgelegt und erlaubt es dem Autoencoder, typische Muster in den Zeitreihendaten zu erlernen.
+Diese Struktur ist speziell für \acs{ki}-Modelle ausgelegt und erlaubt dem Autoencoder, typische Muster in den Zeitreihendaten zu erlernen.
 
 Der Autoencoder selbst wird mit dem Deep-Learning-Framework PyTorch \cite{PyTorch} implementiert.
 Der Encoder komprimiert die Eingabesequenz schrittweise von 64 auf 16 und schließlich auf 4 Neuronen, welche den latenten Raum repräsentieren.
 Der Decoder ist spiegelbildlich aufgebaut und rekonstruiert aus dem latenten Raum die ursprüngliche Eingabesequenz, indem er die Dimensionen in umgekehrter Reihenfolge auf 16, 64 und schließlich auf die ursprüngliche Sequenzlänge erweitert.
 
 Als Eingabe für das Training dienen die zuvor definierten Tensoren.
-Das Ziel ist es, die Eingabedaten möglichst exakt zu rekonstruieren.
+Das Ziel ist, die Eingabedaten möglichst exakt zu rekonstruieren.
 Nach jedem Trainingsdurchgang wird hierzu der mittlere quadratische Fehler zwischen Eingabe- und Ausgabedaten berechnet.
 Dieser Fehlerwert wird verwendet, um die Gewichte des Netzes, typischerweise mittels Backpropagation, anzupassen.
 Durch die iterative Wiederholung dieses Prozesses über mehrere Trainingszyklen (Epochen) wird der Rekonstruktionsfehler sukzessive verringert und somit die Fähigkeit des Modells, die Eingabedaten genau nachzubilden, kontinuierlich verbessert.
@@ -491,11 +491,11 @@ Dabei dient der Rekonstruktionsfehler nicht mehr zur Optimierung, sondern als Ma
 \subsection{Anwendungsfall Digitaler Produktpass}
 Angesichts steigender Anforderungen an Nachhaltigkeit und Transparenz über den gesamten Produktlebenszyklus gewinnt der \acs{dpp} zunehmend an Bedeutung.
 Aufbauend auf dem von \acs{zvei} und \acs{idta} vorgestellten Konzept des \acs{dpp40}, das unter anderem in einem \acs{pcf}-Showcase \cite{PCFShowcas} demonstriert wird, wird in diesem Anwendungsfall untersucht, wie sich zentrale Herausforderungen mithilfe der \acs{aas} umsetzen lassen.
-Im Mittelpunkt stehen dabei die Erfassung des \acs{pcf} sowie die Realisierung differenzierte Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen.
+Im Mittelpunkt stehen dabei die Erfassung des \acs{pcf} sowie die Realisierung differenzierter Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen.
 Grundlage bildet die zuvor erstellte \acs{aas} des Abfüll- und Verschließmoduls, das um ein Submodell zur Abbildung des \acs{cf} erweitert wird.
 
 \subsubsection{Umsetzung mit dem \acs{smt} Carbon Footprint}
-Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\\valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
+Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\-valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
 Seine Relevanz zeigt sich unter anderem in der EU-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt. 
 Dieser stellt die erste konkrete Umsetzung eines \acs{dpp} dar und dient als Ausgangspunkt für weitere Branchen wie den Maschinen- und Anlagenbau. 
 Die Verordnung fordert unter anderem die verpflichtende Angabe des \acs{pcf} für die Phasen Material, Produktion und die Gesamtbetrachtung (Cradle to Gate). 
@@ -524,14 +524,15 @@ Zur Trennung von Logik und Benutzeroberfläche wird ein eigenständiger, Node.js
 Über diese kann die Berechnung der CO\textsubscript{2}-Äquivalente ausgelöst werden.
 Die Aggregation erfolgt damit zentral und serverseitig, anstatt direkt im Plugin clientseitig.
 
-Der Microservice liest die im \acs{cf}-Submodell des Abfüll- und Verschließmoduls referenzierten Komponenten aus, fasst deren \acs{pcf}-Werte zusammen und schreibt die berechneten CO\textsubscript{2}-Äquivalente in die vorbereiteten \acsp{smc} der Haupt-\acs{aas} zurück.
+% Der Microservice liest die im \acs{cf}-Submodell des Abfüll- und Verschließmoduls referenzierten Komponenten aus, fasst deren \acs{pcf}-Werte zusammen und schreibt die berechneten CO\textsubscript{2}-Äquivalente in die vorbereiteten \acsp{smc} der Haupt-\acs{aas} zurück.
+Der Microservice liest die im \acs{cf}-Submodell des Abfüll- und Verschließmoduls referenzierten Komponenten aus, aggregiert deren \acs{pcf}-Werte und schreibt die berechneten CO\textsubscript{2}-Äquivalente in die vorbereiteten \acsp{smc} der Haupt-\acs{aas} zurück.
 Zusätzlich können weitere Metadaten wie die verwendete Berechnungsmethode oder der Gültigkeitszeitraum berücksichtigt werden.
 Da diese Werte im vorliegenden Anwendungsfall jedoch bei allen Komponenten identisch sind, ist keine Differenzierung erforderlich.
 
 \subsubsection{Zugriffsrechte und Datensicherheit}
 
 Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Informationen ist essenziell, insbesondere im Hinblick auf Datenschutz, regulatorische Vorgaben sowie den Schutz geistigen Eigentums.  
-Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} hierfür die Nutzung eines attributbasiertes Zugriffskontrollmodell (\acs{abac}) vor.
+Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} hierfür die Nutzung eines attributbasierten Zugriffskontrollmodells (\acs{abac}) vor.
 
 Da die \acs{abac}-Funktionalität in aktuellen Referenzimplementierungen wie dem AASX Server Blazor oder Eclipse BaSyx jedoch noch nicht vollständig verfügbar ist, wird im Rahmen dieses Anwendungsfalls exemplarisch ein rollenbasiertes Zugriffsmodell (\acs{rbac}) umgesetzt, wie es von der Eclipse BaSyx-Plattform unterstützt wird.  
 Im Gegensatz zum \acs{abac}-Ansatz erfolgt die Zugriffskontrolle hierbei durch die Zuweisung spezifischer Berechtigungen an vordefinierte Rollen, denen wiederum Benutzer oder technische Clients zugeordnet sind.
@@ -544,7 +545,7 @@ Im ersten Schritt muss ein dediziertes Realm eingerichtet werden, das als gekaps
 Innerhalb dieses Realms lassen sich sowohl Benutzerkonten als auch Rollen definieren, wobei die Zuweisung über sogenannte Role Mappings erfolgt.  
 Ein Benutzer kann einer oder mehreren Rollen gleichzeitig zugeordnet sein.
 
-Jedes Benutzerkonto verfügt dabei über einen eindeutigen Benutzernamen sowie ein initiales Passwort zur Authentifizierung.  
+Jedes Benutzerkonto verfügt dabei über einen eindeutigen Benutzernamen sowie ein ini\-tiales Passwort zur Authentifizierung.  
 Zur Erhöhung der Sicherheit kann dieses Passwort als temporär markiert werden, wodurch der Benutzer bei der ersten Anmeldung zu einer Änderung gezwungen wird.  
 Darüber hinaus bietet Keycloak ebenfalls die Möglichkeit, sogenannte Required Actions (erforderliche Aktionen) zu definieren, etwa zur E-Mail-Verifizierung oder zur erzwungenen Passwortänderung beim nächsten Login.  
 Dies erlaubt eine flexible Anpassung des Authentifizierungsprozesses an projektspezifische Sicherheitsanforderungen.
@@ -555,12 +556,12 @@ Für jeden Client kann optional ein Service Account aktiviert werden, der als te
 Dies ermöglicht eine differenzierte Zugriffsteuerung auch für automatisierte Systemzugriffe.
 
 Die Rechtevergabe innerhalb der einzelnen BaSyx-Komponenten erfolgt rollenbasiert über externe Konfigurationsdateien im \acs{json}-Format.  
-Darin wird definiert, welch Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE ) auf bestimmte Elemente wie \acs{aas}, Submodelle oder Concept Descriptions erhalten.  
+Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE ) auf bestimmte Elemente wie \acs{aas}, Submodelle oder Concept Descriptions erhalten.  
 Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um beispielsweise den Zugriff auf alle Submodelle einer BaSyx-Komponente zu gewähren.  
 Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Services.
 
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
-Im folgenden Anwendungsfall wird gezeigt, wie eine \acs{aas} automatisiert erstellt und bereitgestellt werden kann.  
+Im folgenden Anwendungsfall wird gezeigt, wie eine \acs{aas} automatisiert erzeugt und bereitgestellt werden kann.  
 Ausgangspunkt ist ein unternehmensspezifisch angepasstes \acs{smt}, das als Grundlage für die Ableitung eines Typ-Submodells dient.  
 Dieses wird anschließend mit konkreten Daten befüllt, in eine vollständige \acs{aas}-Instanz eingebettet und abschließend in das Eclipse BaSyx-System integriert.
 
@@ -575,7 +576,7 @@ Auf Unternehmensebene kann das generische Template an spezifische Anforderungen 
 Branchenspezifische Varianten sind grundsätzlich ebenfalls denkbar, werden in diesem Anwendungsfall jedoch nicht weiter betrachtet.
 
 Die Anpassung erfolgt mithilfe des Package Explorers, über den sich das \acs{smt} importieren und erweitern lässt.
-So können beispielsweise produktspezifische Anforderungen, wie Umgebungsbedingungen oder der Verarbeitungsbereich, mithilfe geeigneter Submodellelemente ergänzt werden.
+So können beispielsweise produktspezifische Anforderungen, wie Umgebungsbedingungen oder der Verarbeitungsbereich, mithilfe geeigneter Submodell\-elemente ergänzt werden.
 Das resultierende unternehmensspezifische Template erhält eine eigene semanticId, bleibt jedoch zusätzlich mit der ursprünglichen semanticId des generischen Templates verknüpft, um die Rückverfolgbarkeit zur standardisierten Vorlage sicherzustellen.
 
 Aus dem angepassten Template kann anschließend ein Typ-Submodell abgeleitet werden, das nicht nur die Struktur, sondern auch allgemeingültige Merkmale einer Produktgruppe enthält, etwa den Einsatzort oder die maximal zulässige Umgebungstemperatur.

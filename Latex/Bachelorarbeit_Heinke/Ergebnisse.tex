@@ -217,9 +217,8 @@ Dieses Konzept kommt auch bei der robocell-Linie zum Einsatz und ermöglicht ein
 Die Visualisierung erfolgt über ein in die AAS Web UI integriertes Vue.js-Plugin, das den Maschinenstatus als PackML-Zustandsautomat darstellt.
 Das Plugin basiert auf einer Entwicklung der Hochschule für Technik und Wirtschaft Berlin \cite{HTW1, HTW2} und wurde funktional angepasst, um es in die AAS Web UI zu integrieren und die im Demonstrator benötigten Steuer- und Anzeigeoptionen zu unterstützen.
 
-Abbildung~\ref{fig:PackMLZustandsautomat} zeigt die Darstellung des Zustandsautomaten in der Benutzeroberfläche.
+Abbildung~\ref{fig:PackMLZustandsautomat} zeigt den Zustandsautomaten in der Benutzeroberfläche.
 Damit Statusänderungen unmittelbar sichtbar werden, ist eine Polling-Logik implementiert, die den aktuellen Maschinenstatus in festen Intervallen aus dem Submodel Repository der AAS Environment abruft und im Zustandsautomaten aktualisiert.
-
 Neben der reinen Statusanzeige erlaubt das Plugin auch die Steuerung zulässiger Zustandsübergänge direkt aus der Benutzeroberfläche heraus.
 Befindet sich die Maschine beispielsweise im Zustand Execute, können Befehle wie Stop, Hold, Suspend oder Abort ausgelöst werden.
 Darüber hinaus lässt sich der Betriebsmodus setzen, der ebenfalls als Property im Submodell verwaltet wird.
@@ -300,7 +299,7 @@ Die wesentlichen Punkte sind im Folgenden zusammengefasst:
 \newpage
 \subsection{KI-Modell zur Anomalieerkennung}
 
-Für die Anomalieerkennung wurde der zuvor trainierte Autoencoder im Evaluierungsmodus eingesetzt, sodass während der Auswertung keine Anpassungen der Modellparameter erfolgen.
+Für die Anomalieerkennung wurde der zuvor trainierte Autoencoder im Evaluierungsmodus eingesetzt, sodass während der Auswertung keine Anpassungen der Modellparameter erfolgten.
 Die Testdaten basieren, wie beim Training, auf simulierten Temperaturverläufen aus dem Datengenerator, die analog zu den Zeitreihendaten in Kapitel \ref{sec:DynamischeSubmodelle} in einer InfluxDB gespeichert wurden.
 
 Als Eingabe erhält das Modell kurze Sequenzen von jeweils fünf Messwerten.
@@ -327,7 +326,7 @@ Erst wenn mehrere aufeinanderfolgende Werte vom Normalverlauf abweichen, steigt 
 \end{figure}
 \vspace{-0.75em}
 
-In Abbildung~\ref{fig:Fall2} ist ein Temperaturverlauf mit einem gleichmäßigen, linearen Anstiegim Bereich t = 25343 - 25393 (gezielt eingefügte Anomalie) dargestellt. 
+In Abbildung~\ref{fig:Fall2} ist ein Temperaturverlauf mit einem gleichmäßigen, linearen Anstieg im Bereich t = 25343 - 25393 (gezielt eingefügte Anomalie) dargestellt. 
 Auch hier%
 \pagebreak
 ~klassifiziert das Modell den Verlauf korrekt als Anomalie. 
@@ -373,7 +372,7 @@ Abbildung~\ref{fig:SubmodellCF} zeigt exemplarisch die \acs{smc} für die Phase 
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png}
-    \caption{Ausschnitt Submodell Carbon Footprint}
+    \caption{Ausschnitt Submodell \acs{cf}}
     \label{fig:SubmodellCF}
 \end{figure}
 \vspace{-0.5em}
