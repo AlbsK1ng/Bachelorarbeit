@@ -59,8 +59,8 @@
 \contentsline {subsection}{\numberline {5.1}Zusammenfassung der Arbeit}{64}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Handlungsempfehlung für groninger}{65}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Ausblick auf zukünftige Entwicklungen}{66}{subsection.5.3}%
-\contentsline {section}{Literatur}{67}{section*.184}%
-\contentsline {section}{Anhang}{74}{section*.185}%
+\contentsline {section}{Literatur}{67}{section*.201}%
+\contentsline {section}{Anhang}{74}{section*.202}%
 \setcounter {tocdepth}{-1}
 \contentsline {section}{\numberline {A}Statische Submodelle des AAS-Demonstrators}{74}{appendix.A}%
 \contentsline {subsection}{\numberline {A.1}Typenschild}{74}{subsection.A.1}%

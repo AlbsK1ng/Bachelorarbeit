@@ -191,30 +191,26 @@ Es ist daher essenziell, digitale Zwillinge in einem interope\-rablen Format ber
 \newpage
 \subsection{Asset Administration Shell}
 \label{chap:AAS}
-% Das \ac{rami} ist ein Leitfaden für die Industrie und dient als Hilfestellung um die digitale Transformation in einem Unternehmen systematisch umzusetzten.
-% Es wird in der DIN SPEC 91345 \cite{RAMI4.0} standardisiert und soll helfen, die komplexen Anforderungen an die Industrie 4.0 für die Allgemeinheit verständlich zu machen.
-% Das Modell ist als dreidimensionales Koordinatensystem konzipiert und umfässt die Achsen ... .
 
-Die \acs{aas} - deutsch Verwaltungsschale - ist eine Schlüsselkomponente innerhalb des \ac{rami} \cite{RAMI4.0} und bildet die Grundlage für die Umsetzung und Entwicklung interoperabler digitaler Zwillinge im industriellen Umfeld.
-Sie wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und erstmals im Jahr 2016 als Teil von \acs{rami} vorgestellt.
-Seit ihrer Einführung wurde die \acs{aas} kontinuierlich weiterentwickelt und ist mittlerweile in der internationalen Norm IEC 63278-1 \cite{AASIEC63278} standardisiert.
+Die \acs{aas} -- deutsch Verwaltungsschale -- stellt eine Schlüsselkomponente innerhalb des Referenzarchitekturmodells Industrie 4.0 (\acs{rami}) \cite{RAMI4.0} dar und bildet die Grundlage für die Realisierung interoperabler digitaler Zwillinge. 
+Sie wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und im Jahr 2016 erstmals als Bestandteil von \acs{rami} vorgestellt. 
+Seit ihrer Einführung wurde die \acs{aas} schrittweise standardisiert und ist mittlerweile in der internationalen Norm IEC 63278-1 \cite{AASIEC63278} verankert.
 
-Seit 2020 wird die Umsetzung und Weiterentwicklung der \acs{aas} von der \ac{idta} \cite{IDTA} organisiert und gesteuert.
-Ziel der Organisation ist es, den digitalen Zwilling auf Basis der \acs{aas} zu standardisieren und in Form von Open-Source-Softwarelösungen in das industrielle Umfeld zu integrieren.
-Die \acs{aas} wird dabei in mehreren Spezifikationen der \acs{idta} dokumentiert und beschrieben.
-Aktuell bildet die \acs{aas}-Version 3 den neuesten Entwicklungsstand und ist ebenfalls die Basis für diese Arbeit.
+Die Koordination der Weiterentwicklung erfolgt seit 2020 durch die Industrial Digital Twin Association (\acs{idta}) \cite{IDTA}. 
+Ziel der Organisation ist es, den digitalen Zwilling auf Basis der \acs{aas} weiter zu standardisieren und über Open-Source-Softwarelösungen in das industrielle Umfeld zu integrieren. 
+Die Struktur ist in mehreren Spezifikationen der \acs{idta} beschrieben.
+\acs{aas}-Version 3 stellt den neuesten Entwicklungsstand dar und bildet zugleich die Grundlage für diese Arbeit.
 
-In diesem Zusammenhang bildet die \acs{aas} das digitale Abbild eines Assets und stellt damit die Grundlage für den digitalen Zwilling bereit, indem sie alle relevanten Daten, Eigenschaften und Funktionen über den gesamten Lebenszyklus hinweg in strukturierter und standardisierter Form bereitstellt.
-Die Informationen sind in sogenannten Submodellen organisiert, die jeweils spezifische Aspekte eines Assets abbilden.
-Dabei kann es sich sowohl um physische Assets (z.B. Maschinen, Anlagen) als auch um virtuelle Assets (z.B. Software, Konzepte) handeln. 
-Eine \acs{aas} ist stets einem Asset zugeordnet und global eindeutig identifizierbar. 
-Durch die Kombination eines Assets mit seiner \acs{aas} entsteht eine sogenannte Industrie-4.0-Komponente (siehe Abbildung \ref{fig:Industrie4Komponente}).
+Die zentrale Funktion der \acs{aas} besteht in der digitalen Repräsentation eines Assets. 
+Sie verwaltet alle relevanten Daten, Eigenschaften und Funktionen über den gesamten Lebenszyklus hinweg in standardisierter Form. 
+Dabei können sowohl physische Objekte (z.~B. Maschinen oder Anlagen) als auch virtuelle Komponenten (z.~B. Software oder Konzepte) abgebildet werden. 
+Auf diese Weise schafft die \acs{aas} die Basis für die Umsetzung interoperabler digitaler Zwillinge.
 
-% Durch die standardisierte Struktur bildet die Verwaltungsschale die Grundlage für einen einheitlichen Informationsaustausch über System -und Unternehmensgrenzen hinweg.
-% Verwaltungsschalen repräsentieren immer genau ein Asset und müssen global eindeutig identifizierbar sein.
-% In der Industrie können Assets physische Objekte, wie eine Anlage oder eine Maschine sein oder aber auch virtuelle Elemente wie Software oder eine Idee.
-% In RAMI 4.0 wird davon ausgegangen, das Assets immmer einen konkreten Nutzen für ein Unternehmen bzw. eine Organisation bieten.
-\vspace{1.5em}
+Jede \acs{aas} ist eindeutig einem Asset zugeordnet und global identifizierbar. 
+Durch die Kombination beider entsteht eine sogenannte Industrie-4.0-Komponente, die in Abbildung~\ref{fig:Industrie4Komponente} dargestellt ist. 
+In ihr werden die Informationen eines Assets in verschiedenen Teilmodellen strukturiert, die jeweils spezifische Daten, Dokumente und Funktionen enthalten.
+Eine detaillierte Betrachtung des Aufbaus sowie der Themen Informationsaustausch und Sicherheit erfolgt in den nachstehenden Kapiteln.
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/I4Komponente/I4KomponenteNeu.pdf}
@@ -226,10 +222,10 @@ Durch die Kombination eines Assets mit seiner \acs{aas} entsteht eine sogenannte
 Analog zur in Kapitel \ref{sec: DT} beschriebenen Unterscheidung von Typen und Instanzen digitaler Zwillinge unterscheidet auch die \acs{aas} zwischen diesen beiden Ausprägungen.
 Während Typ-\acs{aas} allgemeine Merkmale und Strukturen eines Produkttyps beschreiben, sind Instanz-\acs{aas} konkreten physischen oder virtuellen Objekten zugeordnet und enthalten spezifische Informationen wie Seriennummer, Zustand oder Standort.
 
-Bestimmte Aspekte eines Assets werden dabei gemäß der Spezifikation des Metamodells der AAS \cite{SpezifikationPart1} in verschiedenen Submodellen verwaltet.
-Man kann sich dies wie ein Schubladensystem vorstellen, wobei jede Schublade einen bestimmten Bereich des Assets abdeckt, beispielsweise die technischen Stammdaten, das Typenschild, Wartungsinformationen oder Zustandswerte einer Maschine.
-Die Auswahl und Struktur der Submodelle ist domänenspezifisch und hängt stark vom konkreten Asset bzw. Anwendungsfall ab. 
-Dabei kann eine \acs{aas} beliebig viele Submodelle enthalten, die bei Bedarf auch erweitert werden können. 
+Bestimmte Aspekte eines Assets werden gemäß der Spezifikation des Metamodells der \acs{aas} \cite{SpezifikationPart1} in Submodellen organisiert.
+Diese fungieren als Container, die jeweils einen bestimmten Bereich des Assets abbilden, beispielsweise Typenschild, technische Stammdaten, Wartungsinformationen und Zustandswerte einer Maschine.  
+Ihre Auswahl und Ausgestaltung ist domänenspezifisch und richtet sich nach dem jeweiligen Anwendungsfall.
+Eine \acs{aas} kann beliebig viele Submodelle umfassen, die bei Bedarf auch erweitert werden können.
 
 Die Daten innerhalb eines Submodells werden in verschiedenen Submodellelementen strukturiert.
 Diese umfassen Dateneigenschaften, Operationen sowie weitere Strukturelemente, die für eine umfassende Beschreibung eines digitalen Modells eines Assets erforderlich sind.
