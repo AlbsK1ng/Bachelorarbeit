@@ -1,10 +1,11 @@
 \newpage
 \section{Grundlagen}
 \label{sec:Grundlagen}
-Das folgende Kapitel stellt die theoretischen und technologischen Grundlagen vor, die für das Verständnis und die Umsetzung dieser Arbeit erforderlich sind.
-Es beginnt mit einer Einführung in die Industrie 4.0 und vermittelt ein grundlegendes Verständnis für das Konzept des digitalen Zwillings.
-Anschließend werden die Struktur und Funktion der \acs{aas} sowie die Rolle des \acs{dpp} erläutert.
-Den Abschluss bilden die technologischen Voraussetzungen für die praktische Umsetzung, darunter beispielsweise die Open-Source-Plattform Eclipse BaSyx oder der Kommunikationsstandard \acs{opcua}.
+Dieses Kapitel behandelt die theoretischen und technologischen Grundlagen, die für das Verständnis und die Durchführung dieser Arbeit relevant sind.
+Es beginnt mit einer Einführung in die Konzepte von Industrie 4.0, dem digitalen Zwilling und der \acs{ki}.
+Anschließend werden die Struktur und Funktion der \acs{aas} sowie die Rolle des \acs{dpp} dargestellt.
+Zum Abschluss folgen die technologischen Voraussetzungen für die praktische Realisierung, darunter der AASX Package Explorer, die Open-Source-Plattform Eclipse BaSyx und der Kommunikationsstandard \acs{opcua}.
+
 \subsection{Industrie 4.0}
 
 Der Begriff Industrie 4.0 wurde erstmals im Jahr 2011 im Rahmen eines von der deutschen Bundesregierung initiierten Zukunftsprojekts eingeführt, das auf die Förderung der Informatisierung in der industriellen Fertigung abzielt.
@@ -53,8 +54,8 @@ Insgesamt trägt Industrie 4.0 somit nicht nur zur Verbesserung der Wirtschaftli
 % Künstliche Intelligenz ist eine Schlüsselkomponente der Industrie 4.0.
 Mit der zunehmenden Vernetzung von Maschinen und Anlagen entstehen immer größere Datenmengen entlang von Produktionsprozessen.
 Diese Daten bieten enorme Potenziale zur Optimierung industrieller Abläufe, beispielsweise zur Steigerung der Anlagenverfügbarkeit, zur Reduzierung von Ausschuss oder zur Verbesserung der Produktqualität.
-Zudem erlauben intelligente Produkte, dass Hersteller auch während der Nutzungsphase Informationen über den Einsatz und Zustand eines Produktes erhalten.
-Auf Basis dieser lassen sich neue Dienstleistungen und Anwendungen entwickeln, wie etwa die vorausschauende Instandhaltung oder die dynamische Optimierung von Betriebsparametern.
+Zudem erlauben intelligente Produkte, dass Hersteller auch während der Nutzungsphase Informationen über den Einsatz und Zustand ihrer Produkte erhalten.
+Auf dieser Grundlage lassen sich neue Dienstleistungen und Anwendungen entwickeln, wie etwa die vorausschauende Instandhaltung oder die dynamische Optimierung von Betriebsparametern.
 
 Damit solche datengetriebenen Ansätze erfolgreich umgesetzt werden können, benötigt es leistungsfähige Technologien zur Analyse und Interpretation.
 Genau hier setzt \acs{ki} an.
@@ -82,13 +83,12 @@ Eine typische Anwendung ist beispielsweise die Anomalieerkennung, bei der Abweic
 
 Ein besonders leistungsfähiger Ansatz innerhalb des maschinellen Lernens ist das Deep Learning \cite{DLEinordnung}.
 Es basiert auf künstlichen neuronalen Netzen, die in ihrer Struktur an das Verhalten von Neuronen im menschlichen Gehirn angelehnt sind.
-Während klassische maschinelle Lernmodelle meist aus nur wenigen Schichten bestehen, kommen beim 
-\linebreak
-Deep Learning sogenannte tiefe neuronale Netze mit vielen hintereinandergeschachtelten Schichten zum Einsatz.
+Während klassische maschinelle Lernmodelle meist aus nur wenigen Schichten bestehen, kommen beim Deep Learning sogenannte tiefe neuronale Netze mit vielen hintereinandergeschalteten Schichten zum Einsatz.
 Diese ermöglichen das Erkennen hochkomplexer und abstrakter Zusammenhänge in großen Datenmengen, etwa bei der Bilderkennung oder Sprachverarbeitung. \cite{DLDefinition}
-Ein besonders aktuelles Beispiel für die Anwendung tiefer neuronaler Netzwerke ist die generative \acs{ki}. 
-Sie beschäftigt sich mit der Erstellung neuer Inhalte wie Text oder Sprache. 
-Dabei kommen verschiedene Methoden des Deep Learnings zum Einsatz, um aus großen Datenmengen zu lernen, wie neue Inhalte erzeugt werden können. \cite{GenerativeKI}
+
+In jüngster Zeit hat sich insbesondere die generative \acs{ki} als Anwendungsfeld etabliert. 
+Sie nutzt tiefe neuronale Netze, um neue Inhalte wie Text, Bilder oder Sprache zu erzeugen. 
+Dabei kommen verschiedene Methoden des Deep Learnings zum Einsatz, die aus großen Datenmengen lernen, wie neue Inhalte generiert werden können \cite{GenerativeKI}.
 
 \newpage
 \subsection{Digitaler Zwilling}
@@ -121,21 +121,21 @@ Analog zur Softwareentwicklung können diese als instanziiertes Objekt einer Kla
 Je nach Art des Informationsflusses sowie dem Grad der Ausprägung der Verbindung zur realen Welt werden Instanzen digitaler Zwillinge häufig in drei Kategorien eingeteilt: das digitale Modell, den digitalen Schatten und den digitalen Zwilling \cite{ClassificationDT}.
 Obwohl diese Begriffe im allgemeinen Sprachgebrauch oft synonym verwendet werden, unterscheiden sie sich deutlich hinsichtlich ihrer Funktion und Kopplung zum realen Objekt.
 
-Digitale Modelle sind statische Abbilder physischer Objekte, besitzen jedoch keine Verbindung zur realen Welt. 
-Sie dienen vor allem der Veranschaulichung oder Konstruktion, etwa in Form eines 3D-Modells einer Maschine. 
-Zwar können reale Daten wie Maße oder Materialeigenschaften manuell eingepflegt werden, jedoch erfolgt keine automatische Aktualisierung bei Änderungen am physischen Objekt. 
-Das digitale Modell bleibt somit vollständig losgelöst von seinem physischen Gegenstück.
+Digitale Modelle sind statische Abbilder physischer Objekte, besitzen jedoch keine direkte Verbindung zur realen Welt. 
+Sie werden vor allem zur Veranschaulichung oder Konstruktion genutzt, etwa als 3D-Modell einer Maschine. 
+Zwar lassen sich Daten wie Maße oder Materialeigenschaften integrieren, die Eingabe erfolgt jedoch manuell. 
+Eine automatische Aktualisierung bei Änderungen am realen Objekt findet nicht statt, sodass das digitale Modell vollständig von seinem physischen Gegenstück getrennt bleibt.
 
-Der digitale Schatten erweitert das digitale Modell um eine unidirektionale Verbindung zur realen Welt.
-Reale Daten werden meist in Echtzeit automatisch über geeignete Sensoren in das digitale Abbild übertragen, wodurch der aktuelle Zustand des physischen Objekts kontinuierlich erfasst wird.
-Ein typisches Beispiel ist das Condition Monitoring, bei dem zentrale Betriebsdaten einer Maschine digital abgebildet werden.
-Der Informationsfluss verläuft dabei jedoch ausschließlich in eine Richtung.
+Der digitale Schatten erweitert dieses Konzept um eine unidirektionale Kopplung zum realen Objekt. 
+Daten werden hierbei in Echtzeit über geeignete Sensoren erfasst und in das digitale Abbild übertragen, wodurch der aktuelle Zustand des Objekts kontinuierlich nachvollziehbar ist. 
+Ein typisches Beispiel ist das Condition Monitoring, bei dem Betriebsdaten einer Maschine digital abgebildet werden. 
+Der Informationsfluss erfolgt automatisiert, bleibt jedoch ausschließlich auf eine Richtung beschränkt.
 
-Mit einer aktiven Rückkopplung zum realen Objekt wird der digitale Schatten zum digitalen Zwilling.
-Es entsteht eine Feedback-Schleife, die es dem virtuellen Abbild erlaubt, direkt Einfluss auf das reale System zu nehmen, beispielsweise durch Steuerungsbefehle.
-Eine Übersicht der drei Kategorien zeigt Abbildung~\ref{fig:klassifizierungDT}, die die Unterschiede hinsichtlich Datenfluss und Kopplung zur realen Welt veranschaulicht.
+Der digitale Zwilling schließlich ergänzt den digitalen Schatten um eine Rückkopplung zum physischen Objekt. 
+Durch diese bidirektionale Verbindung entsteht eine Feedback-Schleife, die es dem virtuellen Abbild ermöglicht, aktiv Einfluss auf das reale System zu nehmen, beispielsweise durch Steuerungsbefehle.
+Damit stellt der digitale Zwilling die umfassendste Ausprägung dar und eröffnet Potenziale, die über reine Dokumentation oder Überwachung hinausgehen.
+Abbildung~\ref{fig:klassifizierungDT} fasst die drei Kategorien zusammen und verdeutlicht die Unterschiede im Hinblick auf Datenfluss und Kopplung zur realen Welt.
 
-\vspace{-0.5em}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/klassifizierung_DT.pdf}
@@ -144,26 +144,25 @@ Eine Übersicht der drei Kategorien zeigt Abbildung~\ref{fig:klassifizierungDT},
 \end{figure}
 \vspace{-0.5em}
 
-Im industriellen Umfeld werden digitale Zwillinge in vielen unterschiedlichen Bereichen genutzt.
-Sie kommen entlang des gesamten Lebenszyklus eines Assets zum Einsatz%
-\pagebreak
-~, von der Entwicklung über die Produktion bis hin zum Betrieb und der Wartung.
-In der Praxis werden jedoch häufig auch digitale Modelle oder digitale Schatten als digitale Zwillinge bezeichnet, obwohl sie technisch gesehen nicht alle Merkmale eines echten digitalen Zwillings aufweisen und somit nicht ihr volles Potenzial entfalten.
+\newpage
+Während in der Theorie zwischen digitalem Modell, digitalem Schatten und digitalem Zwilling klar unterschieden wird, werden in der Praxis häufig alle drei Ausprägungen unter dem Begriff digitaler Zwilling zusammengefasst.
+Die nachfolgend beschriebenen Einsatzmöglichkeiten und Vorteile beziehen sich daher allgemein auf digitale Zwillinge im industriellen Umfeld, wobei deren konkrete Ausprägung variieren kann.
 
-Bereits bei der Entwicklung können digitale Zwillinge einen erheblichen Vorteil bieten. 
-Indem bereits frühzeitig virtuelle Modelle oder Simulationen eingesetzt werden, entfällt die Notwendigkeit physischer Prototypen, was Entwicklungszeiten und Kosten deutlich senken kann. 
-In der Produktion ermöglichen sie eine durchgängige Analyse und Optimierung auf Basis von Echtzeitdaten, unterstützen die virtuelle Inbetriebnahme und dienen als Grundlage für vorausschauende Wartung (\ac{pm}). 
-Als zentrale Datenplattform bündeln sie zudem Informationen aus verschiedenen Quellen und schaffen eine konsistente Datenbasis für weitere Prozesse. \cite{DTForSmartManufacturing}
-Dabei ist zu beachten, dass sich die beschriebenen Vorteile je nach Ausprägung des digitalen Zwillings unterschiedlich realisieren lassen.
+Bereits in der Entwicklung bieten digitale Zwillinge erhebliche Vorteile, da virtuelle Modelle und Simulationen frühzeitig eingesetzt werden können. 
+Dadurch entfällt die Notwendigkeit physischer Prototypen, was Entwicklungszeiten verkürzen und Kosten reduzieren kann. 
+In der Produktion ermöglichen sie eine durchgängige Überwachung, Analyse und Optimierung von Fertigungsprozessen auf Basis von Echtzeitdaten. 
+Zudem unterstützen sie die virtuelle Inbetriebnahme von Maschinen und können eine Grundlage für vorausschauende Wartung (\ac{pm}) bilden, wodurch sich Stillstandzeiten reduzieren lassen.
+Darüber hinaus dienen digitale Zwillinge als zentrale Datenplattform, die Informationen aus unterschiedlichen Quellen zusammenführt und eine konsistente Datenbasis für nachgelagerte Prozesse schafft. \cite{DTForSmartManufacturing}
 
-Die Implementierung digitaler Zwillinge erweist sich in der Praxis jedoch oftmals als sehr anspruchsvoll.
+Die genannten Vorteile verdeutlichen das große Potenzial digitaler Zwillinge. 
+Die praktische Umsetzung erweist sich jedoch oftmals als anspruchsvoll.
 Eine zentrale Herausforderung ist die fehlende Interoperabilität zwischen verschiedenen \ac{it}-Systemen.
 Sowohl innerhalb eines Unternehmens als auch unternehmensübergreifend bilden sich dadurch häufig voneinander isolierte Datenbestände, die nicht systemübergreifend nutzbar sind.
-Solche sogenannten Informationssilos können die Umsetzung eines konsistenten digitalen Zwillings erheblich erschweren, da die relevanten Informationen und Daten zunächst aus unterschiedlichen Systemen wie \ac{erp}, \ac{mes} oder \ac{cad} zusammengeführt werden müssen.
+Solche Informationssilos können die Umsetzung eines konsistenten digitalen Zwillings erheblich erschweren, da die relevanten Informationen und Daten zunächst aus unterschiedlichen Systemen wie \ac{erp}, \ac{mes} oder \ac{cad} zusammengeführt werden müssen.
 
-Hinzu kommt, dass diese Daten oftmals in unterschiedlichen, nicht standardisierten Formaten vorliegen, was eine automatisierte Integration zusätzlich erschwert.
+Hinzu kommt, dass diese Daten häufig in unterschiedlichen, nicht standardisierten Formaten vorliegen, was eine automatisierte Integration zusätzlich erschwert.
 Diese Problematik zeigt sich nicht nur innerhalb einzelner Unternehmen, sondern auch entlang der gesamten Wertschöpfungskette, etwa wenn verschiedene Akteure einer Lieferkette heterogene Datenformate und proprietäre Austauschprotokolle verwenden.
-Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einer Anwendung oder einem weiteren digitalen Zwilling eines Unternehmens B nicht ohne Weiteres interpretiert oder verwendet werden.
+Ein digitaler Zwilling, der in einem Unternehmen A erstellt wurde, kann dadurch von einer Anwendung oder einem weiteren digitalen Zwilling eines Unternehmens B nicht unmittelbar interpretiert oder verwendet werden.
 Es ist daher essenziell, digitale Zwillinge in einem interope\-rablen Format bereitzustellen, um eine einheitliche Interpretation und Nutzung auch über Unternehmensgrenzen hinweg zu ermöglichen.
 \cite{DTandAASConceptsInI4.0}
 
@@ -190,6 +189,7 @@ Durch die Kombination beider entsteht eine sogenannte Industrie-4.0-Komponente, 
 In ihr werden die Informationen eines Assets in verschiedenen Teilmodellen strukturiert, die jeweils spezifische Daten, Dokumente und Funktionen enthalten.
 Eine detaillierte Betrachtung des Aufbaus sowie der Themen Informationsaustausch und Sicherheit erfolgt in den nachstehenden Kapiteln.
 
+\vspace{0.25em}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/I4Komponente/I4KomponenteNeu.pdf}
@@ -286,25 +286,23 @@ Rollen können ebenfalls als Attribute behandelt werden, wodurch sich auch probl
 
 Die beschriebenen Kontrollmechanismen lassen sich nicht nur auf die Inhalte der \acs{aas} selbst, sondern insbesondere auch auf die Schnittstellen von Registries und Repositories anwenden.
 So kann beispielsweise sichergestellt werden, dass nur autorisierte Systeme Zugriff auf ein bestimmtes Submodell erhalten oder nur bestimmte Nutzergruppen neue \acs{aas}-Instanzen registrieren können.
-Diese Sicherheitskonzepte sind jedoch noch%
-\pagebreak
-~vergleichsweise neu und müssen in der Praxis erst noch weiter erprobt werden.
+Diese Sicherheitskonzepte sind jedoch noch vergleichsweise neu und müssen in der Praxis erst noch weiter erprobt werden.
 Erste Referenzimplementierungen liegen zwar bereits in Form rollenbasierter Zugriffskontrollen vor, eine vollständige Integration des \acs{abac}-Ansatzes steht jedoch noch aus.
 
 
 \subsection{Digitaler Produktpass}
-Der \acs{dpp} ist ein zentrales Instrument der \acs{eu} zur Umsetzung einer nachhaltigen, digitalen Transformation. 
-Ziel ist es, die Transparenz über ökologische Merkmale von Produkten wie verwendete Materialien, Recycelbarkeit oder die CO\textsubscript{2}-Bilanz deutlich zu verbessern.
-Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg aufgezeichnet und in einem menschen- und maschinenlesbaren Format bereitgestellt werden. \cite{DPPEinführung}
-Langfristig soll dies zu einer Kreislaufwirtschaft und digitalen Wirtschaft innerhalb der \acs{eu} führen.
+Der \acs{dpp} ist ein zentrales Instrument der \acs{eu} zur Förderung einer nachhaltigen und digitalen Transformation. 
+Ziel ist es, die Transparenz über ökologische Eigenschaften von Produkten wie verwendete Materialien, Recycelbarkeit oder die CO\textsubscript{2}-Bilanz deutlich zu verbessern.
+Hierzu müssen produktspezifische Daten über den gesamten Lebenszyklus hinweg erfasst und in einem menschen- und maschinenlesbaren Format bereitgestellt werden. \cite{DPPEinführung}
+Langfristig soll dies den Übergang zu einer Kreislaufwirtschaft innerhalb der \acs{eu} unterstützen.
 
-Das Konzept des \acs{dpp} wurde erstmals im Rahmen des European Green Deal von der Europäischen Kommission im Jahr 2019 vorgestellt \cite{GreenDeal}.
+Das Konzept des \acs{dpp} wurde erstmals 2019 im Rahmen des European Green Deal von der Europäischen Kommission vorgestellt \cite{GreenDeal}.
 Im Zuge der Ökodesign-Verordnung (\ac{espr}) \cite{ESPR} wird er aktuell als verpflichtendes Mittel für zahlreiche Produktgruppen eingeführt.
 Als erste konkrete Anwendung wird der \acs{dpp} im Jahr 2027 erstmals für Batterien verpflichtend.
 Weitere Produktkategorien, darunter auch die Elektroindustrie sowie der Maschinen- und Anlagenbau, sollen in den nächsten Jahren folgen.
 
 Die Bereitstellung der Produktpässe erfolgt gemäß den Anforderungen der \acs{espr} in elektronischer Form. 
-Dabei müssen diese untereinander interoperabel kommunizieren können.
+Dabei müssen diese interoperabel sein.
 Je nach Art der Information werden verschiedene Zugriffsrechte für unterschiedliche Interessengruppen eingeführt. 
 Damit soll der Schutz von geistigem Eigentum sichergestellt werden.
 Die Daten sollen auf einem zentralen Server gespeichert und über eine zentrale Registry verwaltet werden, in der die verschiedenen \acsp{dpp} registriert sind.
@@ -339,7 +337,7 @@ So wird sichergestellt, dass trotz der dezentralen Struktur eine durchgängige I
 \subsection{robocell}
 Die robocell ist eine von groninger in Zusammenarbeit mit SKAN entwickelte Maschinenlinie zur aseptischen Abfüllung von genesteten Spritzen, Zylinderampullen und Vials.
 Sie zeichnet sich dadurch aus, dass alle Prozesschritte vollständig automatisiert ablaufen.
-Durch den gezielten Einsatz von Robotern kann der menschliche Eingriff auf ein Minimum reduziert werden, wodurch maximale Sicherheit, Flexibilität und Effizienz im Abfüllprozess gewährleistet wird \cite{RobocellWebsite}.
+Durch den gezielten Einsatz von Robotern kann der menschliche Eingriff auf ein Minimum reduziert werden, wodurch maximale Sicherheit, Flexibilität und Effizienz im Abfüllprozess gewährleistet werden \cite{RobocellWebsite}.
 
 Die Linie besteht aus mehreren modular aufgebauten Einzelmaschinen, die jeweils spezifische Aufgaben entlang des Produktionsprozesses übernehmen. 
 Im Rahmen dieser Arbeit liegt der Fokus auf dem in Abbildung~\ref{fig:robocell} gezeigten hochautomatisierten Abfüll- und%
