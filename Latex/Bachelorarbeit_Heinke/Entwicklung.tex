@@ -51,7 +51,7 @@ Im nächsten Schritt ist daher die Auswahl bzw. der Entwurf geeigneter Submodell
 Als Orientierung dienen die von der \acs{idta} bereitgestellten \acsp{smt} \cite{idtaTemplates}, die bereits viele typische Anwendungsfälle standardisiert abdecken.
 Diese sind jeweils in einer Submodellspezifikation der \acs{idta} dokumentiert.
 Darüber hinaus besteht jedoch auch die Möglichkeit, eigene Submodelle zu entwerfen, die gezielt auf projektspezifische Anforderungen zugeschnitten sind.
-Diese können entweder vollständig neu konzipiert oder aus bestehenden Vorlagen abgeleitet werden.
+Sie können entweder vollständig neu konzipiert oder aus bestehenden Vorlagen abgeleitet werden.
 
 Die konkrete Auswahl der Submodelle in dieser Arbeit orientiert sich hauptsächlich an typischen Industrie-4.0-Anwendungsfällen, die unter anderem auf der Website der \acs{idta} dokumentiert sind \cite{idtaUseCases}.
 Diese Anwendungsfälle zeigen auf, welche Submodelle in der Praxis besonders relevant sind.
@@ -184,7 +184,7 @@ Alternativ kann die \acs{aas} auch als \ac{json}- oder \ac{xml}-Datei gespeicher
 Diese Formate beinhalten allerdings ausschließlich die strukturierte Beschreibung der \acs{aas}, eignen sich jedoch besonders für die Nutzung in \acsp{api} oder zur Anbindung an bestehende Softwaresysteme.
 
 Zusätzlich unterstützt der Package Explorer auch den gezielten Export einzelner Submodelle oder Concept Descriptions.
-Diese lassen sich seperat, etwa als \acs{json}-Datei, abspeichern und können so gezielt in anderen \acs{aas}-Projekten wiederverwendet werden.
+Diese lassen sich separat, etwa als \acs{json}-Datei, abspeichern und können so gezielt in anderen \acs{aas}-Projekten wiederverwendet werden.
 
 \subsubsection{Validierung}
 Im Anschluss an die Modellierung der \acs{aas} sollte eine Überprüfung der Konformität erfolgen.
@@ -397,7 +397,7 @@ Hierfür sind sowohl der Datenendpunkt als auch die Abfrage zu spezifizieren, mi
 Im vorliegenden Fall handelt es sich um die Adresse des InfluxDB-Containers sowie die Abfrage, mit der die Werte für Druck und Temperatur aus der zugehörigen Tabelle extrahiert werden. 
 Dabei ist zu beachten, dass der entsprechende Port der InfluxDB nach außen freigegeben ist, da andernfalls kein Zugriff durch externe Anwendungen möglich ist.
 
-Ergänzend können weitere Metadaten angegeben werden, beispielsweise die Abtastrate, der durch das Segment abgedeckte Zeitraum oder ein recordCount, der die erwartete Anzahl an Einträgen innerhalb dieses Zeitfensters beschreibt.
+Ergänzend können weitere Metadaten angegeben werden, beispielsweise die Abtastrate, der durch das Segment abgedeckte Zeitraum oder ein RecordCount, der die erwartete Anzahl an Einträgen innerhalb dieses Zeitfensters beschreibt.
 Alle relevanten Informationen zur externen Speicherung der Zeitreihendaten sind somit im Submodell enthalten, wodurch externen Clients ein strukturierter und standardisierter Zugang zu den Daten ermöglicht wird.
 
 \newpage
@@ -433,7 +433,7 @@ Der prinzipielle Aufbau eines Autoencoders ist in Abbildung \ref{fig:Autoencoder
 Der Encoder besteht aus mehreren Schichten, die die Eingabedaten schrittweise in%
 \pagebreak
 ~eine komprimierte Form überführen. 
-Dabei erfolgt eine Dimensionsreduktion, das heißt, die Daten werden im Verlauf auf wenigere Dimensionen verdichtet. 
+Dabei erfolgt eine Dimensionsreduktion, das heißt, die Daten werden im Verlauf auf weniger Dimensionen verdichtet. 
 Das Ziel ist, die für die Rekonstruktion wesentlichen Merkmale zu extrahieren und irrelevante Informationen zu filtern.
 
 Der dabei entstehende latente Raum bildet die am stärksten komprimierte Repräsentation der Daten ab und dient als Ausgangspunkt für den Decoder.
@@ -497,7 +497,7 @@ Grundlage bildet die zuvor erstellte \acs{aas} des Abfüll- und Verschließmodul
 
 \subsubsection{Umsetzung mit dem \acs{smt} Carbon Footprint}
 Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\-valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
-Seine Relevanz zeigt sich unter anderem in der EU-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt. 
+Seine Relevanz zeigt sich unter anderem in der \acs{eu}-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt. 
 Dieser stellt die erste konkrete Umsetzung eines \acs{dpp} dar und dient als Ausgangspunkt für weitere Branchen wie den Maschinen- und Anlagenbau. 
 Die Verordnung fordert unter anderem die verpflichtende Angabe des \acs{pcf} für die Phasen Material, Produktion und die Gesamtbetrachtung (Cradle to Gate). 
 Für weiterführende Lebenszyklusphasen ist die Angabe derzeit noch nicht vorgeschrieben.
@@ -554,10 +554,10 @@ Dies erlaubt eine flexible Anpassung des Authentifizierungsprozesses an projekts
 Neben der Verwaltung menschlicher Benutzer unterstützt Keycloak auch die Administration technischer Clients, die z.B. maschinelle Anwendungen oder externe Systeme repräsentieren.  
 Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutiger Client-\acs{id} und einem geheimen Schlüssel (Client Secret) gemäß dem OpenID Connect-Protokoll \cite{OpenID}.  
 Für jeden Client kann optional ein Service Account aktiviert werden, der als technisches Benutzerkonto agiert und, analog zu realen Benutzern, mit spezifischen Rollen ausgestattet ist.  
-Dies ermöglicht eine differenzierte Zugriffsteuerung auch für automatisierte Systemzugriffe.
+Dies ermöglicht eine differenzierte Zugriffssteuerung auch für automatisierte Systemzugriffe.
 
 Die Rechtevergabe innerhalb der einzelnen BaSyx-Komponenten erfolgt rollenbasiert über externe Konfigurationsdateien im \acs{json}-Format.  
-Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE ) auf bestimmte Elemente wie \acs{aas}, Submodelle oder Concept Descriptions erhalten.  
+Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE) auf bestimmte Elemente wie \acs{aas}, Submodelle oder Concept Descriptions erhalten.  
 Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um beispielsweise den Zugriff auf alle Submodelle einer BaSyx-Komponente zu gewähren.  
 Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Services.
 

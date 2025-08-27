@@ -116,7 +116,7 @@ Auf diese Weise sind alle relevanten technischen Angaben an einem zentralen Ort 
 
 Das Submodell \acs{bom} dient dazu, die Maschinenstruktur sichtbar zu machen und die Beziehungen zwischen ihren einzelnen Komponenten hierarchisch abzubilden, vergleichbar mit einer digitalen Stückliste.
 Dabei enthält es verschiedene Entitäten, die jeweils eine untergeordnete Komponente repräsentieren.
-Die Beziehungen zwischen den Komponenten werden über Relationship-Elemente mit einer eindeutigen semanticId gemäß dem \acs{smt} Hierarchical Structures enabling Bills of Material \cite{SpezifikationHierachischeStrukturen} hergestellt.
+Die Beziehungen zwischen den Komponenten werden über Relationship-Elemente mit einer eindeutigen semanticId gemäß dem \acs{smt} Hierarchical Structures Enabling Bills of Material \cite{SpezifikationHierachischeStrukturen} hergestellt.
 
 Zur Veranschaulichung wurde die Grundmaschine als Beispiel gewählt, da sie weniger komplex als die Maschinenebene ist, aber dennoch alle relevanten Strukturelemente enthält.
 Abbildung~\ref{fig:BOMSubmodelGrundmashcine} zeigt das entsprechende Submodell, in dem weitere untergeordnete Komponenten aufgeführt sind, darunter auch das Bedientableau.
@@ -460,14 +460,6 @@ Gleichzeitig bleibt der \acs{rbac}-Ansatz in seiner Flexibilität begrenzt, soda
 Der Anwendungsfall der automatisierten Generierung zeigt, wie sich \acs{aas}-Instanzen automatisch erzeugen und in das BaSyx-Backend integrieren lassen.
 Abbildung~\ref{fig:AutomatisierteGenerierungAblauf} veranschaulicht den Ablauf.
 Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mithilfe des Package Explorers aus dem generischen SMT Generic Frame for Technical Data for Industrial Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
-
-% \begin{figure}[htbp]
-%     \centering
-%         \includegraphics{Bilder/ErgebnisseAutomatisierteGenerierung/ARchitektur.pdf}
-%     \caption[Automatisierte Generierung einer AAS]{Automatisierte Generierung einer AAS (eigene Darstellung; Bildbestandteile: \cite{SpezifikaitonTechnischeDaten}, \cite{ECLASSLogo} )}
-%     \label{fig:AutomatisierteGenerierungAblauf}
-% \end{figure}
-% \vspace{-0.5em}
 
 \begin{figure}[htbp]
     \centering
