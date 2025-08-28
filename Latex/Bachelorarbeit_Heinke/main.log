@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  28 AUG 2025 13:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.12)  28 AUG 2025 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1899,8 +1899,8 @@ Package acronym Info: Label `acro:idta' overridden on input line 191.
 [29]
 
 [30]
-Package acronym Info: Label `acro:rest' overridden on input line 264.
-Package acronym Info: Label `acro:rest' overridden on input line 269.
+Package acronym Info: Label `acro:rest' overridden on input line 266.
+Package acronym Info: Label `acro:rest' overridden on input line 271.
  (./TabelleBereitstellungBaSyxMitAPI.tex
 > Step: init table outer spec.
 > Step: parse table options.
@@ -1911,96 +1911,96 @@ Package acronym Info: Label `acro:rest' overridden on input line 269.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 )
-Package acronym Info: Label `acro:rest' overridden on input line 276.
+Package acronym Info: Label `acro:rest' overridden on input line 278.
 
 
 [31]
 <Bilder/OPCUA/ProcessData.pdf, id=1214, 529.01637pt x 104.3097pt>
 File: Bilder/OPCUA/ProcessData.pdf Graphic file (type pdf)
 <use Bilder/OPCUA/ProcessData.pdf>
-Package pdftex.def Info: Bilder/OPCUA/ProcessData.pdf  used on input line 292.
+Package pdftex.def Info: Bilder/OPCUA/ProcessData.pdf  used on input line 294.
 (pdftex.def)             Requested size: 426.79135pt x 84.15454pt.
 Package acronym Info: Label `acro:mqtt' newly defined as it shall be overridden
-although it is yet undefined on input line 300.
+although it is yet undefined on input line 302.
 Package acronym Info: Label `acro:url' newly defined as it shall be overridden
-although it is yet undefined on input line 309.
+although it is yet undefined on input line 311.
 
 
 [32 <./Bilder/OPCUA/ProcessData.pdf>]
 <Bilder/OPCUA/OPCUADaten.pdf, id=1264, 425.67029pt x 116.35469pt>
 File: Bilder/OPCUA/OPCUADaten.pdf Graphic file (type pdf)
 <use Bilder/OPCUA/OPCUADaten.pdf>
-Package pdftex.def Info: Bilder/OPCUA/OPCUADaten.pdf  used on input line 316.
+Package pdftex.def Info: Bilder/OPCUA/OPCUADaten.pdf  used on input line 318.
 (pdftex.def)             Requested size: 425.66924pt x 116.3544pt.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 328.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 330.
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 12.0pt on input line 328.
-Package acronym Info: Label `acro:id' overridden on input line 345.
-Package acronym Info: Label `acro:rest' overridden on input line 345.
+(Font)              scaled to size 12.0pt on input line 330.
+Package acronym Info: Label `acro:id' overridden on input line 347.
+Package acronym Info: Label `acro:rest' overridden on input line 347.
 
 
 [33 <./Bilder/OPCUA/OPCUADaten.pdf>]
 <Bilder/TimeSeries/TimeSeriesData.pdf, id=1316, 530.94356pt x 252.945pt>
 File: Bilder/TimeSeries/TimeSeriesData.pdf Graphic file (type pdf)
 <use Bilder/TimeSeries/TimeSeriesData.pdf>
-Package pdftex.def Info: Bilder/TimeSeries/TimeSeriesData.pdf  used on input line 385.
+Package pdftex.def Info: Bilder/TimeSeries/TimeSeriesData.pdf  used on input line 387.
 (pdftex.def)             Requested size: 426.79135pt x 203.32504pt.
-Package acronym Info: Label `acro:smc' overridden on input line 391.
+Package acronym Info: Label `acro:smc' overridden on input line 393.
 
 
 [34]
 
 [35 <./Bilder/TimeSeries/TimeSeriesData.pdf>]
-Package acronym Info: Label `acro:ki' overridden on input line 406.
+Package acronym Info: Label `acro:ki' overridden on input line 408.
 <Bilder/Autoencoder/AutoencoderModell.pdf, id=1371, 469.755pt x 233.9139pt>
 File: Bilder/Autoencoder/AutoencoderModell.pdf Graphic file (type pdf)
 <use Bilder/Autoencoder/AutoencoderModell.pdf>
-Package pdftex.def Info: Bilder/Autoencoder/AutoencoderModell.pdf  used on input line 428.
+Package pdftex.def Info: Bilder/Autoencoder/AutoencoderModell.pdf  used on input line 430.
 (pdftex.def)             Requested size: 426.79135pt x 212.51932pt.
 
 
 [36 <./Bilder/Autoencoder/AutoencoderModell.pdf>]
-Package acronym Info: Label `acro:url' overridden on input line 459.
-Package acronym Info: Label `acro:ki' overridden on input line 474.
+Package acronym Info: Label `acro:url' overridden on input line 461.
+Package acronym Info: Label `acro:ki' overridden on input line 476.
 
 
 [37]
 
 [38]
-Package acronym Info: Label `acro:dpp' overridden on input line 494.
-Package acronym Info: Label `acro:idta' overridden on input line 495.
-Package acronym Info: Label `acro:dpp40' overridden on input line 495.
 Package acronym Info: Label `acro:dpp' overridden on input line 496.
-Package acronym Info: Label `acro:eu' overridden on input line 501.
-Package acronym Info: Label `acro:dpp' overridden on input line 502.
-Package acronym Info: Label `acro:idta' overridden on input line 506.
+Package acronym Info: Label `acro:idta' overridden on input line 497.
+Package acronym Info: Label `acro:dpp40' overridden on input line 497.
+Package acronym Info: Label `acro:dpp' overridden on input line 498.
+Package acronym Info: Label `acro:eu' overridden on input line 503.
+Package acronym Info: Label `acro:dpp' overridden on input line 504.
+Package acronym Info: Label `acro:idta' overridden on input line 508.
 Package acronym Info: Label `acro:tcf' newly defined as it shall be overridden
-although it is yet undefined on input line 507.
-Package acronym Info: Label `acro:smc' overridden on input line 508.
-Package acronym Info: Label `acro:smc' overridden on input line 509.
+although it is yet undefined on input line 509.
+Package acronym Info: Label `acro:smc' overridden on input line 510.
+Package acronym Info: Label `acro:smc' overridden on input line 511.
 
 
 [39]
-Package acronym Info: Label `acro:sml' overridden on input line 519.
-Package acronym Info: Label `acro:smc' overridden on input line 530.
-Package acronym Info: Label `acro:dpp' overridden on input line 536.
-Package acronym Info: Label `acro:idta' overridden on input line 537.
+Package acronym Info: Label `acro:sml' overridden on input line 521.
+Package acronym Info: Label `acro:smc' overridden on input line 532.
+Package acronym Info: Label `acro:dpp' overridden on input line 538.
+Package acronym Info: Label `acro:idta' overridden on input line 539.
 
 
 [40
 
 ]
-Package acronym Info: Label `acro:id' overridden on input line 556.
+Package acronym Info: Label `acro:id' overridden on input line 558.
 
 
 [41]
-Package acronym Info: Label `acro:smc' overridden on input line 574.
+Package acronym Info: Label `acro:smc' overridden on input line 576.
 
 
 [42]
-Package acronym Info: Label `acro:rest' overridden on input line 597.
-Package acronym Info: Label `acro:id' overridden on input line 612.
-Package acronym Info: Label `acro:rest' overridden on input line 616.
+Package acronym Info: Label `acro:rest' overridden on input line 599.
+Package acronym Info: Label `acro:id' overridden on input line 614.
+Package acronym Info: Label `acro:rest' overridden on input line 618.
 ) (./Ergebnisse.tex
 
 [43]
@@ -2054,75 +2054,75 @@ Package acronym Info: Label `acro:smc' overridden on input line 159.
 
 
 [49]
-<Bilder/ErgebnisseAASWebUI/ProcessData.png, id=1660, 2102.60532pt x 1273.75874pt>
+<Bilder/ErgebnisseAASWebUI/ProcessData.png, id=1659, 2102.60532pt x 1273.75874pt>
 File: Bilder/ErgebnisseAASWebUI/ProcessData.png Graphic file (type png)
 <use Bilder/ErgebnisseAASWebUI/ProcessData.png>
-Package pdftex.def Info: Bilder/ErgebnisseAASWebUI/ProcessData.png  used on input line 194.
+Package pdftex.def Info: Bilder/ErgebnisseAASWebUI/ProcessData.png  used on input line 195.
 (pdftex.def)             Requested size: 426.79135pt x 258.53725pt.
 
 
 [50 <./Bilder/ErgebnisseAASWebUI/ProcessData.png>]
-Package acronym Info: Label `acro:mqtt' overridden on input line 203.
-Package acronym Info: Label `acro:rest' overridden on input line 203.
+Package acronym Info: Label `acro:mqtt' overridden on input line 204.
+Package acronym Info: Label `acro:rest' overridden on input line 204.
 
 
 [51]
-<Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png, id=1684, 2102.60532pt x 1879.02pt>
+<Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png, id=1683, 2102.60532pt x 1879.02pt>
 File: Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png Graphic file (type png)
 <use Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png>
-Package pdftex.def Info: Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png  used on input line 228.
+Package pdftex.def Info: Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png  used on input line 230.
 (pdftex.def)             Requested size: 426.79135pt x 381.38829pt.
 
 
 [52 <./Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png>]
-Package acronym Info: Label `acro:smc' overridden on input line 249.
-<Bilder/ErgebnisseAASWebUI/Zeitreihen.png, id=1699, 2966.08125pt x 1580.90625pt>
+Package acronym Info: Label `acro:smc' overridden on input line 253.
+<Bilder/ErgebnisseAASWebUI/Zeitreihen.png, id=1700, 2966.08125pt x 1580.90625pt>
 File: Bilder/ErgebnisseAASWebUI/Zeitreihen.png Graphic file (type png)
 <use Bilder/ErgebnisseAASWebUI/Zeitreihen.png>
-Package pdftex.def Info: Bilder/ErgebnisseAASWebUI/Zeitreihen.png  used on input line 258.
+Package pdftex.def Info: Bilder/ErgebnisseAASWebUI/Zeitreihen.png  used on input line 262.
 (pdftex.def)             Requested size: 426.79135pt x 227.47664pt.
 
 
 [53 <./Bilder/ErgebnisseAASWebUI/Zeitreihen.png>]
 
 [54]
-<Bilder/Ergebnisse/KI/Fall1.pdf, id=1724, 426.25058pt x 172.71465pt>
+<Bilder/Ergebnisse/KI/Fall1.pdf, id=1725, 426.25058pt x 172.71465pt>
 File: Bilder/Ergebnisse/KI/Fall1.pdf Graphic file (type pdf)
 <use Bilder/Ergebnisse/KI/Fall1.pdf>
-Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall1.pdf  used on input line 322.
+Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall1.pdf  used on input line 326.
 (pdftex.def)             Requested size: 426.79135pt x 172.9461pt.
 
 
 [55 <./Bilder/Ergebnisse/KI/Fall1.pdf>]
-<Bilder/Ergebnisse/KI/Fall2.pdf, id=1767, 426.25058pt x 172.87837pt>
+<Bilder/Ergebnisse/KI/Fall2.pdf, id=1768, 426.25058pt x 172.87837pt>
 File: Bilder/Ergebnisse/KI/Fall2.pdf Graphic file (type pdf)
 <use Bilder/Ergebnisse/KI/Fall2.pdf>
-Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall2.pdf  used on input line 338.
+Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall2.pdf  used on input line 342.
 (pdftex.def)             Requested size: 426.79135pt x 173.11006pt.
 
 
 [56 <./Bilder/Ergebnisse/KI/Fall2.pdf>]
-Package acronym Info: Label `acro:dpp' overridden on input line 361.
-Package acronym Info: Label `acro:smc' overridden on input line 366.
-Package acronym Info: Label `acro:smc' overridden on input line 367.
-<Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png, id=1821, 484.39197pt x 204.91747pt>
+Package acronym Info: Label `acro:dpp' overridden on input line 365.
+Package acronym Info: Label `acro:smc' overridden on input line 370.
+Package acronym Info: Label `acro:smc' overridden on input line 371.
+<Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png, id=1822, 484.39197pt x 204.91747pt>
 File: Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png>
-Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png  used on input line 371.
+Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png  used on input line 375.
 (pdftex.def)             Requested size: 426.79135pt x 180.55305pt.
-<Bilder/ErgebnisseAASWebUI/CarbonFootprint.png, id=1825, 2267.47125pt x 1818.795pt>
+<Bilder/ErgebnisseAASWebUI/CarbonFootprint.png, id=1826, 2267.47125pt x 1818.795pt>
 File: Bilder/ErgebnisseAASWebUI/CarbonFootprint.png Graphic file (type png)
 <use Bilder/ErgebnisseAASWebUI/CarbonFootprint.png>
-Package pdftex.def Info: Bilder/ErgebnisseAASWebUI/CarbonFootprint.png  used on input line 388.
+Package pdftex.def Info: Bilder/ErgebnisseAASWebUI/CarbonFootprint.png  used on input line 392.
 (pdftex.def)             Requested size: 426.79135pt x 342.32759pt.
 
 
 [57 <./Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png>]
-Package acronym Info: Label `acro:dpp' overridden on input line 399.
+Package acronym Info: Label `acro:dpp' overridden on input line 403.
 
 
 [58 <./Bilder/ErgebnisseAASWebUI/CarbonFootprint.png>]
-Package acronym Info: Label `acro:dpp' overridden on input line 403.
+Package acronym Info: Label `acro:dpp' overridden on input line 407.
  (./TabelleRBAC.tex
 > Step: init table outer spec.
 > Step: parse table options.
@@ -2133,28 +2133,28 @@ Package acronym Info: Label `acro:dpp' overridden on input line 403.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 )
-Package acronym Info: Label `acro:dpp' overridden on input line 413.
-<Bilder/KeycloakAnmeldeSeite.png, id=1847, 1321.18594pt x 855.195pt>
+Package acronym Info: Label `acro:dpp' overridden on input line 417.
+<Bilder/KeycloakAnmeldeSeite.png, id=1848, 1321.18594pt x 855.195pt>
 File: Bilder/KeycloakAnmeldeSeite.png Graphic file (type png)
 <use Bilder/KeycloakAnmeldeSeite.png>
-Package pdftex.def Info: Bilder/KeycloakAnmeldeSeite.png  used on input line 420.
+Package pdftex.def Info: Bilder/KeycloakAnmeldeSeite.png  used on input line 424.
 (pdftex.def)             Requested size: 298.75264pt x 193.37622pt.
 
 
 [59 <./Bilder/KeycloakAnmeldeSeite.png>]
-<Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png, id=1857, 429.85594pt x 216.05719pt>
+<Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png, id=1858, 429.85594pt x 216.05719pt>
 File: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png Graphic file (type png)
 <use Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png  used on input line 446.
+Package pdftex.def Info: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png  used on input line 450.
 (pdftex.def)             Requested size: 405.45047pt x 203.79268pt.
-Package acronym Info: Label `acro:dpp' overridden on input line 453.
+Package acronym Info: Label `acro:dpp' overridden on input line 457.
 
 
 [60 <./Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png (PNG copy)>]
-<Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf, id=1872, 383.51279pt x 108.405pt>
+<Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf, id=1873, 383.51279pt x 108.405pt>
 File: Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf Graphic file (type pdf)
 <use Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf>
-Package pdftex.def Info: Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf  used on input line 466.
+Package pdftex.def Info: Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf  used on input line 470.
 (pdftex.def)             Requested size: 426.79135pt x 120.64194pt.
 
 
@@ -2211,7 +2211,7 @@ Underfull \hbox (badness 1783) in paragraph at lines 276--276
 [72]
 
 [73] (./Anhang.tex
-<Bilder/ErgebnissePackageExplorer/Typenschild.PNG, id=2173, 392.21532pt x 511.15968pt>
+<Bilder/ErgebnissePackageExplorer/Typenschild.PNG, id=2174, 392.21532pt x 511.15968pt>
 File: Bilder/ErgebnissePackageExplorer/Typenschild.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/Typenschild.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/Typenschild.PNG  used on input line 16.
@@ -2221,7 +2221,7 @@ Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/Typenschild.PNG  used 
 [74
 
  <./Bilder/ErgebnissePackageExplorer/Typenschild.PNG>]
-<Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG, id=2181, 429.10312pt x 648.92438pt>
+<Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG, id=2182, 429.10312pt x 648.92438pt>
 File: Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG  used on input line 24.
@@ -2229,7 +2229,7 @@ Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG  u
 
 
 [75 <./Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG>]
-<Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG, id=2188, 442.65375pt x 609.77812pt>
+<Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG, id=2189, 442.65375pt x 609.77812pt>
 File: Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG  used on input line 32.
@@ -2237,7 +2237,7 @@ Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG  
 
 
 [76 <./Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG>]
-<Bilder/ErgebnissePackageExplorer/Wartung.PNG, id=2195, 447.92343pt x 530.73282pt>
+<Bilder/ErgebnissePackageExplorer/Wartung.PNG, id=2196, 447.92343pt x 530.73282pt>
 File: Bilder/ErgebnissePackageExplorer/Wartung.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/Wartung.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/Wartung.PNG  used on input line 40.
@@ -2275,16 +2275,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  53149 strings out of 473190
  1052046 string characters out of 5715806
- 1951651 words of memory out of 5000000
+ 1951652 words of memory out of 5000000
  74684 multiletter control sequences out of 15000+600000
  652017 words of font info for 378 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  84i,15n,116p,2471b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (88 pages, 6181400 bytes).
+Output written on main.pdf (88 pages, 6181376 bytes).
 PDF statistics:
- 2532 PDF objects out of 2984 (max. 8388607)
- 2128 compressed objects within 22 object streams
+ 2533 PDF objects out of 2984 (max. 8388607)
+ 2129 compressed objects within 22 object streams
  489 named destinations out of 1000 (max. 500000)
  88242 words of extra memory for PDF output out of 89155 (max. 10000000)
 

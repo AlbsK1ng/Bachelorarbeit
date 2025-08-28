@@ -178,27 +178,28 @@ Auf diese Weise wird nicht nur die Interoperabilität gewährleistet, sondern au
 Neben den statischen Submodellen wurden im Demonstrator auch dynamische Submodelle umgesetzt.
 Sie ermöglichen die kontinuierliche Erfassung und Aktualisierung von Maschinen- und Prozessdaten sowie die Interaktion mit dem zugrunde liegenden Asset.
 Da im Rahmen dieser Arbeit keine reale Maschine zur Verfügung stand, wird dieses Asset durch den Datengenerator und den Maschinensimulator repräsentiert.
-
-Die technische Umsetzung und die zugrunde liegenden Datenflüsse orientieren sich an etablierten Industriearchitekturen, sodass die Schnittstellen und Funktionsweisen ohne Anpassungen auch mit einem realen System genutzt werden könnten.
-Durch diese Erweiterung erfüllt der Demonstrator die Anforderungen an einen digitalen Zwilling gemäß der in Kapitel~\ref{sec: DT} beschriebenen Klassifizierung.
+Die technische Umsetzung und die zugrunde liegenden Datenflüsse orientieren sich an etablierten Industriearchitekturen, sodass Schnittstellen und Funktionsweisen ohne Anpassungen auch in realen Systemen nutzbar wären.
 
 \subsubsection*{Prozessdaten}
 \vspace{-0.5em}
 Das Submodell Prozessdaten erfasst die Prozessgrößen Füllstand, Durchfluss, Anzahl abgefüllter Einheiten und Druck.
-Die Werte stammen aus dem \acs{opcua} Server des Datengenerators, werden dort im Sekundentakt aktualisiert und über die Databridge nahezu in Echtzeit an die \acs{aas} übertragen.
-Innerhalb der Databridge erfolgt dabei eine zweistufige Transformation.
+Die Werte stammen aus dem \acs{opcua} Server des
+\linebreak
+Datengenerators, werden im Sekundentakt aktualisiert und nahezu in Echtzeit über die Databridge an die \acs{aas} übertragen.
+Innerhalb der Databridge erfolgt eine zweistufige Transformation.
 Mithilfe des Jackson-Transformers werden die Rohdaten zunächst in ein JSON-Objekt überführt und anschließend mit JSONata gefiltert, sodass nur die relevanten Messgrößen in die Properties des Submodells übernommen werden.
 
+\vspace{0.2em}
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/ProcessData.png}
     \caption{Visualisierung Submodell Prozessdaten}
     \label{fig:Processdata}
 \end{figure}
-
-Die Visualisierung der Prozessdaten erfolgt in der klassischen Elemente-Ansicht der AAS Web UI, wie in Abbildung~\ref{fig:Processdata} dargestellt, oder über ein speziell entwickeltes Plugin.
+\vspace{-0.7em}
+Die Visualisierung der Prozessdaten erfolgt entweder in der klassischen Elemente-Ansicht der AAS Web UI, wie in Abbildung~\ref{fig:Processdata} dargestellt, oder über ein speziell entwickeltes Plugin.
 Damit die Werte in der Benutzeroberfläche aktuell bleiben, kann eine Synchronisationsfunktion aktiviert werden.
-Dabei ruft die Weboberfläche die relevanten Daten in festen Intervallen, beispielsweise alle vier Sekunden, automatisch vom Repository ab.
+Dabei ruft die Weboberfläche die relevanten Daten in festen Intervallen, beispielsweise alle vier Sekunden, automatisch aus der AAS Environment ab.
 
 Die Umsetzung ist protokolloffen und könnte grundsätzlich auf weitere Kommunikationsstandards wie \acs{mqtt} oder \acs{rest} erweitert werden.
 Eine automatische bidirektionale Kommunikation, etwa das Zurückschreiben von Werten aus der \acs{aas} in externe Systeme, ist mit der eingesetzten Databridge derzeit jedoch nicht möglich.
@@ -221,8 +222,9 @@ Abbildung~\ref{fig:PackMLZustandsautomat} zeigt den Zustandsautomaten in der Ben
 Damit Statusänderungen unmittelbar sichtbar werden, ist eine Polling-Logik implementiert, die den aktuellen Maschinenstatus in festen Intervallen aus dem Submodel Repository der AAS Environment abruft und im Zustandsautomaten aktualisiert.
 Neben der reinen Statusanzeige erlaubt das Plugin auch die Steuerung zulässiger Zustandsübergänge direkt aus der Benutzeroberfläche heraus.
 Befindet sich die Maschine beispielsweise im Zustand Execute, können Befehle wie Stop, Hold, Suspend oder Abort ausgelöst werden.
-Darüber hinaus lässt sich der Betriebsmodus setzen, der ebenfalls als Property im Submodell verwaltet wird.
+Zudem lässt sich der Betriebsmodus setzen, der ebenfalls als Property im Submodell verwaltet wird.
 
+\newpage
 \begin{figure}[htbp]
     \centering 
     \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png} 
@@ -231,15 +233,17 @@ Darüber hinaus lässt sich der Betriebsmodus setzen, der ebenfalls als Property
 \end{figure}
 \vspace{-0.5em}
 
-Neben der reinen Statusanzeige erlaubt das Plugin auch die Steuerung zulässiger Zustandsübergänge direkt aus der Benutzeroberfläche heraus.
-Befindet sich die Maschine beispielsweise im Zustand Execute, können Befehle wie Stop, Hold, Suspend oder Abort ausgelöst werden.
-Darüber hinaus lässt sich der Betriebsmodus (Produktion, Manuell oder Wartung) setzen, der ebenfalls als Property im Submodell verwaltet wird.
 
+Im Demonstrator werden Befehle per WebSocket an den Maschinensimulator übermittelt und dort ohne weitere Prüfungen übernommen. 
+Dadurch entsteht eine Feedback-Schleife zwischen der \acs{aas} und dem simulierten Asset, die eine bidirektionale Datenkommunikation ermöglicht. 
+Wie in Kapitel~\ref{sec: DT} erläutert, entspricht dieser Ansatz der fortgeschrittensten Ausprägung digitaler Zwillinge, da er über eine reine Datenrepräsentation hinausgeht und eine aktive Rückkopplung zur realen Welt erlaubt. 
 
-Im Demonstrator werden Befehle direkt per WebSocket an den Maschinensimulator übermittelt und dort ohne weitere Prüfungen übernommen. 
-Dadurch entsteht eine direkte Feedback-Schleife zwischen der \acs{aas} und dem simulierten Asset.
-In einer realen Maschine würden diese Signale hingegen zunächst über ein geeignetes Industrieprotokoll wie \acs{opcua} an die speicherprogrammierbare Steuerung (SPS) übertragen und dort validiert werden müssen, bevor der neue Zustand an die \acs{aas} zurückgemeldet wird.
+Damit verdeutlicht die Kontrollkomponente, dass sich mit der \acs{aas} auch interaktive digitale Zwillinge realisieren lassen. 
+In der industriellen Praxis würde dieser Ablauf jedoch nicht unmittelbar erfolgen. 
+Stattdessen müssten Steuerungsbefehle zunächst über ein geeignetes Industrieprotokoll wie \acs{opcua} an die speicherprogrammierbare Steuerung übertragen werden. 
+Diese würde die Befehle prüfen, die entsprechende Zustandsänderung der Maschine auslösen und den neuen Status anschließend über die DataBridge an die \acs{aas} zurückmelden.
 
+\newpage
 \subsubsection*{Zeitreihendaten}
 \vspace{-0.5em}
 
