@@ -274,9 +274,9 @@ Sie zeigt die notwendigen Schritte sowie die zugehörigen \acs{rest}-Endpunkte, 
 \input{TabelleBereitstellungBaSyxMitAPI.tex}
 
 Neben der Bereitstellung in der AAS Environment kann eine \acs{aas} optional auch im Discovery Service registriert werden.
-Über einen sogenannten assetLink kann sie dabei logisch mit ihrem zugehörigen physischen Asset verknüpft werden.
+Über einen sogenannten assetLink lässt sich diese logisch mit ihrem zugehörigen physischen Asset verknüpfen.
 Die Registrierung erfolgt analog zur AAS Environment über einen \acs{rest}-Endpunkt.
-Dies erleichtert insbesondere die eindeutige Zuordnung in komplexen, hierarchisch aufgebauten AAS, die wiederum mehrere verschachtelte Assets digital abbilden.
+Dies erleichtert die eindeutige Zuordnung, insbesondere in komplexen, hierarchisch aufgebauten \acs{aas}, die wiederum mehrere verschachtelte Assets digital abbilden.
 
 \subsubsection{Integration von Echtzeitdaten über OPC UA}
 
@@ -286,7 +286,7 @@ Grundlage hierfür bilden die beiden zuvor beschriebenen Anwendungen, welche sim
 
 Die Integration der Echtzeitdaten in die \acs{aas} wird im Folgenden exemplarisch anhand des Submodells Prozessdaten erläutert.
 Wie in Abbildung \ref{fig:SubmodellProzessdaten} dargestellt, enthält dieses Submodell verschiedene Properties, die jeweils spezifische Werte, wie etwa den Druck oder die Anzahl abgefüllter Einheiten, repräsentieren.
-Diese Properties sollen im weiteren Verlauf dynamisch mit den über \acs{opcua} bereitgestellten Werten aktualisiert werden.
+Diese sollen im weiteren Verlauf dynamisch mit den über \acs{opcua} bereitgestellten Werten aktualisiert werden.
 
 \begin{figure}[htbp]
     \centering
@@ -302,12 +302,12 @@ Diese steht, wie alle anderen Komponenten, als Docker-Container zur Verfügung u
 Sie unterstützt eine Vielzahl von Protokollen, darunter insbesondere \acs{opcua} und \acs{mqtt} (Message Queuing Telemetry Transport).
 Dabei dient sie als Vermittler zwischen einem Datenendpunkt und einem Submodell innerhalb der \acs{aas}.
 
-Die Konfiguration der Databridge erfolgt über mehrere \acs{json}-Dateien.
+Die Konfiguration erfolgt über mehrere \acs{json}-Dateien.
 In einer zentralen Konfigurationsdatei werden sowohl die Datenquelle als auch die Datensenke definiert.
 Zusätzlich können Transformatoren angegeben werden, die beispielsweise Einheitenumrechnungen oder Typkonvertierungen übernehmen.
 
-Im Kontext des Submodells Prozessdaten erfolgt die Anbindung der simulierten Werte über den \acs{opcua} Server des Datengenerators, der als Datenquelle für die Databridge dient.
-Die Konfiguration erfolgt in einer separaten \acs{json}-Datei.
+Im Kontext des Submodells Prozessdaten erfolgt die Anbindung über den \acs{opcua} Server des Datengenerators, der als Datenquelle für die Databridge dient.
+Zu diesem Zweck wird eine separate \acs{json}-Datei verwendet.
 Darin sind sowohl die Verbindungsparameter des Servers (z.~B. \acs{url} (Uniform Resource Locator) und Port) als auch die zu überwachenden Knoten anzugeben.
 Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua} Server die Werte hierfür in einer hierarchischen Struktur bereit, wobei jeder Knoten über einen Namespaceindex (ns) und eine NodeId (i) eindeutig adressierbar ist.
 
@@ -320,12 +320,12 @@ Wie in Abbildung \ref{fig:OPCUADatenStruktur} zu erkennen, stellt der \acs{opcua
     \label{fig:OPCUADatenStruktur}
 \end{figure}
 
-Darüber hinaus muss der zu verwendende \acs{opcua} Client festgelegt werden.
+Zusätzlich muss der zu verwendende \acs{opcua} Client festgelegt werden.
 In diesem Projekt kommt Eclipse Milo zum Einsatz, der auf einem Subscription-Modell basiert.
 Im Gegensatz zu einem Polling-Ansatz werden hierbei gezielt bestimmte Knoten abonniert, sodass neue Werte bei Änderungen automatisch übermittelt werden.
 
-Ein Beispiel für eine entsprechende \acs{json}-Konfiguration der Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für den Druckwert dargestellt.
-Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall, können zusätzlich angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
+Ein Beispiel für eine entsprechende Konfiguration der Datenquelle ist in Listing~\ref{lst:jsonDatenquelle} für den Druckwert dargestellt.
+Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertragungsintervall, können ebenfalls angegeben werden, wurden hier jedoch zur besseren Übersicht weggelassen.
 
 \begin{lstlisting}[language=json, caption={\acs{json}-Konfiguration einer Datenquelle}, label={lst:jsonDatenquelle}]
 {
@@ -337,14 +337,14 @@ Weitere optionale Parameter, wie etwa Sicherheitseinstellungen oder das Übertra
 }
 \end{lstlisting}
 
-Zur Anpassung der eingehenden Daten an die Struktur der Ziel-Property können verschiedene Transformatoren eingesetzt werden.
+Zur Anpassung der eingehenden Daten an die Struktur der Ziel-Property können unterschiedliche Transformatoren eingesetzt werden.
 Die Databridge unterstützt hierfür unter anderem JSONata-Ausdrücke sowie Jackson-basierte Transformer.
-Mithilfe dieser Mechanismen lassen sich die vom \acs{opcua} Server empfangenen Rohdaten zunächst in ein \acs{json}-Objekt überführen und anschließend gezielt extrahieren sowie weiterverarbeiten.
+Mithilfe dieser Mechanismen lassen sich die vom \acs{opcua} Server empfangenen Rohdaten in ein \acs{json}-Objekt überführen, gezielt extrahieren und weiterverarbeiten.
 
 Im Anschluss erfolgt die Konfiguration der Datensenke, also der Zielkomponente innerhalb der \acs{aas}.
-Auch diese erfolgt über eine separate \acs{json}-Datei, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete \acs{api}-Version definiert werden.
-Listing~\ref{lst:jsonDatensenke} zeigt ein Beispiel einer entsprechenden Konfiguration.
-Der Platzhalter \{smId\} steht dabei für die Base64-kodierte \acs{id} des Submodells Prozessdaten, wie sie in der \acs{rest}-API der \acs{aas} verwendet wird.
+Diese wird ebenfalls über eine separate \acs{json}-Datei definiert, in der der Endpunkt des Submodells, der idShortPath der gewünschten Property sowie die verwendete \acs{api}-Version angegeben werden.
+Listing~\ref{lst:jsonDatensenke} zeigt ein Beispiel einer solchen Konfiguration.
+Der Platzhalter \{smId\} steht für die Base64-kodierte \acs{id} des Submodells Prozessdaten, wie sie in der \acs{rest}-API der \acs{aas} verwendet wird.
 
 \newpage
 \begin{lstlisting}[language=json, caption={\acs{json}-Konfiguration einer Datensenke}, label={lst:jsonDatensenke}]
@@ -358,7 +358,7 @@ Der Platzhalter \{smId\} steht dabei für die Base64-kodierte \acs{id} des Submo
 
 Nach erfolgreicher Konfiguration übernimmt die Databridge die automatisierte Übertragung der \acs{opcua} Werte in die entsprechenden Properties des Submodells.
 Dieses Prinzip lässt sich nicht nur auf Prozesswerte anwenden, sondern auch zur Abbildung des Maschinenzustands oder anderer dynamischer Betriebsdaten nutzen.
-Damit stellt die Databridge eine zentrale Komponente zur Echtzeitanbindung externer Datenquellen dar und trägt wesentlich zur dynamischen Erweiterung der \acs{aas} bei.
+Die Databridge stellt damit eine zentrale Komponente zur Echtzeitanbindung externer Datenquellen dar und trägt wesentlich zur dynamischen Erweiterung der \acs{aas} bei.
 
 \subsubsection{Verarbeitung von Zeitreihendaten}
 \label{sec: VerarbeitungZeitreihen}
@@ -369,16 +369,16 @@ Dies erfolgt über ein InternalSegment, das die entsprechenden Einträge enthäl
 Diese Variante eignet sich jedoch nur für kleinere Datenmengen.
 
 Alternativ können die Zeitreihendaten in Form einer Datei abgelegt werden. 
-Diese Datei kann entweder direkt in die \acs{aas} eingebunden oder über ein ExternalSegment referenziert werden.
+Diese kann entweder direkt in die \acs{aas} eingebunden oder über ein ExternalSegment referenziert werden.
 Für größere Datenmengen empfiehlt sich die externe Speicherung an einem separaten Ort, beispielsweise in einer Datenbank.
 Die Verknüpfung mit der \acs{aas} erfolgt in diesem Fall über ein LinkedSegment.
 
 In dieser Arbeit wird die zuletzt genannte Option näher untersucht und praktisch umgesetzt.
 Hierzu werden die simulierten Werte für Druck und Temperatur des Datengenerators extern in einer InfluxDB gespeichert.
 Die über \acs{opcua} bereitgestellten Daten werden mithilfe von Telegraf, einem leichtgewichtigen Agenten zur Datenerfassung und -weiterleitung \cite{Influx}, kontinuierlich in eine speziell für diesen Anwendungsfall angelegte Tabelle geschrieben.
-InfluxDB sowie Telegraf stehen beide als Docker-Container zur Verfügung und lassen sich so nahtlos in das bestehende BaSyx-System integrieren.
+InfluxDB und Telegraf stehen beide als Docker-Container zur Verfügung und lassen sich so nahtlos in das bestehende BaSyx-System integrieren.
 
-Zur Einbindung der in der Datenbank gespeicherten Daten in die \acs{aas} kann das bereits genannte \acs{smt} verwendet werden.
+Zur Einbindung der in der Datenbank gespeicherten Daten in die \acs{aas} wird das zuvor eingeführte \acs{smt} genutzt.
 Abbildung \ref{fig:SMTTimeSeriesData} zeigt den strukturellen Aufbau, wobei ausschließlich die für die externe Anbindung relevanten Elemente berücksichtigt sind.
 
 \begin{figure}[htbp]
@@ -398,9 +398,9 @@ Die Konfiguration des LinkedSegments bildet den nächsten Schritt.
 Dieses stellt die eigentliche Verbindung zu den extern gespeicherten Zeitreihendaten her. 
 Hierfür sind sowohl der Datenendpunkt als auch die Abfrage zu spezifizieren, mit der die gewünschten Werte ausgelesen werden können. 
 Im vorliegenden Fall handelt es sich um die Adresse des InfluxDB-Containers sowie die Abfrage, mit der die Werte für Druck und Temperatur aus der zugehörigen Tabelle extrahiert werden. 
-Dabei ist zu beachten, dass der entsprechende Port der InfluxDB nach außen freigegeben ist, da andernfalls kein Zugriff durch externe Anwendungen möglich ist.
+Dabei ist zu beachten, dass der entsprechende Port der InfluxDB nach außen freigegeben sein muss, da andernfalls kein Zugriff durch externe Anwendungen möglich ist.
 
-Ergänzend können weitere Metadaten angegeben werden, beispielsweise die Abtastrate, der durch das Segment abgedeckte Zeitraum oder ein RecordCount, der die erwartete Anzahl an Einträgen innerhalb dieses Zeitfensters beschreibt.
+Zusätzlich können weitere Metadaten angegeben werden, beispielsweise die Abtastrate, der durch das Segment abgedeckte Zeitraum oder ein RecordCount, der die erwartete Anzahl an Einträgen innerhalb dieses Zeitfensters beschreibt.
 Alle relevanten Informationen zur externen Speicherung der Zeitreihendaten sind somit im Submodell enthalten, wodurch externen Clients ein strukturierter und standardisierter Zugang zu den Daten ermöglicht wird.
 
 \newpage
