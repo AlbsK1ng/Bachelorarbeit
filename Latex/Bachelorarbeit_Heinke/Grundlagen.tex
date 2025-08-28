@@ -112,11 +112,12 @@ Während ein einfacher digitaler Zwilling lediglich ein Modell mit statischen Da
 
 Für ein besseres Verständnis und zur tieferen Klassifizierung ist es zunächst hilfreich, zwischen Typen und Instanzen des digitalen Zwillings zu unterscheiden.
 Typen sind allgemeine Abbilder, die grundlegende Eigenschaften und Verhaltensmodelle einer Produktgruppe beschreiben. 
-Sie können mit einer Klasse in der Softwareentwicklung verglichen werden, die als Vorlage für konkrete Instanzen dienen.
+Sie können mit einer Klasse in der Softwareentwicklung verglichen werden, die als Vorlage für konkrete Instanzen dient.
 Typen können beispielsweise einen bestimmten Maschinentyp hinsichtlich Aufbau, Struktur oder Schnittstellen beschreiben, ohne dabei Bezug zu einer einzelnen physischen Maschine zu nehmen.
-Instanzen wiederum sind einzigartig und beschreiben ein konkretes Produkt, etwa eine Maschine, die eindeutig über eine Seriennummer identifizierbar ist.
-Häufig sind Instanzen Ausprägungen eines Typs mit einer Verbindung zu einem realen Objekt, wodurch beispielsweise die Überwachung des Zustands einer Produktionsanlage ermöglicht wird.
-Analog zur Softwareentwicklung können diese als instanziiertes Objekt einer Klasse gesehen werden. \cite{ZEISS}
+
+Instanzen hingegen sind einzigartig und beschreiben ein konkretes Produkt, etwa eine Maschine, die eindeutig über eine Seriennummer identifizierbar ist.
+Häufig sind sie Ausprägungen eines Typs mit einer Verbindung zu einem realen Objekt, wodurch beispielsweise die Zustandsüberwachung einer Produktionsanlage ermöglicht wird.
+Analog zur Softwareentwicklung können sie als instanziiertes Objekt einer Klasse gesehen werden. \cite{ZEISS}
 
 Je nach Art des Informationsflusses sowie dem Grad der Ausprägung der Verbindung zur realen Welt werden Instanzen digitaler Zwillinge häufig in drei Kategorien eingeteilt: das digitale Modell, den digitalen Schatten und den digitalen Zwilling \cite{ClassificationDT}.
 Obwohl diese Begriffe im allgemeinen Sprachgebrauch oft synonym verwendet werden, unterscheiden sie sich deutlich hinsichtlich ihrer Funktion und Kopplung zum realen Objekt.
@@ -154,7 +155,7 @@ In der Produktion ermöglichen sie eine durchgängige Überwachung, Analyse und 
 Zudem unterstützen sie die virtuelle Inbetriebnahme von Maschinen und können eine Grundlage für vorausschauende Wartung (\ac{pm}) bilden, wodurch sich Stillstandzeiten reduzieren lassen.
 Darüber hinaus dienen digitale Zwillinge als zentrale Datenplattform, die Informationen aus unterschiedlichen Quellen zusammenführt und eine konsistente Datenbasis für nachgelagerte Prozesse schafft. \cite{DTForSmartManufacturing}
 
-Die genannten Vorteile verdeutlichen das große Potenzial digitaler Zwillinge. 
+Die genannten Vorteile verdeutlichen das große Potenzial dieses Konzepts. 
 Die praktische Umsetzung erweist sich jedoch oftmals als anspruchsvoll.
 Eine zentrale Herausforderung ist die fehlende Interoperabilität zwischen verschiedenen \ac{it}-Systemen.
 Sowohl innerhalb eines Unternehmens als auch unternehmensübergreifend bilden sich dadurch häufig voneinander isolierte Datenbestände, die nicht systemübergreifend nutzbar sind.
@@ -172,7 +173,7 @@ Es ist daher essenziell, digitale Zwillinge in einem interope\-rablen Format ber
 
 Die \acs{aas} (deutsch: Verwaltungsschale) stellt eine Schlüsselkomponente innerhalb des Referenzarchitekturmodells Industrie 4.0 (\acs{rami}) \cite{RAMI4.0} dar und bildet die Grundlage für die Realisierung interoperabler digitaler Zwillinge. 
 Sie wurde maßgeblich von der Plattform Industrie 4.0 entwickelt und im Jahr 2016 erstmals als Bestandteil von \acs{rami} vorgestellt. 
-Seit ihrer Einführung wurde die \acs{aas} schrittweise standardisiert und ist mittlerweile in der internationalen Norm IEC 63278-1 \cite{AASIEC63278} verankert.
+Seit ihrer Einführung wurde sie schrittweise standardisiert und ist mittlerweile in der internationalen Norm IEC 63278-1 \cite{AASIEC63278} verankert.
 
 Die Koordination der Weiterentwicklung erfolgt seit 2020 durch die Industrial Digital Twin Association (\acs{idta}) \cite{IDTA}. 
 Ziel der Organisation ist es, den digitalen Zwilling auf Basis der \acs{aas} weiter zu standardisieren und über Open-Source-Softwarelösungen in das industrielle Umfeld zu integrieren. 
@@ -182,7 +183,7 @@ Die Struktur ist in mehreren Spezifikationen der \acs{idta} beschrieben.
 Die zentrale Funktion der \acs{aas} besteht in der digitalen Repräsentation eines Assets. 
 Sie verwaltet alle relevanten Daten, Eigenschaften und Funktionen über den gesamten Lebenszyklus hinweg in standardisierter Form. 
 Dabei können sowohl physische Objekte (z.~B. Maschinen oder Anlagen) als auch virtuelle Komponenten (z.~B. Software oder Konzepte) abgebildet werden. 
-Damit leistet die \acs{aas} einen entscheidenden Beitrag zur Umsetzung digitaler Zwillinge in Industrie 4.0.
+Damit leistet sie einen entscheidenden Beitrag zur Umsetzung digitaler Zwillinge in Industrie 4.0.
 
 Jede \acs{aas} ist eindeutig einem Asset zugeordnet und global identifizierbar. 
 Durch die Kombination beider entsteht eine sogenannte Industrie-4.0-Komponente, die in Abbildung~\ref{fig:Industrie4Komponente} dargestellt ist. 
