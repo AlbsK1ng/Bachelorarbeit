@@ -304,21 +304,21 @@ Die wesentlichen Punkte sind im Folgenden zusammengefasst:
 \subsection{KI-Modell zur Anomalieerkennung}
 
 Für die Anomalieerkennung wurde der zuvor trainierte Autoencoder im Evaluierungsmodus eingesetzt, sodass während der Auswertung keine Anpassungen der Modellparameter erfolgten.
-Die Testdaten basieren, wie beim Training, auf simulierten Temperaturverläufen aus dem Datengenerator, die analog zu den Zeitreihendaten in Kapitel \ref{sec:DynamischeSubmodelle} in einer InfluxDB gespeichert wurden.
+Die Testdaten basieren, wie beim Training, auf simulierten Temperaturverläufen aus dem Datengenerator, die analog zu den Zeitreihendaten in Kapitel \ref{sec:DynamischeSubmodelle} in einer InfluxDB gespeichert sind.
 
 Als Eingabe erhält das Modell kurze Sequenzen von jeweils fünf Messwerten.
-Im Unterschied zur Trainingsphase enthalten die Testdaten gezielt eingefügte Anomalien, um die Erkennungsfähigkeit des Modells zu prüfen.
+Im Unterschied zur Trainingsphase enthalten diese gezielt eingefügte Anomalien, um die Erkennungsfähigkeit des Modells zu prüfen.
 Dabei wurden vier Anomalietypen simuliert: dauerhaft erhöhte Werte, ein einzelner ausgeprägter Peak, ein linearer Anstieg über mehrere Zeitpunkte sowie invertierte Werte im Vergleich zum Normalverlauf.
 
-Während der Auswertung berechnet der Autoencoder für jede Sequenz den Rekonstruktionsfehler als durchschnittliche Abweichung zwischen Eingabe- und Ausgabedaten. 
-Zur Klassifikation dient ein Schwellenwert, der aus dem Mittelwert des Fehlers plus dem Zweifachen der Standardabweichung gebildet wird. 
+Während der Evaluation berechnet der Autoencoder für jede Sequenz den Rekonstruktionsfehler als durchschnittliche Abweichung zwischen Eingabe- und Ausgabedaten. 
+Die Klassifikation erfolgt durch den Vergleich mit einem Schwellenwert, der aus den Testdaten (Mittelwert + 2·Standardabweichung) abgeleitet wurde.
 Überschreitet der Fehler einer Sequenz diesen Wert, wird das gesamte Zeitfenster als Anomalie markiert.
 
-Zur Veranschaulichung werden zwei Beispiele gezeigt, die unterschiedliche Anomalietypen repräsentieren. 
+Zur Veranschaulichung werden zwei Beispiele präsentiert, die unterschiedliche Anomalietypen repräsentieren.
 Abbildung~\ref{fig:Fall1} zeigt einen Temperaturverlauf mit dauerhaft erhöhten Werten im Bereich t = 10000 - 10010 (gezielt eingefügte Anomalie). 
-Das Modell erkennt die Anomalie zuverlässig, allerdings leicht verzögert. 
-Dies liegt an der Mittelwertbildung über das Fünf-Werte-Fenster.
-Erst wenn mehrere aufeinanderfolgende Werte vom Normalverlauf abweichen, steigt der Fehler ausreichend an.
+Das Modell erkennt die Abweichung zuverlässig, jedoch leicht verzögert. 
+Ursache ist die Mittelwertbildung über das Fünf-Werte-Fenster: Erst wenn mehrere aufeinanderfolgende Werte vom Normalverlauf abweichen, steigt der Fehler ausreichend an.
+
 
 \vspace{-0.75em}
 \begin{figure}[htbp]
@@ -328,15 +328,15 @@ Erst wenn mehrere aufeinanderfolgende Werte vom Normalverlauf abweichen, steigt 
     \caption[Anomalieerkennung - Fall 1]{Anomalieerkennung - Fall 1: Temperaturverlauf mit überhöhten Werten}
     \label{fig:Fall1}
 \end{figure}
-\vspace{-0.75em}
+\vspace{-0.5em}
 
-In Abbildung~\ref{fig:Fall2} ist ein Temperaturverlauf mit einem gleichmäßigen, linearen Anstieg im Bereich t = 25343 - 25393 (gezielt eingefügte Anomalie) dargestellt. 
+Abbildung~\ref{fig:Fall2} zeigt einen Temperaturverlauf mit einem gleichmäßigen, linearen Anstieg im Bereich t = 25343 - 25393 (gezielt eingefügte Anomalie).
 Auch hier%
 \pagebreak
 ~klassifiziert das Modell den Verlauf korrekt als Anomalie. 
-Dies zeigt, dass die Erkennung nicht nur auf plötzliche Ausreißer reagiert, sondern auch schleichende Veränderungen im Signalverlauf erkennt.
+Dies verdeutlicht, dass die Erkennung nicht nur auf plötzliche Ausreißer reagiert, sondern auch schleichende Veränderungen im Signalverlauf erfasst.
 
-\vspace{-0.75em}
+\vspace{-0.5em}
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/Ergebnisse/KI/Fall2.pdf}
@@ -344,7 +344,7 @@ Dies zeigt, dass die Erkennung nicht nur auf plötzliche Ausreißer reagiert, so
     \caption[Anomalieerkennung - Fall 2]{Anomalieerkennung - Fall 2: Temperaturverlauf mit linearem Anstieg}
     \label{fig:Fall2}
 \end{figure}
-\vspace{-0.75em}
+\vspace{-0.5em}
 
 In allen Testfällen mit künstlich erzeugten Anomalien erfolgte die Klassifikation korrekt, ohne Fehlalarme. 
 Aufgrund der Fenstergröße und der Mittelwertbildung tritt die Markierung jedoch häufig leicht verzögert auf, wodurch einzelne Sequenzen innerhalb einer Anomaliephase nicht als abweichend markiert werden. 
@@ -362,7 +362,8 @@ Werden neben Sensordaten zusätzlich technische Stammdaten oder standardisierte 
 \newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
 
-Mit dem Anwendungsfall \acs{dpp} konnte gezeigt werden, dass Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten direkt in der AAS einer Maschine abgebildet und nutzer- bzw. rollenabhängig bereitgestellt werden können.
+% Mit dem Anwendungsfall \acs{dpp} konnte gezeigt werden, dass Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten direkt in der AAS einer Maschine abgebildet und nutzer- bzw. rollenabhängig bereitgestellt werden können.
+Der Anwendungsfall \acs{dpp} zeigt, dass Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten direkt in der \acs{aas} einer Maschine abgebildet und nutzer- bzw. rollenabhängig bereitgestellt werden können.
 Im Folgenden wird hierzu sowohl die Aggregation der Werte als auch die Umsetzung des rollenbasierten Zugriffs durch unterschiedliche Nutzerrollen und technische Clients dargestellt.
 Grundlage bildet der in Kapitel~\ref{sec:AAS-Demonstrator} vorgestellte Demonstrator, der um ein Submodell zur Abbildung des \acs{cf} erweitert wurde.
 
@@ -370,13 +371,14 @@ Grundlage bildet der in Kapitel~\ref{sec:AAS-Demonstrator} vorgestellte Demonstr
 Das Submodell \acs{cf} bildet die Lebenszyklusphasen Material, Produktion und Cradle to Gate jeweils in eigenen \acsp{smc} ab.
 Abbildung~\ref{fig:SubmodellCF} stellt exemplarisch die \acs{smc} für die Phase Cradle to Gate (links) sowie die integrierte Komponentenliste (rechts) dar, in der die für die Berechnung herangezogenen Siemens-Komponenten hinterlegt sind.
 
+\vspace{0.5em}
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png}
     \caption{Ausschnitt Submodell \acs{cf}}
     \label{fig:SubmodellCF}
 \end{figure}
-\vspace{-0.5em}
+\vspace{-0.2em}
 
 Die Aggregation der CO\textsubscript{2}-Äquivalente erfolgt dynamisch über einen Microservice. 
 Dieser ist als Docker-Container implementiert und greift über die REST-Schnittstellen des BaSyx-Backends auf die in der Komponentenliste hinterlegten Entitäten zu. 
@@ -384,16 +386,18 @@ Mithilfe des Discovery Service werden deren AAS identifiziert und vorhandene CF-
 Die enthaltenen PCF-Werte werden anschließend zu Gesamtwerten für die einzelnen Lebenszyklusphasen aggregiert und in das CF-Submodell der Haupt-AAS zurückgeschrieben.
 
 Die Berechnung kann direkt über ein Plugin in der AAS Web UI ausgelöst werden.
-Nach Abschluss des Berechnungsprozesses werden die aktualisierten Werte automatisch vom Submodel Repository abgefragt und in der Benutzeroberfläche aktualisiert.
+Nach Abschluss des Berechnungsprozesses werden die aktualisierten Werte automatisch vom Submodel Repository abgefragt und in der Benutzeroberfläche aktualisiert. 
+\pagebreak
 Abbildung~\ref{fig:PluginAggregation} zeigt die entsprechende Visualisierung: links die aggregierten CO\textsubscript{2}-Äquivalente, rechts die zugehörigen Lebenszyklusphasen.
 
+\vspace{0.5em}
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/CarbonFootprint.png}
     \caption{Visualisierung \acs{pcf}-Werte je Lebenszyklusphase}
     \label{fig:PluginAggregation}
 \end{figure}
-\vspace{-0.5em}
+\vspace{-0.2em}
 
 Der Ansatz ist flexibel erweiterbar.
 Bei Verfügbarkeit weiterer Komponenten-AAS lässt sich die Liste unkompliziert ergänzen, sodass sukzessive die gesamte Maschine berücksichtigt werden kann. 
@@ -439,9 +443,9 @@ Neben der AAS Web UI ist auch ein direkter Zugriff auf die BaSyx-Komponenten üb
 Dafür wurden in Keycloak drei Clients mit Service Accounts angelegt, die denselben Rollen wie die Benutzerkonten entsprechen und somit identische Berechtigungen besitzen.
 
 Zur Validierung der Konfiguration wurde Postman eingesetzt. 
-Die Clients rufen dabei über den Token-Endpunkt von Keycloak Zugriffstokens ab und nutzen diese für API-Anfragen. 
+Die Clients rufen dabei über den Token-Endpunkt von Keycloak Zugriffstokens ab und nutzen diese für \acs{api}-Anfragen. 
 Abbildung~\ref{fig:DELETEServiceTechniker} zeigt exemplarisch eine DELETE-Anfrage des Service-Techniker-Clients. 
-Da dieser nur Leserechte besitzt, wird die Anfrage mit HTTP 403 Forbidden abgelehnt. 
+Da dieser nur Leserechte besitzt, wird die Anfrage mit \acs{http} 403 Forbidden abgelehnt. 
 Mit dem Groninger-Client hingegen gelingt der Löschvorgang, da dessen Rolle uneingeschränkte Rechte umfasst.
 
 \vspace{0.25em}
@@ -453,16 +457,15 @@ Mit dem Groninger-Client hingegen gelingt der Löschvorgang, da dessen Rolle une
 \end{figure}
 \vspace{-0.25em}
 
-Die Zugriffskontrolle mit BaSyx und Keycloak hat gezeigt, dass sich Berechtigungen zuverlässig auf die \acs{aas} und ihre Submodelle übertragen lassen. 
+Die Zugriffskontrolle mit BaSyx und Keycloak zeigt, dass sich Berechtigungen zuverlässig auf die \acs{aas} und ihre Submodelle übertragen lassen. 
 Dies verdeutlicht die Eignung der \acs{aas} als technische Grundlage für den \acs{dpp} und eröffnet neue Perspektiven für Szenarien, in denen sensible Informationen, etwa Nachhaltigkeitsdaten, differenziert entlang der Wertschöpfungskette zugänglich gemacht werden. 
-Gleichzeitig erweist sich der \acs{rbac}-Ansatz in seiner Flexibilität als begrenzt, sodass für komplexe Szenarien ABAC erforderlich wäre, das von BaSyx bislang jedoch nicht unterstützt wird.
+Gleichzeitig erweist sich der \acs{rbac}-Ansatz in seiner Flexibilität als begrenzt, sodass für komplexe Szenarien \acs{abac} erforderlich wäre, das von BaSyx bislang jedoch nicht unterstützt wird.
 
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 
-Der Anwendungsfall der automatisierten Generierung hat gezeigt, wie sich \acs{aas}-Instanzen automatisch erzeugen und in das BaSyx-Backend integrieren lassen.
+Der Anwendungsfall der automatisierten Generierung verdeutlicht, wie sich \acs{aas}-In\-stanzen automatisch erzeugen und in das BaSyx-Backend integrieren lassen.
 Abbildung~\ref{fig:AutomatisierteGenerierungAblauf} veranschaulicht den Ablauf.
-Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mithilfe des Package Explorers aus dem generischen SMT Generic Frame for Technical Data for Industrial Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
 
 \vspace{-0.5em}
 \begin{figure}[htbp]
@@ -473,8 +476,13 @@ Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mithilfe des Pa
 \end{figure}
 \vspace{-0.5em}
 
+Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mithilfe des Package 
+\linebreak
+Explorers aus dem generischen SMT Generic Frame for Technical Data for Industrial
+\linebreak
+Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
 Das resultierende Typ-Submodell wird durch ein Node.js-basiertes Mapping-Skript mit Beispieldaten angereichert und in eine neue \acs{aas}-Instanz eingebettet. 
-Das Skript übernimmt zusätzlich die Registrierung im BaSyx-Backend, sodass die erzeugte \acs{aas} unmittelbar zur Verfügung steht und beispielsweise in der AAS Web UI visualisiert werden kann.
+Das Skript übernimmt zusätzlich die Registrierung im BaSyx-Backend, sodass die erzeugte \acs{aas} unmittelbar zur Verfügung steht.
 
 In der prototypischen Umsetzung zeigte sich, dass der entwickelte Ansatz den manuellen Modellierungsaufwand im Package Explorer potenziell erheblich reduzieren kann, insbesondere bei komplexen Strukturen wäre dies ein großer Vorteil. 
 Zudem ist der Prozess grundsätzlich auch auf weitere Submodelle übertragbar, sodass perspektivisch die \acs{aas} einer gesamten Maschine automatisiert generiert werden könnte. 

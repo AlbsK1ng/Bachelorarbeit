@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  28 AUG 2025 19:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  29 AUG 2025 00:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2160,52 +2160,52 @@ Package pdftex.def Info: Bilder/Ergebnisse/KI/Fall2.pdf  used on input line 342.
 
 
 [56 <./Bilder/Ergebnisse/KI/Fall2.pdf>]
-Package acronym Info: Label `acro:dpp' overridden on input line 365.
-Package acronym Info: Label `acro:smc' overridden on input line 370.
+Package acronym Info: Label `acro:dpp' overridden on input line 366.
 Package acronym Info: Label `acro:smc' overridden on input line 371.
-<Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png, id=1808, 484.39197pt x 204.91747pt>
+Package acronym Info: Label `acro:smc' overridden on input line 372.
+<Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png, id=1809, 484.39197pt x 204.91747pt>
 File: Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png>
-Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png  used on input line 375.
+Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png  used on input line 377.
 (pdftex.def)             Requested size: 426.79135pt x 180.55305pt.
-<Bilder/ErgebnisseAASWebUI/CarbonFootprint.png, id=1812, 2267.47125pt x 1818.795pt>
-File: Bilder/ErgebnisseAASWebUI/CarbonFootprint.png Graphic file (type png)
-<use Bilder/ErgebnisseAASWebUI/CarbonFootprint.png>
-Package pdftex.def Info: Bilder/ErgebnisseAASWebUI/CarbonFootprint.png  used on input line 392.
-(pdftex.def)             Requested size: 426.79135pt x 342.32759pt.
 
 
 [57 <./Bilder/ErgebnissePackageExplorer/CarbonFoorprintTest.png>]
-Package acronym Info: Label `acro:dpp' overridden on input line 403.
+<Bilder/ErgebnisseAASWebUI/CarbonFootprint.png, id=1819, 2267.47125pt x 1818.795pt>
+File: Bilder/ErgebnisseAASWebUI/CarbonFootprint.png Graphic file (type png)
+<use Bilder/ErgebnisseAASWebUI/CarbonFootprint.png>
+Package pdftex.def Info: Bilder/ErgebnisseAASWebUI/CarbonFootprint.png  used on input line 396.
+(pdftex.def)             Requested size: 426.79135pt x 342.32759pt.
+Package acronym Info: Label `acro:dpp' overridden on input line 407.
 
 
 [58 <./Bilder/ErgebnisseAASWebUI/CarbonFootprint.png>]
-Package acronym Info: Label `acro:dpp' overridden on input line 407.
+Package acronym Info: Label `acro:dpp' overridden on input line 411.
  (TabelleRBAC.tex)
-Package acronym Info: Label `acro:dpp' overridden on input line 417.
-<Bilder/KeycloakAnmeldeSeite.png, id=1834, 1321.18594pt x 855.195pt>
+Package acronym Info: Label `acro:dpp' overridden on input line 421.
+<Bilder/KeycloakAnmeldeSeite.png, id=1835, 1321.18594pt x 855.195pt>
 File: Bilder/KeycloakAnmeldeSeite.png Graphic file (type png)
 <use Bilder/KeycloakAnmeldeSeite.png>
-Package pdftex.def Info: Bilder/KeycloakAnmeldeSeite.png  used on input line 424.
+Package pdftex.def Info: Bilder/KeycloakAnmeldeSeite.png  used on input line 428.
 (pdftex.def)             Requested size: 298.75264pt x 193.37622pt.
 
 
 [59 <./Bilder/KeycloakAnmeldeSeite.png>]
-<Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png, id=1844, 429.85594pt x 216.05719pt>
+<Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png, id=1847, 429.85594pt x 216.05719pt>
 File: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png Graphic file (type png)
 <use Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png>
-Package pdftex.def Info: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png  used on input line 450.
+Package pdftex.def Info: Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png  used on input line 454.
 (pdftex.def)             Requested size: 405.45047pt x 203.79268pt.
-Package acronym Info: Label `acro:dpp' overridden on input line 457.
+Package acronym Info: Label `acro:dpp' overridden on input line 461.
 
 
 [60 <./Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png (PNG copy)>]
 
 pdfTeX warning: pdflatex (file ./Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf, id=1858, 383.51279pt x 108.405pt>
+<Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf, id=1860, 383.51279pt x 108.405pt>
 File: Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf Graphic file (type pdf)
 <use Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf>
-Package pdftex.def Info: Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf  used on input line 470.
+Package pdftex.def Info: Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf  used on input line 473.
 (pdftex.def)             Requested size: 426.79135pt x 120.64194pt.
 
 
@@ -2262,7 +2262,7 @@ Underfull \hbox (badness 1783) in paragraph at lines 276--276
 [72]
 
 [73] (Anhang.tex
-<Bilder/ErgebnissePackageExplorer/Typenschild.PNG, id=2156, 392.21532pt x 511.15968pt>
+<Bilder/ErgebnissePackageExplorer/Typenschild.PNG, id=2160, 392.21532pt x 511.15968pt>
 File: Bilder/ErgebnissePackageExplorer/Typenschild.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/Typenschild.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/Typenschild.PNG  used on input line 16.
@@ -2272,7 +2272,7 @@ Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/Typenschild.PNG  used 
 [74
 
  <./Bilder/ErgebnissePackageExplorer/Typenschild.PNG>]
-<Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG, id=2164, 429.10312pt x 648.92438pt>
+<Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG, id=2168, 429.10312pt x 648.92438pt>
 File: Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG  used on input line 24.
@@ -2280,7 +2280,7 @@ Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG  u
 
 
 [75 <./Bilder/ErgebnissePackageExplorer/TehcnischeDaten.PNG>]
-<Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG, id=2171, 442.65375pt x 609.77812pt>
+<Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG, id=2175, 442.65375pt x 609.77812pt>
 File: Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG  used on input line 32.
@@ -2288,7 +2288,7 @@ Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG  
 
 
 [76 <./Bilder/ErgebnissePackageExplorer/SMCDokumentation.PNG>]
-<Bilder/ErgebnissePackageExplorer/Wartung.PNG, id=2178, 447.92343pt x 530.73282pt>
+<Bilder/ErgebnissePackageExplorer/Wartung.PNG, id=2182, 447.92343pt x 530.73282pt>
 File: Bilder/ErgebnissePackageExplorer/Wartung.PNG Graphic file (type png)
 <use Bilder/ErgebnissePackageExplorer/Wartung.PNG>
 Package pdftex.def Info: Bilder/ErgebnissePackageExplorer/Wartung.PNG  used on input line 40.
@@ -2324,17 +2324,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54477 strings out of 468225
- 1097877 string characters out of 5432974
- 2005149 words of memory out of 5000000
- 81276 multiletter control sequences out of 15000+600000
- 720005 words of font info for 382 fonts, out of 8000000 for 9000
+ 54479 strings out of 468225
+ 1097907 string characters out of 5432974
+ 2005147 words of memory out of 5000000
+ 81277 multiletter control sequences out of 15000+600000
+ 720071 words of font info for 383 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  84i,15n,118p,2569b,2680s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (88 pages, 11395170 bytes).
+Output written on main.pdf (88 pages, 11396003 bytes).
 PDF statistics:
- 2510 PDF objects out of 2984 (max. 8388607)
+ 2514 PDF objects out of 2984 (max. 8388607)
  489 named destinations out of 1000 (max. 500000)
  88242 words of extra memory for PDF output out of 89155 (max. 10000000)
 
