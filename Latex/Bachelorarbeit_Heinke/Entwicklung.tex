@@ -406,17 +406,14 @@ Alle relevanten Informationen zur externen Speicherung der Zeitreihendaten sind 
 \newpage
 \subsection{KI-Modell zur Optimierung}
 In diesem Abschnitt wird ein Konzept zur Optimierung der zustandsbasierten Prozessüberwachung auf Basis von \acs{ki} vorgestellt und prototypisch umgesetzt.
-Ziel ist es, mithilfe maschinellen Lernens potenzielle Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen.
+Ziel ist es, mithilfe maschinellen Lernens Anomalien in den im digitalen Zwilling abgebildeten Prozessdaten zu erkennen.
 Damit wird eine Grundlage für proaktive Instandhaltungsmaßnahmen geschaffen, die zur Optimierung des Betriebs einer Maschine beitragen können.
-
-
-% und dadurch eine Grundlage für prädiktive Instandhaltungsmaßnahmen zu schaffen.
-% Darüber hinaus wird gezeigt, wie das resultierende \acs{ki}-Modell mithilfe der \acs{aas} standardisiert und interoperabel verwaltet werden kann.
 
 \subsubsection{Konzeptidee}
 Mit der fortschreitenden Digitalisierung industrieller Prozesse entstehen zunehmend umfangreiche Datenmengen, die wertvolle Informationen über den Zustand und das Verhalten eines Assets liefern. 
 Dabei handelt es sich um unterschiedlichste Datenarten, etwa die Drehzahl eines Motors oder, wie im Rahmen dieser Arbeit im digitalen Zwilling abgebildet, klassische Prozessdaten wie Druck und Temperatur.
-Die manuelle Analyse dieser Daten kann sich als sehr herausfordernd gestalten. Abweichungen vom Normalbetrieb sind oft schwer zu erkennen, was eine zuverlässige Zustandsüberwachung erheblich erschwert.
+Die manuelle Analyse dieser Daten ist jedoch sehr anspruchsvoll.
+Abweichungen vom Normalbetrieb sind oft schwer zu erkennen, was eine zuverlässige Zustandsüberwachung erheblich erschwert.
 
 Ein vielversprechender Ansatz, der genau diese Problematik adressiert, ist der sogenannte Autoencoder. 
 Dieser stellt eine spezielle Architektur tiefer neuronaler Netze dar und besteht typischerweise aus zwei Hauptkomponenten: einem Encoder und einem Decoder, die gemeinsam eine komprimierte, latente Repräsentation der Eingangsdaten erlernen.
@@ -440,7 +437,7 @@ Dabei erfolgt eine Dimensionsreduktion, das heißt, die Daten werden im Verlauf 
 Das Ziel ist, die für die Rekonstruktion wesentlichen Merkmale zu extrahieren und irrelevante Informationen zu filtern.
 
 Der dabei entstehende latente Raum bildet die am stärksten komprimierte Repräsentation der Daten ab und dient als Ausgangspunkt für den Decoder.
-Dieser übernimmt die Aufgabe, die komprimierte Darstellung wieder in die ursprüngliche Eingabe zu rekonstruieren. 
+Dieser übernimmt die Aufgabe, die komprimierte Darstellung in die ursprüngliche Eingabe zu rekonstruieren. 
 Auch er besteht aus mehreren Schichten, die die Daten schrittweise dekomprimieren.
 Zur Bewertung der Leistungsfähigkeit kann die resultierende Ausgabe mit der ursprünglichen Eingabe verglichen werden. 
 Die Differenz zwischen beiden wird als Rekonstruktionsfehler bezeichnet. \cite{Autoencoder}
@@ -450,7 +447,7 @@ Geplant ist ein Training mit Daten aus dem Normalbetrieb.
 Da diese nicht gelabelt sind, wird ein unüberwachter Lernansatz verfolgt. 
 Ziel ist es, dass das Modell typische Muster des Normalbetriebs eigenständig erkennt und rekonstruieren kann. 
 Weichen neue Eingangsdaten deutlich vom gelernten Muster ab, steigt der Rekonstruktionsfehler.
-Dieser dient als Indikator für eine potenzielle Anomalie.
+Dieser dient als Indikator für eine Anomalie.
 
 \subsubsection{Prototypische Umsetzung}
 Für die prototypische Umsetzung des Autoencoders wird die Programmiersprache Python verwendet. 
@@ -458,20 +455,15 @@ Aufgrund ihrer Vielzahl an spezialisierten Frameworks für maschinelles Lernen g
 Als Datengrundlage dienen die simulierten Temperaturverläufe, die mithilfe des Datengenerators erzeugt und, wie auch in Kapitel \ref{sec: VerarbeitungZeitreihen} beschrieben, in einer InfluxDB gespeichert sind.
 
 Im ersten Schritt gilt es, die für das Training notwendigen Daten vorzubereiten. 
-Hierzu kann ein InfluxDB-Client eingesetzt werden, der über ein \acs{api}-Token sowie die \acs{url} des Containers mit der Datenquelle kommuniziert.
+Hierzu wird ein InfluxDB-Client eingesetzt, der über ein \acs{api}-Token sowie die \acs{url} des Containers mit der Datenquelle kommuniziert.
 Die relevanten Temperaturdaten lassen sich anschließend durch gezielte Abfragen aus der entsprechenden Tabelle extrahieren.
-In dieser Umsetzung wird dabei ein Zeitraum von 7 Tagen betrachtet.
+In dieser Umsetzung wird ein Zeitraum von sieben Tagen betrachtet.
 
-Um dem Autoencoder das Erkennen typischer Muster innerhalb dieser Daten zu ermöglichen, müssen diese zunächst in Segmente unterteilt werden.
+Um dem Autoencoder das Erkennen typischer Muster innerhalb dieser Daten zu ermöglichen, werden diese zunächst in Segmente unterteilt.
 Die Wahl der Fenstergröße spielt dabei eine entscheidende Rolle, da sie die Fähigkeit des Modells beeinflusst, relevante Prozessänderungen zu erfassen.
 Da diese Änderungen in der Regel innerhalb kurzer Zeitabschnitte auftreten, ist es wichtig, eine geeignete Fensterlänge zu wählen, die ausreichend Kontext liefert, ohne zu große Zeiträume zusammenzufassen.
 
-
-% Da relevante Prozessänderungen typischerweise innerhalb kurzer Zeitabschnitte auftreten ein kleiner Abschnitt
-% , wird in dieser Arbeit eine Fenstergröße von 30 Werten gewählt. 
-% Bei einer Abtastrate von 1 Hz entspricht dies einem Zeitraum von 30 Sekunden.
-
-Die resultierenden Sequenzen können anschließend in einem Tensor zusammengeführt werden. 
+Die resultierenden Sequenzen werden anschließend in einem Tensor zusammengeführt. 
 Dabei handelt es sich um ein mehrdimensionales Array, in diesem Fall eine zweidimensionale Matrix, bei der jede Zeile ein Zeitfenster mit einer definierten Anzahl an Temperaturwerten abbildet. 
 Diese Struktur ist speziell für \acs{ki}-Modelle ausgelegt und erlaubt dem Autoencoder, typische Muster in den Zeitreihendaten zu erlernen.
 
@@ -480,14 +472,43 @@ Der Encoder komprimiert die Eingabesequenz schrittweise von 64 auf 16 und schlie
 Der Decoder ist spiegelbildlich aufgebaut und rekonstruiert aus dem latenten Raum die ursprüngliche Eingabesequenz, indem er die Dimensionen in umgekehrter Reihenfolge auf 16, 64 und schließlich auf die ursprüngliche Sequenzlänge erweitert.
 
 Als Eingabe für das Training dienen die zuvor definierten Tensoren.
-Das Ziel ist, die Eingabedaten möglichst exakt zu rekonstruieren.
+Ziel ist, die Eingabedaten möglichst exakt zu rekonstruieren.
 Nach jedem Trainingsdurchgang wird hierzu der mittlere quadratische Fehler zwischen Eingabe- und Ausgabedaten berechnet.
 Dieser Fehlerwert wird verwendet, um die Gewichte des Netzes, typischerweise mittels Backpropagation, anzupassen.
 Durch die iterative Wiederholung dieses Prozesses über mehrere Trainingszyklen (Epochen) wird der Rekonstruktionsfehler sukzessive verringert und somit die Fähigkeit des Modells, die Eingabedaten genau nachzubilden, kontinuierlich verbessert.
 
 Das trainierte Modell kann anschließend zur Erkennung von Anomalien in neuen Daten genutzt werden.
 Dabei dient der Rekonstruktionsfehler nicht mehr zur Optimierung, sondern als Maß für Abweichungen von der Normalität.
-Überschreitet der Fehler eines Zeitfensters einen definierten Schwellenwert, so liegt eine Anomalie vor.
+Überschreitet der Fehler eines Zeitfensters einen definierten Schwellenwert, so wird eine Anomalie detektiert.
+
+% \begin{lstlisting}[language=json, caption={\acs{json}-Konfiguration einer Datensenke}, label={lst:jassonDatensenke}]
+% {
+% class Autoencoder(nn.Module):
+%     def __init__(self, window_size):
+%         super(Autoencoder, self).__init__()
+%         self.encoder = nn.Sequential(
+%             nn.Linear(window_size, 64),
+%             nn.ReLU(),
+%             nn.Linear(64, 16),
+%             nn.ReLU(),
+%             nn.Linear(16, 4),
+%             nn.ReLU()
+%         )
+%         self.decoder = nn.Sequential(
+%             nn.Linear(4, 16),
+%             nn.ReLU(),
+%             nn.Linear(16, 64),
+%             nn.ReLU(),
+%             nn.Linear(64, window_size),
+%             nn.ReLU()
+%         )
+
+%     def forward(self, x):
+%         x = self.encoder(x)
+%         x = self.decoder(x)
+%         return x
+% }
+% \end{lstlisting}
 
 \newpage
 % Seitenumbruch im Inhaltsverzeichnis

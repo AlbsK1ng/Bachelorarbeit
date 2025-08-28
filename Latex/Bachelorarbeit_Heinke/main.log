@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  28 AUG 2025 18:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  28 AUG 2025 19:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2009,52 +2009,52 @@ pdfTeX warning: pdflatex (file ./Bilder/Autoencoder/AutoencoderModell.pdf): PDF 
 <Bilder/Autoencoder/AutoencoderModell.pdf, id=1360, 469.755pt x 233.9139pt>
 File: Bilder/Autoencoder/AutoencoderModell.pdf Graphic file (type pdf)
 <use Bilder/Autoencoder/AutoencoderModell.pdf>
-Package pdftex.def Info: Bilder/Autoencoder/AutoencoderModell.pdf  used on input line 430.
+Package pdftex.def Info: Bilder/Autoencoder/AutoencoderModell.pdf  used on input line 427.
 (pdftex.def)             Requested size: 426.79135pt x 212.51932pt.
 
 
 [36 <./Bilder/Autoencoder/AutoencoderModell.pdf>]
-Package acronym Info: Label `acro:url' overridden on input line 461.
-Package acronym Info: Label `acro:ki' overridden on input line 476.
+Package acronym Info: Label `acro:url' overridden on input line 458.
+Package acronym Info: Label `acro:ki' overridden on input line 468.
 
 
 [37]
 
 [38]
-Package acronym Info: Label `acro:dpp' overridden on input line 496.
-Package acronym Info: Label `acro:idta' overridden on input line 497.
-Package acronym Info: Label `acro:dpp40' overridden on input line 497.
-Package acronym Info: Label `acro:dpp' overridden on input line 498.
-Package acronym Info: Label `acro:eu' overridden on input line 503.
-Package acronym Info: Label `acro:dpp' overridden on input line 504.
-Package acronym Info: Label `acro:idta' overridden on input line 508.
+Package acronym Info: Label `acro:dpp' overridden on input line 517.
+Package acronym Info: Label `acro:idta' overridden on input line 518.
+Package acronym Info: Label `acro:dpp40' overridden on input line 518.
+Package acronym Info: Label `acro:dpp' overridden on input line 519.
+Package acronym Info: Label `acro:eu' overridden on input line 524.
+Package acronym Info: Label `acro:dpp' overridden on input line 525.
+Package acronym Info: Label `acro:idta' overridden on input line 529.
 Package acronym Info: Label `acro:tcf' newly defined as it shall be overridden
-although it is yet undefined on input line 509.
-Package acronym Info: Label `acro:smc' overridden on input line 510.
-Package acronym Info: Label `acro:smc' overridden on input line 511.
+although it is yet undefined on input line 530.
+Package acronym Info: Label `acro:smc' overridden on input line 531.
+Package acronym Info: Label `acro:smc' overridden on input line 532.
 
 
 [39]
-Package acronym Info: Label `acro:sml' overridden on input line 521.
-Package acronym Info: Label `acro:smc' overridden on input line 532.
-Package acronym Info: Label `acro:dpp' overridden on input line 538.
-Package acronym Info: Label `acro:idta' overridden on input line 539.
+Package acronym Info: Label `acro:sml' overridden on input line 542.
+Package acronym Info: Label `acro:smc' overridden on input line 553.
+Package acronym Info: Label `acro:dpp' overridden on input line 559.
+Package acronym Info: Label `acro:idta' overridden on input line 560.
 
 
 [40
 
 ]
-Package acronym Info: Label `acro:id' overridden on input line 558.
+Package acronym Info: Label `acro:id' overridden on input line 579.
 
 
 [41]
-Package acronym Info: Label `acro:smc' overridden on input line 576.
+Package acronym Info: Label `acro:smc' overridden on input line 597.
 
 
 [42]
-Package acronym Info: Label `acro:rest' overridden on input line 599.
-Package acronym Info: Label `acro:id' overridden on input line 614.
-Package acronym Info: Label `acro:rest' overridden on input line 618.
+Package acronym Info: Label `acro:rest' overridden on input line 620.
+Package acronym Info: Label `acro:id' overridden on input line 635.
+Package acronym Info: Label `acro:rest' overridden on input line 639.
 ) (Ergebnisse.tex
 
 [43]
@@ -2332,7 +2332,7 @@ Here is how much of TeX's memory you used:
  1143 hyphenation exceptions out of 8191
  84i,15n,118p,2569b,2680s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb><C:/Users/albi0/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (88 pages, 11395175 bytes).
+Output written on main.pdf (88 pages, 11395170 bytes).
 PDF statistics:
  2510 PDF objects out of 2984 (max. 8388607)
  489 named destinations out of 1000 (max. 500000)
