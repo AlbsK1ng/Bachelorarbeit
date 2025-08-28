@@ -357,17 +357,14 @@ Werden neben Sensordaten zusätzlich technische Stammdaten oder standardisierte 
 
 \newpage
 \subsection{Anwendungsfall Digitaler Produktpass}
-% Der Anwendungsfall \acs{dpp} demonstriert, wie Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten direkt in der AAS einer Maschine abgebildet und anschließend nutzer- bzw. rollenabhängig bereitgestellt werden können. 
-% Grundlage bildet der in Kapitel \ref{sec:AAS-Demonstrator} vorgestellte AAS-Demonstrator, der um ein Submodell zur Abbildung des \acs{cf} erweitert wurde. 
-% Neben der dynamischen Berechnung und Aggregation dieser Werte wird daher auch gezeigt, wie der Zugriff auf die im DPP enthaltenen Informationen durch unterschiedliche Nutzerrollen und technische Clients geregelt ist.
 
 Mit dem Anwendungsfall \acs{dpp} konnte gezeigt werden, dass Nachhaltigkeitsinformationen in Form von \acs{pcf}-Werten direkt in der AAS einer Maschine abgebildet und nutzer- bzw. rollenabhängig bereitgestellt werden können.
 Im Folgenden wird hierzu sowohl die Aggregation der Werte als auch die Umsetzung des rollenbasierten Zugriffs durch unterschiedliche Nutzerrollen und technische Clients dargestellt.
-Grundlage bildet der in Kapitel~\ref{sec:AAS-Demonstrator} vorgestellte AAS-Demonstrator, der um ein Submodell zur Abbildung des \acs{cf} erweitert wurde.
+Grundlage bildet der in Kapitel~\ref{sec:AAS-Demonstrator} vorgestellte Demonstrator, der um ein Submodell zur Abbildung des \acs{cf} erweitert wurde.
 
 \subsubsection{Abbildung des PCF}
-Das CF-Submodell bildet die Lebenszyklusphasen Material, Produktion und Cradle to Gate jeweils in eigenen \acsp{smc} ab.
-Abbildung~\ref{fig:SubmodellCF} zeigt exemplarisch die \acs{smc} für die Phase Cradle to Gate (links) sowie die integrierte Komponentenliste (rechts), in der die für die Berechnung herangezogenen Siemens-Komponenten hinterlegt sind.
+Das Submodell \acs{cf} bildet die Lebenszyklusphasen Material, Produktion und Cradle to Gate jeweils in eigenen \acsp{smc} ab.
+Abbildung~\ref{fig:SubmodellCF} stellt exemplarisch die \acs{smc} für die Phase Cradle to Gate (links) sowie die integrierte Komponentenliste (rechts) dar, in der die für die Berechnung herangezogenen Siemens-Komponenten hinterlegt sind.
 
 \begin{figure}[htbp]
     \centering
@@ -410,7 +407,8 @@ Die Authentifizierung und Autorisierung erfolgt über Keycloak, das als Docker-C
 Zur Veranschaulichung wurden drei Nutzer mit typischen Rollen eingerichtet, deren zugehörige Berechtigungen in Tabelle~\ref{tab:RBACUsers} dokumentiert sind.
 
 \input{TabelleRBAC.tex}
-    
+\vspace{-0.25em}   
+
 \vspace{-0.25em}
 Eine Möglichkeit zur Einsicht der im \acs{dpp} enthaltenen Informationen bietet die AAS Web UI.
 Ist \acs{rbac} aktiviert, wird der Benutzer beim Aufruf der Oberfläche automatisch zur Keycloak-Anmeldeseite weitergeleitet.
@@ -442,6 +440,7 @@ Abbildung~\ref{fig:DELETEServiceTechniker} zeigt exemplarisch eine DELETE-Anfrag
 Da dieser nur Leserechte besitzt, wird die Anfrage mit HTTP 403 Forbidden abgelehnt. 
 Mit dem Groninger-Client hingegen gelingt der Löschvorgang, da dessen Rolle uneingeschränkte Rechte umfasst.
 
+\vspace{0.25em}
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=0.95\textwidth]{Bilder/Ergebnisse/DPP/Postman/TechnicianDelet.png}
@@ -450,21 +449,22 @@ Mit dem Groninger-Client hingegen gelingt der Löschvorgang, da dessen Rolle une
 \end{figure}
 \vspace{-0.25em}
 
-Die Zugriffskontrolle mit BaSyx und Keycloak zeigt, dass sich Berechtigungen zuverlässig auf die AAS und ihre Submodelle übertragen lassen. 
-Dies bestätigt die Eignung der AAS als technische Grundlage für den \acs{dpp} und eröffnet Potenziale für Szenarien, in denen sensible Informationen, etwa Nachhaltigkeitsdaten, differenziert entlang der Wertschöpfungskette bereitgestellt werden. 
-Gleichzeitig bleibt der \acs{rbac}-Ansatz in seiner Flexibilität begrenzt, sodass für komplexe Szenarien eine attributbasierte Zugriffskontrolle (\acs{abac}) erforderlich ist, die von BaSyx bislang jedoch nicht unterstützt wird.
+Die Zugriffskontrolle mit BaSyx und Keycloak hat gezeigt, dass sich Berechtigungen zuverlässig auf die \acs{aas} und ihre Submodelle übertragen lassen. 
+Dies verdeutlicht die Eignung der \acs{aas} als technische Grundlage für den \acs{dpp} und eröffnet neue Perspektiven für Szenarien, in denen sensible Informationen, etwa Nachhaltigkeitsdaten, differenziert entlang der Wertschöpfungskette zugänglich gemacht werden. 
+Gleichzeitig erweist sich der \acs{rbac}-Ansatz in seiner Flexibilität als begrenzt, sodass für komplexe Szenarien ABAC erforderlich wäre, das von BaSyx bislang jedoch nicht unterstützt wird.
 
 \newpage
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 
-Der Anwendungsfall der automatisierten Generierung zeigt, wie sich \acs{aas}-Instanzen automatisch erzeugen und in das BaSyx-Backend integrieren lassen.
+Der Anwendungsfall der automatisierten Generierung hat gezeigt, wie sich \acs{aas}-Instanzen automatisch erzeugen und in das BaSyx-Backend integrieren lassen.
 Abbildung~\ref{fig:AutomatisierteGenerierungAblauf} veranschaulicht den Ablauf.
 Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mithilfe des Package Explorers aus dem generischen SMT Generic Frame for Technical Data for Industrial Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
 
+\vspace{-0.5em}
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=\textwidth]{Bilder/ErgebnisseAutomatisierteGenerierung/ARchitekturTest.pdf}
-    \caption[Automatisierte Generierung einer AAS]{Automatisierte Generierung einer AAS (eigene Darstellung; Bildbestandteile: \cite{SpezifikaitonTechnischeDaten}, \cite{ECLASSLogo} )}
+    \caption[Automatisierte Generierung einer AAS]{Automatisierte Generierung einer AAS (Bildbestandteile: \cite{SpezifikaitonTechnischeDaten}, \cite{ECLASSLogo})}
     \label{fig:AutomatisierteGenerierungAblauf}
 \end{figure}
 \vspace{-0.5em}
@@ -472,7 +472,7 @@ Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mithilfe des Pa
 Das resultierende Typ-Submodell wird durch ein Node.js-basiertes Mapping-Skript mit Beispieldaten angereichert und in eine neue \acs{aas}-Instanz eingebettet. 
 Das Skript übernimmt zusätzlich die Registrierung im BaSyx-Backend, sodass die erzeugte \acs{aas} unmittelbar zur Verfügung steht und beispielsweise in der AAS Web UI visualisiert werden kann.
 
-In der prototypischen Umsetzung zeigte sich, dass der entwickelte Ansatz den manuellen Modellierungsaufwand im Package Explorer potenziell erheblich reduzieren kann, insbesondere bei komplexen Submodellstrukturen wäre dies ein großer Vorteil. 
+In der prototypischen Umsetzung zeigte sich, dass der entwickelte Ansatz den manuellen Modellierungsaufwand im Package Explorer potenziell erheblich reduzieren kann, insbesondere bei komplexen Strukturen wäre dies ein großer Vorteil. 
 Zudem ist der Prozess grundsätzlich auch auf weitere Submodelle übertragbar, sodass perspektivisch die \acs{aas} einer gesamten Maschine automatisiert generiert werden könnte. 
 
 Im Rahmen dieses Anwendungsfalls wurden zwar statische Beispieldaten verwendet. 
@@ -480,8 +480,8 @@ In einer produktiven Umgebung könnten die technischen Produktinformationen jedo
 Bei groninger liegen diese Daten überwiegend im \acs{plm}-System Agile vor. 
 Eine technische Anbindung ist dort derzeit allerdings nicht möglich und konnte in dieser Arbeit nicht realisiert werden.
 
-Darüber hinaus ließe sich die Mapping-Logik in eine Laufzeitumgebung integrieren, wodurch Generierung, Bereitstellung und Aktualisierung von \acs{aas}-Instanzen vollständig automatisiert erfolgen könnten. 
-Damit eröffnet der Ansatz die Möglichkeit, den Aufbau digitaler Zwillinge zukünftig wesentlich effizienter zu gestalten und die Interoperabilität weiter zu erhöhen.
+Um diesen Ansatz weiterzuführen, ließe sich die Mapping-Logik zudem in eine Laufzeitumgebung integrieren, wodurch Generierung, Bereitstellung und Aktualisierung von \acs{aas}-Instanzen vollständig automatisiert erfolgen könnten. 
+Damit eröffnet sich die Möglichkeit, den Aufbau digitaler Zwillinge zukünftig effizienter zu gestalten und sowohl Interoperabilität als auch Produktivität zu fördern, da Informationen ohne manuellen Aufwand bereitgestellt und Modellierungsprozesse beschleunigt werden können.
 
 %Evaluation der eingesetzten Software
 \newpage
