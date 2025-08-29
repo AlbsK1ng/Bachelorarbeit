@@ -282,22 +282,22 @@ Die wesentlichen Punkte sind im Folgenden zusammengefasst:
     \item \textbf{Begrenzte Datenverfügbarkeit:}  
     Da keine reale Maschine angebunden war, mussten Echtzeitdaten simuliert werden.  
     Zudem waren nicht alle relevanten Daten im PLM-System so dokumentiert, dass eine direkte Übernahme möglich gewesen wäre.  
-    Viele Informationen mussten daher manuell aus verschiedenen Dokumenten, wie der Betriebsanleitung, extrahiert werden.  
+    Viele Informationen mussten daher händisch aus verschiedenen Dokumenten, wie der Betriebsanleitung, extrahiert werden.  
 
-    \item \textbf{Begrenzte Verfügbarkeit semantischer Beschreibungen:}  
+    \item \textbf{Unzureichende Standardisierung semantischer Beschreibungen:}  
     Für viele spezifische Maschineneigenschaften, wie technische Parameter im Verarbeitungsbereich (z.\,B. Spritze, Vial, Zylinderampulle) und deren Detailwerte (z.\,B. Füllmenge, Stopfenhöhe), existieren bislang keine standardisierten ECLASS-Beschreibungen.  
-    Diese mussten daher manuell angelegt werden, was zeitaufwendig war und die Interoperabilität einschränkt.
+    Diese mussten daher manuell angelegt werden, was zeitaufwendig war und die Interoperabilität einschränkte.
 
     \item \textbf{Eingeschränkte Funktionalität der eingesetzten Tools:}  
     Die verwendeten Werkzeuge unterstützten nicht alle benötigten Funktionen.  
-    So wurden beispielsweise beim Hochladen von Dateien in der AAS Web UI keine Einträge im Discovery Service erzeugt.  
+    Beispielsweise erzeugte das Hochladen von Dateien in der AAS Web UI keine Einträge im Discovery Service.  
     Da diese Funktionalität erforderlich war, musste sie mithilfe eines eigens entwickelten Skripts ergänzt werden.  
     Eine detailliertere Evaluierung der eingesetzten Tools erfolgt in Kapitel \ref{subsec:EvaluierungTools}.
 
-    \item \textbf{Inkonsistenzen zwischen Spezifikationen und Tools:}  
+    \item \textbf{Inkonsistenzen in den Spezifikationen:}  
     \acsp{smt} und die zugehörigen Spezifikationen wiesen teilweise Inkonsistenzen auf, etwa unterschiedliche Werte in der Dokumentation im Vergleich zu den AASX-Vorlagen.  
     Dies führte dazu, dass einige Plugins nicht oder nur eingeschränkt funktionierten, da sie auf korrekte semantische Beschreibungen angewiesen sind.  
-    Die Fehlerbehebung erforderte eine manuelle Anpassung der \acsp{smt}, was zusätzlichen Aufwand verursachte.
+    Die Fehlerbehebung erforderte eine Anpassung der \acsp{smt}, die mit zusätzlichem Arbeitsaufwand verbunden war.
 \end{enumerate}
 
 \newpage
