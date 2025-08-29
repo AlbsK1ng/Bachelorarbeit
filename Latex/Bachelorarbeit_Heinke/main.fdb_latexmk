@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1756448438.03411 "main.aux" "main.bbl" "main" 1756449802.04661 0
-  "./main-blx.bib" 1756449801.61946 343 bf1f0c75b5bafd473925320ac9611e26 ""
+["bibtex main"] 1756454935.37232 "main.aux" "main.bbl" "main" 1756454949.23805 0
+  "./main-blx.bib" 1756454948.22574 343 bf1f0c75b5bafd473925320ac9611e26 ""
   "./references.bib" 1756205303.11525 24261 eb727fc9bb50b1d77f9b3e80fe0836a3 ""
   "/usr/local/texlive/2025/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1711143581 65510 b1f696b0241395385f422f67543c37fd ""
-  "main.aux" 1756449801.59445 93463 305df2e3850fd3ae98b7620e7c723125 "pdflatex"
+  "main.aux" 1756454948.14873 93669 fb7d0f3c3b7cce80ab3b965e2275f824 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1756449789.71644 "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1756449802.04699 0
+["pdflatex"] 1756454935.55153 "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" "main.pdf" "main" 1756454949.23864 0
   "/home/aheinke/Documents/Git/bachelorarbeit/Bachelorarbeit/Latex/Bachelorarbeit_Heinke/main.tex" 1756377578.70397 7168 2b9e4677bca78b1d9f2ecb9f56f3427d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc" 1558214095 7631 5169ff1acd97ff1c4ab83563c99f96f4 ""
@@ -309,7 +309,7 @@
   "Bilder/Ergebnisse/KI/Fall1.pdf" 1754842319.91719 16023 a62f2aab52a1369dcc76891dcba704ac ""
   "Bilder/Ergebnisse/KI/Fall2.pdf" 1754842320.00219 16491 7f2a54acce325ed48819f77d1ed14d88 ""
   "Bilder/Ergebnisse/Systemarchitektur/BaSyx.pdf" 1755248743 50479 be45d3e3ba4c836442c537060363bcde ""
-  "Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterungNeu.pdf" 1756101759.37279 54788 44afafe59c541590711a899c8b3d52f6 ""
+  "Bilder/Ergebnisse/Systemarchitektur/DynamischeErwweiterungNeu.pdf" 1756452548 54525 89dbdc08d89d5c749044d4bcc2bc318a ""
   "Bilder/ErgebnisseAASWebUI/CarbonFootprint.png" 1755498175.28733 405217 b7cd0d323d60a32bc912deb9ce6de1cf ""
   "Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png" 1755855244 229208 151d316c2ceedbe56d0e95513c3b058a ""
   "Bilder/ErgebnisseAASWebUI/ProcessData.png" 1755431647 313866 09ec45ec5b31246ad4bc1c1cae9aedae ""
@@ -339,7 +339,7 @@
   "DataSpecificationContent.tex" 1755681754.28255 1053 4498f4360312eaf62649bf22b1b2eca2 ""
   "Einleitung.tex" 1756363659.7431 4879 078a7c677c00430e6d5e710a5c723c46 ""
   "Entwicklung.tex" 1756448386.90612 55244 c86daa3d2c56fb5eb18a764903e29e4a ""
-  "Ergebnisse.tex" 1756449789.41396 44588 0f42844945ebebccbee25957a99c1f76 ""
+  "Ergebnisse.tex" 1756454921.42904 44249 f37e5610579ae817511799fef9c874e5 ""
   "Grundlagen.tex" 1756378442.28933 43672 9aac3cfb65969921a5941213b8f27216 ""
   "Kurzfassung.tex" 1756218501.87856 3378 b6362f7998c39336df68df6340ff4a64 ""
   "TabelleBasyxEndpunkte.tex" 1756378215.91185 959 4d33facba74a69c7845f9249a3558a50 ""
@@ -353,14 +353,14 @@
   "commands.tex" 1747647607.92526 0 d41d8cd98f00b204e9800998ecf8427e ""
   "ehrenwoertlichErklärung.tex" 1747385158.63477 557 4ec48bd316d1a5d701d88a7edd0ff2cb ""
   "glossary.tex" 1523254870 167 69e8ece9b7c85abdb3646b31f274c667 ""
-  "main.aux" 1756449801.59445 93463 305df2e3850fd3ae98b7620e7c723125 "pdflatex"
-  "main.bbl" 1756448438.1618 58085 9e3e4889abb9fcabc26d6df11dfca596 "bibtex main"
-  "main.lof" 1756449801.62046 3741 a86f7cc79c2b55d760dd72d0aef50da1 "pdflatex"
-  "main.lol" 1756449801.62046 243 062d975ad8018e4b31d13c7f4d96c589 "pdflatex"
-  "main.lot" 1756449801.62046 511 d21a2c09ebd024e318c36bc0edb677ce "pdflatex"
-  "main.run.xml" 1756449801.62046 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
+  "main.aux" 1756454948.14873 93669 fb7d0f3c3b7cce80ab3b965e2275f824 "pdflatex"
+  "main.bbl" 1756454935.54152 58085 9e3e4889abb9fcabc26d6df11dfca596 "bibtex main"
+  "main.lof" 1756454948.23474 3741 fd2fafd70569e27e0bcc68410f6b3255 "pdflatex"
+  "main.lol" 1756454948.23474 243 062d975ad8018e4b31d13c7f4d96c589 "pdflatex"
+  "main.lot" 1756454948.23474 511 d21a2c09ebd024e318c36bc0edb677ce "pdflatex"
+  "main.run.xml" 1756454948.23374 2593 cd11b895e5c62300423329cac5f1395e "pdflatex"
   "main.tex" 1756377578.70397 7168 2b9e4677bca78b1d9f2ecb9f56f3427d ""
-  "main.toc" 1756449801.62046 6264 c63754bd125ab01b3938aa56d75c6a04 "pdflatex"
+  "main.toc" 1756454948.23474 6264 a4dd5af874cbab1d617bce0b620eccc8 "pdflatex"
   "sperrvermerk.tex" 1755240525.56696 1403 61f0423a08084ff13faa2476f0d0cc12 ""
   (generated)
   "main-blx.bib"
