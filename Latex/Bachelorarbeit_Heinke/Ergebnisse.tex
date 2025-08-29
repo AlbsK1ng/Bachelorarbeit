@@ -50,7 +50,9 @@ Abbildung~\ref{fig:DynamischeErweiterungArchitektur} zeigt den Aufbau der zusät
 
 Der Datengenerator und der Maschinensimulator simulieren das Abfüll- und Verschließmodul und erzeugen sowohl Zustands- als auch Prozessdaten. 
 Beide Anwendungen stellen ihre Daten über einen \acs{opcua} Server bereit und sind über die Databridge direkt an die AAS Environment im BaSyx-Backend angebunden.
-Zusätzlich werden die vom Datengenerator simulierten Werte mithilfe von Telegraf kontinuierlich in eine InfluxDB geschrieben, wodurch eine historische Datenbasis entsteht. 
+Zusätzlich werden die vom 
+\linebreak
+Datengenerator simulierten Werte mithilfe von Telegraf kontinuierlich in eine InfluxDB geschrieben, wodurch eine historische Datenbasis entsteht. 
 
 \newpage
 \begin{figure}[htbp]
@@ -205,7 +207,7 @@ Vor der Speicherung erfolgt eine semantische Umwandlung mithilfe von JSONata, um
 
 Die Zustände orientieren sich am PackML-Standard (Packaging Machine Language), einem von der OMAC (Organization for Machine Automation and Control) entwickelten Modell zur einheitlichen Beschreibung von Maschinenzuständen und zulässigen Zustandsübergängen, insbesondere für Verpackungsmaschinen \cite{OMAC}. 
 Der Standard definiert insgesamt 17 Maschinenzustände und legt fest, welche Übergänge zwischen diesen möglich sind. 
-Dieses Konzept kommt auch bei der robocell-Linie zum Einsatz und ermöglicht eine konsistente und interoperable Erfassung des Maschinenstatus über verschiedene Systeme hinweg.
+Dieses Konzept findet auch bei der robocell-Linie Verwendung und ermöglicht eine konsistente und interoperable Erfassung des Maschinenstatus über verschiedene Systeme hinweg.
 
 Die Visualisierung erfolgt über ein in die AAS Web UI integriertes Vue.js-Plugin, das den Maschinenstatus als PackML-Zustandsautomat darstellt.
 Das Plugin basiert auf einer Entwicklung der Hochschule für Technik und Wirtschaft Berlin \cite{HTW1, HTW2} und wurde funktional angepasst, um es in die AAS Web UI zu integrieren und die im Demonstrator benötigten Steuer- und Anzeigeoptionen zu unterstützen.
@@ -259,7 +261,7 @@ Abbildung~\ref{fig:LiniendiagrammBaSyx} zeigt exemplarisch ein Liniendiagramm mi
 
 Ein wesentlicher Vorteil dieser Umsetzung liegt in der Entkopplung von Datenspeicherung und \acs{aas}. 
 Da die \acs{aas} selbst nicht für die Ablage großer oder historischer Datenmengen ausgelegt ist, ermöglicht die Auslagerung in eine externe Zeitreihendatenbank eine effiziente Speicherung und Verarbeitung. 
-Zudem können die Daten durch die strukturierte Referenzierung über das LinkedSegment einfach in weiteren Anwendungen, wie Analysesystemen oder KI gestützten Verfahren, weiterverwendet werden.
+Zudem können die Daten durch die strukturierte Referenzierung über das LinkedSegment einfach in weiteren Anwendungen, wie Analysesystemen oder \acs{ki}-gestützten Verfahren, weiterverwendet werden.
 
 \subsubsection{Herausforderungen bei der Implementierung}
 Im Rahmen der Implementierung des Demonstrators traten verschiedene Herausforderungen auf, die sowohl technische als auch methodische Aspekte betrafen. 
@@ -296,7 +298,7 @@ Die wesentlichen Punkte sind im Folgenden zusammengefasst:
 \subsection{KI-Modell zur Anomalieerkennung}
 
 Für die Anomalieerkennung wurde der zuvor trainierte Autoencoder im Evaluierungsmodus eingesetzt, sodass während der Auswertung keine Anpassungen der Modellparameter erfolgten.
-Die Testdaten basieren, wie beim Training, auf simulierten Temperaturverläufen aus dem Datengenerator, die analog zu den Zeitreihendaten in Kapitel \ref{sec:DynamischeSubmodelle} in einer InfluxDB gespeichert sind.
+Die Testdaten basieren, wie beim Training, auf simulierten Temperaturverläufen aus dem Datengenerator, die analog zu den Zeitreihendaten in Kapitel \ref{sec:DynamischeSubmodelle} in der InfluxDB gespeichert sind.
 
 Als Eingabe erhält das Modell kurze Sequenzen von jeweils fünf Messwerten.
 Im Unterschied zur Trainingsphase enthalten diese gezielt eingefügte Anomalien, um die Erkennungsfähigkeit des Modells zu prüfen.
@@ -360,7 +362,7 @@ Im Folgenden wird hierzu sowohl die Aggregation der Werte als auch die Umsetzung
 Grundlage bildet der in Kapitel~\ref{sec:AAS-Demonstrator} vorgestellte Demonstrator, der um ein Submodell zur Abbildung des \acs{cf} erweitert wurde.
 
 \subsubsection{Abbildung des PCF}
-Das Submodell \acs{cf} bildet die Lebenszyklusphasen Material, Produktion und Cradle to Gate jeweils in eigenen \acsp{smc} ab.
+Das \acs{cf}-Submodell bildet die Lebenszyklusphasen Material, Produktion und Cradle to Gate jeweils in eigenen \acsp{smc} ab.
 Abbildung~\ref{fig:SubmodellCF} stellt exemplarisch die \acs{smc} für die Phase Cradle to Gate (links) sowie die integrierte Komponentenliste (rechts) dar, in der die für die Berechnung herangezogenen Siemens-Komponenten hinterlegt sind.
 
 \vspace{0.5em}
@@ -378,9 +380,11 @@ Mithilfe des Discovery Service werden deren AAS identifiziert und vorhandene CF-
 Die enthaltenen PCF-Werte werden anschließend zu Gesamtwerten für die einzelnen Lebenszyklusphasen aggregiert und in das CF-Submodell der Haupt-AAS zurückgeschrieben.
 
 Die Berechnung kann direkt über ein Plugin in der AAS Web UI ausgelöst werden.
-Nach Abschluss des Berechnungsprozesses werden die aktualisierten Werte automatisch vom Submodel Repository abgefragt und in der Benutzeroberfläche aktualisiert. 
+Nach Abschluss werden die aktualisierten Werte automatisch vom Submodel Repository abgefragt und in der Benutzeroberfläche aktualisiert. 
 \pagebreak
-Abbildung~\ref{fig:PluginAggregation} zeigt die entsprechende Visualisierung: links die aggregierten CO\textsubscript{2}-Äquivalente, rechts die zugehörigen Lebenszyklusphasen.
+Abbildung~\ref{fig:PluginAggregation} zeigt die entsprechende Visualisierung: links die aggregierten CO\textsubscript{2}-Äquivalente, rechts die zugehörigen 
+\linebreak
+Lebenszyklusphasen.
 
 \vspace{0.5em}
 \begin{figure}[htbp]
@@ -404,7 +408,8 @@ Der \acs{dpp} wird durch die zuvor erweiterte \acs{aas} des Abfüll- und Verschl
 Um sensible Inhalte gezielt und sicher bereitzustellen, wurde eine rollenbasierte Zugriffskontrolle implementiert. 
 Die Authentifizierung und Autorisierung erfolgt über Keycloak, das als Docker-Container in die BaSyx-Architektur integriert ist.
 
-Zur Veranschaulichung wurden drei Nutzer mit typischen Rollen eingerichtet, deren zugehörige Berechtigungen in Tabelle~\ref{tab:RBACUsers} dokumentiert sind.
+Zur Veranschaulichung wurden drei Nutzer mit typischen Rollen eingerichtet.
+Die zugehörigen Berechtigungen sind in Tabelle~\ref{tab:RBACUsers} dargestellt.
 
 \input{TabelleRBAC.tex}
 \vspace{-0.25em}   
@@ -427,16 +432,17 @@ Wie in Abbildung~\ref{fig:KeycloakAnmeldeSeite} dargestellt, erfolgt die Authent
 Nach erfolgreicher Anmeldung erhält die AAS Web UI ein Zugriffstoken mit den Rolleninformationen, das bei allen weiteren Anfragen an die BaSyx-Komponenten%
 \pagebreak
 ~automatisch mitgesendet wird.
-Die jeweiligen Dienste prüfen es gegen die hinterlegten \acs{rbac}-Regeln und entscheiden so über die tatsächliche Zugriffsberechtigung.
+Die jeweiligen Dienste prüfen es gegen die hinterlegten \acs{rbac}-Regeln und entscheiden so über den tatsächlichen Zugriff.
 Meldet sich etwa customer.doe an, sieht er nur die für seine Rolle freigegebenen Submodelle, während andere verborgen bleiben.
 Zudem besitzt er ausschließlich Leserechte, sodass Änderungsversuche mit einem Fehler abgelehnt werden.
 
-Neben der AAS Web UI ist auch ein direkter Zugriff auf die BaSyx-Komponenten über die REST-API möglich, der insbesondere für technische Clients relevant ist. 
-Dafür wurden in Keycloak drei Clients mit Service Accounts angelegt, die denselben Rollen wie die Benutzerkonten entsprechen und somit identische Berechtigungen besitzen.
+Neben der AAS Web UI ist auch ein direkter Zugriff auf die BaSyx-Komponenten über die \acs{rest}-\acs{api} möglich, der insbesondere für technische Clients relevant ist. 
+Dafür wurden in Keycloak drei Clients mit Service Accounts angelegt, denen dieselben Rollen wie den Benutzerkonten zugewiesen wurden. 
+Dadurch besitzen diese identische Berechtigungen.
 
 Zur Validierung der Konfiguration wurde Postman eingesetzt. 
-Die Clients rufen dabei über den Token-Endpunkt von Keycloak Zugriffstokens ab und nutzen diese für \acs{api}-Anfragen. 
-Abbildung~\ref{fig:DELETEServiceTechniker} zeigt exemplarisch eine DELETE-Anfrage des Service-Techniker-Clients. 
+Damit lassen sich die Clients simulieren, die über den Token-Endpunkt von Keycloak Zugriffstokens abrufen und diese für \acs{api}-Anfragen nutzen.
+Abbildung~\ref{fig:DELETEServiceTechniker} zeigt exemplarisch eine DELETE-Anfrage des Service-Techniker-Clients auf das \acs{cf}-Submodell. 
 Da dieser nur Leserechte besitzt, wird die Anfrage mit \acs{http} 403 Forbidden abgelehnt. 
 Mit dem Groninger-Client hingegen gelingt der Löschvorgang, da dessen Rolle uneingeschränkte Rechte umfasst.
 
@@ -468,15 +474,12 @@ Abbildung~\ref{fig:AutomatisierteGenerierungAblauf} veranschaulicht den Ablauf.
 \end{figure}
 \vspace{-0.5em}
 
-Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mithilfe des Package 
-\linebreak
-Explorers aus dem generischen SMT Generic Frame for Technical Data for Industrial
-\linebreak
-Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
-Das resultierende Typ-Submodell wird durch ein Node.js-basiertes Mapping-Skript mit Beispieldaten angereichert und in eine neue \acs{aas}-Instanz eingebettet. 
-Das Skript übernimmt zusätzlich die Registrierung im BaSyx-Backend, sodass die erzeugte \acs{aas} unmittelbar zur Verfügung steht.
+Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mit dem Package Explorer aus dem generischen SMT Generic Frame for Technical Data for Industrial Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
+Aus diesem wurde ein Typ-Submodell erstellt, das durch ein Node.js-basiertes Mapping-Skript mit Beispieldaten angereichert und in eine neue \acs{aas}-Instanz eingebettet wird. 
+Das Skript übernimmt zusätzlich die Registrierung im BaSyx-Backend, sodass die generierte \acs{aas} unmittelbar zur Verfügung steht.
 
-In der prototypischen Umsetzung zeigte sich, dass der entwickelte Ansatz den manuellen Modellierungsaufwand im Package Explorer potenziell erheblich reduzieren kann, insbesondere bei komplexen Strukturen wäre dies ein großer Vorteil. 
+In der prototypischen Umsetzung zeigte sich, dass dieses Vorgehen den manuellen Modellierungsaufwand im Package Explorer potenziell erheblich reduzieren kann.
+Gerade bei komplexen Strukturen wäre dies ein großer Vorteil. 
 Zudem ist der Prozess grundsätzlich auch auf weitere Submodelle übertragbar, sodass perspektivisch die \acs{aas} einer gesamten Maschine automatisiert generiert werden könnte. 
 
 Im Rahmen dieses Anwendungsfalls wurden zwar statische Beispieldaten verwendet. 
@@ -484,16 +487,16 @@ In einer produktiven Umgebung könnten die technischen Produktinformationen jedo
 Bei groninger liegen diese Daten überwiegend im \acs{plm}-System Agile vor. 
 Eine technische Anbindung ist dort derzeit allerdings nicht möglich und konnte in dieser Arbeit nicht realisiert werden.
 
-Um diesen Ansatz weiterzuführen, ließe sich die Mapping-Logik zudem in eine Laufzeitumgebung integrieren, wodurch Generierung, Bereitstellung und Aktualisierung von \acs{aas}-Instanzen vollständig automatisiert erfolgen könnten. 
-Damit eröffnet sich die Möglichkeit, den Aufbau digitaler Zwillinge zukünftig effizienter zu gestalten und sowohl Interoperabilität als auch Produktivität zu fördern, da Informationen ohne manuellen Aufwand bereitgestellt und Modellierungsprozesse beschleunigt werden können.
+Um den Ansatz weiterzuführen, ließe sich die Mapping-Logik zudem in eine Laufzeitumgebung integrieren, wodurch Generierung, Bereitstellung und Aktualisierung von \acs{aas}-Instanzen vollständig automatisiert erfolgen könnten. 
+Damit eröffnet sich die Möglichkeit, den Aufbau digitaler Zwillinge künftig effizienter zu gestalten und sowohl Interoperabilität als auch Produktivität zu fördern, da Informationen ohne manuellen Aufwand bereitgestellt und Modellierungsprozesse beschleunigt werden können.
 
 %Evaluation der eingesetzten Software
 \newpage
 \subsection{Evaluierung eingesetzter Tools und Software}
 \label{subsec:EvaluierungTools}
-Zur Umsetzung des AAS-Demonstrators sowie der zugehörigen Anwendungsfälle kamen zwei zentrale Softwarelösungen zum Einsatz.
-Im Folgenden werden diese mit Blick auf ihre Funktionalität sowie ihre Stärken und Schwächen evaluiert.
-Die Bewertung stützt sich dabei auf die Erfahrungen aus der praktischen Anwendung und berücksichtigt sowohl technische Aspekte als auch die Benutzerfreundlichkeit.
+Zur Umsetzung des AAS-Demonstrators sowie der zugehörigen Anwendungsfälle kamen zwei wesentliche Softwarelösungen zum Einsatz.
+Im Folgenden werden diese mit Blick auf Funktionalität sowie Stärken und Schwächen evaluiert.
+Die Bewertung basiert auf praktischen Erfahrungen und berücksichtigt sowohl technische Aspekte als auch die Benutzerfreundlichkeit.
 
 \subsubsection{Package Explorer}
 
@@ -507,7 +510,7 @@ In der praktischen Anwendung zeigten sich jedoch auch Einschränkungen.
 Die integrierte Validierungsfunktion erwies sich als unzuverlässig, sodass zur Absicherung eine separate Test-Engine erforderlich war.
 Während die Anbindung an den AASX Server Blazor problemlos funktionierte, war eine direkte Integration in modulare Laufzeitsysteme wie Eclipse BaSyx nicht möglich.
 Die AAS mussten daher manuell bereitgestellt werden, was insbesondere bei einer größeren Anzahl oder häufigen Änderungen mit erheblichem Mehraufwand verbunden war.
-Darüber hinaus wich der Package Explorer in einzelnen Punkten von den aktuellen AAS-Spezifikationen ab, was vereinzelt zu fehlerhaften semantischen Angaben führte, die nachträglich korrigiert werden mussten.
+Darüber hinaus wich der Package Explorer in einzelnen Punkten von den aktuellen \acs{aas}-Spezifikationen ab, was vereinzelt fehlerhafte semantische Angaben nach sich zog, die nachträglich korrigiert werden mussten.
 
 Insgesamt erwies sich der Package Explorer als hilfreiches Werkzeug für die statische Modellierung von Typ-1-\acs{aas}.
 Die vorhandenen Exportfunktionen, insbesondere im AASX-Format, erleichterten die Weiterverwendung und Weitergabe maßgeblich.
@@ -516,29 +519,27 @@ Für automatisierte Szenarien bot das Tool hingegen nur eingeschränkte Unterst�
 \newpage
 \subsubsection{Eclipse BaSyx}
 
-Die Eclipse-BaSyx-Plattform bildete in diesem Projekt die zentrale Laufzeitumgebung für den Betrieb von \acs{aas}.
+Die Eclipse BaSyx-Plattform bildete in diesem Projekt die zentrale Laufzeitumgebung für den Betrieb von \acs{aas}.
 Ein wesentlicher Vorteil war der modulare Aufbau, der praxisnahe Szenarien und zugleich eine flexible Konfiguration ermöglichte.
-%der die Umsetzung praxisnaher Industrieszenarien erlaubte und zugleich eine flexible Konfiguration einzelner Komponenten zuließ.
 Ebenso eröffneten die standardisierten REST-APIs einen direkten Zugriff auf die einzelnen Komponenten, der dank der integrierten Swagger-Dokumentation unmittelbar getestet und transparent nachvollzogen werden konnte.
 Darüber hinaus erleichterte die DataBridge die Anbindung unterschiedlicher Protokolle, insbesondere von \acs{opcua}, wodurch eine dynamische Erweiterung der AAS und die Umsetzung dynamischer Submodelle möglich wurde.
 
 Mit der AAS Web UI stand zudem eine Benutzeroberfläche zur Verfügung, die sowohl die Darstellung als auch die Anpassung von AAS erlaubte. 
 Für zentrale Submodelle existieren bereits spezialisierte Plugins, die sich aufgrund des Open-Source-Charakters einfach erweitern oder ergänzen ließen.
-% So konnten weitere Submodelle integriert und projektspezifische Anforderungen berücksichtigt werden.
-Als besonders hilfreich erwies sich zudem die Synchronisationsfunktion, die insbesondere in dynamischen Szenarien sicherstellte, dass die angezeigten Daten stets aktuell blieben.
+Als besonders hilfreich erwies sich außerdem die Synchronisationsfunktion, die insbesondere in dynamischen Szenarien sicherstellt, dass die angezeigten Daten stets aktuell bleiben.
 
 Aufgrund der Komplexität des Gesamtsystems war jedoch ein erheblicher Konfigurationsaufwand erforderlich.
 Dies betraf nicht nur die initiale Einrichtung, sondern zeigte sich auch bei der Konfiguration der rollenbasierten Zugriffskontrolle (\acs{rbac}), die für jede Komponente separat vorgenommen werden musste.
-Hinzu kam, dass der Start des Systems in der Docker-Umgebung vergleichsweise lange dauerte (bis zu mehreren Minuten).
+Hinzu kam, dass der Start einzelner Dienste in der Docker-Umgebung vergleichsweise lange dauerte (bis zu mehreren Minuten).
 Dies erwies sich insbesondere bei häufigen Anpassungen oder Testläufen als hinderlich.
 
-Darüber hinaus zeigte sich, dass die Plattform in einzelnen Bereichen noch nicht vollständig ausgereift ist.
+Darüber hinaus wurde deutlich, dass die Plattform in einzelnen Bereichen noch nicht vollständig ausgereift ist.
 So war es beispielsweise beim Ändern von Werten innerhalb einer Property über die REST-API nur möglich, String-Werte einzutragen, auch wenn ein anderer Datentyp, wie etwa ein Integer, vorgesehen war.
 Zudem erfolgte beim Ablegen aktualisierter \acs{aas} in das gemountete Volume der AAS Environment nicht immer eine zuverlässige Synchronisierung der zugehörigen Concept Descriptions.
-In diesen Fällen war ein Start des Gesamtsystems nicht möglich, sodass die betreffenden Einträge in der angebundenen MongoDB gelöscht und anschließend mithilfe eines Skripts nachgeführt werden mussten.
+In diesen Fällen war ein Start des Systems nicht möglich, sodass die betreffenden Einträge in der angebundenen MongoDB gelöscht und anschließend mithilfe eines Skripts nachgeführt werden mussten.
 
-Insgesamt erwies sich Eclipse BaSyx als leistungsfähige Plattform, die bereits für Typ-2-\acs{aas} geeignet ist und perspektivisch auch als Grundlage für Typ-3-\acs{aas} dienen kann.
-Der praktische Einsatz zeigte jedoch auch, dass einzelne Funktionalitäten fehlerhaft oder nicht vollständig implementiert sind.
+Insgesamt präsentierte sich Eclipse BaSyx als leistungsfähige Plattform, die bereits für Typ-2-\acs{aas} geeignet ist und perspektivisch auch als Grundlage für Typ-3-\acs{aas} dienen kann.
+Der praktische Einsatz zeigte jedoch auch, dass einzelne Funktionalitäten fehlerhaft oder unvollständig implementiert sind.
 Aufgrund der offenen Architektur können diese zwar korrigiert oder ergänzt werden, erfordern allerdings zusätzlichen Entwicklungsaufwand.
 
 
