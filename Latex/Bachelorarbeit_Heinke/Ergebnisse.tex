@@ -79,7 +79,7 @@ Als Hauptdatenquellen dienten die technischen Dokumentationen der robocell, insb
 Abbildung~\ref{fig:PackageExplorerRobocell} zeigt die Gesamtübersicht des Abfüll- und Verschließmoduls. 
 Die statischen Submodelle sind darin mit einer Nummer gekennzeichnet, die der im Folgenden verwendeten Gliederung entspricht. 
 Sie beinhalten feststehende, beschreibende Inhalte, die nicht zur Laufzeit geändert werden. 
-Zur besseren Veranschaulichung wird das Submodell BOM ausführlicher beschrieben.
+Zur besseren Veranschaulichung wird das \acs{bom}-Submodell ausführlicher beschrieben.
 Die grundlegende Struktur der weiteren statischen Submodelle ist im Anhang~\ref{sec:AnhangStatischeSubmodelle} ergänzend anhand von Screenshots dokumentiert.
 
 \begin{figure}[htbp]
@@ -108,7 +108,7 @@ Auf diese Weise sind alle relevanten technischen Angaben an einem zentralen Ort 
 \subsubsection*{3) BOM}
 \vspace{-0.5em}
 
-Das Submodell \acs{bom} dient dazu, die Maschinenstruktur sichtbar zu machen und die Beziehungen zwischen ihren einzelnen Komponenten hierarchisch abzubilden, vergleichbar mit einer digitalen Stückliste.
+Das \acs{bom}-Submodell dient dazu, die Maschinenstruktur sichtbar zu machen und die Beziehungen zwischen ihren einzelnen Komponenten hierarchisch abzubilden, vergleichbar mit einer digitalen Stückliste.
 Dabei enthält es verschiedene Entitäten, die jeweils eine untergeordnete Komponente repräsentieren.
 Die Beziehungen zwischen den Komponenten werden über Relationship-Elemente mit einer eindeutigen semanticId gemäß dem \acs{smt} Hierarchical Structures Enabling Bills of Material \cite{SpezifikationHierachischeStrukturen} hergestellt.
 
@@ -474,7 +474,7 @@ Abbildung~\ref{fig:AutomatisierteGenerierungAblauf} veranschaulicht den Ablauf.
 \end{figure}
 \vspace{-0.5em}
 
-Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mit dem Package Explorer aus dem generischen SMT Generic Frame for Technical Data for Industrial Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
+Ausgangspunkt bildet ein unternehmensspezifisches \acs{smt}, das mit dem Package Explorer aus dem generischen \acs{smt} Generic Frame for Technical Data for Industrial Equipment in Manufacturing \cite{SpezifikaitonTechnischeDaten} abgeleitet wurde.
 Aus diesem wurde ein Typ-Submodell erstellt, das durch ein Node.js-basiertes Mapping-Skript mit Beispieldaten angereichert und in eine neue \acs{aas}-Instanz eingebettet wird. 
 Das Skript übernimmt zusätzlich die Registrierung im BaSyx-Backend, sodass die generierte \acs{aas} unmittelbar zur Verfügung steht.
 

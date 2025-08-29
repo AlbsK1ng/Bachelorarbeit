@@ -517,7 +517,7 @@ Dabei dient der Rekonstruktionsfehler nicht mehr zur Optimierung, sondern als Ma
 Angesichts steigender Anforderungen an Nachhaltigkeit und Transparenz über den gesamten Produktlebenszyklus gewinnt der \acs{dpp} zunehmend an Bedeutung.
 Aufbauend auf dem von \acs{zvei} und \acs{idta} vorgestellten Konzept des \acs{dpp40}, das unter anderem in einem \acs{pcf}-Showcase \cite{PCFShowcas} demonstriert wird, wird in diesem Anwendungsfall untersucht, wie sich zentrale Herausforderungen mithilfe der \acs{aas} umsetzen lassen.
 Im Mittelpunkt stehen dabei die Erfassung des \acs{pcf} sowie die Realisierung differenzierter Zugriffsrechte auf die im \acs{dpp} enthaltenen Informationen.
-Grundlage bildet die zuvor erstellte \acs{aas} des Abfüll- und Verschließmoduls, das um ein Submodell zur Abbildung des \acs{cf} erweitert wird.
+Grundlage bildet die zuvor erstellte \acs{aas} des Abfüll- und Verschließmoduls, die um ein Submodell zur Abbildung des \acs{cf} erweitert wird.
 
 \subsubsection{Umsetzung mit dem \acs{smt} Carbon Footprint}
 Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\-valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
@@ -532,24 +532,25 @@ Die Modellierung erfolgt über \acsp{smc}, die standardisierte Elemente wie den 
 Für jede relevante Phase empfiehlt es sich, eine eigene \acs{smc} anzulegen.
 Die konkreten Werte bleiben zunächst leer und werden im weiteren Verlauf dynamisch gefüllt.
 
-Zur Demonstration wurde eine Auswahl von acht im Abfüll- und Verschließmodul der robocell verbauten Siemens-Steuerungskomponenten getroffen, darunter beispielsweise eine CPU sowie Ein- und Ausgangsmodule.
+Zur Demonstration wurde eine Auswahl von acht im Abfüll- und Verschließmodul verbauten Siemens-Steuerungskomponenten getroffen.
+Dazu gehören beispielsweise eine CPU sowie Ein- und Ausgangsmodule.
 Die Entscheidung für Siemens basiert darauf, dass für deren Produkte bereits \acs{aas}-Strukturen mit nachhaltigkeitsbezogenen Informationen vorliegen, auch wenn diese derzeit noch nicht öffentlich verfügbar sind.
-Die zugehörigen \acs{aas} wurden im Rahmen des Projekts auf persönliche Anfrage von der Siemens AG bereitgestellt. 
-Dabei enthalten sie jeweils ein eigenes Submodell gemäß dem \acs{smt} \acs{cf}.
+Die zugehörigen \acs{aas} wurden daher im Rahmen des Projekts auf persönliche Anfrage von der Siemens AG bereitgestellt.
+Diese enthalten jeweils ein eigenes Submodell gemäß dem \acs{smt} \acs{cf}.
 
 \clearpage
-Die Referenzierung der Komponenten erfolgt im \acs{cf}-Submodell der \acs{aas} des Abfüll- und Verschließmoduls, nachfolgend als Haupt-\acs{aas} bezeichnet.
-Dies geschieht über eine \acs{sml}, in der die ausgewählten Einheiten als Self-Managed Entities unter Angabe ihrer globalAssetId eingebunden sind.
+Die Referenzierung der Komponenten findet im \acs{cf}-Submodell des Abfüll- und Verschließmoduls, nachfolgend als Haupt-\acs{aas} bezeichnet, statt.
+Dies erfolgt über eine \acs{sml}, in der die ausgewählten Einheiten als Self-Managed Entities unter Angabe ihrer globalAssetId eingebunden sind.
 Self-Managed Entities sind eigenständige Assets, die über eine eigene \acs{aas} verfügen und somit unabhängig adressierbar sind.
-Zwar wäre auch eine Referenzierung über das \acs{bom}-Submodell denkbar, jedoch wären dadurch die für die Berechnung relevanten Daten auf verschiedene Submodelle verteilt, was die Aggregation erschweren würde.
+Zwar wäre auch eine Referenzierung über das \acs{bom}-Submodell denkbar, jedoch wären die relevanten Daten dadurch auf verschiedene Submodelle verteilt, was die Aggregation erschweren würde.
 
 Die aktualisierte Haupt-\acs{aas} sowie die zugehörigen Komponenten-\acs{aas} werden über die Eclipse~BaSyx-Plattform bereitgestellt und bilden die Grundlage für die technische Umsetzung.
-Zur Benutzerinteraktion dient das bestehende Vue.js-Plugin der AAS Web UI, das um eine Funktion zur Ermittlung der Gesamt-\acs{pcf}-Werte erweitert wurde.
+Für die Benutzerinteraktion steht ein Vue.js-Plugin der AAS Web UI zur Verfügung, das um eine Schaltfläche zur Initialisierung erweiterbar ist.
+
 Zur Trennung von Logik und Benutzeroberfläche wird ein eigenständiger, Node.js-basierter Microservice implementiert, der eine Web-\acs{api} bereitstellt.
-Über diese kann die Berechnung der CO\textsubscript{2}-Äquivalente ausgelöst werden.
+Diese lässt sich vom Vue.js-Plugin aufrufen und löst die Berechnung der CO\textsubscript{2}-Äquivalente aus.
 Die Aggregation erfolgt damit zentral und serverseitig, anstatt direkt im Plugin clientseitig.
 
-% Der Microservice liest die im \acs{cf}-Submodell des Abfüll- und Verschließmoduls referenzierten Komponenten aus, fasst deren \acs{pcf}-Werte zusammen und schreibt die berechneten CO\textsubscript{2}-Äquivalente in die vorbereiteten \acsp{smc} der Haupt-\acs{aas} zurück.
 Der Microservice liest die im \acs{cf}-Submodell des Abfüll- und Verschließmoduls referenzierten Komponenten aus, aggregiert deren \acs{pcf}-Werte und schreibt die berechneten CO\textsubscript{2}-Äquivalente in die vorbereiteten \acsp{smc} der Haupt-\acs{aas} zurück.
 Zusätzlich können weitere Metadaten wie die verwendete Berechnungsmethode oder der Gültigkeitszeitraum berücksichtigt werden.
 Da diese Werte im vorliegenden Anwendungsfall jedoch bei allen Komponenten identisch sind, ist keine Differenzierung erforderlich.
@@ -570,10 +571,10 @@ Im ersten Schritt muss ein dediziertes Realm eingerichtet werden, das als gekaps
 Innerhalb dieses Realms lassen sich sowohl Benutzerkonten als auch Rollen definieren, wobei die Zuweisung über sogenannte Role Mappings erfolgt.  
 Ein Benutzer kann einer oder mehreren Rollen gleichzeitig zugeordnet sein.
 
-Jedes Benutzerkonto verfügt dabei über einen eindeutigen Benutzernamen sowie ein ini\-tiales Passwort zur Authentifizierung.  
+Jedes Benutzerkonto verfügt über einen eindeutigen Benutzernamen sowie ein ini\-tiales Passwort zur Authentifizierung.  
 Zur Erhöhung der Sicherheit kann dieses Passwort als temporär markiert werden, wodurch der Benutzer bei der ersten Anmeldung zu einer Änderung gezwungen wird.  
-Darüber hinaus bietet Keycloak ebenfalls die Möglichkeit, sogenannte Required Actions (erforderliche Aktionen) zu definieren, etwa zur E-Mail-Verifizierung oder zur erzwungenen Passwortänderung beim nächsten Login.  
-Dies erlaubt eine flexible Anpassung des Authentifizierungsprozesses an projektspezifische Sicherheitsanforderungen.
+Darüber hinaus bietet Keycloak die Möglichkeit, sogenannte Required Actions (erforderliche Aktionen) zu definieren, etwa zur E-Mail-Verifizierung oder erzwungenen Passwortänderung beim nächsten Login.  
+So lässt sich der Authentifizierungsprozess flexibel an projektspezifische Sicherheitsanforderungen anpassen.
 
 Neben der Verwaltung menschlicher Benutzer unterstützt Keycloak auch die Administration technischer Clients, die z.B. maschinelle Anwendungen oder externe Systeme repräsentieren.  
 Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutiger Client-\acs{id} und einem geheimen Schlüssel (Client Secret) gemäß dem OpenID Connect-Protokoll \cite{OpenID}.  
@@ -586,54 +587,62 @@ Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um beis
 Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Services.
 
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
-Im folgenden Anwendungsfall wird gezeigt, wie eine \acs{aas} automatisiert erzeugt und bereitgestellt werden kann.  
-Ausgangspunkt ist ein unternehmensspezifisch angepasstes \acs{smt}, das als Grundlage für die Ableitung eines Typ-Submodells dient.  
-Dieses wird anschließend mit konkreten Daten befüllt, in eine vollständige \acs{aas}-Instanz eingebettet und abschließend in das Eclipse BaSyx-System integriert.
+Im Folgenden wird gezeigt, wie eine \acs{aas} automatisiert erzeugt und bereitgestellt werden kann.  
+Ausgangspunkt ist ein unternehmensspezifisch angepasstes \acs{smt}, das die Basis für die Ableitung eines Typ-Submodells bildet.
+Dieses wird durch ein Skript mit Daten befüllt, in eine vollständige \acs{aas}-Instanz überführt und abschließend in das Eclipse BaSyx-System integriert.
 
 \subsubsection{Arbeiten mit Submodel Templates}
 \label{chap:ErstellenvonSubmodelTemplates}
 Für die automatisierte Generierung einer \acs{aas} ist eine konsistente Submodellstruktur erforderlich, die sich aus wiederverwendbaren Vorlagen ableiten lässt.
-Im Rahmen dieses Anwendungsfalls dient das standardisierte \acs{smt} Technische Daten \cite{SpezifikaitonTechnischeDaten} als Grundlage. 
-Es definiert eine generische Struktur zur Beschreibung technischer Merkmale, gegliedert in Kategorien (\acsp{smc}) wie Generelle Informationen, Technische Informationen oder Produktklassifikation. 
-Damit bildet es den semantischen Rahmen, enthält jedoch zunächst keine konkreten Ausprägungen.
+Das standardisierte \acs{smt} \mbox{Generic} \mbox{Frame} \mbox{for} \mbox{Technical} \mbox{Data} \mbox{for} \mbox{Industrial} \mbox{Equipment} \mbox{in} \mbox{Manufacturing} \cite{SpezifikaitonTechnischeDaten} dient in diesem Anwendungsfall als Grundlage.
+Es definiert eine generische Struktur zur Beschreibung technischer Merkmale, gegliedert in Kategorien (\acsp{smc}) wie Generelle Informationen, Technische Informationen oder \mbox{Produktklassifikation}.
+Damit stellt es den semantischen Rahmen bereit, enthält jedoch keine konkreten Ausprägungen.
 
-Auf Unternehmensebene kann das generische Template an spezifische Anforderungen angepasst werden, beispielsweise für einen bestimmten Maschinentyp wie die robocell.
-Branchenspezifische Varianten sind grundsätzlich ebenfalls denkbar, werden in diesem Anwendungsfall jedoch nicht weiter betrachtet.
+Auf Unternehmensebene lässt sich die generische Vorlage an spezifische Anforderungen anpassen, beispielsweise für einen bestimmten Maschinen- oder Anlagentyp wie die robocell. 
+Branchenspezifische Varianten sind ebenfalls denkbar, etwa wenn für eine gesamte Maschinenklasse wie Abfüllmaschinen auf Basis des standardisierten \acs{smt} ein von Fachverbänden abgestimmtes Template abgeleitet wird.
+In dieser Arbeit werden solche branchenspezifischen Ansätze jedoch nicht weiter betrachtet.
 
 Die Anpassung erfolgt mithilfe des Package Explorers, über den sich das \acs{smt} importieren und erweitern lässt.
-So können beispielsweise produktspezifische Anforderungen, wie Umgebungsbedingungen oder der Verarbeitungsbereich, mithilfe geeigneter Submodell\-elemente ergänzt werden.
-Das resultierende unternehmensspezifische Template erhält eine eigene semanticId, bleibt jedoch zusätzlich mit der ursprünglichen semanticId des generischen Templates verknüpft, um die Rückverfolgbarkeit zur standardisierten Vorlage sicherzustellen.
+So können produktspezifische Anforderungen, wie Umgebungsbedingungen oder der Verarbeitungsbereich, mithilfe geeigneter Submodellelemente ergänzt werden.
+Das resultierende unternehmensspezifische Template erhält eine eigene 
+\linebreak
+semanticId, bleibt jedoch zugleich mit der semanticId des generischen Templates verknüpft.
+Dadurch ist die Rückverfolgbarkeit zur standardisierten Vorlage gewährleistet.
 
-Aus dem angepassten Template kann anschließend ein Typ-Submodell abgeleitet werden, das nicht nur die Struktur, sondern auch allgemeingültige Merkmale einer Produktgruppe enthält, etwa den Einsatzort oder die maximal zulässige Umgebungstemperatur.
-Dieses Typ-Submodell dient als Vorlage für die spätere Erstellung konkreter \acs{aas}-Instanzen, die mit produktspezifischen Werten wie Seriennummern ergänzt werden.
-Die Verbindung zur ursprünglichen sowie zur unternehmensspezifischen Template-Struktur bleibt dabei über entsprechende semanticId-Verknüpfungen erhalten.
+Aus dem angepassten \acs{smt} kann anschließend ein Typ-Submodell abgeleitet werden, das nicht nur die Struktur, sondern auch allgemeingültige Merkmale einer Produktgruppe enthält, etwa den Einsatzort oder die maximal zulässige Umgebungstemperatur.
+Es dient als Vorlage für konkrete Instanz-Submodelle, die durch die Befüllung mit produktspezifischen Werten wie der Seriennummer oder der Art der zulässigen Behältnisse entstehen.
+Die Verbindung zur ursprünglichen sowie zur unternehmensspezifischen Template-Struktur bleibt über entsprechende semanticId-Verknüpfungen erhalten.
 
 \subsubsection{Automatisiertes Befüllen mit strukturierten Daten}
 
-Nach der Ableitung eines Typ-Submodells stellt sich die Frage, wie dieses effizient mit konkreten Produktinformationen befüllt und in eine vollständige \acs{aas}-Instanz überführt werden kann.
+Nach der Ableitung eines Typ-Submodells muss dieses effizient mit Produktinformationen befüllt und in eine vollständige \acs{aas}-Instanz überführt werden. 
+Die hierfür benötigten Daten liegen in der industriellen Praxis häufig bereits strukturiert in bestehenden \mbox{\acs{it}-Systemen} wie \acs{plm}- oder \acs{erp}-Lösungen vor.
 
-In der industriellen Praxis liegen die benötigten Daten häufig bereits strukturiert in bestehenden \acs{it}-Systemen wie \acs{plm}- oder \acs{erp}-Lösungen vor.
-Da eine direkte Systemintegration im Rahmen dieser Arbeit jedoch nicht realisierbar ist, wird der Prozess anhand vordefinierter Beispieldaten demonstriert.
-Diese enthalten typische technische Merkmale, wie sie auch in realen Unternehmenssystemen vorzufinden sind, und bilden die Grundlage für die automatisierte Erstellung eines Instanz-Submodells.
+Da eine direkte Systemintegration im Rahmen dieser Arbeit nicht realisierbar ist, wird der Prozess anhand vordefinierter Beispieldaten demonstriert.
+Diese enthalten typische technische Merkmale, wie sie auch in realen Unternehmenssystemen anzutreffen sind, und bilden die Grundlage für die automatisierte Erstellung eines Instanz-Submodells.
 
-Die automatisierte Befüllung erfolgt mithilfe eines Skripts, das die Beispieldaten in die vorgegebene Submodellstruktur überträgt und in eine neue \acs{aas}-Instanz einbettet.
-Zum Einsatz kommt die serverseitige JavaScript-Laufzeitumgebung Node.js, da sie eine effiziente Verarbeitung von \acs{json}-Daten sowie eine unkomplizierte Kommunikation mit \acs{rest}-Schnittstellen ermöglicht \cite{nodejs}.
+Die automatisierte Befüllung erfolgt mithilfe eines Skripts, das die Beispieldaten in die vorgegebene Submodellstruktur überträgt und in eine \acs{aas}-Instanz einbettet.
+Zum Einsatz kommt die serverseitige JavaScript-Laufzeitumgebung Node.js \cite{nodejs}, da sie eine effiziente Verarbeitung von \acs{json}-Daten sowie eine unkomplizierte Kommunikation mit \acs{rest}-Schnittstellen ermöglicht.
 
-Die Basis bilden drei strukturierte \acs{json}-Dateien:
+Grundlage bilden drei strukturierte \acs{json}-Dateien:
 
-\begin{enumerate}[noitemsep, leftmargin=*, label=\textbf{\arabic*.}]
-    \item \textbf{Datenquelle:} Technische Produktinformationen
-    \item \textbf{Typ-Submodell:} Struktur und Semantik des Submodells
-    \item \textbf{AAS-Vorlage:} Aufbau und Struktur der \acs{aas}-Instanz
+\vspace{0.2em}
+\begin{enumerate}[noitemsep, parsep=0.2em, label=\textbf{\arabic*.}, labelsep=0.4em]
+    \item \makebox[2.9cm][l]{\textbf{Datenquelle}}    Beinhaltet technische Produktinformationen
+    \item \makebox[2.9cm][l]{\textbf{Typ-Submodell}}  Definiert Struktur und Semantik des Submodells
+    \item \makebox[2.9cm][l]{\textbf{AAS-Vorlage}}    Beschreibt Aufbau und Struktur der \acs{aas}-Instanz
 \end{enumerate}
+\vspace{0.2em}
 
-Die Datenquelle ist hierarchisch aufgebaut und enthält verschachtelte Schlüssel-Wert-Paare.
-Jeder Schlüssel entspricht einem idShort-Wert eines Submodellelements innerhalb des Typ-Submodells.
-Dieses ist so konzipiert, dass Platzhalter an den relevanten Stellen eingefügt sind, die bei der Skriptausführung durch die zugehörigen Werte aus der Datenquelle ersetzt werden.
+Die Datenquelle ist hierarchisch aufgebaut und besteht aus verschachtelten Schlüssel-Wert-Paaren.
+Jeder Schlüssel entspricht dem idShort-Wert eines Submodellelements innerhalb des Typ-Submodells.
+Dieses enthält Platzhalter, die zur Laufzeit automatisch durch die zugehörigen Werte aus der Datenquelle ersetzt werden.
 
-Das resultierende Instanz-Submodell muss anschließend in eine \acs{aas}-Instanz eingebunden werden.
-Die AAS-Vorlage definiert hierfür zwar die grundlegende Struktur, enthält jedoch noch keine spezifischen Identifikatoren wie die \acs{id} der \acs{aas} oder des zugehörigen Assets.
-Um diese hinzuzufügen, können während der Skriptausführung zufällig generierte UUID-Werte (Universally Unique Identifier) an den entsprechenden Stellen in die Vorlage eingefügt werden.
+Das resultierende Instanz-Submodell muss anschließend in eine \acs{aas} eingebunden werden. 
+Hierfür wird die \acs{aas}-Vorlage verwendet, die die grundlegende Struktur vorgibt, jedoch ohne Angaben wie die \acs{id} der \acs{aas} oder des zugehörigen Assets. 
+Diese Identifikatoren lassen sich während der Skriptausführung durch zufällig generierte \ac{uuid}-Werte an den entsprechenden Stellen einfügen.
+Dadurch erhält jede \acs{aas} eine eindeutige Kennung und wird zu einer vollständigen Instanz.
 
-Im letzten Schritt muss die \acs{aas}-Instanz innerhalb des Eclipse BaSyx-Systems bereitgestellt werden.
-Hierzu kann die \acs{aas} sowie das zugehörige Submodell, analog zur Möglichkeit~C \acs{rest}-API aus Kapitel~\ref{sec:bereitstellungAAS}, eingebunden und registriert werden.
+Im letzten Schritt muss die \acs{aas} gemeinsam mit dem zugehörigen Submodell innerhalb des Eclipse BaSyx-Systems bereitgestellt werden. 
+Hierzu können beide über die \acs{rest}-\acs{api} eingebunden und verknüpft werden, analog zur in Kapitel~\ref{sec:bereitstellungAAS} beschriebenen Möglichkeit~C.
+Durch die Ausführung des Skripts entsteht so automatisch eine Typ-2-\acs{aas}.
