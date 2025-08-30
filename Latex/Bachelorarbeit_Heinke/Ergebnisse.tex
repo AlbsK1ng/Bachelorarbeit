@@ -205,11 +205,11 @@ Die Zustandsinformationen stammen aus dem Maschinensimulator, der sie in numeris
 Über die Databridge werden diese Werte in die \acs{aas} übertragen.
 Vor der Speicherung erfolgt eine semantische Umwandlung mithilfe von JSONata, um die numerischen Codes in sprechende Zustandsbezeichnungen zu überführen.
 
-Die Zustände orientieren sich am PackML-Standard (Packaging Machine Language), einem von der OMAC (Organization for Machine Automation and Control) entwickelten Modell zur einheitlichen Beschreibung von Maschinenzuständen und zulässigen Zustandsübergängen, insbesondere für Verpackungsmaschinen \cite{OMAC}. 
+Die Zustände orientieren sich am \acs{packml}-Standard, einem von der Organization for Machine Automation and Control entwickelten Modell zur einheitlichen Beschreibung von Maschinenzuständen und zulässigen Zustandsübergängen, insbesondere für Verpackungsmaschinen \cite{OMAC}. 
 Der Standard definiert insgesamt 17 Maschinenzustände und legt fest, welche Übergänge zwischen diesen möglich sind. 
 Dieses Konzept findet auch bei der robocell-Linie Verwendung und ermöglicht eine konsistente und interoperable Erfassung des Maschinenstatus über verschiedene Systeme hinweg.
 
-Die Visualisierung erfolgt über ein in die AAS Web UI integriertes Vue.js-Plugin, das den Maschinenstatus als PackML-Zustandsautomat darstellt.
+Die Visualisierung erfolgt über ein in die AAS Web UI integriertes Vue.js-Plugin, das den Maschinenstatus als \acs{packml}-Zustandsautomat darstellt.
 Das Plugin basiert auf einer Entwicklung der Hochschule für Technik und Wirtschaft Berlin \cite{HTW1, HTW2} und wurde funktional angepasst, um es in die AAS Web UI zu integrieren und die im Demonstrator benötigten Steuer- und Anzeigeoptionen zu unterstützen.
 
 Abbildung~\ref{fig:PackMLZustandsautomat} zeigt den Zustandsautomaten in der Benutzeroberfläche.
@@ -222,7 +222,7 @@ Zudem lässt sich der Betriebsmodus setzen, der ebenfalls als Property im Submod
 \begin{figure}[htbp]
     \centering 
     \includegraphics[width=1\textwidth]{Bilder/ErgebnisseAASWebUI/Kontrollkomponente.png} 
-    \caption[Visualisierung Submodell Kontrollkomponente]{Visualisierung Submodell Kontrollkomponente (PackML-Zustandsautomat)} 
+    \caption[Visualisierung Submodell Kontrollkomponente]{Visualisierung Submodell Kontrollkomponente (\acs{packml}-Zustandsautomat)} 
     \label{fig:PackMLZustandsautomat} 
 \end{figure}
 \vspace{-0.5em}
