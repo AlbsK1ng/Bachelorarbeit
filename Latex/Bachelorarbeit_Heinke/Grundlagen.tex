@@ -105,10 +105,11 @@ Grieves definierte drei grundlegende Komponenten \cite{DTGrieves}, die zusammen 
     \item eine Schnittstelle, die den Informationsfluss zwischen diesen beiden ermöglicht.
 \end{itemize}
 
-Auf Basis des von Grieves entwickelten Informationsmodells hat sich der Begriff des digitalen Zwillings kontinuierlich weiterentwickelt.
-Aufgrund verschiedener Fachgebiete und inkonsistenter Definitionen hat sich in der Vergangenheit allerdings eine Vielzahl unterschiedlicher Ausprägungen des Begriffs gebildet.
-Diese unterscheiden sich insbesondere in der Tiefe der Datenintegration zwischen dem physischen Objekt und seinem virtuellen Abbild.
-Während ein einfacher digitaler Zwilling lediglich ein Modell mit statischen Daten ist, ermöglichen fortgeschrittene Varianten einen bidirektionalen Datenaustausch zwischen physischem und virtuellem Objekt. 
+Auf Basis des von Grieves entwickelten Informationsmodells hat sich der Begriff des digitalen Zwillings kontinuierlich weiterentwickelt. 
+Aufgrund unterschiedlicher Fachperspektiven und inkonsistenter Definitionen haben sich im Laufe der Zeit verschiedene Ausprägungen gebildet. 
+Diese unterscheiden sich vor allem in der Tiefe der Datenintegration zwischen dem physischen Objekt und seinem virtuellen Abbild. 
+Einfache Ausprägungen sind statische Modelle, die vor allem grundlegende Informationen abbilden. 
+Fortgeschrittene Varianten hingegen ermöglichen einen bidirektionalen Datenaustausch zwischen beiden Ebenen und eröffnen damit ein erhebliches Potenzial.
 
 Für ein besseres Verständnis und zur tieferen Klassifizierung ist es zunächst hilfreich, zwischen Typen und Instanzen des digitalen Zwillings zu unterscheiden.
 Typen sind allgemeine Abbilder, die grundlegende Eigenschaften und Verhaltensmodelle einer Produktgruppe beschreiben. 
@@ -218,12 +219,12 @@ Das vermutlich am häufigsten verwendete Datenelement ist das Submodellelement
 \linebreak Property.
 Es lässt sich mit einer Variablen aus der Softwareentwicklung vergleichen, da es einfache Merkmale wie etwa einen Namen oder eine Seriennummer abbildet und über einen definierten Datentyp wie String, Integer oder Boolean verfügt.
 
-Zur besseren Veranschaulichung dient Abbildung \ref{fig:MetamodellAAS}, die eine vereinfachte Darstellung des zugrunde liegenden Metamodells zeigt.
-
 Wichtig ist, dass sowohl die \acs{aas} selbst als auch ihre Submodelle global eindeutig identifizierbar sind.
-Dies wird durch die Verwendung eindeutiger Identifikatoren (\acsp{id}) der Klasse Identifiable wie einer URI (Uniform Resource Identifier) oder \acs{irdi} (International Registration Data Identifier) sichergestellt.
+Dies wird durch die Verwendung von Identifikatoren (\acsp{id}) der Klasse Identifiable wie einer URI (Uniform Resource Identifier) oder \acs{irdi} (International Registration Data Identifier) sichergestellt.
 Für die Elemente innerhalb eines Submodells ist hingegen eine lokale Kennung ausreichend. 
 Dies erfolgt anhand einer idShort der Klasse Referable, die einen kurzen, aussagekräftigen Namen enthält.
+
+Zur besseren Veranschaulichung dient Abbildung \ref{fig:MetamodellAAS}, die eine vereinfachte Darstellung des zugrunde liegenden Metamodells zeigt.
 
 \newpage
 \begin{figure}[htbp]
@@ -244,27 +245,29 @@ Darin enthalten sind unter anderem Definitionen, Einheiten, Wertebereiche, zulä
 
 Um die Erstellung von Submodellen zu erleichtern und gleichzeitig Interoperabilität zu gewährleisten, stellt die \acs{idta} standardisierte Submodellvorlagen -- sogenannte \acp{smt} -- zur Verfügung.
 Diese decken eine Vielzahl industrieller Anwendungsfälle ab und werden kontinuierlich weiterentwickelt und ergänzt.
-Bereits verfügbare Templates umfassen unter anderem Submodelle wie beispielsweise das digitale \linebreak
-Typenschild und den \ac{cf}.
+
+Bereits verfügbare \acsp{smt} umfassen unter anderem Submodelle wie beispielsweise das digitale Typenschild und den \ac{cf}.
 Alle Submodellelemente innerhalb dieser Vorlagen sind in Verbindung mit dem ECLASS-Standard einheitlich semantisch beschrieben.
 Die Templates können über ein zentrales Repository \cite{idtaTemplates} bezogen werden und bilden die Basis für eine interoperable Datenstruktur.
 
 \subsubsection{Informationsaustausch}
+
 Der Austausch von Informationen über die \acs{aas} kann auf unterschiedliche Weise erfolgen.
-Die einfachste Möglichkeit besteht im Dateiaustausch. Hierfür wurden speziell für die \acs{aas} sogenannte AASX-Dateien \cite{SpezifikationPart5} entwickelt, die den einfachen Austausch statischer \acs{aas} (Typ-1-\acs{aas}) ermöglichen.
-Dabei werden sämtliche Daten, Beziehungen, Strukturen sowie zugehörige Dateien der \acs{aas} serialisiert und in ein AASX-ZIP-Dateiformat gespeichert. 
+Die einfachste Möglichkeit besteht im Dateiaustausch. 
+Hierfür wurden speziell sogenannte AASX-Dateien \cite{SpezifikationPart5} entwickelt, die den Austausch statischer \acs{aas} (Typ-1-\acs{aas}) ermöglichen.
+Dabei werden sämtliche Daten, Beziehungen, Strukturen sowie zugehörige Dateien serialisiert und in einem AASX-ZIP-Dateiformat gespeichert. 
 Diese Datei kann anschließend über ein digitales Medium, etwa per E-Mail oder über eine Cloud-Plattform, weitergegeben werden. 
 
 Eine Typ-2-\acs{aas} hingegen wird von einer Laufzeitumgebung gehostet, wodurch ein direkter und dynamischer Zugriff auf ihre Inhalte ermöglicht wird. 
-Die Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2} beschreibt hierfür nicht nur standardisierte Schnittstellen, sondern auch ein ganzheitliches System für das Verwalten, Bereitstellen und Auffinden der \acs{aas}.
-Repositories dienen dabei als zentraler Speicherort für die Inhalte einer \acs{aas}, einschließlich ihrer Submodelle und Concept Descriptions.
-Die Aufgabe der Verwaltung und Registrierung übernehmen sogenannte Registries.
-Sie ermöglichen das systemweite Auffinden von \acs{aas} und stellen sicher, dass diese eindeutig referenzierbar sind.
+Die Spezifikation \mbox{Part 2: Application Programming Interfaces} \cite{SpezifikationPart2} beschreibt hierfür nicht nur standardisierte Schnittstellen, sondern auch ein ganzheitliches System für das Verwalten, Bereitstellen und Auffinden.
 
-Ergänzend dazu bieten Discovery Services eine erweiterte Suchfunktionalität, indem sie Beziehungen verschiedener Entitäten mittels verschiedener Schlüsselwertpaare speichern.
-Eine \acs{aas} kann so zum Beispiel logisch mit einer Asset-\acs{id} verknüpft und somit schnell innerhalb komplexer Systeme identifiziert werden.
-Der Zugriff auf diese Systeme bzw. ihre Inhalte wird in Form von Schnittstellen standardisiert, wodurch eine hohe Interoperabilität gewährleistet wird.
-Ein besonderer Fokus liegt dabei auf der Nutzung von \ac{http} gemäß dem \acs{rest}-Architekturstil (Representational State Transfer), der eine strukturierte Kommunikation über Methoden wie GET, POST, PUT oder DELETE ermöglicht.
+Repositories dienen in diesem Zusammenhang als zentrale Speicherorte für die Inhalte einer \acs{aas}, einschließlich ihrer Submodelle und Concept Descriptions. 
+Die Aufgabe der Verwaltung und Registrierung übernehmen Registries, die das systemweite Auffinden sicherstellen.
+Ergänzend dazu bieten Discovery Services eine erweiterte Suchfunktionalität, indem sie Beziehungen zwischen Entitäten über Schlüssel-Wert-Paare abbilden.
+Auf diese Weise kann eine \acs{aas} logisch mit einer Asset-\acs{id} verknüpft und so innerhalb komplexer Systeme schnell identifiziert werden.
+
+Der Zugriff auf diese Systeme sowie deren Inhalte erfolgt über standardisierte Schnittstellen, die eine hohe Interoperabilität gewährleisten. 
+Ein besonderer Fokus liegt dabei auf der Nutzung von \ac{http} nach dem \ac{rest}-Architekturstil, der eine strukturierte Kommunikation über Methoden wie GET, POST, PUT oder DELETE ermöglicht.
 
 Die fortschrittlichste Form des Informationsaustausches stellt die Peer-to-Peer-Kommuni\-kation dar, bei der Industrie-4.0-Komponenten eigenständig über die Industrie-4.0-Sprache \cite{I4Sprache} miteinander kommunizieren (Typ-3-\acs{aas}).
 
@@ -359,15 +362,16 @@ Im Folgenden werden die technologischen Grundlagen erläutert, die für das Vers
 Der AASX Package Explorer, nachfolgend als Package Explorer bezeichnet, wurde als Referenzimplementierung für die \acs{aas} gemäß den Spezifikationen der \acs{idta} entwickelt.
 Das Tool ist als Open-Source-Software \cite{AASXPackageExplorer} verfügbar und ermöglicht das Erstellen und Bearbeiten von \acs{aas} im standardisierten AASX-Dateiformat.
 
-Der Package Explorer verfügt dabei über eine benutzerfreundliche grafische Oberfläche (siehe Abbildung \ref{fig:AASXPackageExplorer}), die insbesondere Einsteigern den Zugang zur Modellierung erleichtert.
+Er verfügt über eine benutzerfreundliche grafische Oberfläche, wie in Abbildung \ref{fig:AASXPackageExplorer} dargestellt, die insbesondere Einsteigern einen intuitiven Zugang zur Modellierung gewährt.
 Dabei können Submodelle, Eigenschaften, semantische Referenzen sowie Metadaten strukturiert definiert und verwaltet werden.
-Gleichzeitig bietet der Package Explorer auch erweiterte Funktionen, wie das Erstellen von \acsp{smt}, wodurch er sich auch für den professionellen Einsatz eignet.
+Gleichzeitig stellt der Package Explorer auch erweiterte Funktionen bereit, wie das Erstellen von \acsp{smt}, wodurch er sich auch für den professionellen Einsatz eignet.
 
-Neben der lokalen Modellierung erlaubt das Tool ebenfalls die Verbindung zu einem AAS-Server über standardisierte Schnittstellen (z.B. \acs{opcua} oder \acs{http}/\acs{rest}).
+Neben der lokalen Modellierung erlaubt das Tool auch die Verbindung zu einem AAS-Server über standardisierte Schnittstellen (z.~B. \acs{opcua} oder \acs{http}/\acs{rest}).
 Dies ermöglicht den Betrieb von \acs{aas} in verteilten Systemen.
 Besonders geeignet hierfür%
 \pagebreak
-~ist der Referenzserver des Eclipse-AAS-Projekts \cite{AASXServer}, der das Hosten und Bereitstellen von AASX-Paketen ermöglicht sowie eine nahtlose Integration mit dem Package Explorer erlaubt.
+~ist der Referenzserver des Eclipse-AAS-Projekts \cite{AASXServer}.
+Er unterstützt das Hosten und Bereitstellen von AASX-Paketen, die sich direkt im Package Explorer anzeigen und weiterverarbeiten lassen.
 
 \begin{figure}[htbp]
     \centering
@@ -384,15 +388,15 @@ Die Software steht dabei allen Interessenten frei zur Verfügung.
 
 Die Softwarearchitektur basiert auf einer Vielzahl von Standardkomponenten (Off-the-Shelf), die alle als Docker-Container frei zugänglich sind und somit eine nahtlose Integration in bestehende Docker-Umgebungen erlauben.
 Eine der wichtigsten Komponenten ist die Registry. 
-Sie ist, genau wie alle anderen Komponenten, auf den Spezifikationen der \acs{aas} aufgebaut, insbesondere auf der Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2}.
-In ihr können neue \acs{aas} registriert und bereits vorhandene \acs{aas} anhand ihrer eindeutigen Kennung gesucht werden.
+Wie alle Komponenten basiert auch sie auf den Spezifikationen der \acs{idta}, insbesondere auf der Spezifikation Part 2: Application Programming Interfaces \cite{SpezifikationPart2}.
+In ihr können neue \acs{aas} registriert und bereits vorhandene \acs{aas} über ihre eindeutige Kennung gefunden werden.
 Sie bildet damit die zentrale Anlaufstelle für Geräte und Anwendungen innerhalb des BaSyx-Systems.
 Analog dazu existiert eine separate Registry für die Verwaltung von Submodellen.
 
 \newpage
-Die eigentlichen Daten werden in der sogenannten \acs{aas} Environment gespeichert und organisiert.
+Die eigentlichen Daten werden in der \acs{aas} Environment gespeichert und organisiert.
 Sie umfasst Repositories für \acs{aas}, Submodelle und Concept Descriptions.
-In der Regel ist eine Datenbank, standardmäßig eine MongoDB als persistenter Speicher hinterlegt.
+In der Regel ist eine Datenbank, standardmäßig eine MongoDB, als persistenter Speicher hinterlegt.
 Wie auch alle anderen Komponenten stellen diese Repositories standardisierte Schnittstellen basierend auf der \ac{api}-Spezifikation zur Verfügung.
 Dies erlaubt z.~B. das Abfragen, Erstellen oder Aktualisieren einer \acs{aas} samt ihrer Submodelle und Inhalte.
 Alle verfügbaren Endpunkte dieser Schnittstellen können unter anderem in der automatisch generierten Swagger-Dokumentation eingesehen und ausgeführt werden. 
@@ -403,17 +407,17 @@ Eine Auswahl der wichtigsten Endpunkte der AAS Environment ist in Tabelle \ref{t
 
 Im BaSyx-System ermöglicht ein Discovery Service zudem die Verknüpfung physischer Assets mit ihren zugehörigen \acs{aas}.
 Dies ist insbesondere für die Abbildung von hierarchischen Strukturen wie Stücklisten (\ac{bom}) von großer Bedeutung.
-Ein übergeordnetes Asset (z.B. Maschine) kann so mit untergeordneten Komponenten (z.B. Antrieb, Sensoren) logisch über deren AAS verbunden werden.
-Einträge in den Discovery Service müssen derzeit allerdings noch manuell über die \acs{api} vorgenommen werden.
+Ein übergeordnetes Asset (z.~B. eine Maschine) kann so mit untergeordneten Komponenten (z.~B. Antrieb, Sensoren) logisch über deren AAS verbunden werden.
+Einträge in den Discovery Service müssen derzeit manuell über die \acs{api} erfolgen.
 
-Zur benutzerfreundlichen Visualisierung und Interaktion kann die sogenannte AAS Web UI genutzt werden.
+Zur benutzerfreundlichen Visualisierung und Interaktion kann die AAS Web UI genutzt werden.
 Die webbasierte Benutzeroberfläche, wie in Abbildung \ref{fig:BasyxWebUI} dargestellt, wurde mit dem JavaScript-Framework Vue.js entwickelt und kommuniziert über die standardisierte \acs{rest}-API mit den zentralen Komponenten der BaSyx-Plattform, darunter die Repositories, Registries und der Discovery Service.
 Sie zeigt alle registrierten \acs{aas} in einer Liste an und bietet die Möglichkeit, einzelne \acs{aas} in einer Baumstruktur sowohl zu visualisieren als auch zu bearbeiten. 
 
 Ein weiteres zentrales Merkmal der AAS Web UI ist der sogenannte AAS Viewer.
-In nachfolgender Abbildung ist dieser auf der rechten Seite angeordnet.
+In der nachfolgenden Abbildung ist dieser auf der rechten Seite angeordnet.
 Er erlaubt die Visualisierung von Submodellen und deren Elementen anhand ihrer semanticId. 
-Hierfür stehen verschiedene vordefinierte Plugins zur Verfügung, die bestimmte Submodelle, wie beispielsweise das Typenschild oder hierarchische Strukturen, grafisch darstellen.
+Hierfür stehen verschiedene vordefinierte Plugins zur Verfügung, die bestimmte Submodelle, wie das Typenschild oder die Übergabedokumentation, grafisch darstellen.
 Da die Lösung Open Source ist, besteht zudem die Möglichkeit, eigene benutzerdefinierte Plugins für weitere Submodelle zu erstellen. \cite{BaSyxWiki,BaSyxEclipse} 
 
 \vspace{0.5em}
@@ -428,9 +432,13 @@ Da die Lösung Open Source ist, besteht zudem die Möglichkeit, eigene benutzerd
 \subsubsection{OPC Unified Architecture}
 \acs{opcua} ist ein plattformübergreifender Kommunikationsstandard, der speziell für die Anforderungen der industriellen Automatisierung entwickelt wurde.
 Ziel ist ein herstellerübergreifender, sicherer und standardisierter Datenaustausch.
-In \acs{rami} \cite{RAMI4.0} wird \acs{opcua} als empfohlener Standard für die Kommunikationsschicht definiert und bildet damit die Grundlage für die Interoperabilität zwischen Maschinen, Anlagen und \acs{it}-Systemen verschiedener Hersteller.
+In \acs{rami} \cite{RAMI4.0} wird \acs{opcua} als empfohlener Standard für die Kommunikationsschicht definiert.
+Damit bildet er die Grundlage für die Interoperabilität zwischen Maschinen, Anlagen und \acs{it}-Systemen verschiedener Hersteller.
 
-Die grundlegende Idee von \acs{opcua} besteht darin, dass ein Maschinenhersteller einen \acs{opcua} Server bereitstellt, der einen standardisierten und herstellerunabhängigen Zugriff auf eine Maschine ermöglicht.
-Der Server dient hierbei als zentrale Schnittstelle zur Außenwelt. Er implementiert den OPC Standard und stellt strukturierte Informationen sowie Zugriffsmöglichkeiten auf Maschinenzustände und -daten bereit.
-Im Inneren kommuniziert der Server dabei über ein herstellerspezifisches, proprietäres Protokoll mit der Steuerung.
-Zum Auslesen oder Austauschen dieser Daten wird ein \acs{opcua} Client benötigt. Dieser agiert als Kommunikationspartner des Servers, stellt die Verbindung her und ermöglicht den bidirektionalen Datentransfer. \cite{OPCUA}
+Die grundlegende Idee von \acs{opcua} besteht darin, dass ein Maschinenhersteller einen \acs{opcua} Server bereitstellt, der einen standardisierten und herstellerunabhängigen Zugriff auf eine Maschine gewährt.
+Der Server dient dabei als zentrale Schnittstelle zur Außenwelt. 
+Er implementiert den OPC Standard und stellt strukturierte Informationen sowie Zugriffsmöglichkeiten auf Maschinenzustände und -daten bereit.
+
+Im Inneren kommuniziert der Server über ein proprietäres Protokoll mit der Steuerung.
+Für das Auslesen und den Austausch der Maschinendaten wird ein \acs{opcua} Client benötigt.
+Dieser agiert als Kommunikationspartner des Servers, stellt die Verbindung her und unterstützt den bidirektionalen Datentransfer. \cite{OPCUA}
