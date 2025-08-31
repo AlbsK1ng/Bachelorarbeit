@@ -60,10 +60,10 @@ Daneben wurden aber auch projektspezifische Anforderungen berücksichtigt, die s
 Tabelle \ref{tab:Submodelle} liefert einen Überblick über die initiale Auswahl dieser Submodelle sowie den zugehörigen Datenquellen.
 Diese werden in späteren Anwendungsfällen gezielt erweitert.
 Zur besseren Übersicht sind dynamische Submodelle farblich hervorgehoben, während statische Submodelle weiß hinterlegt sind.
-Sofern vorhanden, verweist die Spalte Standardisierung auf das jeweils zugehörige \acs{smt} mittels der offiziellen Dokumentennummer der \acs{idta}, in der die betreffende Version spezifiziert ist.
+Sofern vorhanden, verweist die Spalte \mbox{Standardisierung} auf das jeweils zugehörige \acs{smt} mittels der offiziellen Dokumentennummer der \acs{idta}, in der die betreffende Version spezifiziert ist.
 Die Spalte Vorgesehene Inhalte zeigt beispielhaft, welche Informationen im weiteren Verlauf im digitalen Zwilling abgebildet werden sollen.
 
-\vspace{0.15em}
+\vspace{-0.1em}
 \input{TabelleSubmodelle.tex}
 
 \newpage
@@ -104,7 +104,7 @@ Für erste Modellierungszwecke empfiehlt es sich, auf automatisch generierte Bei
 
 
 \subsubsection*{Strukturierung durch Submodelle}
-\vspace{-0.5em}
+% \vspace{-0.5em}
 
 Als Nächstes müssen die benötigten Submodelle zur \acs{aas} hinzugefügt werden.
 Diese lassen sich entweder als Instanz, Typ oder Template anlegen, was eine flexible Modellierung je nach Anwendungsfall ermöglicht.
@@ -141,7 +141,7 @@ Dies betrifft jedoch ausschließlich statische Submodelle wie Technische Daten o
 Dynamische Inhalte, etwa Betriebsdaten, werden hingegen nicht direkt im Package Explorer gepflegt, sondern zur Laufzeit über externe Datenquellen (Maschinensimulator und Datengenerator) angebunden.
 
 \subsubsection*{Semantische Beschreibung mit Concept Descriptions}
-\vspace{-0.5em}
+% \vspace{-0.5em}
 
 Für die semantische Beschreibung von Submodellen und Submodellelementen innerhalb der \acs{aas} ist die Vergabe von semanticId-Referenzen von zentraler Bedeutung.
 Jede \mbox{semanticId} verweist auf eine zugehörige \acs{cd}, welche die Bedeutung des referenzierten Elements eindeutig und maschinenlesbar beschreibt.
@@ -153,7 +153,7 @@ Je nach Elementtyp unterscheiden sich jedoch die verpflichtenden und empfohlenen
 So gelten für unterschiedliche Elemente (z.~B. Property oder RelationshipElement) jeweils spezifische Pflichtfelder, während andere Angaben optional oder nicht vorgesehen sind.
 Abbildung~\ref{fig:SubmodellTypenschild} veranschaulicht die Eingabemaske, wobei die Struktur exemplarisch anhand einer Property für die physikalische Größe Frequenz dargestellt ist.
 
-\vspace{0.25em}
+% \vspace{0.25em}
 \begin{figure}[htbp]
     \centering
     \input{DataSpecificationContent.tex}
@@ -161,7 +161,7 @@ Abbildung~\ref{fig:SubmodellTypenschild} veranschaulicht die Eingabemaske, wobei
     \caption[Eingabemaske einer \acs{cd}]{Eingabemaske einer \acs{cd} (in Anlehnung an \cite{SpezifikationPart3a})}
     \label{fig:SubmodellTypenschild}
 \end{figure}
-\vspace{-0.35em}
+\vspace{-0.5em}
 
 Alternativ können auch externe Standards referenziert werden. 
 Der Package Explorer unterstützt diesen Ansatz durch eine erweiterte Funktionalität, mit der vorgefertigte ECLASS-Kataloge in das Tool importiert werden können. 
@@ -170,13 +170,13 @@ Die semantische Verknüpfung erfolgt über eine \acs{irdi}, die das jeweilige Ko
 
 Wird ein solcher Standard referenziert, legt der Package Explorer automatisch eine \acs{cd} an. 
 Sie folgt, analog zur manuellen Erstellung, dem in IEC~61360 definierten Datenmodell. 
-Somit sind die semantischen Informationen auch lokal im Modell verfügbar und konsistent strukturiert. 
+Somit sind die semantischen Informationen auch lokal im Modell verfügbar.
 Technisch betrachtet wäre jedoch auch eine rein externe Referenz ausreichend, da die entsprechenden Elemente bereits vollständig in den jeweiligen Katalogen enthalten sind.
 
 Die Nutzung etablierter externer Standards ist grundsätzlich zu bevorzugen, da sie nicht nur den Modellierungsaufwand erheblich reduziert, sondern auch die Interoperabilität zwischen verschiedenen Systemen und Anwendungen deutlich verbessert.
 
 \subsubsection*{Exportmöglichkeiten im Package Explorer}
-\vspace{-0.5em}
+% \vspace{-0.5em}
 Nach Abschluss der Modellierung kann die erstellte \acs{aas} in verschiedenen Formaten exportiert werden.
 Das bevorzugte Format in diesem Projekt ist das AASX-Format, das sich als standardisierte Austauschform für die \acs{aas} etabliert hat.
 Es umfasst alle modellierten Inhalte, einschließlich eingebetteter Dateien wie Bilder oder Dokumente, und eignet sich daher besonders für die Weitergabe einer Typ-1-\acs{aas}.
@@ -184,7 +184,7 @@ Es umfasst alle modellierten Inhalte, einschließlich eingebetteter Dateien wie 
 Alternativ kann die \acs{aas} auch als \ac{json}- oder \ac{xml}-Datei gespeichert werden.
 Sie enthalten ausschließlich die strukturierte Beschreibung der \acs{aas}, sind jedoch besonders für die Nutzung in \acsp{api} oder zur Anbindung an bestehende Softwaresysteme geeignet.
 
-Darüber hinaus ermöglicht der Package Explorer den gezielten Export einzelner Concept Descriptions oder \mbox{Submodelle}.
+Darüber hinaus ermöglicht der Package Explorer den gezielten Export von einzelnen \mbox{Submodellen} oder Concept Descriptions.
 Diese können separat, beispielsweise als \acs{json}-Datei, gespeichert und in anderen \acs{aas}-Projekten wiederverwendet werden.
 
 \subsubsection{Validierung}
@@ -209,7 +209,7 @@ Werden im gesamten Prüfprozess hingegen keine Fehler oder Abweichungen festgest
 
 \subsection{Technische Integration}
 Im Anschluss an die Konzeption und Modellierung des digitalen Zwillings steht in diesem Kapitel die technische Integration in eine Industrie-4.0-kompatible Umgebung im Mittelpunkt. 
-Es wird gezeigt, wie die statisch modellierte Typ-1-\acs{aas} mithilfe des AASX Server Blazor beziehungsweise vorzugsweise der Eclipse BaSyx-Plattform in eine Typ-2-\acs{aas} überführt und systemseitig bereitgestellt werden kann. 
+Es wird gezeigt, wie die statisch modellierte Typ-1-\acs{aas} mithilfe des \mbox{AASX Server Blazor} beziehungsweise vorzugsweise der Eclipse BaSyx-Plattform in eine Typ-2-\acs{aas} überführt und systemseitig bereitgestellt werden kann. 
 Darüber hinaus wird dargestellt, wie die \acs{aas} um dynamische Inhalte erweitert werden kann. 
 Dies umfasst die Integration von Echtzeitdaten über \acs{opcua} sowie die Einbindung und Visualisierung externer Zeitreihendaten mithilfe von InfluxDB und Telegraf.
 
@@ -221,10 +221,10 @@ Er bildet das serverseitige Gegenstück zum Package Explorer und verfügt ebenfa
 
 Über eine \acs{http}-Schnittstelle können beide Anwendungen miteinander verbunden werden.
 Dadurch lassen sich AASX-Dateien ohne zusätzlichen Konfigurationsaufwand direkt aus dem Package Explorer heraus auf den Server übertragen und bereitstellen.
-Ebenso können auf dem Server gespeicherte \acs{aas} über den Explorer eingesehen und bearbeitet werden.
-Die enge Verzahnung beider Komponenten ermöglicht somit eine unkomplizierte Bereitstellung und Verwaltung von \acs{aas}-Paketen und eignet sich besonders für erste Testszenarien oder prototypische Anwendungen.
+Ebenso können auf dem Server gespeicherte \acs{aas} über den Package Explorer eingesehen und bearbeitet werden.
+Die enge Verzahnung beider Komponenten ermöglicht somit eine unkomplizierte Bereitstellung sowie Verwaltung von \acs{aas} und eignet sich besonders für erste Testszenarien oder prototypische Anwendungen.
 
-Für komplexere Anwendungsszenarien, insbesondere solche mit Anforderungen an Echtzeitfähigkeit sowie an flexible und erweiterbare Submodelle, stößt der AASX Server Blazor jedoch an seine funktionalen und architektonischen Grenzen. 
+Bei komplexen Anwendungsszenarien, insbesondere mit Anforderungen an Echtzeitfähigkeit sowie an flexible und erweiterbare Submodelle, stößt der \mbox{AASX Server Blazor} jedoch an funktionale und architektonische Grenzen. 
 So fehlen beispielsweise Schnittstellen zur Anbindung dynamischer Datenquellen sowie Möglichkeiten zur Skalierung und zur verteilten Systemintegration.
 
 \pagebreak
@@ -234,7 +234,7 @@ Durch ihre modulare Architektur und die klare Trennung verschiedener Komponenten
 Repositories bietet sie eine deutlich flexiblere Grundlage für die Umsetzung anspruchsvoller Industrie-4.0-Szenarien.
 
 Die einfachste Möglichkeit, BaSyx zu installieren, besteht in der Nutzung von Docker.
-Alle benötigten Komponenten stehen als vorgefertigte Images öffentlich über den Docker Hub \cite{BaSyxDockerHub} zur Verfügung. 
+Alle benötigten Komponenten stehen als vorgefertigte Images öffentlich über den \mbox{Docker Hub} \cite{BaSyxDockerHub} zur Verfügung. 
 Alternativ kann der Quellcode von GitHub \cite{BaSyxGithub} bezogen werden, um einzelne Komponenten individuell anzupassen oder zu erweitern.
 Für die vorliegende Arbeit ist dies insbesondere im Zusammenhang mit der AAS Web UI von Vorteil, da sich benutzerdefinierte Plugins flexibel integrieren lassen.
 
@@ -396,7 +396,7 @@ Dazu gehören ein eindeutiger Name, eine Beschreibung sowie die Festlegung der S
 Ein Record kann mit einer Spaltenbeschreibung in einer Tabelle verglichen werden.
 Er beschreibt, welche Variablen, in diesem Fall Druck und Temperatur, ein Zeitreihendatensatz enthält und wie diese zu interpretieren sind.
 
-Die Konfiguration des LinkedSegments bildet den nächsten Schritt.
+Anschließend folgt die Konfiguration des LinkedSegments.
 Dieses stellt die eigentliche Verbindung zu den extern gespeicherten Zeitreihendaten her. 
 Hierfür sind sowohl der Datenendpunkt als auch die Abfrage zu spezifizieren, mit der die gewünschten Werte ausgelesen werden können. 
 Im vorliegenden Fall handelt es sich um die Adresse des InfluxDB-Containers sowie die Abfrage, mit der die Werte für Druck und Temperatur aus der zugehörigen Tabelle abgerufen werden. 
@@ -418,7 +418,7 @@ Dabei handelt es sich um unterschiedlichste Datenarten, etwa die Drehzahl eines 
 Die manuelle Analyse dieser Daten ist jedoch sehr anspruchsvoll, da Abweichungen vom Normalbetrieb oft schwer zu erkennen sind und dadurch eine zuverlässige Zustandsüberwachung erheblich erschwert wird.
 
 Ein vielversprechender Ansatz, der diese Problematik adressiert, ist der sogenannte \mbox{Autoencoder}. 
-Dabei handelt es sich um eine spezielle Architektur tiefer neuronaler Netze, die typischerweise aus zwei Hauptkomponenten besteht: einem Encoder und einem Decoder, die gemeinsam eine komprimierte, latente Repräsentation der Eingangsdaten erlernen \cite{Lempitsky2019}.
+Dabei handelt es sich um eine spezielle Architektur tiefer neuronaler Netze, die typischerweise aus zwei Hauptkomponenten besteht: einem Encoder und einem \mbox{Decoder}, die gemeinsam eine komprimierte, latente Repräsentation der Eingangsdaten erlernen \cite{Lempitsky2019}.
 
 Der prinzipielle Aufbau eines Autoencoders ist in Abbildung \ref{fig:Autoencoder} dargestellt.
 
@@ -433,7 +433,7 @@ Der prinzipielle Aufbau eines Autoencoders ist in Abbildung \ref{fig:Autoencoder
 
 Der Encoder besteht aus mehreren Schichten, die die Eingabedaten schrittweise in eine komprimierte Form überführen. 
 Dabei erfolgt eine Dimensionsreduktion, das heißt, die Daten werden im Verlauf auf weniger Dimensionen verdichtet. 
-Das Ziel ist, die für die Rekonstruktion wesentlichen Merkmale zu extrahieren und irrelevante Informationen zu filtern.
+Ziel ist, die für die Rekonstruktion wesentlichen Merkmale zu extrahieren und irrelevante Informationen zu filtern.
 
 Der dabei entstehende latente Raum bildet die am stärksten komprimierte Repräsentation der Daten ab und dient als Ausgangspunkt für den Decoder.
 Dieser übernimmt die Aufgabe, die komprimierte Darstellung in die ursprüngliche Eingabe zu rekonstruieren. 
@@ -467,8 +467,8 @@ Dabei handelt es sich um ein mehrdimensionales Array, in diesem Fall eine zweidi
 Diese Struktur ist speziell für \acs{ki}-Modelle ausgelegt und erlaubt dem Autoencoder, typische Muster in den Zeitreihendaten zu erlernen.
 
 Der Autoencoder selbst wird mit dem Deep-Learning-Framework PyTorch \cite{PyTorch} implementiert.
-Der Encoder komprimiert die Eingabesequenz schrittweise von 64 auf 16 und schließlich auf 4 Neuronen, welche den latenten Raum repräsentieren.
-Der Decoder ist spiegelbildlich aufgebaut und rekonstruiert aus dem latenten Raum die ursprüngliche Eingabesequenz, indem er die Dimensionen in umgekehrter Reihenfolge auf 16, 64 und schließlich auf die ursprüngliche Sequenzlänge erweitert.
+Der Encoder reduziert die Eingabesequenz schrittweise von 64 auf 16 und schließlich auf 4 Neuronen, die den latenten Raum repräsentieren.
+Der Decoder ist spiegelbildlich aufgebaut: Er erweitert die Zwischenschichten wieder auf 16 und anschließend auf 64 Neuronen und stellt im letzten Schritt die ursprüngliche Eingabesequenz vollständig wieder her.
 
 Als Eingabe für das Training dienen die zuvor definierten Tensoren.
 Ziel ist, die Eingabedaten möglichst exakt zu rekonstruieren.
@@ -519,7 +519,7 @@ Grundlage bildet die zuvor erstellte \acs{aas} des Abfüll- und Verschließmodul
 
 \subsubsection{Umsetzung mit dem \acs{smt} Carbon Footprint}
 Der \acs{pcf} beschreibt die Summe aller Treibhausgasemissionen, ausgedrückt in CO\textsubscript{2}-Äqui\-valenten, die entlang des Lebenszyklus eines Produkts entstehen \cite{PCF}. 
-Seine Relevanz zeigt sich unter anderem in der \acs{eu}-Batterieverordnung \cite{EUVerordnung}, die die Einführung eines digitalen Batteriepasses vorschreibt. 
+Seine Relevanz zeigt sich unter anderem in der \acs{eu}-Batterieverordnung \cite{EUVerordnung}, welche die Einführung eines digitalen Batteriepasses vorschreibt. 
 Dieser stellt die erste konkrete Umsetzung eines \acs{dpp} dar und dient als Ausgangspunkt für weitere Branchen wie den Maschinen- und Anlagenbau. 
 Die Verordnung fordert unter anderem die verpflichtende Angabe des \acs{pcf} für die Phasen Material, Produktion und die Gesamtbetrachtung (Cradle to Gate). 
 Für weiterführende Lebenszyklusphasen ist die Angabe derzeit noch nicht vorgeschrieben.
@@ -558,7 +558,7 @@ Da diese Werte im vorliegenden Anwendungsfall jedoch bei allen Komponenten ident
 Die kontrollierte Bereitstellung der im \acs{dpp} enthaltenen Informationen ist essenziell, insbesondere im Hinblick auf Datenschutz, regulatorische Vorgaben sowie den Schutz geistigen Eigentums.  
 Wie in Kapitel~\ref{sec: Sicherheit} beschrieben, sieht die Security-Spezifikation der \acs{idta} hierfür die Nutzung eines attributbasierten Zugriffskontrollmodells (\acs{abac}) vor.
 
-Da die \acs{abac}-Funktionalität in aktuellen Referenzimplementierungen wie dem AASX Server Blazor oder Eclipse BaSyx jedoch noch nicht vollständig verfügbar ist, wird im Rahmen dieses Anwendungsfalls exemplarisch ein rollenbasiertes Zugriffsmodell (\acs{rbac}) umgesetzt, wie es von der Eclipse BaSyx-Plattform unterstützt wird.  
+Da die \acs{abac}-Funktionalität in aktuellen Referenzimplementierungen wie \mbox{Eclipse BaSyx} oder dem \mbox{AASX Server Blazor} jedoch noch nicht in vollem Umfang verfügbar ist, wird in diesem Anwendungsfall exemplarisch ein rollenbasiertes Zugriffsmodell (\acs{rbac}) umgesetzt, wie es von der Eclipse BaSyx-Plattform unterstützt wird.  
 Im Gegensatz zum \acs{abac}-Ansatz erfolgt die Zugriffskontrolle hierbei durch die Zuweisung spezifischer Berechtigungen an vordefinierte Rollen, denen wiederum Benutzer oder technische Clients zugeordnet sind.
 
 Zur Umsetzung von Authentifizierung und Autorisierung wird der Open-Source Identity Provider Keycloak eingesetzt \cite{Keycloak}.  
@@ -574,15 +574,15 @@ Zur Erhöhung der Sicherheit kann dieses Passwort als temporär markiert werden,
 Darüber hinaus bietet Keycloak die Möglichkeit, sogenannte Required Actions (erforderliche Aktionen) zu definieren, etwa zur E-Mail-Verifizierung oder erzwungenen Passwortänderung beim nächsten Login.  
 So lässt sich der Authentifizierungsprozess flexibel an projektspezifische Sicherheitsanforderungen anpassen.
 
-Neben der Verwaltung menschlicher Benutzer unterstützt Keycloak auch die Administration technischer Clients, die z.~B. maschinelle Anwendungen oder externe Systeme repräsentieren.  
-Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutiger Client-\acs{id} und einem geheimen Schlüssel (Client Secret) gemäß dem OpenID Connect-Protokoll \cite{OpenID}.  
+Neben der Verwaltung menschlicher Benutzer unterstützt Keycloak auch die Administration technischer Clients, die z.~B. für maschinelle Anwendungen oder externe Systeme vorgesehen sind.
+Die Authentifizierung erfolgt in der Regel über eine Kombination aus eindeutiger Client-\acs{id} und einem geheimen Schlüssel (Client Secret) gemäß dem \mbox{OpenID Connect}-Protokoll \cite{OpenID}.  
 Für jeden Client kann optional ein Service Account aktiviert werden, der als technisches Benutzerkonto agiert und, analog zu realen Benutzern, mit spezifischen Rollen ausgestattet ist.  
 Dies ermöglicht eine differenzierte Zugriffssteuerung auch für automatisierte Systemzugriffe.
 
 Die Rechtevergabe innerhalb der einzelnen BaSyx-Komponenten erfolgt rollenbasiert über externe Konfigurationsdateien im \acs{json}-Format.  
-Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE) auf bestimmte Elemente wie \acs{aas}, Submodelle oder Concept Descriptions erhalten.  
+Darin wird definiert, welche Rollen welche Berechtigungen (z.~B. READ, WRITE, DELETE) auf bestimmte Elemente wie Submodelle oder Concept Descriptions erhalten.  
 Für generische Regeln kann der Platzhalter \texttt{*} verwendet werden, um beispielsweise den Zugriff auf alle Submodelle einer BaSyx-Komponente zu gewähren.  
-Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Services.
+Die AAS Web UI benötigt keine eigene \acs{rbac}-Datei, sondern orientiert sich an den Konfigurationen der angebundenen Dienste.
 
 \subsection{Anwendungsfall automatisierte Generierung von AAS}
 In diesem Anwendungsfall wird gezeigt, wie eine \acs{aas} automatisiert erzeugt und bereitgestellt werden kann.  

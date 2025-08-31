@@ -2,30 +2,31 @@
 \section{Ergebnisse}
 \label{sec:Ergebnisse}
 In diesem Kapitel werden die Ergebnisse der Arbeit präsentiert.
-Im Mittelpunkt steht der entwickelte \acs{aas}-Demonstrator, der die prototypische Umsetzung des digitalen Zwillings des Abfüll- und Verschließmoduls der robocell-Linie zeigt.
+Im Mittelpunkt steht der \acs{aas}-Demonstrator, der die prototypische Umsetzung des digitalen Zwillings des Abfüll- und Verschließmoduls der robocell-Linie zeigt.
 Darauf folgt die Analyse des eingesetzten Autoencoder-Modells zur Anomalieerkennung sowie die Vorstellung der beiden Anwendungsfälle \acs{dpp} und automatisierte Generierung von \acs{aas}.
 Abschließend werden die im Projekt eingesetzten wesentlichen Softwarelösungen und Tools evaluiert.
 
 \subsection{AAS-Demonstrator für die robocell}
 \label{sec:AAS-Demonstrator}
 Der \acs{aas}-Demonstrator basiert auf dem standardisierten Konzept der \acs{aas}.
-Neben der Haupt-\acs{aas} der robocell-Maschine sind auch exemplarische \acs{aas} untergeordneter Komponenten enthalten, wodurch eine modulare und hierarchisch aufgebaute digitale Repräsentation entsteht.
-Als Laufzeitumgebung kommt die Eclipse BaSyx-Plattform zum Einsatz, während für die Datenanbindung standardisierte Protokolle wie \acs{opcua} sowie \acs{http}/\acs{rest} verwendet werden.
+Neben der Haupt-\acs{aas} des Abfüll- und Verschließmoduls sind auch exemplarische \acs{aas} untergeordneter Komponenten enthalten, wodurch eine modulare und hierarchisch aufgebaute digitale Repräsentation entsteht.
+Als Laufzeitumgebung kommt Eclipse BaSyx zum Einsatz, während für die Datenanbindung standardisierte Protokolle wie \acs{opcua} sowie \acs{http}/\acs{rest} verwendet werden.
 
 Im weiteren Verlauf wird zunächst die Architektur des Gesamtsystems vorgestellt.
 Sie dient der Verwaltung und Bereitstellung aller modellierten \acs{aas} und bildet die Grundlage für die dynamische Erweiterung um Echtzeit- und Zeitreihendaten.
-Anschließend werden die im Demonstrator abgebildeten Aspekte der Maschine erläutert, gegliedert in statische und dynamische Submodelle.
+Anschließend werden die im Demonstrator abgebildeten Aspekte der Maschine beschrieben, gegliedert in statische und dynamische Submodelle.
 Den Abschluss bildet eine kurze Reflexion über zentrale Herausforderungen, die während der Implementierung aufgetreten sind.
 
 \subsubsection{Systemarchitektur}
 
-Die Architektur besteht aus mehreren Komponenten, die zusammen einen aktiven digitalen Zwilling im Sinne einer Typ-2-\acs{aas} ermöglichen.
+Die Architektur besteht aus mehreren Komponenten, die einen aktiven \mbox{digitalen Zwilling} im Sinne einer Typ-2-\acs{aas} ermöglichen.
 Sie basiert auf containerisierten Diensten, die in einer gemeinsamen Docker-Umgebung verwaltet werden und über ein internes Netzwerk miteinander kommunizieren.
-Der modulare Aufbau erleichtert Erweiterungen und Anpassungen und schafft so eine skalierbare Infrastruktur für unterschiedliche Anforderungen.
+Der modulare Aufbau erleichtert Erweiterungen und Anpassungen und schafft damit eine skalierbare Infrastruktur für unterschiedliche Anforderungen.
 
-Die Bereitstellung und Verwaltung der AAS erfolgt in der Eclipse BaSyx-Plattform.
-Der ursprünglich vorgesehene AASX Server Blazor wurde zugunsten von BaSyx ersetzt, da die Plattform mehr Flexibilität und zusätzliche Funktionen für die Umsetzung digitaler Zwillinge bietet.
-Abbildung~\ref{fig:BaSyxArchitektur} zeigt den Aufbau des Systems, das als zentrales BaSyx-Backend die Verwaltung sämtlicher \acs{aas}-Bestandteile übernimmt.
+Die Bereitstellung der \acs{aas} erfolgt in der Eclipse BaSyx-Plattform.
+Der ursprünglich vorgesehene AASX Server Blazor wurde zugunsten der BaSyx-Plattform ersetzt, da diese mehr Flexibilität und zusätzliche Funktionen für die Umsetzung digitaler Zwillinge bietet.
+Abbildung~\ref{fig:BaSyxArchitektur} zeigt den Aufbau des Systems, welches als zentrales BaSyx-Backend die Verwaltung sämtlicher \acs{aas}-Bestandteile übernimmt.
+
 \newpage
 \begin{figure}[htbp]
     \centering
@@ -33,17 +34,18 @@ Abbildung~\ref{fig:BaSyxArchitektur} zeigt den Aufbau des Systems, das als zentr
     \caption{Systemarchitektur BaSyx-Backend}
     \label{fig:BaSyxArchitektur}
 \end{figure}
+ 
+Der Discovery Service ist für die Auflösung einer Asset-\acs{id} (globalAssetId) in die zugehörige \acs{aas}-\acs{id} zuständig und ermöglicht so das gezielte Auffinden einer \acs{aas} im Gesamtsystem.
+Die Registries dienen als Verzeichnisse aller registrierten \acs{aas} und \mbox{Submodelle} mit ihren jeweiligen Endpunkten innerhalb der AAS Environment.
+Die \acs{aas} Registry kann optional auch Referenzen auf die Submodel Registry (SM Registry) enthalten.
 
-Der Discovery Service übernimmt die Auflösung einer Asset-\acs{id} (globalAssetId) in die zugehörige \acs{aas}-\acs{id} und ermöglicht so das gezielte Auffinden einer \acs{aas} im Gesamtsystem. 
-Die Registries dienen als Verzeichnisse aller registrierten \acs{aas} und Submodelle einschließlich ihrer Endpunkte innerhalb der \acs{aas} Environment. Die \acs{aas} Registry kann dabei optional auch Referenzen auf die Submodel Registry (SM Registry) enthalten.
+Die \acs{aas} Environment beherbergt die eigentlichen Inhalte und ist in drei \mbox{Repositories} gegliedert. 
+Im AAS Repository werden die \acs{aas} einschließlich Asset-Metadaten und Referenzen auf Submodelle verwaltet. 
+Das Submodel Repository (SM Repository) speichert die Submodelle samt Inhalten und Referenzen auf die zugehörigen \mbox{Concept Descriptions}. 
+Im \acs{cd} Repository sind die Concept Descriptions abgelegt, die die semantischen Beschreibungen bereitstellen.
 
-Die \acs{aas} Environment selbst beherbergt die eigentlichen Inhalte und ist in drei Repositories gegliedert. 
-Das AAS Repository verwaltet die \acs{aas} einschließlich Asset-Metadaten und Referenzen auf Submodelle. 
-Das Submodel Repository (SM Repository) speichert die Submodelle mit ihren jeweiligen Inhalten und Referenzen auf die zugehörigen Concept Descriptions. 
-Diese werden im \acs{cd} Repository verwaltet und beinhalten alle semantischen Beschreibungen.
-
-Alle Komponenten verfügen dabei über eine standardisierte REST-API, die sowohl anderen Systemen als auch den Komponenten selbst einen einheitlichen Zugriff auf ihre Inhalte ermöglicht. 
-Zudem sind sie an eine gemeinsame MongoDB angebunden, in der sämtliche Daten persistent gespeichert werden.
+Alle Komponenten verfügen über eine standardisierte REST-API, die sowohl anderen Systemen als auch den Komponenten selbst einen einheitlichen Zugriff auf ihre Inhalte ermöglicht. 
+Zudem sind sie an eine gemeinsame MongoDB-Instanz angebunden, in der sämtliche Daten persistent gespeichert werden.
 
 Die dynamische Erweiterung ergänzt die Kernarchitektur um die Fähigkeit zur Verarbeitung von Echtzeit- und Zeitreihendaten. 
 Abbildung~\ref{fig:DynamischeErweiterungArchitektur} zeigt den Aufbau der zusätzlichen Komponenten sowie deren Zusammenspiel mit dem bestehenden System.
@@ -52,7 +54,7 @@ Der Datengenerator und der Maschinensimulator simulieren das Abfüll- und Versch
 Beide Anwendungen stellen ihre Daten über einen \acs{opcua} Server bereit und sind über die Databridge direkt an die AAS Environment im BaSyx-Backend angebunden.
 Zusätzlich werden die vom 
 \linebreak
-Datengenerator simulierten Werte mithilfe von Telegraf kontinuierlich in eine InfluxDB geschrieben, wodurch eine historische Datenbasis entsteht. 
+Datengenerator simulierten Werte mithilfe von Telegraf fortlaufend in eine InfluxDB geschrieben, wodurch eine historische Datenbasis aufgebaut wird.
 
 \newpage
 \begin{figure}[htbp]
@@ -63,21 +65,21 @@ Datengenerator simulierten Werte mithilfe von Telegraf kontinuierlich in eine In
 \end{figure}
 
 % \vspace{-0.5em}
-Zur Weiterverarbeitung und Visualisierung, sowohl der statischen Inhalte der AAS als auch der durch die dynamische Erweiterung ergänzten Echtzeit- und Zeitreihendaten, kommt die AAS Web UI zum Einsatz. 
+Zur Weiterverarbeitung und Visualisierung der statischen Inhalte der \acs{aas} sowie der durch die dynamische Erweiterung ergänzten Echtzeit- und Zeitreihendaten kommt die AAS Web UI zum Einsatz.
 Alternativ könnten auch benutzerdefinierte Anwendungen verwendet werden, die beispielsweise zusätzliche Analysen ermöglichen oder spezifische Anforderungen erfüllen.
 
 Die AAS Web UI greift über die standardisierten Schnittstellen der Komponenten des BaSyx-Backends auf die Registrierungsdaten der AAS sowie deren Submodelle und Inhalte zu. 
 Statische Daten und Echtzeitdaten werden direkt aus dem Submodel Repository abgefragt. 
-Bei Zeitreihendaten ist in der AAS nicht der eigentliche Dateninhalt gespeichert, sondern lediglich ein Verweis auf den Endpunkt der InfluxDB.
-Die AAS Web UI kann diesen nutzen, um die historischen Daten direkt aus der Datenbank abzurufen und in der Web-Oberfläche zu visualisieren.
+Bei Zeitreihendaten ist nicht der eigentliche Dateninhalt in der \acs{aas} gespeichert, sondern lediglich ein Verweis auf den Endpunkt der InfluxDB.
+Die AAS Web UI kann diesen nutzen, um die historischen Daten aus der Datenbank abzurufen und in der Web-Oberfläche zu visualisieren.
 
 \subsubsection{Statische Submodelle}
-Die statische Modellierung des Demonstrators erfolgte ausschließlich im Package Explorer.
-Dazu wurden alle relevanten AAS sowie die zugehörigen Submodelle angelegt, mit Inhalten befüllt, semantisch angereichert und mit eindeutigen Identifikatoren versehen.
-Als Hauptdatenquellen dienten die technischen Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem PLM-System Agile.
+Die statische Modellierung des Demonstrators erfolgte ausschließlich im \mbox{Package~Explorer}.
+Dazu wurden alle relevanten \acs{aas} sowie die zugehörigen Submodelle angelegt, mit Inhalten befüllt, semantisch angereichert und mit eindeutigen Identifikatoren versehen.
+Als Hauptdatenquellen dienten die technischen Dokumentationen der robocell, insbesondere die Betriebsanleitung, sowie Informationen aus dem \acs{plm}-System Agile.
 
 Abbildung~\ref{fig:PackageExplorerRobocell} zeigt die Gesamtübersicht des Abfüll- und Verschließmoduls. 
-Die statischen Submodelle sind darin mit einer Nummer gekennzeichnet, die der im Folgenden verwendeten Gliederung entspricht. 
+Statische \mbox{Submodelle} sind darin mit einer Nummer gekennzeichnet, die der im Folgenden verwendeten Gliederung entspricht. 
 Sie beinhalten feststehende, beschreibende Inhalte, die nicht zur Laufzeit geändert werden. 
 Zur besseren Veranschaulichung wird das \acs{bom}-Submodell ausführlicher beschrieben.
 Die grundlegende Struktur der weiteren statischen Submodelle ist im Anhang~\ref{sec:AnhangStatischeSubmodelle} ergänzend anhand von Screenshots dokumentiert.
@@ -110,7 +112,7 @@ Auf diese Weise sind alle relevanten technischen Angaben an einem zentralen Ort 
 
 Das \acs{bom}-Submodell dient dazu, die Maschinenstruktur sichtbar zu machen und die Beziehungen zwischen ihren einzelnen Komponenten hierarchisch abzubilden, vergleichbar mit einer digitalen Stückliste.
 Dabei enthält es verschiedene Entitäten, die jeweils eine untergeordnete Komponente repräsentieren.
-Die Beziehungen zwischen den Komponenten werden über Relationship-Elemente mit einer eindeutigen semanticId gemäß dem \acs{smt} Hierarchical Structures Enabling Bills of Material \cite{SpezifikationHierachischeStrukturen} hergestellt.
+Die Beziehungen zwischen den Komponenten werden über RelationshipElements mit einer eindeutigen semanticId gemäß dem \acs{smt} Hierarchical Structures Enabling Bills of Material \cite{SpezifikationHierachischeStrukturen} hergestellt.
 
 Zur Veranschaulichung wurde die Grundmaschine als Beispiel gewählt, da sie weniger komplex als die Maschinenebene ist, aber dennoch alle relevanten Strukturelemente enthält.
 Abbildung~\ref{fig:BOMSubmodelGrundmashcine} zeigt das entsprechende Submodell, in dem weitere untergeordnete Komponenten aufgeführt sind, darunter auch das Bedientableau.
@@ -141,8 +143,8 @@ Dies ermöglicht eine modulare und herstellerübergreifende Integration, da auch
 Beide Submodelle dienen der Bereitstellung und Klassifizierung zentraler Maschinendateien. 
 Das Submodell Dokumentation umfasst technische Unterlagen wie%
 \pagebreak
-~die Betriebsanleitung oder die Netzwerkübersicht, während das Submodell 3D-Modelle CAD-Daten zur Geometrie beinhaltet. 
-Alle Dateien sind als File-Elemente direkt in die Struktur der AAS eingebettet und jeweils in eigenen \acsp{smc} organisiert, die zusätzlich Metainformationen zu Identifikation, Klassifikation und Versionierung enthalten. 
+~die Betriebsanleitung oder die Netzwerkübersicht, während das Submodell 3D-Modelle \acs{cad}-Daten zur Geometrie beinhaltet. 
+Alle Dateien sind als File-Elemente direkt in die Struktur der \acs{aas} eingebettet und jeweils in eigenen \acsp{smc} organisiert, die zusätzlich Metainformationen zu Identifikation, Klassifikation und Versionierung enthalten. 
 Das Submodell 3D-Modelle könnte darüber hinaus um weitere Metadaten, etwa zu Darstellungsoptionen oder Geometrieinformationen, ergänzt werden, was im Demonstrator jedoch nicht umgesetzt wurde. 
 Dadurch ermöglichen beide Submodelle nicht nur das Einbetten von Dateien, sondern auch deren eindeutige Beschreibung und Rückverfolgbarkeit über den gesamten Lebenszyklus hinweg.
 
@@ -163,8 +165,8 @@ Dadurch wird eine einfache Weitergabe der Informationen entlang der Wertschöpfu
 Die \acs{aas} lässt sich beispielsweise in Form einer AASX-Datei an einen Betreiber übergeben, der direkten Zugriff auf die Daten benötigt.
 Zugleich erlaubt die rekursive Einbindung von Komponenten-\acs{aas} die nahtlose Integration in den digitalen Zwilling der Gesamtmaschine. 
 
-Durch die Orientierung an standardisierten \acsp{smt} und die Nutzung von Concept Descriptions zur semantischen Beschreibung können die Inhalte dabei von unterschiedlichen Systemen oder Personen gleichermaßen interpretiert und genutzt werden. 
-Auf diese Weise wird nicht nur die Interoperabilität gewährleistet, sondern auch die Rückverfolgbarkeit von Maschinendaten über den gesamten Lebenszyklus gestärkt.
+Ergänzend dazu stellt die Nutzung von \mbox{Concept Descriptions} in Kombination mit standardisierten \acsp{smt} sicher, dass die Inhalte von unterschiedlichen Systemen oder Personen gleichermaßen interpretierbar und nutzbar sind.
+Auf diese Weise wird nicht nur die Interoperabilität gefördert, sondern auch die Rückverfolgbarkeit von Maschinendaten über den gesamten Lebenszyklus gestärkt.
 
 \newpage
 \subsubsection{Dynamische Submodelle}
@@ -235,7 +237,7 @@ Wie in Kapitel~\ref{sec: DT} erläutert, entspricht dieser Ansatz der fortgeschr
 Damit verdeutlicht die Kontrollkomponente, dass sich mit der \acs{aas} auch interaktive digitale Zwillinge realisieren lassen. 
 In der industriellen Praxis würde dieser Ablauf jedoch nicht unmittelbar erfolgen. 
 Stattdessen müssten Steuerungsbefehle zunächst über ein geeignetes Industrieprotokoll wie \acs{opcua} an die speicherprogrammierbare Steuerung übertragen werden. 
-Diese würde die Befehle prüfen, die entsprechende Zustandsänderung der Maschine auslösen und den neuen Status anschließend über die DataBridge an die \acs{aas} zurückmelden.
+Diese würde die Befehle prüfen, die entsprechende Zustandsänderung der Maschine auslösen und den neuen Status anschließend über die Databridge an die \acs{aas} zurückmelden.
 
 \newpage
 \subsubsection*{Zeitreihendaten}
@@ -376,8 +378,8 @@ Abbildung~\ref{fig:SubmodellCF} stellt exemplarisch die \acs{smc} für die Phase
 
 Die Aggregation der CO\textsubscript{2}-Äquivalente erfolgt dynamisch über einen Microservice. 
 Dieser ist als Docker-Container implementiert und greift über die REST-Schnittstellen des BaSyx-Backends auf die in der Komponentenliste hinterlegten Entitäten zu. 
-Mithilfe des Discovery Service werden deren AAS identifiziert und vorhandene CF-Submodelle ausgelesen. 
-Die enthaltenen PCF-Werte werden anschließend zu Gesamtwerten für die einzelnen Lebenszyklusphasen aggregiert und in das CF-Submodell der Haupt-AAS zurückgeschrieben.
+Mithilfe des \mbox{Discovery Service} werden deren \acs{aas} identifiziert und vorhandene \acs{cf}-Submodelle ausgelesen. 
+Die enthaltenen \acs{pcf}-Werte werden anschließend zu Gesamtwerten für die einzelnen Lebenszyklusphasen aggregiert und in das \acs{cf}-Submodell der Haupt-\acs{aas} zurückgeschrieben.
 
 Die Berechnung kann direkt über ein Plugin in der AAS Web UI ausgelöst werden.
 Nach Abschluss werden die aktualisierten Werte automatisch vom Submodel Repository abgefragt und in der Benutzeroberfläche aktualisiert. 
@@ -396,10 +398,10 @@ Lebenszyklusphasen.
 \vspace{-0.2em}
 
 Der Ansatz ist flexibel erweiterbar.
-Bei Verfügbarkeit weiterer Komponenten-AAS lässt sich die Liste unkompliziert ergänzen, sodass sukzessive die gesamte Maschine berücksichtigt werden kann. 
-Perspektivisch ist auch eine Erweiterung auf weitere Lebenszyklusphasen, wie Nutzung oder Entsorgung, sowie die Einbeziehung des TCF denkbar, um eine ganzheitliche ökologische Bilanzierung zu ermöglichen.
+Bei Verfügbarkeit weiterer Komponenten-\acs{aas} lässt sich die Liste unkompliziert ergänzen, sodass sukzessive die gesamte Maschine berücksichtigt werden kann. 
+Perspektivisch ist auch eine Erweiterung auf weitere Lebenszyklusphasen, wie Nutzung oder Entsorgung, sowie die Einbeziehung des \acs{tcf} denkbar, um eine ganzheitliche ökologische Bilanzierung zu ermöglichen.
 
-Auf diese Weise wird nicht nur die Transparenz gestärkt, sondern auch die Rückverfolgbarkeit, da die einzelnen Beiträge durch die Einbindung separater Komponenten-AAS eindeutig zuordenbar sind. 
+Auf diese Weise wird nicht nur die Transparenz gestärkt, sondern auch die Rückverfolgbarkeit, da die einzelnen Beiträge durch die Einbindung separater Komponenten-\acs{aas} eindeutig zuordenbar sind. 
 Insgesamt verdeutlicht die Umsetzung, dass sich mit der AAS ein \acs{dpp} realisieren lässt, der auch nachhaltigkeitsbezogene Daten standardisiert abbildet und entlang der Wertschöpfungskette nachvollziehbar zur Verfügung gestellt werden kann.
 
 \newpage
@@ -503,11 +505,11 @@ Die Bewertung basiert auf praktischen Erfahrungen und berücksichtigt sowohl tec
 Der Package Explorer wurde während der gesamten Projektlaufzeit als zentrales Modellierungstool eingesetzt.
 Er ermöglichte die Erstellung, Bearbeitung und Visualisierung von AAS einschließlich ihrer Submodelle und Submodellelemente.
 Besonders hilfreich war die Möglichkeit, semantische Beschreibungen direkt aus ECLASS-Katalogen zu importieren.
-Dadurch verringerte sich der ansonsten sehr aufwendige manuelle Aufbau eigener Concept Descriptions deutlich, was den Modellierungsprozess spürbar beschleunigte.
+Dadurch verringerte sich der ansonsten sehr aufwendige manuelle Aufbau eigener \mbox{Concept Descriptions} deutlich, was den Modellierungsprozess spürbar beschleunigte.
 Zudem überzeugte die benutzerfreundliche Oberfläche, die den Einstieg erleichterte, das Verständnis der AAS-Strukturen förderte und Verstöße gegen die Spezifikation der IDTA unmittelbar kenntlich machte.
 
 In der praktischen Anwendung zeigten sich jedoch auch Einschränkungen.
-Die integrierte Validierungsfunktion erwies sich als unzuverlässig, sodass zur Absicherung eine separate Test-Engine erforderlich war.
+Die integrierte Validierungsfunktion erwies sich als unzuverlässig, sodass zur Absicherung eine separate Test Engine erforderlich war.
 Während die Anbindung an den AASX Server Blazor problemlos funktionierte, war eine direkte Integration in modulare Laufzeitsysteme wie Eclipse BaSyx nicht möglich.
 Die AAS mussten daher manuell bereitgestellt werden, was insbesondere bei einer größeren Anzahl oder häufigen Änderungen mit erheblichem Mehraufwand verbunden war.
 Darüber hinaus wich der Package Explorer in einzelnen Punkten von den aktuellen \acs{aas}-Spezifikationen ab, was vereinzelt fehlerhafte semantische Angaben nach sich zog, die nachträglich korrigiert werden mussten.
@@ -522,7 +524,7 @@ Für automatisierte Szenarien bot das Tool hingegen nur eingeschränkte Unterst�
 Die Eclipse BaSyx-Plattform bildete in diesem Projekt die zentrale Laufzeitumgebung für den Betrieb von \acs{aas}.
 Ein wesentlicher Vorteil war der modulare Aufbau, der praxisnahe Szenarien und zugleich eine flexible Konfiguration ermöglichte.
 Ebenso eröffneten die standardisierten REST-APIs einen direkten Zugriff auf die einzelnen Komponenten, der dank der integrierten Swagger-Dokumentation unmittelbar getestet und transparent nachvollzogen werden konnte.
-Darüber hinaus erleichterte die DataBridge die Anbindung unterschiedlicher Protokolle, insbesondere von \acs{opcua}, wodurch eine dynamische Erweiterung der AAS und die Umsetzung dynamischer Submodelle möglich wurde.
+Darüber hinaus erleichterte die Databridge die Anbindung unterschiedlicher Protokolle, insbesondere von \acs{opcua}, wodurch eine dynamische Erweiterung der AAS und die Umsetzung dynamischer Submodelle möglich wurde.
 
 Mit der AAS Web UI stand zudem eine Benutzeroberfläche zur Verfügung, die sowohl die Darstellung als auch die Anpassung von AAS erlaubte. 
 Für zentrale Submodelle existieren bereits spezialisierte Plugins, die sich aufgrund des Open-Source-Charakters einfach erweitern oder ergänzen ließen.
